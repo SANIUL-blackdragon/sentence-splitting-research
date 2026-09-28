@@ -1,0 +1,3056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch 2.7 — IMFs, Redox & Groups 1/2/7 | WCH12 Study Guide</title>
+<style>
+:root{--bg:#fafcfe;--surface:#fff;--text:#1e293b;--heading:#0f4c75;--heading2:#1b6ca8;--accent:#3b82f6;--accent2:#10b981;--border:#e2e8f0;--muted:#64748b;--tip-bg:#eff6ff;--tip-border:#bfdbfe;--warn-bg:#fefce8;--warn-border:#fde68a;--worked-bg:#f0fdf4;--worked-border:#bbf7d0;--sidebar-bg:#fff;--sidebar-shadow:0 4px 24px rgba(0,0,0,.1);--code-bg:#f1f5f9;--tbl-head:#eef2f7;--tbl-alt:#f8fafc}
+[data-theme="dark"]{--bg:#0f172a;--surface:#1e293b;--text:#e2e8f0;--heading:#93c5fd;--heading2:#7dd3fc;--accent:#60a5fa;--accent2:#34d399;--border:#334155;--muted:#94a3b8;--tip-bg:#1e3a5f;--tip-border:#2563eb;--warn-bg:#422006;--warn-border:#a16207;--worked-bg:#052e16;--worked-border:#16a34a;--sidebar-bg:#1e293b;--sidebar-shadow:0 4px 24px rgba(0,0,0,.4);--code-bg:#0f172a;--tbl-head:#1e3a5f;--tbl-alt:#162032}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding-top:52px}
+@media(max-width:480px){body{font-size:15px;padding-top:48px}}
+header{position:fixed;top:0;left:0;right:0;height:52px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;z-index:1000;padding:0 16px;gap:12px}
+#menuBtn{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text);padding:4px 8px;border-radius:6px;line-height:1}
+#menuBtn:hover{background:var(--code-bg)}
+#headerTitle{font-weight:700;font-size:.95rem;color:var(--heading);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+#darkBtn{margin-left:auto;background:none;border:1px solid var(--border);border-radius:6px;cursor:pointer;padding:4px 10px;font-size:.8rem;color:var(--text);white-space:nowrap}
+#darkBtn:hover{background:var(--code-bg)}
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:1100;display:none}
+#overlay.open{display:block}
+#sidebar{position:fixed;top:0;left:-340px;width:320px;max-width:85vw;height:100vh;background:var(--sidebar-bg);box-shadow:var(--sidebar-shadow);z-index:1200;overflow-y:auto;padding:16px 0;transition:left .25s ease}
+#sidebar.open{left:0}
+#sidebar .sb-head{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;border-bottom:1px solid var(--border);margin-bottom:8px}
+#sidebar .sb-head span{font-weight:700;color:var(--heading);font-size:.95rem}
+#sidebar .sb-close{background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text);padding:4px;line-height:1}
+#sidebar nav{padding:0 12px}
+#sidebar nav ul{list-style:none;padding:0;margin:0}
+#sidebar nav li{margin-bottom:2px}
+#sidebar nav a{display:block;padding:6px 10px;border-radius:6px;font-size:.82rem;color:var(--text);text-decoration:none;transition:background .15s;line-height:1.4}
+#sidebar nav a:hover{background:var(--code-bg)}
+#sidebar nav a.chapter{font-weight:700;color:var(--heading);font-size:.9rem;margin-top:10px;padding:8px 10px;border-radius:6px}
+#sidebar nav a.sub{padding-left:18px;font-size:.8rem;color:var(--muted)}
+main{max-width:900px;margin:0 auto;padding:24px 20px 60px}
+@media(max-width:600px){main{padding:16px 12px 40px}}
+.cover{text-align:center;padding:48px 20px 40px;border-bottom:2px solid var(--border);margin-bottom:32px}
+.cover h1{font-size:2rem;color:var(--heading);margin-bottom:8px;line-height:1.25}
+@media(max-width:480px){.cover h1{font-size:1.5rem}}
+.cover .subtitle{font-size:1rem;color:var(--muted);margin-bottom:16px}
+.cover .meta{display:inline-flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.cover .tag{background:var(--code-bg);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:.8rem;color:var(--muted)}
+.cover .stats{margin-top:20px;font-size:1.1rem;font-weight:700;color:var(--accent)}
+.cover .stats2{font-size:.85rem;color:var(--muted);font-weight:400;margin-top:4px}
+section{margin-bottom:40px}
+section h2{color:var(--heading);font-size:1.4rem;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid var(--accent);scroll-margin-top:64px}
+section h3{color:var(--heading2);font-size:1.15rem;margin:20px 0 8px;scroll-margin-top:64px}
+section h4{color:var(--heading);font-size:1.05rem;margin:16px 0 6px;scroll-margin-top:64px}
+section h5{color:var(--heading);font-size:1rem;margin:14px 0 6px;scroll-margin-top:64px}
+section p{margin-bottom:10px}
+section strong{color:var(--heading)}
+section em{font-style:italic;color:var(--heading2)}
+section code{background:var(--code-bg);padding:1px 5px;border-radius:4px;font-size:.92em;font-family:'SF Mono',Consolas,monospace}
+section pre{background:var(--code-bg);padding:12px 16px;border-radius:8px;overflow-x:auto;margin:12px 0;font-size:.88rem;line-height:1.5}
+section pre code{background:none;padding:0;font-size:1em}
+section ul,section ol{margin:8px 0 12px 24px}
+section li{margin-bottom:4px}
+section blockquote{border-left:4px solid var(--accent);background:var(--tip-bg);padding:10px 16px;margin:12px 0;border-radius:0 6px 6px 0;color:var(--text)}
+section blockquote p{margin:0}
+.tbl-wrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+@media(max-width:600px){table{font-size:.78rem}}
+th{background:var(--tbl-head);color:var(--heading);font-weight:600;text-align:left;padding:8px 10px;border:1px solid var(--border);white-space:nowrap}
+td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+tr:nth-child(even) td{background:var(--tbl-alt)}
+hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+sub,sup{font-size:.75em}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border)}
+@media print{header,#sidebar,#overlay,#darkBtn,nav,.no-print{display:none!important}body{padding-top:0}main{max-width:100%;padding:0}*{color:#000!important;background:#fff!important;background-color:#fff!important;background-image:none!important;text-shadow:none!important;box-shadow:none!important;border-color:#666!important}a{color:#000!important;text-decoration:underline!important}section{break-inside:avoid}h2,h3,h4{break-after:avoid}@page{margin:18mm 16mm}}
+
+</style>
+</head>
+<body>
+<header>
+<button id="menuBtn" onclick="toggleSidebar()" aria-label="Toggle navigation">&#9776;</button>
+<span id="headerTitle">Ch 2.7 — IMFs, Redox &amp; Groups 1/2/7</span>
+<button id="darkBtn" onclick="toggleDark()" aria-label="Toggle dark mode">&#127769; Dark</button>
+</header>
+<div id="overlay" onclick="toggleSidebar()"></div>
+
+<aside id="sidebar">
+<div class="sb-head"><span>Index</span><button class="sb-close" onclick="toggleSidebar()" aria-label="Close">&#10005;</button></div>
+<nav>
+<a href="#cover" class="chapter" onclick="toggleSidebar()">Cover</a>
+<a href="#defs" class="chapter" onclick="toggleSidebar()">Definitions</a>
+<ul>
+<li><a href="#def-intermolecular-forces-redox-chemistry-and-groups-1-2-and-7" onclick="toggleSidebar()">Intermolecular Forces, Redox Chemistry, and Groups 1, 2 and 7</a></li>
+<li><a href="#def-section-7a-intermolecular-forces-spec-7176" onclick="toggleSidebar()">Section 7A — Intermolecular Forces (Spec 7.1–7.6)</a></li>
+<li><a href="#def-71-london-forces-induced-dipoledipole-forces" onclick="toggleSidebar()">7.1 London Forces (Induced Dipole–Dipole Forces)</a></li>
+<li><a href="#def-72-permanent-dipoledipole-forces" onclick="toggleSidebar()">7.2 Permanent Dipole–Dipole Forces</a></li>
+<li><a href="#def-73-hydrogen-bonding" onclick="toggleSidebar()">7.3 Hydrogen Bonding</a></li>
+<li><a href="#def-7475-predicting-physical-properties-from-imf" onclick="toggleSidebar()">7.4–7.5 Predicting Physical Properties from IMF</a></li>
+<li><a href="#def-76-ion-dipole-interactions" onclick="toggleSidebar()">7.6 Ion-Dipole Interactions</a></li>
+<li><a href="#def-section-8a-redox-chemistry-spec-81810" onclick="toggleSidebar()">Section 8A — Redox Chemistry (Spec 8.1–8.10)</a></li>
+<li><a href="#def-81-oxidation-and-reduction-definitions" onclick="toggleSidebar()">8.1 Oxidation and Reduction (Definitions)</a></li>
+<li><a href="#def-8285-oxidation-numbers" onclick="toggleSidebar()">8.2–8.5 Oxidation Numbers</a></li>
+<li><a href="#def-8688-half-equations-and-balancing-redox-equations" onclick="toggleSidebar()">8.6–8.8 Half-Equations and Balancing Redox Equations</a></li>
+<li><a href="#def-89810-disproportionation" onclick="toggleSidebar()">8.9–8.10 Disproportionation</a></li>
+<li><a href="#def-section-8b-groups-1-and-2-spec-811823" onclick="toggleSidebar()">Section 8B — Groups 1 and 2 (Spec 8.11–8.23)</a></li>
+<li><a href="#def-811813-reactivity-trends" onclick="toggleSidebar()">8.11–8.13 Reactivity Trends</a></li>
+<li><a href="#def-814817-thermal-decomposition" onclick="toggleSidebar()">8.14–8.17 Thermal Decomposition</a></li>
+<li><a href="#def-818820-solubility-trends" onclick="toggleSidebar()">8.18–8.20 Solubility Trends</a></li>
+<li><a href="#def-821823-flame-tests-and-qualitative-analysis" onclick="toggleSidebar()">8.21–8.23 Flame Tests and Qualitative Analysis</a></li>
+<li><a href="#def-section-8c-group-7-spec-824828" onclick="toggleSidebar()">Section 8C — Group 7 (Spec 8.24–8.28)</a></li>
+<li><a href="#def-824825-group-7-trends" onclick="toggleSidebar()">8.24–8.25 Group 7 Trends</a></li>
+<li><a href="#def-826-reactions-of-halide-salts-with-concentrated-sulfuric-acid" onclick="toggleSidebar()">8.26 Reactions of Halide Salts with Concentrated Sulfuric Acid</a></li>
+<li><a href="#def-827-halide-ion-tests-silver-nitrate" onclick="toggleSidebar()">8.27 Halide Ion Tests (Silver Nitrate)</a></li>
+<li><a href="#def-828-halogen-extraction-and-solvent-extraction" onclick="toggleSidebar()">8.28 Halogen Extraction and Solvent Extraction</a></li>
+<li><a href="#def-core-practical-definitions-cp3-and-cp4" onclick="toggleSidebar()">Core Practical Definitions (CP3 and CP4)</a></li>
+<li><a href="#def-cp3-volumetric-analysis-titrations" onclick="toggleSidebar()">CP3 — Volumetric Analysis (Titrations)</a></li>
+<li><a href="#def-cp4-identification-of-group-2-cations-and-group-7-anions" onclick="toggleSidebar()">CP4 — Identification of Group 2 Cations and Group 7 Anions</a></li>
+<li><a href="#def-summary-of-highest-value-definitions-by-exam-frequency" onclick="toggleSidebar()">Summary of Highest-Value Definitions (by Exam Frequency)</a></li>
+</ul>
+<a href="#concepts" class="chapter" onclick="toggleSidebar()">Concepts &amp; Worked Examples</a>
+<ul>
+<li><a href="#con-intermolecular-forces-redox-chemistry-and-groups-1-2-and-7" onclick="toggleSidebar()">Intermolecular Forces, Redox Chemistry, and Groups 1, 2 and 7</a></li>
+<li><a href="#con-concept-1-predicting-physical-properties-from-intermolecular-forces" onclick="toggleSidebar()">Concept 1: Predicting Physical Properties from Intermolecular Forces</a></li>
+<li><a href="#con-key-principles" onclick="toggleSidebar()">Key Principles</a></li>
+<li><a href="#con-worked-example-11-boiling-point-comparison-jan-2023-q6-style" onclick="toggleSidebar()">Worked Example 1.1: Boiling Point Comparison (Jan 2023 Q6 style)</a></li>
+<li><a href="#con-worked-example-12-isomeric-alcohols-jan-2023-q19bii-style" onclick="toggleSidebar()">Worked Example 1.2: Isomeric Alcohols (Jan 2023 Q19(b)(ii) style)</a></li>
+<li><a href="#con-worked-example-13-solubility-in-different-solvents-jan-2023-q19biii-style" onclick="toggleSidebar()">Worked Example 1.3: Solubility in Different Solvents (Jan 2023 Q19(b)(iii) style)</a></li>
+<li><a href="#con-worked-example-14-non-polar-molecule-identification" onclick="toggleSidebar()">Worked Example 1.4: Non-Polar Molecule Identification</a></li>
+<li><a href="#con-concept-2-oxidation-number-calculations" onclick="toggleSidebar()">Concept 2: Oxidation Number Calculations</a></li>
+<li><a href="#con-key-rules-and-exceptions" onclick="toggleSidebar()">Key Rules and Exceptions</a></li>
+<li><a href="#con-worked-example-21-oxidation-numbers-in-simple-compounds" onclick="toggleSidebar()">Worked Example 2.1: Oxidation Numbers in Simple Compounds</a></li>
+<li><a href="#con-worked-example-22-oxidation-numbers-in-peroxides-and-hydrides-jan-2024-q6-style" onclick="toggleSidebar()">Worked Example 2.2: Oxidation Numbers in Peroxides and Hydrides (Jan 2024 Q6 style)</a></li>
+<li><a href="#con-worked-example-23-disproportionation-identification-oct-2023-q7-style" onclick="toggleSidebar()">Worked Example 2.3: Disproportionation Identification (Oct 2023 Q7 style)</a></li>
+<li><a href="#con-worked-example-24-oxidation-number-range-for-disproportionation-jun-2024-q18biii-style" onclick="toggleSidebar()">Worked Example 2.4: Oxidation Number Range for Disproportionation (Jun 2024 Q18(b)(iii) style)</a></li>
+<li><a href="#con-concept-3-balancing-redox-equations-from-half-equations" onclick="toggleSidebar()">Concept 3: Balancing Redox Equations from Half-Equations</a></li>
+<li><a href="#con-method" onclick="toggleSidebar()">Method</a></li>
+<li><a href="#con-worked-example-31-mno₂-hcl-oct-2023-q19b-style" onclick="toggleSidebar()">Worked Example 3.1: MnO₂ + HCl (Oct 2023 Q19(b) style)</a></li>
+<li><a href="#con-worked-example-32-disproportionation-of-clo-jan-2024-q24biii-style" onclick="toggleSidebar()">Worked Example 3.2: Disproportionation of ClO⁻ (Jan 2024 Q24(b)(iii) style)</a></li>
+<li><a href="#con-worked-example-33-half-equation-in-alkaline-conditions-oct-2023-q6-style" onclick="toggleSidebar()">Worked Example 3.3: Half-Equation in Alkaline Conditions (Oct 2023 Q6 style)</a></li>
+<li><a href="#con-worked-example-34-cl₂-h₂o-disproportionation-oct-2024-q19bi-style" onclick="toggleSidebar()">Worked Example 3.4: Cl₂ + H₂O Disproportionation (Oct 2024 Q19(b)(i) style)</a></li>
+<li><a href="#con-concept-4-group-2-thermal-decomposition-polarising-power-mechanism" onclick="toggleSidebar()">Concept 4: Group 2 Thermal Decomposition — Polarising Power Mechanism</a></li>
+<li><a href="#con-the-polarising-power-argument-full-chain" onclick="toggleSidebar()">The Polarising Power Argument (Full Chain)</a></li>
+<li><a href="#con-worked-example-41-explaining-the-trend-jan-2024-q21cii-style" onclick="toggleSidebar()">Worked Example 4.1: Explaining the Trend (Jan 2024 Q21(c)(ii) style)</a></li>
+<li><a href="#con-worked-example-42-thermal-decomposition-equations-jan-2023-q21-style" onclick="toggleSidebar()">Worked Example 4.2: Thermal Decomposition Equations (Jan 2023 Q21 style)</a></li>
+<li><a href="#con-worked-example-43-diagonal-relationship-limg-oct-2024-q20e-style" onclick="toggleSidebar()">Worked Example 4.3: Diagonal Relationship Li/Mg (Oct 2024 Q20(e) style)</a></li>
+<li><a href="#con-worked-example-44-gas-volume-from-thermal-decomposition-jun-2023-q12-style" onclick="toggleSidebar()">Worked Example 4.4: Gas Volume from Thermal Decomposition (Jun 2023 Q12 style)</a></li>
+<li><a href="#con-concept-5-volumetric-analysis-calculations-titrations-with-uncertainty" onclick="toggleSidebar()">Concept 5: Volumetric Analysis Calculations (Titrations with Uncertainty)</a></li>
+<li><a href="#con-general-method" onclick="toggleSidebar()">General Method</a></li>
+<li><a href="#con-worked-example-51-solubility-of-caoh₂-from-titration-oct-2023-q20bi-style" onclick="toggleSidebar()">Worked Example 5.1: Solubility of Ca(OH)₂ from Titration (Oct 2023 Q20(b)(i) style)</a></li>
+<li><a href="#con-worked-example-52-percentage-composition-from-titration-oct-2023-q19aii-style" onclick="toggleSidebar()">Worked Example 5.2: Percentage Composition from Titration (Oct 2023 Q19(a)(ii) style)</a></li>
+<li><a href="#con-worked-example-53-percentage-uncertainty-in-titration-jun-2024-q11c-style" onclick="toggleSidebar()">Worked Example 5.3: Percentage Uncertainty in Titration (Jun 2024 Q11(c) style)</a></li>
+<li><a href="#con-worked-example-54-back-titration-gas-volume-calculation-jan-2023-q18c-style" onclick="toggleSidebar()">Worked Example 5.4: Back Titration / Gas Volume Calculation (Jan 2023 Q18(c) style)</a></li>
+<li><a href="#con-concept-6-group-7-displacement-reactions-and-trend-explanations" onclick="toggleSidebar()">Concept 6: Group 7 Displacement Reactions and Trend Explanations</a></li>
+<li><a href="#con-the-trend" onclick="toggleSidebar()">The Trend</a></li>
+<li><a href="#con-worked-example-61-non-spontaneous-displacement-jan-2023-q11-style" onclick="toggleSidebar()">Worked Example 6.1: Non-Spontaneous Displacement (Jan 2023 Q11 style)</a></li>
+<li><a href="#con-worked-example-62-concentrated-h₂so₄-with-halides-oct-2023-q8-style" onclick="toggleSidebar()">Worked Example 6.2: Concentrated H₂SO₄ with Halides (Oct 2023 Q8 style)</a></li>
+<li><a href="#con-worked-example-63-electronegativity-trend-down-group-7-jun-2022-q16a-style" onclick="toggleSidebar()">Worked Example 6.3: Electronegativity Trend Down Group 7 (Jun 2022 Q16(a) style)</a></li>
+<li><a href="#con-worked-example-64-group-7-bp-trend-with-explanation-jun-2024-q12-style" onclick="toggleSidebar()">Worked Example 6.4: Group 7 B.p. Trend with Explanation (Jun 2024 Q12 style)</a></li>
+<li><a href="#con-concept-7-identifying-unknown-compounds-using-tests" onclick="toggleSidebar()">Concept 7: Identifying Unknown Compounds Using Tests</a></li>
+<li><a href="#con-worked-example-71-flame-test-precipitation-jun-2024-q8-style" onclick="toggleSidebar()">Worked Example 7.1: Flame Test + Precipitation (Jun 2024 Q8 style)</a></li>
+<li><a href="#con-worked-example-72-thermal-decomposition-flame-test-oct-2024-q5-style" onclick="toggleSidebar()">Worked Example 7.2: Thermal Decomposition + Flame Test (Oct 2024 Q5 style)</a></li>
+<li><a href="#con-worked-example-73-multi-step-identification-jan-2023-q9-style" onclick="toggleSidebar()">Worked Example 7.3: Multi-Step Identification (Jan 2023 Q9 style)</a></li>
+<li><a href="#con-concept-8-ion-dipole-interactions-and-dissolution" onclick="toggleSidebar()">Concept 8: Ion-Dipole Interactions and Dissolution</a></li>
+<li><a href="#con-worked-example-81-ion-dipole-diagram-oct-2024-q16ci-style" onclick="toggleSidebar()">Worked Example 8.1: Ion-Dipole Diagram (Oct 2024 Q16(c)(i) style)</a></li>
+<li><a href="#con-worked-example-82-why-i₂-is-more-soluble-in-hexane-than-water-oct-2023-q19d-style" onclick="toggleSidebar()">Worked Example 8.2: Why I₂ is More Soluble in Hexane than Water (Oct 2023 Q19(d) style)</a></li>
+<li><a href="#con-concept-9-redox-in-context-batteries-and-bleach" onclick="toggleSidebar()">Concept 9: Redox in Context — Batteries and Bleach</a></li>
+<li><a href="#con-worked-example-91-lithium-battery-oct-2024-q20c-style" onclick="toggleSidebar()">Worked Example 9.1: Lithium Battery (Oct 2024 Q20(c) style)</a></li>
+<li><a href="#con-worked-example-92-bleach-acid-danger-jan-2024-q24bii-style" onclick="toggleSidebar()">Worked Example 9.2: Bleach + Acid Danger (Jan 2024 Q24(b)(ii) style)</a></li>
+<li><a href="#con-concept-10-calculations-involving-group-2-compounds" onclick="toggleSidebar()">Concept 10: Calculations Involving Group 2 Compounds</a></li>
+<li><a href="#con-worked-example-101-water-of-crystallisation-oct-2024-q16aii-style" onclick="toggleSidebar()">Worked Example 10.1: Water of Crystallisation (Oct 2024 Q16(a)(ii) style)</a></li>
+<li><a href="#con-worked-example-102-percentage-composition-and-empirical-formula-jun-2024-q18biv-style" onclick="toggleSidebar()">Worked Example 10.2: Percentage Composition and Empirical Formula (Jun 2024 Q18(b)(iv) style)</a></li>
+<li><a href="#con-quick-reference-common-calculation-templates" onclick="toggleSidebar()">Quick Reference: Common Calculation Templates</a></li>
+<li><a href="#con-template-1-enthalpy-from-calorimetry-q-mcδt" onclick="toggleSidebar()">Template 1: Enthalpy from Calorimetry (q = mcΔT)</a></li>
+<li><a href="#con-template-2-titration-to-find-unknown-concentration" onclick="toggleSidebar()">Template 2: Titration to Find Unknown Concentration</a></li>
+<li><a href="#con-template-3-percentage-uncertainty" onclick="toggleSidebar()">Template 3: Percentage Uncertainty</a></li>
+<li><a href="#con-template-4-gas-volume-at-rtp" onclick="toggleSidebar()">Template 4: Gas Volume at RTP</a></li>
+<li><a href="#con-template-5-empirical-formula" onclick="toggleSidebar()">Template 5: Empirical Formula</a></li>
+<li><a href="#con-exam-strategy-tips-for-chapter-27" onclick="toggleSidebar()">Exam Strategy Tips for Chapter 2.7</a></li>
+</ul>
+<a href="#exam" class="chapter" onclick="toggleSidebar()">Exam Connections</a>
+<ul>
+<li><a href="#exam-1-per-paper-mark-allocation-7-papers" onclick="toggleSidebar()">1. Per-Paper Mark Allocation (7 Papers)</a></li>
+<li><a href="#exam-trend-analysis" onclick="toggleSidebar()">Trend Analysis</a></li>
+<li><a href="#exam-2-high-frequency-question-types" onclick="toggleSidebar()">2. High-Frequency Question Types</a></li>
+<li><a href="#exam-21-group-2-chemistry-est-44-marks-total-avg-63paper" onclick="toggleSidebar()">2.1 Group 2 Chemistry — Est. 44 marks total (avg 6.3/paper) 🔴</a></li>
+<li><a href="#exam-thermal-decomposition-trends" class="sub" onclick="toggleSidebar()">Thermal Decomposition Trends</a></li>
+<li><a href="#exam-reactivity-with-water" class="sub" onclick="toggleSidebar()">Reactivity with Water</a></li>
+<li><a href="#exam-solubility-trends" class="sub" onclick="toggleSidebar()">Solubility Trends</a></li>
+<li><a href="#exam-flame-tests" class="sub" onclick="toggleSidebar()">Flame Tests</a></li>
+<li><a href="#exam-22-group-7-chemistry-est-27-marks-total-avg-39paper" onclick="toggleSidebar()">2.2 Group 7 Chemistry — Est. 27 marks total (avg 3.9/paper) 🔴</a></li>
+<li><a href="#exam-displacement-reactions" class="sub" onclick="toggleSidebar()">Displacement Reactions</a></li>
+<li><a href="#exam-disproportionation" class="sub" onclick="toggleSidebar()">Disproportionation</a></li>
+<li><a href="#exam-concentrated-h₂so₄-halides" class="sub" onclick="toggleSidebar()">Concentrated H₂SO₄ + Halides</a></li>
+<li><a href="#exam-silver-nitrate-precipitation-tests" class="sub" onclick="toggleSidebar()">Silver Nitrate Precipitation Tests</a></li>
+<li><a href="#exam-23-oxidation-numbers-redox-equations-est-18-marks-total-avg-26paper" onclick="toggleSidebar()">2.3 Oxidation Numbers &amp;amp; Redox Equations — Est. 18 marks total (avg 2.6/paper) 🔴</a></li>
+<li><a href="#exam-24-volumetric-analysis-titrations-est-11-marks-total-avg-16paper" onclick="toggleSidebar()">2.4 Volumetric Analysis / Titrations — Est. 11 marks total (avg 1.6/paper) 🟡</a></li>
+<li><a href="#exam-25-intermolecular-forces-est-23-marks-total-avg-33paper" onclick="toggleSidebar()">2.5 Intermolecular Forces — Est. 23 marks total (avg 3.3/paper) 🟡</a></li>
+<li><a href="#exam-ion-dipole-interactions-spec-7678" class="sub" onclick="toggleSidebar()">Ion-Dipole Interactions (Spec 7.6–7.8)</a></li>
+<li><a href="#exam-26-qualitative-tests-est-15-marks-total-avg-21paper" onclick="toggleSidebar()">2.6 Qualitative Tests — Est. 15 marks total (avg 2.1/paper) 🟡</a></li>
+<li><a href="#exam-3-common-traps-with-specific-paper-references" onclick="toggleSidebar()">3. Common Traps with Specific Paper References</a></li>
+<li><a href="#exam-31-oxidation-state-traps" onclick="toggleSidebar()">3.1 Oxidation State Traps</a></li>
+<li><a href="#exam-32-group-2-trend-traps" onclick="toggleSidebar()">3.2 Group 2 Trend Traps</a></li>
+<li><a href="#exam-33-titration-traps" onclick="toggleSidebar()">3.3 Titration Traps</a></li>
+<li><a href="#exam-34-imf-traps" onclick="toggleSidebar()">3.4 IMF Traps</a></li>
+<li><a href="#exam-4-mark-scheme-requirements-exact-phrasing" onclick="toggleSidebar()">4. Mark Scheme Requirements: Exact Phrasing</a></li>
+<li><a href="#exam-41-tests-exact-words-required" onclick="toggleSidebar()">4.1 Tests (Exact Words Required)</a></li>
+<li><a href="#exam-42-equations-must-be-balanced" onclick="toggleSidebar()">4.2 Equations (Must Be Balanced)</a></li>
+<li><a href="#exam-5-core-practical-integration" onclick="toggleSidebar()">5. Core Practical Integration</a></li>
+<li><a href="#exam-cp3-finding-the-concentration-of-a-solution-of-hydrochloric-acid" onclick="toggleSidebar()">CP3: Finding the Concentration of a Solution of Hydrochloric Acid</a></li>
+<li><a href="#exam-cp4-standard-solution-from-solid-acid-naoh-concentration" onclick="toggleSidebar()">CP4: Standard Solution from Solid Acid → NaOH Concentration</a></li>
+<li><a href="#exam-6-revision-priority-ranking" onclick="toggleSidebar()">6. Revision Priority Ranking</a></li>
+<li><a href="#exam-7-detailed-question-by-question-reference-key-marks-across-all-7-papers" onclick="toggleSidebar()">7. Detailed Question-by-Question Reference: Key Marks Across All 7 Papers</a></li>
+<li><a href="#exam-group-2-anchor-questions-highest-individual-marks" onclick="toggleSidebar()">Group 2 Anchor Questions (Highest Individual Marks)</a></li>
+<li><a href="#exam-group-7-anchor-questions" onclick="toggleSidebar()">Group 7 Anchor Questions</a></li>
+<li><a href="#exam-8-predictions-for-future-papers" onclick="toggleSidebar()">8. Predictions for Future Papers</a></li>
+<li><a href="#exam-9-checklist-am-i-exam-ready-for-ch27" onclick="toggleSidebar()">9. Checklist: Am I Exam-Ready for ch2.7?</a></li>
+</ul>
+</nav>
+</aside>
+<main>
+<section class="cover" id="cover">
+<h1>Chapter 2.7 — Intermolecular Forces, Redox & Groups 1, 2, 7</h1>
+<p class="subtitle">WCH12 &middot; Edexcel International A-Level Chemistry &middot; Unit 2</p>
+<div class="meta">
+<span class="tag">Spec Points 7.1–8.28</span><span class="tag">7 Papers Analysed</span><span class="tag">Jun 2022 – Oct 2024</span>
+</div>
+<p class="stats2">Average ~16 marks per paper — IMFs, redox, and Group chemistry consistently tested</p>
+</section>
+<section id="defs">
+<h2>Definitions</h2>
+<h2 id="def-intermolecular-forces-redox-chemistry-and-groups-1-2-and-7">Intermolecular Forces, Redox Chemistry, and Groups 1, 2 and 7</h2>
+<p><strong>Specification coverage:</strong> 7.1–8.28 | <strong>Average paper weight:</strong> 38.6% (20–46 marks)<br>
+<strong>Core practicals:</strong> CP3 (volumetric analysis), CP4 (identification of Group 2 cations and Group 7 anions)</p>
+<hr>
+<h2 id="def-section-7a-intermolecular-forces-spec-7176">Section 7A — Intermolecular Forces (Spec 7.1–7.6)</h2>
+<h3 id="def-71-london-forces-induced-dipoledipole-forces">7.1 London Forces (Induced Dipole–Dipole Forces)</h3>
+<p><strong>Exam-ready definition:</strong></p>
+<blockquote>
+<p>London forces are weak intermolecular forces caused by the movement of electrons in an atom or molecule creating an instantaneous/temporary dipole, which induces a dipole in a neighbouring atom or molecule. The resulting attraction between the temporary dipole and the induced dipole is the London force. They exist between ALL atoms and molecules, whether polar or non-polar.</p>
+</blockquote>
+<p><strong>Key points to include for full marks:</strong>
+- Electrons are in constant motion → instantaneous/temporary dipole
+- This induces a dipole in an adjacent molecule
+- Attraction between temporary dipole and induced dipole
+- Present in ALL molecules (and atoms)</p>
+<p><strong>Real exam examples with MS answers:</strong></p>
+<ol>
+<li>
+<p><strong>Jan 2024 Q4</strong> (1 mark) — Which has strongest London forces?<br>
+<strong>MS:</strong> Straight-chain alkane with most electrons (CH₃(CH₂)₇CH₃). More electrons → larger electron cloud → more easily polarised → stronger London forces.</p>
+</li>
+<li>
+<p><strong>Oct 2024 Q19(a)(i)</strong> (2 marks) — Describe how London forces arise.<br>
+<strong>MS:</strong> Instantaneous/temporary dipole from asymmetrical electron distribution → induced dipoles in neighbouring molecules.</p>
+</li>
+<li>
+<p><strong>Oct 2024 Q19(a)(ii)</strong> (1 mark) — Why HI has stronger London forces than HCl.<br>
+<strong>MS:</strong> HI has more electrons.</p>
+</li>
+<li>
+<p><strong>Jun 2022 Q16(d)</strong> (4 marks) — Explain HX boiling point trend.<br>
+<strong>MS:</strong> (1) All HX have London forces; (2) London force strength increases with number of electrons down the group; (3) Only HF has hydrogen bonding; (4) Hydrogen bonding is much stronger than London forces.</p>
+</li>
+</ol>
+<p><strong>Common mistakes:</strong>
+- Writing "van der Waals forces" instead of "London forces" (Edexcel uses "London forces")
+- Saying "more electrons = stronger forces" without mentioning polarisability
+- Confusing London forces with permanent dipole–dipole forces
+- Saying London forces are only in non-polar molecules (they exist in ALL molecules)</p>
+<hr>
+<h3 id="def-72-permanent-dipoledipole-forces">7.2 Permanent Dipole–Dipole Forces</h3>
+<p><strong>Exam-ready definition:</strong></p>
+<blockquote>
+<p>Permanent dipole–dipole forces are intermolecular forces of attraction between the permanent dipoles of polar molecules. They arise because polar molecules have an uneven distribution of electron density, creating a permanent δ⁺ end and a permanent δ⁻ end. The δ⁺ end of one molecule attracts the δ⁻ end of another.</p>
+</blockquote>
+<p><strong>Key points:</strong>
+- Only exist in POLAR molecules
+- Caused by a permanent uneven distribution of electron density
+- Stronger than London forces but weaker than hydrogen bonding
+- PH₃ is an important example: non-polar P–H bonds (Δχ ≈ 0) but a polar molecule due to the lone pair</p>
+<p><strong>Real exam examples with MS answers:</strong></p>
+<ol>
+<li>
+<p><strong>Jun 2023 Q6</strong> (1 mark) — Butane vs propanal b.p.<br>
+<strong>MS:</strong> Propanal has a C=O bond that creates permanent dipole–dipole forces, which are stronger than the London forces in butane.</p>
+</li>
+<li>
+<p><strong>Jan 2023 Q4</strong> (1 mark) — Which has only London forces?<br>
+<strong>MS:</strong> CF₄ is tetrahedral and symmetrical → no permanent dipole → London forces only. (HF has H-bonding; OF₂ and PF₃ are polar.)</p>
+</li>
+<li>
+<p><strong>Oct 2023 Q4</strong> (1 mark) — Table of IMF for BF₃, CH₄, NH₃, H₂S.<br>
+<strong>MS:</strong> H₂S has London forces + permanent dipole–dipole, but NOT hydrogen bonding (S is not electronegative enough).</p>
+</li>
+</ol>
+<p><strong>Common mistakes:</strong>
+- Confusing which molecules are polar vs non-polar (symmetrical molecules like CF₄, BF₃ are non-polar despite polar bonds)
+- Saying PH₃ has hydrogen bonding (P is NOT electronegative enough)
+- Forgetting that permanent dipole–dipole forces are additional to London forces (all molecules have London forces too)</p>
+<hr>
+<h3 id="def-73-hydrogen-bonding">7.3 Hydrogen Bonding</h3>
+<p><strong>Exam-ready definition:</strong></p>
+<blockquote>
+<p>Hydrogen bonding is a strong type of intermolecular force that occurs when a hydrogen atom is covalently bonded to a highly electronegative atom (fluorine, oxygen, or nitrogen) and is attracted to a lone pair of electrons on a highly electronegative atom (F, O, or N) in a DIFFERENT molecule.</p>
+</blockquote>
+<p><strong>Key points for full marks:</strong>
+- H must be covalently bonded to F, O, or N (NOT to C, P, S, Cl)
+- H is attracted to a lone pair on F, O, or N in a different molecule
+- Strongest type of intermolecular force (but NOT a covalent bond)
+- Gives anomalous properties: high b.p. of H₂O, HF, NH₃; lower density of ice</p>
+<p><strong>Real exam examples with MS answers:</strong></p>
+<ol>
+<li>
+<p><strong>Jan 2024 Q1</strong> (1 mark) — Which exhibits hydrogen bonding?<br>
+<strong>MS:</strong> HF (F is highly electronegative, H bonded directly to F).</p>
+</li>
+<li>
+<p><strong>Jan 2023 Q5</strong> (1 mark) — Which forms hydrogen bonding?<br>
+<strong>MS:</strong> (CH₃)₃COH — only option with O–H bond. N not bonded to H in option A; F not bonded to H in option B; C=O in option D has no O–H.</p>
+</li>
+<li>
+<p><strong>Jan 2023 Q6</strong> (1 mark) — HF b.p. anomaly.<br>
+<strong>MS:</strong> HF &gt; HI &gt; HBr &gt; HCl. HF highest due to H-bonding; then London forces dominate: HI &gt; HBr &gt; HCl.</p>
+</li>
+<li>
+<p><strong>Jun 2023 Q20(b)</strong> (6 marks, QWC) — Compare IMF in H₂ and NH₃.<br>
+<strong>MS indicative points:</strong> (1) Both form London forces; (2) Temporary dipole induces dipole in adjacent molecule; (3) Weaker attraction in H₂ (electron cloud less easily polarised); (4) NH₃ forms hydrogen bonds (N very electronegative); (5) H-bond between N lone pair and δ⁺H of different molecule; (6) NH₃ liquefies more easily.</p>
+</li>
+<li>
+<p><strong>Jun 2023 Q7</strong> (1 mark) — Which diagram shows H-bond between methanol and water?<br>
+<strong>MS:</strong> H must be bonded to O (not C); O—H⋯O angle ~180°.</p>
+</li>
+</ol>
+<p><strong>Common mistakes:</strong>
+- Saying H bonded to C can hydrogen bond (it CANNOT — Jan 2023 Q5 specifically tests this)
+- Confusing intramolecular hydrogen bonds with intermolecular ones
+- Saying H-bonding is a covalent bond or a type of covalent bonding
+- Forgetting to specify that the H is attracted to a LONE PAIR on the electronegative atom
+- Writing "H-bond between H and O" without specifying it is a lone pair on O</p>
+<hr>
+<h3 id="def-7475-predicting-physical-properties-from-imf">7.4–7.5 Predicting Physical Properties from IMF</h3>
+<p><strong>Key definitions:</strong></p>
+<blockquote>
+<p><strong>Boiling point</strong> is the temperature at which the vapour pressure of a liquid equals the external pressure. Stronger intermolecular forces → higher boiling point.</p>
+<p><strong>Solubility</strong> depends on whether the solute–solvent intermolecular forces are similar in strength to the solute–solute and solvent–solvent forces they replace ("like dissolves like").</p>
+</blockquote>
+<p><strong>Rules for predicting b.p.:</strong>
+1. H-bonding &gt; permanent dipole–dipole &gt; London forces
+2. More electrons → stronger London forces → higher b.p. (for molecules with same type of IMF)
+3. Less branching → greater surface area → stronger London forces → higher b.p.
+4. More H-bonding sites → stronger overall IMF → higher b.p.</p>
+<p><strong>Real exam examples with MS answers:</strong></p>
+<ol>
+<li>
+<p><strong>Jun 2024 Q4(a)</strong> (1 mark) — Structural isomer with highest b.p.<br>
+<strong>MS:</strong> Least branched chain (greater surface area for London forces).</p>
+</li>
+<li>
+<p><strong>Jun 2024 Q4(b)</strong> (1 mark) — Compound with highest b.p. (diol vs mono-alcohol).<br>
+<strong>MS:</strong> Butane-1,4-diol — two H-bonding sites per molecule.</p>
+</li>
+<li>
+<p><strong>Jan 2023 Q19(b)(ii)</strong> (2 marks) — Explain b.p. difference between two alcohols.<br>
+<strong>MS:</strong> (The less branched one) has stronger London forces due to greater surface area / less branching. Must specify "London forces" and "greater surface area". MS explicitly says "Do not award just stronger intermolecular forces."</p>
+</li>
+<li>
+<p><strong>Jan 2023 Q19(b)(iii)</strong> (3 marks) — Solubility in ethanol vs water.<br>
+<strong>MS:</strong> (1) London forces between B and ethanol; (2) H-bonds between B and water; (3) Comparison — London forces B–EtOH stronger than/similar to those in B; OR H-bonds B–H₂O weaker than H-bonds in water.</p>
+</li>
+<li>
+<p><strong>Oct 2023 Q19(d)</strong> (6 marks, QWC) — Why I₂ is more soluble in hexane than water.<br>
+<strong>MS:</strong> (1) I₂ has only London forces; (2) Water forms H-bonds (strongest IMF); (3) Hexane has only London forces; (4) I₂–hexane London forces similar in strength to those broken → dissolves; (5) I₂ cannot break water H-bonds → does not dissolve.</p>
+</li>
+<li>
+<p><strong>Jun 2023 Q22(c)(iii)</strong> (2 marks) — Why propane-1,2,3-triol is viscous.<br>
+<strong>MS:</strong> Three OH groups → forms 3 H-bonds per molecule → strong IMF → viscous.</p>
+</li>
+</ol>
+<p><strong>Common mistakes:</strong>
+- Writing "stronger intermolecular forces" without specifying which type (MS penalises this)
+- Forgetting that ALL molecules have London forces (even those with H-bonding or pd-pd forces)
+- Saying a molecule has "more H-bonds" when it has the same number of H-bonding sites but different branching
+- Confusing solubility reasoning: must compare forces formed vs forces broken, not just list forces</p>
+<hr>
+<h3 id="def-76-ion-dipole-interactions">7.6 Ion-Dipole Interactions</h3>
+<p><strong>Exam-ready definition:</strong></p>
+<blockquote>
+<p>Ion-dipole interactions are the attractive forces between an ion and the permanent dipole of a polar molecule. When an ionic compound dissolves in a polar solvent (such as water), the δ⁺ hydrogen atoms of water are attracted to negative ions (anions) and the δ⁻ oxygen atoms of water are attracted to positive ions (cations). These interactions help to separate the ions from the ionic lattice, enabling dissolution.</p>
+</blockquote>
+<p><strong>Real exam examples with MS answers:</strong></p>
+<ol>
+<li>
+<p><strong>Jun 2024 Q2</strong> (1 mark) — NaCl dissolving in water — what IMF?<br>
+<strong>MS:</strong> Ion-dipole interactions.</p>
+</li>
+<li>
+<p><strong>Oct 2024 Q16(c)(i)</strong> (2 marks) — Draw ion-dipole interaction diagram (Mg²⁺ and SO₄²⁻ with water).<br>
+<strong>MS:</strong> H atoms of water near SO₄²⁻; O atom of water near Mg²⁺. Must show δ⁺/δ⁻ on water at least once.</p>
+</li>
+</ol>
+<p><strong>Common mistakes:</strong>
+- Confusing ion-dipole with hydrogen bonding
+- Not showing partial charges (δ⁺/δ⁻) on the water molecule
+- Putting the wrong end of water near the wrong ion</p>
+<hr>
+<h2 id="def-section-8a-redox-chemistry-spec-81810">Section 8A — Redox Chemistry (Spec 8.1–8.10)</h2>
+<h3 id="def-81-oxidation-and-reduction-definitions">8.1 Oxidation and Reduction (Definitions)</h3>
+<p><strong>Exam-ready definitions:</strong></p>
+<blockquote>
+<p><strong>Oxidation</strong> is the LOSS of electrons OR an INCREASE in oxidation number.</p>
+<p><strong>Reduction</strong> is the GAIN of electrons OR a DECREASE in oxidation number.</p>
+<p><strong>Oxidising agent</strong> is a species that CAUSES oxidation by GAINING electrons (it is itself reduced). Its oxidation number DECREASES.</p>
+<p><strong>Reducing agent</strong> is a species that CAUSES reduction by LOSING electrons (it is itself oxidised). Its oxidation number INCREASES.</p>
+</blockquote>
+<p><strong>Real exam examples with MS answers:</strong></p>
+<ol>
+<li>
+<p><strong>Jun 2022 Q2</strong> (1 mark) — Identify the oxidising agent.<br>
+<strong>MS:</strong> The species that gains electrons / has its oxidation number decreased.</p>
+</li>
+<li>
+<p><strong>Jan 2024 Q21(b)(i)</strong> (2 marks) — Ca + Cl₂: explain redox.<br>
+<strong>MS:</strong> Ca oxidised 0→+2 AND Cl₂ reduced 0→−1. Both oxidation number changes required.</p>
+</li>
+<li>
+<p><strong>Oct 2023 Q19(b)</strong> (2 marks) — Show MnO₂ + HCl is redox using oxidation numbers.<br>
+<strong>MS:</strong> Mn: +4 → +2 (reduced); Cl: −1 → 0 (oxidised). Both changes must be shown.</p>
+</li>
+</ol>
+<blockquote>
+<p><em>Note: Jan 2023 Q18(a) on disproportionation of Cl₂ is listed under §8.9–8.10 (Disproportionation) below — see there for the full MS.</em></p>
+</blockquote>
+<p><strong>Common mistakes:</strong>
+- Writing "the oxidising agent loses electrons" (wrong — it GAINS electrons)
+- Confusing oxidation/oxidising agent (the agent does the OPPOSITE of what it's named)
+- Not showing BOTH oxidation and reduction changes when asked to "show it is redox"
+- Confusing the species being oxidised with the oxidising agent</p>
+<hr>
+<h3 id="def-8285-oxidation-numbers">8.2–8.5 Oxidation Numbers</h3>
+<p><strong>Rules for assigning oxidation numbers:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Statement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The oxidation number of an element in its standard state is <strong>0</strong> (e.g., Cl₂, Na, O₂)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>For simple monatomic ions, the oxidation number equals the charge (e.g., Na⁺ = +1, O²⁻ = −2)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>In compounds, <strong>oxygen is usually −2</strong> (exception: −1 in peroxides like H₂O₂, Na₂O₂)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>In compounds, <strong>hydrogen is usually +1</strong> (exception: −1 in metal hydrides like NaH, CaH₂)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Fluorine is ALWAYS −1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>The sum of all oxidation numbers in a neutral compound equals 0; in an ion, equals the charge</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Roman numeral naming convention:</strong></p>
+<blockquote>
+<p>The Roman numeral in a compound name (e.g., chlorate(V), manganate(VII)) indicates the oxidation number of the specified element.</p>
+</blockquote>
+<p><strong>Real exam examples with MS answers:</strong></p>
+<ol>
+<li>
+<p><strong>Jan 2023 Q7</strong> (1 mark) — Oxidation number of V in VO²⁺.<br>
+<strong>MS:</strong> V = +4 (O is −2, overall +2: x + (−2) = +2 → x = +4).</p>
+</li>
+<li>
+<p><strong>Jan 2023 Q8</strong> (1 mark) — Formula of potassium manganate(VI).<br>
+<strong>MS:</strong> K₂MnO₄ (Mn(VI): x − 8 = −2 → x = +6; K is +1, so K₂MnO₄).</p>
+</li>
+<li>
+<p><strong>Jan 2024 Q6</strong> (1 mark) — In which compound is an oxidation number −1?<br>
+<strong>MS:</strong> CH₄ has no element at −1 (H = +1, C = −4). Correct options include HF (F = −1), NaH (H = −1), H₂O₂ (O = −1).</p>
+</li>
+<li>
+<p><strong>Jun 2024 Q18(b)(ii)</strong> (1 mark) — Oxidation number of Cl in ClO₂.<br>
+<strong>MS:</strong> Cl = +4 (2 × (−2) + x = 0 → x = +4).</p>
+</li>
+<li>
+<p><strong>Jun 2022 Q4</strong> (1 mark) — Name KClO₂ using oxidation state.<br>
+<strong>MS:</strong> Potassium chlorate(III). Cl: K = +1, 2O = −4, so Cl = +3.</p>
+</li>
+<li>
+<p><strong>Jun 2023 Q8</strong> (1 mark) — Which pair has the same oxidation state?<br>
+<strong>MS:</strong> Cr in K₂Cr₂O₇ and K₂CrO₄ — both have Cr = +6.</p>
+</li>
+<li>
+<p><strong>Jun 2023 Q9</strong> (1 mark) — Formula of barium(II) ferrate(VI).<br>
+<strong>MS:</strong> BaFeO₄ (Ba²⁺ and FeO₄²⁻ with Fe = +6).</p>
+</li>
+<li>
+<p><strong>Jun 2024 Q18(b)(i)</strong> (1 mark) — Roman numerals in chlorate(V) and chlorate(VII).<br>
+<strong>MS:</strong> Oxidation number of chlorine (+5 and +7).</p>
+</li>
+</ol>
+<p><strong>Common mistakes:</strong>
+- Forgetting the peroxide exception: O = −1 in H₂O₂, Na₂O₂ (tested in Jan 2024 Q6)
+- Forgetting the hydride exception: H = −1 in NaH, CaH₂ (tested in Jan 2024 Q6)
+- Assigning oxidation numbers to elements in their standard state as non-zero
+- Confusing oxidation number with charge (e.g., in CO₃²⁻, C is +4 not +2)
+- Not showing working for oxidation number calculations</p>
+<hr>
+<h3 id="def-8688-half-equations-and-balancing-redox-equations">8.6–8.8 Half-Equations and Balancing Redox Equations</h3>
+<p><strong>Exam-ready definition:</strong></p>
+<blockquote>
+<p>A half-equation shows either the oxidation or reduction process separately, including electrons. To combine half-equations into a full redox equation: (1) balance all atoms except H and O; (2) balance O with H₂O; (3) balance H with H⁺ (in acid) or OH⁻ (in alkali); (4) balance charge with electrons; (5) multiply half-equations so electrons cancel; (6) add the half-equations and cancel common species.</p>
+</blockquote>
+<p><strong>Real exam examples with MS answers:</strong></p>
+<ol>
+<li>
+<p><strong>Oct 2023 Q6</strong> (1 mark) — Balance O₂ in alkaline conditions.<br>
+<strong>MS:</strong> O₂ + 2H₂O + 4e⁻ → 4OH⁻ (n = 4 electrons).</p>
+</li>
+<li>
+<p><strong>Jun 2022 Q16(b)</strong> (4 marks) — Explain why IO₃⁻ + 5I⁻ + 6H⁺ → 3I₂ + 3H₂O is NOT disproportionation.<br>
+<strong>MS:</strong> I in IO₃⁻ = +5 (reduced to 0 in I₂); I in I⁻ = −1 (oxidised to 0 in I₂). Not disproportionation because two DIFFERENT species are oxidised and reduced — not the SAME species.</p>
+</li>
+<li>
+<p><strong>Jun 2024 Q18(b)(iii)</strong> (2 marks) — Deduce oxidation number range for disproportionation.<br>
+<strong>MS:</strong> Compound A disproportionates to give ClO₂ (Cl = +4, reduced) and HClO₄ (Cl = +7, oxidised); for disproportionation, Cl in compound A must lie strictly between these values, so the oxidation number is +5 or +6.</p>
+</li>
+</ol>
+<blockquote>
+<p><em>Note: Oct 2024 Q19(b)(i) on Cl₂ + H₂O disproportionation is listed under §8.9–8.10 (Disproportionation) below — see there for the full MS.</em></p>
+</blockquote>
+<p><strong>Common mistakes:</strong>
+- Not multiplying half-equations to make electrons equal before combining
+- Forgetting to add water to balance oxygen in acidic or alkaline conditions
+- Identifying comproportionation (reverse) as disproportionation
+- Not stating that the SAME element must be both oxidised AND reduced for disproportionation
+- Writing "redox" alone instead of "disproportionation" (explicitly ignored in Jun 2023 MS)</p>
+<hr>
+<h3 id="def-89810-disproportionation">8.9–8.10 Disproportionation</h3>
+<p><strong>Exam-ready definition:</strong></p>
+<blockquote>
+<p>Disproportionation is a redox reaction in which the SAME element is simultaneously oxidised AND reduced. The oxidation numbers of this element in the products are both higher and lower than its oxidation number in the reactant.</p>
+</blockquote>
+<p><strong>Key disproportionation reactions to know:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Reaction</th>
+<th>Element</th>
+<th>Oxidised to</th>
+<th>Reduced to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cl₂ + H₂O → HClO + HCl</td>
+<td>Cl (0)</td>
+<td>Cl (+1) in HClO</td>
+<td>Cl (−1) in HCl</td>
+</tr>
+<tr>
+<td>Cl₂ + 2NaOH → NaCl + NaClO + H₂O</td>
+<td>Cl (0)</td>
+<td>Cl (+1) in NaClO</td>
+<td>Cl (−1) in NaCl</td>
+</tr>
+<tr>
+<td>3NaClO → 2NaCl + NaClO₃</td>
+<td>Cl (+1)</td>
+<td>Cl (+5) in NaClO₃</td>
+<td>Cl (−1) in NaCl</td>
+</tr>
+<tr>
+<td>2H₂O₂ → 2H₂O + O₂</td>
+<td>O (−1)</td>
+<td>O (0) in O₂</td>
+<td>O (−2) in H₂O</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Real exam examples with MS answers:</strong></p>
+<ol>
+<li>
+<p><strong>Jan 2023 Q18(a)</strong> (3 marks) — Disproportionation of Cl₂ forming Ca(ClO)₂.<br>
+<strong>MS:</strong> Cl oxidised from 0 to +1 (in ClO⁻) and Cl reduced from 0 to −1 (in Cl⁻).</p>
+</li>
+<li>
+<p><strong>Jun 2023 Q22(c)(i)</strong> (3 marks) — Disproportionation of Cl₂ in bleach.<br>
+<strong>MS:</strong> Cl (0) → +1 in HClO/ClO⁻ (oxidised) and Cl (0) → −1 in HCl/Cl⁻ (reduced). Must state "disproportionation" not just "redox".</p>
+</li>
+<li>
+<p><strong>Jan 2024 Q24(b)(iii)</strong> (2 marks) — Disproportionation of NaClO.<br>
+<strong>MS:</strong> 3NaClO → 2NaCl + NaClO₃. Cl from +1 to −1 (reduced) and +1 to +5 (oxidised).</p>
+</li>
+<li>
+<p><strong>Oct 2024 Q19(b)(i)</strong> (3 marks) — Cl₂ + H₂O disproportionation.<br>
+<strong>MS:</strong> Same element (Cl) both oxidised (0 → +1 in HOCl) and reduced (0 → −1 in HCl).</p>
+</li>
+<li>
+<p><strong>Oct 2023 Q7</strong> (1 mark) — Identify disproportionation reaction.<br>
+<strong>MS:</strong> S₂O₃²⁻ reaction where S goes from +2 to +4 and 0 simultaneously.</p>
+</li>
+</ol>
+<p><strong>Common mistakes:</strong>
+- Confusing disproportionation with comproportionation (reverse process)
+- Not stating that the SAME element is both oxidised and reduced
+- Writing "redox" instead of "disproportionation" (explicitly penalised in Jun 2023 MS)
+- Not giving the correct oxidation numbers for each species
+- Not being able to balance disproportionation equations (e.g., 3ClO⁻ → 2Cl⁻ + ClO₃⁻)</p>
+<hr>
+<h2 id="def-section-8b-groups-1-and-2-spec-811823">Section 8B — Groups 1 and 2 (Spec 8.11–8.23)</h2>
+<h3 id="def-811813-reactivity-trends">8.11–8.13 Reactivity Trends</h3>
+<p><strong>Exam-ready definitions:</strong></p>
+<blockquote>
+<p><strong>Group 1 reactivity increases down the group</strong> because the outer electron is further from the nucleus and is more effectively shielded by more inner electron shells. This means LESS energy is needed to remove the outer electron (lower first ionisation energy), so the metals react more vigorously.</p>
+<p><strong>Group 2 reactivity increases down the group</strong> for the same reason: larger atomic radius and greater shielding lead to lower ionisation energies, making it easier to lose the two outer electrons.</p>
+</blockquote>
+<p><strong>Real exam examples with MS answers:</strong></p>
+<ol>
+<li>
+<p><strong>Jan 2024 Q21(d)</strong> (6 marks, QWC) — Ca vs Mg reactivity with water.<br>
+<strong>MS:</strong> Ca + 2H₂O → Ca(OH)₂ + H₂; Ca reacts faster than Mg; Ca has lower ionisation energy; Ca(OH)₂ more soluble → darker blue / higher pH.</p>
+</li>
+<li>
+<p><strong>Jan 2024 Q21(c)(i)</strong> (2 marks) — Observations of Mg(NO₃)₂ thermal decomposition.<br>
+<strong>MS:</strong> Two from: brown gas (NO₂), bubbles, solid melts, indicator turns red.</p>
+</li>
+<li>
+<p><strong>Jun 2023 Q10</strong> (1 mark) — Why Na⁺ forms peroxide but Li⁺ does not.<br>
+<strong>MS:</strong> Larger ionic radius of Na⁺ → lower charge density → polarises O₂²⁻ less → stabilises peroxide. Li⁺ has too high charge density.</p>
+</li>
+</ol>
+<p><strong>Common mistakes:</strong>
+- Saying reactivity INCREASES up the group
+- Confusing the reason (must mention ionisation energy AND distance/shielding)
+- Forgetting that Group 2 reactions with cold water are slow (Mg barely reacts), but steam reactions are vigorous</p>
+<hr>
+<h3 id="def-814817-thermal-decomposition">8.14–8.17 Thermal Decomposition</h3>
+<p><strong>Exam-ready definition:</strong></p>
+<blockquote>
+<p>Thermal decomposition is the breaking down of a compound into simpler substances when heated. For Group 2 compounds, thermal stability INCREASES down the group. This is because the M²⁺ ion gets larger down the group, decreasing its charge density and polarising power. The larger cation polarises the anion less, so less distortion of the electron cloud occurs and more energy is needed to break the bonds.</p>
+</blockquote>
+<p><strong>Polarising power explanation chain (high-value for QWC):</strong>
+1. M²⁺ ionic radius increases down Group 2
+2. Charge density (charge/size ratio) decreases
+3. Polarising power decreases
+4. The cation distorts/polarises the anion (e.g., CO₃²⁻, NO₃⁻) less
+5. The O–C or O–N bonds within the anion are weakened less
+6. More energy is required to decompose the compound
+7. Thermal stability increases</p>
+<p><strong>Thermal decomposition products:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Compound Type</th>
+<th>Group 1 (general)</th>
+<th>Group 2 (general)</th>
+<th>Li / Be (exceptions)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Carbonates</strong></td>
+<td>M₂CO₃ → M₂O + CO₂</td>
+<td>MCO₃ → MO + CO₂</td>
+<td>Li₂CO₃ → Li₂O + CO₂</td>
+</tr>
+<tr>
+<td><strong>Nitrates</strong></td>
+<td>MNO₃ → MNO₂ + ½O₂</td>
+<td>M(NO₃)₂ → MO + 2NO₂ + ½O₂</td>
+<td><strong>4LiNO₃ → 2Li₂O + 4NO₂ + O₂</strong></td>
+</tr>
+<tr>
+<td><strong>Hydroxides</strong></td>
+<td>Generally do NOT decompose (except LiOH)</td>
+<td>M(OH)₂ → MO + H₂O</td>
+<td>LiOH → Li₂O + H₂O</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Real exam examples with MS answers:</strong></p>
+<ol>
+<li>
+<p><strong>Jan 2023 Q21</strong> (6 marks, QWC) — Thermal stability of Group 1 and 2 nitrates.<br>
+<strong>MS indicative points:</strong> (IP1) Stability increases down Group 2; (IP2) Ionic radius increases / polarising power decreases; (IP3) N–O bond breaks less easily; (IP4) LiNO₃ decomposes like Group 2; (IP5) NaNO₃ equation → NaNO₂ + O₂; (IP6) Mg(NO₃)₂ equation → MgO + NO₂ + O₂.</p>
+</li>
+<li>
+<p><strong>Jan 2024 Q21(c)(ii)</strong> (3 marks) — Why Mg(NO₃)₂ is LESS thermally stable than Ca(NO₃)₂.<br>
+<strong>MS:</strong> Mg²⁺ smaller → higher charge density → more polarising → N–O bonds weakened more → less energy to break → decomposes more easily. Three linked points needed.</p>
+</li>
+<li>
+<p><strong>Jun 2024 Q6</strong> (1 mark) — Thermal decomposition of LiNO₃ and Ca(NO₃)₂.<br>
+<strong>MS:</strong> Both give oxide + NO₂ + O₂ (Li behaves like Group 2).</p>
+</li>
+<li>
+<p><strong>Oct 2024 Q20(e)</strong> (6 marks, QWC) — Diagonal relationship Li/Mg (nitrate decomposition).<br>
+<strong>MS:</strong> 4LiNO₃ → 2Li₂O + 4NO₂ + O₂ and 2Mg(NO₃)₂ → 2MgO + 4NO₂ + O₂ (both give NO₂). NaNO₃ → NaNO₂ + ½O₂ (no NO₂). Mg²⁺/Li⁺ smaller than Na⁺ → greater charge density → polarise nitrate more → weaken N–O bond.</p>
+</li>
+<li>
+<p><strong>Jun 2023 Q12</strong> (1 mark) — Mass of Mg(NO₃)₂ from gas volume.<br>
+<strong>MS:</strong> 2Mg(NO₃)₂ → 2MgO + 4NO₂ + O₂ (5 mol gas per 2 mol nitrate); n(gas) = 1200/24000; mass = 2.97 g.</p>
+</li>
+</ol>
+<p><strong>Common mistakes:</strong>
+- Getting Group 1 nitrate products wrong (NaNO₃ → NaNO₂ + O₂, NOT oxide + NO₂)
+- Forgetting LiNO₃ is the EXCEPTION (decomposes like Group 2)
+- Saying thermal stability DECREASES down the group
+- Not using the polarising power argument chain (ionic radius → charge density → polarising power → bond weakening)
+- Wrong number of products or unbalanced equations for nitrates</p>
+<hr>
+<h3 id="def-818820-solubility-trends">8.18–8.20 Solubility Trends</h3>
+<p><strong>Exam-ready definitions:</strong></p>
+<blockquote>
+<p><strong>Group 2 hydroxides:</strong> Solubility INCREASES down the group. Mg(OH)₂ is insoluble (forms a white ppt), Ca(OH)₂ is sparingly soluble, Ba(OH)₂ is soluble.</p>
+<p><strong>Group 2 sulfates:</strong> Solubility DECREASES down the group. MgSO₄ is soluble, CaSO₄ is sparingly soluble, BaSO₄ is insoluble (forms a white ppt).</p>
+<p><strong>Group 2 carbonates:</strong> All are INSOLUBLE. Decompose on heating to give the oxide and CO₂.</p>
+</blockquote>
+<p><strong>Real exam examples with MS answers:</strong></p>
+<ol>
+<li>
+<p><strong>Oct 2023 Q9</strong> (1 mark) — Which property decreases down Group 2?<br>
+<strong>MS:</strong> Solubility of sulfates DECREASES. (Other options — atomic radius and reactivity INCREASE; thermal stability INCREASES.)</p>
+</li>
+<li>
+<p><strong>Oct 2023 Q20(b)(ii)</strong> (2 marks) — Sr(OH)₂ vs Ca(OH)₂ solubility effect on titre.<br>
+<strong>MS:</strong> Sr(OH)₂ is MORE soluble than Ca(OH)₂ (hydroxides increase in solubility down Group 2) → higher concentration in saturated solution → greater titre value.</p>
+</li>
+<li>
+<p><strong>Oct 2024 Q4</strong> (1 mark) — True statement about Group 2.<br>
+<strong>MS:</strong> First IE of Mg &gt; Ca (correct). Ca(OH)₂ is MORE soluble (not less); MgCO₃ does decompose.</p>
+</li>
+<li>
+<p><strong>Oct 2023 Q20(b)(i)</strong> (4 marks) — Calculate solubility of Ca(OH)₂ in g dm⁻³.<br>
+<strong>MS:</strong> n(HCl) = 18.95 × 10⁻³ × 0.0500; n(Ca(OH)₂) = ½ × n(HCl) (in 25 cm³); scale to 1 dm³; m = 0.01895 × 74.1 = 1.40 g dm⁻³.</p>
+</li>
+</ol>
+<p><strong>Common mistakes:</strong>
+- Getting the hydroxide trend direction WRONG (it INCREASES down the group)
+- Getting the sulfate trend direction WRONG (it DECREASES down the group)
+- Confusing the two trends
+- Forgetting that BaSO₄ is the classic test for sulfate ions (white ppt, insoluble in acid)</p>
+<hr>
+<h3 id="def-821823-flame-tests-and-qualitative-analysis">8.21–8.23 Flame Tests and Qualitative Analysis</h3>
+<p><strong>Exam-ready definition:</strong></p>
+<blockquote>
+<p>Flame tests are used to identify Group 1 and Group 2 metal ions. When a compound containing the metal ion is placed in a Bunsen flame, the heat excites the electrons to higher energy levels. When the electrons fall back to lower levels, they emit light of characteristic wavelengths (colours). Different metals have different gaps between energy levels, so they emit different colours.</p>
+</blockquote>
+<p><strong>Flame test colours:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Ion</th>
+<th>Flame Colour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Li⁺</td>
+<td>Crimson / red</td>
+</tr>
+<tr>
+<td>Na⁺</td>
+<td>Yellow</td>
+</tr>
+<tr>
+<td>K⁺</td>
+<td>Lilac (view through cobalt glass)</td>
+</tr>
+<tr>
+<td>Ca²⁺</td>
+<td>Orange-red / brick-red</td>
+</tr>
+<tr>
+<td>Sr²⁺</td>
+<td>Red</td>
+</tr>
+<tr>
+<td>Ba²⁺</td>
+<td>Green</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Qualitative tests:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Observation</th>
+<th>Ion Identified</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add dilute HCl → BaCl₂(aq)</td>
+<td>White ppt, insoluble in dilute acid</td>
+<td>SO₄²⁻ (sulfate)</td>
+</tr>
+<tr>
+<td>Add AgNO₃(aq)</td>
+<td>White ppt (Cl⁻), cream ppt (Br⁻), yellow ppt (I⁻)</td>
+<td>Halides</td>
+</tr>
+<tr>
+<td>Add NaOH + warm</td>
+<td>Damp red litmus turns blue</td>
+<td>NH₄⁺ (ammonium)</td>
+</tr>
+<tr>
+<td>Add dilute acid</td>
+<td>Effervescence, CO₂ turns limewater cloudy</td>
+<td>CO₃²⁻/HCO₃⁻ (carbonate/bicarbonate)</td>
+</tr>
+<tr>
+<td>Flame test</td>
+<td>See colours above</td>
+<td>Group 1 and 2 cations</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Real exam examples with MS answers:</strong></p>
+<ol>
+<li>
+<p><strong>Jun 2024 Q7</strong> (1 mark) — Flame test colours explained.<br>
+<strong>MS:</strong> Different gaps between electronic energy levels → different wavelengths of light emitted.</p>
+</li>
+<li>
+<p><strong>Jun 2024 Q8</strong> (1 mark) — Identify compound from AgNO₃ test (white ppt) + red flame.<br>
+<strong>MS:</strong> Strontium chloride (red flame = Sr; white ppt with Ag⁺ = Cl⁻).</p>
+</li>
+<li>
+<p><strong>Jan 2023 Q9</strong> (1 mark) — Identify compound from red flame + white ppt with K₂SO₄.<br>
+<strong>MS:</strong> Sr(NO₃)₂ (red flame = Sr/Li; insoluble sulfate → Ba or Sr; Ba gives green flame).</p>
+</li>
+<li>
+<p><strong>Jan 2024 Q21(b)(iii)</strong> (1 mark) — Flame test colour of Ca.<br>
+<strong>MS:</strong> Orange-red / brick-red. NOT crimson, scarlet, or magenta.</p>
+</li>
+<li>
+<p><strong>Oct 2024 Q5</strong> (1 mark) — Identify compound from red flame + colourless acidic gas on heating.<br>
+<strong>MS:</strong> CaCO₃ (red flame = Ca; CO₂ gas from carbonate decomposition).</p>
+</li>
+</ol>
+<p><strong>Common mistakes:</strong>
+- Confusing flame colours (especially red/crimson vs brick-red, and lilac vs purple)
+- Saying "it turns the flame red" instead of giving the specific colour
+- Forgetting to view K⁺ through cobalt glass to mask Na⁺
+- Confusing Ca (brick-red) with Sr (red) and Li (crimson)</p>
+<hr>
+<h2 id="def-section-8c-group-7-spec-824828">Section 8C — Group 7 (Spec 8.24–8.28)</h2>
+<h3 id="def-824825-group-7-trends">8.24–8.25 Group 7 Trends</h3>
+<p><strong>Exam-ready definitions:</strong></p>
+<blockquote>
+<p><strong>Reactivity as oxidising agents DECREASES down Group 7</strong> because atomic radius increases, shielding increases, and the ability to attract electrons (electronegativity) decreases. This means the halogen molecules become less able to gain an electron and act as oxidising agents.</p>
+<p><strong>Displacement reactions:</strong> A more reactive halogen (higher up Group 7) will displace a less reactive halogen from its halide salt solution. E.g., Cl₂ + 2KBr → 2KCl + Br₂.</p>
+</blockquote>
+<p><strong>Trend summary:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Direction down Group 7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Atomic radius</td>
+<td>INCREASES</td>
+</tr>
+<tr>
+<td>Electronegativity</td>
+<td>DECREASES</td>
+</tr>
+<tr>
+<td>Reactivity (oxidising power)</td>
+<td>DECREASES</td>
+</tr>
+<tr>
+<td>Boiling temperature</td>
+<td>INCREASES (more electrons → stronger London forces)</td>
+</tr>
+<tr>
+<td>Bond enthalpy (H–X)</td>
+<td>DECREASES (bond gets weaker, longer)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Real exam examples with MS answers:</strong></p>
+<ol>
+<li>
+<p><strong>Jan 2024 Q12</strong> (1 mark) — Group 7 trends.<br>
+<strong>MS:</strong> Boiling temp ↑, electronegativity ↓, oxidising power ↓ (all three simultaneously).</p>
+</li>
+<li>
+<p><strong>Jun 2024 Q12</strong> (1 mark) — Why b.p. increases down Group 7.<br>
+<strong>MS:</strong> More electrons → stronger London forces.</p>
+</li>
+<li>
+<p><strong>Jun 2023 Q8</strong> (1 mark) — Which halogen displacement reaction would NOT occur?<br>
+<strong>MS:</strong> F₂ cannot be displaced by At₂ (F₂ is the strongest oxidising agent).</p>
+</li>
+<li>
+<p><strong>Jan 2024 Q7</strong> (1 mark) — Which equation shows oxidation of a Group 7 element?<br>
+<strong>MS:</strong> Br₂ + F₂ → 2BrF (Br oxidised from 0 to +1).</p>
+</li>
+</ol>
+<p><strong>Common mistakes:</strong>
+- Saying reactivity INCREASES down Group 7 (it DECREASES as oxidising agents)
+- Confusing "reactivity" — halogens get LESS reactive down the group (opposite to Groups 1 and 2)
+- Explaining b.p. increase as "stronger covalent bonds" (it is intermolecular London forces)</p>
+<hr>
+<h3 id="def-826-reactions-of-halide-salts-with-concentrated-sulfuric-acid">8.26 Reactions of Halide Salts with Concentrated Sulfuric Acid</h3>
+<p><strong>Exam-ready definitions:</strong></p>
+<blockquote>
+<p>When concentrated sulfuric acid reacts with solid halides, it acts as both an acid (proton donor) and an oxidising agent. With chloride, only acid-base reaction occurs (producing HCl). With bromide, H₂SO₄ is reduced to SO₂. With iodide, H₂SO₄ is reduced further to S and/or H₂S.</p>
+</blockquote>
+<p><strong>Products with conc. H₂SO₄:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Halide</th>
+<th>Acid-base product</th>
+<th>Redox products</th>
+<th>Observations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NaCl(s)</td>
+<td>HCl(g)</td>
+<td>None (Cl⁻ not strong enough reducing agent)</td>
+<td>White fumes (HCl), no redox</td>
+</tr>
+<tr>
+<td>NaBr(s)</td>
+<td>HBr(g)</td>
+<td>Br₂(l/s), SO₂(g), H₂O(l)</td>
+<td>Red-brown fumes (Br₂), colourless gas (SO₂)</td>
+</tr>
+<tr>
+<td>NaI(s)</td>
+<td>HI(g)</td>
+<td>I₂(s), S(s), H₂S(g), SO₂(g)</td>
+<td>Black solid (I₂), yellow solid (S), colourless gas</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Real exam examples with MS answers:</strong></p>
+<ol>
+<li>
+<p><strong>Jan 2023 Q12</strong> (1 mark) — Conc. H₂SO₄ + halide: greatest moles of halide oxidised.<br>
+<strong>MS:</strong> 8KI + 9H₂SO₄ → 8mol I⁻ oxidised to I₂, H₂SO₄ reduced to H₂S. (More halide oxidised than with Br⁻.)</p>
+</li>
+<li>
+<p><strong>Oct 2023 Q8</strong> (1 mark) — NaBr + conc H₂SO₄ products.<br>
+<strong>MS:</strong> Br₂, HBr, SO₂. Br⁻ is moderate reducing agent → reduces H₂SO₄ to SO₂ but NOT to S or H₂S.</p>
+</li>
+<li>
+<p><strong>Oct 2024 Q9</strong> (1 mark) — Conc. H₂SO₄ + solid KCl.<br>
+<strong>MS:</strong> KHSO₄ (conc. H₂SO₄ acts as acid, not oxidising agent, with chloride).</p>
+</li>
+</ol>
+<p><strong>Common mistakes:</strong>
+- Thinking ALL halides reduce H₂SO₄ (Cl⁻ does NOT — not a strong enough reducing agent)
+- Getting the wrong reduction products for Br⁻ (only to SO₂, not S or H₂S)
+- Forgetting the acid-base reaction occurs FIRST for all halides
+- Confusing the colours of the products</p>
+<hr>
+<h3 id="def-827-halide-ion-tests-silver-nitrate">8.27 Halide Ion Tests (Silver Nitrate)</h3>
+<p><strong>Exam-ready definition:</strong></p>
+<blockquote>
+<p>Silver nitrate test: Add dilute nitric acid (to remove carbonate/sulfite interferences), then add silver nitrate solution. The colour of the precipitate identifies the halide ion:
+- <strong>Cl⁻:</strong> White precipitate (AgCl) — soluble in dilute NH₃
+- <strong>Br⁻:</strong> Cream precipitate (AgBr) — soluble in concentrated NH₃ only
+- <strong>I⁻:</strong> Yellow precipitate (AgI) — insoluble in NH₃</p>
+</blockquote>
+<p><strong>Real exam examples with MS answers:</strong></p>
+<ol>
+<li>
+<p><strong>Oct 2023 Q19(a)(i)</strong> (1 mark) — Colour of AgI precipitate.<br>
+<strong>MS:</strong> Yellow (accept "pale yellow"). AgCl dissolves in excess NH₃; AgI does not.</p>
+</li>
+<li>
+<p><strong>Oct 2023 Q19(a)(ii)</strong> (3 marks) — Calculate % KI in a KI/KCl mixture.<br>
+<strong>MS:</strong> M(AgI) = 234.8; n(AgI) = 0.162/234.8 = 6.90 × 10⁻⁴ mol; m(KI) = 6.90 × 10⁻⁴ × 166 = 0.1145 g; % = (0.1145/2.49) × 100 = 4.60%.</p>
+</li>
+</ol>
+<blockquote>
+<p><em>Note: Jun 2024 Q8 (AgNO₃ white ppt + red flame → SrCl₂) is listed under §8.21–8.23 (Flame Tests &amp; Qualitative Analysis) above — see there for the full MS.</em></p>
+</blockquote>
+<p><strong>Common mistakes:</strong>
+- Confusing cream and yellow precipitate colours
+- Forgetting to add dilute HNO₃ first
+- Not knowing the ammonia solubility differences (used to confirm halide)
+- Confusing Ag⁺ test (for halides) with Ba²⁺ test (for sulfates)</p>
+<hr>
+<h3 id="def-828-halogen-extraction-and-solvent-extraction">8.28 Halogen Extraction and Solvent Extraction</h3>
+<p><strong>Exam-ready definitions:</strong></p>
+<blockquote>
+<p>Halogens can be extracted from aqueous solution using a non-polar organic solvent (e.g., cyclohexane). The halogen is more soluble in the organic solvent because the London forces between the halogen and the solvent are similar in strength to the London forces in the halogen itself, whereas the halogen cannot break the strong hydrogen bonds in water.</p>
+</blockquote>
+<p><strong>Colours of halogens in organic solvents:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Halogen</th>
+<th>In water</th>
+<th>In organic solvent (cyclohexane/hexane)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cl₂</td>
+<td>Pale green</td>
+<td>Pale green / yellow-green</td>
+</tr>
+<tr>
+<td>Br₂</td>
+<td>Orange / red-brown</td>
+<td>Orange / red-brown</td>
+</tr>
+<tr>
+<td>I₂</td>
+<td>Yellow / brown</td>
+<td>Purple / violet / pink</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Real exam examples with MS answers:</strong></p>
+<ol>
+<li>
+<p><strong>Jun 2024 Q14</strong> (1 mark) — Colours of cyclohexane + aqueous iodine layers.<br>
+<strong>MS:</strong> Lower layer = yellow/brown (aqueous, density &gt;1.0); Upper layer = purple (cyclohexane, density &lt;1.0).</p>
+</li>
+<li>
+<p><strong>Oct 2023 Q19(c)</strong> (2 marks) — Colours of aqueous and hexane layers after Cl₂ + KI.<br>
+<strong>MS:</strong> Aqueous layer: yellow (accept orange/brown/straw/colourless). Hexane layer: purple/pink/violet (accept lilac).</p>
+</li>
+<li>
+<p><strong>Oct 2024 Q10</strong> (1 mark) — Iodine in cyclohexane colour.<br>
+<strong>MS:</strong> Purple. (Blue-black is starch-iodine complex; brown/yellow is aqueous iodine.)</p>
+</li>
+</ol>
+<p><strong>Common mistakes:</strong>
+- Confusing aqueous and organic layer colours (especially for iodine)
+- Not knowing which layer is upper/lower (based on density: water &gt;1.0, organic &lt;1.0)
+- Saying "blue-black" for iodine in organic solvent (that is the starch-iodine complex)</p>
+<hr>
+<h2 id="def-core-practical-definitions-cp3-and-cp4">Core Practical Definitions (CP3 and CP4)</h2>
+<h3 id="def-cp3-volumetric-analysis-titrations">CP3 — Volumetric Analysis (Titrations)</h3>
+<p><strong>Key definition:</strong></p>
+<blockquote>
+<p>A titration is a quantitative analytical technique in which a solution of known concentration (from the burette) is gradually added to a solution of unknown concentration (in the conical flask) until the reaction is complete, as indicated by a colour change in the indicator.</p>
+</blockquote>
+<p><strong>Indicator colours (exam-tested):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Indicator</th>
+<th>Acid</th>
+<th>Base</th>
+<th>Colour change (acid → alkali)</th>
+<th>Colour change (alkali → acid)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Methyl orange</td>
+<td>Red (pH &lt; 3.1)</td>
+<td>Yellow (pH &gt; 4.4)</td>
+<td>Red → orange</td>
+<td>Yellow → orange</td>
+</tr>
+<tr>
+<td>Phenolphthalein</td>
+<td>Colourless (pH &lt; 8.3)</td>
+<td>Pink (pH &gt; 10.0)</td>
+<td>Colourless → pink</td>
+<td>Pink → colourless</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Real exam examples:</strong></p>
+<ol>
+<li>
+<p><strong>Jun 2024 Q11(a)</strong> (1 mark) — Methyl orange colour change in H₂SO₄ + KOH.<br>
+<strong>MS:</strong> Red to orange (acid is red; endpoint is orange). NOT red to yellow.</p>
+</li>
+<li>
+<p><strong>Jun 2022 Q9(a)</strong> (1 mark) — Methyl orange colour change.<br>
+<strong>MS:</strong> Yellow → orange.</p>
+</li>
+</ol>
+<p><strong>Common mistakes:</strong>
+- Saying methyl orange changes from red to YELLOW (endpoint is ORANGE, not yellow)
+- Saying phenolphthalein changes from pink to red (it goes pink → COLOURLESS)
+- Forgetting which indicator is used for which titration type
+- Confusing the direction of the colour change</p>
+<h3 id="def-cp4-identification-of-group-2-cations-and-group-7-anions">CP4 — Identification of Group 2 Cations and Group 7 Anions</h3>
+<p><strong>Key definition:</strong></p>
+<blockquote>
+<p>Qualitative analysis involves using chemical tests to identify ions present in a solution. For Group 2 cations, flame tests and precipitation reactions (with NaOH, H₂SO₄) are used. For Group 7 anions, silver nitrate (after acidification) and solvent extraction are used.</p>
+</blockquote>
+<hr>
+<h2 id="def-summary-of-highest-value-definitions-by-exam-frequency">Summary of Highest-Value Definitions (by Exam Frequency)</h2>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Definition</th>
+<th style="text-align: center;">Times Tested</th>
+<th style="text-align: center;">Typical Marks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Disproportionation (with oxidation numbers)</td>
+<td style="text-align: center;">7/7 papers</td>
+<td style="text-align: center;">2–6</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Oxidation number assignment</td>
+<td style="text-align: center;">7/7 papers</td>
+<td style="text-align: center;">1–3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Hydrogen bonding (identification + explanation)</td>
+<td style="text-align: center;">7/7 papers</td>
+<td style="text-align: center;">1–6</td>
+</tr>
+<tr>
+<td>4</td>
+<td>London forces (strength comparison)</td>
+<td style="text-align: center;">7/7 papers</td>
+<td style="text-align: center;">1–4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Thermal decomposition (trends + equations)</td>
+<td style="text-align: center;">6/7 papers</td>
+<td style="text-align: center;">1–6</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Group 7 displacement / reactivity trends</td>
+<td style="text-align: center;">6/7 papers</td>
+<td style="text-align: center;">1–3</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Solubility trends (hydroxides vs sulfates)</td>
+<td style="text-align: center;">5/7 papers</td>
+<td style="text-align: center;">1–4</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Flame test colours</td>
+<td style="text-align: center;">5/7 papers</td>
+<td style="text-align: center;">1–2</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Halide tests (AgNO₃ + conc. H₂SO₄)</td>
+<td style="text-align: center;">5/7 papers</td>
+<td style="text-align: center;">1–3</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Solvent extraction colours</td>
+<td style="text-align: center;">4/7 papers</td>
+<td style="text-align: center;">1–2</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><em>Generated from analysis of 7 WCH12 papers (Jun 2022 – Oct 2024). All MS answers are verbatim or paraphrased from official mark schemes.</em></p>
+</section>
+<section id="concepts">
+<h2>Concepts &amp; Worked Examples</h2>
+<h2 id="con-intermolecular-forces-redox-chemistry-and-groups-1-2-and-7">Intermolecular Forces, Redox Chemistry, and Groups 1, 2 and 7</h2>
+<p><strong>Specification coverage:</strong> 7.1–8.28 | <strong>Average paper weight:</strong> 38.6% (20–46 marks)<br>
+<strong>Core practicals:</strong> CP3 (volumetric analysis), CP4 (identification of Group 2 cations and Group 7 anions)</p>
+<hr>
+<h2 id="con-concept-1-predicting-physical-properties-from-intermolecular-forces">Concept 1: Predicting Physical Properties from Intermolecular Forces</h2>
+<h3 id="con-key-principles">Key Principles</h3>
+<p>When predicting boiling points, melting points, or solubility, you must systematically consider:</p>
+<p><strong>Step 1: Identify the types of IMF present in each substance.</strong>
+- ALL substances have London forces
+- Polar molecules ALSO have permanent dipole–dipole forces
+- Molecules with H bonded to F, O, or N ALSO have hydrogen bonding
+- Ionic compounds have ion-dipole interactions with polar solvents</p>
+<p><strong>Step 2: Compare the strongest IMF in each substance.</strong>
+- Hydrogen bonding &gt; permanent dipole–dipole &gt; London forces
+- When the same type of IMF operates, compare:
+  - Number of electrons (more electrons → stronger London forces)
+  - Surface area / branching (less branching → greater surface area → stronger London forces)
+  - Number of H-bonding sites (more OH/NH groups → more H-bonds per molecule)</p>
+<p><strong>Step 3: Apply to the property being asked about.</strong></p>
+<h3 id="con-worked-example-11-boiling-point-comparison-jan-2023-q6-style">Worked Example 1.1: Boiling Point Comparison (Jan 2023 Q6 style)</h3>
+<p><strong>Question:</strong> Arrange HF, HCl, HBr, and HI in order of increasing boiling temperature. Explain your answer.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>All four HX molecules have London forces.</strong></li>
+<li><strong>Only HF has hydrogen bonding</strong> (H bonded to the most electronegative element, F).</li>
+<li><strong>London force strength increases down the group</strong> (more electrons → more polarisable electron cloud):
+   - HCl (18 electrons) &lt; HBr (36 electrons) &lt; HI (54 electrons)</li>
+<li><strong>Hydrogen bonding is much stronger than London forces</strong>, so HF has the highest b.p. despite having the fewest electrons.</li>
+</ol>
+<p><strong>Answer:</strong> HCl &lt; HBr &lt; HI &lt; HF</p>
+<p><strong>Mark scheme requirements (4 marks):</strong>
+- (1) All hydrogen halides have London forces
+- (2) London force strength increases with number of electrons (HCl to HI)
+- (3) Only HF has hydrogen bonding
+- (4) Hydrogen bonding is much stronger than London forces</p>
+<h3 id="con-worked-example-12-isomeric-alcohols-jan-2023-q19bii-style">Worked Example 1.2: Isomeric Alcohols (Jan 2023 Q19(b)(ii) style)</h3>
+<p><strong>Question:</strong> Compound A (CH₃CH₂CH₂CH₂CH₂OH, pentan-1-ol) has a higher boiling point than compound B ((CH₃)₃CCH₂OH, 2,2-dimethylpropan-1-ol). Explain why.</p>
+<p><strong>Solution:</strong>
+- Both compounds have hydrogen bonding (both have one –OH group)
+- Both compounds have London forces
+- Since hydrogen bonding is the same in both, the difference is due to <strong>London forces</strong>
+- Compound A has a straight chain → greater surface area → stronger London forces
+- Compound B is branched → smaller surface area → weaker London forces</p>
+<p><strong>Exam-ready answer:</strong> Compound A has stronger London forces due to greater surface area / less branching.</p>
+<p><strong>MS note:</strong> "Do not award just stronger intermolecular forces" — you MUST specify London forces.</p>
+<h3 id="con-worked-example-13-solubility-in-different-solvents-jan-2023-q19biii-style">Worked Example 1.3: Solubility in Different Solvents (Jan 2023 Q19(b)(iii) style)</h3>
+<p><strong>Question:</strong> Compound B (a branched alcohol) dissolves more readily in ethanol than in water. Explain why, considering intermolecular forces.</p>
+<p><strong>Solution:</strong>
+- When B dissolves in ethanol: London forces form between B and ethanol. These London forces are similar in strength to the London forces within ethanol and within B → favourable dissolution.
+- When B dissolves in water: hydrogen bonds form between B and water (through the –OH group). However, the hydrogen bonds within water are very strong, and the hydrogen bonds formed between B and water are weaker (B has only one –OH group, water has two H-bonds per molecule per direction) → less favourable.
+- In ethanol, the forces broken (London forces in ethanol + London/H-bonds in B) are more similar to the forces formed (London forces + H-bonds between B and ethanol).</p>
+<p><strong>Mark scheme (3 marks):</strong>
+- (1) London forces between B and ethanol
+- (2) H-bonds between B and water
+- (3) Comparison: London forces B–EtOH stronger than/similar to those in B; OR H-bonds B–H₂O weaker than H-bonds in water</p>
+<h3 id="con-worked-example-14-non-polar-molecule-identification">Worked Example 1.4: Non-Polar Molecule Identification</h3>
+<p><strong>Question:</strong> Which of the following has ONLY London forces: BF₃, CH₄, NH₃, or H₂S?</p>
+<p><strong>Solution:</strong>
+- BF₃: Trigonal planar, symmetrical → bond dipoles cancel → non-polar → London forces only ✓
+- CH₄: Tetrahedral, symmetrical → non-polar → London forces only ✓
+- NH₃: Trigonal pyramidal (lone pair) → polar molecule → London forces + permanent dipole–dipole + hydrogen bonding ✗
+- H₂S: Bent (lone pairs) → polar molecule → London forces + permanent dipole–dipole ✗ (but NOT hydrogen bonding — S is not electronegative enough)</p>
+<p>If asked to identify the compound with ONLY London forces, check for molecular symmetry. <strong>Answer: BF₃ or CH₄</strong> (depends on the specific options in the question).</p>
+<hr>
+<h2 id="con-concept-2-oxidation-number-calculations">Concept 2: Oxidation Number Calculations</h2>
+<h3 id="con-key-rules-and-exceptions">Key Rules and Exceptions</h3>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Standard</th>
+<th>Exception</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Oxygen</td>
+<td>−2</td>
+<td>−1 in peroxides (H₂O₂, Na₂O₂)</td>
+</tr>
+<tr>
+<td>Hydrogen</td>
+<td>+1</td>
+<td>−1 in metal hydrides (NaH, CaH₂)</td>
+</tr>
+<tr>
+<td>Fluorine</td>
+<td>−1</td>
+<td>No exceptions</td>
+</tr>
+<tr>
+<td>Elements</td>
+<td>0</td>
+<td>Always</td>
+</tr>
+<tr>
+<td>Sum (neutral)</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Sum (ion)</td>
+<td>= charge</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="con-worked-example-21-oxidation-numbers-in-simple-compounds">Worked Example 2.1: Oxidation Numbers in Simple Compounds</h3>
+<p><strong>Question:</strong> Calculate the oxidation number of the specified element in each compound:
+(a) V in VO²⁺  (b) Cr in K₂Cr₂O₇  (c) Fe in BaFeO₄  (d) Cl in KClO₂</p>
+<p><strong>Solution:</strong></p>
+<p>(a) <strong>V in VO²⁺:</strong><br>
+O = −2, overall charge = +2<br>
+x + (−2) = +2 → <strong>x = +4</strong></p>
+<p>(b) <strong>Cr in K₂Cr₂O₇:</strong><br>
+K = +1, O = −2, overall = 0<br>
+2(+1) + 2x + 7(−2) = 0 → 2 + 2x − 14 = 0 → 2x = 12 → <strong>x = +6</strong></p>
+<p>(c) <strong>Fe in BaFeO₄:</strong><br>
+Ba = +2, O = −2, overall = 0<br>
++2 + x + 4(−2) = 0 → x − 6 = 0 → <strong>x = +6</strong> (so this is ferrate(VI))</p>
+<p>(d) <strong>Cl in KClO₂:</strong><br>
+K = +1, O = −2, overall = 0<br>
++1 + x + 2(−2) = 0 → x − 3 = 0 → <strong>x = +3</strong> (so this is potassium chlorate(III))</p>
+<h3 id="con-worked-example-22-oxidation-numbers-in-peroxides-and-hydrides-jan-2024-q6-style">Worked Example 2.2: Oxidation Numbers in Peroxides and Hydrides (Jan 2024 Q6 style)</h3>
+<p><strong>Question:</strong> In which compound does an element have an oxidation number of −1?
+Options: HF, NaH, H₂O₂, CH₄</p>
+<p><strong>Solution:</strong>
+- <strong>HF:</strong> F is always −1 ✓ (but the question asks about "an element" — this is valid)
+- <strong>NaH:</strong> Na = +1, so H = −1 ✓ (metal hydride — H is −1)
+- <strong>H₂O₂:</strong> H = +1, so O = −1 ✓ (peroxide — O is −1)
+- <strong>CH₄:</strong> H = +1, so C = −4 ✗ (no element at −1)</p>
+<p><strong>Answer:</strong> CH₄ is the one that does NOT have an element at −1. The others do (F in HF, H in NaH, O in H₂O₂).</p>
+<h3 id="con-worked-example-23-disproportionation-identification-oct-2023-q7-style">Worked Example 2.3: Disproportionation Identification (Oct 2023 Q7 style)</h3>
+<p><strong>Question:</strong> Which of the following is a disproportionation reaction?
+- A: 3Cu + 8HNO₃ → 3Cu(NO₃)₂ + 2NO + 4H₂O
+- B: S₂O₃²⁻ + 2H⁺ → S + SO₂ + H₂O
+- C: NH₄NO₂ → N₂ + 2H₂O
+- D: 2H₂O₂ → 2H₂O + O₂</p>
+<p><strong>Solution:</strong>
+Disproportionation = SAME element both oxidised AND reduced.</p>
+<ul>
+<li>A: Cu is oxidised (0 → +2), N is reduced (+5 → +2). Different elements → NOT disproportionation.</li>
+<li>B: In S₂O₃²⁻, S has oxidation state +2 (average). Products: S(0) and S in SO₂ (+4). Same element (S) both oxidised (+2 → +4) and reduced (+2 → 0) → <strong>DISPROPORTIONATION</strong> ✓</li>
+<li>C: N in NH₄⁺ is −3, N in NO₂⁻ is +3. Both end up at 0. This is comproportionation (reverse of disproportionation).</li>
+<li>D: In H₂O₂, O is −1. Products: O in H₂O is −2 (reduced), O in O₂ is 0 (oxidised). Same element → <strong>DISPROPORTIONATION</strong> ✓</li>
+</ul>
+<p><strong>Answer:</strong> B or D (depending on options — in Oct 2023, answer was B for S₂O₃²⁻).</p>
+<h3 id="con-worked-example-24-oxidation-number-range-for-disproportionation-jun-2024-q18biii-style">Worked Example 2.4: Oxidation Number Range for Disproportionation (Jun 2024 Q18(b)(iii) style)</h3>
+<p><strong>Question:</strong> ClO₂ (Cl = +4) can disproportionate to form HClO₄ (Cl = +7). What is the minimum oxidation number that compound A must have for disproportionation to occur between ClO₂ and HClO₄?</p>
+<p><strong>Solution:</strong>
+For disproportionation of element X, the intermediate oxidation number must be between the oxidation numbers in the products.</p>
+<p>Cl in ClO₂ = +4<br>
+Cl in HClO₄ = +7  </p>
+<p>The disproportionating species must have an oxidation number between +4 and +7 (exclusive), so that some Cl atoms are oxidised (to +7) and some are reduced (to +4 or below).</p>
+<p><strong>Answer:</strong> The oxidation number of Cl in compound A must be +5 or +6 (between +4 and +7).</p>
+<hr>
+<h2 id="con-concept-3-balancing-redox-equations-from-half-equations">Concept 3: Balancing Redox Equations from Half-Equations</h2>
+<h3 id="con-method">Method</h3>
+<ol>
+<li>Identify what is oxidised and what is reduced (assign oxidation numbers)</li>
+<li>Write the two separate half-equations:
+   - Balance atoms (except H and O)
+   - Balance O by adding H₂O
+   - Balance H by adding H⁺ (acidic) or OH⁻ (alkaline — add H₂O to the O-deficient side, then OH⁻ to both sides)
+   - Balance charge by adding electrons (e⁻)</li>
+<li>Multiply the half-equations so that the electrons cancel</li>
+<li>Add the half-equations and cancel common species</li>
+</ol>
+<h3 id="con-worked-example-31-mno₂-hcl-oct-2023-q19b-style">Worked Example 3.1: MnO₂ + HCl (Oct 2023 Q19(b) style)</h3>
+<p><strong>Question:</strong> Show that MnO₂ + 4HCl → MnCl₂ + Cl₂ + 2H₂O is a redox reaction using oxidation numbers.</p>
+<p><strong>Solution:</strong></p>
+<p><strong>Assign oxidation numbers:</strong>
+- Mn in MnO₂: x + 2(−2) = 0 → Mn = +4
+- Mn in MnCl₂: Mn = +2 (Cl is always −1)
+- Cl in HCl: Cl = −1
+- Cl in Cl₂: Cl = 0</p>
+<p><strong>Identify changes:</strong>
+- Mn: +4 → +2 (decreased = <strong>reduced</strong>) — gains 2 electrons
+- Cl: −1 → 0 (increased = <strong>oxidised</strong>) — loses 1 electron per Cl atom</p>
+<p><strong>Half-equations:</strong>
+- Reduction: MnO₂ + 4H⁺ + 2e⁻ → Mn²⁺ + 2H₂O
+- Oxidation: 2Cl⁻ → Cl₂ + 2e⁻</p>
+<p><strong>Combine:</strong> MnO₂ + 4H⁺ + 2Cl⁻ → Mn²⁺ + Cl₂ + 2H₂O</p>
+<h3 id="con-worked-example-32-disproportionation-of-clo-jan-2024-q24biii-style">Worked Example 3.2: Disproportionation of ClO⁻ (Jan 2024 Q24(b)(iii) style)</h3>
+<p><strong>Question:</strong> Write a balanced equation for the disproportionation of sodium chlorate(I), NaClO, to form NaCl and NaClO₃.</p>
+<p><strong>Solution:</strong></p>
+<p><strong>Assign oxidation numbers:</strong>
+- Cl in ClO⁻: x + (−2) = −1 → Cl = +1
+- Cl in Cl⁻: Cl = −1
+- Cl in ClO₃⁻: x + 3(−2) = −1 → Cl = +5</p>
+<p><strong>Half-equations:</strong>
+- Reduction (+1 → −1): ClO⁻ + 2H⁺ + 2e⁻ → Cl⁻ + H₂O
+- Oxidation (+1 → +5): ClO⁻ + 3H₂O → ClO₃⁻ + 6H⁺ + 4e⁻</p>
+<p><strong>Multiply to cancel electrons:</strong>
+- Reduction × 2: 2ClO⁻ + 4H⁺ + 4e⁻ → 2Cl⁻ + 2H₂O
+- Oxidation × 1: ClO⁻ + 3H₂O → ClO₃⁻ + 6H⁺ + 4e⁻</p>
+<p><strong>Add and cancel (4e⁻ cancel):</strong>
+3ClO⁻ → 2Cl⁻ + ClO₃⁻</p>
+<p><strong>Full ionic equation:</strong> 3ClO⁻ → 2Cl⁻ + ClO₃⁻</p>
+<p><strong>With spectator ions:</strong> 3NaClO → 2NaCl + NaClO₃</p>
+<h3 id="con-worked-example-33-half-equation-in-alkaline-conditions-oct-2023-q6-style">Worked Example 3.3: Half-Equation in Alkaline Conditions (Oct 2023 Q6 style)</h3>
+<p><strong>Question:</strong> Write the balanced half-equation for the reduction of O₂ to OH⁻ in alkaline conditions. How many electrons are transferred?</p>
+<p><strong>Solution:</strong></p>
+<p>In alkaline conditions:
+1. Balance O: O₂ + 2H₂O → 4OH⁻ (oxygen balanced, but charge not balanced)
+2. Balance charge: Left side = 0, Right side = 4 × (−1) = −4
+3. Add electrons to left: O₂ + 2H₂O + 4e⁻ → 4OH⁻</p>
+<p><strong>Check:</strong> Left: charge = 0 + 0 + (−4) = −4. Right: charge = 4 × (−1) = −4. ✓</p>
+<p><strong>Answer: 4 electrons</strong> (n = 4)</p>
+<h3 id="con-worked-example-34-cl₂-h₂o-disproportionation-oct-2024-q19bi-style">Worked Example 3.4: Cl₂ + H₂O Disproportionation (Oct 2024 Q19(b)(i) style)</h3>
+<p><strong>Question:</strong> Explain why the reaction Cl₂ + H₂O ⇌ HClO + HCl is a disproportionation reaction.</p>
+<p><strong>Solution:</strong></p>
+<p><strong>Assign oxidation numbers:</strong>
+- Cl in Cl₂: 0 (element in standard state)
+- Cl in HClO: x + (−2) + (+1) = 0 → x = <strong>+1</strong> (oxidised)
+- Cl in HCl: +1 + x = 0 → x = <strong>−1</strong> (reduced)</p>
+<p><strong>Explanation:</strong> The SAME element (chlorine) is both oxidised (from 0 to +1 in HClO) AND reduced (from 0 to −1 in HCl). This is the definition of disproportionation.</p>
+<hr>
+<h2 id="con-concept-4-group-2-thermal-decomposition-polarising-power-mechanism">Concept 4: Group 2 Thermal Decomposition — Polarising Power Mechanism</h2>
+<h3 id="con-the-polarising-power-argument-full-chain">The Polarising Power Argument (Full Chain)</h3>
+<p>This is one of the most frequently tested extended explanations. You must present a linked chain of reasoning:</p>
+<pre><code>M²⁺ ionic radius increases down Group 2
+        ↓
+Charge density (charge/size ratio) decreases
+        ↓
+Polarising power decreases
+        ↓
+Cation distorts/polarises the anion less
+        ↓
+Bonds within the anion are weakened less
+        ↓
+More energy is needed to break the bonds
+        ↓
+Thermal stability INCREASES down the group
+</code></pre>
+<h3 id="con-worked-example-41-explaining-the-trend-jan-2024-q21cii-style">Worked Example 4.1: Explaining the Trend (Jan 2024 Q21(c)(ii) style)</h3>
+<p><strong>Question:</strong> Mg(NO₃)₂ is less thermally stable than Ca(NO₃)₂. Explain why.</p>
+<p><strong>Solution:</strong></p>
+<p>Mg²⁺ has a smaller ionic radius than Ca²⁺ (higher up the group). This means Mg²⁺ has a higher charge density and greater polarising power. The Mg²⁺ ion more strongly polarises/distorts the electron cloud of the NO₃⁻ anion. This greater distortion weakens the N–O bonds within the nitrate ion more than Ca²⁺ would. Therefore, less energy is required to break the N–O bonds and decompose Mg(NO₃)₂, making it less thermally stable.</p>
+<p><strong>MS requirement (3 marks, 3 linked points):</strong>
+- Mg²⁺ smaller → higher charge density → more polarising
+- N–O bonds weakened more
+- Less energy to break → decomposes more easily</p>
+<h3 id="con-worked-example-42-thermal-decomposition-equations-jan-2023-q21-style">Worked Example 4.2: Thermal Decomposition Equations (Jan 2023 Q21 style)</h3>
+<p><strong>Question:</strong> Write balanced equations for:
+(a) The thermal decomposition of sodium nitrate
+(b) The thermal decomposition of magnesium nitrate
+(c) The thermal decomposition of lithium nitrate</p>
+<p><strong>Solution:</strong></p>
+<p>(a) <strong>NaNO₃ (Group 1, general):</strong>
+2NaNO₃ → 2NaNO₂ + O₂</p>
+<p>(b) <strong>Mg(NO₃)₂ (Group 2, general):</strong>
+2Mg(NO₃)₂ → 2MgO + 4NO₂ + O₂</p>
+<p>(c) <strong>LiNO₃ (Li exception — behaves like Group 2):</strong>
+4LiNO₃ → 2Li₂O + 4NO₂ + O₂</p>
+<p><strong>Key point:</strong> LiNO₃ decomposes to the OXIDE (like Group 2), NOT to the nitrite (like other Group 1 nitrates). This is because Li⁺ is small with high charge density (similar to Mg²⁺).</p>
+<h3 id="con-worked-example-43-diagonal-relationship-limg-oct-2024-q20e-style">Worked Example 4.3: Diagonal Relationship Li/Mg (Oct 2024 Q20(e) style)</h3>
+<p><strong>Question:</strong> Explain why lithium and magnesium show similar chemical behaviour in their thermal decomposition of nitrates.</p>
+<p><strong>Solution:</strong></p>
+<p><strong>Equations:</strong>
+- 4LiNO₃ → 2Li₂O + 4NO₂ + O₂
+- 2Mg(NO₃)₂ → 2MgO + 4NO₂ + O₂
+- 2NaNO₃ → 2NaNO₂ + ½O₂ (for comparison)</p>
+<p><strong>Explanation:</strong>
+Li⁺ and Mg²⁺ have similar ionic radii (despite being in different groups). Both are smaller than Na⁺. The smaller ionic radius gives Li⁺ and Mg²⁺ greater charge density compared to Na⁺. This greater charge density means they polarise the nitrate anion more strongly, weakening the N–O bonds more. As a result, the nitrate ion fully decomposes (breaking N–O bonds completely to give the oxide and NO₂), rather than simply losing oxygen to give the nitrite.</p>
+<p><strong>MS indicative points (6 points, 4 marks max + 2 reasoning):</strong>
+- IP1: Mg has extra shell but Mg²⁺/Li⁺ similar size
+- IP2: Both Li and Mg nitrate equations give NO₂
+- IP3: NaNO₃ → NaNO₂ + O₂ (no NO₂)
+- IP4: Li/Mg nitrates produce NO₂ but NaNO₃ does not
+- IP5: Mg²⁺/Li⁺ smaller than Na⁺ → greater charge density
+- IP6: Polarise nitrate more → weaken N–O bond</p>
+<h3 id="con-worked-example-44-gas-volume-from-thermal-decomposition-jun-2023-q12-style">Worked Example 4.4: Gas Volume from Thermal Decomposition (Jun 2023 Q12 style)</h3>
+<p><strong>Question:</strong> When a sample of Mg(NO₃)₂ is heated, 1200 cm³ of gas is collected at room temperature and pressure. Calculate the mass of Mg(NO₃)₂ that decomposed.</p>
+<p><strong>Solution:</strong></p>
+<p><strong>Step 1:</strong> Write the equation:
+2Mg(NO₃)₂ → 2MgO + 4NO₂ + O₂</p>
+<p><strong>Step 2:</strong> Calculate total moles of gas:
+n(gas) = V / 24000 = 1200 / 24000 = 0.0500 mol</p>
+<p><strong>Step 3:</strong> Use the mole ratio:
+From the equation: 2 mol Mg(NO₃)₂ → 5 mol gas (4NO₂ + 1O₂)
+n(Mg(NO₃)₂) = (2/5) × 0.0500 = 0.0200 mol</p>
+<p><strong>Step 4:</strong> Calculate mass:
+M(Mg(NO₃)₂) = 24.3 + 2 × (14.0 + 3 × 16.0) = 24.3 + 124.0 = 148.3 g mol⁻¹
+m = 0.0200 × 148.3 = <strong>2.97 g</strong></p>
+<hr>
+<h2 id="con-concept-5-volumetric-analysis-calculations-titrations-with-uncertainty">Concept 5: Volumetric Analysis Calculations (Titrations with Uncertainty)</h2>
+<h3 id="con-general-method">General Method</h3>
+<ol>
+<li><strong>Identify the titrant (burette) and analyte (conical flask).</strong></li>
+<li><strong>Write the balanced equation.</strong></li>
+<li><strong>Calculate moles of titrant</strong> from concentration and average titre.</li>
+<li><strong>Use the mole ratio</strong> to find moles of analyte.</li>
+<li><strong>Convert to required quantity</strong> (mass, concentration, percentage, etc.).</li>
+</ol>
+<h3 id="con-worked-example-51-solubility-of-caoh₂-from-titration-oct-2023-q20bi-style">Worked Example 5.1: Solubility of Ca(OH)₂ from Titration (Oct 2023 Q20(b)(i) style)</h3>
+<p><strong>Question:</strong> 25.0 cm³ of a saturated solution of Ca(OH)₂ is titrated with 0.0500 mol dm⁻³ HCl. The average titre is 18.95 cm³. Calculate the solubility of Ca(OH)₂ in g dm⁻³.</p>
+<p><strong>Solution:</strong></p>
+<p><strong>Step 1:</strong> Write the equation:
+Ca(OH)₂ + 2HCl → CaCl₂ + 2H₂O</p>
+<p><strong>Step 2:</strong> Moles of HCl:
+n(HCl) = c × V = 0.0500 × (18.95/1000) = 9.475 × 10⁻⁴ mol</p>
+<p><strong>Step 3:</strong> Moles of Ca(OH)₂ (mole ratio 1:2):
+n(Ca(OH)₂) = 9.475 × 10⁻⁴ / 2 = 4.738 × 10⁻⁴ mol (in 25.0 cm³)</p>
+<p><strong>Step 4:</strong> Scale to 1 dm³:
+n(Ca(OH)₂ in 1 dm³) = 4.738 × 10⁻⁴ × (1000/25.0) = 0.01895 mol dm⁻³</p>
+<p><strong>Step 5:</strong> Convert to mass:
+M(Ca(OH)₂) = 40.1 + 2 × (16.0 + 1.0) = 74.1 g mol⁻¹
+Solubility = 0.01895 × 74.1 = <strong>1.40 g dm⁻³</strong></p>
+<p><strong>Mark scheme (4 marks):</strong> moles HCl → moles Ca(OH)₂ in 25 cm³ → scale to 1 dm³ → convert to mass.</p>
+<h3 id="con-worked-example-52-percentage-composition-from-titration-oct-2023-q19aii-style">Worked Example 5.2: Percentage Composition from Titration (Oct 2023 Q19(a)(ii) style)</h3>
+<p><strong>Question:</strong> 2.49 g of a mixture of KI and KCl is dissolved in water and excess AgNO₃ is added. 0.162 g of precipitate is formed. Calculate the percentage of KI in the mixture.</p>
+<p><strong>Solution:</strong></p>
+<p><strong>Key insight:</strong> Both KI and KCl form precipitates with AgNO₃, but the question asks about AgI (tested by the context of identifying KI). Only AgI is relevant here (or the total precipitate if both are formed — context determines which).</p>
+<p><strong>If only AgI precipitate mass is given:</strong>
+n(AgI) = 0.162 / 234.8 = 6.90 × 10⁻⁴ mol
+n(KI) = n(AgI) = 6.90 × 10⁻⁴ mol (1:1 ratio)
+m(KI) = 6.90 × 10⁻⁴ × 166.0 = 0.1145 g
+%KI = (0.1145 / 2.49) × 100 = <strong>4.60%</strong></p>
+<h3 id="con-worked-example-53-percentage-uncertainty-in-titration-jun-2024-q11c-style">Worked Example 5.3: Percentage Uncertainty in Titration (Jun 2024 Q11(c) style)</h3>
+<p><strong>Question:</strong> In a titration, 10.00 cm³ of solution is measured using a pipette (±0.04 cm³) and the titre is 25.00 cm³ using a burette (±0.05 cm³). What is the total percentage uncertainty?</p>
+<p><strong>Solution:</strong></p>
+<p><strong>Pipette uncertainty:</strong> ±0.04/10.00 × 100 = ±0.40%
+<strong>Burette uncertainty:</strong> ±0.05/25.00 × 100 = ±0.20%</p>
+<p>For a calculated quantity that involves division (c = n/V), the percentage uncertainties ADD:
+Total % uncertainty = 0.40% + 0.20% = <strong>±0.60%</strong></p>
+<p><strong>Note:</strong> If the question asks about the uncertainty in the volume change (ΔV = final − initial), the burette reading is taken TWICE, so the absolute uncertainty doubles: ±0.10 cm³. Always check whether you're measuring once or reading a difference.</p>
+<h3 id="con-worked-example-54-back-titration-gas-volume-calculation-jan-2023-q18c-style">Worked Example 5.4: Back Titration / Gas Volume Calculation (Jan 2023 Q18(c) style)</h3>
+<p><strong>Question:</strong> A swimming pool (50 m × 25 m × 2.0 m deep) is treated with calcium hypochlorite, Ca(ClO)₂, at a concentration of 4.2 mg dm⁻³.
+(a) Calculate the mass of Ca(ClO)₂ needed.
+(b) Calculate the volume of Cl₂ gas (at rtp) that could produce this mass of Ca(ClO)₂, given: 2Ca(OH)₂ + 2Cl₂ → Ca(ClO)₂ + CaCl₂ + 2H₂O</p>
+<p><strong>Solution:</strong></p>
+<p><strong>(a) Mass of Ca(ClO)₂:</strong>
+Volume of pool = 50 × 25 × 2.0 = 2500 m³ = 2500 × 10³ dm³ = 2.50 × 10⁶ dm³
+Concentration = 4.2 mg dm⁻³ = 4.2 × 10⁻³ g dm⁻³
+Mass = 2.50 × 10⁶ × 4.2 × 10⁻³ = 10500 g = <strong>10.5 kg</strong></p>
+<p><strong>(b) Volume of Cl₂:</strong>
+M(Ca(ClO)₂) = 40.1 + 2 × (35.5 + 16.0) = 143.1 g mol⁻¹
+n(Ca(ClO)₂) = 10500 / 143.1 = 73.4 mol
+From equation: 1 mol Ca(ClO)₂ requires 2 mol Cl₂
+n(Cl₂) = 73.4 × 2 = 146.8 mol
+V(Cl₂) = 146.8 × 24000 = 3,523,200 cm³ = <strong>3520 dm³</strong> (to 3 SF)</p>
+<hr>
+<h2 id="con-concept-6-group-7-displacement-reactions-and-trend-explanations">Concept 6: Group 7 Displacement Reactions and Trend Explanations</h2>
+<h3 id="con-the-trend">The Trend</h3>
+<p><strong>Reactivity as oxidising agents decreases down Group 7:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Halogen</th>
+<th>Ability to gain e⁻</th>
+<th>Oxidising power</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F₂</td>
+<td>Strongest</td>
+<td>Strongest</td>
+</tr>
+<tr>
+<td>Cl₂</td>
+<td></td>
+<td>↓</td>
+</tr>
+<tr>
+<td>Br₂</td>
+<td></td>
+<td>↓</td>
+</tr>
+<tr>
+<td>I₂</td>
+<td>Weakest</td>
+<td>Weakest</td>
+</tr>
+</tbody>
+</table>
+<p>A more reactive halogen will displace a less reactive one from its halide solution:
+- Cl₂ + 2KBr → 2KCl + Br₂ ✓ (Cl₂ more reactive than Br₂)
+- Cl₂ + 2KI → 2KCl + I₂ ✓
+- Br₂ + 2KI → 2KBr + I₂ ✓
+- <strong>Br₂ + 2KCl → no reaction</strong> ✗ (Br₂ less reactive than Cl₂)
+- <strong>I₂ + 2KBr → no reaction</strong> ✗</p>
+<h3 id="con-worked-example-61-non-spontaneous-displacement-jan-2023-q11-style">Worked Example 6.1: Non-Spontaneous Displacement (Jan 2023 Q11 style)</h3>
+<p><strong>Question:</strong> Which of the following reactions would NOT be expected to occur?
+- A: Cl₂ + 2KBr → 2KCl + Br₂
+- B: Br₂ + 2KI → 2KBr + I₂
+- C: I₂ + 2KBr → 2KI + Br₂
+- D: 2F⁻ + At₂ → 2At⁻ + F₂</p>
+<p><strong>Solution:</strong>
+- A: Cl₂ &gt; Br₂ → reaction occurs ✓
+- B: Br₂ &gt; I₂ → reaction occurs ✓
+- C: I₂ &lt; Br₂ → I₂ cannot displace Br₂ → <strong>does NOT occur</strong> ✓
+- D: F₂ &gt; At₂ → F⁻ cannot be displaced by At₂ → <strong>does NOT occur</strong> ✓</p>
+<p>Both C and D are non-spontaneous. The answer depends on the specific question framing. In Jan 2023, the answer was D because F₂ is the MOST reactive halogen — it is impossible for any halogen to oxidise F⁻ to F₂.</p>
+<h3 id="con-worked-example-62-concentrated-h₂so₄-with-halides-oct-2023-q8-style">Worked Example 6.2: Concentrated H₂SO₄ with Halides (Oct 2023 Q8 style)</h3>
+<p><strong>Question:</strong> Concentrated sulfuric acid is added to solid sodium bromide. What product(s) are formed?</p>
+<p><strong>Solution:</strong></p>
+<p>Two processes occur:
+1. <strong>Acid-base reaction:</strong> NaBr + H₂SO₄ → NaHSO₄ + HBr
+2. <strong>Redox reaction:</strong> HBr reduces H₂SO₄:
+   H₂SO₄ + 2HBr → Br₂ + SO₂ + 2H₂O</p>
+<p>Overall products: <strong>Br₂ (red-brown fumes), SO₂ (colourless acidic gas), H₂O, and NaHSO₄</strong></p>
+<p><strong>Key point:</strong> Br⁻ is a moderate reducing agent — it reduces H₂SO₄ to SO₂ (S goes from +6 to +4) but NOT further to S or H₂S. Compare with I⁻ which reduces H₂SO₄ further.</p>
+<h3 id="con-worked-example-63-electronegativity-trend-down-group-7-jun-2022-q16a-style">Worked Example 6.3: Electronegativity Trend Down Group 7 (Jun 2022 Q16(a) style)</h3>
+<p><strong>Question:</strong> Explain why electronegativity decreases down Group 7.</p>
+<p><strong>Solution:</strong></p>
+<p>Going down Group 7, the atomic radius increases (more electron shells are added). Although the nuclear charge also increases, the additional inner electron shells provide increased shielding. The increased distance between the nucleus and the outer electrons, combined with the greater shielding, means the nucleus attracts bonding electrons less strongly. Therefore, electronegativity decreases.</p>
+<p><strong>Key points for marks:</strong>
+- Atomic radius increases / more electron shells
+- Increased shielding
+- Nuclear attraction for outer electrons decreases
+- Therefore electronegativity decreases</p>
+<h3 id="con-worked-example-64-group-7-bp-trend-with-explanation-jun-2024-q12-style">Worked Example 6.4: Group 7 B.p. Trend with Explanation (Jun 2024 Q12 style)</h3>
+<p><strong>Question:</strong> Explain why the boiling temperatures of the halogens increase down Group 7.</p>
+<p><strong>Solution:</strong></p>
+<p>Going down Group 7, the number of electrons in each molecule increases (Cl₂ = 34e⁻, Br₂ = 70e⁻, I₂ = 106e⁻). More electrons means a larger electron cloud that is more easily polarised. The resulting instantaneous and induced dipoles are stronger, giving stronger London forces. Stronger London forces require more energy to overcome, so boiling temperatures increase.</p>
+<p><strong>MS answer (1 mark):</strong> More electrons → stronger London forces.</p>
+<p><strong>Note:</strong> This is about INTERMOLECULAR forces (London forces), NOT about the strength of the covalent bond within the halogen molecule (X–X bond enthalpy actually DECREASES down the group). The F–F bond (158 kJ/mol) is anomalously weak compared to Cl–Cl (242 kJ/mol), Br–Br (193 kJ/mol), and I–I (151 kJ/mol), because fluorine's small atomic radius brings lone-pair electrons close together, causing strong lone-pair repulsion that weakens the bond.</p>
+<hr>
+<h2 id="con-concept-7-identifying-unknown-compounds-using-tests">Concept 7: Identifying Unknown Compounds Using Tests</h2>
+<h3 id="con-worked-example-71-flame-test-precipitation-jun-2024-q8-style">Worked Example 7.1: Flame Test + Precipitation (Jun 2024 Q8 style)</h3>
+<p><strong>Question:</strong> A compound gives a white precipitate with AgNO₃(aq) and a red flame test. Identify the compound.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>White ppt with AgNO₃:</strong> Chloride ion (Cl⁻) — AgCl is white</li>
+<li><strong>Red flame:</strong> Strontium (Sr²⁺) — crimson red. Lithium also gives crimson but AgLi is insoluble (white ppt); calcium gives brick-red/orange-red, not crimson</li>
+</ol>
+<p>Check other options:
+- CaI₂: Yellow ppt (AgI) ✗ and brick-red/orange-red flame ✗
+- LiBr: Cream ppt (AgBr) ✗ and crimson flame ✗
+- K₂CO₃: No ppt with AgNO₃ (carbonate would need acid first) and lilac flame ✗</p>
+<p><strong>Answer:</strong> Strontium chloride, SrCl₂</p>
+<h3 id="con-worked-example-72-thermal-decomposition-flame-test-oct-2024-q5-style">Worked Example 7.2: Thermal Decomposition + Flame Test (Oct 2024 Q5 style)</h3>
+<p><strong>Question:</strong> A white solid gives a red flame and, when heated, produces a colourless acidic gas that turns limewater cloudy. Identify the compound.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>Red flame:</strong> Calcium (Ca²⁺) — brick-red / orange-red (distinct from strontium's crimson red)</li>
+<li><strong>Colourless acidic gas + limewater cloudy:</strong> CO₂ from carbonate decomposition</li>
+</ol>
+<p><strong>Answer:</strong> CaCO₃ (calcium carbonate)</p>
+<p>Check: Ca(NO₃)₂ would give brown NO₂ gas, not colourless. Na compounds give yellow flame. Sr compounds give crimson-red flame but Sr(NO₃)₂ gives brown gas.</p>
+<h3 id="con-worked-example-73-multi-step-identification-jan-2023-q9-style">Worked Example 7.3: Multi-Step Identification (Jan 2023 Q9 style)</h3>
+<p><strong>Question:</strong> A compound gives a red flame test and a white precipitate with K₂SO₄ solution. Identify the compound.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li><strong>Red flame:</strong> Strontium (Sr²⁺) — crimson red (distinguish from Ca's brick-red/orange-red and Li's crimson)</li>
+<li><strong>White ppt with K₂SO₄:</strong> Insoluble sulfate → Ba²⁺ or Sr²⁺ (CaSO₄ is sparingly soluble, MgSO₄ is soluble)</li>
+</ol>
+<p>Combining both: Crimson-red flame + insoluble sulfate = <strong>Strontium (Sr²⁺)</strong>
+- Ba gives GREEN flame (not red) ✗
+- Li gives crimson flame but Li₂SO₄ is SOLUBLE ✗
+- Ca gives brick-red/orange-red flame (not crimson) ✗
+- Sr gives crimson-red flame + SrSO₄ is insoluble ✓</p>
+<p><strong>Answer:</strong> Sr(NO₃)₂ (from the options given)</p>
+<hr>
+<h2 id="con-concept-8-ion-dipole-interactions-and-dissolution">Concept 8: Ion-Dipole Interactions and Dissolution</h2>
+<h3 id="con-worked-example-81-ion-dipole-diagram-oct-2024-q16ci-style">Worked Example 8.1: Ion-Dipole Diagram (Oct 2024 Q16(c)(i) style)</h3>
+<p><strong>Question:</strong> Draw a labelled diagram showing the ion-dipole interactions between Mg²⁺, SO₄²⁻, and water molecules when MgSO₄ dissolves.</p>
+<p><strong>Solution:</strong></p>
+<p><strong>For Mg²⁺ (positive ion):</strong>
+- The δ⁻ oxygen atom of water molecules should point TOWARDS the Mg²⁺ ion
+- Draw 4–6 water molecules surrounding Mg²⁺, with O atoms nearest</p>
+<p><strong>For SO₄²⁻ (negative ion):</strong>
+- The δ⁺ hydrogen atoms of water molecules should point TOWARDS the SO₄²⁻ ion
+- Draw water molecules with H atoms nearest the SO₄²⁻</p>
+<p><strong>Must show:</strong>
+- δ⁺ on H atoms and δ⁻ on O atom (at least once)
+- Correct orientation (O of H₂O near cation, H of H₂O near anion)</p>
+<p><strong>MS note:</strong> Must show δ⁺/δ⁻ on water at least once. Full charges are NOT correct (these are partial charges).</p>
+<h3 id="con-worked-example-82-why-i₂-is-more-soluble-in-hexane-than-water-oct-2023-q19d-style">Worked Example 8.2: Why I₂ is More Soluble in Hexane than Water (Oct 2023 Q19(d) style)</h3>
+<p><strong>Question:</strong> Iodine is much more soluble in hexane than in water. Explain this in terms of intermolecular forces.</p>
+<p><strong>Solution:</strong></p>
+<p><strong>Iodine has only London forces</strong> between its molecules.</p>
+<p><strong>In hexane:</strong>
+- Hexane also has only London forces
+- The London forces between I₂ and hexane molecules are similar in strength to the London forces between hexane molecules and between I₂ molecules
+- Energy released forming I₂–hexane London forces ≈ energy needed to break hexane–hexane and I₂–I₂ London forces
+- Therefore, I₂ dissolves readily</p>
+<p><strong>In water:</strong>
+- Water has strong hydrogen bonding between its molecules
+- I₂ cannot form hydrogen bonds (no H bonded to F, O, or N)
+- The London forces formed between I₂ and water are MUCH weaker than the hydrogen bonds that must be broken in water
+- The energetics are unfavourable → I₂ is barely soluble</p>
+<p><strong>MS (6 marks, QWC):</strong>
+- IP1: I₂ has only London forces
+- IP2: Water forms H-bonds (strongest IMF)
+- IP3: Hexane has only London forces
+- IP4: I₂–hexane London forces similar in strength to those broken → dissolves
+- IP5: I₂ cannot break water H-bonds → does not dissolve</p>
+<hr>
+<h2 id="con-concept-9-redox-in-context-batteries-and-bleach">Concept 9: Redox in Context — Batteries and Bleach</h2>
+<h3 id="con-worked-example-91-lithium-battery-oct-2024-q20c-style">Worked Example 9.1: Lithium Battery (Oct 2024 Q20(c) style)</h3>
+<p><strong>Question:</strong> In a lithium-ion battery, the overall equation is:
+C₆Li + CoO₂ → LiCoO₂ + C₆</p>
+<p>Describe, with reference to oxidation numbers, what happens to cobalt.</p>
+<p><strong>Solution:</strong></p>
+<p>In CoO₂: O = −2, so Co = +4 (overall charge 0: x + 2(−2) = 0 → x = +4)
+In LiCoO₂: Li = +1, O = −2, so Co: +1 + x + 2(−2) = 0 → x = +3</p>
+<p>Co changes from +4 to +3 → oxidation number DECREASES → Co is <strong>reduced</strong> (gains electrons).</p>
+<p><strong>Answer:</strong> Cobalt is reduced; its oxidation number changes from +4 to +3.</p>
+<h3 id="con-worked-example-92-bleach-acid-danger-jan-2024-q24bii-style">Worked Example 9.2: Bleach + Acid Danger (Jan 2024 Q24(b)(ii) style)</h3>
+<p><strong>Question:</strong> Household bleach contains NaOCl. Explain why mixing bleach with an acid-based toilet cleaner is dangerous, using equilibrium reasoning.</p>
+<p><strong>Solution:</strong></p>
+<p>Bleach contains ClO⁻ ions in equilibrium:
+Eq.1: HClO ⇌ H⁺ + ClO⁻</p>
+<p>Adding acid (H⁺) shifts Eq.1 to the LEFT:
+H⁺ + ClO⁻ → HClO</p>
+<p>The HClO then reacts with Cl⁻ and H⁺ (from the acid):
+Eq.2: HClO + Cl⁻ + H⁺ → Cl₂ + H₂O</p>
+<p><strong>Toxic chlorine gas (Cl₂)</strong> is released — this is the danger.</p>
+<p><strong>MS (3 marks):</strong>
+- Adding acid → Eq.1 shifts left (H⁺ + ClO⁻ → HClO)
+- Eq.2 shifts right (HClO + Cl⁻ + H⁺ → Cl₂ + H₂O)
+- Toxic Cl₂(g) released</p>
+<hr>
+<h2 id="con-concept-10-calculations-involving-group-2-compounds">Concept 10: Calculations Involving Group 2 Compounds</h2>
+<h3 id="con-worked-example-101-water-of-crystallisation-oct-2024-q16aii-style">Worked Example 10.1: Water of Crystallisation (Oct 2024 Q16(a)(ii) style)</h3>
+<p><strong>Question:</strong> 7.67 g of hydrated magnesium sulfate, MgSO₄·xH₂O, is heated until constant mass is 6.67 g. Calculate the value of x.</p>
+<p><strong>Solution:</strong></p>
+<p><strong>Step 1:</strong> Mass of water lost:
+m(H₂O) = 7.67 − 6.67 = 1.00 g</p>
+<p><strong>Step 2:</strong> Moles of water:
+n(H₂O) = 1.00 / 18.0 = 0.0556 mol</p>
+<p><strong>Step 3:</strong> Moles of MgSO₄:
+M(MgSO₄) = 24.3 + 32.1 + 4 × 16.0 = 120.4 g mol⁻¹
+n(MgSO₄) = 6.67 / 120.4 = 0.0554 mol</p>
+<p><strong>Step 4:</strong> Ratio:
+x = n(H₂O) / n(MgSO₄) = 0.0556 / 0.0554 ≈ 1.00</p>
+<p>x = 1 (whole number, as expected for water of crystallisation). The key method is:</p>
+<ol>
+<li>Mass of water = mass before − mass after</li>
+<li>Moles of water</li>
+<li>Moles of anhydrous salt</li>
+<li>Divide to get ratio</li>
+</ol>
+<p><strong>Answer: x = 1</strong> (MgSO₄·H₂O)</p>
+<h3 id="con-worked-example-102-percentage-composition-and-empirical-formula-jun-2024-q18biv-style">Worked Example 10.2: Percentage Composition and Empirical Formula (Jun 2024 Q18(b)(iv) style)</h3>
+<p><strong>Question:</strong> Compound A has Mᵣ = 84.5 and contains 1.18% H and 42.33% Cl by mass. The remainder is oxygen. Deduce the molecular formula.</p>
+<p><strong>Solution:</strong></p>
+<p><strong>Step 1:</strong> %O = 100 − 1.18 − 42.33 = 56.49%</p>
+<p><strong>Step 2:</strong> Moles of each element (per 100 g):
+n(H) = 1.18 / 1.0 = 1.18 mol
+n(Cl) = 42.33 / 35.5 = 1.193 mol
+n(O) = 56.49 / 16.0 = 3.531 mol</p>
+<p><strong>Step 3:</strong> Simplest mole ratio:
+Divide by smallest (≈1.18):
+H : Cl : O = 1.00 : 1.01 : 2.99 ≈ 1 : 1 : 3</p>
+<p><strong>Empirical formula:</strong> HClO₃</p>
+<p><strong>Step 4:</strong> Check molecular formula:
+M(HClO₃) = 1.0 + 35.5 + 3 × 16.0 = 84.5</p>
+<p>Molecular formula = <strong>HClO₃</strong> (empirical and molecular are the same since Mₑ = Mᵣ)</p>
+<hr>
+<h2 id="con-quick-reference-common-calculation-templates">Quick Reference: Common Calculation Templates</h2>
+<h3 id="con-template-1-enthalpy-from-calorimetry-q-mcδt">Template 1: Enthalpy from Calorimetry (q = mcΔT)</h3>
+<pre><code>q = m × c × ΔT           (in joules)
+ΔH = ±q / n              (in kJ mol⁻¹, don't forget sign and ÷1000)
+</code></pre>
+<ul>
+<li>m = mass of SOLUTION (not the solute), in grams</li>
+<li>c = specific heat capacity (usually 4.18 J g⁻¹ K⁻¹)</li>
+<li>n = moles of the substance that reacts (check the stoichiometry)</li>
+</ul>
+<h3 id="con-template-2-titration-to-find-unknown-concentration">Template 2: Titration to Find Unknown Concentration</h3>
+<pre><code>n(titrant) = c(burette) × V(burette) / 1000
+n(analyte) = n(titrant) × (mole ratio analyte:titrant)
+c(analyte) = n(analyte) / V(analyte in dm³)
+</code></pre>
+<h3 id="con-template-3-percentage-uncertainty">Template 3: Percentage Uncertainty</h3>
+<pre><code>% uncertainty = (absolute uncertainty / measured value) × 100
+Total % uncertainty = sum of individual % uncertainties (for multiplication/division)
+</code></pre>
+<h3 id="con-template-4-gas-volume-at-rtp">Template 4: Gas Volume at RTP</h3>
+<pre><code>V = n × 24000 cm³ mol⁻¹    (at room temperature and pressure)
+V = n × 24.0 dm³ mol⁻¹
+</code></pre>
+<h3 id="con-template-5-empirical-formula">Template 5: Empirical Formula</h3>
+<pre><code>n(element) = mass / Mᵣ
+Divide all by smallest n
+Round to nearest whole number (or simple fraction like 1.5 → ×2)
+</code></pre>
+<hr>
+<h2 id="con-exam-strategy-tips-for-chapter-27">Exam Strategy Tips for Chapter 2.7</h2>
+<ol>
+<li>
+<p><strong>This chapter is worth 30–46 marks per paper</strong> — it is the single most important chapter in Unit 2. Prioritise it.</p>
+</li>
+<li>
+<p><strong>QWC (asterisk) questions always appear</strong> and are usually from this chapter. Practise writing structured explanations with:
+   - Clear topic sentences
+   - Linked chains of reasoning (A → B → C → therefore D)
+   - Specific terminology (not "stronger forces" but "stronger London forces due to more electrons")</p>
+</li>
+<li>
+<p><strong>Oxidation number questions appear in every paper</strong> — master the exceptions (peroxides O = −1, hydrides H = −1).</p>
+</li>
+<li>
+<p><strong>Disproportionation is tested in 7/7 papers</strong> — always state "same element both oxidised AND reduced" and give the oxidation numbers.</p>
+</li>
+<li>
+<p><strong>Group 2 thermal decomposition appears in 6/7 papers</strong> — memorise the polarising power chain and the LiNO₃ exception.</p>
+</li>
+<li>
+<p><strong>For "explain" questions, always give CAUSE + REASONING:</strong>
+   - "WHY does X happen?" → "Because A, which leads to B, resulting in C."
+   - The MS has separate marks for the "because" and the "which leads to" parts.</p>
+</li>
+<li>
+<p><strong>Calculation questions use error carried forward (TE):</strong> If you make an error in an early step, you can still get full marks on subsequent steps. Show all working clearly.</p>
+</li>
+<li>
+<p><strong>Significant figures:</strong> 3 SF is standard. Only 1 SF is penalised. Always show the sign for enthalpy changes (+ or −).</p>
+</li>
+</ol>
+<hr>
+<p><em>Generated from analysis of 7 WCH12 papers (Jun 2022 – Oct 2024). All worked examples are based on actual exam questions with mark scheme requirements.</em></p>
+</section>
+<section id="exam">
+<h2>Exam Connections</h2>
+<p><strong>Edexcel IAL Chemistry WCH12 Unit 2 | Spec Points 7.1–8.28 | DOMINANT CHAPTER (38.6%)</strong></p>
+<hr>
+<h2 id="exam-1-per-paper-mark-allocation-7-papers">1. Per-Paper Mark Allocation (7 Papers)</h2>
+<table>
+<thead>
+<tr>
+<th>Session</th>
+<th style="text-align: center;">ch2.7 Marks</th>
+<th style="text-align: center;">% of 80</th>
+<th>Key Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jun 2022</td>
+<td style="text-align: center;"><strong>30</strong></td>
+<td style="text-align: center;">37.5%</td>
+<td>Q2–Q9 (MCQs), Q15, Q16, Q9(b,c)</td>
+</tr>
+<tr>
+<td>Jan 2023</td>
+<td style="text-align: center;"><strong>30</strong></td>
+<td style="text-align: center;">37.5%</td>
+<td>Q4–Q12 (MCQs), Q18, Q19(b), Q21 (QWC), Q22(b)(ii)</td>
+</tr>
+<tr>
+<td>Jun 2023</td>
+<td style="text-align: center;"><strong>20</strong></td>
+<td style="text-align: center;">25.0%</td>
+<td>Q4–Q12 (MCQs), Q20(b) (QWC), Q22(c)(i,iii)</td>
+</tr>
+<tr>
+<td>Oct 2023</td>
+<td style="text-align: center;"><strong>29</strong></td>
+<td style="text-align: center;">36.3%</td>
+<td>Q4–Q9 (MCQs), Q19, Q20</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td style="text-align: center;"><strong>37</strong></td>
+<td style="text-align: center;">46.3%</td>
+<td>Q1–Q12 (MCQs), Q21, Q24(a)(iii), Q24(b)(iii), Q24(c)</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td style="text-align: center;"><strong>24</strong></td>
+<td style="text-align: center;">30.0%</td>
+<td>Q2, Q4–Q8, Q10, Q12–Q14 (MCQs), Q18</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td style="text-align: center;"><strong>46</strong></td>
+<td style="text-align: center;">57.5%</td>
+<td>Q4–Q11 (MCQs), Q16, Q19, Q20 (entire 20-mark Section C)</td>
+</tr>
+<tr>
+<td><strong>Average</strong></td>
+<td style="text-align: center;"><strong>30.9</strong></td>
+<td style="text-align: center;"><strong>38.6%</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="exam-trend-analysis">Trend Analysis</h3>
+<ul>
+<li><strong>Highest ever:</strong> Oct 2024 (46 marks, 57.5%) — Section C was entirely Group 1 lithium chemistry</li>
+<li><strong>Lowest:</strong> Jun 2023 (20 marks, 25.0%) — reduced IMF/Redox content that sitting</li>
+<li><strong>This chapter DOMINATES every paper.</strong> Minimum 20 marks; typically 30+ marks</li>
+<li><strong>MCQs are heavily ch2.7-weighted</strong> — averaging 9–12 MCQ marks per paper (45–60% of Section A)</li>
+<li><strong>Always contains the QWC (*) question or a large structured block</strong></li>
+</ul>
+<hr>
+<h2 id="exam-2-high-frequency-question-types">2. High-Frequency Question Types</h2>
+<h3 id="exam-21-group-2-chemistry-est-44-marks-total-avg-63paper">2.1 Group 2 Chemistry — Est. 44 marks total (avg 6.3/paper) 🔴</h3>
+<p>This is the <strong>#1 highest-value topic</strong> across all 7 papers.</p>
+<h4 id="exam-thermal-decomposition-trends">Thermal Decomposition Trends</h4>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Key Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jun 2022</td>
+<td>Q15(a)</td>
+<td style="text-align: center;">3</td>
+<td>Explain why CaCO₃ decomposes at higher T than MgCO₃: larger Ca²⁺ → lower polarising power → C–O bonds less weakened</td>
+</tr>
+<tr>
+<td>Jan 2023</td>
+<td>Q21</td>
+<td style="text-align: center;">6</td>
+<td>QWC: Thermal stability of Group 1 &amp; 2 nitrates. LiNO₃ decomposes like Group 2 (→ oxide + NO₂ + O₂). NaNO₃ → NaNO₂ + ½O₂</td>
+</tr>
+<tr>
+<td>Jun 2023</td>
+<td>Q12</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Mg(NO₃)₂ gas volume → mass calculation (2 mol Mg(NO₃)₂ → 5 mol gas)</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Q6</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: LiNO₃ and Ca(NO₃)₂ — both give oxide + NO₂ + O₂</td>
+</tr>
+</tbody>
+</table>
+<!-- R947: Oct 2024 Q5 removed (duplicate) — kept in Flame Tests sub-section below -->
+<p>| Oct 2024 | Q20(e) | 6 | QWC: Li/Mg diagonal relationship — both nitrates give NO₂ (unlike NaNO₃) |
+| Jan 2024 | Q21(c)(i–ii) | 5 | Observations of thermal decomposition + explanation: Mg²⁺ smaller → higher charge density → polarises more → less energy to break N–O |</p>
+<p><strong>Full-Mark Answer Pattern: Explaining Thermal Decomposition Trends (3 marks)</strong></p>
+<pre><code>Question: &quot;Explain why [Group 2 carbonate/nitrate] is more/less thermally stable&quot;
+Answer must include ALL THREE points in chain:
+
+1. IONIC RADIUS: Ca²⁺ has a LARGER ionic radius than Mg²⁺ (same charge)
+2. POLARISING POWER: Ca²⁺ has LOWER polarising power / polarises the anion LESS
+3. BOND WEAKENING: the C–O (or N–O) bonds are LESS weakened / harder to break
+
+→ Therefore CaCO₃ requires MORE energy to decompose → higher decomposition temperature
+
+REVERSE for Mg²⁺: smaller → higher polarising power → more bond weakening → easier to decompose
+</code></pre>
+<h4 id="exam-reactivity-with-water">Reactivity with Water</h4>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Key Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jun 2022</td>
+<td>Q5(a)</td>
+<td style="text-align: center;">1</td>
+<td>Ca + 2H₂O → Ca(OH)₂ + H₂</td>
+</tr>
+<tr>
+<td>Jun 2022</td>
+<td>Q5(b)</td>
+<td style="text-align: center;">1</td>
+<td>Ca oxidised (0→+2), H reduced (+1→0)</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td>Q21(d)</td>
+<td style="text-align: center;">6</td>
+<td>QWC: Ca vs Mg reactivity with water — Ca reacts faster; Ca(OH)₂ more soluble → darker blue; Ca has lower 1st IE</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Q5</td>
+<td style="text-align: center;">1</td>
+<td>Mg + steam → MgO + H₂ (not hydroxide — hot Mg forms oxide)</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td>Q20(a)(i)</td>
+<td style="text-align: center;">2</td>
+<td>2Li(s) + 2H₂O(l) → 2LiOH(aq) + H₂(g) — with state symbols required</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td>Q20(a)(ii)</td>
+<td style="text-align: center;">2</td>
+<td>Observations: bubbles/fizzing/effervescence + Li disappears/disintegrates</td>
+</tr>
+</tbody>
+</table>
+<h4 id="exam-solubility-trends">Solubility Trends</h4>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Key Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- R947: Jun 2022 Q8 removed (duplicate + wrong section) — kept in §2.2 Displacement Reactions -->
+<p>| Oct 2023 | Q9 | 1 | MCQ: Sulfate solubility DECREASES down Group 2 (counterintuitive) |
+| Oct 2023 | Q20(b)(ii) | 2 | Sr(OH)₂ more soluble than Ca(OH)₂ (solubility of hydroxides INCREASES down group) → higher titre |
+| Oct 2024 | Q4 | 1 | MCQ: 1st IE of Mg &gt; Ca (not less); Ca(OH)₂ more soluble; MgCO₃ decomposes |</p>
+<p><strong>CRITICAL: Know the OPPOSITE trends</strong></p>
+<pre><code>Group 2 hydroxide solubility:  Mg(OH)₂ &lt; Ca(OH)₂ &lt; Sr(OH)₂ &lt; Ba(OH)₂  (INCREASES ↓)
+Group 2 sulfate solubility:    MgSO₄  &gt; CaSO₄  &gt; SrSO₄  &gt; BaSO₄      (DECREASES ↓)
+</code></pre>
+<h4 id="exam-flame-tests">Flame Tests</h4>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Key Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jun 2024</td>
+<td>Q7</td>
+<td style="text-align: center;">1</td>
+<td>Different gaps between electronic energy levels → different coloured light</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Q8</td>
+<td style="text-align: center;">1</td>
+<td>White ppt (AgNO₃) + red flame → strontium chloride (SrCl₂)</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td>Q21(b)(iii)</td>
+<td style="text-align: center;">1</td>
+<td>Ca flame test: orange-red / brick-red / red. NOT crimson, scarlet, or magenta</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td>Q5</td>
+<td style="text-align: center;">1</td>
+<td>Red flame → Ca; combined with CO₂ gas → CaCO₃</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td>Q6</td>
+<td style="text-align: center;">1</td>
+<td>Electrons emit energy dropping to lower level (emission, not absorption)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="exam-22-group-7-chemistry-est-27-marks-total-avg-39paper">2.2 Group 7 Chemistry — Est. 27 marks total (avg 3.9/paper) 🔴</h3>
+<h4 id="exam-displacement-reactions">Displacement Reactions</h4>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Key Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jan 2023</td>
+<td>Q11</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Non-spontaneous displacement — F₂ cannot be displaced by At₂</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td>Q7</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Br₂ + F₂ → 2BrF: Br oxidised from 0 to +1</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td>Q12</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Group 7 trends: boiling temp ↑, electronegativity ↓, oxidising power ↓</td>
+</tr>
+<tr>
+<td>Jun 2022</td>
+<td>Q8</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: I₂ is violet in non-polar organic solvent</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Q14</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Cyclohexane + aqueous iodine layers — lower yellow, upper purple</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td>Q10</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: I₂ in cyclohexane = purple (blue-black is aqueous/starch)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="exam-disproportionation">Disproportionation</h4>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Key Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jan 2023</td>
+<td>Q18(a)</td>
+<td style="text-align: center;">3</td>
+<td>Cl₂ + NaOH → Cl⁻ (−1) and ClO⁻ (+1). State oxidised/reduced with oxidation numbers</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td>Q24(b)(iii)</td>
+<td style="text-align: center;">2</td>
+<td>3NaClO → 2NaCl + NaClO₃ (Cl from +1 to −1 and +5)</td>
+</tr>
+</tbody>
+</table>
+<!-- R947: Jun 2024 Q18(b)(i–v) removed (duplicate) — kept in §2.3 Oxidation Numbers & Redox Equations -->
+<p>| Jun 2023 | Q22(c)(i) | 3 | Cl₂ + 2NaOH → NaCl (−1) and NaClO (+1). Must state "disproportionation" — "redox" alone is ignored |
+| Oct 2024 | Q19(b)(i) | 3 | Cl₂ + H₂O: Cl(0) → +1 in HOCl (oxidised) AND Cl(0) → −1 in HCl (reduced) |
+| Oct 2023 | Q7 | 1 | MCQ: S₂O₃²⁻ disproportionation — S goes from +2 to +6 AND 0 simultaneously |</p>
+<p><strong>Full-Mark Answer Pattern: Disproportionation (3 marks)</strong></p>
+<pre><code>1. IDENTIFY: &quot;This is a disproportionation reaction&quot;
+2. OXIDATION: Element X goes from [state A] to [higher state] (oxidised)
+3. REDUCTION: Same element X goes from [state A] to [lower state] (reduced)
+
+Key phrase: &quot;The SAME element is both oxidised AND reduced&quot;
+
+Examples tested:
+  • Cl₂ + H₂O → HClO + HCl           (Cl: 0 → +1 and 0 → −1)
+  • Cl₂ + cold dilute NaOH → NaCl + NaClO  (Cl: 0 → −1 and 0 → +1)
+  • 3NaClO → 2NaCl + NaClO₃           (Cl: +1 → −1 and +1 → +5)
+  • ClO₂ disproportionates between +4 (ClO₂) and +7 (HClO₄)
+</code></pre>
+<h4 id="exam-concentrated-h₂so₄-halides">Concentrated H₂SO₄ + Halides</h4>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Key Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jan 2023</td>
+<td>Q12</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: 8KI reduces H₂SO₄ to H₂S (4 mol I₂); most halide oxidised per mole</td>
+</tr>
+<tr>
+<td>Oct 2023</td>
+<td>Q8</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: NaBr + conc H₂SO₄ → Br₂ + SO₂ (NOT S or H₂S; Br⁻ is moderate reducer)</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td>Q9</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: KCl + conc H₂SO₄ → KHSO₄ (NOT redox; Cl⁻ is weak reducer)</td>
+</tr>
+<tr>
+<td>Jun 2022</td>
+<td>Q16(c)</td>
+<td style="text-align: center;">1</td>
+<td>HBr → SO₂; HI → H₂S (HI is stronger reducing agent)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key pattern to memorise:</strong></p>
+<pre><code>NaCl + conc H₂SO₄ → NaHSO₄ + HCl      (NOT redox — Cl⁻ too weak)
+NaBr + conc H₂SO₄ → NaHSO₄ + SO₂ + HBr + Br₂  (Br⁻ reduces H₂SO₄ to SO₂)
+NaI  + conc H₂SO₄ → NaHSO₄ + H₂S + HI + I₂    (I⁻ reduces H₂SO₄ to H₂S)
+</code></pre>
+<h4 id="exam-silver-nitrate-precipitation-tests">Silver Nitrate Precipitation Tests</h4>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Key Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jun 2024</td>
+<td>Q8</td>
+<td style="text-align: center;">1</td>
+<td>AgNO₃: white ppt → chloride (or sulfate); combine with flame test for full ID</td>
+</tr>
+<tr>
+<td>Oct 2023</td>
+<td>Q19(a)(i)</td>
+<td style="text-align: center;">1</td>
+<td>AgI = yellow precipitate; does NOT dissolve in excess NH₃</td>
+</tr>
+<tr>
+<td>Jun 2022</td>
+<td>Q16(e)</td>
+<td style="text-align: center;">3</td>
+<td>Gravimetric calculation from AgCl precipitate mass</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="exam-23-oxidation-numbers-redox-equations-est-18-marks-total-avg-26paper">2.3 Oxidation Numbers &amp; Redox Equations — Est. 18 marks total (avg 2.6/paper) 🔴</h3>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Format</th>
+<th>Key Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jan 2023</td>
+<td>Q7</td>
+<td style="text-align: center;">1</td>
+<td>MCQ</td>
+<td>V = +4 in VO²⁺ (O is −2, overall +2)</td>
+</tr>
+<tr>
+<td>Jan 2023</td>
+<td>Q8</td>
+<td style="text-align: center;">1</td>
+<td>MCQ</td>
+<td>K₂MnO₄: Mn(VI) with O(−2)</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td>Q6</td>
+<td style="text-align: center;">1</td>
+<td>MCQ</td>
+<td>Oxidation number −1 in HF, NaH, H₂O₂ (triple: F, H in hydride, O in peroxide)</td>
+</tr>
+<tr>
+<td>Jun 2023</td>
+<td>Q8</td>
+<td style="text-align: center;">1</td>
+<td>MCQ</td>
+<td>Cr = +6 in both K₂Cr₂O₇ and K₂CrO₄</td>
+</tr>
+<tr>
+<td>Jun 2023</td>
+<td>Q9</td>
+<td style="text-align: center;">1</td>
+<td>MCQ</td>
+<td>BaFeO₄: Ba²⁺ + FeO₄²⁻ (ferrate VI)</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Q18(b)(i–v)</td>
+<td style="text-align: center;">10</td>
+<td>Structured</td>
+<td>Full redox problem: oxidation numbers, disproportionation, formula deduction, equations</td>
+</tr>
+<tr>
+<td>Oct 2023</td>
+<td>Q6</td>
+<td style="text-align: center;">1</td>
+<td>MCQ</td>
+<td>Balancing half-equation: O₂ + 2H₂O + 4e⁻ → 4OH⁻ (n = 4)</td>
+</tr>
+<tr>
+<td>Oct 2023</td>
+<td>Q19(b)</td>
+<td style="text-align: center;">2</td>
+<td>Structured</td>
+<td>MnO₂ + HCl: Mn(+4→+2) reduced, Cl(−1→0) oxidised</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Common oxidation number traps:</strong></p>
+<pre><code>PEROXIDES:  O = −1 (e.g. H₂O₂, Na₂O₂, BaO₂) — NOT −2
+HYDRIDES:   H = −1 (e.g. NaH, CaH₂) — NOT +1
+Oxygen:     O = −2 normally, −1 in peroxides, −½ in superoxides
+Fluorine:   F = −1 ALWAYS (most electronegative element)
+</code></pre>
+<hr>
+<h3 id="exam-24-volumetric-analysis-titrations-est-11-marks-total-avg-16paper">2.4 Volumetric Analysis / Titrations — Est. 11 marks total (avg 1.6/paper) 🟡</h3>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Format</th>
+<th>Key Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jun 2022</td>
+<td>Q9(a)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ</td>
+<td>Methyl orange: yellow → <strong>orange</strong> (NOT red — red = excess acid)</td>
+</tr>
+<tr>
+<td>Jun 2022</td>
+<td>Q9(b)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ</td>
+<td>Air bubble in burette → first titre anomalously HIGH</td>
+</tr>
+<tr>
+<td>Jun 2022</td>
+<td>Q9(c)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ</td>
+<td>2NaOH + H₂SO₄ → Na₂SO₄ + 2H₂O; 2:1 mole ratio</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Q11(a)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ</td>
+<td>Methyl orange in H₂SO₄ + KOH: red → orange</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Q11(b)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ</td>
+<td>[K₂SO₄] after titration: must use TOTAL volume (35 cm³, not 25)</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Q11(c)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ</td>
+<td>% uncertainty: pipette ±0.04/10 + burette ±0.05/25 = 0.6%</td>
+</tr>
+<tr>
+<td>Oct 2023</td>
+<td>Q20(b)(i)</td>
+<td style="text-align: center;">4</td>
+<td>Calculation</td>
+<td>Ca(OH)₂ solubility from titration: n(HCl) = 18.95 × 10⁻³ × 0.0500 = 9.475 × 10⁻⁴; n(Ca(OH)₂) = 4.738 × 10⁻⁴ in 25 cm³; scale to 1 dm³ → 1.40 g dm⁻³</td>
+</tr>
+<tr>
+<td>Oct 2023</td>
+<td>Q20(a)(ii)</td>
+<td style="text-align: center;">1</td>
+<td>State</td>
+<td>Limewater test for CO₂: cloudy/milky solution or white precipitate</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Full-Mark Answer Pattern: Titration Calculation (4 marks)</strong></p>
+<pre><code>Step 1: Moles of known solution (from burette reading × concentration)
+  n(acid/base) = c × V/1000
+
+Step 2: Use balanced equation to find moles of unknown
+  Watch the mole ratio! (e.g. 2:1 for NaOH:H₂SO₄)
+
+Step 3: If concentration needed in original volume, scale appropriately
+  If titration used 25 cm³ aliquot of 250 cm³ flask → multiply by 10
+
+Step 4: Convert to required units (g dm⁻³, mol dm⁻³, % purity)
+
+COMMON TRAP: Total volume after mixing
+  If 20 cm³ acid + 10 cm³ base → total = 30 cm³ for dilution calculations
+</code></pre>
+<hr>
+<h3 id="exam-25-intermolecular-forces-est-23-marks-total-avg-33paper">2.5 Intermolecular Forces — Est. 23 marks total (avg 3.3/paper) 🟡</h3>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Key Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jun 2023</td>
+<td>Q4</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Longest alkane chain = strongest London forces = highest b.p.</td>
+</tr>
+<tr>
+<td>Jun 2023</td>
+<td>Q5</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Cyclohexane: larger surface area → higher b.p. than branched isomer</td>
+</tr>
+<tr>
+<td>Jun 2023</td>
+<td>Q6</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Propanal C=O → strong permanent dipole-dipole forces</td>
+</tr>
+<tr>
+<td>Jun 2023</td>
+<td>Q7</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: H-bond requires H bonded to O (not C)</td>
+</tr>
+<tr>
+<td>Jun 2023</td>
+<td>Q20(b)</td>
+<td style="text-align: center;">6</td>
+<td>QWC: H₂ vs NH₃ IMF comparison — London forces + hydrogen bonding</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td>Q19(a)(i–iii)</td>
+<td style="text-align: center;">4</td>
+<td>London forces mechanism, HI &gt; HCl/HBr (more electrons), HF anomaly (H-bonding)</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td>Q1–Q5</td>
+<td style="text-align: center;">5</td>
+<td>MCQs: H-bonding identification, ion-dipole, non-polar bonds, London forces, solubility</td>
+</tr>
+<tr>
+<td>Jun 2022</td>
+<td>Q16(d)</td>
+<td style="text-align: center;">4</td>
+<td>HX boiling trend: London forces + HF H-bonding anomaly</td>
+</tr>
+</tbody>
+</table>
+<h4 id="exam-ion-dipole-interactions-spec-7678">Ion-Dipole Interactions (Spec 7.6–7.8)</h4>
+<p>A newer tested concept. Ion-dipole interactions occur between IONS and the permanent dipole of a polar molecule (e.g., ionic compounds dissolving in water). Not an intermolecular force (which is between molecules), but grouped with IMFs in the spec.</p>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Key Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jun 2024</td>
+<td>Q2</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: NaCl dissolving in water — ion-dipole interactions (also in Jan 2024 Q1–Q5 block above)</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td>Q16(c)(i)</td>
+<td style="text-align: center;">2</td>
+<td>Draw ion-dipole diagram: δ⁺H of water near SO₄²⁻; δ⁻O of water near Mg²⁺; show partial charges</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key points:</strong>
+- Ion-dipole ≠ hydrogen bonding (hydrogen bonding is between molecules, not involving ions)
+- In diagrams: H atoms (δ⁺) orient toward ANIONS; O atom (δ⁻) orients toward CATIONS
+- Must show at least one δ⁺/δ⁻ on the water molecule for full marks (Oct 2024 MS requirement)</p>
+<p><strong>Full-Mark Answer Pattern: Boiling Point Comparison (2–4 marks)</strong></p>
+<pre><code>Must specify the TYPE of intermolecular force AND link to structural feature:
+
+&quot;London forces / dispersion forces&quot;
+  → more electrons / larger surface area / less branching
+  → stronger London forces → higher boiling point
+
+&quot;Hydrogen bonding&quot;
+  → H bonded to highly electronegative atom (O, N, F)
+  → strongest type of IMF
+  → anomalously high boiling point (e.g. HF, H₂O, NH₃)
+
+&quot;Permanent dipole-dipole forces&quot;
+  → polar molecule (C=O, C-Cl)
+  → stronger than London forces but weaker than H-bonding
+
+MARK SCHEME WATCH:
+  • &quot;Stronger intermolecular forces&quot; alone is NOT enough (Jan 2023 Q19b(ii))
+  • Must specify &quot;London forces&quot; + &quot;greater surface area&quot;
+  • H-bonding: must mention lone pair + δ⁺H interaction
+</code></pre>
+<hr>
+<h3 id="exam-26-qualitative-tests-est-15-marks-total-avg-21paper">2.6 Qualitative Tests — Est. 15 marks total (avg 2.1/paper) 🟡</h3>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Reagent</th>
+<th>Observation</th>
+<th>Papers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Carbonate/HCO₃⁻</strong></td>
+<td>Dilute acid (HCl/HNO₃)</td>
+<td>Effervescence; CO₂ turns limewater cloudy</td>
+<td>Jun 2022 Q6, Jan 2024 Q9, Oct 2023 Q20(a)(i)</td>
+</tr>
+<tr>
+<td><strong>Sulfate</strong></td>
+<td>BaCl₂ in dilute HNO₃</td>
+<td>White precipitate (BaSO₄, insoluble in acid)</td>
+<td>Jun 2022 Q6, Jun 2024 Q10</td>
+</tr>
+<tr>
+<td><strong>Ammonium</strong></td>
+<td>NaOH(aq) + warmth</td>
+<td>Damp red litmus turns blue (NH₃ gas)</td>
+<td>Jun 2022 Q7</td>
+</tr>
+<tr>
+<td><strong>Flame test</strong></td>
+<td>nichrome/platinum wire + HCl</td>
+<td>Li = crimson, Na = yellow, K = lilac, Ca = red-orange, Sr = red, Ba = green</td>
+<td>Jan 2024 Q21(b)(iii), Jun 2024 Q8, Oct 2024 Q5</td>
+</tr>
+<tr>
+<td><strong>Halide</strong></td>
+<td>AgNO₃ + dilute HNO₃</td>
+<td>AgCl = white, AgBr = cream, AgI = yellow</td>
+<td>Oct 2023 Q19(a)(i), Jun 2024 Q8</td>
+</tr>
+<tr>
+<td><strong>NH₃ solubility</strong></td>
+<td>NH₃(aq)</td>
+<td>AgCl dissolves, AgBr partially, AgI NOT</td>
+<td>Oct 2023 Q19(a)(i)</td>
+</tr>
+</tbody>
+</table>
+<!-- R947: Section 2 enumerated total ≈ 138 marks (44+27+18+11+23+15). The full ch2.7 chapter total is 216 marks (§1). The gap of ~78 marks reflects anchor question sub-parts documented in §7 that are not individually itemised above. -->
+
+<hr>
+<h2 id="exam-3-common-traps-with-specific-paper-references">3. Common Traps with Specific Paper References</h2>
+<h3 id="exam-31-oxidation-state-traps">3.1 Oxidation State Traps</h3>
+<table>
+<thead>
+<tr>
+<th>Trap</th>
+<th>Paper</th>
+<th>Correct</th>
+<th>Why Students Fail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O is −1 in peroxides</td>
+<td>Jan 2024 Q6</td>
+<td>H₂O₂ → O = −1</td>
+<td>Assume O is always −2</td>
+</tr>
+<tr>
+<td>H is −1 in hydrides</td>
+<td>Jan 2024 Q6</td>
+<td>NaH → H = −1</td>
+<td>Assume H is always +1</td>
+</tr>
+<tr>
+<td>Cl has multiple oxidation states</td>
+<td>Jun 2024 Q18(b)(iii)</td>
+<td>Cl: +4 in ClO₂ between +1 and +7</td>
+<td>Don't consider range</td>
+</tr>
+<tr>
+<td>Roman numeral = oxidation number</td>
+<td>Jan 2023 Q8, Jun 2023 Q9</td>
+<td>K₂MnO₄ = Mn(VI), BaFeO₄ = Fe(VI)</td>
+<td>Miscount from O = −2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exam-32-group-2-trend-traps">3.2 Group 2 Trend Traps</h3>
+<table>
+<thead>
+<tr>
+<th>Trap</th>
+<th>Paper</th>
+<th>Correct</th>
+<th>Why Students Fail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hydroxide solubility INCREASES down group</td>
+<td>Oct 2023 Q20(b)(ii)</td>
+<td>Ca(OH)₂ MORE soluble than Mg(OH)₂</td>
+<td>Assume "decreases" like most trends</td>
+</tr>
+<tr>
+<td>Sulfate solubility DECREASES down group</td>
+<td>Oct 2023 Q9</td>
+<td>BaSO₄ insoluble</td>
+<td>Assume same trend as hydroxides</td>
+</tr>
+<tr>
+<td>Mg + steam → MgO (not hydroxide)</td>
+<td>Jun 2024 Q5</td>
+<td>Mg + H₂O(steam) → MgO + H₂</td>
+<td>Expect Mg(OH)₂ like Ca + water</td>
+</tr>
+<tr>
+<td>LiNO₃ decomposes like Group 2</td>
+<td>Jan 2023 Q21, Oct 2024 Q20(e)</td>
+<td>LiNO₃ → Li₂O + NO₂ + O₂</td>
+<td>Assume all Group 1 → nitrites</td>
+</tr>
+<tr>
+<td>1st IE Mg &gt; Ca</td>
+<td>Oct 2024 Q4</td>
+<td>Mg has smaller atomic radius</td>
+<td>Think "lower in group = lower IE"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exam-33-titration-traps">3.3 Titration Traps</h3>
+<table>
+<thead>
+<tr>
+<th>Trap</th>
+<th>Paper</th>
+<th>Correct</th>
+<th>Why Students Fail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Methyl orange end-point is ORANGE (not red)</td>
+<td>Jun 2022 Q9(a), Jun 2024 Q11(a)</td>
+<td>Yellow → orange</td>
+<td>Red is excess acid colour</td>
+</tr>
+<tr>
+<td>Total volume for dilution calculation</td>
+<td>Jun 2024 Q11(b), Oct 2023 Q10</td>
+<td>20 + 10 = 30 cm³ total</td>
+<td>Use only one volume</td>
+</tr>
+<tr>
+<td>Air bubble → first titre HIGH</td>
+<td>Jun 2022 Q9(b)</td>
+<td>Anomalous first reading too high</td>
+<td>Think bubble makes reading low</td>
+</tr>
+<tr>
+<td>% uncertainty from BOTH instruments</td>
+<td>Jun 2024 Q11(c)</td>
+<td>Pipette + burette contributions</td>
+<td>Use only one uncertainty</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exam-34-imf-traps">3.4 IMF Traps</h3>
+<table>
+<thead>
+<tr>
+<th>Trap</th>
+<th>Paper</th>
+<th>Correct</th>
+<th>Why Students Fail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H-bond requires H on electronegative atom</td>
+<td>Jun 2023 Q7</td>
+<td>O–H, N–H, F–H only</td>
+<td>Think any polar bond counts</td>
+</tr>
+<tr>
+<td>"Stronger IMF" is NOT enough — specify type</td>
+<td>Jan 2023 Q19(b)(ii)</td>
+<td>"London forces" + "greater surface area"</td>
+<td>Too vague</td>
+</tr>
+<tr>
+<td>HF anomaly in HX trend</td>
+<td>Jan 2023 Q6, Jun 2022 Q16(d)</td>
+<td>HF highest b.p. due to H-bonding</td>
+<td>Expect simple trend</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="exam-4-mark-scheme-requirements-exact-phrasing">4. Mark Scheme Requirements: Exact Phrasing</h2>
+<h3 id="exam-41-tests-exact-words-required">4.1 Tests (Exact Words Required)</h3>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Required Observation</th>
+<th>Paper Reference</th>
+<th>Words NOT Accepted</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Carbonate + acid</td>
+<td>"Effervescence" or "bubbles" + "turns limewater cloudy/milky"</td>
+<td>Oct 2023 Q20(a)(ii)</td>
+<td>"Fizzes" alone may score; "effervescence" preferred</td>
+</tr>
+<tr>
+<td>Limewater test</td>
+<td>"Cloudy" or "milky" or "white precipitate"</td>
+<td>Oct 2023 Q20(a)(ii)</td>
+<td>"Becomes white" not accepted</td>
+</tr>
+<tr>
+<td>Flame test (Li)</td>
+<td>"Crimson"</td>
+<td>Jan 2024 Q21(b)(iii)</td>
+<td>"Red" for Li; but "orange-red" for Ca</td>
+</tr>
+<tr>
+<td>Flame test (Ca)</td>
+<td>"Orange-red" or "brick-red" or "red"</td>
+<td>Jan 2024 Q21(b)(iii)</td>
+<td>NOT "crimson", NOT "scarlet"</td>
+</tr>
+<tr>
+<td>AgNO₃ + I⁻</td>
+<td>"Yellow" precipitate</td>
+<td>Oct 2023 Q19(a)(i)</td>
+<td>"Pale yellow" accepted</td>
+</tr>
+<tr>
+<td>NH₄⁺ test</td>
+<td>"Damp red litmus turns blue"</td>
+<td>Jun 2022 Q7</td>
+<td>"Blue litmus turns red" = WRONG (that's acidic gas)</td>
+</tr>
+<tr>
+<td>Methyl orange end-point</td>
+<td>"Yellow → orange"</td>
+<td>Jun 2022 Q9(a)</td>
+<td>"Yellow → red" = WRONG (red = excess)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exam-42-equations-must-be-balanced">4.2 Equations (Must Be Balanced)</h3>
+<table>
+<thead>
+<tr>
+<th>Equation</th>
+<th>Format</th>
+<th>Paper</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2Li(s) + 2H₂O(l) → 2LiOH(aq) + H₂(g)</td>
+<td>Full with state symbols</td>
+<td>Oct 2024 Q20(a)(i)</td>
+</tr>
+<tr>
+<td>3NaClO → 2NaCl + NaClO₃</td>
+<td>Solid state (no state symbols needed)</td>
+<td>Jan 2024 Q24(b)(iii)</td>
+</tr>
+<tr>
+<td>Ba²⁺(aq) + SO₄²⁻(aq) → BaSO₄(s)</td>
+<td>Ionic with state symbols</td>
+<td>Oct 2024 Q16(c)(ii)</td>
+</tr>
+<tr>
+<td>CO₃²⁻(s/aq) + 2H⁺(aq) → CO₂(g) + H₂O(l)</td>
+<td>With state symbols for M2</td>
+<td>Oct 2023 Q20(a)(i)</td>
+</tr>
+<tr>
+<td>4LiNO₃ → 2Li₂O + 4NO₂ + O₂</td>
+<td>Balanced (note: Li like Group 2)</td>
+<td>Oct 2024 Q20(e)</td>
+</tr>
+<tr>
+<td>2Mg(NO₃)₂ → 2MgO + 4NO₂ + O₂</td>
+<td>Balanced</td>
+<td>Jan 2024 Q21(c)(i)</td>
+</tr>
+<tr>
+<td>2NaNO₃ → 2NaNO₂ + O₂</td>
+<td>Balanced (note: nitrites, not oxides)</td>
+<td>Jan 2023 Q21</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="exam-5-core-practical-integration">5. Core Practical Integration</h2>
+<h3 id="exam-cp3-finding-the-concentration-of-a-solution-of-hydrochloric-acid">CP3: Finding the Concentration of a Solution of Hydrochloric Acid</h3>
+<ul>
+<li>Tested via volumetric analysis calculations</li>
+<li><strong>Papers:</strong> Jun 2022 Q9 (titration technique + calculation), Oct 2023 Q20(b)(i)</li>
+<li>Must know: burette technique, concordant titres, indicator choice, back-titration concepts</li>
+</ul>
+<h3 id="exam-cp4-standard-solution-from-solid-acid-naoh-concentration">CP4: Standard Solution from Solid Acid → NaOH Concentration</h3>
+<ul>
+<li>Tested via multi-step titration calculations</li>
+<li><strong>Papers:</strong> Oct 2023 Q20(b)(i) (Ca(OH)₂ solubility from titration data)</li>
+<li>Key skill: making standard solution (dissolve, transfer, make up to mark), then titration</li>
+</ul>
+<hr>
+<h2 id="exam-6-revision-priority-ranking">6. Revision Priority Ranking</h2>
+<p>Based on frequency × marks across 7 papers:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Rank</th>
+<th>Topic</th>
+<th style="text-align: center;">Est. Total Marks</th>
+<th style="text-align: center;">Frequency</th>
+<th style="text-align: center;">Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td><strong>Group 2 chemistry (thermal decomposition, solubility, reactivity)</strong></td>
+<td style="text-align: center;">~44</td>
+<td style="text-align: center;">7/7 papers</td>
+<td style="text-align: center;">🔴 <strong>MASTER</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><strong>Group 7 chemistry (displacement, disproportionation, H₂SO₄)</strong></td>
+<td style="text-align: center;">~27</td>
+<td style="text-align: center;">7/7 papers</td>
+<td style="text-align: center;">🔴 <strong>MASTER</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><strong>Oxidation numbers &amp; redox equations</strong></td>
+<td style="text-align: center;">~18</td>
+<td style="text-align: center;">7/7 papers</td>
+<td style="text-align: center;">🟡 <strong>KNOW</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><strong>Volumetric analysis / titrations</strong></td>
+<td style="text-align: center;">~11</td>
+<td style="text-align: center;">6/7 papers</td>
+<td style="text-align: center;">🟡 <strong>KNOW</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><strong>Intermolecular forces (London, pd-pd, H-bonding)</strong></td>
+<td style="text-align: center;">~23</td>
+<td style="text-align: center;">7/7 papers</td>
+<td style="text-align: center;">🟡 <strong>KNOW</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><strong>Qualitative tests (carbonate, sulfate, ammonium, flame, halide)</strong></td>
+<td style="text-align: center;">~15</td>
+<td style="text-align: center;">5/7 papers</td>
+<td style="text-align: center;">🟡 <strong>KNOW</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><strong>Hydrogen bonding explanations</strong></td>
+<td style="text-align: center;">~12</td>
+<td style="text-align: center;">5/7 papers</td>
+<td style="text-align: center;">🟡 <strong>KNOW</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td><strong>Concentrated H₂SO₄ + halide reactions</strong></td>
+<td style="text-align: center;">~5</td>
+<td style="text-align: center;">4/7 papers</td>
+<td style="text-align: center;">🟢 <strong>REVIEW</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="exam-7-detailed-question-by-question-reference-key-marks-across-all-7-papers">7. Detailed Question-by-Question Reference: Key Marks Across All 7 Papers</h2>
+<h3 id="exam-group-2-anchor-questions-highest-individual-marks">Group 2 Anchor Questions (Highest Individual Marks)</h3>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Focus Area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jan 2024</td>
+<td>Q21</td>
+<td style="text-align: center;">18</td>
+<td>Ca and Mg: electronic config, redox, bonding, flame test, thermal decomposition, QWC on reactivity with water</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td>Q20</td>
+<td style="text-align: center;">20</td>
+<td>Lithium chemistry: + water equation, Li₃N formation, battery equation, alloy ratio, QWC on Li/Mg diagonal relationship</td>
+</tr>
+<tr>
+<td>Jun 2022</td>
+<td>Q15</td>
+<td style="text-align: center;">10</td>
+<td>CaCO₃: thermal decomposition explanation, gas syringe calc, rate from graph</td>
+</tr>
+<tr>
+<td>Jun 2023</td>
+<td>Q22</td>
+<td style="text-align: center;">21</td>
+<td>Toilet cleaner context: CaCO₃ + HCl calc, Cl₂ disproportionation, Ca(OH)₂ solubility, empirical formula</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exam-group-7-anchor-questions">Group 7 Anchor Questions</h3>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Focus Area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jun 2022</td>
+<td>Q16</td>
+<td style="text-align: center;">12</td>
+<td>Halogens: electronegativity trend, disproportionation explanation, HBr/HI + H₂SO₄, HX boiling trend, % chloride calc</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Q18</td>
+<td style="text-align: center;">13</td>
+<td>Redox: ClO₂ dot-and-cross, chlorate(V)/(VII), oxidation number range, molecular formula, synthesis equations</td>
+</tr>
+<tr>
+<td>Oct 2023</td>
+<td>Q19</td>
+<td style="text-align: center;">14</td>
+<td>AgI precipitation, KI % composition, MnO₂ + HCl redox, I₂ extraction, QWC on iodine solubility</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td>Q24</td>
+<td style="text-align: center;">20</td>
+<td>Synoptic: S–F bond enthalpy, CO₂ molecules, bleach equilibrium, disproportionation, % Br in retardant</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="exam-8-predictions-for-future-papers">8. Predictions for Future Papers</h2>
+<ol>
+<li><strong>Expect 28–40 marks</strong> from this chapter — it is consistently the dominant chapter</li>
+<li><strong>One large structured question (12–20 marks)</strong> will focus on either Group 2 or Group 7 chemistry</li>
+<li><strong>QWC (*) question</strong> frequently comes from this chapter: thermal stability trends (Jan 2023), IMF comparison (Jun 2023), diagonal relationship (Oct 2024), Ca vs Mg reactivity (Jan 2024)</li>
+<li><strong>Oxidation numbers</strong> will appear in at least 1–2 MCQs + a structured sub-part</li>
+<li><strong>Disproportionation</strong> is tested in 6/7 papers — memorise the key examples (Cl₂ + H₂O, Cl₂ + NaOH, NaClO, ClO₂)</li>
+<li><strong>MCQs are heavily ch2.7:</strong> expect 9–12 MCQ marks from this chapter</li>
+<li><strong>Section C rotation:</strong> When Section C focuses on a Group 1/2 element, ch2.7 can reach 40+ marks. When it focuses on organic chemistry, expect ~25–30 marks</li>
+<li><strong>Ion-dipole interactions</strong> are a newer tested concept (Jun 2024 Q2, Oct 2024 Q16(c)(i)) — know the diagram with δ⁺/δ⁻ on water molecules near ions</li>
+</ol>
+<hr>
+<h2 id="exam-9-checklist-am-i-exam-ready-for-ch27">9. Checklist: Am I Exam-Ready for ch2.7?</h2>
+<pre><code>□ Can I explain Group 2 thermal decomposition trends (ionic radius → polarising power → bond weakening)?
+□ Do I know LiNO₃ decomposes like Group 2 (→ oxide + NO₂ + O₂)?
+□ Can I state why Ca(OH)₂ solubility INCREASES down group but sulfates DECREASE?
+□ Can I identify flame test colours for Li, Na, K, Ca, Sr, Ba?
+□ Can I write balanced equations for Group 2 + water, + steam, + acid?
+□ Can I explain disproportionation of Cl₂ with water AND with cold NaOH?
+□ Can I give the products of NaCl/NaBr/NaI + conc H₂SO₄ (different for each)?
+□ Can I calculate oxidation numbers including peroxides (O = −1) and hydrides (H = −1)?
+□ Can I write the Roman numeral in chlorate(V), chlorate(VII), chlorate(III)?
+□ Can I explain the HX boiling point trend (London forces + HF anomaly)?
+□ Can I give the exact observation for limewater test, AgNO₃ test, ammonium test?
+□ Can I perform a full titration calculation with correct mole ratio?
+□ Can I explain why &quot;stronger intermolecular forces&quot; is NOT a sufficient answer?
+□ Do I know methyl orange end-point is orange (NOT red)?
+□ Can I describe the mechanism of London force formation?
+</code></pre>
+<hr>
+<p><em>Generated from 7-paper analysis: Jun 2022 – Oct 2024. All specific paper references, mark allocations, and mark scheme requirements are sourced from actual WCH12 question papers and mark schemes.</em></p>
+</section>
+<footer>
+<p>Ch 2.7 IMFs, Redox &amp; Groups 1/2/7 Study Guide &middot; WCH12 IAL Chemistry &middot; 7 papers (Jun 2022 – Oct 2024)</p>
+</footer>
+</main>
+<script>
+(function(){
+  var saved=localStorage.getItem('wch12-theme');
+  if(saved==='dark')document.documentElement.setAttribute('data-theme','dark');
+  updateBtn();
+})();
+function toggleDark(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  if(isDark){document.documentElement.removeAttribute('data-theme');localStorage.setItem('wch12-theme','light')}
+  else{document.documentElement.setAttribute('data-theme','dark');localStorage.setItem('wch12-theme','dark')}
+  updateBtn();
+}
+function updateBtn(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  var b=document.getElementById('darkBtn');
+  if(b)b.textContent=isDark?'\u2600\ufe0f Light':'\ud83c\udf19 Dark';
+}
+function toggleSidebar(){
+  var sb=document.getElementById('sidebar'),ov=document.getElementById('overlay');
+  sb.classList.toggle('open');ov.classList.toggle('open');
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    var sb=document.getElementById('sidebar');
+    if(sb&&sb.classList.contains('open'))toggleSidebar();
+  }
+});
+function toggleProgress(qid,cb){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  if(cb.checked)saved[qid]=1;else delete saved[qid];
+  localStorage.setItem(key,JSON.stringify(saved));
+  updateProgBar();
+}
+function updateProgBar(){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  var total=document.querySelectorAll('.prog-table input[type="checkbox"]').length;
+  var done=Object.keys(saved).length;
+  var bar=document.getElementById('progFill');
+  if(bar&&total>0)bar.style.width=Math.round(done*100/total)+'%';
+  var txt=document.getElementById('progText');
+  if(txt)txt.textContent=done+' / '+total+' questions completed';
+}
+(function(){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  document.querySelectorAll('.prog-table input[type="checkbox"]').forEach(function(cb){
+    cb.checked=!!saved[cb.dataset.qid];
+    cb.addEventListener('change',function(){toggleProgress(cb.dataset.qid,cb)});
+  });
+  updateProgBar();
+})();
+</script>
+
+</body>
+</html>

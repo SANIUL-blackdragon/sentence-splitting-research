@@ -1,0 +1,2077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch 2.9 — Halogenoalkanes, Alcohols and Spectra — Exam Readiness Questions</title>
+<style>
+:root{--bg:#fafcfe;--surface:#fff;--text:#1e293b;--heading:#0f4c75;--heading2:#1b6ca8;--accent:#3b82f6;--accent2:#10b981;--border:#e2e8f0;--muted:#64748b;--tip-bg:#eff6ff;--tip-border:#bfdbfe;--warn-bg:#fefce8;--warn-border:#fde68a;--worked-bg:#f0fdf4;--worked-border:#bbf7d0;--sidebar-bg:#fff;--sidebar-shadow:0 4px 24px rgba(0,0,0,.1);--code-bg:#f1f5f9;--tbl-head:#eef2f7;--tbl-alt:#f8fafc;--card-bg:#fff;--card-shadow:0 1px 3px rgba(0,0,0,.06);--tier1-bg:#eff6ff;--tier1-border:#3b82f6;--tier1-fg:#1e40af;--tier2-bg:#f0fdf4;--tier2-border:#10b981;--tier2-fg:#065f46;--tier3-bg:#fef3c2;--tier3-border:#f43f5e;--tier3-fg:#9f1239;--b-QFR-bg:#dbeafe;--b-QFR-fg:#1e40af;--b-TDC-bg:#ede9fe;--b-TDC-fg:#5b21b6;--b-CAL-bg:#d1fae5;--b-CAL-fg:#065f46;--b-EXP-bg:#ffedd5;--b-EXP-fg:#9a3412;--b-WTE-bg:#ccfbf1;--b-WTE-fg:#115e59;--b-STE-bg:#fee2e2;--b-STE-fg:#991b1b;--b-DIA-bg:#e0e7ff;--b-DIA-fg:#3730a3;--b-SYN-bg:#fce7f3;--b-SYN-fg:#9d174d;--b-DER-bg:#fef3c7;--b-DER-fg:#92400e;--b-QWC-bg:#cffafe;--b-QWC-fg:#155e75;--b-GRD-bg:#ecfccb;--b-GRD-fg:#3f6212}
+[data-theme="dark"]{--bg:#0f172a;--surface:#1e293b;--text:#e2e8f0;--heading:#93c5fd;--heading2:#7dd3fc;--accent:#60a5fa;--accent2:#34d399;--border:#334155;--muted:#94a3b8;--tip-bg:#1e3a5f;--tip-border:#2563eb;--warn-bg:#422006;--warn-border:#a16207;--worked-bg:#052e16;--worked-border:#16a34a;--sidebar-bg:#1e293b;--sidebar-shadow:0 4px 24px rgba(0,0,0,.4);--code-bg:#0f172a;--tbl-head:#1e3a5f;--tbl-alt:#162032;--card-bg:#1e293b;--card-shadow:0 1px 3px rgba(0,0,0,.3);--tier1-bg:#1e3a5f;--tier1-border:#60a5fa;--tier1-fg:#bfdbfe;--tier2-bg:#052e16;--tier2-border:#34d399;--tier2-fg:#a7f3d0;--tier3-bg:#4c1d1d;--tier3-border:#fb7185;--tier3-fg:#fecdd3;--b-QFR-bg:#1e3a5f;--b-QFR-fg:#bfdbfe;--b-TDC-bg:#3b2a5e;--b-TDC-fg:#ddd6fe;--b-CAL-bg:#0c3a26;--b-CAL-fg:#a7f3d0;--b-EXP-bg:#5a2e0a;--b-EXP-fg:#fed7aa;--b-WTE-bg:#0c3a36;--b-WTE-fg:#99f6e4;--b-STE-bg:#5a1a1a;--b-STE-fg:#fecaca;--b-DIA-bg:#2a2e6a;--b-DIA-fg:#c7d2fe;--b-SYN-bg:#5a1d44;--b-SYN-fg:#fbcfe8;--b-DER-bg:#5a3e0a;--b-DER-fg:#fde68a;--b-QWC-bg:#0c4a52;--b-QWC-fg:#a5f3fc;--b-GRD-bg:#2a4310;--b-GRD-fg:#d9f99d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding-top:52px}
+@media(max-width:480px){body{font-size:15px;padding-top:48px}}
+header{position:fixed;top:0;left:0;right:0;height:52px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;z-index:1000;padding:0 16px;gap:12px}
+#menuBtn{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text);padding:4px 8px;border-radius:6px;line-height:1}
+#menuBtn:hover{background:var(--code-bg)}
+#headerTitle{font-weight:700;font-size:.95rem;color:var(--heading);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+#darkBtn{margin-left:auto;background:none;border:1px solid var(--border);border-radius:6px;cursor:pointer;padding:4px 10px;font-size:.8rem;color:var(--text);white-space:nowrap}
+#darkBtn:hover{background:var(--code-bg)}
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:1100;display:none}
+#overlay.open{display:block}
+#sidebar{position:fixed;top:0;left:-340px;width:320px;max-width:85vw;height:100vh;background:var(--sidebar-bg);box-shadow:var(--sidebar-shadow);z-index:1200;overflow-y:auto;padding:16px 0;transition:left .25s ease}
+#sidebar.open{left:0}
+#sidebar .sb-head{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;border-bottom:1px solid var(--border);margin-bottom:8px}
+#sidebar .sb-head span{font-weight:700;color:var(--heading);font-size:.95rem}
+#sidebar .sb-close{background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text);padding:4px;line-height:1}
+#sidebar nav{padding:0 12px}
+#sidebar nav ul{list-style:none;padding:0;margin:0}
+#sidebar nav li{margin-bottom:2px}
+#sidebar nav a{display:block;padding:6px 10px;border-radius:6px;font-size:.82rem;color:var(--text);text-decoration:none;transition:background .15s;line-height:1.4}
+#sidebar nav a:hover{background:var(--code-bg)}
+#sidebar nav a.chapter{font-weight:700;color:var(--heading);font-size:.9rem;margin-top:10px;padding:8px 10px;border-radius:6px}
+#sidebar nav a.q-link{padding-left:16px;font-size:.8rem;color:var(--muted)}
+#sidebar nav a.q-link .q-tag{font-weight:700;color:var(--heading2)}
+#sidebar nav a.q-link:hover{background:var(--code-bg);color:var(--text)}
+main{max-width:920px;margin:0 auto;padding:24px 20px 60px}
+@media(max-width:600px){main{padding:16px 12px 40px}}
+.cover{text-align:center;padding:48px 20px 40px;border-bottom:2px solid var(--border);margin-bottom:32px}
+.cover h1{font-size:2rem;color:var(--heading);margin-bottom:8px;line-height:1.25}
+@media(max-width:480px){.cover h1{font-size:1.5rem}}
+.cover .subtitle{font-size:1rem;color:var(--muted);margin-bottom:16px}
+.cover .meta{display:inline-flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.cover .tag{background:var(--code-bg);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:.8rem;color:var(--muted)}
+.cover .stats{margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cover .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 18px;min-width:100px}
+.cover .stat .num{font-size:1.5rem;font-weight:800;color:var(--accent);line-height:1.1}
+.cover .stat .lbl{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.intro{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:16px 20px;margin-bottom:24px;font-size:.92rem}
+.intro p{margin:0}
+section{margin-bottom:40px}
+section h2{color:var(--heading);font-size:1.4rem;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid var(--accent);scroll-margin-top:64px}
+section h3{color:var(--heading2);font-size:1.1rem;margin:16px 0 8px;scroll-margin-top:64px}
+.tbl-wrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+@media(max-width:600px){table{font-size:.78rem}}
+th{background:var(--tbl-head);color:var(--heading);font-weight:600;text-align:left;padding:8px 10px;border:1px solid var(--border);white-space:nowrap}
+td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+tr:nth-child(even) td{background:var(--tbl-alt)}
+td.num,th.num{text-align:center}
+tr.total td{font-weight:700;background:var(--tbl-head);color:var(--heading)}
+.qcard{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:18px;box-shadow:var(--card-shadow);scroll-margin-top:64px}
+@media(max-width:480px){.qcard{padding:14px}}
+.qcard-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.qnum{background:var(--heading);color:#fff;font-weight:700;font-size:.85rem;padding:3px 10px;border-radius:6px;letter-spacing:.02em}
+[data-theme="dark"] .qnum{background:var(--accent)}
+.badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.75rem;font-weight:700;letter-spacing:.05em;font-family:'SF Mono',Consolas,monospace}
+.badge-QFR{background:var(--b-QFR-bg);color:var(--b-QFR-fg)}.badge-TDC{background:var(--b-TDC-bg);color:var(--b-TDC-fg)}
+.badge-CAL{background:var(--b-CAL-bg);color:var(--b-CAL-fg)}.badge-EXP{background:var(--b-EXP-bg);color:var(--b-EXP-fg)}
+.badge-WTE{background:var(--b-WTE-bg);color:var(--b-WTE-fg)}.badge-STE{background:var(--b-STE-bg);color:var(--b-STE-fg)}
+.badge-DIA{background:var(--b-DIA-bg);color:var(--b-DIA-fg)}.badge-SYN{background:var(--b-SYN-bg);color:var(--b-SYN-fg)}
+.badge-DER{background:var(--b-DER-bg);color:var(--b-DER-fg)}.badge-QWC{background:var(--b-QWC-bg);color:var(--b-QWC-fg)}
+.badge-GRD{background:var(--b-GRD-bg);color:var(--b-GRD-fg)}
+.qspec{font-size:.8rem;color:var(--muted);font-weight:600;background:var(--code-bg);padding:2px 8px;border-radius:4px}
+.qmeta{margin-left:auto;font-size:.82rem;color:var(--muted);font-weight:600}
+@media(max-width:480px){.qmeta{margin-left:0;width:100%;font-size:.78rem}}
+.qmeta .marks{color:var(--accent);font-weight:700}
+.qtext{font-size:1rem;margin-bottom:12px;color:var(--text)}
+.qtext p{margin-bottom:6px}.qtext p:last-child{margin-bottom:0}
+.qtext strong{color:var(--heading)}.qtext em{color:var(--heading2);font-style:italic}
+.qtext code{background:var(--code-bg);padding:1px 5px;border-radius:4px;font-size:.9em}
+details.answer{margin-top:10px;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--bg)}
+details.answer>summary{cursor:pointer;padding:10px 14px;background:var(--code-bg);font-weight:700;color:var(--heading);font-size:.88rem;user-select:none;list-style:none;display:flex;align-items:center;gap:8px}
+details.answer>summary::-webkit-details-marker{display:none}
+details.answer>summary::before{content:"\25B6";font-size:.7rem;transition:transform .15s}
+details.answer[open]>summary::before{transform:rotate(90deg)}
+details.answer>summary:hover{background:var(--tbl-head)}
+.answer-body{padding:12px 16px 14px;font-size:.92rem}
+.answer-body p{margin-bottom:8px}.answer-body p:last-child{margin-bottom:0}
+.answer-body strong{color:var(--heading)}
+.answer-body code{background:var(--code-bg);padding:1px 5px;border-radius:4px;font-size:.88em}
+.answer-body ul,.answer-body ol{margin:4px 0 8px 22px}
+.answer-body li{margin-bottom:3px}
+.answer-body table{margin:8px 0;font-size:.85rem}
+.answer-body pre{background:var(--code-bg);padding:10px 14px;border-radius:8px;overflow-x:auto;margin:8px 0;font-size:.85rem;line-height:1.5}
+.ans{background:var(--worked-bg);border-left:4px solid var(--worked-border);border-radius:0 6px 6px 0;padding:10px 14px;margin:8px 0}
+.ans-label{font-weight:700;color:var(--heading2);margin-right:4px}
+.marking{margin:10px 0}
+.marking-title{font-weight:700;color:var(--heading);font-size:.85rem;margin-bottom:4px;text-transform:uppercase;letter-spacing:.03em}
+.marking ul{margin:4px 0 8px 22px}.marking li{margin-bottom:3px}
+hr{border:none;border-top:1px solid var(--border);margin:24px 0}
+sub,sup{font-size:.75em}
+.prog-table th,.prog-table td{text-align:center}
+.prog-table td.qcol{text-align:left;font-weight:600}
+.prog-table input[type="checkbox"]{width:18px;height:18px;cursor:pointer;accent-color:var(--accent)}
+.prog-table tr.t1-row td.qcol{color:var(--tier1-fg)}
+.prog-table tr.t2-row td.qcol{color:var(--tier2-fg)}
+.prog-table tr.t3-row td.qcol{color:var(--tier3-fg)}
+#progBar{width:100%;height:8px;background:var(--border);border-radius:4px;overflow:hidden;margin:12px 0}
+#progFill{height:100%;background:var(--accent);border-radius:4px;transition:width .3s;width:0}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border)}
+@media print{header,#sidebar,#overlay,#darkBtn,nav,.progress-tracker,.no-print{display:none!important}body{padding-top:0;background:#fff;color:#000}main{max-width:100%;padding:0}details.answer{break-inside:avoid}details.answer>summary{display:none}details.answer .answer-body{display:block!important}.qcard{break-inside:avoid;box-shadow:none;border:1px solid #ccc}.cover{break-after:avoid}*{color:#000!important;background:#fff!important;background-color:#fff!important;background-image:none!important;text-shadow:none!important;box-shadow:none!important;border-color:#666!important}.tier-banner,.qcard,.q-tag,.badge-tier1,.badge-tier2,.badge-tier3,.badge-marks,.badge-type,.prog-table tr.t1-row,.prog-table tr.t2-row,.prog-table tr.t3-row{color:#000!important;background:#f2f2f2!important;background-color:#f2f2f2!important;border:1px solid #666!important}.badge-tier1{border:1px solid #000!important}.badge-tier2{border:1px dashed #000!important}.badge-tier3{border:1px dotted #000!important}a{color:#000!important;text-decoration:underline!important}@page{margin:18mm 16mm}}
+
+</style>
+</head>
+<body>
+<header>
+<button id="menuBtn" onclick="toggleSidebar()" aria-label="Toggle navigation">&#9776;</button>
+<span id="headerTitle">Ch 2.9 — Halogenoalkanes, Alcohols and Spectra — Exam Readiness Questions</span>
+<button id="darkBtn" onclick="toggleDark()" aria-label="Toggle dark mode">&#127769; Dark</button>
+</header>
+<div id="overlay" onclick="toggleSidebar()"></div>
+
+<aside id="sidebar">
+<div class="sb-head"><span>Index</span><button class="sb-close" onclick="toggleSidebar()" aria-label="Close">&#10005;</button></div>
+<nav>
+<a href="#cover" class="chapter" onclick="toggleSidebar()">Cover</a>
+<ul><li><a href="#summary" onclick="toggleSidebar()">&#128202; Summary &amp; Progress Tracker</a></li></ul>
+<a href="#sec-s101" class="chapter" onclick="toggleSidebar()">Spec Point 10.1 — Substitution and Elimination Reactions</a>
+<ul>
+<li><a href="#q1" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q1 QFR</span> 1m</a></li>
+<li><a href="#q2" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q2 TDC</span> 2m</a></li>
+<li><a href="#q3" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q3 EXP</span> 3m</a></li>
+</ul>
+<a href="#sec-s102" class="chapter" onclick="toggleSidebar()">Spec Point 10.2 — Nucleophile Identity in the AgNO₃ Test</a>
+<ul>
+<li><a href="#q4" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q4 WTE</span> 1m</a></li>
+<li><a href="#q5" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q5 EXP</span> 3m</a></li>
+</ul>
+<a href="#sec-s103" class="chapter" onclick="toggleSidebar()">Spec Point 10.3 — Reactivity Trend: Bond Enthalpy, Not Polarity</a>
+<ul>
+<li><a href="#q6" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q6 WTE</span> 2m</a></li>
+<li><a href="#q7" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q7 EXP</span> 3m</a></li>
+<li><a href="#q8" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q8 WTE</span> 2m</a></li>
+<li><a href="#q9" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q9 EXP</span> 4m</a></li>
+</ul>
+<a href="#sec-s104" class="chapter" onclick="toggleSidebar()">Spec Point 10.4 — Nucleophiles and the SN2 Mechanism</a>
+<ul>
+<li><a href="#q10" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q10 TDC</span> 2m</a></li>
+<li><a href="#q11" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q11 WTE</span> 2m</a></li>
+<li><a href="#q12" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q12 DIA</span> 3m</a></li>
+<li><a href="#q13" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q13 TDC</span> 2m</a></li>
+<li><a href="#q14" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q14 WTE</span> 2m</a></li>
+<li><a href="#q15" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q15 DIA</span> 3m</a></li>
+</ul>
+<a href="#sec-s105" class="chapter" onclick="toggleSidebar()">Spec Point 10.5 — Reactions of Halogenoalkanes</a>
+<ul>
+<li><a href="#q16" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q16 QFR</span> 2m</a></li>
+<li><a href="#q17" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q17 TDC</span> 2m</a></li>
+<li><a href="#q18" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q18 EXP</span> 3m</a></li>
+<li><a href="#q19" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q19 WTE</span> 2m</a></li>
+<li><a href="#q20" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q20 QFR</span> 1m</a></li>
+<li><a href="#q21" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q21 EXP</span> 2m</a></li>
+<li><a href="#q22" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q22 WTE</span> 2m</a></li>
+<li><a href="#q23" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q23 SYN</span> 4m</a></li>
+<li><a href="#q24" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q24 EXP</span> 3m</a></li>
+</ul>
+<a href="#sec-s106" class="chapter" onclick="toggleSidebar()">Spec Point 10.6 — Classification of Halogenoalkanes</a>
+<ul>
+<li><a href="#q25" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q25 QFR</span> 2m</a></li>
+</ul>
+<a href="#sec-s107" class="chapter" onclick="toggleSidebar()">Spec Point 10.7 — Aqueous vs Ethanolic KOH</a>
+<ul>
+<li><a href="#q26" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q26 TDC</span> 4m</a></li>
+<li><a href="#q27" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q27 WTE</span> 1m</a></li>
+<li><a href="#q28" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q28 STE</span> 2m</a></li>
+<li><a href="#q29" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q29 EXP</span> 3m</a></li>
+</ul>
+<a href="#sec-s108" class="chapter" onclick="toggleSidebar()">Spec Point 10.8 — Ammonia Reaction Conditions and Elimination Products</a>
+<ul>
+<li><a href="#q30" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q30 TDC</span> 3m</a></li>
+<li><a href="#q31" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q31 EXP</span> 2m</a></li>
+<li><a href="#q32" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q32 SYN</span> 4m</a></li>
+<li><a href="#q33" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q33 SYN</span> 4m</a></li>
+<li><a href="#q34" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q34 CAL</span> 3m</a></li>
+</ul>
+<a href="#sec-s109" class="chapter" onclick="toggleSidebar()">Spec Point 10.9 — Reaction with KCN</a>
+<ul>
+<li><a href="#q35" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q35 CAL</span> 3m</a></li>
+<li><a href="#q36" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q36 SYN</span> 4m</a></li>
+</ul>
+<a href="#sec-s1010" class="chapter" onclick="toggleSidebar()">Spec Point 10.10 — Silver Nitrate Test</a>
+<ul>
+<li><a href="#q37" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q37 QFR</span> 2m</a></li>
+<li><a href="#q38" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q38 EXP</span> 3m</a></li>
+</ul>
+<a href="#sec-s1011" class="chapter" onclick="toggleSidebar()">Spec Point 10.11 — Silver Oxide</a>
+<ul>
+<li><a href="#q39" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q39 EXP</span> 3m</a></li>
+</ul>
+<a href="#sec-s1012" class="chapter" onclick="toggleSidebar()">Spec Point 10.12 — Order of Reactivity</a>
+<ul>
+<li><a href="#q40" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q40 QFR</span> 1m</a></li>
+<li><a href="#q41" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q41 SYN</span> 4m</a></li>
+</ul>
+<a href="#sec-s1013" class="chapter" onclick="toggleSidebar()">Spec Point 10.13 — SN2 and SN1 Mechanisms</a>
+<ul>
+<li><a href="#q42" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q42 TDC</span> 3m</a></li>
+</ul>
+<a href="#sec-s1014" class="chapter" onclick="toggleSidebar()">Spec Point 10.14 — Core Practical 5: Comparing Rates of Hydrolysis</a>
+<ul>
+<li><a href="#q43" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q43 EXP</span> 4m</a></li>
+</ul>
+<a href="#sec-s1015" class="chapter" onclick="toggleSidebar()">Spec Point 10.15 — Naming Alcohols</a>
+<ul>
+<li><a href="#q44" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q44 DIA</span> 2m</a></li>
+</ul>
+<a href="#sec-s1016" class="chapter" onclick="toggleSidebar()">Spec Point 10.16 — Classification and Naming of Alcohols</a>
+<ul>
+<li><a href="#q45" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q45 QFR</span> 2m</a></li>
+<li><a href="#q46" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q46 QFR</span> 2m</a></li>
+</ul>
+<a href="#sec-s1017" class="chapter" onclick="toggleSidebar()">Spec Point 10.17 — Tests for Alcohols</a>
+<ul>
+<li><a href="#q47" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q47 WTE</span> 1m</a></li>
+<li><a href="#q48" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q48 WTE</span> 2m</a></li>
+<li><a href="#q49" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q49 QFR</span> 1m</a></li>
+<li><a href="#q50" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q50 SYN</span> 5m</a></li>
+</ul>
+<a href="#sec-s1018" class="chapter" onclick="toggleSidebar()">Spec Point 10.18 — Infrared Spectroscopy</a>
+<ul>
+<li><a href="#q66" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q66 TDC</span> 3m</a></li>
+<li><a href="#q67" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q67 TDC</span> 3m</a></li>
+<li><a href="#q68" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q68 WTE</span> 2m</a></li>
+<li><a href="#q69" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q69 WTE</span> 2m</a></li>
+<li><a href="#q70" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q70 DIA</span> 3m</a></li>
+<li><a href="#q71" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q71 CAL</span> 3m</a></li>
+<li><a href="#q72" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q72 TDC</span> 3m</a></li>
+<li><a href="#q73" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q73 EXP</span> 3m</a></li>
+<li><a href="#q74" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q74 EXP</span> 3m</a></li>
+<li><a href="#q75" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q75 EXP</span> 3m</a></li>
+<li><a href="#q76" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q76 SYN</span> 4m</a></li>
+</ul>
+<a href="#sec-s1019" class="chapter" onclick="toggleSidebar()">Spec Point 10.19 — Dehydration of Alcohols</a>
+<ul>
+<li><a href="#q51" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q51 TDC</span> 3m</a></li>
+</ul>
+<a href="#sec-s1020" class="chapter" onclick="toggleSidebar()">Spec Point 10.20 — Oxidation of Alcohols</a>
+<ul>
+<li><a href="#q52" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q52 TDC</span> 3m</a></li>
+<li><a href="#q53" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q53 WTE</span> 2m</a></li>
+<li><a href="#q54" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q54 QFR</span> 1m</a></li>
+<li><a href="#q55" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q55 EXP</span> 3m</a></li>
+<li><a href="#q56" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q56 EXP</span> 2m</a></li>
+<li><a href="#q57" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q57 STE</span> 3m</a></li>
+<li><a href="#q58" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q58 EXP</span> 2m</a></li>
+<li><a href="#q59" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q59 TDC</span> 2m</a></li>
+<li><a href="#q60" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q60 SYN</span> 4m</a></li>
+<li><a href="#q61" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q61 EXP</span> 3m</a></li>
+</ul>
+<a href="#sec-s1021" class="chapter" onclick="toggleSidebar()">Spec Point 10.21 — [O] Calculations</a>
+<ul>
+<li><a href="#q62" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q62 CAL</span> 3m</a></li>
+<li><a href="#q63" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q63 SYN</span> 4m</a></li>
+</ul>
+<a href="#sec-s1022" class="chapter" onclick="toggleSidebar()">Spec Point 10.22 — IR Absorptions for C=O and C=C</a>
+<ul>
+<li><a href="#q77" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q77 QFR</span> 2m</a></li>
+<li><a href="#q78" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q78 STE</span> 2m</a></li>
+</ul>
+<a href="#sec-s1023" class="chapter" onclick="toggleSidebar()">Spec Point 10.23 — Conversion of Alcohols to Chloroalkanes</a>
+<ul>
+<li><a href="#q64" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q64 TDC</span> 3m</a></li>
+<li><a href="#q65" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q65 WTE</span> 2m</a></li>
+</ul>
+<a href="#sec-s1024" class="chapter" onclick="toggleSidebar()">Spec Point 10.24 — Mass Spectrometry</a>
+<ul>
+<li><a href="#q79" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q79 QFR</span> 2m</a></li>
+<li><a href="#q80" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q80 QFR</span> 1m</a></li>
+<li><a href="#q81" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q81 CAL</span> 3m</a></li>
+<li><a href="#q82" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q82 EXP</span> 3m</a></li>
+<li><a href="#q83" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q83 DIA</span> 3m</a></li>
+<li><a href="#q84" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q84 CAL</span> 3m</a></li>
+<li><a href="#q85" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q85 QFR</span> 2m</a></li>
+<li><a href="#q86" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q86 SYN</span> 5m</a></li>
+</ul>
+<a href="#sec-s1027" class="chapter" onclick="toggleSidebar()">Spec Point 10.27 — Carboxylic Acid Identification</a>
+<ul>
+<li><a href="#q87" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q87 QFR</span> 1m</a></li>
+<li><a href="#q88" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q88 EXP</span> 4m</a></li>
+</ul>
+<a href="#sec-s1028" class="chapter" onclick="toggleSidebar()">Spec Point 10.28 — Determination of Mᵣ by Volatilisation</a>
+<ul>
+<li><a href="#q89" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q89 CAL</span> 3m</a></li>
+</ul>
+<a href="#sec-s1024-2" class="chapter" onclick="toggleSidebar()">Spec Point 10.24+ — Additional Spectroscopy &amp; Mechanism Questions</a>
+<ul>
+<li><a href="#q90" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q90 EXP</span> 3m</a></li>
+<li><a href="#q91" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q91 EXP</span> 4m</a></li>
+<li><a href="#q92" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q92 SYN</span> 4m</a></li>
+<li><a href="#q93" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q93 EXP</span> 3m</a></li>
+</ul>
+</nav>
+</aside>
+<main>
+<section class="cover" id="cover">
+<h1>Chapter 2.9 — Halogenoalkanes, Alcohols and Spectra</h1>
+<p class="subtitle">WCH12 &middot; Edexcel IAL Chemistry Unit 2 &middot; Exam Readiness Questions</p>
+<div class="meta">
+<span class="tag">Spec Points 10.1–10.23+</span>
+<span class="tag">7 Papers Analysed</span>
+<span class="tag">Jun 2022 – Oct 2024</span>
+</div>
+<div class="stats">
+<div class="stat"><div class="num">93</div><div class="lbl">Questions</div></div>
+<div class="stat"><div class="num">246</div><div class="lbl">Total Marks</div></div>
+<div class="stat"><div class="num">~492</div><div class="lbl">Minutes</div></div>
+</div>
+</section>
+<section id="summary">
+<h2>&#128202; Summary &amp; Progress Tracker</h2>
+<div class="intro">
+<p>This set contains <strong>93 questions</strong> totalling <strong>246 marks</strong>, with an estimated completion time of <strong>~492 minutes</strong>. Questions are organised by specification point and tagged by tier (T1 Foundation, T2 Application, T3 Integration) and type (QFR, TDC, CAL, EXP, WTE, STE, DIA, SYN, DER, QWC, GRD).</p>
+</div>
+<h3>Progress Tracker</h3>
+<p id="progText" style="font-size:.9rem;color:var(--muted);margin-bottom:6px">0 / 93 questions completed</p>
+<div id="progBar"><div id="progFill"></div></div>
+<div class="tbl-wrap">
+<table class="prog-table">
+<thead><tr><th class="qcol">Question</th><th>Type</th><th>Tier</th><th>Marks</th><th>Done</th></tr></thead>
+<tbody>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.1 — Substitution and Elimination Reactions</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q1" style="text-decoration:none;color:inherit">Q1</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q1"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q2" style="text-decoration:none;color:inherit">Q2</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q2"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q3" style="text-decoration:none;color:inherit">Q3</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q3"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.2 — Nucleophile Identity in the AgNO₃ Test</td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q4" style="text-decoration:none;color:inherit">Q4</a></td><td class="num">WTE</td><td class="num">T2</td><td class="num">1</td><td><input type="checkbox" data-qid="q4"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q5" style="text-decoration:none;color:inherit">Q5</a></td><td class="num">EXP</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q5"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.3 — Reactivity Trend: Bond Enthalpy, Not Polarity</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q6" style="text-decoration:none;color:inherit">Q6</a></td><td class="num">WTE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q6"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q7" style="text-decoration:none;color:inherit">Q7</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q7"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q8" style="text-decoration:none;color:inherit">Q8</a></td><td class="num">WTE</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q8"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q9" style="text-decoration:none;color:inherit">Q9</a></td><td class="num">EXP</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q9"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.4 — Nucleophiles and the SN2 Mechanism</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q10" style="text-decoration:none;color:inherit">Q10</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q10"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q11" style="text-decoration:none;color:inherit">Q11</a></td><td class="num">WTE</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q11"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q12" style="text-decoration:none;color:inherit">Q12</a></td><td class="num">DIA</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q12"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q13" style="text-decoration:none;color:inherit">Q13</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q13"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q14" style="text-decoration:none;color:inherit">Q14</a></td><td class="num">WTE</td><td class="num">T3</td><td class="num">2</td><td><input type="checkbox" data-qid="q14"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q15" style="text-decoration:none;color:inherit">Q15</a></td><td class="num">DIA</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q15"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.5 — Reactions of Halogenoalkanes</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q16" style="text-decoration:none;color:inherit">Q16</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q16"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q17" style="text-decoration:none;color:inherit">Q17</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q17"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q18" style="text-decoration:none;color:inherit">Q18</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q18"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q19" style="text-decoration:none;color:inherit">Q19</a></td><td class="num">WTE</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q19"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q20" style="text-decoration:none;color:inherit">Q20</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q20"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q21" style="text-decoration:none;color:inherit">Q21</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q21"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q22" style="text-decoration:none;color:inherit">Q22</a></td><td class="num">WTE</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q22"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q23" style="text-decoration:none;color:inherit">Q23</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q23"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q24" style="text-decoration:none;color:inherit">Q24</a></td><td class="num">EXP</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q24"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.6 — Classification of Halogenoalkanes</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q25" style="text-decoration:none;color:inherit">Q25</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q25"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.7 — Aqueous vs Ethanolic KOH</td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q26" style="text-decoration:none;color:inherit">Q26</a></td><td class="num">TDC</td><td class="num">T2</td><td class="num">4</td><td><input type="checkbox" data-qid="q26"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q27" style="text-decoration:none;color:inherit">Q27</a></td><td class="num">WTE</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q27"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q28" style="text-decoration:none;color:inherit">Q28</a></td><td class="num">STE</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q28"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q29" style="text-decoration:none;color:inherit">Q29</a></td><td class="num">EXP</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q29"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.8 — Ammonia Reaction Conditions and Elimination Products</td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q30" style="text-decoration:none;color:inherit">Q30</a></td><td class="num">TDC</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q30"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q31" style="text-decoration:none;color:inherit">Q31</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q31"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q32" style="text-decoration:none;color:inherit">Q32</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q32"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q33" style="text-decoration:none;color:inherit">Q33</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q33"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q34" style="text-decoration:none;color:inherit">Q34</a></td><td class="num">CAL</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q34"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.9 — Reaction with KCN</td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q35" style="text-decoration:none;color:inherit">Q35</a></td><td class="num">CAL</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q35"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q36" style="text-decoration:none;color:inherit">Q36</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q36"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.10 — Silver Nitrate Test</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q37" style="text-decoration:none;color:inherit">Q37</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q37"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q38" style="text-decoration:none;color:inherit">Q38</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q38"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.11 — Silver Oxide</td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q39" style="text-decoration:none;color:inherit">Q39</a></td><td class="num">EXP</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q39"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.12 — Order of Reactivity</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q40" style="text-decoration:none;color:inherit">Q40</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q40"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q41" style="text-decoration:none;color:inherit">Q41</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q41"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.13 — SN2 and SN1 Mechanisms</td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q42" style="text-decoration:none;color:inherit">Q42</a></td><td class="num">TDC</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q42"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.14 — Core Practical 5: Comparing Rates of Hydrolysis</td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q43" style="text-decoration:none;color:inherit">Q43</a></td><td class="num">EXP</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q43"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.15 — Naming Alcohols</td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q44" style="text-decoration:none;color:inherit">Q44</a></td><td class="num">DIA</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q44"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.16 — Classification and Naming of Alcohols</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q45" style="text-decoration:none;color:inherit">Q45</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q45"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q46" style="text-decoration:none;color:inherit">Q46</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q46"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.17 — Tests for Alcohols</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q47" style="text-decoration:none;color:inherit">Q47</a></td><td class="num">WTE</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q47"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q48" style="text-decoration:none;color:inherit">Q48</a></td><td class="num">WTE</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q48"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q49" style="text-decoration:none;color:inherit">Q49</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q49"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q50" style="text-decoration:none;color:inherit">Q50</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">5</td><td><input type="checkbox" data-qid="q50"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.18 — Infrared Spectroscopy</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q66" style="text-decoration:none;color:inherit">Q66</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">3</td><td><input type="checkbox" data-qid="q66"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q67" style="text-decoration:none;color:inherit">Q67</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">3</td><td><input type="checkbox" data-qid="q67"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q68" style="text-decoration:none;color:inherit">Q68</a></td><td class="num">WTE</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q68"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q69" style="text-decoration:none;color:inherit">Q69</a></td><td class="num">WTE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q69"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q70" style="text-decoration:none;color:inherit">Q70</a></td><td class="num">DIA</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q70"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q71" style="text-decoration:none;color:inherit">Q71</a></td><td class="num">CAL</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q71"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q72" style="text-decoration:none;color:inherit">Q72</a></td><td class="num">TDC</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q72"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q73" style="text-decoration:none;color:inherit">Q73</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q73"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q74" style="text-decoration:none;color:inherit">Q74</a></td><td class="num">EXP</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q74"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q75" style="text-decoration:none;color:inherit">Q75</a></td><td class="num">EXP</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q75"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q76" style="text-decoration:none;color:inherit">Q76</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q76"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.19 — Dehydration of Alcohols</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q51" style="text-decoration:none;color:inherit">Q51</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">3</td><td><input type="checkbox" data-qid="q51"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.20 — Oxidation of Alcohols</td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q52" style="text-decoration:none;color:inherit">Q52</a></td><td class="num">TDC</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q52"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q53" style="text-decoration:none;color:inherit">Q53</a></td><td class="num">WTE</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q53"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q54" style="text-decoration:none;color:inherit">Q54</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q54"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q55" style="text-decoration:none;color:inherit">Q55</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q55"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q56" style="text-decoration:none;color:inherit">Q56</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q56"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q57" style="text-decoration:none;color:inherit">Q57</a></td><td class="num">STE</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q57"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q58" style="text-decoration:none;color:inherit">Q58</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q58"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q59" style="text-decoration:none;color:inherit">Q59</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q59"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q60" style="text-decoration:none;color:inherit">Q60</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q60"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q61" style="text-decoration:none;color:inherit">Q61</a></td><td class="num">EXP</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q61"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.21 — [O] Calculations</td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q62" style="text-decoration:none;color:inherit">Q62</a></td><td class="num">CAL</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q62"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q63" style="text-decoration:none;color:inherit">Q63</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q63"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.22 — IR Absorptions for C=O and C=C</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q77" style="text-decoration:none;color:inherit">Q77</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q77"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q78" style="text-decoration:none;color:inherit">Q78</a></td><td class="num">STE</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q78"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.23 — Conversion of Alcohols to Chloroalkanes</td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q64" style="text-decoration:none;color:inherit">Q64</a></td><td class="num">TDC</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q64"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q65" style="text-decoration:none;color:inherit">Q65</a></td><td class="num">WTE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q65"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.24 — Mass Spectrometry</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q79" style="text-decoration:none;color:inherit">Q79</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q79"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q80" style="text-decoration:none;color:inherit">Q80</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q80"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q81" style="text-decoration:none;color:inherit">Q81</a></td><td class="num">CAL</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q81"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q82" style="text-decoration:none;color:inherit">Q82</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q82"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q83" style="text-decoration:none;color:inherit">Q83</a></td><td class="num">DIA</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q83"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q84" style="text-decoration:none;color:inherit">Q84</a></td><td class="num">CAL</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q84"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q85" style="text-decoration:none;color:inherit">Q85</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q85"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q86" style="text-decoration:none;color:inherit">Q86</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">5</td><td><input type="checkbox" data-qid="q86"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.27 — Carboxylic Acid Identification</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q87" style="text-decoration:none;color:inherit">Q87</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q87"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q88" style="text-decoration:none;color:inherit">Q88</a></td><td class="num">EXP</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q88"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.28 — Determination of Mᵣ by Volatilisation</td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q89" style="text-decoration:none;color:inherit">Q89</a></td><td class="num">CAL</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q89"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 10.24+ — Additional Spectroscopy &amp; Mechanism Questions</td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q90" style="text-decoration:none;color:inherit">Q90</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q90"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q91" style="text-decoration:none;color:inherit">Q91</a></td><td class="num">EXP</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q91"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q92" style="text-decoration:none;color:inherit">Q92</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q92"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q93" style="text-decoration:none;color:inherit">Q93</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q93"></td></tr>
+</tbody></table></div>
+</section>
+<section id="sec-s101">
+<h2>Spec Point 10.1 — Substitution and Elimination Reactions</h2>
+<article class="qcard" id="q1">
+<div class="qcard-head">
+<span class="qnum">Q1</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§10.1</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>Define the term hydrolysis as applied to halogenoalkanes.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>A substitution reaction in which a halogenoalkane reacts with water (or aqueous hydroxide) to form an alcohol. (1)</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q2">
+<div class="qcard-head">
+<span class="qnum">Q2</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§10.1</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Compare substitution and elimination reactions by completing the table below. | Feature | Substitution | Elimination | |---------|-------------|-------------| | What happens to atoms/groups | (a) | (b) | | Bond formed in organic product | (c) | (d) |</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) An atom/group is <strong>replaced</strong> by a different atom/group (½)
+(b) A small molecule (e.g. H₂O, HX) is <strong>removed</strong> (½)
+(c) No new C=C bond / single bonds only (½)
+(d) A C=C <strong>double bond</strong> is formed (½)
+<em>(Award 1 mark for each correct pair: (a)+(b) = 1 mark; (c)+(d) = 1 mark)</em></p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q3">
+<div class="qcard-head">
+<span class="qnum">Q3</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.1</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Classify each of the following reactions as substitution, elimination, addition, or oxidation. Give one reason for each classification. (i) CH₃CH₂Br + NaOH(aq) → CH₃CH₂OH + NaBr (ii) CH₃CHBrCH₃ + KOH(ethanol) → CH₃CH=CH₂ + H₂O + KBr (iii) CH₃CH₂OH + [O] → CH₃CHO + H₂O</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(i) <strong>Substitution</strong> — the Br atom is replaced by an OH group on the same carbon (1)
+(ii) <strong>Elimination</strong> — HBr is removed and a C=C double bond is formed (1)
+(iii) <strong>Oxidation</strong> — the functional group changes from alcohol to aldehyde (loss of H / gain of O) (1)</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s102">
+<h2>Spec Point 10.2 — Nucleophile Identity in the AgNO₃ Test</h2>
+<article class="qcard" id="q4">
+<div class="qcard-head">
+<span class="qnum">Q4</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§10.2</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>A student observes a precipitate forming when 1-bromobutane is added to aqueous silver nitrate in ethanol. The student concludes: <em>"The silver ion (Ag⁺) acted as the nucleophile in this reaction."</em> State whether this conclusion is correct, and if not, identify the actual nucleophile.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Incorrect. The nucleophile is <strong>H₂O</strong> (water). Ag⁺ acts to <strong>precipitate the halide ion</strong> (Br⁻) as AgBr; it is not the nucleophile. (1)</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q5">
+<div class="qcard-head">
+<span class="qnum">Q5</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.2</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Reaction of a halogenoalkane with aqueous silver nitrate involves two distinct roles. (a) Identify the species that acts as the nucleophile and state what is formed when it attacks the halogenoalkane. (2 marks) (b) Identify the role of Ag⁺ in this reaction. (1 mark)</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) The nucleophile is <strong>H₂O (water)</strong> (1). It attacks the electrophilic carbon, forming an <strong>alcohol</strong> (1). <em>(Accept: substitution product / hydroxyl group replaces halogen)</em>
+(b) Ag⁺ reacts with the displaced halide ion (X⁻) to form an <strong>insoluble silver halide precipitate</strong> (AgX) (1), which provides the visible observation used to compare reactivity of different halogenoalkanes.</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s103">
+<h2>Spec Point 10.3 — Reactivity Trend: Bond Enthalpy, Not Polarity</h2>
+<article class="qcard" id="q6">
+<div class="qcard-head">
+<span class="qnum">Q6</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§10.3</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student writes: "The hydrolysis of iodomethane is faster than the hydrolysis of fluoromethane because the C–I bond is more polar than the C–F bond." Identify the error in this statement and give the correct explanation.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Error: the C–I bond is the least polar, not the most polar (1). Correct explanation: the C–I bond has a lower bond enthalpy / is weaker than the C–F bond, leading to a lower activation energy for bond breaking (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q7">
+<div class="qcard-head">
+<span class="qnum">Q7</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.3</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Explain why the rate of hydrolysis of halogenoalkanes increases in the order: RCl &lt; RBr &lt; RI. Your answer should include reference to bond enthalpy and activation energy.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Mean bond enthalpy decreases from C–Cl to C–Br to C–I / C–I bond is the weakest (1). The weaker the C–X bond, the lower the activation energy for the rate-determining step (1). A lower activation energy means a greater proportion of molecules have energy ≥ Eₐ (Maxwell-Boltzmann distribution), leading to more frequent successful collisions per second (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q8">
+<div class="qcard-head">
+<span class="qnum">Q8</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§10.3</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student explains the reactivity trend by saying "reactivity increases down Group 17 because the halogens become less electronegative." Explain why this is NOT the accepted explanation and state what should be said instead.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Electronegativity/polarity does not determine the rate of SN2 reactions (1). The correct explanation is that the <strong>C–X bond enthalpy decreases</strong> down the group (C–F &gt; C–Cl &gt; C–Br &gt; C–I), giving a <strong>lower activation energy</strong> and therefore a faster reaction (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q9">
+<div class="qcard-head">
+<span class="qnum">Q9</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.3</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>A student is asked to explain why fluoromethane is the least reactive halogenoalkane in hydrolysis. The student writes: "The C–F bond is the most polar, so the carbon is most electrophilic and most susceptible to nucleophilic attack, therefore fluoromethane should react fastest." Evaluate this explanation. In your answer you should: identify what is correct about the student's statement, identify what is incorrect or incomplete, and provide a complete and correct explanation.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Correct: the C–F bond is the most polar (largest electronegativity difference), so the carbon atom does carry the greatest δ⁺ charge and is the most electrophilic (1). Incorrect/incomplete: the student assumes that greater electrophilicity (from polarity) determines reactivity, but this is not the dominant factor in hydrolysis (1). Complete explanation: the C–F bond has the highest mean bond enthalpy (485 kJ mol⁻¹), requiring the most energy to break and giving the highest activation energy (1). Therefore, despite being the most polar, fluoromethane reacts slowest because bond enthalpy, not bond polarity, is the dominant factor controlling the rate of hydrolysis (1).</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s104">
+<h2>Spec Point 10.4 — Nucleophiles and the SN2 Mechanism</h2>
+<article class="qcard" id="q10">
+<div class="qcard-head">
+<span class="qnum">Q10</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§10.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>(a) Define the term nucleophile. (1) (b) State the number of steps in an SN2 mechanism. (1)</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) An electron-pair donor (1) [accept: a species that donates a pair of electrons to form a new covalent bond] (b) One (1) [accept: one step / concerted / single step]</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q11">
+<div class="qcard-head">
+<span class="qnum">Q11</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§10.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student draws a curly arrow from the negative charge symbol on OH⁻ towards the carbon in an SN2 mechanism. Explain why this is incorrect and state what should be drawn instead.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The curly arrow must originate from a <strong>lone pair of electrons</strong> on the oxygen atom, not from the negative charge symbol (1). The negative charge is a consequence of the extra electron, not the electrons themselves — the arrow represents the movement of the electron pair (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q12">
+<div class="qcard-head">
+<span class="qnum">Q12</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§10.4</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Draw the SN2 mechanism for the hydrolysis of bromoethane with aqueous sodium hydroxide. Your mechanism should include: curly arrows to show the movement of electron pairs, the transition state, and the products.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Curly arrow from lone pair on O of OH⁻ to the electrophilic carbon of bromoethane AND curly arrow from the C–Br bond to Br (1). Transition state drawn with the central carbon bonded to five groups in a trigonal bipyramidal arrangement, with partial/dashed bonds to both the incoming OH group and the outgoing Br (1). Products shown: ethanol (CH₃CH₂OH) and Br⁻ (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q13">
+<div class="qcard-head">
+<span class="qnum">Q13</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§10.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State TWO differences between the transition state and the products of an SN2 reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Any two from: the transition state has five groups around the central carbon (trigonal bipyramidal) whereas the product has four groups (tetrahedral) (1); the transition state is not isolable whereas the products are stable, separate species (1); the transition state has a partial bond to both the nucleophile and the leaving group whereas the product has a complete bond to the nucleophile only (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q14">
+<div class="qcard-head">
+<span class="qnum">Q14</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§10.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student writing an SN2 mechanism uses a half-headed (fishhook) arrow from the C–Br bond to Br. Why would this be penalised in an Edexcel exam?</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>A half-headed (fishhook) arrow represents the movement of a <strong>single electron</strong> (homolytic fission) (1). The C–Br bond in an SN2 mechanism breaks by <strong>heterolytic fission</strong> (both electrons go to Br), so a full-headed curly arrow must be used (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q15">
+<div class="qcard-head">
+<span class="qnum">Q15</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§10.4</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Draw a reaction profile diagram (potential energy vs reaction coordinate) showing two curves: one for the SN2 hydrolysis of 1-chlorobutane and one for 1-iodobutane. Label the activation energies and explain the difference.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li>Both curves start at the same (or similar) reactant energy level and end at the same product energy level</li>
+<li>The <strong>1-iodobutane curve</strong> has a <strong>lower activation energy (Eₐ)</strong> peak than the 1-chlorobutane curve (1)</li>
+<li>Label Eₐ(I) &lt; Eₐ(Cl) on the diagram (1)</li>
+<li><strong>Explanation</strong>: C–I bond has lower bond enthalpy than C–Cl, so less energy is required to break the C–X bond in the rate-determining step; the 1-iodobutane reaction is therefore faster at the same temperature (1)</li>
+</ul></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s105">
+<h2>Spec Point 10.5 — Reactions of Halogenoalkanes</h2>
+<article class="qcard" id="q16">
+<div class="qcard-head">
+<span class="qnum">Q16</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§10.5</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State the systematic name of the halogenoalkane with the formula (CH₃)₂CHCH₂Br.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>1-bromo-2-methylpropane (2)</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q17">
+<div class="qcard-head">
+<span class="qnum">Q17</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§10.5</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Compare the products of the reaction of 1-bromopropane with (i) NaOH(aq) and (ii) KCN(ethanol). In each case, state the product name and the number of carbon atoms in the product.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(i) NaOH(aq) → propan-1-ol, <strong>3 carbon atoms</strong> (1). (ii) KCN(ethanol) → butanenitrile, <strong>4 carbon atoms</strong> (the nitrile adds one carbon to the chain) (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q18">
+<div class="qcard-head">
+<span class="qnum">Q18</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.5</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Explain why the reaction of a halogenoalkane with KCN is particularly useful in organic synthesis. Refer to the carbon chain length in your answer.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The cyanide ion (CN⁻) acts as a nucleophile and substitutes the halogen on the halogenoalkane (1). The CN group contains a <strong>carbon atom</strong>, so the product (a nitrile) has <strong>one more carbon</strong> in the chain than the starting halogenoalkane (1). This extends the carbon chain by one carbon, which is valuable for building larger organic molecules (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q19">
+<div class="qcard-head">
+<span class="qnum">Q19</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§10.5</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student writes that the reaction of 1-chloropentane with KCN in aqueous solution produces pentanenitrile. Explain why this is incorrect and state the actual product under aqueous conditions.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Under <strong>aqueous</strong> conditions, water (or hydroxide from water) acts as the nucleophile, so the product is <strong>pentan-1-ol</strong> (via hydrolysis), not the nitrile (1). To obtain pentanenitrile, the reaction must be carried out in <strong>ethanol</strong> as the solvent, not aqueous solution (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q20">
+<div class="qcard-head">
+<span class="qnum">Q20</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§10.5</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the name of the organic product when 1-bromopropane reacts with excess ammonia.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Propylamine (CH₃CH₂CH₂NH₂) (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q21">
+<div class="qcard-head">
+<span class="qnum">Q21</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.5</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain why the reaction of 1-bromopropane with ammonia requires TWO steps in the mechanism, unlike the reaction with NaOH(aq) which occurs in one step.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Ammonia (NH₃) is a <strong>neutral</strong> nucleophile, so when it attacks the electrophilic carbon, it forms a positively charged intermediate (CH₃CH₂CH₂N⁺H₃) because nitrogen now has four bonds (1). A second NH₃ molecule is needed to remove a proton (H⁺) from this intermediate, forming the neutral amine product and NH₄⁺ (1). In contrast, OH⁻ is already negatively charged and the product (alcohol) is neutral directly.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q22">
+<div class="qcard-head">
+<span class="qnum">Q22</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§10.5</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student writes the product of Step 1 of the ammonia reaction as CH₃CH₂CH₂NH₃ (without a positive charge on N). Explain why this would lose a mark.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>After the nitrogen of NH₃ forms a bond to carbon, it has <strong>four bonds and a positive charge</strong> (N⁺) — it is a propylammonium ion, not a neutral amine (1). Omitting the positive charge on nitrogen shows a failure to recognise that nitrogen now has four covalent bonds and carries a formal positive charge (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q23">
+<div class="qcard-head">
+<span class="qnum">Q23</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§10.5</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Describe the full two-step mechanism for the reaction of 1-bromopropane with excess ammonia. In your answer, show all curly arrows, name all intermediates and products, and state the conditions.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>Step 1:</strong> Lone pair on N of NH₃ attacks the electrophilic carbon (Cδ⁺) of 1-bromopropane; simultaneous curly arrow from C–Br bond to Br (1). Forms propylammonium ion (CH₃CH₂CH₂N⁺H₃) and Br⁻ (1).
+<strong>Step 2:</strong> A second NH₃ molecule acts as a base; curly arrow from lone pair on N to H⁺ on the ammonium ion; curly arrow from N–H bond to N⁺ (1). Forms propylamine (CH₃CH₂CH₂NH₂) and NH₄⁺ (1).
+<strong>Conditions (required for full marks but no separate mark — counted within Step 1/2):</strong> ethanol as solvent, heat under pressure in a sealed tube, excess ammonia. <em>(Any one of these conditions may be stated; the 4 marks are all awarded for the two-step mechanism above.)</em></p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q24">
+<div class="qcard-head">
+<span class="qnum">Q24</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.5</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Explain TWO key distinctions between the conditions used for (R1) hydrolysis to form an alcohol and (R3) reaction with ammonia to form an amine.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Distinction 1: R1 uses <strong>aqueous</strong> solvent (water) because water is the nucleophile in hydrolysis; R3 uses <strong>ethanol</strong> as solvent because aqueous conditions would cause competing hydrolysis of the halogenoalkane (1). Distinction 2: R1 is carried out under <strong>reflux</strong> (heating with condenser, open to atmosphere); R3 requires heating <strong>under pressure</strong> in a sealed tube because ammonia is a gas and needs to be kept in contact with the halogenoalkane at elevated temperature (1). Both R1 and R3 are nucleophilic substitution but require different practical conditions (1).</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s106">
+<h2>Spec Point 10.6 — Classification of Halogenoalkanes</h2>
+<article class="qcard" id="q25">
+<div class="qcard-head">
+<span class="qnum">Q25</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§10.6</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Classify each of the following halogenoalkanes as primary, secondary or tertiary. (i) 1-bromopropane, CH₃CH₂CH₂Br (ii) Cyclohexyl bromide</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(i) Primary <strong>(1)</strong> — the carbon bearing the bromine is bonded to one other carbon atom.
+(ii) Secondary <strong>(1)</strong> — the carbon bearing the bromine is bonded to two ring carbon atoms.</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s107">
+<h2>Spec Point 10.7 — Aqueous vs Ethanolic KOH</h2>
+<article class="qcard" id="q26">
+<div class="qcard-head">
+<span class="qnum">Q26</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§10.7</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Complete the table to compare the reactions of a halogenoalkane with KOH. | Condition | Type of solvent | Type of reaction | Organic product | |-----------|----------------|------------------|-----------------| | Heat under reflux | Aqueous | | | | Heat | Ethanolic | | |</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Type of solvent</th>
+<th>Type of reaction</th>
+<th>Organic product</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Heat under reflux</td>
+<td>Aqueous</td>
+<td>Substitution (1)</td>
+<td>Alcohol (1)</td>
+</tr>
+<tr>
+<td>Heat</td>
+<td>Ethanolic</td>
+<td>Elimination (1)</td>
+<td>Alkene (1)</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q27">
+<div class="qcard-head">
+<span class="qnum">Q27</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§10.7</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>A student writes: "Heating 1-bromopropane with aqueous KOH produces propene." Identify the error in this statement.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Aqueous KOH gives <strong>substitution</strong> (hydrolysis) producing an <strong>alcohol</strong> (propan-1-ol); <strong>elimination</strong> to give propene requires <strong>ethanolic</strong> KOH (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q28">
+<div class="qcard-head">
+<span class="qnum">Q28</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§10.7</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State the organic product formed when 2-bromopropane reacts with: (i) aqueous NaOH heated under reflux (ii) ethanolic KOH heated</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(i) Propan-2-ol (CH₃CH(OH)CH₃) <strong>(1)</strong>
+(ii) Propene (CH₃CH=CH₂) <strong>(1)</strong></p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q29">
+<div class="qcard-head">
+<span class="qnum">Q29</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.7</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Explain why 1-chlorobutane would give the slowest precipitate in an AgNO₃ in ethanol test compared to (CH₃)₃CI, (CH₃)₂CHBr, and CH₃CH₂CH₂Br.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>1-Chlorobutane is <strong>primary</strong> (favouring the slower SN2 mechanism rather than SN1) (1) AND contains <strong>chlorine</strong>, which forms the <strong>strongest C–X bond</strong> (highest bond enthalpy, highest activation energy) among Cl, Br, and I (1). Both factors (primary structure AND strong C–Cl bond) result in the slowest rate of hydrolysis, hence the slowest precipitate formation (1).</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s108">
+<h2>Spec Point 10.8 — Ammonia Reaction Conditions and Elimination Products</h2>
+<article class="qcard" id="q30">
+<div class="qcard-head">
+<span class="qnum">Q30</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§10.8</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Compare the conditions required for the reaction of a halogenoalkane with aqueous sodium hydroxide (hydrolysis) with those required for reaction with ammonia to form a primary amine. Your answer should include the solvent, heating method and a reason for any difference.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Aqueous NaOH: dissolved in water (or aqueous ethanol), heated under reflux (1). Ammonia: dissolved in alcoholic ammonia (ethanol solvent), heated under pressure / in a sealed tube (1). Reason: ammonia is a gas and would escape from an open reflux system, so a sealed tube is required to maintain sufficient concentration / pressure of NH₃ (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q31">
+<div class="qcard-head">
+<span class="qnum">Q31</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.8</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Even when a large excess of ammonia is used, the yield of the primary amine from the reaction of a halogenoalkane with ammonia is relatively low. Explain why.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The primary amine product (R–NH₂) itself contains a lone pair on nitrogen and can act as a nucleophile (1). It can undergo further nucleophilic substitution with unreacted halogenoalkane to form a secondary amine, tertiary amine or quaternary ammonium salt, reducing the yield of the desired primary amine (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q32">
+<div class="qcard-head">
+<span class="qnum">Q32</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§10.8</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>A student carries out two experiments on 2-bromobutane. <strong>Experiment 1:</strong> 2-bromobutane is warmed with aqueous sodium hydroxide. <strong>Experiment 2:</strong> 2-bromobutane is warmed with potassium hydroxide dissolved in ethanol. (a) For each experiment, state the reaction type and name the nucleophile. (2 marks) (b) For Experiment 2, the student expects the major organic product to be but-1-ene but the major product is actually but-2-ene. Explain why but-2-ene is the major product. (2 marks)</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) <strong>Experiment 1:</strong> Substitution (1); nucleophile = <strong>OH⁻</strong> (1)
+<strong>Experiment 2:</strong> Elimination (1); base = <strong>OH⁻</strong> (1)
+<em>(Note: in elimination, OH⁻ acts as a base (abstracting H⁺), not a nucleophile; accept "OH⁻" for both experiments)</em>
+(b) But-2-ene is the <strong>more substituted alkene</strong> (it has more alkyl groups attached to the C=C double bond) (1), making it <strong>more stable</strong> than but-1-ene (1). <em>(Accept: Zaitsev's rule — the alkene with the greater number of alkyl groups on the C=C bond is favoured)</em></p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q33">
+<div class="qcard-head">
+<span class="qnum">Q33</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§10.8</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>2-Bromobutane (CH₃CHBrCH₂CH₃) undergoes elimination with hot, concentrated ethanolic KOH. (a) State the reaction type. (b) Name the alkene products formed. (c) For each product, state whether it shows E/Z stereoisomerism, giving a reason.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) <strong>Elimination</strong> (1). (b) <strong>But-1-ene</strong> and <strong>but-2-ene</strong> (1). (c) But-2-ene: YES, it shows E/Z isomerism because each carbon of the C=C has two different groups (CH₃ and H on each carbon) (1). But-1-ene: NO, one carbon of the C=C has two H atoms (CH₂=), so E/Z isomerism is not possible (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q34">
+<div class="qcard-head">
+<span class="qnum">Q34</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§10.8</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>CH₃CH₂CHBrCH₂CH₂CH₃ undergoes elimination with hot ethanolic KOH. (a) Name the two alkene products (without stereoisomers). (b) State the total number of alkene products including stereoisomers.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) <strong>Hex-2-ene</strong> and <strong>hex-3-ene</strong> (1 each, 2 marks). (b) <strong>4</strong> products total (hex-2-ene has E and Z stereoisomers; hex-3-ene has E and Z stereoisomers) (1).</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s109">
+<h2>Spec Point 10.9 — Reaction with KCN</h2>
+<article class="qcard" id="q35">
+<div class="qcard-head">
+<span class="qnum">Q35</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§10.9</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>2-bromopropane (C₃H₇Br) is reacted with excess KCN dissolved in ethanol and heated. (a) Give the IUPAC name of the organic product. (b) How many carbon atoms does the product contain? (c) Write the equation for this reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) 2-methylpropanenitrile (1). (b) 4 carbon atoms (1). (c) CH₃CHBrCH₃ + KCN → CH₃CH(CN)CH₃ + KBr (1). The CN⁻ replaces Br via SN2, extending the carbon chain by one carbon.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q36">
+<div class="qcard-head">
+<span class="qnum">Q36</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§10.9</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>1-bromopropane is reacted with KCN in ethanol to give compound A. Compound A is then reduced to give compound B, which is a primary amine. (a) Give the structural formula of A. (b) Give the name and structural formula of B. (c) Compare the number of carbon atoms in B with the original 1-bromopropane and explain why.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) A is CH₃CH₂CH₂CN (butanenitrile) (1). (b) B is butan-1-amine / CH₃CH₂CH₂CH₂NH₂ (1). (c) B contains 4 carbon atoms compared to 3 in 1-bromopropane (1). This is because the KCN reaction introduces a –CN group, which extends the carbon chain by one carbon atom; reduction of the nitrile converts –CN to –CH₂NH₂, retaining the additional carbon (1).</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1010">
+<h2>Spec Point 10.10 — Silver Nitrate Test</h2>
+<article class="qcard" id="q37">
+<div class="qcard-head">
+<span class="qnum">Q37</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§10.10</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State the colour of the precipitate formed when silver nitrate in ethanol is added to (a) 1-bromobutane and (b) 1-iodobutane at room temperature.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) Cream (1) (b) Yellow (1)</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q38">
+<div class="qcard-head">
+<span class="qnum">Q38</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.10</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>When silver nitrate in ethanol is added separately to 1-chlorobutane, 2-bromobutane and 2-iodo-2-methylpropane at room temperature, the iodo-compound gives a precipitate most rapidly. Explain this observation in terms of both bond enthalpy and the mechanism involved.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The C–I bond has the lowest bond enthalpy / is the weakest bond of the three, so it has the lowest activation energy for bond breaking, making it the fastest to react (1). Additionally, 2-iodo-2-methylpropane is a tertiary halogenoalkane, which undergoes SN1 via a carbocation intermediate; the tertiary carbocation is the most stable due to electron-donating alkyl groups / positive inductive effect, further increasing the rate (2).</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1011">
+<h2>Spec Point 10.11 — Silver Oxide</h2>
+<article class="qcard" id="q39">
+<div class="qcard-head">
+<span class="qnum">Q39</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.11</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>(a) Complete the ionic equation for the dissolution of silver oxide: Ag₂O + H₂O → (b) In the silver nitrate test, some students incorrectly state that Ag⁺ directly attacks the carbon–halogen bond. Describe the correct mechanism, identifying the nucleophile and the role of Ag⁺.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) 2Ag⁺ + 2OH⁻ (1). (b) The nucleophile is H₂O, which attacks the electrophilic carbon of the C–X bond in an SN2 (or SN1 for tertiary) substitution reaction, displacing X⁻ (1). Ag⁺ then reacts with the halide ion (X⁻) to form an insoluble precipitate (AgX), giving the visual observation; Ag⁺ does NOT act as the nucleophile (1).</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1012">
+<h2>Spec Point 10.12 — Order of Reactivity</h2>
+<article class="qcard" id="q40">
+<div class="qcard-head">
+<span class="qnum">Q40</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§10.12</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the order of reactivity for the hydrolysis of halogenoalkanes, from slowest to fastest.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>C–F &lt; C–Cl &lt; C–Br &lt; C–I (1)</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q41">
+<div class="qcard-head">
+<span class="qnum">Q41</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§10.12</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Four halogenoalkanes are available: A = 1-chlorobutane, B = 2-chloro-2-methylpropane, C = 1-iodobutane, D = 2-iodo-2-methylpropane. Predict which of these four will hydrolyse most rapidly with aqueous KOH, giving TWO reasons for your choice.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>D (2-iodo-2-methylpropane) will hydrolyse most rapidly (1). Reason 1: It is a tertiary halogenoalkane, which reacts via the SN1 mechanism forming a relatively stable tertiary carbocation intermediate, whereas primary halogenoalkanes react by the slower SN2 mechanism (1). Reason 2: The C–I bond has a lower bond enthalpy (238 kJ mol⁻¹) than the C–Cl bond (339 kJ mol⁻¹), giving a lower activation energy for C–X bond breaking (1). Both the structural factor (tertiary &gt; primary) and the bond enthalpy factor (iodine &gt; chlorine) favour D as the fastest (1).</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1013">
+<h2>Spec Point 10.13 — SN2 and SN1 Mechanisms</h2>
+<article class="qcard" id="q42">
+<div class="qcard-head">
+<span class="qnum">Q42</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§10.13</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Compare the SN2 and SN1 mechanisms in terms of: (a) number of steps, (b) the intermediate formed, and (c) rate dependence on reactant concentrations.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) SN2 is a <strong>one-step</strong> (concerted) mechanism; SN1 is a <strong>two-step</strong> mechanism (1). (b) SN2 has a <strong>transition state</strong> (five groups around carbon, transient and not isolable); SN1 has a <strong>carbocation intermediate</strong> (trigonal planar, transient but long-lived enough to be detected spectroscopically in favourable cases) (1). (c) SN2 rate depends on <strong>both</strong> [halogenoalkane] and [nucleophile]; SN1 rate depends on <strong>[halogenoalkane] only</strong> (1).</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1014">
+<h2>Spec Point 10.14 — Core Practical 5: Comparing Rates of Hydrolysis</h2>
+<article class="qcard" id="q43">
+<div class="qcard-head">
+<span class="qnum">Q43</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.14</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>In Core Practical 5, a student uses silver nitrate solution in ethanol to compare the rates of hydrolysis of 1-chlorobutane, 1-bromobutane and 1-iodobutane. (a) State two variables that must be kept constant to ensure a fair test. (2 marks) (b) The precipitate forms fastest for 1-iodobutane. With reference to the role of water, explain the overall process occurring in this test. (2 marks)</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) Any two from: same temperature / same concentration of AgNO₃ / same volume of AgNO₃ / same concentration of halogenoalkane / same volume of halogenoalkane (2). (b) Water acts as the nucleophile (electron-pair donor), attacking the electrophilic carbon of the halogenoalkane in an SN2 substitution, displacing the halide ion (X⁻) (1); the released X⁻ then reacts with Ag⁺(aq) to form the insoluble precipitate AgX, the appearance of which signals that hydrolysis has occurred (1).</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1015">
+<h2>Spec Point 10.15 — Naming Alcohols</h2>
+<article class="qcard" id="q44">
+<div class="qcard-head">
+<span class="qnum">Q44</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§10.15</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student is asked to name the alcohol with the structure CH₃CH(OH)CH₂CH₃. State the correct IUPAC name. Explain why the locant number must be included.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Butan-2-ol (1). The locant number is required because the –OH group could be on carbon-1 or carbon-2 of the four-carbon chain; including the locant (2) distinguishes this isomer from butan-1-ol (1).</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1016">
+<h2>Spec Point 10.16 — Classification and Naming of Alcohols</h2>
+<article class="qcard" id="q45">
+<div class="qcard-head">
+<span class="qnum">Q45</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§10.16</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Classify each of the following alcohols as primary, secondary, or tertiary: (a) (CH₃)₂CHOH (b) (CH₃)(C₂H₅)(OH)C–CH₂CH₃</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) Secondary (the –OH carbon is attached to <strong>two</strong> other carbon atoms) (1)
+(b) Tertiary (the –OH carbon is attached to <strong>three</strong> other carbon atoms) (1)</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q46">
+<div class="qcard-head">
+<span class="qnum">Q46</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§10.16</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Name the following alcohol, giving the full systematic IUPAC name: (CH₃)₂CHCH₂CH₂OH</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>3-methylbutan-1-ol</strong> (1 mark for correct methyl position, 1 mark for correct –ol position and stem name; allow "3-methylbutan-1-ol" only)</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1017">
+<h2>Spec Point 10.17 — Tests for Alcohols</h2>
+<article class="qcard" id="q47">
+<div class="qcard-head">
+<span class="qnum">Q47</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§10.17</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>A student writes in their notes: <em>"Bromine water (Br₂) can be used to test for the presence of an alcohol, as it decolourises when an –OH group is present."</em> Is this statement correct? Give a reason for your answer.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>No</strong> (1). Bromine does <strong>not</strong> react with aliphatic alcohols; it reacts with C=C double bonds (alkenes) via electrophilic addition, so a negative bromine-water test does not rule out the presence of an alcohol.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q48">
+<div class="qcard-head">
+<span class="qnum">Q48</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§10.17</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student states: <em>"PCl₅ only reacts with primary and secondary alcohols, just like acidified potassium dichromate(VI)."</em> Identify the error in this statement and correct it.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Error: PCl₅ does NOT only react with primary and secondary alcohols (1). Correction: PCl₅ reacts with <strong>all</strong> alcohol types (primary, secondary, and tertiary), whereas acidified potassium dichromate(VI) only oxidises primary and secondary alcohols (tertiary alcohols are not oxidised) (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q49">
+<div class="qcard-head">
+<span class="qnum">Q49</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§10.17</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the observation when phosphorus pentachloride (PCl₅) is added to an alcohol.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Misty white fumes of hydrogen chloride (HCl) are produced. (1)</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q50">
+<div class="qcard-head">
+<span class="qnum">Q50</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§10.17</span>
+<span class="qmeta"><span class="marks">5 marks</span> &middot; ~10 min</span>
+</div>
+<div class="qtext"><p>Three students propose different tests to identify the –OH group in three alcohols: menthol (secondary), linalool (tertiary, also has C=C), and citronellol (primary, also has C=C). Evaluate each student's suggestion: - Student 1: Use acidified potassium dichromate(VI) - Student 2: Use acidified potassium manganate(VII) - Student 3: Use PCl₅ Which test is best and why?</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li><strong>Student 1 (K₂Cr₂O₇)</strong>: Works for menthol (secondary → orange to green) and citronellol (primary → orange to green) but <strong>not</strong> linalool (tertiary — no colour change). Not a valid test for all three. (1)</li>
+<li><strong>Student 2 (KMnO₄)</strong>: Not specific for –OH; would also react with the <strong>C=C bonds</strong> in linalool and citronellol, giving false positives. Not diagnostic. (1)</li>
+<li><strong>Student 3 (PCl₅)</strong>: <strong>Best test</strong> — produces misty fumes of HCl with <strong>all alcohols</strong> (primary, secondary, tertiary) by reacting with the –OH group specifically; does <strong>not</strong> react with C=C bonds. (2)</li>
+<li>Therefore Student 3's suggestion is the most reliable for identifying –OH in all three compounds. (1)</li>
+</ul></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1018">
+<h2>Spec Point 10.18 — Infrared Spectroscopy</h2>
+<article class="qcard" id="q66">
+<div class="qcard-head">
+<span class="qnum">Q66</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§10.18</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Compare the infrared absorption of the O–H bond in an alcohol with that in a carboxylic acid. In your answer, refer to the wavenumber range and the appearance (broad/sharp) of each.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Alcohol O–H: 3750–3200 cm⁻¹, broad (1); Carboxylic acid O–H: 2500–3300 cm⁻¹, very broad (1); The carboxylic acid O–H absorption extends to lower wavenumbers and is broader due to extensive hydrogen bonding / dimer formation (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q67">
+<div class="qcard-head">
+<span class="qnum">Q67</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§10.18</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A student makes the following claim: "An IR peak at approximately 1700 cm⁻¹ indicates the presence of a C=C bond, and an IR peak at approximately 1640 cm⁻¹ indicates the presence of a C=O bond." Evaluate this claim by stating whether each part is correct or incorrect, giving the correct wavenumber range for each bond type.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>"1700 cm⁻¹ indicates C=C" — INCORRECT (1); C=C absorbs at 1680–1620 cm⁻¹ (1); "1640 cm⁻¹ indicates C=O" — INCORRECT; C=O absorbs at 1680–1750 cm⁻¹ (depending on the carbonyl type: aldehyde 1740–1720, ketone 1720–1700, carboxylic acid 1725–1700, ester 1750–1730) (1). The student has confused/swapped the wavenumber ranges for C=O and C=C.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q68">
+<div class="qcard-head">
+<span class="qnum">Q68</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§10.18</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student examines an IR spectrum and observes a broad absorption at 2500–3300 cm⁻¹. The student concludes: "This broad O–H peak means the compound is an alcohol." Identify the error in the student's reasoning and give the correct conclusion.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Error: a broad O–H absorption extending to 2500 cm⁻¹ is characteristic of a carboxylic acid, NOT an alcohol (1); Correct conclusion: the compound contains a carboxylic acid group (1). Alcohol O–H absorbs in the range 3750–3200 cm⁻¹ and, although also broad, does not extend as far to low wavenumbers.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q69">
+<div class="qcard-head">
+<span class="qnum">Q69</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§10.18</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student observes an IR peak at 1700 cm⁻¹ and states "this peak confirms the presence of a C=C double bond." Explain why this is incorrect and state the correct assignment.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>A peak at <strong>1700 cm⁻¹ is characteristic of C=O</strong> (carbonyl), not C=C (1). C=C stretches appear at a <strong>lower wavenumber range: 1669–1645 cm⁻¹</strong> (1). Confusing these is a common error — the C=O bond has a larger dipole moment and absorbs at higher wavenumber than C=C.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q70">
+<div class="qcard-head">
+<span class="qnum">Q70</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§10.18</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>An IR spectrum of an unsaturated hydrocarbon shows three significant absorptions: - P at approximately 3090 cm⁻¹ - Q at approximately 2900 cm⁻¹ - R at approximately 1650 cm⁻¹ Identify the bond responsible for each absorption. You must specify the type of carbon–hydrogen bond where relevant.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>P: C–H stretching in <strong>alkene</strong> (1); Q: C–H stretching in <strong>alkane</strong> (1); R: C=C stretching in alkene (1). Just "C–H stretch" for P or Q is insufficient — must specify "in alkene" or "in alkane".</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q71">
+<div class="qcard-head">
+<span class="qnum">Q71</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§10.18</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>An unknown compound shows IR absorptions at 3415 cm⁻¹ (medium, sharp) and 2250 cm⁻¹ (sharp). Which compound from the following is most likely to be the unknown? Give a reason for your choice. A: CH₃CH₂COOH  B: H₂NCH₂CH₂C≡N  C: CH₃COCH₃  D: CH₃CH₂OH</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>B: H₂NCH₂CH₂C≡N (1); Absorption at 3415 cm⁻¹ corresponds to N–H stretch (in amine) (1); Absorption at 2250 cm⁻¹ corresponds to C≡N stretch (nitrile group) (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q72">
+<div class="qcard-head">
+<span class="qnum">Q72</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§10.18</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Use the following IR absorption ranges to complete the table distinguishing between five functional groups: | Functional Group | Key Absorption 1 (cm⁻¹) | Key Absorption 2 (cm⁻¹) | |---|---|---| | Alcohol | | | | Aldehyde | | | | Ketone | | | | Carboxylic acid | | | | Ester | | |</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <table>
+<thead>
+<tr>
+<th>Functional Group</th>
+<th>Key Absorption 1</th>
+<th>Key Absorption 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alcohol</td>
+<td>O–H stretch <strong>3750–3200</strong> (broad)</td>
+<td>C–O stretch <strong>1000–1300</strong></td>
+</tr>
+<tr>
+<td>Aldehyde</td>
+<td>C=O stretch <strong>1740–1720</strong></td>
+<td>C–H stretch <strong>2775–2700</strong></td>
+</tr>
+<tr>
+<td>Ketone</td>
+<td>C=O stretch <strong>1720–1700</strong></td>
+<td>(No distinctive second absorption)</td>
+</tr>
+<tr>
+<td>Carboxylic acid</td>
+<td>O–H stretch <strong>2500–3300</strong> (very broad)</td>
+<td>C=O stretch <strong>1725–1700</strong></td>
+</tr>
+<tr>
+<td>Ester</td>
+<td>C=O stretch <strong>1750–1730</strong></td>
+<td>C–O stretch <strong>1300–1000</strong></td>
+</tr>
+<tr>
+<td>(1 mark per correct row, max 3)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q73">
+<div class="qcard-head">
+<span class="qnum">Q73</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.18</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>An IR spectrum shows: a sharp peak at 2255 cm⁻¹, C–H stretches at 2950–2850 cm⁻¹, and no O–H absorption. Identify the functional group present and explain your reasoning using the IR decision tree approach.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li>No broad absorption at 2500–3300 cm⁻¹ → not a carboxylic acid (1)</li>
+<li>Sharp absorption at 2255 cm⁻¹ (within 2250–2215 cm⁻¹) → <strong>C≡N (nitrile)</strong> (1)</li>
+<li>C–H stretches at 2950–2850 cm⁻¹ → alkane C–H; no O–H absorption rules out alcohol or carboxylic acid</li>
+<li>The compound contains a <strong>nitrile functional group</strong> (1)</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q74">
+<div class="qcard-head">
+<span class="qnum">Q74</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.18</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>The IR spectrum of an unknown compound shows C–H stretches at 3080 cm⁻¹ and 2960 cm⁻¹. Explain why two different C–H stretching frequencies are observed and identify what structural feature causes this. How does this information help narrow down the identity of the compound?</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The C–H stretch at 3080 cm⁻¹ is in the <strong>alkene C–H range (3100–3000 cm⁻¹)</strong>, indicating sp² hybridised C–H bonds (1). The C–H stretch at 2960 cm⁻¹ is in the <strong>alkane C–H range (2950–2850 cm⁻¹)</strong>, indicating sp³ hybridised C–H bonds (1). Two different C–H frequencies indicate the compound contains <strong>both alkene and alkane C–H groups</strong> — i.e. an unsymmetrical alkene with an alkyl chain. This narrows the identity to an <strong>alkene</strong> (not a pure alkane) and rules out compounds containing only one type of C–H environment (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q75">
+<div class="qcard-head">
+<span class="qnum">Q75</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.18</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Explain why the O–H absorption in a carboxylic acid appears as a very broad band at 2500–3300 cm⁻¹ rather than a sharper peak. In your answer, refer to hydrogen bonding and the structure of carboxylic acid dimers.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Carboxylic acids form <strong>hydrogen-bonded dimers</strong> in the liquid and solid state — two molecules linked by two O–H···O hydrogen bonds (1). This <strong>strong, extensive hydrogen bonding</strong> creates a wide range of O–H bond strengths and vibrational energies, resulting in a very broad absorption (1). The hydrogen bonding also <strong>weakens the O–H bond</strong>, shifting the absorption to <strong>lower wavenumbers</strong> compared to a free O–H — this broad, low-wavenumber O–H is a key diagnostic feature distinguishing carboxylic acids from alcohols (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q76">
+<div class="qcard-head">
+<span class="qnum">Q76</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§10.18</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Two compounds, P and Q, both have Mᵣ = 60. P shows IR absorptions at: 3400 cm⁻¹ (broad), 2950–2850 cm⁻¹, and 1050 cm⁻¹. Q shows IR absorptions at: 2500–3300 cm⁻¹ (very broad), 2950–2850 cm⁻¹, and 1710 cm⁻¹. The mass spectrum of P shows a significant peak at m/z 31; the mass spectrum of Q shows a significant peak at m/z 45. Identify P and Q, explaining how each piece of spectral evidence supports your identification.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li><strong>Compound P</strong>: O–H at 3400 cm⁻¹ (in alcohol range 3750–3200, NOT carboxylic acid range) → alcohol; no C=O absorption; C–O at 1050 cm⁻¹ (alcohol C–O range 1300–1000); fragment m/z 31 = CH₂OH⁺ (primary alcohol fragment). <strong>P = propan-1-ol</strong> (CH₃CH₂CH₂OH) (2)</li>
+<li><strong>Compound Q</strong>: Very broad O–H at 2500–3300 cm⁻¹ (carboxylic acid range); C=O at 1710 cm⁻¹ (carboxylic acid carbonyl); fragment m/z 45 = COOH⁺ (carboxylic acid fragment). <strong>Q = ethanoic acid</strong> (CH₃COOH) (2)</li>
+</ul></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1019">
+<h2>Spec Point 10.19 — Dehydration of Alcohols</h2>
+<article class="qcard" id="q51">
+<div class="qcard-head">
+<span class="qnum">Q51</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§10.19</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>State the reagent and conditions required for the dehydration of an alcohol to form an alkene. Give the classification of this reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Reagent: concentrated phosphoric(V) acid OR concentrated sulfuric acid (1); Conditions: heat to approximately 170 °C (1). Classification: elimination (1). NOTE: Both H₃PO₄ and H₂SO₄ are accepted by Edexcel as dehydrating agents for alcohols. "Concentrated" must be stated.</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1020">
+<h2>Spec Point 10.20 — Oxidation of Alcohols</h2>
+<article class="qcard" id="q52">
+<div class="qcard-head">
+<span class="qnum">Q52</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§10.20</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Compare the products formed when propan-1-ol is reacted with acidified potassium dichromate(VI) under (a) distillation conditions and (b) reflux conditions. Explain why different products are obtained.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) Under distillation: propanal (aldehyde) is formed (1); (b) Under reflux (with excess oxidising agent): propanoic acid (carboxylic acid) is formed (1). Explanation: under distillation, the aldehyde has a lower boiling point than the alcohol, so it distils off as it forms, preventing further oxidation (1); under reflux, the condenser returns vapour to the flask, allowing prolonged heating and complete oxidation to the carboxylic acid.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q53">
+<div class="qcard-head">
+<span class="qnum">Q53</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§10.20</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student writes: "When a primary alcohol is heated with acidified K₂Cr₂O₇, it always produces a carboxylic acid." Explain the error in this statement and state the additional information needed for it to be correct.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The primary alcohol produces a carboxylic acid only under reflux conditions with excess oxidising agent (1); if distillation is used, the product is an aldehyde (1), because the aldehyde distils off before it can be further oxidised.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q54">
+<div class="qcard-head">
+<span class="qnum">Q54</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§10.20</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State what is observed when acidified potassium dichromate(VI) is added to a tertiary alcohol and gently warmed.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>No colour change / the solution remains <strong>orange</strong> (1) — tertiary alcohols are not oxidised by dichromate(VI).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q55">
+<div class="qcard-head">
+<span class="qnum">Q55</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.20</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Explain why tertiary alcohols are not oxidised by acidified potassium dichromate(VI), whereas primary and secondary alcohols are.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Oxidation of an alcohol requires the carbon bearing the –OH group to have at least one <strong>hydrogen atom</strong> attached, which can be removed (along with the –OH) to form a C=O bond (1). In a tertiary alcohol, the carbon bearing the –OH has <strong>no hydrogen atoms</strong> bonded to it (it is bonded to three alkyl groups) (1), so no C=O bond can form and no oxidation occurs (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q56">
+<div class="qcard-head">
+<span class="qnum">Q56</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.20</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student oxidises propan-2-ol with acidified potassium dichromate(VI) under reflux and collects the product by distillation. Explain why the product is the same regardless of which collection method is used.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Propan-2-ol is a <strong>secondary alcohol</strong>, which is oxidised to a <strong>ketone</strong> (propanone) (1). Ketones cannot be further oxidised by acidified dichromate(VI), so the product is propanone under both distillation and reflux conditions (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q57">
+<div class="qcard-head">
+<span class="qnum">Q57</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§10.20</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>State the product and the observable change when propan-2-ol is heated under reflux with excess acidified potassium dichromate(VI). Give the expected IR absorption range for the key bond in the product.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Product: propanone (acetone) (1); Observable change: orange to green (1). Expected IR absorption for the C=O bond in the ketone product: 1720–1700 cm⁻¹ (accept 1680–1750 cm⁻¹) (1). NOTE: A common trap is giving a C=C range (~1640 cm⁻¹) instead of C=O.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q58">
+<div class="qcard-head">
+<span class="qnum">Q58</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.20</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State the colour change observed when a primary alcohol is oxidised by acidified potassium dichromate(VI) and link this to the oxidation state change of chromium.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Colour changes from <strong>orange to green</strong> (1). Chromium is reduced from <strong>Cr(VI)</strong> in dichromate (orange) to <strong>Cr(III)</strong> in the chromium(III) ions (green) (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q59">
+<div class="qcard-head">
+<span class="qnum">Q59</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§10.20</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Distinguish between the C=O IR absorption ranges for an aldehyde and a ketone. State a range for each.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Aldehyde C=O: <strong>1740–1720 cm⁻¹</strong> (1). Ketone C=O: <strong>1720–1700 cm⁻¹</strong> (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q60">
+<div class="qcard-head">
+<span class="qnum">Q60</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§10.20</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Two products are obtained by oxidising propan-1-ol under different conditions. Product A (from distillation) shows IR absorptions at 1730 cm⁻¹ and a doublet at 2820 and 2720 cm⁻¹. Product B (from reflux) shows IR absorptions at 2500–3300 cm⁻¹ (very broad) and 1710 cm⁻¹. Identify both products, assign each IR absorption, and explain how the different conditions led to different products.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li><strong>Product A (distillation) = propanal (aldehyde)</strong>: 1730 cm⁻¹: C=O stretch in aldehyde (range 1740–1720 cm⁻¹); 2820 &amp; 2720 cm⁻¹: characteristic aldehyde C–H doublet (range 2775–2700 cm⁻¹). Distillation removes the volatile aldehyde (bp 49 °C) from the reaction mixture before further oxidation. (2)</li>
+<li><strong>Product B (reflux) = propanoic acid (carboxylic acid)</strong>: 2500–3300 cm⁻¹: very broad O–H of carboxylic acid (hydrogen-bonded dimer); 1710 cm⁻¹: C=O of carboxylic acid (~1700 cm⁻¹). Reflux keeps the product in contact with K₂Cr₂O₇, so the aldehyde intermediate is further oxidised to the carboxylic acid. (2)</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q61">
+<div class="qcard-head">
+<span class="qnum">Q61</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.20</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A student oxidises ethanol with acidified potassium dichromate(VI) under reflux and obtains ethanoic acid. A second student oxidises ethanol under distillation conditions and obtains ethanal. Explain the role of each technique in determining the product, and state the oxidation state change of the relevant carbon atom in each case.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li><strong>Reflux</strong>: the condenser returns volatile products to the flask, so ethanal remains in contact with the oxidising agent and is further oxidised to ethanoic acid; carbon oxidation state changes from <strong>−1</strong> (in ethanol) to <strong>+3</strong> (in ethanoic acid) (1½)</li>
+<li><strong>Distillation</strong>: the low-boiling ethanal (bp 21 °C) is distilled off as it forms, removing it from the oxidising agent and preventing further oxidation; carbon oxidation state changes from <strong>−1</strong> (in ethanol) to <strong>+1</strong> (in ethanal) (1½)</li>
+</ul>
+<p><em>(Award 1½ marks for each fully-correct bullet; maximum 3 marks total.)</em></p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1021">
+<h2>Spec Point 10.21 — [O] Calculations</h2>
+<article class="qcard" id="q62">
+<div class="qcard-head">
+<span class="qnum">Q62</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§10.21</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A compound contains two primary hydroxyl groups and one secondary hydroxyl group. Calculate the total number of [O] atoms required for complete oxidation of all oxidisable groups using acidified K₂Cr₂O₇.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Each primary –OH → carboxylic acid requires 2[O] (1); each secondary –OH → ketone requires 1[O] (1). Total = (2 × 2) + (1 × 1) = 5[O] (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q63">
+<div class="qcard-head">
+<span class="qnum">Q63</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§10.21</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Outline the systematic steps you would follow to determine the structure of an unknown organic compound, given its mass spectrum (M⁺ at m/z 86), IR spectrum (broad absorption 2500–3300 cm⁻¹, peak at 1700 cm⁻¹, peak at 1650 cm⁻¹), and the results of bromine water and sodium carbonate tests.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ol>
+<li><strong>Molecular formula</strong>: M⁺ = 86; from combustion data or empirical formula × n, deduce C₄H₆O₂ (1)</li>
+<li><strong>IR analysis</strong>: broad 2500–3300 cm⁻¹ = O–H in carboxylic acid; peak at ~1700 cm⁻¹ = C=O (carbonyl); peak at ~1650 cm⁻¹ = C=C (alkene) (1)</li>
+<li><strong>Chemical tests</strong>: bromine water decolourised confirms C=C; effervescence with Na₂CO₃ confirms –COOH (1)</li>
+<li><strong>Structural assembly</strong>: C₄H₆O₂ with COOH and C=C → but-2-enoic acid (CH₃CH=CHCOOH) (1)</li>
+<li><strong>Mass spec confirmation</strong>: fragment at m/z 45 (COOH⁺) supports carboxyl group; fragment at m/z 41 (C₃H₅⁺) supports alkene portion</li>
+</ol></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1022">
+<h2>Spec Point 10.22 — IR Absorptions for C=O and C=C</h2>
+<article class="qcard" id="q77">
+<div class="qcard-head">
+<span class="qnum">Q77</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§10.22</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State the wavenumber range for the C=O absorption in a ketone, and the wavenumber range for the C=C absorption in an alkene.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>C=O (ketone): 1720–1700 cm⁻¹ (1); C=C (alkene): 1680–1620 cm⁻¹ (1). Accept either order.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q78">
+<div class="qcard-head">
+<span class="qnum">Q78</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§10.22</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Propan-1-ol is oxidised using acidified potassium dichromate(VI) under distillation conditions. State the wavenumber range of the IR absorption that would identify the organic product and name the bond responsible.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>1740–1720 cm⁻¹ (1); C=O stretch / C=O bond in an aldehyde (1). Accept "C=O" alone for bond name; must give range for the mark.</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1023">
+<h2>Spec Point 10.23 — Conversion of Alcohols to Chloroalkanes</h2>
+<article class="qcard" id="q64">
+<div class="qcard-head">
+<span class="qnum">Q64</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§10.23</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A student writes: "To convert any alcohol to a chloroalkane, either PCl₅, concentrated HCl, or concentrated H₂SO₄ + KCl can be used." Evaluate the accuracy of this statement for primary, secondary and tertiary alcohols.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The statement is incorrect for primary alcohols (1). PCl₅ reacts with all classes of alcohol to give a chloroalkane (1). Concentrated HCl reacts readily with tertiary alcohols to give chloroalkanes, but primary alcohols require a ZnCl₂ catalyst (Lucas reagent) to react with HCl / do not react readily with HCl alone (1). Concentrated H₂SO₄ + KCl generates HCl in situ and behaves similarly to concentrated HCl.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q65">
+<div class="qcard-head">
+<span class="qnum">Q65</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§10.23</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>An exam question asks: "Which reagent(s) can convert a tertiary alcohol directly to a chloroalkane?" A student selects only PCl₅ and rejects both concentrated HCl and concentrated H₂SO₄ + KCl. Identify the error in the student's reasoning.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The student is incorrect (1). All three reagents work for converting a tertiary alcohol to a chloroalkane: PCl₅ reacts with all alcohols, concentrated HCl reacts readily with tertiary alcohols, and concentrated H₂SO₄ + KCl generates HCl in situ (1).</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1024">
+<h2>Spec Point 10.24 — Mass Spectrometry</h2>
+<article class="qcard" id="q79">
+<div class="qcard-head">
+<span class="qnum">Q79</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§10.24</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Define the term base peak as used in mass spectrometry.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The tallest peak in the mass spectrum / the peak assigned 100% relative abundance (1) / corresponding to the most stable fragment ion (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q80">
+<div class="qcard-head">
+<span class="qnum">Q80</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§10.24</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State what is represented by the molecular ion peak (M⁺) in a mass spectrum.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The M⁺ peak represents the <strong>molecular ion</strong> — the original molecule that has lost one electron but has not fragmented (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q81">
+<div class="qcard-head">
+<span class="qnum">Q81</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§10.24</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>The mass spectrum of a compound shows a molecular ion peak at m/z 86. The empirical formula of the compound is C₂H₃O. Deduce the molecular formula of the compound.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Mᵣ from M⁺ peak = 86 (1). Empirical formula mass of C₂H₃O = (2 × 12) + (3 × 1) + 16 = 43 (1). Multiplier = 86 / 43 = 2, therefore molecular formula = C₄H₆O₂ (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q82">
+<div class="qcard-head">
+<span class="qnum">Q82</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.24</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>In a mass spectrum, the molecular ion peak (M⁺) has a relative abundance of 82% and the M+1 peak has a relative abundance of 3.3%. (a) Explain the origin of the M+1 peak. (b) Use the data to determine the number of carbon atoms in the molecule.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) The M+1 peak is caused by molecules containing one carbon-13 (¹³C) atom instead of carbon-12 (¹²C), due to the natural abundance of ¹³C (~1.1%) (1). (b) The ratio of M+1 to M⁺ is (3.3 / 82) × 100% ≈ 4.0%; number of carbon atoms ≈ (M+1/M⁺ ratio) / 1.1% = 4.0 / 1.1 ≈ <strong>4 carbon atoms</strong> (2). <em>(Methodology consistent with Q84: the M+1/M⁺ ratio is divided by 1.1% to estimate the carbon count.)</em></p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q83">
+<div class="qcard-head">
+<span class="qnum">Q83</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§10.24</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>The mass spectrum of a compound shows a molecular ion peak at m/z 60 and a prominent fragment ion peak at m/z 31. Identify the compound and explain how each piece of evidence supports your identification.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Propan-1-ol, CH₃CH₂CH₂OH (1). The M⁺ peak at m/z 60 corresponds to C₃H₈O (Mᵣ = 60) (1). The peak at m/z 31 corresponds to CH₂OH⁺, which is characteristic of a primary alcohol formed by α-cleavage adjacent to the –OH group (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q84">
+<div class="qcard-head">
+<span class="qnum">Q84</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§10.24</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A student analysing the mass spectrum of compound X sees a small peak at m/z 87, one mass unit higher than the M⁺ peak at m/z 86. Explain the origin of the m/z 87 peak, state the natural abundance of the isotope responsible, and explain how the M+1 peak can be used to estimate the number of carbon atoms in the molecule.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The peak at m/z 87 is the <strong>M+1 peak</strong>, caused by the natural presence of <strong>carbon-13</strong> (¹³C) — one ¹²C is replaced by ¹³C, increasing M⁺ by 1 (1). The natural abundance of ¹³C is approximately <strong>1.1%</strong> (1). For a molecule with <em>n</em> carbon atoms, M+1/M⁺ ≈ <em>n</em> × 1.1%; so if the ratio is about 4.4%, the molecule contains approximately <strong>4 carbon atoms</strong> (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q85">
+<div class="qcard-head">
+<span class="qnum">Q85</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§10.24</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State the fragment ion responsible for a peak at (a) m/z 31 and (b) m/z 45 in a mass spectrum. State the functional group each indicates.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) m/z 31 = <strong>CH₂OH⁺</strong> → indicates a <strong>primary alcohol</strong> (1). (b) m/z 45 = <strong>COOH⁺</strong> → indicates a <strong>carboxylic acid</strong> (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q86">
+<div class="qcard-head">
+<span class="qnum">Q86</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§10.24</span>
+<span class="qmeta"><span class="marks">5 marks</span> &middot; ~10 min</span>
+</div>
+<div class="qtext"><p>An organic compound X has Mᵣ = 60. The mass spectrum of X shows a base peak at m/z 31. The infrared spectrum of X shows a broad absorption covering 2500–3300 cm⁻¹. A student concludes that X is propan-1-ol. (a) Explain why the mass spectrum data is consistent with propan-1-ol. (2 marks) (b) Explain why the student's conclusion is incorrect based on the IR data, and suggest a more likely identity for X. (3 marks)</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) M⁺ at m/z 60 is consistent with C₃H₈O (Mᵣ = 60) (1). The base peak at m/z 31 corresponds to CH₂OH⁺, formed by α-cleavage characteristic of a primary alcohol (1). (b) The broad absorption at 2500–3300 cm⁻¹ is characteristic of the O–H stretch in a carboxylic acid, NOT an alcohol (1). An alcohol O–H stretch is a broad absorption in the range 3750–3200 cm⁻¹ (data-booklet value) and does <strong>not</strong> extend as far to lower wavenumbers (1). A more likely identity for X is ethanoic acid, CH₃COOH (Mᵣ = 60), which would show a broad carboxylic O–H stretch and a characteristic fragment at m/z 45 (COOH⁺) (1).</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1027">
+<h2>Spec Point 10.27 — Carboxylic Acid Identification</h2>
+<article class="qcard" id="q87">
+<div class="qcard-head">
+<span class="qnum">Q87</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§10.27</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the reagent used in test-tube reactions to identify a carboxylic acid by effervescence.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Sodium carbonate / Na₂CO₃ (1)</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q88">
+<div class="qcard-head">
+<span class="qnum">Q88</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.27</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Two isomeric compounds, ethanol (CH₃CH₂OH) and methoxymethane (CH₃OCH₃), both have Mᵣ = 46. Describe a test-tube reaction that could distinguish between them and state the expected observations for each compound.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li>Add acidified potassium dichromate(VI) to each compound and warm (1)</li>
+<li>Ethanol (a primary alcohol): orange solution turns green as Cr₂O₇²⁻ is reduced to Cr³⁺; ethanol is oxidised to ethanal/ethanoic acid (1)</li>
+<li>Methoxymethane (an ether): no colour change; ethers cannot be oxidised by dichromate(VI) (1)</li>
+<li>Alternatively: add PCl₅ — ethanol gives misty white fumes of HCl (has –OH); methoxymethane does not (no –OH group, ether C–O–C does not react with PCl₅ in the same way) (1). Accept either test with correct observations for both compounds.</li>
+</ul></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1028">
+<h2>Spec Point 10.28 — Determination of Mᵣ by Volatilisation</h2>
+<article class="qcard" id="q89">
+<div class="qcard-head">
+<span class="qnum">Q89</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§10.28</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A volatile liquid Y is vapourised to determine its relative molecular mass. The following data were obtained: pressure = 98 500 Pa, volume = 7.5 × 10⁻⁵ m³, temperature = 373 K, mass of vapour = 0.115 g. Calculate Mᵣ of Y and suggest its identity. (R = 8.314 J mol⁻¹ K⁻¹)</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>n = pV / RT = (98 500 × 7.5 × 10⁻⁵) / (8.314 × 373) = 7.3875 / 3101.122 = 2.38 × 10⁻³ mol (1). Mᵣ = mass / n = 0.115 / 2.38 × 10⁻³ = 48.3 (1) (accept 47–49). Ethanol, CH₃CH₂OH, Mᵣ = 46 is closest; methoxymethane (CH₃OCH₃, Mᵣ = 46) also possible — slightly high value suggests experimental error but identity is ethanol or methoxymethane (1).</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s1024-2">
+<h2>Spec Point 10.24+ — Additional Spectroscopy &amp; Mechanism Questions</h2>
+<article class="qcard" id="q90">
+<div class="qcard-head">
+<span class="qnum">Q90</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.24</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>The mass spectrum of an unknown chlorinated compound shows a molecular ion cluster with two peaks at m/z 78 and m/z 80 in an approximate ratio of 3 : 1. (a) Explain the origin of the two peaks. (b) State how the mass spectrum of 1,2-dibromoethane would differ in the molecular ion region, and give the relative heights of the three M, M+2, and M+4 peaks.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) The two peaks arise from the two naturally occurring isotopes of chlorine — ³⁵Cl (~75%) and ³⁷Cl (~25%). Each molecule contains one Cl atom, so two molecular ion peaks appear at m/z = M and M+2 in an approximately 3 : 1 ratio matching the natural isotopic abundance of chlorine (1). (b) Bromine has two isotopes — ⁷⁹Br (~51%) and ⁸¹Br (~49%) of roughly equal abundance. With <strong>two</strong> bromine atoms in 1,2-dibromoethane (CH₂BrCH₂Br, M⁺ = 186), three peaks appear at m/z 186 (M), 188 (M+2) and 190 (M+4) (1). Their relative heights follow the binomial expansion (0.51 + 0.49)² → 0.26 : 0.50 : 0.24, i.e. approximately <strong>1 : 2 : 1</strong> (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q91">
+<div class="qcard-head">
+<span class="qnum">Q91</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.24</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>The Lucas test uses concentrated HCl with anhydrous ZnCl₂ (Lucas reagent) to distinguish between 1°, 2° and 3° alcohols by the rate of formation of the cloudy chloroalkane layer. (a) Write the equation for the reaction of butan-2-ol with HCl in the presence of ZnCl₂. (b) Explain why tertiary alcohols react fastest and primary alcohols react slowest (or not at all without heating). (c) State the visual observation that would distinguish each alcohol class.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) CH₃CH(OH)CH₂CH₃ + HCl —(ZnCl₂)→ CH₃CHClCH₂CH₃ + H₂O (1). (b) The reaction proceeds via an SN1 mechanism through a carbocation intermediate. Tertiary alcohols form a tertiary carbocation (most stable, stabilised by three electron-donating alkyl groups via inductive effect and hyperconjugation), so the activation energy is lowest and the reaction is fastest (1). Primary alcohols would form a primary carbocation (least stable), so the SN1 pathway is disfavoured; the reaction is very slow at room temperature and may require heating (1). (c) Tertiary: cloudiness appears immediately (within ~1 minute); Secondary: cloudiness within 5–10 minutes; Primary: no observable reaction at room temperature (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q92">
+<div class="qcard-head">
+<span class="qnum">Q92</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§10.24</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Account for the observation that 2-bromo-2-methylpropane (tertiary) undergoes hydrolysis via an SN1 mechanism, whereas 1-bromobutane (primary) undergoes hydrolysis via an SN2 mechanism. In your answer, refer to (a) carbocation stability, (b) steric hindrance, and (c) the rate equation expected for each substrate.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) 2-bromo-2-methylpropane forms a tertiary carbocation (CH₃)₃C⁺ that is stabilised by three electron-donating methyl groups (inductive effect + hyperconjugation), making the heterolytic C–Br bond cleavage energetically feasible — so the SN1 pathway is favoured (1). 1-bromobutane would form a primary carbocation (CH₃CH₂CH₂CH₂⁺) that is too unstable to form at an appreciable rate, so the concerted SN2 pathway (no carbocation) is favoured instead (1). (b) The tertiary carbon in 2-bromo-2-methylpropane is sterically hindered by three methyl groups, blocking back-side attack by the nucleophile required for SN2 — another factor favouring SN1 (1). (c) SN1 (tertiary): rate = k[halogenoalkane] (first-order, independent of [nucleophile]); SN2 (primary): rate = k[halogenoalkane][nucleophile] (second-order overall) (1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q93">
+<div class="qcard-head">
+<span class="qnum">Q93</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§10.24</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Sodium iodide reacts with concentrated sulfuric acid to give a mixture of products including hydrogen iodide, iodine, hydrogen sulfide and sulfur. (a) Write the equation for the primary reaction producing HI. (b) Explain why H₂SO₄ is not a suitable acid for producing pure HI from NaI, and identify the type of reaction that the acid undergoes. (c) State the observation that would indicate the formation of iodine.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) NaI(s) + H₂SO₄(l) → NaHSO₄(s) + HI(g) (1). (b) HI is a strong reducing agent and reduces H₂SO₄ (S in +6 oxidation state) to lower sulfur species such as SO₂, S or H₂S — for example: 8HI + H₂SO₄ → 4I₂ + H₂S + 4H₂O (S reduced from +6 to −2; I⁻ oxidised from −1 to 0) (1). Therefore the acid is itself reduced and the products are contaminated with iodine and sulfur-containing gases — this is a <strong>redox</strong> reaction (H₂SO₄ acting as an oxidising agent, not just an acid), so pure HI cannot be prepared this way. Phosphoric acid (a non-oxidising acid) is used instead (1). (c) A brown/black colouration or violet vapour indicates iodine formation (1).</p></div>
+</div>
+</details>
+</article>
+</section>
+<footer>
+<p>Ch 2.9 Halogenoalkanes, Alcohols & Spectra — Exam Readiness Questions &middot; WCH12 IAL Chemistry &middot; 7 papers analysed (Jun 2022 – Oct 2024)</p>
+</footer>
+</main>
+<script>
+(function(){
+  var saved=localStorage.getItem('wch12-theme');
+  if(saved==='dark')document.documentElement.setAttribute('data-theme','dark');
+  updateBtn();
+})();
+function toggleDark(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  if(isDark){document.documentElement.removeAttribute('data-theme');localStorage.setItem('wch12-theme','light')}
+  else{document.documentElement.setAttribute('data-theme','dark');localStorage.setItem('wch12-theme','dark')}
+  updateBtn();
+}
+function updateBtn(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  var b=document.getElementById('darkBtn');
+  if(b)b.textContent=isDark?'\u2600\ufe0f Light':'\ud83c\udf19 Dark';
+}
+function toggleSidebar(){
+  var sb=document.getElementById('sidebar'),ov=document.getElementById('overlay');
+  sb.classList.toggle('open');ov.classList.toggle('open');
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    var sb=document.getElementById('sidebar');
+    if(sb&&sb.classList.contains('open'))toggleSidebar();
+  }
+});
+function toggleProgress(qid,cb){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  if(cb.checked)saved[qid]=1;else delete saved[qid];
+  localStorage.setItem(key,JSON.stringify(saved));
+  updateProgBar();
+}
+function updateProgBar(){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  var total=document.querySelectorAll('.prog-table input[type="checkbox"]').length;
+  var done=Object.keys(saved).length;
+  var bar=document.getElementById('progFill');
+  if(bar&&total>0)bar.style.width=Math.round(done*100/total)+'%';
+  var txt=document.getElementById('progText');
+  if(txt)txt.textContent=done+' / '+total+' questions completed';
+}
+(function(){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  document.querySelectorAll('.prog-table input[type="checkbox"]').forEach(function(cb){
+    cb.checked=!!saved[cb.dataset.qid];
+    cb.addEventListener('change',function(){toggleProgress(cb.dataset.qid,cb)});
+  });
+  updateProgBar();
+})();
+</script>
+
+</body>
+</html>

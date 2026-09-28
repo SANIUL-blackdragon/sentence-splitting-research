@@ -1,0 +1,2395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch 2.8 — Kinetics and Equilibria — Exam Readiness Questions</title>
+<style>
+:root{--bg:#fafcfe;--surface:#fff;--text:#1e293b;--heading:#0f4c75;--heading2:#1b6ca8;--accent:#3b82f6;--accent2:#10b981;--border:#e2e8f0;--muted:#64748b;--tip-bg:#eff6ff;--tip-border:#bfdbfe;--warn-bg:#fefce8;--warn-border:#fde68a;--worked-bg:#f0fdf4;--worked-border:#bbf7d0;--sidebar-bg:#fff;--sidebar-shadow:0 4px 24px rgba(0,0,0,.1);--code-bg:#f1f5f9;--tbl-head:#eef2f7;--tbl-alt:#f8fafc;--card-bg:#fff;--card-shadow:0 1px 3px rgba(0,0,0,.06);--tier1-bg:#eff6ff;--tier1-border:#3b82f6;--tier1-fg:#1e40af;--tier2-bg:#f0fdf4;--tier2-border:#10b981;--tier2-fg:#065f46;--tier3-bg:#fef3c2;--tier3-border:#f43f5e;--tier3-fg:#9f1239;--b-QFR-bg:#dbeafe;--b-QFR-fg:#1e40af;--b-TDC-bg:#ede9fe;--b-TDC-fg:#5b21b6;--b-CAL-bg:#d1fae5;--b-CAL-fg:#065f46;--b-EXP-bg:#ffedd5;--b-EXP-fg:#9a3412;--b-WTE-bg:#ccfbf1;--b-WTE-fg:#115e59;--b-STE-bg:#fee2e2;--b-STE-fg:#991b1b;--b-DIA-bg:#e0e7ff;--b-DIA-fg:#3730a3;--b-SYN-bg:#fce7f3;--b-SYN-fg:#9d174d;--b-DER-bg:#fef3c7;--b-DER-fg:#92400e;--b-QWC-bg:#cffafe;--b-QWC-fg:#155e75;--b-GRD-bg:#ecfccb;--b-GRD-fg:#3f6212}
+[data-theme="dark"]{--bg:#0f172a;--surface:#1e293b;--text:#e2e8f0;--heading:#93c5fd;--heading2:#7dd3fc;--accent:#60a5fa;--accent2:#34d399;--border:#334155;--muted:#94a3b8;--tip-bg:#1e3a5f;--tip-border:#2563eb;--warn-bg:#422006;--warn-border:#a16207;--worked-bg:#052e16;--worked-border:#16a34a;--sidebar-bg:#1e293b;--sidebar-shadow:0 4px 24px rgba(0,0,0,.4);--code-bg:#0f172a;--tbl-head:#1e3a5f;--tbl-alt:#162032;--card-bg:#1e293b;--card-shadow:0 1px 3px rgba(0,0,0,.3);--tier1-bg:#1e3a5f;--tier1-border:#60a5fa;--tier1-fg:#bfdbfe;--tier2-bg:#052e16;--tier2-border:#34d399;--tier2-fg:#a7f3d0;--tier3-bg:#4c1d1d;--tier3-border:#fb7185;--tier3-fg:#fecdd3;--b-QFR-bg:#1e3a5f;--b-QFR-fg:#bfdbfe;--b-TDC-bg:#3b2a5e;--b-TDC-fg:#ddd6fe;--b-CAL-bg:#0c3a26;--b-CAL-fg:#a7f3d0;--b-EXP-bg:#5a2e0a;--b-EXP-fg:#fed7aa;--b-WTE-bg:#0c3a36;--b-WTE-fg:#99f6e4;--b-STE-bg:#5a1a1a;--b-STE-fg:#fecaca;--b-DIA-bg:#2a2e6a;--b-DIA-fg:#c7d2fe;--b-SYN-bg:#5a1d44;--b-SYN-fg:#fbcfe8;--b-DER-bg:#5a3e0a;--b-DER-fg:#fde68a;--b-QWC-bg:#0c4a52;--b-QWC-fg:#a5f3fc;--b-GRD-bg:#2a4310;--b-GRD-fg:#d9f99d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding-top:52px}
+@media(max-width:480px){body{font-size:15px;padding-top:48px}}
+header{position:fixed;top:0;left:0;right:0;height:52px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;z-index:1000;padding:0 16px;gap:12px}
+#menuBtn{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text);padding:4px 8px;border-radius:6px;line-height:1}
+#menuBtn:hover{background:var(--code-bg)}
+#headerTitle{font-weight:700;font-size:.95rem;color:var(--heading);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+#darkBtn{margin-left:auto;background:none;border:1px solid var(--border);border-radius:6px;cursor:pointer;padding:4px 10px;font-size:.8rem;color:var(--text);white-space:nowrap}
+#darkBtn:hover{background:var(--code-bg)}
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:1100;display:none}
+#overlay.open{display:block}
+#sidebar{position:fixed;top:0;left:-340px;width:320px;max-width:85vw;height:100vh;background:var(--sidebar-bg);box-shadow:var(--sidebar-shadow);z-index:1200;overflow-y:auto;padding:16px 0;transition:left .25s ease}
+#sidebar.open{left:0}
+#sidebar .sb-head{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;border-bottom:1px solid var(--border);margin-bottom:8px}
+#sidebar .sb-head span{font-weight:700;color:var(--heading);font-size:.95rem}
+#sidebar .sb-close{background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text);padding:4px;line-height:1}
+#sidebar nav{padding:0 12px}
+#sidebar nav ul{list-style:none;padding:0;margin:0}
+#sidebar nav li{margin-bottom:2px}
+#sidebar nav a{display:block;padding:6px 10px;border-radius:6px;font-size:.82rem;color:var(--text);text-decoration:none;transition:background .15s;line-height:1.4}
+#sidebar nav a:hover{background:var(--code-bg)}
+#sidebar nav a.chapter{font-weight:700;color:var(--heading);font-size:.9rem;margin-top:10px;padding:8px 10px;border-radius:6px}
+#sidebar nav a.q-link{padding-left:16px;font-size:.8rem;color:var(--muted)}
+#sidebar nav a.q-link .q-tag{font-weight:700;color:var(--heading2)}
+#sidebar nav a.q-link:hover{background:var(--code-bg);color:var(--text)}
+main{max-width:920px;margin:0 auto;padding:24px 20px 60px}
+@media(max-width:600px){main{padding:16px 12px 40px}}
+.cover{text-align:center;padding:48px 20px 40px;border-bottom:2px solid var(--border);margin-bottom:32px}
+.cover h1{font-size:2rem;color:var(--heading);margin-bottom:8px;line-height:1.25}
+@media(max-width:480px){.cover h1{font-size:1.5rem}}
+.cover .subtitle{font-size:1rem;color:var(--muted);margin-bottom:16px}
+.cover .meta{display:inline-flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.cover .tag{background:var(--code-bg);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:.8rem;color:var(--muted)}
+.cover .stats{margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cover .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 18px;min-width:100px}
+.cover .stat .num{font-size:1.5rem;font-weight:800;color:var(--accent);line-height:1.1}
+.cover .stat .lbl{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.intro{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:16px 20px;margin-bottom:24px;font-size:.92rem}
+.intro p{margin:0}
+section{margin-bottom:40px}
+section h2{color:var(--heading);font-size:1.4rem;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid var(--accent);scroll-margin-top:64px}
+section h3{color:var(--heading2);font-size:1.1rem;margin:16px 0 8px;scroll-margin-top:64px}
+.tbl-wrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+@media(max-width:600px){table{font-size:.78rem}}
+th{background:var(--tbl-head);color:var(--heading);font-weight:600;text-align:left;padding:8px 10px;border:1px solid var(--border);white-space:nowrap}
+td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+tr:nth-child(even) td{background:var(--tbl-alt)}
+td.num,th.num{text-align:center}
+tr.total td{font-weight:700;background:var(--tbl-head);color:var(--heading)}
+.qcard{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:18px;box-shadow:var(--card-shadow);scroll-margin-top:64px}
+@media(max-width:480px){.qcard{padding:14px}}
+.qcard-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.qnum{background:var(--heading);color:#fff;font-weight:700;font-size:.85rem;padding:3px 10px;border-radius:6px;letter-spacing:.02em}
+[data-theme="dark"] .qnum{background:var(--accent)}
+.badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.75rem;font-weight:700;letter-spacing:.05em;font-family:'SF Mono',Consolas,monospace}
+.badge-QFR{background:var(--b-QFR-bg);color:var(--b-QFR-fg)}.badge-TDC{background:var(--b-TDC-bg);color:var(--b-TDC-fg)}
+.badge-CAL{background:var(--b-CAL-bg);color:var(--b-CAL-fg)}.badge-EXP{background:var(--b-EXP-bg);color:var(--b-EXP-fg)}
+.badge-WTE{background:var(--b-WTE-bg);color:var(--b-WTE-fg)}.badge-STE{background:var(--b-STE-bg);color:var(--b-STE-fg)}
+.badge-DIA{background:var(--b-DIA-bg);color:var(--b-DIA-fg)}.badge-SYN{background:var(--b-SYN-bg);color:var(--b-SYN-fg)}
+.badge-DER{background:var(--b-DER-bg);color:var(--b-DER-fg)}.badge-QWC{background:var(--b-QWC-bg);color:var(--b-QWC-fg)}
+.badge-GRD{background:var(--b-GRD-bg);color:var(--b-GRD-fg)}
+.qspec{font-size:.8rem;color:var(--muted);font-weight:600;background:var(--code-bg);padding:2px 8px;border-radius:4px}
+.qmeta{margin-left:auto;font-size:.82rem;color:var(--muted);font-weight:600}
+@media(max-width:480px){.qmeta{margin-left:0;width:100%;font-size:.78rem}}
+.qmeta .marks{color:var(--accent);font-weight:700}
+.qtext{font-size:1rem;margin-bottom:12px;color:var(--text)}
+.qtext p{margin-bottom:6px}.qtext p:last-child{margin-bottom:0}
+.qtext strong{color:var(--heading)}.qtext em{color:var(--heading2);font-style:italic}
+.qtext code{background:var(--code-bg);padding:1px 5px;border-radius:4px;font-size:.9em}
+details.answer{margin-top:10px;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--bg)}
+details.answer>summary{cursor:pointer;padding:10px 14px;background:var(--code-bg);font-weight:700;color:var(--heading);font-size:.88rem;user-select:none;list-style:none;display:flex;align-items:center;gap:8px}
+details.answer>summary::-webkit-details-marker{display:none}
+details.answer>summary::before{content:"\25B6";font-size:.7rem;transition:transform .15s}
+details.answer[open]>summary::before{transform:rotate(90deg)}
+details.answer>summary:hover{background:var(--tbl-head)}
+.answer-body{padding:12px 16px 14px;font-size:.92rem}
+.answer-body p{margin-bottom:8px}.answer-body p:last-child{margin-bottom:0}
+.answer-body strong{color:var(--heading)}
+.answer-body code{background:var(--code-bg);padding:1px 5px;border-radius:4px;font-size:.88em}
+.answer-body ul,.answer-body ol{margin:4px 0 8px 22px}
+.answer-body li{margin-bottom:3px}
+.answer-body table{margin:8px 0;font-size:.85rem}
+.answer-body pre{background:var(--code-bg);padding:10px 14px;border-radius:8px;overflow-x:auto;margin:8px 0;font-size:.85rem;line-height:1.5}
+.ans{background:var(--worked-bg);border-left:4px solid var(--worked-border);border-radius:0 6px 6px 0;padding:10px 14px;margin:8px 0}
+.ans-label{font-weight:700;color:var(--heading2);margin-right:4px}
+.marking{margin:10px 0}
+.marking-title{font-weight:700;color:var(--heading);font-size:.85rem;margin-bottom:4px;text-transform:uppercase;letter-spacing:.03em}
+.marking ul{margin:4px 0 8px 22px}.marking li{margin-bottom:3px}
+hr{border:none;border-top:1px solid var(--border);margin:24px 0}
+sub,sup{font-size:.75em}
+.prog-table th,.prog-table td{text-align:center}
+.prog-table td.qcol{text-align:left;font-weight:600}
+.prog-table input[type="checkbox"]{width:18px;height:18px;cursor:pointer;accent-color:var(--accent)}
+.prog-table tr.t1-row td.qcol{color:var(--tier1-fg)}
+.prog-table tr.t2-row td.qcol{color:var(--tier2-fg)}
+.prog-table tr.t3-row td.qcol{color:var(--tier3-fg)}
+#progBar{width:100%;height:8px;background:var(--border);border-radius:4px;overflow:hidden;margin:12px 0}
+#progFill{height:100%;background:var(--accent);border-radius:4px;transition:width .3s;width:0}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border)}
+@media print{header,#sidebar,#overlay,#darkBtn,nav,.progress-tracker,.no-print{display:none!important}body{padding-top:0;background:#fff;color:#000}main{max-width:100%;padding:0}details.answer{break-inside:avoid}details.answer>summary{display:none}details.answer .answer-body{display:block!important}.qcard{break-inside:avoid;box-shadow:none;border:1px solid #ccc}.cover{break-after:avoid}*{color:#000!important;background:#fff!important;background-color:#fff!important;background-image:none!important;text-shadow:none!important;box-shadow:none!important;border-color:#666!important}.tier-banner,.qcard,.q-tag,.badge-tier1,.badge-tier2,.badge-tier3,.badge-marks,.badge-type,.prog-table tr.t1-row,.prog-table tr.t2-row,.prog-table tr.t3-row{color:#000!important;background:#f2f2f2!important;background-color:#f2f2f2!important;border:1px solid #666!important}.badge-tier1{border:1px solid #000!important}.badge-tier2{border:1px dashed #000!important}.badge-tier3{border:1px dotted #000!important}a{color:#000!important;text-decoration:underline!important}@page{margin:18mm 16mm}}
+
+</style>
+</head>
+<body>
+<header>
+<button id="menuBtn" onclick="toggleSidebar()" aria-label="Toggle navigation">&#9776;</button>
+<span id="headerTitle">Ch 2.8 — Kinetics and Equilibria — Exam Readiness Questions</span>
+<button id="darkBtn" onclick="toggleDark()" aria-label="Toggle dark mode">&#127769; Dark</button>
+</header>
+<div id="overlay" onclick="toggleSidebar()"></div>
+
+<aside id="sidebar">
+<div class="sb-head"><span>Index</span><button class="sb-close" onclick="toggleSidebar()" aria-label="Close">&#10005;</button></div>
+<nav>
+<a href="#cover" class="chapter" onclick="toggleSidebar()">Cover</a>
+<ul><li><a href="#summary" onclick="toggleSidebar()">&#128202; Summary &amp; Progress Tracker</a></li></ul>
+<a href="#sec-s91" class="chapter" onclick="toggleSidebar()">Spec Point 9.1 — Collision Theory and Factors Affecting Rate</a>
+<ul>
+<li><a href="#q1" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q1 QFR</span> 2m</a></li>
+<li><a href="#q2" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q2 TDC</span> 2m</a></li>
+<li><a href="#q3" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q3 STE</span> 2m</a></li>
+<li><a href="#q4" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q4 TDC</span> 3m</a></li>
+<li><a href="#q5" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q5 EXP</span> 3m</a></li>
+<li><a href="#q6" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q6 STE</span> 2m</a></li>
+<li><a href="#q7" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q7 SYN</span> 4m</a></li>
+<li><a href="#q8" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q8 SYN</span> 3m</a></li>
+</ul>
+<a href="#sec-s92" class="chapter" onclick="toggleSidebar()">Spec Point 9.2 — Activation Energy</a>
+<ul>
+<li><a href="#q9" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q9 QFR</span> 1m</a></li>
+<li><a href="#q10" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q10 WTE</span> 2m</a></li>
+<li><a href="#q11" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q11 STE</span> 1m</a></li>
+<li><a href="#q12" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q12 TDC</span> 2m</a></li>
+<li><a href="#q13" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q13 SYN</span> 3m</a></li>
+<li><a href="#q14" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q14 SYN</span> 4m</a></li>
+</ul>
+<a href="#sec-s93" class="chapter" onclick="toggleSidebar()">Spec Point 9.3 — Measuring Rates of Reaction</a>
+<ul>
+<li><a href="#q15" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q15 QFR</span> 1m</a></li>
+<li><a href="#q16" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q16 WTE</span> 2m</a></li>
+<li><a href="#q17" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q17 CAL</span> 2m</a></li>
+<li><a href="#q18" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q18 CAL</span> 2m</a></li>
+<li><a href="#q19" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q19 CAL</span> 3m</a></li>
+<li><a href="#q20" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q20 CAL</span> 2m</a></li>
+<li><a href="#q21" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q21 EXP</span> 3m</a></li>
+<li><a href="#q22" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q22 TDC</span> 2m</a></li>
+<li><a href="#q23" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q23 SYN</span> 3m</a></li>
+</ul>
+<a href="#sec-s94" class="chapter" onclick="toggleSidebar()">Spec Point 9.4 — Maxwell–Boltzmann Distribution</a>
+<ul>
+<li><a href="#q24" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q24 QFR</span> 1m</a></li>
+<li><a href="#q25" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q25 QFR</span> 1m</a></li>
+<li><a href="#q26" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q26 QFR</span> 1m</a></li>
+<li><a href="#q27" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q27 TDC</span> 2m</a></li>
+<li><a href="#q28" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q28 WTE</span> 2m</a></li>
+<li><a href="#q29" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q29 WTE</span> 2m</a></li>
+<li><a href="#q30" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q30 EXP</span> 3m</a></li>
+<li><a href="#q31" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q31 EXP</span> 2m</a></li>
+<li><a href="#q32" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q32 EXP</span> 3m</a></li>
+<li><a href="#q33" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q33 DIA</span> 3m</a></li>
+<li><a href="#q34" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q34 DIA</span> 4m</a></li>
+<li><a href="#q35" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q35 SYN</span> 4m</a></li>
+</ul>
+<a href="#sec-s95" class="chapter" onclick="toggleSidebar()">Spec Point 9.5 — Catalysts</a>
+<ul>
+<li><a href="#q36" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q36 QFR</span> 1m</a></li>
+<li><a href="#q37" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q37 QFR</span> 4m</a></li>
+<li><a href="#q38" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q38 WTE</span> 2m</a></li>
+<li><a href="#q39" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q39 TDC</span> 2m</a></li>
+<li><a href="#q40" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q40 STE</span> 1m</a></li>
+<li><a href="#q41" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q41 EXP</span> 3m</a></li>
+<li><a href="#q42" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q42 SYN</span> 4m</a></li>
+<li><a href="#q43" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q43 SYN</span> 3m</a></li>
+</ul>
+<a href="#sec-s96" class="chapter" onclick="toggleSidebar()">Spec Point 9.6 — Reaction Profile Diagrams</a>
+<ul>
+<li><a href="#q44" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q44 QFR</span> 1m</a></li>
+<li><a href="#q45" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q45 EXP</span> 2m</a></li>
+<li><a href="#q46" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q46 CAL</span> 2m</a></li>
+<li><a href="#q47" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q47 DIA</span> 3m</a></li>
+<li><a href="#q48" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q48 DIA</span> 3m</a></li>
+<li><a href="#q49" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q49 DIA</span> 3m</a></li>
+<li><a href="#q50" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q50 DIA</span> 4m</a></li>
+<li><a href="#q51" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q51 SYN</span> 4m</a></li>
+</ul>
+<a href="#sec-s97" class="chapter" onclick="toggleSidebar()">Spec Point 9.7 — Catalysts and Sustainability</a>
+<ul>
+<li><a href="#q52" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q52 QFR</span> 1m</a></li>
+<li><a href="#q53" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q53 TDC</span> 2m</a></li>
+<li><a href="#q54" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q54 WTE</span> 2m</a></li>
+<li><a href="#q55" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q55 EXP</span> 2m</a></li>
+<li><a href="#q56" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q56 SYN</span> 3m</a></li>
+</ul>
+<a href="#sec-s98" class="chapter" onclick="toggleSidebar()">Spec Point 9.8 — Maxwell–Boltzmann Distribution and Catalysts</a>
+<ul>
+<li><a href="#q57" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q57 DIA</span> 3m</a></li>
+<li><a href="#q58" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q58 DIA</span> 3m</a></li>
+<li><a href="#q59" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q59 WTE</span> 2m</a></li>
+<li><a href="#q60" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q60 TDC</span> 3m</a></li>
+</ul>
+<a href="#sec-s99" class="chapter" onclick="toggleSidebar()">Spec Point 9.9 — Dynamic Equilibrium</a>
+<ul>
+<li><a href="#q61" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q61 QFR</span> 2m</a></li>
+<li><a href="#q62" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q62 QFR</span> 1m</a></li>
+<li><a href="#q63" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q63 TDC</span> 2m</a></li>
+<li><a href="#q64" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q64 TDC</span> 3m</a></li>
+<li><a href="#q65" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q65 TDC</span> 2m</a></li>
+<li><a href="#q66" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q66 EXP</span> 2m</a></li>
+<li><a href="#q67" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q67 EXP</span> 3m</a></li>
+<li><a href="#q68" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q68 STE</span> 2m</a></li>
+</ul>
+<a href="#sec-s910" class="chapter" onclick="toggleSidebar()">Spec Point 9.10 — Le Chatelier's Principle</a>
+<ul>
+<li><a href="#q69" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q69 QFR</span> 2m</a></li>
+<li><a href="#q70" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q70 STE</span> 2m</a></li>
+<li><a href="#q71" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q71 TDC</span> 2m</a></li>
+<li><a href="#q72" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q72 TDC</span> 2m</a></li>
+<li><a href="#q73" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q73 TDC</span> 2m</a></li>
+<li><a href="#q74" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q74 STE</span> 2m</a></li>
+<li><a href="#q75" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q75 EXP</span> 2m</a></li>
+<li><a href="#q76" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q76 EXP</span> 3m</a></li>
+<li><a href="#q77" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q77 EXP</span> 2m</a></li>
+<li><a href="#q78" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q78 SYN</span> 3m</a></li>
+<li><a href="#q79" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q79 SYN</span> 4m</a></li>
+<li><a href="#q80" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q80 SYN</span> 3m</a></li>
+<li><a href="#q81" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q81 SYN</span> 3m</a></li>
+</ul>
+<a href="#sec-s911" class="chapter" onclick="toggleSidebar()">Spec Point 9.11 — Industrial Conditions and Compromise</a>
+<ul>
+<li><a href="#q82" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q82 QFR</span> 1m</a></li>
+<li><a href="#q83" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q83 STE</span> 2m</a></li>
+<li><a href="#q84" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q84 CAL</span> 2m</a></li>
+<li><a href="#q85" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q85 EXP</span> 3m</a></li>
+<li><a href="#q86" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q86 EXP</span> 2m</a></li>
+<li><a href="#q87" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q87 EXP</span> 3m</a></li>
+<li><a href="#q88" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q88 SYN</span> 4m</a></li>
+<li><a href="#q89" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q89 SYN</span> 4m</a></li>
+<li><a href="#q90" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q90 SYN</span> 5m</a></li>
+</ul>
+</nav>
+</aside>
+<main>
+<section class="cover" id="cover">
+<h1>Chapter 2.8 — Kinetics and Equilibria</h1>
+<p class="subtitle">WCH12 &middot; Edexcel IAL Chemistry Unit 2 &middot; Exam Readiness Questions</p>
+<div class="meta">
+<span class="tag">Spec Points 9.1–9.11</span>
+<span class="tag">7 Papers Analysed</span>
+<span class="tag">Jun 2022 – Oct 2024</span>
+</div>
+<div class="stats">
+<div class="stat"><div class="num">90</div><div class="lbl">Questions</div></div>
+<div class="stat"><div class="num">220</div><div class="lbl">Total Marks</div></div>
+<div class="stat"><div class="num">~440</div><div class="lbl">Minutes</div></div>
+</div>
+</section>
+<section id="summary">
+<h2>&#128202; Summary &amp; Progress Tracker</h2>
+<div class="intro">
+<p>This set contains <strong>90 questions</strong> totalling <strong>220 marks</strong>, with an estimated completion time of <strong>~440 minutes</strong>. Questions are organised by specification point and tagged by tier (T1 Foundation, T2 Application, T3 Integration) and type (QFR, TDC, CAL, EXP, WTE, STE, DIA, SYN, DER, QWC, GRD).</p>
+</div>
+<h3>Progress Tracker</h3>
+<p id="progText" style="font-size:.9rem;color:var(--muted);margin-bottom:6px">0 / 90 questions completed</p>
+<div id="progBar"><div id="progFill"></div></div>
+<div class="tbl-wrap">
+<table class="prog-table">
+<thead><tr><th class="qcol">Question</th><th>Type</th><th>Tier</th><th>Marks</th><th>Done</th></tr></thead>
+<tbody>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 9.1 — Collision Theory and Factors Affecting Rate</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q1" style="text-decoration:none;color:inherit">Q1</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q1"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q2" style="text-decoration:none;color:inherit">Q2</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q2"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q3" style="text-decoration:none;color:inherit">Q3</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q3"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q4" style="text-decoration:none;color:inherit">Q4</a></td><td class="num">TDC</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q4"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q5" style="text-decoration:none;color:inherit">Q5</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q5"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q6" style="text-decoration:none;color:inherit">Q6</a></td><td class="num">STE</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q6"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q7" style="text-decoration:none;color:inherit">Q7</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q7"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q8" style="text-decoration:none;color:inherit">Q8</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q8"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 9.2 — Activation Energy</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q9" style="text-decoration:none;color:inherit">Q9</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q9"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q10" style="text-decoration:none;color:inherit">Q10</a></td><td class="num">WTE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q10"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q11" style="text-decoration:none;color:inherit">Q11</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q11"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q12" style="text-decoration:none;color:inherit">Q12</a></td><td class="num">TDC</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q12"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q13" style="text-decoration:none;color:inherit">Q13</a></td><td class="num">SYN</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q13"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q14" style="text-decoration:none;color:inherit">Q14</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q14"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 9.3 — Measuring Rates of Reaction</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q15" style="text-decoration:none;color:inherit">Q15</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q15"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q16" style="text-decoration:none;color:inherit">Q16</a></td><td class="num">WTE</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q16"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q17" style="text-decoration:none;color:inherit">Q17</a></td><td class="num">CAL</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q17"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q18" style="text-decoration:none;color:inherit">Q18</a></td><td class="num">CAL</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q18"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q19" style="text-decoration:none;color:inherit">Q19</a></td><td class="num">CAL</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q19"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q20" style="text-decoration:none;color:inherit">Q20</a></td><td class="num">CAL</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q20"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q21" style="text-decoration:none;color:inherit">Q21</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q21"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q22" style="text-decoration:none;color:inherit">Q22</a></td><td class="num">TDC</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q22"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q23" style="text-decoration:none;color:inherit">Q23</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q23"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 9.4 — Maxwell–Boltzmann Distribution</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q24" style="text-decoration:none;color:inherit">Q24</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q24"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q25" style="text-decoration:none;color:inherit">Q25</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q25"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q26" style="text-decoration:none;color:inherit">Q26</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q26"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q27" style="text-decoration:none;color:inherit">Q27</a></td><td class="num">TDC</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q27"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q28" style="text-decoration:none;color:inherit">Q28</a></td><td class="num">WTE</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q28"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q29" style="text-decoration:none;color:inherit">Q29</a></td><td class="num">WTE</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q29"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q30" style="text-decoration:none;color:inherit">Q30</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q30"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q31" style="text-decoration:none;color:inherit">Q31</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q31"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q32" style="text-decoration:none;color:inherit">Q32</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q32"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q33" style="text-decoration:none;color:inherit">Q33</a></td><td class="num">DIA</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q33"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q34" style="text-decoration:none;color:inherit">Q34</a></td><td class="num">DIA</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q34"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q35" style="text-decoration:none;color:inherit">Q35</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q35"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 9.5 — Catalysts</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q36" style="text-decoration:none;color:inherit">Q36</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q36"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q37" style="text-decoration:none;color:inherit">Q37</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">4</td><td><input type="checkbox" data-qid="q37"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q38" style="text-decoration:none;color:inherit">Q38</a></td><td class="num">WTE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q38"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q39" style="text-decoration:none;color:inherit">Q39</a></td><td class="num">TDC</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q39"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q40" style="text-decoration:none;color:inherit">Q40</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q40"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q41" style="text-decoration:none;color:inherit">Q41</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q41"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q42" style="text-decoration:none;color:inherit">Q42</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q42"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q43" style="text-decoration:none;color:inherit">Q43</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q43"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 9.6 — Reaction Profile Diagrams</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q44" style="text-decoration:none;color:inherit">Q44</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q44"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q45" style="text-decoration:none;color:inherit">Q45</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q45"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q46" style="text-decoration:none;color:inherit">Q46</a></td><td class="num">CAL</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q46"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q47" style="text-decoration:none;color:inherit">Q47</a></td><td class="num">DIA</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q47"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q48" style="text-decoration:none;color:inherit">Q48</a></td><td class="num">DIA</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q48"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q49" style="text-decoration:none;color:inherit">Q49</a></td><td class="num">DIA</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q49"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q50" style="text-decoration:none;color:inherit">Q50</a></td><td class="num">DIA</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q50"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q51" style="text-decoration:none;color:inherit">Q51</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q51"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 9.7 — Catalysts and Sustainability</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q52" style="text-decoration:none;color:inherit">Q52</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q52"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q53" style="text-decoration:none;color:inherit">Q53</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q53"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q54" style="text-decoration:none;color:inherit">Q54</a></td><td class="num">WTE</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q54"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q55" style="text-decoration:none;color:inherit">Q55</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q55"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q56" style="text-decoration:none;color:inherit">Q56</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q56"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 9.8 — Maxwell–Boltzmann Distribution and Catalysts</td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q57" style="text-decoration:none;color:inherit">Q57</a></td><td class="num">DIA</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q57"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q58" style="text-decoration:none;color:inherit">Q58</a></td><td class="num">DIA</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q58"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q59" style="text-decoration:none;color:inherit">Q59</a></td><td class="num">WTE</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q59"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q60" style="text-decoration:none;color:inherit">Q60</a></td><td class="num">TDC</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q60"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 9.9 — Dynamic Equilibrium</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q61" style="text-decoration:none;color:inherit">Q61</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q61"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q62" style="text-decoration:none;color:inherit">Q62</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q62"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q63" style="text-decoration:none;color:inherit">Q63</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q63"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q64" style="text-decoration:none;color:inherit">Q64</a></td><td class="num">TDC</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q64"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q65" style="text-decoration:none;color:inherit">Q65</a></td><td class="num">TDC</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q65"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q66" style="text-decoration:none;color:inherit">Q66</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q66"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q67" style="text-decoration:none;color:inherit">Q67</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q67"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q68" style="text-decoration:none;color:inherit">Q68</a></td><td class="num">STE</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q68"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 9.10 — Le Chatelier's Principle</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q69" style="text-decoration:none;color:inherit">Q69</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q69"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q70" style="text-decoration:none;color:inherit">Q70</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q70"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q71" style="text-decoration:none;color:inherit">Q71</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q71"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q72" style="text-decoration:none;color:inherit">Q72</a></td><td class="num">TDC</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q72"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q73" style="text-decoration:none;color:inherit">Q73</a></td><td class="num">TDC</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q73"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q74" style="text-decoration:none;color:inherit">Q74</a></td><td class="num">STE</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q74"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q75" style="text-decoration:none;color:inherit">Q75</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q75"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q76" style="text-decoration:none;color:inherit">Q76</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q76"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q77" style="text-decoration:none;color:inherit">Q77</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q77"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q78" style="text-decoration:none;color:inherit">Q78</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q78"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q79" style="text-decoration:none;color:inherit">Q79</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q79"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q80" style="text-decoration:none;color:inherit">Q80</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q80"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q81" style="text-decoration:none;color:inherit">Q81</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q81"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">Spec Point 9.11 — Industrial Conditions and Compromise</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q82" style="text-decoration:none;color:inherit">Q82</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q82"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q83" style="text-decoration:none;color:inherit">Q83</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q83"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q84" style="text-decoration:none;color:inherit">Q84</a></td><td class="num">CAL</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q84"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q85" style="text-decoration:none;color:inherit">Q85</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q85"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q86" style="text-decoration:none;color:inherit">Q86</a></td><td class="num">EXP</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q86"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q87" style="text-decoration:none;color:inherit">Q87</a></td><td class="num">EXP</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q87"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q88" style="text-decoration:none;color:inherit">Q88</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q88"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q89" style="text-decoration:none;color:inherit">Q89</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q89"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q90" style="text-decoration:none;color:inherit">Q90</a></td><td class="num">SYN</td><td class="num">T3</td><td class="num">5</td><td><input type="checkbox" data-qid="q90"></td></tr>
+</tbody></table></div>
+</section>
+<section id="sec-s91">
+<h2>Spec Point 9.1 — Collision Theory and Factors Affecting Rate</h2>
+<article class="qcard" id="q1">
+<div class="qcard-head">
+<span class="qnum">Q1</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§9.1</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State the two conditions that must be satisfied for a collision between reactant particles to result in a reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The particles must collide with <strong>sufficient energy</strong> (equal to or greater than the activation energy) <strong>and</strong> with the <strong>correct orientation</strong>.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: sufficient energy (≥ activation energy)</li>
+<li>1 mark: correct orientation</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Students sometimes write "high enough concentration" or "enough particles" — these are not conditions for an individual collision to be successful, they are factors that affect how many collisions occur overall.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q2">
+<div class="qcard-head">
+<span class="qnum">Q2</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§9.1</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student increases the concentration of a reactant in solution. State whether this change affects (i) the frequency of collisions, and (ii) the proportion of collisions that are successful.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(i) The frequency of collisions <strong>increases</strong> / there are more particles per unit volume leading to more frequent collisions. (ii) The proportion of successful collisions <strong>remains the same</strong> / <strong>does not change</strong>.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: frequency of collisions increases</li>
+<li>1 mark: proportion of successful collisions stays the same / is unchanged</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Students often state that "more collisions are successful" when they mean the total <em>number</em> of successful collisions increases. The <em>proportion</em> does not change — only the total frequency does. This distinction is critical in mark schemes.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q3">
+<div class="qcard-head">
+<span class="qnum">Q3</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§9.1</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State and explain the effect of increasing the surface area of a solid reactant on the rate of reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Increasing the surface area <strong>increases the rate of reaction</strong>. This is because more particles of the solid are <strong>exposed</strong> to the other reactant(s), increasing the <strong>frequency of collisions</strong> between the solid surface and the other reactant particles.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: rate increases</li>
+<li>1 mark: explanation in terms of frequency of collisions increasing (must reference more particles exposed / more surface area available)
+<strong>Accept Alternatives:</strong> "More particles are available for collisions at any one time"; "greater area for collisions to occur."</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q4">
+<div class="qcard-head">
+<span class="qnum">Q4</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§9.1</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A student writes: <em>"Increasing the pressure of a gaseous reaction mixture increases the energy of the gas particles, so more collisions are successful and the rate increases."</em> Evaluate this statement by identifying what is correct and what is incorrect.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The statement is <strong>partially correct</strong> in that increasing pressure does increase the rate of reaction. However, the reasoning is <strong>incorrect</strong>: increasing pressure does <strong>not</strong> increase the energy of the particles. Instead, increasing pressure means there are <strong>more particles per unit volume</strong>, which increases the <strong>frequency of collisions</strong>. The <strong>proportion of successful collisions</strong> remains unchanged because the energy distribution of the particles has not changed.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: identifies that the conclusion (rate increases) is correct</li>
+<li>1 mark: identifies that the reasoning (energy of particles increases) is incorrect</li>
+<li>1 mark: correct explanation — more particles per unit volume → increased frequency of collisions → proportion unchanged</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>This is a high-frequency exam trap. Students confuse the effect of pressure (changes frequency only) with the effect of temperature (changes both frequency and proportion of successful collisions).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q5">
+<div class="qcard-head">
+<span class="qnum">Q5</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§9.1</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Explain why increasing the temperature of a reaction mixture generally has a much greater effect on the rate of reaction than increasing the concentration of a reactant by the same proportion.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Increasing temperature <strong>increases the frequency of collisions</strong> (because particles move faster) <strong>and also increases the proportion of collisions that are successful</strong> (because a greater proportion of molecules have energy ≥ activation energy). In contrast, increasing concentration only increases the <strong>frequency of collisions</strong> but has <strong>no effect</strong> on the proportion of successful collisions. Therefore, temperature affects <strong>both</strong> factors that determine rate, giving it a greater overall effect.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: temperature increases frequency of collisions (particles move faster)</li>
+<li>1 mark: temperature also increases proportion of successful collisions</li>
+<li>1 mark: concentration only affects frequency, not proportion
+<strong>Accept Alternatives:</strong> "Temperature has an exponential effect on rate (roughly doubles per 10 K) whereas concentration has a linear/proportional effect."</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q6">
+<div class="qcard-head">
+<span class="qnum">Q6</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§9.1</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>The concentration of hydrochloric acid in the reaction between calcium carbonate and hydrochloric acid is halved, while all other conditions remain the same. State and explain the effect on: (a) the initial rate of reaction, (b) the final volume of carbon dioxide collected.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) The initial rate is <strong>halved</strong>. Fewer acid particles per unit volume means fewer successful collisions per second. (b) The final volume of gas is <strong>halved</strong>. There are fewer moles of acid available to react, so fewer moles of CO₂ are produced.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>(a) 1 mark: initial rate is halved + explanation (fewer particles per unit volume / fewer collisions)</li>
+<li>(b) 1 mark: final volume is halved + explanation (fewer moles of acid / limiting reagent)</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Students may correctly identify that the rate decreases but state the final volume is "unchanged." Since HCl is the limiting reagent, halving its concentration (and therefore amount if volume is constant) halves the total gas produced.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q7">
+<div class="qcard-head">
+<span class="qnum">Q7</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§9.1</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Use collision theory to explain fully how increasing the temperature increases the rate of a chemical reaction. Your answer should distinguish clearly between the effect on collision frequency and the effect on the proportion of successful collisions.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li>Increasing temperature causes particles to <strong>move faster</strong> / have <strong>greater average kinetic energy</strong> (1 mark).</li>
+<li>This <strong>increases the frequency of collisions</strong> between reactant particles, so more collisions occur per unit time (1 mark).</li>
+<li>In addition, increasing temperature means a <strong>greater proportion of molecules</strong> have energy <strong>equal to or greater than the activation energy</strong> (1 mark).</li>
+<li>Therefore, a greater <strong>proportion of collisions are successful</strong>, further increasing the rate (1 mark).</li>
+<li>Since <strong>both</strong> the frequency of collisions <strong>and</strong> the proportion of successful collisions increase, the rate of reaction increases significantly.</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: particles have more energy / move faster / greater average kinetic energy</li>
+<li>1 mark: frequency of collisions increases</li>
+<li>1 mark: greater proportion of molecules with energy ≥ Eₐ</li>
+<li>1 mark: proportion of successful collisions increases
+<strong>Note:</strong> A mark for the final "both factors" conclusion is not required separately if all four marking points are made. The "significantly" or "greater effect than concentration alone" is a consequence, not a separate mark.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q8">
+<div class="qcard-head">
+<span class="qnum">Q8</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§9.1</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Both increasing pressure (for a gaseous reaction) and increasing temperature increase the rate of reaction. Compare the mechanisms by which each of these changes affects the rate, stating one key similarity and one key difference.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li><strong>Similarity:</strong> Both changes <strong>increase the frequency of collisions</strong> (pressure: more particles per unit volume; temperature: particles move faster) (1 mark).</li>
+<li><strong>Difference:</strong> Increasing temperature also <strong>increases the proportion of successful collisions</strong> (greater proportion of molecules have energy ≥ activation energy), whereas increasing pressure has <strong>no effect</strong> on the proportion of successful collisions (2 marks).</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: both increase frequency of collisions (with brief explanation of mechanism for each)</li>
+<li>2 marks: difference — temperature changes proportion of successful collisions; pressure does not
+<strong>Accept Alternatives for Similarity:</strong> "Both result in a greater number of successful collisions per second."</li>
+</ul></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s92">
+<h2>Spec Point 9.2 — Activation Energy</h2>
+<article class="qcard" id="q9">
+<div class="qcard-head">
+<span class="qnum">Q9</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§9.2</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>Define the term <em>activation energy</em>.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The minimum energy that particles must have for a collision to be successful (to result in a reaction).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: minimum energy for a successful collision / for a reaction to occur
+<strong>Accept Alternatives:</strong> "The minimum energy needed to break bonds and start the reaction"; "the energy barrier that must be overcome for reactants to form products."</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q10">
+<div class="qcard-head">
+<span class="qnum">Q10</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§9.2</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>When asked why increasing temperature increases the rate of a reaction, a common incorrect answer is: <em>"Increasing temperature increases the activation energy."</em> (i) What is wrong with this answer? (ii) What should the correct reasoning be?</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(i) Activation energy is an intrinsic property of a reaction and does <strong>not</strong> change with temperature. (ii) Increasing temperature means a greater proportion of molecules have energy ≥ the activation energy, so more frequent successful collisions occur per unit time.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>(i) 1 mark: identifies that activation energy does NOT change / is fixed / is intrinsic</li>
+<li>(ii) 1 mark: correct explanation — greater proportion of molecules have energy ≥ activation energy</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>This is one of the most common student errors in kinetics. Students often conflate the activation energy threshold with the average kinetic energy of the particles. The threshold stays the same; it is the distribution of particle energies that changes.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q11">
+<div class="qcard-head">
+<span class="qnum">Q11</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§9.2</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the effect, if any, of increasing the temperature on the activation energy of a reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>No effect / the activation energy is unchanged. (Activation energy is an intrinsic property of the reaction and does not depend on temperature.)</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: no effect / unchanged / does not change
+<strong>Note:</strong> If a student writes "increases," this scores zero. Examiners specifically test this distinction.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q12">
+<div class="qcard-head">
+<span class="qnum">Q12</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§9.2</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>When the temperature of a reaction mixture is increased, state the effect on each of the following: (i) the activation energy, (ii) the most probable energy of the molecules, (iii) the mean energy of the molecules.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(i) <strong>No change</strong> / remains the same. (ii) <strong>Increases</strong> / shifts to a higher value. (iii) <strong>Increases</strong>.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>(i) 1 mark: no change / unchanged</li>
+<li>(ii) + (iii): 1 mark for both correct (both increase)</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Students may state that the activation energy decreases at higher temperature, or that it increases. Neither is correct — Eₐ is invariant with temperature for a given reaction.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q13">
+<div class="qcard-head">
+<span class="qnum">Q13</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§9.2</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Both increasing temperature and adding a catalyst increase the rate of a chemical reaction. Compare the mechanisms by which each achieves this increase. Your answer must include similarities and differences.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li><strong>Similarity:</strong> Both result in a greater proportion of molecules having energy ≥ the activation energy, leading to more successful collisions per unit time (1 mark).</li>
+<li><strong>Difference (temperature):</strong> Increasing temperature changes the Maxwell–Boltzmann distribution (peak lowers, shifts right) but the activation energy itself remains unchanged; more molecules now exceed the unchanged Eₐ (1 mark).</li>
+<li><strong>Difference (catalyst):</strong> Adding a catalyst provides an alternative pathway with a lower activation energy; the Maxwell–Boltzmann distribution remains completely unchanged, but the threshold (Eₐ) is lowered so more molecules exceed it (1 mark).</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: similarity — both increase proportion of molecules with E ≥ Eₐ</li>
+<li>1 mark: difference — temperature changes the distribution; Eₐ unchanged</li>
+<li>1 mark: difference — catalyst lowers Eₐ; distribution unchanged</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q14">
+<div class="qcard-head">
+<span class="qnum">Q14</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§9.2</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Chloromethane (CH₃Cl) hydrolyses more slowly than bromomethane (CH₃Br) under identical conditions. Explain this difference in terms of bond enthalpy and activation energy.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The C–Cl bond has a higher bond enthalpy (is stronger) than the C–Br bond. Therefore, more energy is required to break the C–Cl bond. The activation energy for the hydrolysis of CH₃Cl is higher than for CH₃Br. At any given temperature, a smaller proportion of CH₃Cl molecules have energy ≥ the (higher) activation energy, so fewer successful collisions occur per unit time and the rate of reaction is slower.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: C–Cl bond has a higher bond enthalpy / is stronger</li>
+<li>1 mark: more energy needed to break C–Cl / higher activation energy for CH₃Cl</li>
+<li>1 mark: smaller proportion of CH₃Cl molecules have energy ≥ activation energy</li>
+<li>1 mark: therefore slower rate / fewer successful collisions
+<strong>Accept Alternatives:</strong> "C–Cl bond enthalpy is 346 kJ mol⁻¹ and C–Br bond enthalpy is 290 kJ mol⁻¹" (specific values accepted if approximately correct).</li>
+</ul></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s93">
+<h2>Spec Point 9.3 — Measuring Rates of Reaction</h2>
+<article class="qcard" id="q15">
+<div class="qcard-head">
+<span class="qnum">Q15</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§9.3</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State how the instantaneous rate of reaction at a particular time is determined from a concentration–time graph.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The instantaneous rate is equal to the <strong>gradient of the tangent</strong> to the curve at that time.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: gradient of the tangent (at that point / at that time)
+<strong>Accept Alternatives:</strong> "Draw a tangent and calculate its gradient"; "the slope of the tangent line."</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q16">
+<div class="qcard-head">
+<span class="qnum">Q16</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§9.3</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student is asked to find the rate of reaction at a specific point on a volume–time graph. The student divides the total volume of gas produced by the total time taken. Identify the error in the student's method and state the correct method.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The student has calculated the <strong>average rate</strong> over the whole time period (1 mark). To find the rate at a specific point, a <strong>tangent should be drawn</strong> to the curve at that point and the <strong>gradient of the tangent</strong> calculated (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: identifies the error — student calculated average rate, not instantaneous rate</li>
+<li>1 mark: states correct method — draw tangent, calculate its gradient</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Students frequently confuse average rate with instantaneous rate. Average rate = total change / total time. Instantaneous rate = gradient of tangent at a specific point.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q17">
+<div class="qcard-head">
+<span class="qnum">Q17</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§9.3</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>In an experiment to compare reaction rates, the time taken for a precipitate to first appear was measured. At 20 °C the time was 120 s and at 40 °C the time was 30 s. Calculate the ratio of the approximate rate at 40 °C to the approximate rate at 20 °C.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Rate at 20 °C ∝ 1/120 = 8.33 × 10⁻³ s⁻¹. Rate at 40 °C ∝ 1/30 = 3.33 × 10⁻² s⁻¹. Ratio = (1/30) / (1/120) = 120/30 = <strong>4.0</strong>. The rate at 40 °C is approximately 4 times the rate at 20 °C.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: correct calculation method (rate ∝ 1/time, then ratio = time₁/time₂ = 120/30)</li>
+<li>1 mark: correct answer of <strong>4.0</strong> (accept 4 without decimal)
+<strong>Note:</strong> The shortcut is simply 120/30 = 4, since rate₁/rate₂ = (1/t₁)/(1/t₂) = t₂/t₁. Students who calculate each rate separately and then divide will also score full marks.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q18">
+<div class="qcard-head">
+<span class="qnum">Q18</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§9.3</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>In an experiment, the volume of gas produced was measured over time. At time <em>t</em> = 60 s, a tangent was drawn to the curve. The tangent passes through the points (40 s, 12.0 cm³) and (80 s, 28.0 cm³). Calculate the rate of reaction at <em>t</em> = 60 s. Give your answer with appropriate units.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Gradient = (28.0 − 12.0) / (80 − 40) = 16.0 / 40 = <strong>0.40 cm³ s⁻¹</strong> (1 mark) ✓ units: <strong>cm³ s⁻¹</strong> (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: correct numerical answer of 0.40 (allow 0.4; must show working for credit if answer is wrong)</li>
+<li>1 mark: correct units (cm³ s⁻¹)</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Students may calculate the gradient upside down as (80 − 40)/(28.0 − 12.0) = 2.5 s cm⁻³, losing the method mark. Always remind students: gradient = Δy/Δx.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q19">
+<div class="qcard-head">
+<span class="qnum">Q19</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§9.3</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A student investigates the decomposition of hydrogen peroxide and measures the volume of oxygen gas produced. A tangent is drawn to the volume–time curve at 60 s. The tangent passes through the points (20 s, 12 cm³) and (100 s, 48 cm³). Calculate the rate of reaction at 60 s, giving your answer to two significant figures with units.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Gradient = (48 − 12) / (100 − 20) = 36 / 80 = <strong>0.45 cm³ s⁻¹</strong> (to 2 s.f.).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: correct subtraction of values (Δy = 36, Δx = 80)</li>
+<li>1 mark: correct numerical answer (0.45 or 0.45 cm³ s⁻¹)</li>
+<li>1 mark: correct units (cm³ s⁻¹) and correct significant figures (2 s.f.)</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>A common error is using the tangent point itself (60 s) in the calculation rather than two points on the tangent line. The tangent line gives the slope at that point.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q20">
+<div class="qcard-head">
+<span class="qnum">Q20</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§9.3</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>The reaction between aqueous sodium thiosulfate and hydrochloric acid was timed. Without any added substance the reaction took 142 s. With Fe³⁺ ions present the reaction took 58 s. With Zn²⁺ ions present the reaction took 307 s. Use the relationship rate ∝ 1/time to identify which ion acts as a catalyst and justify your answer.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Fe³⁺ acts as a catalyst. The reaction time decreases from 142 s to 58 s, so the rate increases. Zn²⁺ is an inhibitor/poison because the reaction time increases so the rate decreases.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: Fe³⁺ identified as the catalyst (with justification: time decreased / rate increased)</li>
+<li>1 mark: Zn²⁺ identified as an inhibitor/poison (with justification: time increased / rate decreased)
+<strong>Accept Alternatives:</strong> "Fe³⁺ decreases the time taken, meaning the rate of reaction is faster"; "Zn²⁺ increases the time, meaning it slows the reaction."</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q21">
+<div class="qcard-head">
+<span class="qnum">Q21</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§9.3</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>The initial rate of a reaction can be estimated using the relationship initial rate ∝ 1/time. Explain why this relationship is only an approximation and does not give the true initial rate.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li>1/time assumes the rate is constant throughout the reaction / assumes a straight-line graph</li>
+<li>In reality the rate decreases over time as reactant concentration decreases</li>
+<li>The true initial rate is the gradient of a tangent at <em>t</em> = 0, which is steeper than the average rate</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: 1/time gives an average rate / assumes constant rate</li>
+<li>1 mark: rate actually decreases over time (as concentration decreases)</li>
+<li>1 mark: true initial rate is gradient of tangent at <em>t</em> = 0
+<strong>Note:</strong> This question tests understanding of the limitations of the 1/time method. It is commonly used in "disappearing cross" experiments where the time for a precipitate to obscure a mark is measured.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q22">
+<div class="qcard-head">
+<span class="qnum">Q22</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§9.3</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Compare the two methods used to measure the rate of a reaction: (a) using the relationship rate ∝ 1/time, and (b) calculating the gradient of a tangent to a concentration–time graph.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) Rate ∝ 1/time is an <strong>approximation</strong> that gives an average/relative rate from the start of the reaction to a fixed endpoint (e.g. a colour change). It is used for comparing rates under different conditions. (b) The gradient of a tangent to a concentration–time graph gives the <strong>instantaneous rate</strong> at a specific point in time. It is more accurate and shows how rate changes as the reaction proceeds.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: describes 1/time — gives average/relative rate; used for comparison</li>
+<li>1 mark: describes tangent method — gives instantaneous rate; more accurate
+<strong>Accept Alternatives:</strong> "1/time is quicker and simpler but less accurate"; "tangent method requires a graph but gives the exact rate at any moment."</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q23">
+<div class="qcard-head">
+<span class="qnum">Q23</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§9.3</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>The rate of reaction between excess magnesium and dilute hydrochloric acid is monitored by measuring the volume of hydrogen gas produced every 10 seconds. (a) Explain why the rate of reaction decreases as the reaction proceeds. (b) Describe how the rate of reaction at exactly <em>t</em> = 45 s can be determined from the resulting volume–time graph.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) The concentration of hydrochloric acid decreases as the reaction proceeds. Fewer acid particles per unit volume leads to fewer collisions per unit time.
+(b) Draw a tangent to the volume–time curve at <em>t</em> = 45 s and calculate the gradient of this tangent.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><p>(a)
+- 1 mark: concentration of acid decreases (as it is consumed)
+- 1 mark: fewer particles per unit volume → fewer collisions → lower rate
+(b)
+- 1 mark: draw tangent at <em>t</em> = 45 s and calculate gradient</p></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>In part (a), students may say "magnesium is used up" — since magnesium is in excess, this is not the reason the rate decreases. It is the acid concentration that decreases.</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s94">
+<h2>Spec Point 9.4 — Maxwell–Boltzmann Distribution</h2>
+<article class="qcard" id="q24">
+<div class="qcard-head">
+<span class="qnum">Q24</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§9.4</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the point at which a Maxwell–Boltzmann distribution curve must begin on a graph of number of molecules against energy.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The <strong>origin</strong> (0, 0) / zero energy and zero number of molecules.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: the origin / (0, 0)</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Some students draw the curve starting above the <em>x</em>-axis. The curve must begin at (0, 0) because no molecule has zero kinetic energy, and the probability of having very low energy approaches zero.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q25">
+<div class="qcard-head">
+<span class="qnum">Q25</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§9.4</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State what the total area under a single Maxwell–Boltzmann distribution curve represents.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The total <strong>number of molecules</strong> (in the sample).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: total number of molecules
+<strong>Accept Alternatives:</strong> "Total number of particles"; "the total number of molecules in the sample."</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q26">
+<div class="qcard-head">
+<span class="qnum">Q26</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§9.4</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the two quantities plotted on the axes of a Maxwell–Boltzmann distribution curve.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>Energy</strong> (or kinetic energy) on the <em>x</em>-axis and <strong>number of molecules</strong> (or fraction of molecules) on the <em>y</em>-axis.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: both axes correctly identified (energy on <em>x</em>, number/fraction of molecules on <em>y</em>)
+<strong>Note:</strong> Both axes must be correct for the mark. "Molecular energy" or "kinetic energy" are both acceptable for the <em>x</em>-axis.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q27">
+<div class="qcard-head">
+<span class="qnum">Q27</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§9.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State whether each of the following statements about a Maxwell–Boltzmann distribution is true or false. Justify each answer. (a) The curve starts at the origin because a small number of molecules have zero kinetic energy. (b) The area under the curve represents the total number of molecules in the sample.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) <strong>False</strong>. The curve starts at the origin but <strong>no molecule has zero energy</strong> (1 mark). (b) <strong>True</strong>. The area under the curve represents the total number of molecules (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: (a) false + justification that no molecule has zero energy</li>
+<li>1 mark: (b) true</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>For (a), students incorrectly accept the statement because they confuse "the curve approaches the origin" with "molecules have zero energy." The curve approaches but never actually reaches zero on the <em>y</em>-axis at zero energy.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q28">
+<div class="qcard-head">
+<span class="qnum">Q28</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§9.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student draws a Maxwell–Boltzmann distribution curve that curves downwards and crosses the <em>x</em>-axis, returning to zero at high energies. State the error in the student's diagram and explain why it is incorrect.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The curve should <strong>never cross or reach the <em>x</em>-axis</strong> / should be <strong>asymptotic</strong> (1 mark) because there is no maximum energy — theoretically a very small number of molecules can have very high energies (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: identifies the error — curve must be asymptotic / must not cross the <em>x</em>-axis</li>
+<li>1 mark: explanation — no maximum energy / small probability of very high energies</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>This is a frequent drawing error. Students sketch the curve returning to zero on the right side. The correct curve approaches zero but never reaches it, reflecting the fact that there is always a non-zero (though tiny) probability of any energy value.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q29">
+<div class="qcard-head">
+<span class="qnum">Q29</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§9.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>When asked to draw a Maxwell–Boltzmann distribution at a higher temperature, a student draws a curve that has a higher peak than the original and a larger total area beneath it. Identify two errors in this diagram.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ol>
+<li>The peak at higher temperature should be <strong>lower</strong> (not higher) and positioned to the <strong>right</strong> of the original peak (1 mark). 2. The total area under both curves should be the <strong>same</strong>, representing the same total number of molecules (1 mark).</li>
+</ol></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: peak should be lower and shifted right (either feature scores)</li>
+<li>1 mark: total area should be the same (same number of molecules)</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Students instinctively associate "higher temperature" with "bigger" and draw a taller, wider curve. The peak must be LOWER because the same number of molecules is spread over a wider range of energies.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q30">
+<div class="qcard-head">
+<span class="qnum">Q30</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§9.4</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Use the Maxwell–Boltzmann distribution to explain why increasing the temperature of a reaction mixture increases the rate of reaction. Your answer should make clear that the activation energy itself does not change.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>At higher temperature, the peak of the Maxwell–Boltzmann distribution is <strong>lower and shifts to the right</strong> (1 mark). The activation energy <strong>remains unchanged</strong>, but a <strong>greater proportion of molecules</strong> have energy ≥ activation energy (1 mark). Therefore, a greater frequency of successful collisions occurs per unit time, increasing the rate of reaction (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: describes the change in the distribution curve (peak lower, shifts right / broader)</li>
+<li>1 mark: states Eₐ is unchanged AND greater proportion exceed Eₐ</li>
+<li>1 mark: conclusion — more successful collisions per unit time → increased rate
+<strong>Critical Point:</strong> The mark scheme specifically requires the student to state that Eₐ does NOT change. Omitting this will lose a mark even if the rest of the explanation is correct.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q31">
+<div class="qcard-head">
+<span class="qnum">Q31</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§9.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain why the activation energy line on a Maxwell–Boltzmann distribution diagram does not move when the temperature is increased, even though the rate of reaction increases.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Activation energy is the minimum energy required for a successful collision (1 mark) and is an <strong>intrinsic property</strong> of the reaction, determined by the bonds being broken and formed; it does not depend on conditions such as temperature (1 mark). The rate increases because at higher temperature, a greater proportion of molecules have energy ≥ the (unchanged) activation energy.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: activation energy is an intrinsic property / depends on bonds being broken</li>
+<li>1 mark: does not depend on temperature / external conditions
+<strong>Accept Alternatives:</strong> "Eₐ is fixed for a given reaction regardless of conditions."</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q32">
+<div class="qcard-head">
+<span class="qnum">Q32</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§9.4</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Some gas is removed from a reaction vessel AND the temperature is decreased. Explain the changes to the Maxwell–Boltzmann distribution curve.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li>The area under the curve <strong>decreases</strong>, because there are fewer molecules in the container</li>
+<li>The peak <strong>shifts to the left</strong> / the most probable energy decreases, because the average kinetic energy of molecules is lower at the lower temperature</li>
+<li>The distribution becomes <strong>narrower</strong></li>
+</ul></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: area decreases (fewer molecules)</li>
+<li>1 mark: peak shifts left / most probable energy decreases</li>
+<li>1 mark: distribution becomes narrower (accept: any two changes for full marks)
+<strong>Note:</strong> If a student states the peak height stays the same, this is incorrect — the peak height would decrease because there are fewer molecules at every energy value AND the peak position shifts.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q33">
+<div class="qcard-head">
+<span class="qnum">Q33</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§9.4</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Sketch two Maxwell–Boltzmann distribution curves on the same axes for the same gas at temperature T₁ and a higher temperature T₂ (T₂ &gt; T₁). Label the lower temperature curve T₁ and the higher temperature curve T₂. Include a labelled vertical line for the activation energy, Eₐ.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The diagram should show:
+- Two curves both starting from the <strong>origin</strong> (1 mark)
+- T₂ curve with a <strong>lower</strong> peak positioned to the <strong>right</strong> of the T₁ peak; both curves having the <strong>same total area</strong> under them, both approaching the <em>x</em>-axis asymptotically (1 mark)
+- The Eₐ vertical line in the <strong>same position</strong> for both curves, with a visibly greater area under T₂ to the right of Eₐ (1 mark)</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: both curves start at origin, have correct shape (peak then asymptotic to <em>x</em>-axis)</li>
+<li>1 mark: T₂ peak lower and to the right of T₁; same total area</li>
+<li>1 mark: Eₐ in same position for both; greater shaded area beyond Eₐ for T₂
+<strong>Common Drawing Errors:</strong></li>
+<li>Drawing T₂ peak higher than T₁ (should be lower)</li>
+<li>Different total areas under the curves (should be the same)</li>
+<li>Eₐ line at different positions for the two curves (should be the same — Eₐ is unchanged by temperature)</li>
+<li>Curves that cross or touch the <em>x</em>-axis on the right side</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q34">
+<div class="qcard-head">
+<span class="qnum">Q34</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§9.4</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Sketch two Maxwell–Boltzmann distribution curves on the same axes: one for a gas at temperature T₁ and one at a higher temperature T₂. Label both curves. Draw and label the activation energy, Eₐ, on your diagram. Use your diagram to explain why the rate of reaction is greater at T₂. Your answer must make clear what stays the same and what changes.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li>Both curves start at the origin, rise to a peak, and are asymptotic to the <em>x</em>-axis (never touch or cross the <em>x</em>-axis on the right) (1 mark).</li>
+<li>The T₂ curve has a <strong>lower</strong> peak and the peak is shifted to the <strong>right</strong> compared to T₁ (1 mark).</li>
+<li>A vertical line labelled Eₐ is drawn; the shaded area beyond Eₐ is larger for T₂ than for T₁ (1 mark).</li>
+<li>The activation energy, Eₐ, <strong>stays the same</strong> at both temperatures. At T₂, a greater proportion of molecules have energy ≥ Eₐ, so more frequent successful collisions occur and the rate of reaction is greater (1 mark).</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: correct shape for both curves (origin, peak, asymptotic)</li>
+<li>1 mark: T₂ lower peak, shifted right; same area</li>
+<li>1 mark: Eₐ in same position for both; clear indication of greater area beyond Eₐ for T₂</li>
+<li>1 mark: explanation linking diagram to rate — Eₐ unchanged, greater proportion exceed Eₐ at T₂
+<strong>Critical Requirement:</strong> The student must explicitly state that Eₐ stays the same. If they say "the activation energy decreases," they lose a mark.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q35">
+<div class="qcard-head">
+<span class="qnum">Q35</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§9.4</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>The temperature of a gaseous reaction mixture is increased at constant volume. (a) Describe two changes to the Maxwell–Boltzmann distribution curve. (b) A student concludes: <em>"The rate of reaction increases because the activation energy is lowered by the temperature increase."</em> Evaluate this conclusion.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) Any two of:
+- Peak shifts to the right / most probable energy increases
+- Peak becomes lower
+- Distribution becomes broader / wider
+- Area under the curve is unchanged
+(b)
+- The conclusion is <strong>incorrect</strong> in stating that activation energy is lowered
+- Activation energy is an <strong>intrinsic property</strong> and does not change with temperature
+- The rate increases because a <strong>greater proportion of molecules</strong> have energy ≥ activation energy at the higher temperature</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><p>(a) 1 mark per change described (max 1 mark if both are very similar, e.g. "shifts right" and "broader")
+(b) 1 mark: conclusion incorrect — Eₐ does not change; 1 mark: correct reason — greater proportion of molecules with E ≥ Eₐ
+<strong>Accept for (b):</strong> "Eₐ is determined by the reaction and its mechanism, not by conditions."</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s95">
+<h2>Spec Point 9.5 — Catalysts</h2>
+<article class="qcard" id="q36">
+<div class="qcard-head">
+<span class="qnum">Q36</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§9.5</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State what a catalyst does to the activation energy of a reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Provides an alternative reaction pathway with a <strong>lower activation energy</strong>.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: lowers activation energy / provides alternative pathway with lower Eₐ
+<strong>Accept Alternatives:</strong> "Reduces the activation energy"; "lowers the energy barrier."</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Students sometimes write "gives molecules more energy to overcome the activation energy." This is incorrect and will not score — a catalyst does NOT give molecules more energy.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q37">
+<div class="qcard-head">
+<span class="qnum">Q37</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§9.5</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>State two effects that a catalyst has on a chemical reaction and two things that a catalyst does NOT change.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>A catalyst provides an <strong>alternative reaction pathway with a lower activation energy</strong> (1 mark) and increases the rate of both the forward and backward reactions equally (1 mark). A catalyst does <strong>NOT</strong> change the <strong>position of equilibrium</strong> (1 mark) and does <strong>NOT</strong> change the <strong>enthalpy change, ΔH</strong>, of the reaction (1 mark). <em>(Any two 'does' and any two 'does not' for full marks.)</em></p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark per correct effect (max 2)</li>
+<li>1 mark per correct "does not change" (max 2)
+<strong>Common Errors:</strong></li>
+<li>"Increases the yield" — INCORRECT, a catalyst does not change yield</li>
+<li>"Provides more energy to molecules" — INCORRECT, catalyst does not change molecular energies</li>
+<li>"Changes the products" — INCORRECT, products are unchanged</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q38">
+<div class="qcard-head">
+<span class="qnum">Q38</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§9.5</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student writes: "A catalyst increases the rate of reaction because it gives the molecules more energy, so more collisions are successful." Identify the error in this statement and write a corrected version.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Error: a catalyst does <strong>NOT</strong> give molecules more energy / does not increase the energy of molecules (1 mark). Correction: a catalyst provides an alternative reaction pathway with a <strong>lower activation energy</strong>, so a greater proportion of molecules have energy ≥ activation energy and successful collisions occur more frequently (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: identifies the error — catalyst does not give/increase molecular energy</li>
+<li>1 mark: correct explanation — provides alternative pathway with lower Eₐ; greater proportion have E ≥ Eₐ
+<strong>Exam Note:</strong> This is one of the most commonly penalised errors in Edexcel chemistry. It appears in almost every exam series in some form.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q39">
+<div class="qcard-head">
+<span class="qnum">Q39</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§9.5</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student states: "Adding a catalyst to a reversible reaction at equilibrium shifts the equilibrium position to the right, increasing the yield of products." State whether this statement is true or false and justify your answer.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>False</strong>. A catalyst increases the rate of <strong>both</strong> the forward and backward reactions <strong>equally</strong>, so the position of equilibrium is <strong>unchanged</strong>. The catalyst does not affect the yield of products.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: false / incorrect</li>
+<li>1 mark: catalyst increases rates of both forward and backward reactions equally / equilibrium position unchanged / yield unchanged</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Students often state that a catalyst "speeds up the forward reaction" without acknowledging that it also speeds up the backward reaction. The key word is <strong>equally</strong> — both rates increase by the same factor.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q40">
+<div class="qcard-head">
+<span class="qnum">Q40</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§9.5</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the effect of adding a catalyst on the position of equilibrium for a reversible reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>No effect</strong> / the equilibrium position is unchanged.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: no effect / unchanged / no change
+<strong>Note:</strong> This is a direct recall question. A one-word answer "none" or "no effect" is sufficient.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q41">
+<div class="qcard-head">
+<span class="qnum">Q41</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§9.5</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Use the Maxwell–Boltzmann distribution to explain how a catalyst increases the rate of a reaction. Do NOT include a diagram in your answer.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li>The catalyst provides an alternative pathway with <strong>lower activation energy</strong> (1 mark)</li>
+<li>The Maxwell–Boltzmann distribution curve is <strong>unchanged</strong> (1 mark)</li>
+<li>A greater proportion of molecules have energy ≥ Eₐ, so a greater proportion of collisions are successful (1 mark)</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: alternative pathway with lower Eₐ</li>
+<li>1 mark: M-B distribution unchanged</li>
+<li>1 mark: greater proportion of molecules with E ≥ Eₐ → more successful collisions
+<strong>Critical Point:</strong> Stating "the M-B curve shifts to the right" or "the peak changes" scores ZERO for the second mark. The distribution is UNCHANGED — only the Eₐ threshold moves.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q42">
+<div class="qcard-head">
+<span class="qnum">Q42</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§9.5</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>A student claims: <em>"Adding a catalyst to a reversible reaction at equilibrium will increase the yield of products because it lowers the activation energy."</em> Evaluate this claim by discussing the effect of a catalyst on: (a) the rate of the forward reaction, (b) the rate of the backward reaction, (c) the position of equilibrium.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li>(a) The catalyst increases the rate of the forward reaction by providing an alternative pathway with a lower activation energy, so a greater proportion of molecules have energy ≥ the activation energy (1 mark).</li>
+<li>(b) The catalyst increases the rate of the backward reaction by the <strong>same amount</strong>, since it lowers the activation energy for <strong>both</strong> the forward and backward reactions equally (1 mark).</li>
+<li>(c) Because both forward and backward rates increase equally, the <strong>position of equilibrium is unchanged</strong>. The student's claim is <strong>incorrect</strong> — a catalyst does NOT increase the yield of products (2 marks).</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: forward rate increases (alternative pathway, lower Eₐ)</li>
+<li>1 mark: backward rate increases by the same amount</li>
+<li>2 marks: equilibrium position unchanged / claim incorrect (must explain that equal rate increase means no shift)</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q43">
+<div class="qcard-head">
+<span class="qnum">Q43</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§9.5</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A student argues: "Adding a catalyst to an equilibrium reaction must increase the product yield, because it makes the forward reaction faster." Use ideas about activation energy, the Maxwell–Boltzmann distribution, and Le Chatelier's principle to explain why this argument is incorrect.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li>A catalyst provides an alternative reaction pathway with a lower activation energy (1 mark).</li>
+<li>On the Maxwell–Boltzmann distribution, a greater proportion of molecules now have energy ≥ this lower activation energy, so <strong>both</strong> the forward <strong>and</strong> backward reactions increase in rate equally (1 mark).</li>
+<li>Since both rates increase by the same factor, the position of equilibrium (and therefore the yield) does not change. Le Chatelier's principle does not apply because the catalyst does not disturb the equilibrium — it is not a change in concentration, pressure, or temperature (1 mark).</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: catalyst provides alternative pathway with lower Eₐ</li>
+<li>1 mark: both forward and backward rates increase equally</li>
+<li>1 mark: equilibrium position (yield) unchanged; Le Chatelier's principle not applicable
+<strong>Note:</strong> This question integrates three key concepts: activation energy, the M-B distribution, and Le Chatelier's principle. It is an excellent synthesis question.</li>
+</ul></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s96">
+<h2>Spec Point 9.6 — Reaction Profile Diagrams</h2>
+<article class="qcard" id="q44">
+<div class="qcard-head">
+<span class="qnum">Q44</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§9.6</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>On a reaction profile diagram for a catalysed and an uncatalysed pathway, state which feature has the same value for both pathways.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The <strong>enthalpy change (ΔH)</strong>.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: enthalpy change / ΔH
+<strong>Accept Alternatives:</strong> "The energy of the reactants and products"; "the overall energy change."</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q45">
+<div class="qcard-head">
+<span class="qnum">Q45</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§9.6</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>On a reaction profile diagram, the catalysed and uncatalysed pathways for the same reaction are shown. Explain why the enthalpy change (ΔH) is the same for both pathways.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The catalyst provides an alternative reaction pathway but does not change the overall energy change of the reaction. The reactants and products are the same in both pathways, so the difference in energy between reactants and products (ΔH) is unchanged.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: reactants and products are the same in both pathways</li>
+<li>1 mark: therefore ΔH (energy difference) is unchanged
+<strong>Accept Alternatives:</strong> "The catalyst only changes the route, not the start and end points."</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q46">
+<div class="qcard-head">
+<span class="qnum">Q46</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§9.6</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>The uncatalysed activation energy for the catalytic oxidation of ammonia is 290 kJ mol⁻¹. In the presence of a catalyst, the activation energy is 70 kJ mol⁻¹. The overall enthalpy change, ΔH, is −905 kJ mol⁻¹. On the reaction profile, the products are drawn at a lower energy level than the reactants. Calculate the energy of the products relative to the reactants.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Energy of products relative to reactants = ΔH = <strong>−905 kJ mol⁻¹</strong> (1 mark). The products are at 905 kJ mol⁻¹ <strong>below</strong> the reactant energy level, so their absolute position is reactant energy − 905 (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: answer of −905 kJ mol⁻¹ (or equivalent phrasing)</li>
+<li>1 mark: explanation that products are 905 kJ mol⁻¹ below reactants</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Students may try to use the activation energy values (290 or 70) in their calculation. The key point is that ΔH is the energy difference between reactants and products — the activation energy values are not needed for this calculation.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q47">
+<div class="qcard-head">
+<span class="qnum">Q47</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§9.6</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Sketch, on the same axes, the reaction profiles for both the uncatalysed and catalysed routes of an exothermic reaction. The uncatalysed activation energy is 280 kJ mol⁻¹ and the catalysed activation energy is 85 kJ mol⁻¹. Label both activation energy values and the enthalpy change, ΔH.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Diagram showing:
+- <em>y</em>-axis labelled "<strong>enthalpy</strong>" and <em>x</em>-axis labelled "<strong>reaction progress</strong>"
+- Two curves starting at the <strong>same reactant energy level</strong> and ending at the <strong>same (lower) product energy level</strong>
+- Uncatalysed curve has a <strong>higher peak</strong>; catalysed curve has a <strong>lower peak</strong>
+- <strong>Eₐ(uncatalyst) = 280 kJ mol⁻¹</strong> labelled on the higher peak
+- <strong>Eₐ(catalyst) = 85 kJ mol⁻¹</strong> labelled on the lower peak
+- ΔH arrow drawn from reactant level to product level (downward for exothermic)</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: correct axes labels + both curves start and end at same levels</li>
+<li>1 mark: uncatalysed peak higher than catalysed peak, both Eₐ values labelled</li>
+<li>1 mark: ΔH arrow clearly shown between reactant and product levels
+<strong>Common Drawing Errors:</strong></li>
+<li>Different starting or ending levels for the two curves</li>
+<li>Only one curve drawn</li>
+<li>ΔH arrow on the wrong curves or in the wrong direction</li>
+<li>Missing axis labels</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q48">
+<div class="qcard-head">
+<span class="qnum">Q48</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§9.6</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>The reaction A(g) + B(g) → C(g) has ΔH = −150 kJ mol⁻¹. The uncatalysed activation energy is 200 kJ mol⁻¹ and the catalysed activation energy is 80 kJ mol⁻¹. Sketch a labelled reaction profile diagram showing both the catalysed and uncatalysed pathways.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ol>
+<li>Correctly labelled axes: <strong>energy</strong> (<em>y</em>-axis) and <strong>reaction progress</strong> (<em>x</em>-axis).</li>
+<li>Horizontal lines for reactant energy level and product energy level, with the product line lower (exothermic).</li>
+<li>Two humped profiles: the uncatalysed peak is significantly higher (Eₐ = 200 kJ mol⁻¹) than the catalysed peak (Eₐ = 80 kJ mol⁻¹).</li>
+<li>Both profiles start at the SAME reactant energy level and end at the SAME product energy level.</li>
+<li>ΔH = −150 kJ mol⁻¹ clearly indicated (e.g. double-headed arrow or label between reactant and product energy levels).</li>
+</ol></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: correct axes + same reactant and product energy levels for both curves</li>
+<li>1 mark: uncatalysed peak significantly higher; both Eₐ values labelled correctly</li>
+<li>1 mark: ΔH = −150 kJ mol⁻¹ clearly shown</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q49">
+<div class="qcard-head">
+<span class="qnum">Q49</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§9.6</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>The reaction X → Z proceeds in two steps via an intermediate Y. The first step is endothermic and the second step is exothermic; the overall reaction is exothermic. Sketch an enthalpy level diagram for this reaction. On your diagram, label the intermediate Y, the overall enthalpy change ΔH, and indicate with an arrow the activation energy for the <strong>first step only</strong>.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Diagram showing:
+- <em>y</em>-axis labelled "<strong>enthalpy</strong>" and <em>x</em>-axis labelled "<strong>reaction progress</strong>"
+- Reactants (X) at a certain energy level; intermediate (Y) at a <strong>higher</strong> energy level (since first step is endothermic)
+- Products (Z) at a <strong>lower</strong> energy level than reactants (overall exothermic)
+- "<strong>Y (intermediate)</strong>" clearly labelled at the local minimum/plateau between the two peaks
+- <strong>ΔH</strong> arrow from reactant level down to product level
+- <strong>Eₐ</strong> arrow from reactant level up to the top of the first peak (first step only)</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: correct axes + reactant and product levels (product lower than reactant)</li>
+<li>1 mark: intermediate Y at a HIGHER energy than reactants + clearly labelled</li>
+<li>1 mark: Eₐ arrow for first step only (reactant to top of first peak) + ΔH shown</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Drawing the intermediate at a lower energy than the reactants (this would mean the first step is exothermic, not endothermic as stated). The intermediate must be ABOVE the reactant energy level.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q50">
+<div class="qcard-head">
+<span class="qnum">Q50</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§9.6</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>A student is given two reaction profile diagrams for the same exothermic reaction — one uncatalysed and one catalysed. State four features that should be the <strong>same</strong> in both diagrams and one feature that should be <strong>different</strong>.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>Same in both diagrams:</strong>
+1. The <strong>enthalpy of the reactants</strong> (starting level)
+2. The <strong>enthalpy of the products</strong> (ending level)
+3. The <strong>overall enthalpy change, ΔH</strong> (difference between products and reactants)
+4. The <strong>general shape</strong> (peak for transition state, lower level for products since exothermic)
+<strong>Different in the catalysed diagram:</strong>
+5. The <strong>peak height / activation energy (Eₐ)</strong> — the catalysed reaction has a <strong>lower activation energy</strong> than the uncatalysed reaction</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark per correct "same" feature (max 2 marks for any 2 correct features)</li>
+<li>2 marks: the different feature — lower peak / lower Eₐ in catalysed diagram
+<strong>Accept for "Same":</strong> "Same reactants and products"; "same direction of enthalpy change"; "both are exothermic."</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q51">
+<div class="qcard-head">
+<span class="qnum">Q51</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§9.6</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>A student investigates the decomposition of hydrogen peroxide. Without a manganese(IV) oxide catalyst, the reaction takes 240 s to produce 50 cm³ of oxygen. With MnO₂ present, the same volume is produced in 45 s. (a) Calculate how many times faster the catalysed reaction is. <em>(1 mark)</em> (b) Describe and explain two differences between the reaction profile for the uncatalysed reaction and the catalysed reaction. <em>(3 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) 240/45 = <strong>5.3</strong> times faster (1 mark).
+(b) Two from:
+- The catalysed profile has a <strong>lower peak</strong> (lower activation energy) / the uncatalysed profile has a higher peak
+- Both profiles have the <strong>same starting (reactant) energy level</strong>
+- Both profiles have the <strong>same ending (product) energy level</strong>
+- <strong>ΔH is the same</strong> for both reactions
+- The catalysed pathway represents an <strong>alternative reaction route</strong> with lower activation energy</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><p>(a) 1 mark: 5.3 (accept range 5–5.4)
+(b) 1 mark per correct difference (max 2) + 1 mark for explanation of at least one difference (max 3 marks total)</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s97">
+<h2>Spec Point 9.7 — Catalysts and Sustainability</h2>
+<article class="qcard" id="q52">
+<div class="qcard-head">
+<span class="qnum">Q52</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§9.7</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>Give one reason, in terms of energy, why using a catalyst makes an industrial process more sustainable.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>Less energy needed</strong> (accept: lower temperature required / less fuel burned / reduced CO₂ emissions).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: less energy / lower temperature / reduced CO₂ emissions</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>"The catalyst lowers the activation energy" is NOT a sustainability argument — it is the mechanism by which a catalyst works. "The catalyst is not used up" is also NOT a sustainability argument — it is a general property of catalysts.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q53">
+<div class="qcard-head">
+<span class="qnum">Q53</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§9.7</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State two reasons, other than "the catalyst can be reused", why the use of a catalyst improves the sustainability of an industrial chemical process.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Any two of:
+- <strong>Less energy needed</strong> (to heat the reaction mixture to a high temperature)
+- A <strong>lower temperature</strong> can be used (while still achieving an acceptable rate)
+- <strong>Reduced CO₂ emissions</strong> (because less fuel is burned for heating)
+<strong>Common error to avoid:</strong> "The catalyst lowers the activation energy" or "the catalyst is not used up" are NOT sustainability arguments — they describe how a catalyst works, not why it is sustainable.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark per valid sustainability reason (max 2)
+<strong>Accept Alternatives:</strong> "Reduced carbon footprint"; "lower energy consumption"; "fewer greenhouse gas emissions."</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q54">
+<div class="qcard-head">
+<span class="qnum">Q54</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§9.7</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>When asked about the sustainability benefits of using a catalyst in an industrial process, a student writes: <em>"Catalysts are sustainable because they are not used up in the reaction and can be reused."</em> This answer would not receive credit for the sustainability argument. Explain why and give the correct sustainability reasoning.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The student's answer describes a <strong>general property of catalysts</strong>, not a <strong>sustainability argument</strong> (1 mark). The correct sustainability benefits are that using a catalyst allows the reaction to proceed at a <strong>lower temperature</strong>, which means <strong>less energy is needed</strong>, leading to <strong>reduced CO₂ emissions</strong> from burning fossil fuels (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: identifies that "not used up" is a property, not a sustainability argument</li>
+<li>1 mark: correct sustainability reasoning — less energy / lower temperature / reduced CO₂
+<strong>Exam Note:</strong> This is a high-frequency exam trap. Markers are specifically instructed not to award marks for "catalyst is not used up" or "catalyst can be reused" in sustainability questions.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q55">
+<div class="qcard-head">
+<span class="qnum">Q55</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§9.7</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain how the use of a catalyst in an industrial process can provide a sustainability advantage. Do NOT mention that the catalyst is reused.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>A catalyst provides an alternative reaction pathway with a lower activation energy, so a <strong>lower temperature</strong> can be used (1 mark). Less energy is needed to maintain the reaction conditions, which <strong>reduces CO₂ emissions</strong> from fossil fuel combustion used to generate the energy required (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: lower temperature can be used</li>
+<li>1 mark: less energy needed / reduced CO₂ emissions
+<strong>Note:</strong> The question explicitly forbids mentioning reuse. If a student still writes about reuse, it will not score, even if their sustainability argument is otherwise correct.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q56">
+<div class="qcard-head">
+<span class="qnum">Q56</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§9.7</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A student is asked: "Suggest why the use of a catalyst makes an industrial process more sustainable." The student writes: "The catalyst can be reused, and it lowers the activation energy." Explain why neither part of this answer would score the mark, and give the correct answer.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>"The catalyst can be reused" is a true statement but it is <strong>not a sustainability argument</strong> — it describes how the catalyst functions, not its environmental benefit. "It lowers the activation energy" is the <strong>mechanism</strong> by which the catalyst works, not the sustainability benefit. The correct answer is: <strong>less energy needed</strong> (because a lower temperature can be used) / <strong>lower temperature required</strong> / <strong>less fuel burned</strong> / <strong>reduced CO₂ emissions</strong> / <strong>reduced carbon footprint</strong>.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: explains why "reused" does not score (property, not sustainability)</li>
+<li>1 mark: explains why "lowers Eₐ" does not score (mechanism, not sustainability)</li>
+<li>1 mark: correct sustainability answer (less energy / lower temperature / reduced CO₂)</li>
+</ul></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s98">
+<h2>Spec Point 9.8 — Maxwell–Boltzmann Distribution and Catalysts</h2>
+<article class="qcard" id="q57">
+<div class="qcard-head">
+<span class="qnum">Q57</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§9.8</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Sketch a Maxwell–Boltzmann distribution curve for a sample of gas at a fixed temperature. On your diagram, show and label the activation energy (Eₐ) without a catalyst and the activation energy with a catalyst. Shade the area representing the proportion of molecules with energy ≥ Eₐ with the catalyst.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li>Correctly labelled axes: <strong>energy</strong> on the <em>x</em>-axis and <strong>number/fraction of molecules</strong> on the <em>y</em>-axis</li>
+<li>A <strong>single</strong> Maxwell–Boltzmann curve starting at the origin, peaking, and asymptotic to the energy axis</li>
+<li>Two vertical lines labelled <strong>Eₐ(uncat)</strong> and <strong>Eₐ(cat)</strong>, with <strong>Eₐ(cat)</strong> positioned to the <strong>left</strong> of <strong>Eₐ(uncat)</strong> (lower value)</li>
+<li><strong>Shaded area</strong> under the curve to the right of Eₐ(cat), representing the greater proportion of molecules with energy ≥ the lower activation energy</li>
+<li>The curve itself is <strong>NOT redrawn or shifted</strong> — only the Eₐ line moves</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: correctly drawn M-B curve (origin, peak, asymptotic) with labelled axes</li>
+<li>1 mark: two Eₐ lines, Eₐ(cat) to the LEFT of Eₐ(uncat), both labelled</li>
+<li>1 mark: shaded area beyond Eₐ(cat) showing greater proportion of molecules can react
+<strong>Critical Error:</strong> If the student draws TWO curves of different shapes, they lose the first mark. The curve must NOT change when a catalyst is added.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q58">
+<div class="qcard-head">
+<span class="qnum">Q58</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§9.8</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Sketch two Maxwell–Boltzmann distribution curves on the same axes for the same reaction mixture at the same temperature, one without a catalyst and one with a catalyst. Label the activation energy for each.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li><strong>Both curves are identical</strong> (same shape, same peak position, same area under the curve) (1 mark)</li>
+<li>A vertical line (or clearly marked position on the <em>x</em>-axis) labelled <strong>Eₐ</strong> (uncatalysed) is drawn further to the <strong>right</strong> (1 mark)</li>
+<li>A second vertical line labelled <strong>Eₐ</strong> (catalysed) is drawn further to the <strong>left</strong> (lower activation energy) and the area under the curve beyond this line is <strong>shaded</strong> (or otherwise indicated) to show that a <strong>greater proportion of molecules</strong> have energy ≥ the (lower) activation energy (1 mark)
+<strong>Note:</strong> The curve itself does NOT change when a catalyst is added — only the activation energy line moves to the left.</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: both curves identical (same shape, peak, area)</li>
+<li>1 mark: Eₐ(uncat) further right than Eₐ(cat), both labelled</li>
+<li>1 mark: shaded area showing greater proportion beyond Eₐ(cat)</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>The question asks to "sketch two curves" — but they must be identical. If a student draws two visibly different curves (e.g. one taller, one shifted), they lose marks because this implies the temperature or number of molecules has changed, which it has not.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q59">
+<div class="qcard-head">
+<span class="qnum">Q59</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§9.8</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student is asked to draw a Maxwell–Boltzmann distribution curve for a reaction mixture before and after a catalyst is added. The student draws two curves of different shapes and labels the catalysed curve with a higher peak. (i) What mistake has the student made? (ii) What should they have drawn instead?</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(i) The student has <strong>changed the shape of the distribution curve</strong> / drawn a different curve for the catalyst. (ii) The distribution curve should <strong>remain unchanged</strong>; only the activation energy line should shift to the <strong>left</strong> (to a lower value) to show that a greater proportion of molecules have energy ≥ activation energy.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>(i) 1 mark: identifies the error — changed the curve shape / drew a different curve</li>
+<li>(ii) 1 mark: correct approach — single curve, only Eₐ line moves left</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Students often draw the catalysed curve as taller/narrower (resembling a lower-temperature distribution). This suggests they think the catalyst "concentrates" the energy — it does not.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q60">
+<div class="qcard-head">
+<span class="qnum">Q60</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§9.8</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Compare the effects of increasing temperature and adding a catalyst on a Maxwell–Boltzmann distribution diagram. In your answer, you must refer to what happens to (i) the shape of the distribution curve, (ii) the position of the activation energy line, and (iii) the proportion of molecules that can react.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(i) <strong>Shape of the curve:</strong> Increasing temperature <strong>changes</strong> the curve — the peak is lower and shifted to the right, with the same total area. Adding a catalyst leaves the distribution curve <strong>completely unchanged</strong> (1 mark).
+(ii) <strong>Activation energy line:</strong> Increasing temperature does <strong>not</strong> move the Eₐ line — it stays in the same position. Adding a catalyst <strong>moves</strong> the Eₐ line to the <strong>left</strong> (to a lower value) (1 mark).
+(iii) <strong>Proportion of molecules that can react:</strong> In both cases, a greater proportion of molecules have energy ≥ activation energy and the rate of reaction increases. However, the <strong>reason</strong> differs: for temperature the distribution has shifted so more molecules exceed the <strong>same</strong> threshold; for a catalyst the <strong>threshold itself has lowered</strong> so more of the same distribution exceeds it (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: (i) temperature changes curve; catalyst does not change curve</li>
+<li>1 mark: (ii) temperature does not move Eₐ; catalyst moves Eₐ to the left</li>
+<li>1 mark: (iii) both increase proportion with E ≥ Eₐ, but for different reasons
+<strong>This is a T3 question</strong> because it requires the student to integrate two concepts and make a nuanced comparison. It tests understanding at the highest level.</li>
+</ul></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s99">
+<h2>Spec Point 9.9 — Dynamic Equilibrium</h2>
+<article class="qcard" id="q61">
+<div class="qcard-head">
+<span class="qnum">Q61</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§9.9</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State two conditions that must be satisfied for a dynamic equilibrium to be established in a reversible reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ol>
+<li>The reaction must take place in a <strong>closed system</strong> (so that no reactants or products can escape) <strong>and</strong> 2. The <strong>rate of the forward reaction must equal the rate of the backward reaction</strong>.</li>
+</ol></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: closed system</li>
+<li>1 mark: forward rate equals backward rate</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Students often write "the concentrations of reactants and products are equal" — this is incorrect. The concentrations are constant (unchanging), not necessarily equal.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q62">
+<div class="qcard-head">
+<span class="qnum">Q62</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§9.9</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State what is meant by the term <em>dynamic equilibrium</em>.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Dynamic equilibrium is the state in a <strong>closed system</strong> where the <strong>rate of the forward reaction equals the rate of the backward reaction</strong>, and the concentrations of all reactants and products <strong>remain constant</strong>.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: reference to closed system, equal forward/backward rates, and constant concentrations (all three elements ideally, but "equal rates and constant concentrations" is sufficient for the mark)</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q63">
+<div class="qcard-head">
+<span class="qnum">Q63</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§9.9</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student writes: "At dynamic equilibrium, the concentrations of all reactants and products are equal, which is why the macroscopic properties are constant." State whether the first part of this statement is correct and explain your reasoning.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The statement is <strong>incorrect</strong>. At dynamic equilibrium, the concentrations of reactants and products are <strong>constant</strong>, not necessarily <strong>equal</strong>. The forward rate equals the backward rate, so there is no net change in concentration, but the actual concentration values depend on the equilibrium position.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: identifies the statement as incorrect</li>
+<li>1 mark: explains that concentrations are constant, not equal</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>This is one of the most frequently tested misconceptions. "Constant" means "not changing" — it does NOT mean "the same as each other."</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q64">
+<div class="qcard-head">
+<span class="qnum">Q64</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§9.9</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Consider the following three statements about dynamic equilibrium. For each statement, state whether it is true or false, and give a brief explanation. - Statement 1: "At equilibrium, the concentrations of reactants and products are equal." - Statement 2: "At equilibrium, the rate of the forward reaction equals the rate of the backward reaction." - Statement 3: "Dynamic equilibrium can be established in an open beaker."</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li><strong>Statement 1: False.</strong> At equilibrium the concentrations of reactants and products are <strong>constant</strong>, but they are <strong>not necessarily equal</strong>.</li>
+<li><strong>Statement 2: True.</strong> This is the defining condition of dynamic equilibrium — the forward and backward rates are equal.</li>
+<li><strong>Statement 3: False.</strong> Dynamic equilibrium can only be established in a <strong>closed system</strong> where no reactants or products can escape.</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark per correct true/false + explanation (max 3 marks)</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q65">
+<div class="qcard-head">
+<span class="qnum">Q65</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§9.9</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Compare the rate of the forward reaction and the rate of the backward reaction: (i) At dynamic equilibrium. (ii) Immediately after the concentration of a reactant is increased in a system at equilibrium.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(i) At dynamic equilibrium: rate of forward reaction <strong>equals</strong> rate of backward reaction.
+(ii) Immediately after increasing reactant concentration: rate of forward reaction <strong>is greater than</strong> rate of backward reaction (the system is no longer at equilibrium and will shift to the right to oppose the change).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>(i) 1 mark: forward rate equals backward rate</li>
+<li>(ii) 1 mark: forward rate greater than backward rate (system no longer at equilibrium)
+<strong>Accept for (ii):</strong> "Forward rate increases but backward rate stays the same initially, so forward &gt; backward."</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q66">
+<div class="qcard-head">
+<span class="qnum">Q66</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§9.9</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain why dynamic equilibrium can only be achieved in a closed system.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>In a closed system, no reactants or products can enter or leave. If the system were open, products could escape or reactants could be added, meaning the forward and backward rates would never become equal and concentrations would not remain constant.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: closed system prevents matter entering or leaving</li>
+<li>1 mark: in an open system, rates would not become equal / concentrations would not be constant</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q67">
+<div class="qcard-head">
+<span class="qnum">Q67</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§9.9</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Explain what is meant by a dynamic equilibrium in a closed system. Why does a reversible reaction at dynamic equilibrium never go to completion?</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>In a dynamic equilibrium, the forward and backward reactions occur at equal rates in a closed system, so the concentrations of all species remain constant (1 mark). The reaction never goes to completion because the products can react in the reverse direction (1 mark); as product concentration increases, the backward rate increases until it equals the forward rate, at which point equilibrium is established and no further net change occurs (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: forward and backward reactions occur at equal rates in a closed system</li>
+<li>1 mark: products can react in reverse direction</li>
+<li>1 mark: backward rate increases as product concentration increases until rates are equal</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q68">
+<div class="qcard-head">
+<span class="qnum">Q68</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§9.9</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>At dynamic equilibrium, the concentrations of all reactants and products remain constant. Does this mean the reaction has stopped? Explain your reasoning.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>No</strong>, the reaction has not stopped. At dynamic equilibrium, the forward and backward reactions are both <strong>still occurring</strong> but at the <strong>same rate</strong>. The concentrations are constant because the rate of formation of each substance equals its rate of consumption — this is why the equilibrium is described as <strong>dynamic</strong>.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: No / reaction has not stopped</li>
+<li>1 mark: both forward and backward reactions still occurring at the same rate
+<strong>Accept Alternatives:</strong> "The word 'dynamic' tells us the reactions are still happening"; "individual molecules are still reacting but there is no overall change."</li>
+</ul></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s910">
+<h2>Spec Point 9.10 — Le Chatelier's Principle</h2>
+<article class="qcard" id="q69">
+<div class="qcard-head">
+<span class="qnum">Q69</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§9.10</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State Le Chatelier's principle.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>If a system at dynamic equilibrium is subjected to a change, the equilibrium position shifts to <strong>oppose</strong> (counteract) the imposed change.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: system at equilibrium is subjected to a change</li>
+<li>1 mark: equilibrium shifts to oppose / counteract the change
+<strong>Accept Alternatives:</strong> "The equilibrium position moves in the direction that tends to reduce the effect of the change."</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q70">
+<div class="qcard-head">
+<span class="qnum">Q70</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§9.10</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State the effect of increasing the total pressure on the equilibrium position for each of the following reactions: (i) N₂(g) + 3H₂(g) ⇌ 2NH₃(g) (ii) H₂(g) + I₂(g) ⇌ 2HI(g)</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(i) Equilibrium shifts to the <strong>right</strong> / moves towards the product side (fewer gas moles) (1 mark). (ii) <strong>No effect</strong> / equilibrium position unchanged (equal gas moles on both sides) (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>(i) 1 mark: shifts right / towards products (with reference to fewer gas moles)</li>
+<li>(ii) 1 mark: no change / no effect (with reference to equal gas moles)</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Students sometimes say (ii) shifts left or right. With equal moles (2 mol → 2 mol), pressure has NO effect on the equilibrium position.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q71">
+<div class="qcard-head">
+<span class="qnum">Q71</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§9.10</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student states: "Increasing the pressure of any gaseous equilibrium mixture will always increase the yield of products." State whether this is true or false and justify your answer with reference to the number of gas moles on each side of the equilibrium.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>False</strong>. Increasing the pressure causes the equilibrium to shift towards the side with <strong>fewer gas moles</strong>. The yield of products only increases if the product side has fewer gas moles than the reactant side. If the product side has more gas moles, increasing pressure <strong>decreases</strong> the yield of products.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: false</li>
+<li>1 mark: justification — shift is to side with fewer gas moles, not always to products</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q72">
+<div class="qcard-head">
+<span class="qnum">Q72</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§9.10</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student states: "Decreasing the temperature of any equilibrium reaction will always increase the yield of product." Evaluate this statement.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The statement is <strong>incorrect</strong>. Decreasing the temperature only increases the yield of product when the forward reaction is <strong>exothermic</strong>. If the forward reaction is <strong>endothermic</strong>, decreasing the temperature shifts the equilibrium to the <strong>left</strong> (towards reactants), which <strong>decreases</strong> the yield of product.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: identifies statement as incorrect</li>
+<li>1 mark: explains with reference to exothermic vs endothermic direction</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q73">
+<div class="qcard-head">
+<span class="qnum">Q73</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§9.10</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Compare the effect of decreasing the temperature on the equilibrium yield for the following two reactions. Reaction 1: SO₂(g) + ½O₂(g) ⇌ SO₃(g) ΔH = −192 kJ mol⁻¹ Reaction 2: CH₄(g) + H₂O(g) ⇌ CO(g) + 3H₂(g) ΔH = +206 kJ mol⁻¹</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>For Reaction 1: yield of SO₃ <strong>increases</strong> / equilibrium shifts to the <strong>right</strong> (exothermic direction) (1 mark). For Reaction 2: yield of H₂ <strong>decreases</strong> / equilibrium shifts to the <strong>left</strong> (exothermic direction) (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: Reaction 1 — yield increases (shifts right / exothermic direction)</li>
+<li>1 mark: Reaction 2 — yield decreases (shifts left / exothermic direction)</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Students may say "decreasing temperature decreases yield for both reactions." This shows they have not applied Le Chatelier's principle correctly — the direction of the temperature shift depends on the enthalpy change of the reaction.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q74">
+<div class="qcard-head">
+<span class="qnum">Q74</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§9.10</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>For the equilibrium CH₄(g) + H₂O(g) ⇌ CO(g) + 3H₂(g), state the effect of increasing the total pressure on (i) the yield of hydrogen, (ii) the rate of reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(i) The yield of hydrogen <strong>decreases</strong> / equilibrium shifts to the <strong>left</strong> (side with fewer gas moles) (1 mark). (ii) The rate of reaction <strong>increases</strong> (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>(i) 1 mark: yield decreases (shifts left / 2 mol gas → 4 mol gas on right)</li>
+<li>(ii) 1 mark: rate increases
+<strong>Note:</strong> Part (ii) tests the distinction between equilibrium position and rate. Increasing pressure ALWAYS increases rate (more collisions) but may increase OR decrease yield depending on gas moles.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q75">
+<div class="qcard-head">
+<span class="qnum">Q75</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§9.10</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Sodium hydroxide is added to the equilibrium mixture: HCrO₄⁻(aq) ⇌ CrO₄²⁻(aq) + H⁺(aq). Explain the effect on the equilibrium position.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>NaOH reacts with (removes) H⁺ ions (1 mark). The equilibrium shifts to the <strong>right</strong> to replace (oppose the removal of) H⁺ / to counteract the change (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: H⁺ is removed (by reaction with NaOH / neutralisation)</li>
+<li>1 mark: equilibrium shifts right to oppose / to replace H⁺</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Students may say "NaOH is added so the equilibrium shifts left" — they incorrectly treat NaOH as if it were increasing the concentration of a product. The key is to identify what NaOH reacts WITH (H⁺) and then apply Le Chatelier's principle to the removal of that species.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q76">
+<div class="qcard-head">
+<span class="qnum">Q76</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§9.10</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Bleach solution contains two linked equilibria: - Eq.1: ClO⁻(aq) + H₂O(l) ⇌ HClO(aq) + OH⁻(aq) - Eq.2: HClO(aq) + Cl⁻(aq) + H⁺(aq) ⇌ Cl₂(aq) + H₂O(l) Explain step-by-step why adding an acid such as HCl to bleach can release toxic chlorine gas. In your answer, use Le Chatelier's principle and state which equilibrium shifts and in which direction at each stage.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Adding HCl provides H⁺ ions. For <strong>Eq.1</strong>, the H⁺ ions react with OH⁻, reducing [OH⁻], so the equilibrium shifts to the <strong>right</strong> to oppose the change, producing more HClO (1 mark). The increased [HClO] and the added H⁺ and Cl⁻ (from HCl) mean that for <strong>Eq.2</strong>, the equilibrium shifts to the <strong>right</strong> (to oppose the increase in [HClO], [Cl⁻], and [H⁺]), producing Cl₂(aq) which escapes as toxic Cl₂(g) (1 mark). The system responds through two linked equilibrium shifts driven by the initial addition of acid (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: Eq.1 — H⁺ reacts with OH⁻; equilibrium shifts right; more HClO produced</li>
+<li>1 mark: Eq.2 — increased [HClO], [H⁺], [Cl⁻]; equilibrium shifts right; Cl₂ produced</li>
+<li>1 mark: linked explanation — initial acid addition drives both shifts</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q77">
+<div class="qcard-head">
+<span class="qnum">Q77</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§9.10</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>The steam-reforming process for hydrogen production involves the equilibrium: CH₄(g) + H₂O(g) ⇌ CO(g) + 3H₂(g). Explain why passing excess steam through the reaction mixture increases the yield of hydrogen.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Adding excess steam increases the concentration of H₂O (a reactant) (1 mark). The equilibrium shifts to the <strong>right</strong> to oppose the change, increasing the yield of hydrogen (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: concentration of H₂O increases (excess steam)</li>
+<li>1 mark: equilibrium shifts right to oppose → increased H₂ yield</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q78">
+<div class="qcard-head">
+<span class="qnum">Q78</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§9.10</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Explain why increasing the total pressure on a gaseous equilibrium mixture always increases the rate of reaction, but may either increase or decrease the equilibrium yield. Use an example to support your answer.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Increasing pressure increases the concentration (of gas molecules) (1 mark), so there are more frequent (successful) collisions per unit time, increasing the rate (1 mark). The effect on yield depends on the number of gas moles on each side: e.g. for N₂(g) + 3H₂(g) ⇌ 2NH₃(g) increasing pressure increases yield (shifts to side with fewer gas moles), but for CH₄(g) + H₂O(g) ⇌ CO(g) + 3H₂(g) increasing pressure decreases yield (shifts to side with fewer gas moles / reactant side) (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: increased pressure → increased concentration → increased rate (always)</li>
+<li>1 mark: yield depends on gas moles on each side</li>
+<li>1 mark: specific example showing both possibilities</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q79">
+<div class="qcard-head">
+<span class="qnum">Q79</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§9.10</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>For the equilibrium PCl₅(g) ⇌ PCl₃(g) + Cl₂(g), where the forward reaction is endothermic: (a) State and explain the effect of increasing the temperature on the equilibrium yield of PCl₃. (b) State and explain the effect of increasing the total pressure on the equilibrium yield of PCl₃. (c) State the effect of increasing the temperature on the <strong>rate</strong> of this reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) The equilibrium yield of PCl₃ <strong>increases</strong>. The forward reaction is endothermic, so increasing the temperature shifts the equilibrium to the <strong>right</strong> (in the endothermic direction) to oppose the change, by Le Chatelier's principle. (b) The equilibrium yield of PCl₃ <strong>decreases</strong>. There is <strong>1 mol of gas</strong> on the left (PCl₅) and <strong>2 mol of gas</strong> on the right (PCl₃ + Cl₂). Increasing the pressure shifts the equilibrium to the side with <strong>fewer gas moles</strong> (to the left) to oppose the change. (c) The rate of reaction <strong>increases</strong> because molecules have more kinetic energy and a greater proportion of molecules have energy ≥ the activation energy.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>(a) 1 mark: yield increases + explanation (forward endothermic, shift right)</li>
+<li>(b) 1 mark: yield decreases + explanation (1 mol → 2 mol gas, shift left)</li>
+<li>(c) 1 mark: rate increases + explanation (greater proportion with E ≥ Eₐ)</li>
+<li>1 mark: overall quality of explanation and use of Le Chatelier's principle</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q80">
+<div class="qcard-head">
+<span class="qnum">Q80</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§9.10</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Chlorine reacts with water in a reversible equilibrium: Cl₂(g) + H₂O(l) ⇌ HClO(aq) + H⁺(aq) + Cl⁻(aq). When aqueous sodium hydroxide is added to this equilibrium mixture, a colour change is observed. Use Le Chatelier's principle to explain the effect of adding sodium hydroxide on the position of this equilibrium.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Sodium hydroxide reacts with / removes H⁺ ions from the equilibrium mixture (by neutralisation) (1 mark). The equilibrium shifts to the <strong>right</strong> to oppose the change / to replace the removed H⁺ (1 mark). More HClO and Cl⁻ are formed / the equilibrium yield of products increases (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: NaOH removes H⁺ (neutralisation)</li>
+<li>1 mark: equilibrium shifts right (to oppose / replace H⁺)</li>
+<li>1 mark: consequence — more products formed / colour change explained</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q81">
+<div class="qcard-head">
+<span class="qnum">Q81</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§9.10</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>The following equilibria exist in ocean water: CO₂(aq) + H₂O(l) ⇌ H₂CO₃(aq) H₂CO₃(aq) ⇌ H⁺(aq) + HCO₃⁻(aq) Explain why increasing the concentration of CO₂ in the atmosphere leads to increased acidity of ocean water. Use Le Chatelier's principle in your answer.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Increased atmospheric CO₂ leads to more CO₂ dissolving in the ocean, increasing the concentration of CO₂(aq) (1 mark). The first equilibrium shifts to the <strong>right</strong> to oppose the change, increasing the concentration of H₂CO₃(aq). The increased [H₂CO₃] shifts the second equilibrium to the <strong>right</strong>, increasing [H⁺(aq)] (1 mark). An increase in [H⁺] means the ocean water becomes more acidic / the pH decreases (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: increased CO₂ → more dissolved CO₂(aq)</li>
+<li>1 mark: both equilibria shift right (linked explanation)</li>
+<li>1 mark: [H⁺] increases → more acidic / lower pH
+<strong>Note:</strong> This is a real-world application of Le Chatelier's principle. It links to environmental chemistry and is a common context question.</li>
+</ul></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s911">
+<h2>Spec Point 9.11 — Industrial Conditions and Compromise</h2>
+<article class="qcard" id="q82">
+<div class="qcard-head">
+<span class="qnum">Q82</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§9.11</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State what is meant by the term <em>compromise conditions</em> in the context of an industrial chemical process.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Conditions that are a compromise between the conditions that give the <strong>maximum yield</strong> (from Le Chatelier's principle) and the conditions that give an <strong>acceptable rate</strong> (from kinetics) and are economically viable.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: reference to balancing yield and rate / economic viability
+<strong>Accept Alternatives:</strong> "Conditions that give an acceptable yield at an economically viable rate."</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q83">
+<div class="qcard-head">
+<span class="qnum">Q83</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§9.11</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>For the reaction N₂(g) + 3H₂(g) ⇌ 2NH₃(g) (ΔH = −92 kJ mol⁻¹), state the effect of increasing the temperature on (i) the yield of ammonia and (ii) the rate of reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(i) The yield of ammonia <strong>decreases</strong> because increasing temperature favours the endothermic (backward) reaction (shifts equilibrium to the left) (1 mark). (ii) The rate of reaction <strong>increases</strong> because a greater proportion of molecules have energy ≥ the activation energy (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>(i) 1 mark: yield decreases + explanation (endothermic backward favoured / shifts left)</li>
+<li>(ii) 1 mark: rate increases + explanation (greater proportion with E ≥ Eₐ)</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Common Error</div><p>Students may say "yield increases because rate increases." Yield and rate are different concepts — increasing temperature always increases rate but may decrease yield for an exothermic forward reaction.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q84">
+<div class="qcard-head">
+<span class="qnum">Q84</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§9.11</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Ethanol is produced industrially by the hydration of ethene: C₂H₄(g) + H₂O(g) ⇌ C₂H₅OH(g). A pressure greater than 7 MPa is recommended for this process. Calculate the total moles of gas on each side of the equilibrium and hence predict and explain the effect of increasing pressure on the yield of ethanol.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Reactants: 1 + 1 = 2 mol gas; Products: 1 mol gas (1 mark). Increasing pressure shifts the equilibrium to the <strong>right</strong> (side with fewer moles of gas) to oppose the change, giving a greater yield of ethanol (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: 2 mol gas on left, 1 mol gas on right</li>
+<li>1 mark: increasing pressure shifts right (fewer gas moles) → greater yield</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q85">
+<div class="qcard-head">
+<span class="qnum">Q85</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§9.11</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>The Haber process for the manufacture of ammonia uses the equilibrium: N₂(g) + 3H₂(g) ⇌ 2NH₃(g) ΔH = −92 kJ mol⁻¹. The process is operated at approximately 450 °C, not at the lowest possible temperature. Explain why a very low temperature is not used, even though it would give a higher equilibrium yield of ammonia.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>A lower temperature would give a higher yield because the forward reaction is exothermic (1 mark). However, at very low temperatures the rate of reaction would be <strong>too slow / uneconomically slow</strong> (1 mark). A compromise temperature of approximately 450 °C is used to give a reasonable rate of reaction while maintaining an acceptable yield (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: lower temperature → higher yield (exothermic forward reaction)</li>
+<li>1 mark: very low temperature → rate too slow / uneconomical</li>
+<li>1 mark: compromise temperature gives acceptable yield at reasonable rate</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q86">
+<div class="qcard-head">
+<span class="qnum">Q86</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§9.11</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>In the industrial hydration of ethene to ethanol, the equilibrium conversion at the operating conditions is less than 95%, yet the overall process achieves an ethanol yield of approximately 95%. Explain how this is achieved.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Ethanol and excess water are continuously <strong>removed from the reaction mixture</strong> by condensation/liquefaction, shifting the equilibrium to the right. <strong>Unreacted ethene is recycled</strong> back into the reactor, so it is not wasted.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: unreacted ethene is recycled</li>
+<li>1 mark: product is continuously removed / shifts equilibrium
+<strong>Accept Alternatives:</strong> "The reaction mixture is condensed to separate ethanol and water from unreacted gases, which are then recycled."</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q87">
+<div class="qcard-head">
+<span class="qnum">Q87</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§9.11</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>The reaction 2SO₂(g) + O₂(g) ⇌ 2SO₃(g) is exothermic. In the Contact process, a compromise temperature of approximately 450 °C is used rather than room temperature. Explain why this compromise temperature is used, with reference to both the rate of reaction and the equilibrium yield of SO₃.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>At <strong>room temperature</strong>, the equilibrium yield of SO₃ would be <strong>higher</strong> (since the forward reaction is exothermic, Le Chatelier's principle predicts that lower temperature shifts equilibrium to the right). However, at room temperature the <strong>rate of reaction is too slow</strong> for the process to be economically viable. At <strong>450 °C</strong>, the equilibrium yield of SO₃ is <strong>lower</strong> than at room temperature, but the rate of reaction is <strong>significantly faster</strong>, so the product is produced quickly enough to be economically practical. This represents a <strong>compromise</strong> between maximising yield and achieving an acceptable rate.</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: lower temperature → higher yield (exothermic forward)</li>
+<li>1 mark: lower temperature → rate too slow</li>
+<li>1 mark: 450 °C is a compromise — reasonable yield at acceptable rate</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q88">
+<div class="qcard-head">
+<span class="qnum">Q88</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§9.11</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>In the Haber process, nitrogen and hydrogen react to form ammonia. A typical operating temperature of 450 °C and a pressure of 200 atm are used, even though these conditions do not give the maximum possible yield of ammonia. Explain why these compromise conditions are used rather than the conditions that would give the maximum yield.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li>The forward reaction is exothermic, so a <strong>lower temperature</strong> would give a <strong>higher equilibrium yield</strong> of ammonia (Le Chatelier's principle).</li>
+<li>However, a lower temperature would give an <strong>unacceptably slow rate</strong> of reaction, making the process uneconomical.</li>
+<li>A <strong>higher pressure</strong> would give a higher equilibrium yield (fewer gas moles on the product side: 4 → 2).</li>
+<li>However, very high pressures are <strong>expensive</strong> to build and maintain (safety risks, energy costs of compressing gases).</li>
+<li>The compromise conditions of 450 °C and 200 atm give a reasonable yield at an acceptable rate, while keeping costs manageable.</li>
+<li>Any unreacted nitrogen and hydrogen are <strong>recycled</strong> to improve the overall yield.</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: lower temperature → higher yield (exothermic forward)</li>
+<li>1 mark: lower temperature → rate too slow / uneconomical</li>
+<li>1 mark: higher pressure → higher yield (fewer gas moles on right)</li>
+<li>1 mark: very high pressures expensive / dangerous; compromise needed</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q89">
+<div class="qcard-head">
+<span class="qnum">Q89</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§9.11</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Ethanol is manufactured by the hydration of ethene: C₂H₄(g) + H₂O(g) ⇌ C₂H₅OH(g) ΔH is negative. In industry, a temperature of 300 °C and a pressure of 7 MPa are used, rather than the conditions that would give the maximum theoretical yield. Explain the reasoning behind this compromise, stating the effect of both temperature and pressure on the rate of reaction and on the equilibrium yield of ethanol.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li><strong>Temperature:</strong> The forward reaction is exothermic, so a lower temperature would give a higher equilibrium yield (shifts right). However, at low temperatures the rate of reaction is too slow, making the process economically unviable. A moderate temperature (300 °C) gives an acceptable rate while maintaining a reasonable yield (2 marks).</li>
+<li><strong>Pressure:</strong> There are fewer moles of gas on the product side (2 mol → 1 mol), so a higher pressure gives a higher equilibrium yield (shifts right) and a higher rate (more concentrated gas particles). However, very high pressures (&gt; 7 MPa) require expensive, reinforced plant and equipment. A pressure of 7 MPa is a compromise between yield, rate, and cost (2 marks).</li>
+</ul></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: lower temp → higher yield (exothermic)</li>
+<li>1 mark: lower temp → rate too slow; 300 °C is compromise</li>
+<li>1 mark: higher pressure → higher yield (2 mol → 1 mol gas) and higher rate</li>
+<li>1 mark: very high pressures too expensive; 7 MPa is compromise</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q90">
+<div class="qcard-head">
+<span class="qnum">Q90</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§9.11</span>
+<span class="qmeta"><span class="marks">5 marks</span> &middot; ~10 min</span>
+</div>
+<div class="qtext"><p>In the Haber process, N₂(g) + 3H₂(g) ⇌ 2NH₃(g) ΔH = −92 kJ mol⁻¹, an iron catalyst is used at approximately 450 °C and 200 atm rather than at room temperature and 1 atm. Explain the reasons for these chosen conditions. Include a sustainability argument for the use of the catalyst.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Higher temperature (450 °C) increases the rate of reaction but decreases the equilibrium yield of ammonia (forward reaction is exothermic); 450 °C is a compromise between acceptable rate and acceptable yield (1 mark). Higher pressure (200 atm) increases both the rate and the equilibrium yield of ammonia (fewer gas moles on product side) (1 mark). However, very high pressures are expensive and dangerous (1 mark). The catalyst increases the rate by providing an alternative pathway with a lower activation energy, allowing a lower temperature to be used than would otherwise be needed for an acceptable rate (1 mark); this means <strong>less energy is required</strong>, reducing CO₂ emissions and making the process more sustainable (1 mark).</p></div>
+<div class="marking"><div class="marking-title">Mark Scheme</div><ul>
+<li>1 mark: temperature compromise — rate vs yield</li>
+<li>1 mark: higher pressure → higher rate and yield (fewer gas moles)</li>
+<li>1 mark: very high pressures are expensive/dangerous</li>
+<li>1 mark: catalyst allows lower temperature to be used</li>
+<li>1 mark: sustainability — less energy / reduced CO₂ emissions</li>
+</ul></div>
+</div>
+</details>
+</article>
+</section>
+<footer>
+<p>Ch 2.8 Kinetics & Equilibria — Exam Readiness Questions &middot; WCH12 IAL Chemistry &middot; 7 papers analysed (Jun 2022 – Oct 2024)</p>
+</footer>
+</main>
+<script>
+(function(){
+  var saved=localStorage.getItem('wch12-theme');
+  if(saved==='dark')document.documentElement.setAttribute('data-theme','dark');
+  updateBtn();
+})();
+function toggleDark(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  if(isDark){document.documentElement.removeAttribute('data-theme');localStorage.setItem('wch12-theme','light')}
+  else{document.documentElement.setAttribute('data-theme','dark');localStorage.setItem('wch12-theme','dark')}
+  updateBtn();
+}
+function updateBtn(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  var b=document.getElementById('darkBtn');
+  if(b)b.textContent=isDark?'\u2600\ufe0f Light':'\ud83c\udf19 Dark';
+}
+function toggleSidebar(){
+  var sb=document.getElementById('sidebar'),ov=document.getElementById('overlay');
+  sb.classList.toggle('open');ov.classList.toggle('open');
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    var sb=document.getElementById('sidebar');
+    if(sb&&sb.classList.contains('open'))toggleSidebar();
+  }
+});
+function toggleProgress(qid,cb){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  if(cb.checked)saved[qid]=1;else delete saved[qid];
+  localStorage.setItem(key,JSON.stringify(saved));
+  updateProgBar();
+}
+function updateProgBar(){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  var total=document.querySelectorAll('.prog-table input[type="checkbox"]').length;
+  var done=Object.keys(saved).length;
+  var bar=document.getElementById('progFill');
+  if(bar&&total>0)bar.style.width=Math.round(done*100/total)+'%';
+  var txt=document.getElementById('progText');
+  if(txt)txt.textContent=done+' / '+total+' questions completed';
+}
+(function(){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  document.querySelectorAll('.prog-table input[type="checkbox"]').forEach(function(cb){
+    cb.checked=!!saved[cb.dataset.qid];
+    cb.addEventListener('change',function(){toggleProgress(cb.dataset.qid,cb)});
+  });
+  updateProgBar();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch 2.7 — IMFs, Redox & Groups 1/2/7 — Exam Readiness Questions</title>
+<style>
+:root{--bg:#fafcfe;--surface:#fff;--text:#1e293b;--heading:#0f4c75;--heading2:#1b6ca8;--accent:#3b82f6;--accent2:#10b981;--border:#e2e8f0;--muted:#64748b;--tip-bg:#eff6ff;--tip-border:#bfdbfe;--warn-bg:#fefce8;--warn-border:#fde68a;--worked-bg:#f0fdf4;--worked-border:#bbf7d0;--sidebar-bg:#fff;--sidebar-shadow:0 4px 24px rgba(0,0,0,.1);--code-bg:#f1f5f9;--tbl-head:#eef2f7;--tbl-alt:#f8fafc;--card-bg:#fff;--card-shadow:0 1px 3px rgba(0,0,0,.06);--tier1-bg:#eff6ff;--tier1-border:#3b82f6;--tier1-fg:#1e40af;--tier2-bg:#f0fdf4;--tier2-border:#10b981;--tier2-fg:#065f46;--tier3-bg:#fef3c2;--tier3-border:#f43f5e;--tier3-fg:#9f1239;--b-QFR-bg:#dbeafe;--b-QFR-fg:#1e40af;--b-TDC-bg:#ede9fe;--b-TDC-fg:#5b21b6;--b-CAL-bg:#d1fae5;--b-CAL-fg:#065f46;--b-EXP-bg:#ffedd5;--b-EXP-fg:#9a3412;--b-WTE-bg:#ccfbf1;--b-WTE-fg:#115e59;--b-STE-bg:#fee2e2;--b-STE-fg:#991b1b;--b-DIA-bg:#e0e7ff;--b-DIA-fg:#3730a3;--b-SYN-bg:#fce7f3;--b-SYN-fg:#9d174d;--b-DER-bg:#fef3c7;--b-DER-fg:#92400e;--b-QWC-bg:#cffafe;--b-QWC-fg:#155e75;--b-GRD-bg:#ecfccb;--b-GRD-fg:#3f6212}
+[data-theme="dark"]{--bg:#0f172a;--surface:#1e293b;--text:#e2e8f0;--heading:#93c5fd;--heading2:#7dd3fc;--accent:#60a5fa;--accent2:#34d399;--border:#334155;--muted:#94a3b8;--tip-bg:#1e3a5f;--tip-border:#2563eb;--warn-bg:#422006;--warn-border:#a16207;--worked-bg:#052e16;--worked-border:#16a34a;--sidebar-bg:#1e293b;--sidebar-shadow:0 4px 24px rgba(0,0,0,.4);--code-bg:#0f172a;--tbl-head:#1e3a5f;--tbl-alt:#162032;--card-bg:#1e293b;--card-shadow:0 1px 3px rgba(0,0,0,.3);--tier1-bg:#1e3a5f;--tier1-border:#60a5fa;--tier1-fg:#bfdbfe;--tier2-bg:#052e16;--tier2-border:#34d399;--tier2-fg:#a7f3d0;--tier3-bg:#4c1d1d;--tier3-border:#fb7185;--tier3-fg:#fecdd3;--b-QFR-bg:#1e3a5f;--b-QFR-fg:#bfdbfe;--b-TDC-bg:#3b2a5e;--b-TDC-fg:#ddd6fe;--b-CAL-bg:#0c3a26;--b-CAL-fg:#a7f3d0;--b-EXP-bg:#5a2e0a;--b-EXP-fg:#fed7aa;--b-WTE-bg:#0c3a36;--b-WTE-fg:#99f6e4;--b-STE-bg:#5a1a1a;--b-STE-fg:#fecaca;--b-DIA-bg:#2a2e6a;--b-DIA-fg:#c7d2fe;--b-SYN-bg:#5a1d44;--b-SYN-fg:#fbcfe8;--b-DER-bg:#5a3e0a;--b-DER-fg:#fde68a;--b-QWC-bg:#0c4a52;--b-QWC-fg:#a5f3fc;--b-GRD-bg:#2a4310;--b-GRD-fg:#d9f99d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding-top:52px}
+@media(max-width:480px){body{font-size:15px;padding-top:48px}}
+header{position:fixed;top:0;left:0;right:0;height:52px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;z-index:1000;padding:0 16px;gap:12px}
+#menuBtn{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text);padding:4px 8px;border-radius:6px;line-height:1}
+#menuBtn:hover{background:var(--code-bg)}
+#headerTitle{font-weight:700;font-size:.95rem;color:var(--heading);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+#darkBtn{margin-left:auto;background:none;border:1px solid var(--border);border-radius:6px;cursor:pointer;padding:4px 10px;font-size:.8rem;color:var(--text);white-space:nowrap}
+#darkBtn:hover{background:var(--code-bg)}
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:1100;display:none}
+#overlay.open{display:block}
+#sidebar{position:fixed;top:0;left:-340px;width:320px;max-width:85vw;height:100vh;background:var(--sidebar-bg);box-shadow:var(--sidebar-shadow);z-index:1200;overflow-y:auto;padding:16px 0;transition:left .25s ease}
+#sidebar.open{left:0}
+#sidebar .sb-head{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;border-bottom:1px solid var(--border);margin-bottom:8px}
+#sidebar .sb-head span{font-weight:700;color:var(--heading);font-size:.95rem}
+#sidebar .sb-close{background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text);padding:4px;line-height:1}
+#sidebar nav{padding:0 12px}
+#sidebar nav ul{list-style:none;padding:0;margin:0}
+#sidebar nav li{margin-bottom:2px}
+#sidebar nav a{display:block;padding:6px 10px;border-radius:6px;font-size:.82rem;color:var(--text);text-decoration:none;transition:background .15s;line-height:1.4}
+#sidebar nav a:hover{background:var(--code-bg)}
+#sidebar nav a.chapter{font-weight:700;color:var(--heading);font-size:.9rem;margin-top:10px;padding:8px 10px;border-radius:6px}
+#sidebar nav a.q-link{padding-left:16px;font-size:.8rem;color:var(--muted)}
+#sidebar nav a.q-link .q-tag{font-weight:700;color:var(--heading2)}
+#sidebar nav a.q-link:hover{background:var(--code-bg);color:var(--text)}
+main{max-width:920px;margin:0 auto;padding:24px 20px 60px}
+@media(max-width:600px){main{padding:16px 12px 40px}}
+.cover{text-align:center;padding:48px 20px 40px;border-bottom:2px solid var(--border);margin-bottom:32px}
+.cover h1{font-size:2rem;color:var(--heading);margin-bottom:8px;line-height:1.25}
+@media(max-width:480px){.cover h1{font-size:1.5rem}}
+.cover .subtitle{font-size:1rem;color:var(--muted);margin-bottom:16px}
+.cover .meta{display:inline-flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.cover .tag{background:var(--code-bg);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:.8rem;color:var(--muted)}
+.cover .stats{margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cover .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 18px;min-width:100px}
+.cover .stat .num{font-size:1.5rem;font-weight:800;color:var(--accent);line-height:1.1}
+.cover .stat .lbl{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.intro{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:16px 20px;margin-bottom:24px;font-size:.92rem}
+.intro p{margin:0}
+section{margin-bottom:40px}
+section h2{color:var(--heading);font-size:1.4rem;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid var(--accent);scroll-margin-top:64px}
+section h3{color:var(--heading2);font-size:1.1rem;margin:16px 0 8px;scroll-margin-top:64px}
+.tbl-wrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+@media(max-width:600px){table{font-size:.78rem}}
+th{background:var(--tbl-head);color:var(--heading);font-weight:600;text-align:left;padding:8px 10px;border:1px solid var(--border);white-space:nowrap}
+td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+tr:nth-child(even) td{background:var(--tbl-alt)}
+td.num,th.num{text-align:center}
+tr.total td{font-weight:700;background:var(--tbl-head);color:var(--heading)}
+.qcard{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:18px;box-shadow:var(--card-shadow);scroll-margin-top:64px}
+@media(max-width:480px){.qcard{padding:14px}}
+.qcard-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.qnum{background:var(--heading);color:#fff;font-weight:700;font-size:.85rem;padding:3px 10px;border-radius:6px;letter-spacing:.02em}
+[data-theme="dark"] .qnum{background:var(--accent)}
+.badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.75rem;font-weight:700;letter-spacing:.05em;font-family:'SF Mono',Consolas,monospace}
+.badge-QFR{background:var(--b-QFR-bg);color:var(--b-QFR-fg)}.badge-TDC{background:var(--b-TDC-bg);color:var(--b-TDC-fg)}
+.badge-CAL{background:var(--b-CAL-bg);color:var(--b-CAL-fg)}.badge-EXP{background:var(--b-EXP-bg);color:var(--b-EXP-fg)}
+.badge-WTE{background:var(--b-WTE-bg);color:var(--b-WTE-fg)}.badge-STE{background:var(--b-STE-bg);color:var(--b-STE-fg)}
+.badge-DIA{background:var(--b-DIA-bg);color:var(--b-DIA-fg)}.badge-SYN{background:var(--b-SYN-bg);color:var(--b-SYN-fg)}
+.badge-DER{background:var(--b-DER-bg);color:var(--b-DER-fg)}.badge-QWC{background:var(--b-QWC-bg);color:var(--b-QWC-fg)}
+.badge-GRD{background:var(--b-GRD-bg);color:var(--b-GRD-fg)}
+.qspec{font-size:.8rem;color:var(--muted);font-weight:600;background:var(--code-bg);padding:2px 8px;border-radius:4px}
+.qmeta{margin-left:auto;font-size:.82rem;color:var(--muted);font-weight:600}
+@media(max-width:480px){.qmeta{margin-left:0;width:100%;font-size:.78rem}}
+.qmeta .marks{color:var(--accent);font-weight:700}
+.qtext{font-size:1rem;margin-bottom:12px;color:var(--text)}
+.qtext p{margin-bottom:6px}.qtext p:last-child{margin-bottom:0}
+.qtext strong{color:var(--heading)}.qtext em{color:var(--heading2);font-style:italic}
+.qtext code{background:var(--code-bg);padding:1px 5px;border-radius:4px;font-size:.9em}
+details.answer{margin-top:10px;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--bg)}
+details.answer>summary{cursor:pointer;padding:10px 14px;background:var(--code-bg);font-weight:700;color:var(--heading);font-size:.88rem;user-select:none;list-style:none;display:flex;align-items:center;gap:8px}
+details.answer>summary::-webkit-details-marker{display:none}
+details.answer>summary::before{content:"\25B6";font-size:.7rem;transition:transform .15s}
+details.answer[open]>summary::before{transform:rotate(90deg)}
+details.answer>summary:hover{background:var(--tbl-head)}
+.answer-body{padding:12px 16px 14px;font-size:.92rem}
+.answer-body p{margin-bottom:8px}.answer-body p:last-child{margin-bottom:0}
+.answer-body strong{color:var(--heading)}
+.answer-body code{background:var(--code-bg);padding:1px 5px;border-radius:4px;font-size:.88em}
+.answer-body ul,.answer-body ol{margin:4px 0 8px 22px}
+.answer-body li{margin-bottom:3px}
+.answer-body table{margin:8px 0;font-size:.85rem}
+.answer-body pre{background:var(--code-bg);padding:10px 14px;border-radius:8px;overflow-x:auto;margin:8px 0;font-size:.85rem;line-height:1.5}
+.ans{background:var(--worked-bg);border-left:4px solid var(--worked-border);border-radius:0 6px 6px 0;padding:10px 14px;margin:8px 0}
+.ans-label{font-weight:700;color:var(--heading2);margin-right:4px}
+.marking{margin:10px 0}
+.marking-title{font-weight:700;color:var(--heading);font-size:.85rem;margin-bottom:4px;text-transform:uppercase;letter-spacing:.03em}
+.marking ul{margin:4px 0 8px 22px}.marking li{margin-bottom:3px}
+hr{border:none;border-top:1px solid var(--border);margin:24px 0}
+sub,sup{font-size:.75em}
+.prog-table th,.prog-table td{text-align:center}
+.prog-table td.qcol{text-align:left;font-weight:600}
+.prog-table input[type="checkbox"]{width:18px;height:18px;cursor:pointer;accent-color:var(--accent)}
+.prog-table tr.t1-row td.qcol{color:var(--tier1-fg)}
+.prog-table tr.t2-row td.qcol{color:var(--tier2-fg)}
+.prog-table tr.t3-row td.qcol{color:var(--tier3-fg)}
+#progBar{width:100%;height:8px;background:var(--border);border-radius:4px;overflow:hidden;margin:12px 0}
+#progFill{height:100%;background:var(--accent);border-radius:4px;transition:width .3s;width:0}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border)}
+@media print{header,#sidebar,#overlay,#darkBtn,nav,.progress-tracker,.no-print{display:none!important}body{padding-top:0;background:#fff;color:#000}main{max-width:100%;padding:0}details.answer{break-inside:avoid}details.answer>summary{display:none}details.answer .answer-body{display:block!important}.qcard{break-inside:avoid;box-shadow:none;border:1px solid #ccc}.cover{break-after:avoid}*{color:#000!important;background:#fff!important;background-color:#fff!important;background-image:none!important;text-shadow:none!important;box-shadow:none!important;border-color:#666!important}.tier-banner,.qcard,.q-tag,.badge-tier1,.badge-tier2,.badge-tier3,.badge-marks,.badge-type,.prog-table tr.t1-row,.prog-table tr.t2-row,.prog-table tr.t3-row{color:#000!important;background:#f2f2f2!important;background-color:#f2f2f2!important;border:1px solid #666!important}.badge-tier1{border:1px solid #000!important}.badge-tier2{border:1px dashed #000!important}.badge-tier3{border:1px dotted #000!important}a{color:#000!important;text-decoration:underline!important}@page{margin:18mm 16mm}}
+
+</style>
+</head>
+<body>
+<header>
+<button id="menuBtn" onclick="toggleSidebar()" aria-label="Toggle navigation">&#9776;</button>
+<span id="headerTitle">Ch 2.7 — IMFs, Redox &amp; Groups 1/2/7 — Exam Readiness Questions</span>
+<button id="darkBtn" onclick="toggleDark()" aria-label="Toggle dark mode">&#127769; Dark</button>
+</header>
+<div id="overlay" onclick="toggleSidebar()"></div>
+
+<aside id="sidebar">
+<div class="sb-head"><span>Index</span><button class="sb-close" onclick="toggleSidebar()" aria-label="Close">&#10005;</button></div>
+<nav>
+<a href="#cover" class="chapter" onclick="toggleSidebar()">Cover</a>
+<ul><li><a href="#summary" onclick="toggleSidebar()">&#128202; Summary &amp; Progress Tracker</a></li></ul>
+<a href="#sec-intermolecular-forces-redox-chemistry-and-groups-1-2-and-7" class="chapter" onclick="toggleSidebar()">Intermolecular Forces, Redox Chemistry, and Groups 1, 2 and 7</a>
+<ul>
+<li><a href="#q1" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q1 QFR</span> 2m</a></li>
+<li><a href="#q2" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q2 QFR</span> 2m</a></li>
+<li><a href="#q3" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q3 QFR</span> 2m</a></li>
+<li><a href="#q4" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q4 QFR</span> 2m</a></li>
+<li><a href="#q5" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q5 QFR</span> 3m</a></li>
+<li><a href="#q6" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q6 QFR</span> 1m</a></li>
+<li><a href="#q7" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q7 QFR</span> 2m</a></li>
+<li><a href="#q8" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q8 QFR</span> 2m</a></li>
+<li><a href="#q9" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q9 QFR</span> 3m</a></li>
+<li><a href="#q10" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q10 QFR</span> 2m</a></li>
+<li><a href="#q11" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q11 QFR</span> 2m</a></li>
+<li><a href="#q12" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q12 QFR</span> 1m</a></li>
+<li><a href="#q13" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q13 QFR</span> 1m</a></li>
+<li><a href="#q14" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q14 QFR</span> 6m</a></li>
+<li><a href="#q15" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q15 QFR</span> 1m</a></li>
+<li><a href="#q16" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q16 QFR</span> 2m</a></li>
+<li><a href="#q17" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q17 QFR</span> 2m</a></li>
+<li><a href="#q18" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q18 QFR</span> 4m</a></li>
+<li><a href="#q19" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q19 QFR</span> 4m</a></li>
+<li><a href="#q20" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q20 QFR</span> 2m</a></li>
+<li><a href="#q21" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q21 QFR</span> 2m</a></li>
+<li><a href="#q22" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q22 QFR</span> 3m</a></li>
+<li><a href="#q23" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q23 QFR</span> 3m</a></li>
+<li><a href="#q24" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q24 QFR</span> 1m</a></li>
+<li><a href="#q25" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q25 QFR</span> 2m</a></li>
+<li><a href="#q26" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q26 QFR</span> 2m</a></li>
+<li><a href="#q27" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q27 QFR</span> 2m</a></li>
+<li><a href="#q28" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q28 QFR</span> 2m</a></li>
+<li><a href="#q29" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q29 QFR</span> 1m</a></li>
+<li><a href="#q30" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q30 QFR</span> 1m</a></li>
+<li><a href="#q31" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q31 QFR</span> 1m</a></li>
+<li><a href="#q32" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q32 QFR</span> 2m</a></li>
+<li><a href="#q33" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q33 QFR</span> 2m</a></li>
+<li><a href="#q34" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q34 QFR</span> 2m</a></li>
+<li><a href="#q35" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q35 QFR</span> 4m</a></li>
+<li><a href="#q36" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q36 QFR</span> 2m</a></li>
+<li><a href="#q37" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q37 QFR</span> 2m</a></li>
+<li><a href="#q38" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q38 QFR</span> 3m</a></li>
+<li><a href="#q39" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q39 QFR</span> 3m</a></li>
+<li><a href="#q40" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q40 QFR</span> 1m</a></li>
+<li><a href="#q41" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q41 QFR</span> 3m</a></li>
+<li><a href="#q42" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q42 QFR</span> 2m</a></li>
+<li><a href="#q43" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q43 QFR</span> 4m</a></li>
+<li><a href="#q44" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q44 QFR</span> 4m</a></li>
+<li><a href="#q45" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q45 QFR</span> 4m</a></li>
+<li><a href="#q46" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q46 QFR</span> 2m</a></li>
+<li><a href="#q47" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q47 QFR</span> 3m</a></li>
+<li><a href="#q48" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q48 QFR</span> 4m</a></li>
+<li><a href="#q49" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q49 QFR</span> 1m</a></li>
+<li><a href="#q50" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q50 QFR</span> 3m</a></li>
+<li><a href="#q51" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q51 QFR</span> 3m</a></li>
+<li><a href="#q52" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q52 QFR</span> 1m</a></li>
+<li><a href="#q53" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q53 QFR</span> 3m</a></li>
+<li><a href="#q54" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q54 QFR</span> 2m</a></li>
+<li><a href="#q55" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q55 QFR</span> 6m</a></li>
+<li><a href="#q56" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q56 QFR</span> 4m</a></li>
+<li><a href="#q57" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q57 QFR</span> 2m</a></li>
+<li><a href="#q58" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q58 QFR</span> 3m</a></li>
+<li><a href="#q59" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q59 QFR</span> 1m</a></li>
+<li><a href="#q60" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q60 QFR</span> 1m</a></li>
+<li><a href="#q61" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q61 QFR</span> 1m</a></li>
+<li><a href="#q62" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q62 QFR</span> 2m</a></li>
+<li><a href="#q63" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q63 QFR</span> 2m</a></li>
+<li><a href="#q64" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q64 QFR</span> 4m</a></li>
+<li><a href="#q65" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q65 QFR</span> 2m</a></li>
+<li><a href="#q66" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q66 QFR</span> 5m</a></li>
+<li><a href="#q67" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q67 QFR</span> 1m</a></li>
+<li><a href="#q68" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q68 QFR</span> 2m</a></li>
+<li><a href="#q69" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q69 QFR</span> 3m</a></li>
+<li><a href="#q70" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q70 QFR</span> 1m</a></li>
+<li><a href="#q71" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q71 QFR</span> 1m</a></li>
+<li><a href="#q72" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q72 QFR</span> 2m</a></li>
+<li><a href="#q73" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q73 QFR</span> 2m</a></li>
+<li><a href="#q74" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q74 QFR</span> 2m</a></li>
+<li><a href="#q75" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q75 QFR</span> 3m</a></li>
+<li><a href="#q76" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q76 QFR</span> 2m</a></li>
+<li><a href="#q77" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q77 QFR</span> 5m</a></li>
+<li><a href="#q78" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q78 QFR</span> 4m</a></li>
+<li><a href="#q79" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q79 QFR</span> 1m</a></li>
+<li><a href="#q80" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q80 QFR</span> 2m</a></li>
+<li><a href="#q81" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q81 QFR</span> 2m</a></li>
+<li><a href="#q82" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q82 QFR</span> 3m</a></li>
+<li><a href="#q83" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q83 QFR</span> 2m</a></li>
+<li><a href="#q84" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q84 QFR</span> 4m</a></li>
+<li><a href="#q85" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q85 QFR</span> 2m</a></li>
+<li><a href="#q86" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q86 QFR</span> 3m</a></li>
+<li><a href="#q87" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q87 QFR</span> 2m</a></li>
+<li><a href="#q88" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q88 QFR</span> 4m</a></li>
+<li><a href="#q89" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q89 QFR</span> 5m</a></li>
+</ul>
+</nav>
+</aside>
+<main>
+<section class="cover" id="cover">
+<h1>Chapter 2.7 — IMFs, Redox & Groups 1/2/7</h1>
+<p class="subtitle">WCH12 &middot; Edexcel IAL Chemistry Unit 2 &middot; Exam Readiness Questions</p>
+<div class="meta">
+<span class="tag">Spec Points 7.1–8.28</span>
+<span class="tag">7 Papers Analysed</span>
+<span class="tag">Jun 2022 – Oct 2024</span>
+</div>
+<div class="stats">
+<div class="stat"><div class="num">89</div><div class="lbl">Questions</div></div>
+<div class="stat"><div class="num">217</div><div class="lbl">Total Marks</div></div>
+<div class="stat"><div class="num">~434</div><div class="lbl">Minutes</div></div>
+</div>
+</section>
+<section id="summary">
+<h2>&#128202; Summary &amp; Progress Tracker</h2>
+<div class="intro">
+<p>This set contains <strong>89 questions</strong> totalling <strong>217 marks</strong>, with an estimated completion time of <strong>~434 minutes</strong>. Questions are organised by specification point and tagged by tier (T1 Foundation, T2 Application, T3 Integration) and type (QFR, TDC, CAL, EXP, WTE, STE, DIA, SYN, DER, QWC, GRD).</p>
+</div>
+<h3>Progress Tracker</h3>
+<p id="progText" style="font-size:.9rem;color:var(--muted);margin-bottom:6px">0 / 89 questions completed</p>
+<div id="progBar"><div id="progFill"></div></div>
+<div class="tbl-wrap">
+<table class="prog-table">
+<thead><tr><th class="qcol">Question</th><th>Type</th><th>Tier</th><th>Marks</th><th>Done</th></tr></thead>
+<tbody>
+<tr class="total"><td colspan="5" class="qcol">Intermolecular Forces, Redox Chemistry, and Groups 1, 2 and 7</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q1" style="text-decoration:none;color:inherit">Q1</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q1"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q2" style="text-decoration:none;color:inherit">Q2</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q2"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q3" style="text-decoration:none;color:inherit">Q3</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q3"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q4" style="text-decoration:none;color:inherit">Q4</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q4"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q5" style="text-decoration:none;color:inherit">Q5</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q5"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q6" style="text-decoration:none;color:inherit">Q6</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q6"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q7" style="text-decoration:none;color:inherit">Q7</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q7"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q8" style="text-decoration:none;color:inherit">Q8</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q8"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q9" style="text-decoration:none;color:inherit">Q9</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">3</td><td><input type="checkbox" data-qid="q9"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q10" style="text-decoration:none;color:inherit">Q10</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q10"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q11" style="text-decoration:none;color:inherit">Q11</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q11"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q12" style="text-decoration:none;color:inherit">Q12</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q12"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q13" style="text-decoration:none;color:inherit">Q13</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q13"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q14" style="text-decoration:none;color:inherit">Q14</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">6</td><td><input type="checkbox" data-qid="q14"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q15" style="text-decoration:none;color:inherit">Q15</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q15"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q16" style="text-decoration:none;color:inherit">Q16</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q16"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q17" style="text-decoration:none;color:inherit">Q17</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q17"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q18" style="text-decoration:none;color:inherit">Q18</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">4</td><td><input type="checkbox" data-qid="q18"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q19" style="text-decoration:none;color:inherit">Q19</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q19"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q20" style="text-decoration:none;color:inherit">Q20</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q20"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q21" style="text-decoration:none;color:inherit">Q21</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q21"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q22" style="text-decoration:none;color:inherit">Q22</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q22"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q23" style="text-decoration:none;color:inherit">Q23</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">3</td><td><input type="checkbox" data-qid="q23"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q24" style="text-decoration:none;color:inherit">Q24</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q24"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q25" style="text-decoration:none;color:inherit">Q25</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q25"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q26" style="text-decoration:none;color:inherit">Q26</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q26"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q27" style="text-decoration:none;color:inherit">Q27</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q27"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q28" style="text-decoration:none;color:inherit">Q28</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q28"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q29" style="text-decoration:none;color:inherit">Q29</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q29"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q30" style="text-decoration:none;color:inherit">Q30</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q30"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q31" style="text-decoration:none;color:inherit">Q31</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q31"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q32" style="text-decoration:none;color:inherit">Q32</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q32"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q33" style="text-decoration:none;color:inherit">Q33</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q33"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q34" style="text-decoration:none;color:inherit">Q34</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q34"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q35" style="text-decoration:none;color:inherit">Q35</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q35"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q36" style="text-decoration:none;color:inherit">Q36</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q36"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q37" style="text-decoration:none;color:inherit">Q37</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q37"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q38" style="text-decoration:none;color:inherit">Q38</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q38"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q39" style="text-decoration:none;color:inherit">Q39</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">3</td><td><input type="checkbox" data-qid="q39"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q40" style="text-decoration:none;color:inherit">Q40</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">1</td><td><input type="checkbox" data-qid="q40"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q41" style="text-decoration:none;color:inherit">Q41</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q41"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q42" style="text-decoration:none;color:inherit">Q42</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q42"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q43" style="text-decoration:none;color:inherit">Q43</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q43"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q44" style="text-decoration:none;color:inherit">Q44</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q44"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q45" style="text-decoration:none;color:inherit">Q45</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">4</td><td><input type="checkbox" data-qid="q45"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q46" style="text-decoration:none;color:inherit">Q46</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q46"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q47" style="text-decoration:none;color:inherit">Q47</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q47"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q48" style="text-decoration:none;color:inherit">Q48</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q48"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q49" style="text-decoration:none;color:inherit">Q49</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q49"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q50" style="text-decoration:none;color:inherit">Q50</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q50"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q51" style="text-decoration:none;color:inherit">Q51</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q51"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q52" style="text-decoration:none;color:inherit">Q52</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q52"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q53" style="text-decoration:none;color:inherit">Q53</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q53"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q54" style="text-decoration:none;color:inherit">Q54</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q54"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q55" style="text-decoration:none;color:inherit">Q55</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">6</td><td><input type="checkbox" data-qid="q55"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q56" style="text-decoration:none;color:inherit">Q56</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q56"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q57" style="text-decoration:none;color:inherit">Q57</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q57"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q58" style="text-decoration:none;color:inherit">Q58</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q58"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q59" style="text-decoration:none;color:inherit">Q59</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q59"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q60" style="text-decoration:none;color:inherit">Q60</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q60"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q61" style="text-decoration:none;color:inherit">Q61</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">1</td><td><input type="checkbox" data-qid="q61"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q62" style="text-decoration:none;color:inherit">Q62</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q62"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q63" style="text-decoration:none;color:inherit">Q63</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q63"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q64" style="text-decoration:none;color:inherit">Q64</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">4</td><td><input type="checkbox" data-qid="q64"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q65" style="text-decoration:none;color:inherit">Q65</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q65"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q66" style="text-decoration:none;color:inherit">Q66</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">5</td><td><input type="checkbox" data-qid="q66"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q67" style="text-decoration:none;color:inherit">Q67</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q67"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q68" style="text-decoration:none;color:inherit">Q68</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q68"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q69" style="text-decoration:none;color:inherit">Q69</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q69"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q70" style="text-decoration:none;color:inherit">Q70</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q70"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q71" style="text-decoration:none;color:inherit">Q71</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q71"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q72" style="text-decoration:none;color:inherit">Q72</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q72"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q73" style="text-decoration:none;color:inherit">Q73</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q73"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q74" style="text-decoration:none;color:inherit">Q74</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q74"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q75" style="text-decoration:none;color:inherit">Q75</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q75"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q76" style="text-decoration:none;color:inherit">Q76</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q76"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q77" style="text-decoration:none;color:inherit">Q77</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">5</td><td><input type="checkbox" data-qid="q77"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q78" style="text-decoration:none;color:inherit">Q78</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q78"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q79" style="text-decoration:none;color:inherit">Q79</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q79"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q80" style="text-decoration:none;color:inherit">Q80</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q80"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q81" style="text-decoration:none;color:inherit">Q81</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q81"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q82" style="text-decoration:none;color:inherit">Q82</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">3</td><td><input type="checkbox" data-qid="q82"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q83" style="text-decoration:none;color:inherit">Q83</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q83"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q84" style="text-decoration:none;color:inherit">Q84</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q84"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q85" style="text-decoration:none;color:inherit">Q85</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q85"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q86" style="text-decoration:none;color:inherit">Q86</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">3</td><td><input type="checkbox" data-qid="q86"></td></tr>
+<tr class="t2-row"><td class="qcol"><a href="#q87" style="text-decoration:none;color:inherit">Q87</a></td><td class="num">QFR</td><td class="num">T2</td><td class="num">2</td><td><input type="checkbox" data-qid="q87"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q88" style="text-decoration:none;color:inherit">Q88</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">4</td><td><input type="checkbox" data-qid="q88"></td></tr>
+<tr class="t3-row"><td class="qcol"><a href="#q89" style="text-decoration:none;color:inherit">Q89</a></td><td class="num">QFR</td><td class="num">T3</td><td class="num">5</td><td><input type="checkbox" data-qid="q89"></td></tr>
+</tbody></table></div>
+</section>
+<section id="sec-intermolecular-forces-redox-chemistry-and-groups-1-2-and-7">
+<h2>Intermolecular Forces, Redox Chemistry, and Groups 1, 2 and 7</h2>
+<article class="qcard" id="q1">
+<div class="qcard-head">
+<span class="qnum">Q1</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Describe how London forces arise between molecules.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Describe</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>An instantaneous/temporary dipole arises from the asymmetrical distribution of electrons in a molecule. This induces a dipole in a neighbouring molecule. The attraction between the instantaneous dipole and the induced dipole is a London force.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q2">
+<div class="qcard-head">
+<span class="qnum">Q2</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain why a straight-chain alkane has stronger London forces than a branched isomer with the same molecular formula.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>The straight-chain isomer has greater surface area, allowing more extensive London force interactions between molecules.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q3">
+<div class="qcard-head">
+<span class="qnum">Q3</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain, in terms of electrons, why larger halogen molecules (e.g. I₂) have higher boiling points than smaller ones (e.g. Cl₂).</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Larger halogen molecules have more electrons → larger electron cloud → more easily polarised → stronger London forces → more energy needed to overcome intermolecular forces → higher boiling point.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q4">
+<div class="qcard-head">
+<span class="qnum">Q4</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Draw two adjacent molecules to show how an instantaneous dipole induces a dipole in a neighbouring molecule. Label the instantaneous dipole and the induced dipole, and show the partial charges (δ⁺ and δ⁻).</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Draw</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Two molecules drawn adjacent. First molecule labelled "instantaneous (temporary) dipole" with δ⁺ on one end and δ⁻ on the other (due to asymmetric electron distribution). Second molecule labelled "induced dipole" with δ⁺ facing the δ⁻ of the first molecule and δ⁻ facing the δ⁺ of the first molecule. An arrow or label showing "attraction" between the opposite partial charges.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q5">
+<div class="qcard-head">
+<span class="qnum">Q5</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Explain why saying "more electrons = stronger forces" alone is insufficient for explaining London force trends, and state what additional concept is required.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>"More electrons" alone is insufficient because the mark scheme also requires the concept of polarisability. The full chain is: more electrons → larger electron cloud → more easily polarised → stronger London forces. Without "more easily polarised", the explanation is incomplete.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q6">
+<div class="qcard-head">
+<span class="qnum">Q6</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>Which of the following compounds has ONLY London forces between its molecules: HF, OF₂, CF₄, PF₃?</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Name</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>CF₄. CF₄ is tetrahedral and symmetrical → bond dipoles cancel → no permanent dipole → London forces only.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q7">
+<div class="qcard-head">
+<span class="qnum">Q7</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain the difference between BF₃ and NH₃ in terms of the intermolecular forces they experience.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>BF₃ is trigonal planar and symmetrical, so the bond dipoles cancel, making it non-polar — it has only London forces. NH₃ is trigonal pyramidal (due to the lone pair), so it is polar — it has London forces, permanent dipole–dipole forces, and hydrogen bonding.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q8">
+<div class="qcard-head">
+<span class="qnum">Q8</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain why propanal has a higher boiling point than butane, even though butane has more electrons.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Propanal has a C=O bond that creates permanent dipole–dipole forces, which are stronger than the London forces in butane. The additional permanent dipole–dipole forces in propanal outweigh the slightly stronger London forces in butane.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q9">
+<div class="qcard-head">
+<span class="qnum">Q9</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Define the term hydrogen bonding.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Define</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Hydrogen bonding is a strong type of intermolecular force that occurs when a hydrogen atom is covalently bonded to a highly electronegative atom (F, O, or N) and is attracted to a lone pair of electrons on a highly electronegative atom (F, O, or N) in a different molecule.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q10">
+<div class="qcard-head">
+<span class="qnum">Q10</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain why (CH₃)₃COH can form hydrogen bonds but CH₃COCH₃ (propanone) cannot, despite both containing oxygen.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>(CH₃)₃COH has an O–H bond where H is covalently bonded to the electronegative O atom, allowing hydrogen bonding to a lone pair on O of a different molecule. CH₃COCH₃ has a C=O bond but no O–H bond; the H atoms are bonded to C, which is not electronegative enough for hydrogen bonding.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q11">
+<div class="qcard-head">
+<span class="qnum">Q11</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Describe what a correct diagram showing a hydrogen bond between a methanol molecule and a water molecule should include.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Draw</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>The diagram must show: (1) The O—H bond of one molecule (H bonded to O, NOT to C); (2) A dashed line from H to the O atom of the other molecule, representing the hydrogen bond; (3) The O—H⋯O angle approximately 180°; (4) The lone pair on the O atom accepting the hydrogen bond should be indicated; (5) Partial charges δ⁺ on H and δ⁻ on O.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q12">
+<div class="qcard-head">
+<span class="qnum">Q12</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the two elements that must be present in a molecule for hydrogen bonding to occur.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>State</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Hydrogen bonded to fluorine, oxygen, or nitrogen (any two of F, O, N).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q13">
+<div class="qcard-head">
+<span class="qnum">Q13</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State whether a molecule with a C–H bond can participate in hydrogen bonding.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>State</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>No. Carbon is not electronegative enough; hydrogen bonding requires H bonded to F, O or N.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q14">
+<div class="qcard-head">
+<span class="qnum">Q14</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">6 marks</span> &middot; ~12 min</span>
+</div>
+<div class="qtext"><p>Compare the intermolecular forces in H₂ and NH₃. In your answer, you should include the types of forces present, how they arise, and explain which substance liquefies more easily.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Compare</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>(1) Both form London forces. (2) Temporary dipole induces dipole in adjacent molecule. (3) Weaker attraction in H₂ (electron cloud less easily polarised). (4) NH₃ forms hydrogen bonds (N very electronegative). (5) Hydrogen bond between N lone pair and δ⁺H of different molecule. (6) NH₃ liquefies more easily (due to stronger hydrogen bonding compared to London forces in H₂).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q15">
+<div class="qcard-head">
+<span class="qnum">Q15</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State which compound has the higher boiling point: butan-1-ol or butane-1,4-diol. Give a reason.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>State</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Butane-1,4-diol — two hydrogen-bonding sites per molecule (more hydrogen bonding).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q16">
+<div class="qcard-head">
+<span class="qnum">Q16</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain why propane-1,2,3-triol (glycerol) is viscous at room temperature.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Three OH groups → can form up to 3 hydrogen bonds per molecule → strong intermolecular forces → high viscosity.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q17">
+<div class="qcard-head">
+<span class="qnum">Q17</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Pentan-1-ol (CH₃CH₂CH₂CH₂CH₂OH) has a higher boiling point than 2,2-dimethylpropan-1-ol ((CH₃)₃CCH₂OH). Explain why.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Both compounds have hydrogen bonding (both have one –OH group). The difference is due to London forces. Pentan-1-ol has a straight chain (greater surface area) and therefore stronger London forces than the branched 2,2-dimethylpropan-1-ol.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q18">
+<div class="qcard-head">
+<span class="qnum">Q18</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Arrange HF, HCl, HBr, and HI in order of increasing boiling temperature. Explain your answer.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>HCl &lt; HBr &lt; HI &lt; HF. All hydrogen halides have London forces. London force strength increases with increasing number of electrons from HCl to HI. Only HF has hydrogen bonding. Hydrogen bonding is much stronger than London forces, so HF has the highest boiling point despite having the fewest electrons.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q19">
+<div class="qcard-head">
+<span class="qnum">Q19</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>A student claims that HBr must have a higher boiling point than HF because it has more electrons and therefore stronger intermolecular forces. Evaluate this claim with reference to the types and strengths of intermolecular forces involved.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Justify</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>The student's claim is incorrect. While it is true that HBr has more electrons than HF and therefore stronger London forces, HF also has hydrogen bonding (H bonded to F, the most electronegative element). Hydrogen bonding is much stronger than London forces. Therefore HF has a higher boiling point than HBr despite having fewer electrons. The student failed to consider that different TYPES of intermolecular force can override electron count comparisons.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q20">
+<div class="qcard-head">
+<span class="qnum">Q20</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>For a 2-mark boiling point explanation question, why is writing "stronger intermolecular forces" alone NOT sufficient for full marks?</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Write</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Because the mark scheme explicitly requires specifying WHICH type of intermolecular force (e.g. "stronger London forces" not just "stronger intermolecular forces") AND the reason (e.g. "due to greater surface area" or "more electrons"). Writing "stronger IMF" without naming the type is penalised.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q21">
+<div class="qcard-head">
+<span class="qnum">Q21</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Compare the intermolecular forces in hexane with those in water.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Compare</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Hexane has only London forces between its molecules (non-polar molecule). Water has hydrogen bonding between its molecules (H bonded to O), which is the strongest type of intermolecular force. Water also has London forces and permanent dipole–dipole forces, but hydrogen bonding is the strongest and most significant.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q22">
+<div class="qcard-head">
+<span class="qnum">Q22</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Explain why an ionic compound such as NaCl dissolves readily in water but not in hexane. Refer to the intermolecular forces involved.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Water is polar and forms ion-dipole interactions with Na⁺ and Cl⁻ ions, which are strong enough to separate the ions from the ionic lattice. Hexane is non-polar and can only form London forces, which are too weak to overcome the strong ionic bonds in NaCl.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q23">
+<div class="qcard-head">
+<span class="qnum">Q23</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Draw a labelled diagram showing the ion-dipole interactions between Mg²⁺, SO₄²⁻ and water molecules when MgSO₄ dissolves.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Draw</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <ul>
+<li>For Mg²⁺ (positive ion): the δ⁻ oxygen atom of water molecules points TOWARDS the Mg²⁺ ion; draw 4–6 water molecules surrounding Mg²⁺ with O atoms nearest.</li>
+<li>For SO₄²⁻ (negative ion): the δ⁺ hydrogen atoms of water molecules point TOWARDS the SO₄²⁻ ion; draw water molecules with H atoms nearest the SO₄²⁻.</li>
+<li>Must show: δ⁺ on H atoms and δ⁻ on O atom (at least once); correct orientation (O of H₂O near cation, H of H₂O near anion). Full charges (+/−) are NOT correct — these are partial charges.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q24">
+<div class="qcard-head">
+<span class="qnum">Q24</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State which end of a water molecule (H or O) is attracted to a negative ion (anion) when an ionic compound dissolves.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>State</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>The δ⁺ hydrogen atoms of water are attracted to negative ions (anions).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q25">
+<div class="qcard-head">
+<span class="qnum">Q25</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>For an ion-dipole diagram question, what must you show and why?</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>N</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>You must show δ⁺ and δ⁻ (partial charges) on water molecules at least once, because full positive/negative charges are NOT correct — ion-dipole interactions involve partial charges on the polar water molecule. Marks are deducted if full charges are shown.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q26">
+<div class="qcard-head">
+<span class="qnum">Q26</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Define the term oxidising agent.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Define</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>An oxidising agent is a species that causes oxidation by gaining electrons (it is itself reduced). Its oxidation number decreases.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q27">
+<div class="qcard-head">
+<span class="qnum">Q27</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>In the reaction Ca + Cl₂ → CaCl₂, explain why this is a redox reaction. Include the oxidation number changes.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Ca is oxidised (0 → +2) AND Cl₂ is reduced (0 → −1). Both oxidation number changes must be shown to demonstrate that both oxidation and reduction occur.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q28">
+<div class="qcard-head">
+<span class="qnum">Q28</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain the difference between the species being oxidised and the oxidising agent.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>The species being oxidised LOSES electrons and has its oxidation number INCREASED. The oxidising agent is the species that CAUSES oxidation by GAINING electrons; it is itself REDUCED. They are different species — the oxidising agent is NOT the species being oxidised.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q29">
+<div class="qcard-head">
+<span class="qnum">Q29</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the oxidation number of oxygen in hydrogen peroxide, H₂O₂.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>State</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>−1</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q30">
+<div class="qcard-head">
+<span class="qnum">Q30</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the oxidation number of hydrogen in sodium hydride, NaH.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>State</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>−1</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q31">
+<div class="qcard-head">
+<span class="qnum">Q31</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the oxidation number of fluorine in any compound.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>State</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>−1 (always −1 in all compounds).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q32">
+<div class="qcard-head">
+<span class="qnum">Q32</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Calculate the oxidation number of vanadium in the ion VO²⁺.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Calculate</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>O is −2. Let V = x. x + (−2) = +2, therefore x = +4. V = +4.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q33">
+<div class="qcard-head">
+<span class="qnum">Q33</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Determine the oxidation number of Cl in ClO₂.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Determine</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>O is −2. Let Cl = x. x + 2(−2) = 0, therefore x = +4. Cl = +4.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q34">
+<div class="qcard-head">
+<span class="qnum">Q34</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Compare the oxidation numbers of chromium in K₂Cr₂O₇ and K₂CrO₄. Show your working.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Compare</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>In K₂Cr₂O₇: 2(+1) + 2x + 7(−2) = 0 → 2x = +12 → Cr = +6. In K₂CrO₄: 2(+1) + x + 4(−2) = 0 → x = +6. Both have Cr = +6.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q35">
+<div class="qcard-head">
+<span class="qnum">Q35</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>A student is given four compounds: HF, NaH, H₂O₂, and CH₄. (a) Deduce which compound does NOT contain any element with an oxidation number of −1. (b) For each of the remaining three compounds, identify the element with oxidation number −1 and explain why.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Deduce</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) CH₄ (C = −4, H = +1; no element at −1). (b) HF: F has oxidation number −1 (fluorine is always −1). NaH: H has oxidation number −1 (NaH is a metal hydride; Na = +1, so H = −1). H₂O₂: O has oxidation number −1 (H₂O₂ is a peroxide; H = +1, so O = −1).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q36">
+<div class="qcard-head">
+<span class="qnum">Q36</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Work out the formula of potassium manganate(VI).</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Work</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Mn(VI) indicates Mn = +6. In the manganate ion: x + 4(−2) = −2 → x = +6. K is +1, so K₂MnO₄.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q37">
+<div class="qcard-head">
+<span class="qnum">Q37</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Determine the formula of barium(II) ferrate(VI).</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Determine</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>BaFeO₄. Ba²⁺ and FeO₄²⁻ with Fe = +6.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q38">
+<div class="qcard-head">
+<span class="qnum">Q38</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>The Roman numerals in chlorate(V) and chlorate(VII) refer to the oxidation number of chlorine. Deduce the oxidation number of chlorine in NaClO₃ (chlorate(V)) and NaClO₄ (chlorate(VII)), showing your working.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Deduce</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>In NaClO₃: +1 + x + 3(−2) = 0 → x = +5. Cl = +5 in chlorate(V). In NaClO₄: +1 + x + 4(−2) = 0 → x = +7. Cl = +7 in chlorate(VII). The Roman numerals indicate the oxidation number of chlorine (+5 and +7).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q39">
+<div class="qcard-head">
+<span class="qnum">Q39</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Define the term disproportionation as applied to a redox reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Define</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Disproportionation is a redox reaction in which the same element is simultaneously oxidised and reduced. The oxidation numbers of this element in the products are both higher and lower than its oxidation number in the reactant.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q40">
+<div class="qcard-head">
+<span class="qnum">Q40</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>For a 3-mark disproportionation explanation, what phrase is absolutely required that will NOT be accepted if you just write "redox"?</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Give</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Write "disproportionation" and state "the SAME element is both oxidised AND reduced". Writing just "redox" is explicitly ignored/penalised in mark schemes — the specific term "disproportionation" is required.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q41">
+<div class="qcard-head">
+<span class="qnum">Q41</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Explain why the reaction Cl₂ + H₂O → HClO + HCl is a disproportionation reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>The same element (Cl) is both oxidised (0 → +1 in HClO) and reduced (0 → −1 in HCl). Since the same element undergoes both oxidation and reduction, this is disproportionation.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q42">
+<div class="qcard-head">
+<span class="qnum">Q42</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain why the reaction IO₃⁻ + 5I⁻ + 6H⁺ → 3I₂ + 3H₂O is NOT a disproportionation reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>I in IO₃⁻ = +5 (reduced to 0 in I₂); I in I⁻ = −1 (oxidised to 0 in I₂). Not disproportionation because two DIFFERENT species are oxidised and reduced — not the SAME species.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q43">
+<div class="qcard-head">
+<span class="qnum">Q43</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Chlorine dioxide, ClO₂, contains chlorine with an oxidation number of +4. (a) Write a balanced equation for the disproportionation of ClO₂ in alkaline solution to give ClO₂⁻ and ClO₃⁻. (b) Explain why this is a disproportionation reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Deduce</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) 2ClO₂ + 2OH⁻ → ClO₂⁻ + ClO₃⁻ + H₂O
+(b) Cl is +4 in ClO₂; it is reduced to +3 in ClO₂⁻ AND oxidised to +5 in ClO₃⁻. The same element (Cl) is both oxidised and reduced.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q44">
+<div class="qcard-head">
+<span class="qnum">Q44</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>In the reaction between chlorine and cold dilute sodium hydroxide: Cl₂ + 2NaOH → NaCl + NaClO + H₂O, deduce which species is oxidised, which is reduced, and identify the oxidising agent and reducing agent.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Deduce</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Cl in Cl₂ (0) is oxidised to Cl in NaClO (+1) — oxidation number increases. Cl in Cl₂ (0) is reduced to Cl in NaCl (−1) — oxidation number decreases. Cl₂ is both the oxidising agent (gains electrons to become Cl⁻) and the reducing agent (loses electrons to become ClO⁻). This is a disproportionation reaction.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q45">
+<div class="qcard-head">
+<span class="qnum">Q45</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Show that MnO₂ + 4HCl → MnCl₂ + Cl₂ + 2H₂O is a redox reaction by assigning oxidation numbers and identifying what is oxidised and what is reduced.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Show</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Mn in MnO₂: +4; Mn in MnCl₂: +2 (reduced, gains 2 electrons). Cl in HCl: −1; Cl in Cl₂: 0 (oxidised, loses 1 electron per Cl atom). Since oxidation numbers change, this is a redox reaction. Manganese is reduced and chlorine is oxidised.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q46">
+<div class="qcard-head">
+<span class="qnum">Q46</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Write the two half-equations for the reaction between MnO₂ and HCl, given that the products are Mn²⁺, Cl₂, and H₂O.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Write</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Reduction: MnO₂ + 4H⁺ + 2e⁻ → Mn²⁺ + 2H₂O; Oxidation: 2Cl⁻ → Cl₂ + 2e⁻.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q47">
+<div class="qcard-head">
+<span class="qnum">Q47</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A student writes the following half-equation for the reduction of MnO₂ in acidic conditions: MnO₂ + 2H⁺ + 2e⁻ → Mn²⁺ + H₂O. Identify the error in this half-equation and write the correct balanced version.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>The equation is not balanced for oxygen or hydrogen. There are 2 oxygen atoms on the left but only 1 on the right. The correct balanced half-equation is: MnO₂ + 4H⁺ + 2e⁻ → Mn²⁺ + 2H₂O (2 H₂O needed to balance oxygen, 4H⁺ needed to balance hydrogen).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q48">
+<div class="qcard-head">
+<span class="qnum">Q48</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Sodium chlorate(I) solution is left to stand and slowly disproportionates. (a) Write the oxidation and reduction half-equations for this disproportionation. (b) By multiplying and combining the half-equations, deduce the full ionic equation.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Deduce</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) Reduction (+1 → −1): ClO⁻ + H₂O + 2e⁻ → Cl⁻ + 2OH⁻. Oxidation (+1 → +5): ClO⁻ + 4OH⁻ → ClO₃⁻ + 2H₂O + 4e⁻. (b) Multiply the reduction half-equation by 2 (to give 4e⁻): 2ClO⁻ + 2H₂O + 4e⁻ → 2Cl⁻ + 4OH⁻. Add to the oxidation half-equation and cancel: 3ClO⁻ → 2Cl⁻ + ClO₃⁻.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q49">
+<div class="qcard-head">
+<span class="qnum">Q49</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State how the reactivity of Group 2 metals changes down the group.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>State</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Reactivity increases down the group.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q50">
+<div class="qcard-head">
+<span class="qnum">Q50</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Explain why calcium reacts more vigorously with water than magnesium. In your answer, refer to electronic structure.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Ca has a larger atomic radius and the outer electron is more effectively shielded by more inner electron shells. This means less energy is needed to remove the outer electron (lower first ionisation energy), so calcium reacts more vigorously than magnesium.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q51">
+<div class="qcard-head">
+<span class="qnum">Q51</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Explain why Na⁺ forms a stable peroxide (Na₂O₂) but Li⁺ does not.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Larger ionic radius of Na⁺ → lower charge density → polarises O₂²⁻ less → stabilises the peroxide ion. Li⁺ has too high charge density and distorts the peroxide ion excessively, making it unstable.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q52">
+<div class="qcard-head">
+<span class="qnum">Q52</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State how the thermal stability of Group 2 carbonates changes down the group.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>State</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Thermal stability increases down the group.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q53">
+<div class="qcard-head">
+<span class="qnum">Q53</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Explain why Mg(NO₃)₂ is LESS thermally stable than Ca(NO₃)₂.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Mg²⁺ is smaller → higher charge density → more polarising → N–O bonds weakened more → less energy to break → decomposes more easily.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q54">
+<div class="qcard-head">
+<span class="qnum">Q54</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>For a QWC question on thermal decomposition trends, what is the full polarising power explanation chain you must include?</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Write</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Write the chain in order: (1) M²⁺ ionic radius increases down Group 2; (2) Charge density (charge/size ratio) decreases; (3) Polarising power decreases; (4) The cation distorts/polarises the anion less; (5) The bonds within the anion are weakened less; (6) More energy is required to decompose; (7) Thermal stability increases.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q55">
+<div class="qcard-head">
+<span class="qnum">Q55</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">6 marks</span> &middot; ~12 min</span>
+</div>
+<div class="qtext"><p>Evaluate the diagonal relationship between Li and Mg by comparing the thermal decomposition of their nitrates with that of NaNO₃.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Evaluate</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>4LiNO₃ → 2Li₂O + 4NO₂ + O₂ and 2Mg(NO₃)₂ → 2MgO + 4NO₂ + O₂ — both give the oxide, NO₂, and O₂. NaNO₃ → NaNO₂ + ½O₂ — gives the nitrite and O₂ (no NO₂). Li behaves like Group 2 because Li⁺/Mg²⁺ are smaller than Na⁺ → greater charge density → polarise nitrate more → weaken N–O bond → decompose to give NO₂.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q56">
+<div class="qcard-head">
+<span class="qnum">Q56</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Explain why the thermal decomposition of Group 2 nitrates produces the oxide, NO₂, and O₂, whereas Group 1 nitrates (except lithium) produce the nitrite and O₂.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Group 2 cations (M²⁺) have a higher charge than Group 1 cations (M⁺). This gives Group 2 cations a greater charge density and greater polarising power. The greater polarising power more strongly distorts the nitrate anion, weakening the N–O bonds more. This allows the nitrate to fully decompose (breaking N–O bonds completely to give the oxide and NO₂). Group 1 cations (except Li⁺) have lower charge density, so they polarise the nitrate less and only the N–O bond to oxygen is weakened enough for oxygen loss (giving the nitrite).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q57">
+<div class="qcard-head">
+<span class="qnum">Q57</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>When 2.97 g of Mg(NO₃)₂ is thermally decomposed, 1200 cm³ of gas is collected at room temperature and pressure. Use this information to show that the molar gas volume is 24 000 cm³ mol⁻¹. (Molar mass of Mg(NO₃)₂ = 148.3 g mol⁻¹)</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Calculate</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>2Mg(NO₃)₂ → 2MgO + 4NO₂ + O₂ (5 mol gas per 2 mol nitrate). n(Mg(NO₃)₂) = 2.97/148.3 = 0.02003 mol. n(gas) = 5/2 × 0.02003 = 0.05008 mol. Molar volume = 1200/0.05008 = 23 962 ≈ 24 000 cm³ mol⁻¹.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q58">
+<div class="qcard-head">
+<span class="qnum">Q58</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A sample of Mg(NO₃)₂ is heated until completely decomposed. The total volume of gas collected is 600 cm³ at room temperature and pressure. Calculate the moles of Mg(NO₃)₂ that decomposed. (Molar volume at rtp = 24000 cm³ mol⁻¹)</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Calculate</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>n(gas) = 600 / 24000 = 0.0250 mol. From 2Mg(NO₃)₂ → 2MgO + 4NO₂ + O₂, 2 mol Mg(NO₃)₂ produces 5 mol gas. n(Mg(NO₃)₂) = (2/5) × 0.0250 = 0.0100 mol.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q59">
+<div class="qcard-head">
+<span class="qnum">Q59</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State how the solubility of Group 2 hydroxides changes down the group.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>State</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Solubility increases down the group.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q60">
+<div class="qcard-head">
+<span class="qnum">Q60</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State how the solubility of Group 2 sulfates changes down the group.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>State</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Solubility decreases down the group.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q61">
+<div class="qcard-head">
+<span class="qnum">Q61</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>What is the most common mistake students make regarding Group 2 hydroxide and sulfate solubility trends?</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Give</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Getting the trend directions WRONG: students often think hydroxide solubility decreases (it INCREASES) or sulfate solubility increases (it DECREASES). The two trends go in OPPOSITE directions.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q62">
+<div class="qcard-head">
+<span class="qnum">Q62</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Compare the solubilities of MgSO₄ and BaSO₄.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Compare</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>MgSO₄ is soluble (sulfate solubility is highest at the top of Group 2) and BaSO₄ is insoluble (sulfate solubility is lowest at the bottom). BaSO₄ forms a white precipitate.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q63">
+<div class="qcard-head">
+<span class="qnum">Q63</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Compare the solubility trends of Group 2 hydroxides and Group 2 sulfates.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Compare</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Group 2 hydroxide solubility INCREASES down the group: Mg(OH)₂ &lt; Ca(OH)₂ &lt; Sr(OH)₂ &lt; Ba(OH)₂.
+Group 2 sulfate solubility DECREASES down the group: MgSO₄ &gt; CaSO₄ &gt; SrSO₄ &gt; BaSO₄.
+These are OPPOSITE trends.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q64">
+<div class="qcard-head">
+<span class="qnum">Q64</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>25.0 cm³ of a saturated solution of Ca(OH)₂ required 18.95 cm³ of 0.0500 mol dm⁻³ HCl for neutralisation. Calculate the solubility of Ca(OH)₂ in g dm⁻³. (Molar mass of Ca(OH)₂ = 74.1 g mol⁻¹)</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Calculate</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>n(HCl) = 18.95 × 10⁻³ × 0.0500 = 9.475 × 10⁻⁴ mol. n(Ca(OH)₂) = ½ × n(HCl) = 4.738 × 10⁻⁴ mol (in 25 cm³). Concentration in 1 dm³ = 4.738 × 10⁻⁴ × 1000/25 = 0.01895 mol dm⁻³. Solubility = 0.01895 × 74.1 = 1.40 g dm⁻³.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q65">
+<div class="qcard-head">
+<span class="qnum">Q65</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain why BaCl₂ is added to a solution in dilute HNO₃ (rather than in water) when testing for sulfate ions.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Dilute HNO₃ is added first to acidify the solution. This removes any carbonate ions (which would also form a white precipitate with Ba²⁺ as BaCO₃). BaCO₃ dissolves in acid, whereas BaSO₄ is insoluble in acid. This ensures that any white precipitate observed is BaSO₄, confirming the presence of sulfate ions.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q66">
+<div class="qcard-head">
+<span class="qnum">Q66</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">5 marks</span> &middot; ~10 min</span>
+</div>
+<div class="qtext"><p>A student has an unknown Group 2 nitrate. When thermally decomposed, it produces a white solid, brown gas, and oxygen gas. When the remaining solid is added to water, a sparingly soluble suspension forms that gives a white precipitate with dilute H₂SO₄. Suggest the identity of the unknown nitrate and justify your answer.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Suggest</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>The nitrate is Ca(NO₃)₂. Justification: (1) Brown gas (NO₂) and O₂ produced → Group 2 nitrate decomposition pattern (rules out Group 1 except Li). (2) The oxide/hydroxide formed is sparingly soluble in water → consistent with Ca(OH)₂. (3) White precipitate with H₂SO₄ → confirms Ca²⁺ (BaSO₄ would be insoluble but Ba(OH)₂ is fully soluble, so the sparingly soluble hydroxide rules out Ba; Mg(OH)₂ would be insoluble not sparingly soluble).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q67">
+<div class="qcard-head">
+<span class="qnum">Q67</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>For a flame test question, what specific precaution must be taken when testing for potassium ions and why?</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Give</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>View through cobalt glass. This masks the yellow colour of any sodium impurity, allowing the lilac flame of K⁺ to be seen clearly.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q68">
+<div class="qcard-head">
+<span class="qnum">Q68</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain why different metal ions produce different flame test colours.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Different gaps between electronic energy levels → different wavelengths of light emitted when electrons return to lower energy levels.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q69">
+<div class="qcard-head">
+<span class="qnum">Q69</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A compound gives a red flame and forms a white precipitate when added to K₂SO₄(aq). The precipitate is insoluble in dilute acid. Deduce the formula of the compound.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Deduce</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Red flame could be Li⁺ or Sr²⁺. Insoluble sulfate precipitate → Ba²⁺ or Sr²⁺ (MgSO₄ is soluble). Since the flame is red (not green for Ba²⁺), the cation is Sr²⁺. The compound dissolves in K₂SO₄(aq) and Sr²⁺ precipitates with SO₄²⁻, so the anion is a soluble one — the compound is Sr(NO₃)₂.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q70">
+<div class="qcard-head">
+<span class="qnum">Q70</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State how the boiling temperature of the halogens changes down Group 7.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>State</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Boiling temperature increases down Group 7.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q71">
+<div class="qcard-head">
+<span class="qnum">Q71</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State how the reactivity of the halogens as oxidising agents changes down Group 7.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>State</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Reactivity (oxidising power) decreases down Group 7.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q72">
+<div class="qcard-head">
+<span class="qnum">Q72</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain why the boiling temperature increases down Group 7 from Cl₂ to I₂.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>More electrons → larger electron cloud → more easily polarised → stronger London forces. (Not "stronger covalent bonds" — boiling involves overcoming intermolecular forces, not breaking covalent bonds.)</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q73">
+<div class="qcard-head">
+<span class="qnum">Q73</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain why the oxidising power of halogens decreases down Group 7.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Atomic radius increases down Group 7, shielding increases, and the ability to attract electrons (electronegativity) decreases. This means the halogen molecules become less able to gain an electron and act as oxidising agents.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q74">
+<div class="qcard-head">
+<span class="qnum">Q74</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Compare the trend in reactivity down Group 7 with the trend down Group 2.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Compare</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Group 7 reactivity (as oxidising agents) DECREASES down the group. Group 2 reactivity INCREASES down the group. These are opposite trends: halogens get less reactive (less able to gain electrons) while Group 2 metals get more reactive (more easily lose electrons).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q75">
+<div class="qcard-head">
+<span class="qnum">Q75</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Concentrated sulfuric acid is added to solid sodium bromide. Explain the redox reaction that occurs, identifying what is oxidised and what is reduced.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Initially, NaBr + H₂SO₄ → NaHSO₄ + HBr (acid-base reaction). Then HBr reduces H₂SO₄: H₂SO₄ + 2HBr → Br₂ + SO₂ + 2H₂O. Br⁻ (in HBr) is oxidised from −1 to 0 (in Br₂). S in H₂SO₄ is reduced from +6 to +4 (in SO₂). Products include Br₂ (red-brown fumes), SO₂ (colourless acidic gas), and H₂O.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q76">
+<div class="qcard-head">
+<span class="qnum">Q76</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain the difference between the products formed when concentrated H₂SO₄ reacts with NaCl compared with NaBr.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>With NaCl: no redox occurs; only HCl gas (white fumes) is produced. Cl⁻ is too weak a reducing agent to reduce H₂SO₄. With NaBr: a redox reaction occurs; Br₂ (red-brown fumes) and SO₂ (colourless gas) are produced. Br⁻ is a moderate reducing agent and reduces H₂SO₄ from S(+6) to S(+4).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q77">
+<div class="qcard-head">
+<span class="qnum">Q77</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">5 marks</span> &middot; ~10 min</span>
+</div>
+<div class="qtext"><p>Three test tubes contain solid NaCl, NaBr, and NaI respectively. Concentrated sulfuric acid is added to each. (a) State the products formed with each halide. (b) Deduce the order of reducing power of the halide ions from your observations.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Deduce</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) NaCl: HCl(g) only (white fumes, no redox). NaBr: HBr(g), Br₂ (red-brown fumes), SO₂(g) (colourless gas). NaI: HI(g), I₂ (black solid), S (yellow solid), H₂S(g), SO₂(g).
+(b) Reducing power: I⁻ &gt; Br⁻ &gt; Cl⁻. Evidence: I⁻ reduces H₂SO₄ the most (to S/H₂S), Br⁻ reduces it less (to SO₂ only), and Cl⁻ does not reduce it at all. The stronger the reducing agent, the more H₂SO₄ is reduced.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q78">
+<div class="qcard-head">
+<span class="qnum">Q78</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>A student claims that adding concentrated H₂SO₄ to sodium chloride produces chlorine gas. (a) Deduce whether this claim is correct. (b) The student then suggests that to produce chlorine from NaCl, they should use a stronger acid. Evaluate this suggestion.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Deduce</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) The claim is incorrect. Adding concentrated H₂SO₄ to NaCl produces HCl gas (white fumes), NOT chlorine. Cl⁻ is too weak a reducing agent to reduce H₂SO₄; only an acid-base reaction occurs. (b) The suggestion is also incorrect. The issue is not the strength of the acid but the reducing power of Cl⁻. Chloride ions are very weak reducing agents and will not reduce any common laboratory reagent to produce Cl₂. A different method is needed, such as electrolysis of molten NaCl.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q79">
+<div class="qcard-head">
+<span class="qnum">Q79</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the observation when aqueous silver nitrate is added to a solution containing bromide ions.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>State</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Cream precipitate.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q80">
+<div class="qcard-head">
+<span class="qnum">Q80</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Dilute nitric acid is added to a solution before carrying out the silver nitrate test. Explain why this step is necessary.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>To remove carbonate ions (or sulfite ions) which would also form a precipitate with silver nitrate, giving a false positive result.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q81">
+<div class="qcard-head">
+<span class="qnum">Q81</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Compare the solubility of the three silver halide precipitates in ammonia solution.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Compare</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>AgCl is soluble in dilute ammonia; AgBr is soluble in concentrated ammonia only; AgI is insoluble in ammonia.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q82">
+<div class="qcard-head">
+<span class="qnum">Q82</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>2.49 g of a mixture of KI and KCl is dissolved in water and excess AgNO₃ is added. 0.162 g of AgI precipitate is formed. Calculate the percentage of KI in the mixture. (M(AgI) = 234.8 g mol⁻¹; M(KI) = 166.0 g mol⁻¹)</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Calculate</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>n(AgI) = 0.162 / 234.8 = 6.90 × 10⁻⁴ mol; n(KI) = 6.90 × 10⁻⁴ mol (1:1 ratio); m(KI) = 6.90 × 10⁻⁴ × 166.0 = 0.1145 g; %KI = (0.1145 / 2.49) × 100 = 4.60%.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q83">
+<div class="qcard-head">
+<span class="qnum">Q83</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>When aqueous iodine is shaken with cyclohexane in a separating funnel, the iodine preferentially dissolves in the cyclohexane layer. Explain why.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Iodine is a non-polar molecule. The London forces between iodine and cyclohexane are similar in strength to the London forces within iodine itself, whereas iodine cannot break the strong hydrogen bonds in water.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q84">
+<div class="qcard-head">
+<span class="qnum">Q84</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>A solution is known to contain either NaCl or NaI. A student adds silver nitrate solution after acidifying with dilute nitric acid and observes a yellow precipitate. The student then adds the precipitate to cyclohexane and shakes. (a) Identify the halide ion present. (b) State what the student would observe if the yellow precipitate was AgI and excess dilute ammonia was added. (c) The student claims the yellow precipitate could be colloidal sulfur from the oxidation of sulfite by Ag⁺. Explain why the initial addition of dilute nitric acid makes this claim unlikely.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Deduce</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) I⁻ (iodide ions) — a yellow precipitate with AgNO₃ indicates AgI. (b) The precipitate would remain insoluble (AgI does not dissolve in ammonia). (c) Dilute nitric acid removes any sulfite ions present (by converting them to SO₂ gas) before the AgNO₃ is added, so sulfite interference is eliminated.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q85">
+<div class="qcard-head">
+<span class="qnum">Q85</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>In a titration, 10.00 cm³ of solution is measured using a pipette (±0.04 cm³) and the titre is 25.00 cm³ using a burette (±0.05 cm³ per reading). Calculate the total percentage uncertainty in the concentration.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Calculate</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Pipette uncertainty = ±0.04/10.00 × 100 = ±0.40%. Burette titre uncertainty = ±0.10/25.00 × 100 = ±0.40% (titre = two readings, so uncertainty doubles). Total % uncertainty = 0.40% + 0.40% = ±0.80%.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q86">
+<div class="qcard-head">
+<span class="qnum">Q86</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A student uses a burette with an uncertainty of ±0.05 cm³ per reading. When asked to state the uncertainty in the titre volume, the student writes ±0.05 cm³. Explain why this is incorrect and state the correct value.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Suggest</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>The titre volume is the DIFFERENCE between the final and initial burette readings. Since each reading has an uncertainty of ±0.05 cm³ and two readings are taken, the absolute uncertainty is doubled to ±0.10 cm³. The student should write ±0.10 cm³.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q87">
+<div class="qcard-head">
+<span class="qnum">Q87</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>In a lithium-ion battery, the overall equation is: C₆Li + CoO₂ → LiCoO₂ + C₆. Describe, with reference to oxidation numbers, what happens to cobalt.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Explain</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Cobalt is reduced; its oxidation number changes from +4 (in CoO₂) to +3 (in LiCoO₂). The oxidation number decreases, meaning cobalt gains electrons.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q88">
+<div class="qcard-head">
+<span class="qnum">Q88</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Bleach contains NaOCl. A student claims that mixing bleach with acid produces chlorine gas because "the acid reacts with the bleach." Justify this claim by writing a two-step mechanism showing how the toxic gas is produced, naming the type of reaction occurring.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Justify</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>Step 1: Adding H⁺ shifts HClO ⇌ H⁺ + ClO⁻ to the LEFT, forming HClO.
+Step 2: HClO + Cl⁻ + H⁺ → Cl₂ + H₂O.
+This is a redox (comproportionation) reaction. The Cl in ClO⁻ (oxidation number +1) is reduced to Cl₂ (0), and the Cl⁻ (−1) is oxidised to Cl₂ (0). The net result is formation of toxic Cl₂(g), which is dangerous to inhale.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q89">
+<div class="qcard-head">
+<span class="qnum">Q89</span>
+<span class="badge badge-QFR">QFR</span>
+
+<span class="qmeta"><span class="marks">5 marks</span> &middot; ~10 min</span>
+</div>
+<div class="qtext"><p>Chlorine gas is used to produce calcium hypochlorite for swimming pool treatment via the reaction: 2Ca(OH)₂ + 2Cl₂ → Ca(ClO)₂ + CaCl₂ + 2H₂O. (a) Calculate the oxidation number of Cl in Ca(ClO)₂ and in CaCl₂. (b) Is this reaction an example of disproportionation? Justify your answer using oxidation numbers. (c) A pool requires 7.16 kg of Ca(ClO)₂. Calculate the volume of Cl₂ gas needed at rtp. (M(Ca(ClO)₂) = 143.1 g mol⁻¹; molar volume = 24000 cm³ mol⁻¹)</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="marking"><div class="marking-title">Command Word</div><p>Analyse</p></div>
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) In Ca(ClO)₂: Ca = +2, O = −2, so Cl = +1. In CaCl₂: Ca = +2, Cl = −1. (b) Yes, this is disproportionation. Chlorine starts at 0 (in Cl₂) and ends up at +1 (in Ca(ClO)₂, oxidised) and −1 (in CaCl₂, reduced). The SAME element (chlorine) is both oxidised AND reduced. (c) n(Ca(ClO)₂) = 7160 / 143.1 = 50.0 mol. From the equation, 2 mol Cl₂ produces 1 mol Ca(ClO)₂. n(Cl₂) = 50.0 × 2 = 100 mol. V(Cl₂) = 100 × 24000 = 2,400,000 cm³ = 2400 dm³.</p></div>
+</div>
+</details>
+</article>
+</section>
+<footer>
+<p>Ch 2.7 IMFs, Redox & Groups 1/2/7 — Exam Readiness Questions &middot; WCH12 IAL Chemistry &middot; 7 papers analysed (Jun 2022 – Oct 2024)</p>
+</footer>
+</main>
+<script>
+(function(){
+  var saved=localStorage.getItem('wch12-theme');
+  if(saved==='dark')document.documentElement.setAttribute('data-theme','dark');
+  updateBtn();
+})();
+function toggleDark(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  if(isDark){document.documentElement.removeAttribute('data-theme');localStorage.setItem('wch12-theme','light')}
+  else{document.documentElement.setAttribute('data-theme','dark');localStorage.setItem('wch12-theme','dark')}
+  updateBtn();
+}
+function updateBtn(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  var b=document.getElementById('darkBtn');
+  if(b)b.textContent=isDark?'\u2600\ufe0f Light':'\ud83c\udf19 Dark';
+}
+function toggleSidebar(){
+  var sb=document.getElementById('sidebar'),ov=document.getElementById('overlay');
+  sb.classList.toggle('open');ov.classList.toggle('open');
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    var sb=document.getElementById('sidebar');
+    if(sb&&sb.classList.contains('open'))toggleSidebar();
+  }
+});
+function toggleProgress(qid,cb){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  if(cb.checked)saved[qid]=1;else delete saved[qid];
+  localStorage.setItem(key,JSON.stringify(saved));
+  updateProgBar();
+}
+function updateProgBar(){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  var total=document.querySelectorAll('.prog-table input[type="checkbox"]').length;
+  var done=Object.keys(saved).length;
+  var bar=document.getElementById('progFill');
+  if(bar&&total>0)bar.style.width=Math.round(done*100/total)+'%';
+  var txt=document.getElementById('progText');
+  if(txt)txt.textContent=done+' / '+total+' questions completed';
+}
+(function(){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  document.querySelectorAll('.prog-table input[type="checkbox"]').forEach(function(cb){
+    cb.checked=!!saved[cb.dataset.qid];
+    cb.addEventListener('change',function(){toggleProgress(cb.dataset.qid,cb)});
+  });
+  updateProgBar();
+})();
+</script>
+
+</body>
+</html>

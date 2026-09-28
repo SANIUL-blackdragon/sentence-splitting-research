@@ -1,0 +1,2963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch 2.8 — Kinetics and Equilibria | WCH12 Study Guide</title>
+<style>
+:root{--bg:#fafcfe;--surface:#fff;--text:#1e293b;--heading:#0f4c75;--heading2:#1b6ca8;--accent:#3b82f6;--accent2:#10b981;--border:#e2e8f0;--muted:#64748b;--tip-bg:#eff6ff;--tip-border:#bfdbfe;--warn-bg:#fefce8;--warn-border:#fde68a;--worked-bg:#f0fdf4;--worked-border:#bbf7d0;--sidebar-bg:#fff;--sidebar-shadow:0 4px 24px rgba(0,0,0,.1);--code-bg:#f1f5f9;--tbl-head:#eef2f7;--tbl-alt:#f8fafc}
+[data-theme="dark"]{--bg:#0f172a;--surface:#1e293b;--text:#e2e8f0;--heading:#93c5fd;--heading2:#7dd3fc;--accent:#60a5fa;--accent2:#34d399;--border:#334155;--muted:#94a3b8;--tip-bg:#1e3a5f;--tip-border:#2563eb;--warn-bg:#422006;--warn-border:#a16207;--worked-bg:#052e16;--worked-border:#16a34a;--sidebar-bg:#1e293b;--sidebar-shadow:0 4px 24px rgba(0,0,0,.4);--code-bg:#0f172a;--tbl-head:#1e3a5f;--tbl-alt:#162032}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding-top:52px}
+@media(max-width:480px){body{font-size:15px;padding-top:48px}}
+header{position:fixed;top:0;left:0;right:0;height:52px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;z-index:1000;padding:0 16px;gap:12px}
+#menuBtn{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text);padding:4px 8px;border-radius:6px;line-height:1}
+#menuBtn:hover{background:var(--code-bg)}
+#headerTitle{font-weight:700;font-size:.95rem;color:var(--heading);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+#darkBtn{margin-left:auto;background:none;border:1px solid var(--border);border-radius:6px;cursor:pointer;padding:4px 10px;font-size:.8rem;color:var(--text);white-space:nowrap}
+#darkBtn:hover{background:var(--code-bg)}
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:1100;display:none}
+#overlay.open{display:block}
+#sidebar{position:fixed;top:0;left:-340px;width:320px;max-width:85vw;height:100vh;background:var(--sidebar-bg);box-shadow:var(--sidebar-shadow);z-index:1200;overflow-y:auto;padding:16px 0;transition:left .25s ease}
+#sidebar.open{left:0}
+#sidebar .sb-head{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;border-bottom:1px solid var(--border);margin-bottom:8px}
+#sidebar .sb-head span{font-weight:700;color:var(--heading);font-size:.95rem}
+#sidebar .sb-close{background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text);padding:4px;line-height:1}
+#sidebar nav{padding:0 12px}
+#sidebar nav ul{list-style:none;padding:0;margin:0}
+#sidebar nav li{margin-bottom:2px}
+#sidebar nav a{display:block;padding:6px 10px;border-radius:6px;font-size:.82rem;color:var(--text);text-decoration:none;transition:background .15s;line-height:1.4}
+#sidebar nav a:hover{background:var(--code-bg)}
+#sidebar nav a.chapter{font-weight:700;color:var(--heading);font-size:.9rem;margin-top:10px;padding:8px 10px;border-radius:6px}
+#sidebar nav a.sub{padding-left:18px;font-size:.8rem;color:var(--muted)}
+main{max-width:900px;margin:0 auto;padding:24px 20px 60px}
+@media(max-width:600px){main{padding:16px 12px 40px}}
+.cover{text-align:center;padding:48px 20px 40px;border-bottom:2px solid var(--border);margin-bottom:32px}
+.cover h1{font-size:2rem;color:var(--heading);margin-bottom:8px;line-height:1.25}
+@media(max-width:480px){.cover h1{font-size:1.5rem}}
+.cover .subtitle{font-size:1rem;color:var(--muted);margin-bottom:16px}
+.cover .meta{display:inline-flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.cover .tag{background:var(--code-bg);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:.8rem;color:var(--muted)}
+.cover .stats{margin-top:20px;font-size:1.1rem;font-weight:700;color:var(--accent)}
+.cover .stats2{font-size:.85rem;color:var(--muted);font-weight:400;margin-top:4px}
+section{margin-bottom:40px}
+section h2{color:var(--heading);font-size:1.4rem;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid var(--accent);scroll-margin-top:64px}
+section h3{color:var(--heading2);font-size:1.15rem;margin:20px 0 8px;scroll-margin-top:64px}
+section h4{color:var(--heading);font-size:1.05rem;margin:16px 0 6px;scroll-margin-top:64px}
+section h5{color:var(--heading);font-size:1rem;margin:14px 0 6px;scroll-margin-top:64px}
+section p{margin-bottom:10px}
+section strong{color:var(--heading)}
+section em{font-style:italic;color:var(--heading2)}
+section code{background:var(--code-bg);padding:1px 5px;border-radius:4px;font-size:.92em;font-family:'SF Mono',Consolas,monospace}
+section pre{background:var(--code-bg);padding:12px 16px;border-radius:8px;overflow-x:auto;margin:12px 0;font-size:.88rem;line-height:1.5}
+section pre code{background:none;padding:0;font-size:1em}
+section ul,section ol{margin:8px 0 12px 24px}
+section li{margin-bottom:4px}
+section blockquote{border-left:4px solid var(--accent);background:var(--tip-bg);padding:10px 16px;margin:12px 0;border-radius:0 6px 6px 0;color:var(--text)}
+section blockquote p{margin:0}
+.tbl-wrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+@media(max-width:600px){table{font-size:.78rem}}
+th{background:var(--tbl-head);color:var(--heading);font-weight:600;text-align:left;padding:8px 10px;border:1px solid var(--border);white-space:nowrap}
+td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+tr:nth-child(even) td{background:var(--tbl-alt)}
+hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+sub,sup{font-size:.75em}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border)}
+@media print{header,#sidebar,#overlay,#darkBtn,nav,.no-print{display:none!important}body{padding-top:0}main{max-width:100%;padding:0}*{color:#000!important;background:#fff!important;background-color:#fff!important;background-image:none!important;text-shadow:none!important;box-shadow:none!important;border-color:#666!important}a{color:#000!important;text-decoration:underline!important}section{break-inside:avoid}h2,h3,h4{break-after:avoid}@page{margin:18mm 16mm}}
+
+</style>
+</head>
+<body>
+<header>
+<button id="menuBtn" onclick="toggleSidebar()" aria-label="Toggle navigation">&#9776;</button>
+<span id="headerTitle">Ch 2.8 — Kinetics and Equilibria</span>
+<button id="darkBtn" onclick="toggleDark()" aria-label="Toggle dark mode">&#127769; Dark</button>
+</header>
+<div id="overlay" onclick="toggleSidebar()"></div>
+
+<aside id="sidebar">
+<div class="sb-head"><span>Index</span><button class="sb-close" onclick="toggleSidebar()" aria-label="Close">&#10005;</button></div>
+<nav>
+<a href="#cover" class="chapter" onclick="toggleSidebar()">Cover</a>
+<a href="#defs" class="chapter" onclick="toggleSidebar()">Definitions</a>
+<ul>
+<li><a href="#def-edexcel-ial-chemistry-wch12-spec-points-91911" onclick="toggleSidebar()">Edexcel IAL Chemistry WCH12 — Spec Points 9.1–9.11</a></li>
+<li><a href="#def-how-to-use-this-guide" onclick="toggleSidebar()">How to Use This Guide</a></li>
+<li><a href="#def-91-collision-theory" onclick="toggleSidebar()">9.1 Collision Theory</a></li>
+<li><a href="#def-core-definition" onclick="toggleSidebar()">Core Definition</a></li>
+<li><a href="#def-key-sub-points" onclick="toggleSidebar()">Key Sub-points</a></li>
+<li><a href="#def-effects-on-rate-exam-critical-table" onclick="toggleSidebar()">Effects on Rate (Exam-Critical Table)</a></li>
+<li><a href="#def-exam-traps-collision-theory" onclick="toggleSidebar()">Exam Traps — Collision Theory</a></li>
+<li><a href="#def-real-exam-questions" onclick="toggleSidebar()">Real Exam Questions</a></li>
+<li><a href="#def-92-activation-energy" onclick="toggleSidebar()">9.2 Activation Energy</a></li>
+<li><a href="#def-core-definition-1" onclick="toggleSidebar()">Core Definition</a></li>
+<li><a href="#def-essential-details" onclick="toggleSidebar()">Essential Details</a></li>
+<li><a href="#def-exam-facts-from-mark-schemes" onclick="toggleSidebar()">Exam Facts from Mark Schemes</a></li>
+<li><a href="#def-real-exam-questions-1" onclick="toggleSidebar()">Real Exam Questions</a></li>
+<li><a href="#def-93i-measuring-rate-rate-1time" onclick="toggleSidebar()">9.3(i) Measuring Rate — Rate = 1/time</a></li>
+<li><a href="#def-core-definition-2" onclick="toggleSidebar()">Core Definition</a></li>
+<li><a href="#def-when-this-applies" onclick="toggleSidebar()">When This Applies</a></li>
+<li><a href="#def-exam-application" onclick="toggleSidebar()">Exam Application</a></li>
+<li><a href="#def-important-caveat" onclick="toggleSidebar()">Important Caveat</a></li>
+<li><a href="#def-93ii-measuring-rate-gradient-of-a-concentrationtime-or-volumetime-graph" onclick="toggleSidebar()">9.3(ii) Measuring Rate — Gradient of a Concentration–Time or Volume–Time Graph</a></li>
+<li><a href="#def-core-definition-3" onclick="toggleSidebar()">Core Definition</a></li>
+<li><a href="#def-how-to-calculate" onclick="toggleSidebar()">How to Calculate</a></li>
+<li><a href="#def-real-exam-questions-2" onclick="toggleSidebar()">Real Exam Questions</a></li>
+<li><a href="#def-graph-shapes-to-know" onclick="toggleSidebar()">Graph Shapes to Know</a></li>
+<li><a href="#def-94-maxwellboltzmann-distribution" onclick="toggleSidebar()">9.4 Maxwell–Boltzmann Distribution</a></li>
+<li><a href="#def-core-definition-4" onclick="toggleSidebar()">Core Definition</a></li>
+<li><a href="#def-key-features-of-the-distribution" onclick="toggleSidebar()">Key Features of the Distribution</a></li>
+<li><a href="#def-effect-of-temperature-most-tested-topic-in-28" onclick="toggleSidebar()">Effect of Temperature (MOST TESTED TOPIC in 2.8)</a></li>
+<li><a href="#def-real-exam-questions-3" onclick="toggleSidebar()">Real Exam Questions</a></li>
+<li><a href="#def-95-catalysts" onclick="toggleSidebar()">9.5 Catalysts</a></li>
+<li><a href="#def-core-definition-5" onclick="toggleSidebar()">Core Definition</a></li>
+<li><a href="#def-key-properties-exam-ready" onclick="toggleSidebar()">Key Properties (Exam-Ready)</a></li>
+<li><a href="#def-heterogeneous-vs-homogeneous-catalysts" onclick="toggleSidebar()">Heterogeneous vs Homogeneous Catalysts</a></li>
+<li><a href="#def-catalyst-effects-on-the-mb-distribution" onclick="toggleSidebar()">Catalyst Effects on the M–B Distribution</a></li>
+<li><a href="#def-exam-facts-from-mark-schemes-1" onclick="toggleSidebar()">Exam Facts from Mark Schemes</a></li>
+<li><a href="#def-real-exam-questions-4" onclick="toggleSidebar()">Real Exam Questions</a></li>
+<li><a href="#def-96-reaction-profiles" onclick="toggleSidebar()">9.6 Reaction Profiles</a></li>
+<li><a href="#def-core-definition-6" onclick="toggleSidebar()">Core Definition</a></li>
+<li><a href="#def-uncatalysed-vs-catalysed-reaction-profiles" onclick="toggleSidebar()">Uncatalysed vs Catalysed Reaction Profiles</a></li>
+<li><a href="#def-key-differences-to-draw" onclick="toggleSidebar()">Key Differences to Draw</a></li>
+<li><a href="#def-real-exam-questions-5" onclick="toggleSidebar()">Real Exam Questions</a></li>
+<li><a href="#def-97-catalysts-in-industry-sustainability" onclick="toggleSidebar()">9.7 Catalysts in Industry — Sustainability</a></li>
+<li><a href="#def-core-definition-7" onclick="toggleSidebar()">Core Definition</a></li>
+<li><a href="#def-why-this-matters-in-exams" onclick="toggleSidebar()">Why This Matters in Exams</a></li>
+<li><a href="#def-real-exam-questions-6" onclick="toggleSidebar()">Real Exam Questions</a></li>
+<li><a href="#def-98-catalyst-action-via-maxwellboltzmann" onclick="toggleSidebar()">9.8 Catalyst Action via Maxwell–Boltzmann</a></li>
+<li><a href="#def-how-to-answer-3-mark-template" onclick="toggleSidebar()">How to Answer (3-Mark Template)</a></li>
+<li><a href="#def-key-distinction" onclick="toggleSidebar()">Key Distinction</a></li>
+<li><a href="#def-common-error" onclick="toggleSidebar()">Common Error</a></li>
+<li><a href="#def-99i-dynamic-equilibrium-forward-rate-backward-rate" onclick="toggleSidebar()">9.9(i) Dynamic Equilibrium — Forward Rate = Backward Rate</a></li>
+<li><a href="#def-core-definition-8" onclick="toggleSidebar()">Core Definition</a></li>
+<li><a href="#def-essential-conditions-for-dynamic-equilibrium" onclick="toggleSidebar()">Essential Conditions for Dynamic Equilibrium</a></li>
+<li><a href="#def-dynamic-vs-static" onclick="toggleSidebar()">"Dynamic" vs "Static"</a></li>
+<li><a href="#def-real-exam-questions-7" onclick="toggleSidebar()">Real Exam Questions</a></li>
+<li><a href="#def-99ii-constant-concentrations-at-equilibrium" onclick="toggleSidebar()">9.9(ii) Constant Concentrations at Equilibrium</a></li>
+<li><a href="#def-core-definition-9" onclick="toggleSidebar()">Core Definition</a></li>
+<li><a href="#def-key-exam-points" onclick="toggleSidebar()">Key Exam Points</a></li>
+<li><a href="#def-910-le-chateliers-principle" onclick="toggleSidebar()">9.10 Le Chatelier's Principle</a></li>
+<li><a href="#def-core-definition-10" onclick="toggleSidebar()">Core Definition</a></li>
+<li><a href="#def-effects-of-changes-complete-table" onclick="toggleSidebar()">Effects of Changes (Complete Table)</a></li>
+<li><a href="#def-justification-the-key-exam-requirement" onclick="toggleSidebar()">JUSTIFICATION — The Key Exam Requirement</a></li>
+<li><a href="#def-real-exam-questions-8" onclick="toggleSidebar()">Real Exam Questions</a></li>
+<li><a href="#def-common-le-chatelier-pitfalls" onclick="toggleSidebar()">Common Le Chatelier Pitfalls</a></li>
+<li><a href="#def-911-industrial-compromise-conditions-yield-vs-rate" onclick="toggleSidebar()">9.11 Industrial Compromise Conditions — Yield vs Rate</a></li>
+<li><a href="#def-core-definition-11" onclick="toggleSidebar()">Core Definition</a></li>
+<li><a href="#def-the-classic-example-haber-process-n₂-3h₂-2nh₃-δh-92-kj-mol¹" onclick="toggleSidebar()">The Classic Example: Haber Process (N₂ + 3H₂ ⇌ 2NH₃, ΔH = −92 kJ mol⁻¹)</a></li>
+<li><a href="#def-real-exam-questions-9" onclick="toggleSidebar()">Real Exam Questions</a></li>
+<li><a href="#def-the-recycle-concept" onclick="toggleSidebar()">The "Recycle" Concept</a></li>
+<li><a href="#def-quick-reference-definition-checklist" onclick="toggleSidebar()">Quick-Reference Definition Checklist</a></li>
+<li><a href="#def-exam-statistics-chapter-28-across-7-papers" onclick="toggleSidebar()">Exam Statistics — Chapter 2.8 Across 7 Papers</a></li>
+</ul>
+<a href="#concepts" class="chapter" onclick="toggleSidebar()">Concepts &amp; Worked Examples</a>
+<ul>
+<li><a href="#con-edexcel-ial-chemistry-wch12-spec-points-91911" onclick="toggleSidebar()">Edexcel IAL Chemistry WCH12 — Spec Points 9.1–9.11</a></li>
+<li><a href="#con-how-to-use-this-guide" onclick="toggleSidebar()">How to Use This Guide</a></li>
+<li><a href="#con-worked-example-1-maxwellboltzmann-distribution-sketches" onclick="toggleSidebar()">Worked Example 1: Maxwell–Boltzmann Distribution Sketches</a></li>
+<li><a href="#con-1a-temperature-increase-higher-t" onclick="toggleSidebar()">1A: Temperature Increase (Higher T)</a></li>
+<li><a href="#con-1b-catalyst-added-same-temperature" onclick="toggleSidebar()">1B: Catalyst Added (Same Temperature)</a></li>
+<li><a href="#con-1c-combined-changes-fewer-molecules-lower-temperature" onclick="toggleSidebar()">1C: Combined Changes — Fewer Molecules + Lower Temperature</a></li>
+<li><a href="#con-1d-pressure-decrease" onclick="toggleSidebar()">1D: Pressure Decrease</a></li>
+<li><a href="#con-worked-example-2-rate-calculations-from-graph-tangents" onclick="toggleSidebar()">Worked Example 2: Rate Calculations from Graph Tangents</a></li>
+<li><a href="#con-2a-rate-from-a-volumetime-graph" onclick="toggleSidebar()">2A: Rate from a Volume–Time Graph</a></li>
+<li><a href="#con-2b-identifying-rate-from-catalyst-data" onclick="toggleSidebar()">2B: Identifying Rate from Catalyst Data</a></li>
+<li><a href="#con-worked-example-3-le-chatelier-predictions-with-full-justification" onclick="toggleSidebar()">Worked Example 3: Le Chatelier Predictions with Full Justification</a></li>
+<li><a href="#con-3a-temperature-change-exothermic-forward-reaction" onclick="toggleSidebar()">3A: Temperature Change — Exothermic Forward Reaction</a></li>
+<li><a href="#con-3b-temperature-change-endothermic-forward-reaction" onclick="toggleSidebar()">3B: Temperature Change — Endothermic Forward Reaction</a></li>
+<li><a href="#con-3c-pressure-change-fewer-gas-moles-on-product-side" onclick="toggleSidebar()">3C: Pressure Change — Fewer Gas Moles on Product Side</a></li>
+<li><a href="#con-3d-pressure-change-more-gas-moles-on-product-side" onclick="toggleSidebar()">3D: Pressure Change — More Gas Moles on Product Side</a></li>
+<li><a href="#con-3e-concentration-change-removing-a-reactant" onclick="toggleSidebar()">3E: Concentration Change — Removing a Reactant</a></li>
+<li><a href="#con-3f-adding-a-base-to-an-acid-dependent-equilibrium" onclick="toggleSidebar()">3F: Adding a Base to an Acid-Dependent Equilibrium</a></li>
+<li><a href="#con-3g-the-industrial-compromise-full-worked-example" onclick="toggleSidebar()">3G: The Industrial Compromise — Full Worked Example</a></li>
+<li><a href="#con-worked-example-4-reaction-profile-diagrams" onclick="toggleSidebar()">Worked Example 4: Reaction Profile Diagrams</a></li>
+<li><a href="#con-worked-example-5-catalyst-sustainability-argument" onclick="toggleSidebar()">Worked Example 5: Catalyst Sustainability Argument</a></li>
+<li><a href="#con-worked-example-6-catalyst-explanation-using-maxwellboltzmann-3-marks" onclick="toggleSidebar()">Worked Example 6: Catalyst Explanation Using Maxwell–Boltzmann (3 Marks)</a></li>
+<li><a href="#con-worked-example-7-dynamic-equilibrium-misconceptions" onclick="toggleSidebar()">Worked Example 7: Dynamic Equilibrium Misconceptions</a></li>
+<li><a href="#con-worked-example-8-carbon-dioxide-and-ocean-acidification-equilibrium-application" onclick="toggleSidebar()">Worked Example 8: Carbon Dioxide and Ocean Acidification (Equilibrium Application)</a></li>
+<li><a href="#con-worked-example-9-ethene-hydration-complete-industrial-equilibrium-analysis" onclick="toggleSidebar()">Worked Example 9: Ethene Hydration — Complete Industrial Equilibrium Analysis</a></li>
+<li><a href="#con-exam-technique-summary-for-chapter-28" onclick="toggleSidebar()">Exam Technique Summary for Chapter 2.8</a></li>
+<li><a href="#con-le-chatelier-the-3-step-justification-template" onclick="toggleSidebar()">Le Chatelier — The 3-Step Justification Template</a></li>
+<li><a href="#con-maxwellboltzmann-decision-tree" onclick="toggleSidebar()">Maxwell–Boltzmann — Decision Tree</a></li>
+<li><a href="#con-catalyst-what-to-say-vs-what-not-to-say" onclick="toggleSidebar()">Catalyst — What to Say vs What NOT to Say</a></li>
+<li><a href="#con-rate-vs-yield-never-confuse-them" onclick="toggleSidebar()">Rate vs Yield — Never Confuse Them</a></li>
+</ul>
+<a href="#exam" class="chapter" onclick="toggleSidebar()">Exam Connections</a>
+<ul>
+<li><a href="#exam-1-per-paper-mark-allocation-7-papers" onclick="toggleSidebar()">1. Per-Paper Mark Allocation (7 Papers)</a></li>
+<li><a href="#exam-trend-analysis" onclick="toggleSidebar()">Trend Analysis</a></li>
+<li><a href="#exam-2-where-marks-typically-appear" onclick="toggleSidebar()">2. Where Marks Typically Appear</a></li>
+<li><a href="#exam-21-mcqs-average-24-marks-per-paper" onclick="toggleSidebar()">2.1 MCQs — Average 2–4 marks per paper</a></li>
+<li><a href="#exam-22-embedded-in-industrial-context-section-c-variable-210-marks" onclick="toggleSidebar()">2.2 Embedded in Industrial Context (Section C) — Variable 2–10 marks</a></li>
+<li><a href="#exam-23-embedded-in-other-structured-questions-25-marks" onclick="toggleSidebar()">2.3 Embedded in Other Structured Questions — 2–5 marks</a></li>
+<li><a href="#exam-3-key-question-types" onclick="toggleSidebar()">3. Key Question Types</a></li>
+<li><a href="#exam-31-maxwell-boltzmann-distribution-sketches-est-12-marks-total" onclick="toggleSidebar()">3.1 Maxwell-Boltzmann Distribution Sketches — Est. 12 marks total</a></li>
+<li><a href="#exam-32-le-chateliers-principle-predictions-est-25-marks-total" onclick="toggleSidebar()">3.2 Le Chatelier's Principle Predictions — Est. 25 marks total</a></li>
+<li><a href="#exam-33-reaction-profile-diagrams-est-6-marks-total" onclick="toggleSidebar()">3.3 Reaction Profile Diagrams — Est. 6 marks total</a></li>
+<li><a href="#exam-34-rate-from-graphs-est-5-marks-total" onclick="toggleSidebar()">3.4 Rate from Graphs — Est. 5 marks total</a></li>
+<li><a href="#exam-4-common-errors-and-misconceptions" onclick="toggleSidebar()">4. Common Errors and Misconceptions</a></li>
+<li><a href="#exam-41-catalyst-misconceptions-tested-in-47-papers" onclick="toggleSidebar()">4.1 Catalyst Misconceptions (Tested in 4/7 Papers!)</a></li>
+<li><a href="#exam-42-activation-energy-misconceptions" onclick="toggleSidebar()">4.2 Activation Energy Misconceptions</a></li>
+<li><a href="#exam-43-le-chatelier-common-errors" onclick="toggleSidebar()">4.3 Le Chatelier Common Errors</a></li>
+<li><a href="#exam-44-maxwell-boltzmann-sketching-errors" onclick="toggleSidebar()">4.4 Maxwell-Boltzmann Sketching Errors</a></li>
+<li><a href="#exam-5-industrial-context-questions-predictable-pattern" onclick="toggleSidebar()">5. Industrial Context Questions (Predictable Pattern)</a></li>
+<li><a href="#exam-where-ch28-marks-spike" onclick="toggleSidebar()">Where ch2.8 Marks Spike</a></li>
+<li><a href="#exam-pattern-to-expect" onclick="toggleSidebar()">Pattern to Expect</a></li>
+<li><a href="#exam-6-revision-priority-ranking" onclick="toggleSidebar()">6. Revision Priority Ranking</a></li>
+<li><a href="#exam-7-quick-reference-what-changes-vs-what-stays-the-same" onclick="toggleSidebar()">7. Quick-Reference: What Changes vs What Stays the Same</a></li>
+<li><a href="#exam-8-predictions-for-future-papers" onclick="toggleSidebar()">8. Predictions for Future Papers</a></li>
+<li><a href="#exam-9-detailed-question-by-question-reference-all-7-papers" onclick="toggleSidebar()">9. Detailed Question-by-Question Reference: All 7 Papers</a></li>
+<li><a href="#exam-jun-2022-8-marks" onclick="toggleSidebar()">Jun 2022 — 8 marks</a></li>
+<li><a href="#exam-jan-2023-14-marks-highest-section-c-haberostwald" onclick="toggleSidebar()">Jan 2023 — 14 marks (highest — Section C = Haber/Ostwald)</a></li>
+<li><a href="#exam-jun-2023-9-marks" onclick="toggleSidebar()">Jun 2023 — 9 marks</a></li>
+<li><a href="#exam-oct-2023-9-marks" onclick="toggleSidebar()">Oct 2023 — 9 marks</a></li>
+<li><a href="#exam-jan-2024-10-marks" onclick="toggleSidebar()">Jan 2024 — 10 marks</a></li>
+<li><a href="#exam-jun-2024-14-marks" onclick="toggleSidebar()">Jun 2024 — 14 marks</a></li>
+<li><a href="#exam-oct-2024-6-marks-lowest" onclick="toggleSidebar()">Oct 2024 — 6 marks (lowest)</a></li>
+<li><a href="#exam-10-what-you-do-not-need-for-unit-2" onclick="toggleSidebar()">10. What You Do NOT Need for Unit 2</a></li>
+<li><a href="#exam-11-checklist-am-i-exam-ready-for-ch28" onclick="toggleSidebar()">11. Checklist: Am I Exam-Ready for ch2.8?</a></li>
+</ul>
+</nav>
+</aside>
+<main>
+<section class="cover" id="cover">
+<h1>Chapter 2.8 — Kinetics and Equilibria</h1>
+<p class="subtitle">WCH12 &middot; Edexcel International A-Level Chemistry &middot; Unit 2</p>
+<div class="meta">
+<span class="tag">Spec Points 9.1–9.11</span><span class="tag">7 Papers Analysed</span><span class="tag">Jun 2022 – Oct 2024</span>
+</div>
+<p class="stats2">Average ~12 marks per paper — collision theory, Boltzmann, Le Chatelier dominate</p>
+</section>
+<section id="defs">
+<h2>Definitions</h2>
+<h3 id="def-edexcel-ial-chemistry-wch12-spec-points-91911">Edexcel IAL Chemistry WCH12 — Spec Points 9.1–9.11</h3>
+<hr>
+<h2 id="def-how-to-use-this-guide">How to Use This Guide</h2>
+<p>This file contains <strong>every definition, key fact, and exam-critical statement</strong> for Chapter 2.8. Each definition is presented in the exact wording expected by Edexcel mark schemes, followed by common pitfalls and real exam examples drawn from 7 past papers (Jun 2022 – Oct 2024). Chapter 2.8 averages <strong>10.3 marks per paper (12.9%)</strong> — it is underrepresented, meaning every mark you secure here counts disproportionately.</p>
+<hr>
+<h2 id="def-91-collision-theory">9.1 Collision Theory</h2>
+<h3 id="def-core-definition">Core Definition</h3>
+<blockquote>
+<p><strong>Collision theory:</strong> For a reaction to occur, particles must collide with sufficient energy (equal to or greater than the activation energy) and with the correct orientation.</p>
+</blockquote>
+<h3 id="def-key-sub-points">Key Sub-points</h3>
+<ul>
+<li><strong>Not all collisions lead to reaction.</strong> Only those that satisfy BOTH the energy requirement AND the orientation requirement are "successful" or "effective" collisions.</li>
+<li>The rate of reaction depends on: <strong>frequency of collisions</strong> and <strong>proportion of collisions that are successful</strong>.</li>
+</ul>
+<h3 id="def-effects-on-rate-exam-critical-table">Effects on Rate (Exam-Critical Table)</h3>
+<table>
+<thead>
+<tr>
+<th>Change</th>
+<th style="text-align: center;">Effect on Collision Frequency</th>
+<th style="text-align: center;">Effect on Proportion of Successful Collisions</th>
+<th style="text-align: center;">Effect on Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Increase concentration</strong> (solution)</td>
+<td style="text-align: center;">↑ (more particles per unit volume)</td>
+<td style="text-align: center;">No change</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td><strong>Increase pressure</strong> (gas)</td>
+<td style="text-align: center;">↑ (more particles per unit volume)</td>
+<td style="text-align: center;">No change</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td><strong>Increase temperature</strong></td>
+<td style="text-align: center;">↑ (particles move faster)</td>
+<td style="text-align: center;">↑ (more particles have E ≥ Eₐ)</td>
+<td style="text-align: center;">↑↑</td>
+</tr>
+<tr>
+<td><strong>Increase surface area</strong> (solid)</td>
+<td style="text-align: center;">↑ (more exposed particles)</td>
+<td style="text-align: center;">No change</td>
+<td style="text-align: center;">↑</td>
+</tr>
+</tbody>
+</table>
+<h3 id="def-exam-traps-collision-theory">Exam Traps — Collision Theory</h3>
+<table>
+<thead>
+<tr>
+<th>Trap</th>
+<th>Example from Papers</th>
+<th>What to Remember</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Increasing temperature increases the energy of collisions"</td>
+<td>Jun 2024 Q15(a) — Eₐ does NOT change</td>
+<td>Temperature does NOT change activation energy. It changes the <strong>proportion</strong> of molecules above Eₐ.</td>
+</tr>
+<tr>
+<td>"Increasing pressure increases energy of particles"</td>
+<td>Jun 2024 Q15(b) (via MCQ)</td>
+<td>Pressure only increases collision <strong>frequency</strong>, not energy.</td>
+</tr>
+<tr>
+<td>Confusing rate with equilibrium position</td>
+<td>Jan 2024 Q14 — catalysts affect rate only</td>
+<td>Increasing T/pressure may increase rate but DECREASE equilibrium yield (and vice versa).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="def-real-exam-questions">Real Exam Questions</h3>
+<ul>
+<li><strong>Jun 2024 Q15(a):</strong> "For which values does the Maxwell–Boltzmann distribution change when temperature is increased?" Answer: E_mode and E_mean change; Eₐ stays the <strong>same</strong>.</li>
+<li><strong>Jun 2024 Q15(b):</strong> "For which values change when pressure is decreased?" Answer: <strong>None</strong> — Eₐ, E_mode, and E_mean are all unchanged. Decreasing pressure reduces the total number of molecules (lower concentration) but does NOT change Eₐ, E_mode, or E_mean — these depend only on temperature.</li>
+</ul>
+<hr>
+<h2 id="def-92-activation-energy">9.2 Activation Energy</h2>
+<h3 id="def-core-definition-1">Core Definition</h3>
+<blockquote>
+<p><strong>Activation energy (Eₐ):</strong> The minimum energy that particles must have for a collision to be successful (to result in a reaction).</p>
+</blockquote>
+<h3 id="def-essential-details">Essential Details</h3>
+<ul>
+<li>Eₐ is an <strong>intrinsic property</strong> of a reaction — it does <strong>not</strong> change with temperature, pressure, or concentration.</li>
+<li>A lower activation energy means a <strong>faster reaction</strong> (more molecules exceed Eₐ at any given temperature).</li>
+<li>Eₐ is always a <strong>positive</strong> value (energy barrier to be overcome).</li>
+</ul>
+<h3 id="def-exam-facts-from-mark-schemes">Exam Facts from Mark Schemes</h3>
+<ul>
+<li>When asked "what happens to the activation energy when a catalyst is added?" → <strong>Eₐ decreases</strong> (the catalyst provides an alternative route with a lower activation energy).</li>
+<li>When asked "what happens to the activation energy when temperature increases?" → <strong>Eₐ does not change</strong>. This is the single most common MCQ distractor across all 7 papers.</li>
+</ul>
+<h3 id="def-real-exam-questions-1">Real Exam Questions</h3>
+<ul>
+<li><strong>Jan 2023 Q17(a):</strong> "Why does the Maxwell–Boltzmann distribution start at the origin?" Answer: All molecules possess some (kinetic) energy — no molecule has zero energy.</li>
+<li><strong>Jan 2024 Q13:</strong> "Which statement correctly describes the effect of temperature on rate?" Correct: "More particles have energy ≥ Eₐ." Distractors: "Activation energy decreases" (WRONG), "Average kinetic energy increases alone is sufficient" (WRONG — must link to Eₐ).</li>
+</ul>
+<hr>
+<h2 id="def-93i-measuring-rate-rate-1time">9.3(i) Measuring Rate — Rate = 1/time</h2>
+<h3 id="def-core-definition-2">Core Definition</h3>
+<blockquote>
+<p><strong>Rate of reaction</strong> (initial approximation): Rate ∝ 1/time, where time is measured from the start of the reaction to a fixed point (e.g., a colour change, a precipitate appearing, a fixed volume of gas produced).</p>
+</blockquote>
+<h3 id="def-when-this-applies">When This Applies</h3>
+<ul>
+<li>This is an <strong>approximation</strong> valid for comparing rates of similar reactions under different conditions.</li>
+<li>It assumes the reaction progress to the chosen endpoint is consistent across conditions.</li>
+<li>Used extensively in <strong>Core Practical 5</strong> (comparing rates of hydrolysis of halogenoalkanes using the silver nitrate test).</li>
+</ul>
+<h3 id="def-exam-application">Exam Application</h3>
+<ul>
+<li><strong>CP5 context (Oct 2023 Q15):</strong> "Why does C–Cl react slower than C–Br in SN2 hydrolysis?" Answer: The C–Cl bond is <strong>stronger</strong> than C–Br → higher activation energy → fewer molecules have sufficient energy → slower rate. (Bond enthalpy is the key factor, not solubility or polarity.)</li>
+</ul>
+<h3 id="def-important-caveat">Important Caveat</h3>
+<ul>
+<li>Rate = 1/time is only valid as a <strong>relative comparison</strong>. The actual instantaneous rate requires a gradient calculation (see 9.3(ii) below).</li>
+</ul>
+<hr>
+<h2 id="def-93ii-measuring-rate-gradient-of-a-concentrationtime-or-volumetime-graph">9.3(ii) Measuring Rate — Gradient of a Concentration–Time or Volume–Time Graph</h2>
+<h3 id="def-core-definition-3">Core Definition</h3>
+<blockquote>
+<p><strong>Rate of reaction</strong> (from a graph): The instantaneous rate at any point is equal to the <strong>gradient (slope) of the tangent</strong> to the curve at that point.</p>
+</blockquote>
+<h3 id="def-how-to-calculate">How to Calculate</h3>
+<ol>
+<li>Draw a <strong>tangent</strong> to the curve at the required point.</li>
+<li>Choose two well-separated points on the tangent line.</li>
+<li>Calculate: <strong>gradient = (change in y) / (change in x)</strong></li>
+<li>Include correct <strong>units</strong> (e.g., cm³ min⁻¹, mol dm⁻³ s⁻¹).</li>
+</ol>
+<h3 id="def-real-exam-questions-2">Real Exam Questions</h3>
+<ul>
+<li><strong>Jun 2023 Q15:</strong> "What is the rate at point X on the volume–time graph?" Answer: Draw tangent at X, calculate gradient = <strong>1.3 cm³ min⁻¹</strong>. Common error: calculating the <strong>average</strong> rate (total volume / total time) instead of the instantaneous rate at X.</li>
+<li><strong>Jan 2023 Q22(e)(i):</strong> "Why is a high temperature used for NO production?" Answer: To <strong>increase the rate of reaction</strong> / more molecules have E ≥ Eₐ. (Note: this question is about rate, NOT about equilibrium yield.)</li>
+</ul>
+<h3 id="def-graph-shapes-to-know">Graph Shapes to Know</h3>
+<table>
+<thead>
+<tr>
+<th>Graph Type</th>
+<th>Shape</th>
+<th>What the Gradient Tells You</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Concentration of reactant vs time</td>
+<td>Curve decreasing, flattening</td>
+<td>Gradient = rate of disappearance of reactant</td>
+</tr>
+<tr>
+<td>Volume of gas vs time</td>
+<td>Curve increasing, flattening</td>
+<td>Gradient = rate of production of gas</td>
+</tr>
+<tr>
+<td>Mass of product vs time</td>
+<td>Curve increasing, flattening</td>
+<td>Gradient = rate of formation of product</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="def-94-maxwellboltzmann-distribution">9.4 Maxwell–Boltzmann Distribution</h2>
+<h3 id="def-core-definition-4">Core Definition</h3>
+<blockquote>
+<p><strong>Maxwell–Boltzmann distribution:</strong> A graph showing the distribution of kinetic energies among molecules in a gas at a given temperature. The y-axis represents the number (or fraction) of molecules, and the x-axis represents energy.</p>
+</blockquote>
+<h3 id="def-key-features-of-the-distribution">Key Features of the Distribution</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Starts at the origin</strong></td>
+<td>No molecule has zero energy (Jan 2023 Q17(a))</td>
+</tr>
+<tr>
+<td><strong>Peak (mode)</strong></td>
+<td>The most probable energy (E_mode) — shifts right with increasing T</td>
+</tr>
+<tr>
+<td><strong>Asymmetric</strong></td>
+<td>Long "tail" to the right — a small fraction of molecules have very high energies</td>
+</tr>
+<tr>
+<td><strong>Never reaches the x-axis</strong></td>
+<td>The curve is asymptotic — there is no maximum energy (theoretically)</td>
+</tr>
+<tr>
+<td><strong>Area under the curve</strong></td>
+<td>Represents the <strong>total number of molecules</strong> (decreases if gas is removed)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="def-effect-of-temperature-most-tested-topic-in-28">Effect of Temperature (MOST TESTED TOPIC in 2.8)</h3>
+<p>When temperature <strong>increases</strong>:
+- The peak <strong>lowers</strong> (curve flattens)
+- The peak <strong>shifts to the right</strong> (higher average energy)
+- The curve becomes <strong>broader</strong>
+- The area <strong>stays the same</strong> (same number of molecules)
+- A <strong>larger proportion</strong> of molecules now have E ≥ Eₐ
+- Eₐ line is <strong>unchanged</strong></p>
+<blockquote>
+<p><strong>Critical exam trap:</strong> Many students incorrectly state that the distribution "moves up" or that Eₐ changes. The peak ALWAYS lowers when T increases, and Eₐ NEVER changes with temperature.</p>
+</blockquote>
+<h3 id="def-real-exam-questions-3">Real Exam Questions</h3>
+<ul>
+<li><strong>Jan 2023 Q17(b):</strong> "Effect of removing some gas molecules AND cooling on the M–B distribution." Answer: Area <strong>decreases</strong> (fewer molecules) AND peak <strong>shifts left</strong> (lower temperature). Both changes must be identified.</li>
+<li><strong>Jun 2024 Q15(a–c):</strong> Three-part MCQ on M–B:</li>
+<li>(a) Temperature ↑: only E_mode and E_mean change (Eₐ unchanged) → <strong>C</strong></li>
+<li>(b) Pressure ↓: <strong>none</strong> of the three values change — Eₐ, E_mode, and E_mean depend only on temperature, not pressure. Only the total number of molecules (y-axis) decreases.</li>
+<li>(c) Catalyst added: only Eₐ changes (decreases) → <strong>A</strong></li>
+<li><strong>Oct 2024 Q1(a):</strong> "What happens to the M–B curve when temperature increases?" Answer: Peak becomes lower and further right.</li>
+<li><strong>Oct 2024 Q1(b):</strong> "How does the Eₐ line change when a catalyst is added?" Answer: Eₐ moves left; peak stays the same.</li>
+<li><strong>Jun 2023 Q21(a)(i):</strong> Sketch the M–B distribution at a higher temperature. Must start at origin, have lower peak shifted right, same asymptote. Do not let the curve drop below the original low-energy region.</li>
+</ul>
+<hr>
+<h2 id="def-95-catalysts">9.5 Catalysts</h2>
+<h3 id="def-core-definition-5">Core Definition</h3>
+<blockquote>
+<p><strong>Catalyst:</strong> A substance that increases the rate of a chemical reaction by providing an alternative reaction pathway with a lower activation energy. The catalyst is not consumed in the reaction and is regenerated at the end.</p>
+</blockquote>
+<h3 id="def-key-properties-exam-ready">Key Properties (Exam-Ready)</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lowers activation energy</strong></td>
+<td>Provides alternative route; Eₐ(cat) &lt; Eₐ(uncat)</td>
+</tr>
+<tr>
+<td><strong>Not used up</strong></td>
+<td>Regenerated at end of reaction</td>
+</tr>
+<tr>
+<td><strong>Does NOT change equilibrium position</strong></td>
+<td>Speeds up both forward AND backward rates equally</td>
+</tr>
+<tr>
+<td><strong>Does NOT change the products formed</strong></td>
+<td>Same products, same yield, just faster</td>
+</tr>
+<tr>
+<td><strong>Works by</strong></td>
+<td>Providing a surface for adsorption (heterogeneous) or forming an intermediate (homogeneous)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="def-heterogeneous-vs-homogeneous-catalysts">Heterogeneous vs Homogeneous Catalysts</h3>
+<blockquote>
+<p><strong>Heterogeneous catalyst:</strong> A catalyst in a <strong>different phase</strong> from the reactants (e.g. solid Fe in the Haber process with gaseous N₂ and H₂). The reaction occurs on the catalyst's surface.</p>
+<p><strong>Homogeneous catalyst:</strong> A catalyst in the <strong>same phase</strong> as the reactants (e.g. aqueous catalysts in solution reactions). It forms an intermediate species that then decomposes to release products and regenerate the catalyst.</p>
+</blockquote>
+<h3 id="def-catalyst-effects-on-the-mb-distribution">Catalyst Effects on the M–B Distribution</h3>
+<ul>
+<li>The <strong>distribution curve itself does NOT change</strong> when a catalyst is added.</li>
+<li>Only the <strong>Eₐ line shifts to the left</strong> (lower value).</li>
+<li>This means a <strong>greater proportion</strong> of molecules now have E ≥ Eₐ(new), so more successful collisions occur per unit time.</li>
+</ul>
+<h3 id="def-exam-facts-from-mark-schemes-1">Exam Facts from Mark Schemes</h3>
+<ul>
+<li><strong>Jun 2023 Q14:</strong> Catalyst identification from rate data — Cu²⁺ reduced reaction time from 205 s to 75 s (catalyst), while Pb²⁺ increased it to 464 s (poison/inhibitor).</li>
+<li><strong>Jan 2023 Q22(d)(i):</strong> Reaction profile diagram — must show two profiles: uncatalysed (Eₐ = 290 kJ mol⁻¹) and catalysed (Eₐ = 70 kJ mol⁻¹), with correct scale and ΔH arrow.</li>
+</ul>
+<h3 id="def-real-exam-questions-4">Real Exam Questions</h3>
+<ul>
+<li><strong>Oct 2023 Q21(b)(i):</strong> "Explain how a catalyst increases the rate of reaction, with reference to the Maxwell–Boltzmann distribution." Three-mark answer:
+  1. Catalyst provides alternative reaction pathway with lower activation energy
+  2. Greater proportion of molecules have energy ≥ (new, lower) Eₐ
+  3. Higher proportion of successful collisions per unit time</li>
+</ul>
+<hr>
+<h2 id="def-96-reaction-profiles">9.6 Reaction Profiles</h2>
+<h3 id="def-core-definition-6">Core Definition</h3>
+<blockquote>
+<p><strong>Reaction profile (energy level diagram):</strong> A diagram showing the energy changes during a chemical reaction. The y-axis represents enthalpy (energy), and the x-axis represents the progress of the reaction (reaction coordinate).</p>
+</blockquote>
+<h3 id="def-uncatalysed-vs-catalysed-reaction-profiles">Uncatalysed vs Catalysed Reaction Profiles</h3>
+<pre><code>Energy
+  ^
+  |     Uncatalysed: ___----‾‾‾‾‾‾‾‾‾‾‾‾
+  |                 /
+  |                / Ea(uncat)
+  |               /
+  |     Catalysed:/___--‾‾‾‾‾‾‾‾‾‾‾‾
+  |             /   Ea(cat)
+  |            /
+  |___________/________________________&gt; Reaction progress
+  |   Reactants    Products
+  |         |ΔH|
+</code></pre>
+<h3 id="def-key-differences-to-draw">Key Differences to Draw</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th style="text-align: center;">Uncatalysed Profile</th>
+<th style="text-align: center;">Catalysed Profile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Peak height</strong></td>
+<td style="text-align: center;">Higher (larger Eₐ)</td>
+<td style="text-align: center;">Lower (smaller Eₐ)</td>
+</tr>
+<tr>
+<td><strong>ΔH</strong></td>
+<td style="text-align: center;">Same</td>
+<td style="text-align: center;">Same</td>
+</tr>
+<tr>
+<td><strong>Reactant energy</strong></td>
+<td style="text-align: center;">Same</td>
+<td style="text-align: center;">Same</td>
+</tr>
+<tr>
+<td><strong>Product energy</strong></td>
+<td style="text-align: center;">Same</td>
+<td style="text-align: center;">Same</td>
+</tr>
+</tbody>
+</table>
+<h3 id="def-real-exam-questions-5">Real Exam Questions</h3>
+<ul>
+<li><strong>Jan 2023 Q22(d)(i):</strong> Complete a reaction profile for the Haber process. Must show:
+  1. ΔH labelled with downward arrow (exothermic)
+  2. Two profiles: uncatalysed (Eₐ = 290 kJ mol⁻¹) and catalysed (Eₐ = 70 kJ mol⁻¹)
+  3. Correct relative scale for both Eₐ values
+  4. Accuracy: ±1 small square tolerance</li>
+</ul>
+<hr>
+<h2 id="def-97-catalysts-in-industry-sustainability">9.7 Catalysts in Industry — Sustainability</h2>
+<h3 id="def-core-definition-7">Core Definition</h3>
+<blockquote>
+<p><strong>Catalyst sustainability benefit:</strong> Catalysts allow industrial processes to operate at <strong>lower temperatures</strong>, reducing energy consumption and fuel costs, which in turn reduces <strong>carbon dioxide emissions</strong> and makes the process more economically and environmentally sustainable.</p>
+</blockquote>
+<h3 id="def-why-this-matters-in-exams">Why This Matters in Exams</h3>
+<ul>
+<li>When asked "Suggest why using a catalyst is more sustainable" (Jan 2023 Q22(d)(ii)):</li>
+<li><strong>DO say:</strong> Less energy needed / lower temperature required / less fuel burned / reduced CO₂ emissions</li>
+<li><strong>DO NOT say:</strong> "The catalyst can be reused" (technically true but not a sustainability argument)</li>
+<li><strong>DO NOT say:</strong> "It lowers the activation energy" (this is HOW it works, not WHY it's sustainable)</li>
+</ul>
+<h3 id="def-real-exam-questions-6">Real Exam Questions</h3>
+<ul>
+<li><strong>Jan 2023 Q22(d)(ii):</strong> "Suggest why the use of a catalyst is more sustainable." Acceptable answers: less energy needed / lower temperature / less fuel. Explicitly NOT accepted: "catalyst is not used up" or "lowers Ea."</li>
+</ul>
+<hr>
+<h2 id="def-98-catalyst-action-via-maxwellboltzmann">9.8 Catalyst Action via Maxwell–Boltzmann</h2>
+<h3 id="def-how-to-answer-3-mark-template">How to Answer (3-Mark Template)</h3>
+<p>When asked to explain catalyst action with reference to the Maxwell–Boltzmann distribution:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Mark</th>
+<th>Required Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Catalyst provides an alternative reaction pathway with a <strong>lower activation energy</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Greater <strong>proportion</strong> (or more) molecules now have energy <strong>≥ Eₐ</strong> (new, lower value)</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Therefore <strong>more frequent successful collisions</strong> (or higher rate of reaction)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="def-key-distinction">Key Distinction</h3>
+<ul>
+<li>The distribution curve <strong>does not move or change shape</strong> when a catalyst is added.</li>
+<li>Only the Eₐ vertical line shifts left.</li>
+<li>This is a critical distinction from temperature changes, where the curve DOES change.</li>
+</ul>
+<h3 id="def-common-error">Common Error</h3>
+<ul>
+<li>Drawing a new, shifted distribution curve when a catalyst is added. This is <strong>incorrect</strong> — the curve stays the same; only the Eₐ marker moves.</li>
+</ul>
+<hr>
+<h2 id="def-99i-dynamic-equilibrium-forward-rate-backward-rate">9.9(i) Dynamic Equilibrium — Forward Rate = Backward Rate</h2>
+<h3 id="def-core-definition-8">Core Definition</h3>
+<blockquote>
+<p><strong>Dynamic equilibrium:</strong> The state in a closed system where the <strong>rate of the forward reaction equals the rate of the backward reaction</strong>, and the concentrations of all reactants and products remain constant.</p>
+</blockquote>
+<h3 id="def-essential-conditions-for-dynamic-equilibrium">Essential Conditions for Dynamic Equilibrium</h3>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Why It Matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Closed system</strong></td>
+<td>No reactants or products can enter or leave — matter is conserved</td>
+</tr>
+<tr>
+<td><strong>Reversible reaction</strong></td>
+<td>Both forward and backward reactions must be possible</td>
+</tr>
+<tr>
+<td><strong>Rate forward = rate backward</strong></td>
+<td>This is the defining feature of equilibrium</td>
+</tr>
+<tr>
+<td><strong>Macroscopic properties constant</strong></td>
+<td>Concentration, pressure, colour, density remain steady</td>
+</tr>
+</tbody>
+</table>
+<h3 id="def-dynamic-vs-static">"Dynamic" vs "Static"</h3>
+<ul>
+<li><strong>Dynamic</strong> means both reactions are STILL OCCURRING — particles are still colliding and reacting in both directions. It is NOT a state of no reaction.</li>
+<li><strong>Static</strong> equilibrium (which is NOT what we study) would mean both reactions have stopped.</li>
+<li>The word "dynamic" is specifically tested — Jan 2024 Q14 asked students to identify the FALSE statement about equilibrium, and the correct answer (A) was that "catalysts affect the position of equilibrium" — which is false.</li>
+</ul>
+<h3 id="def-real-exam-questions-7">Real Exam Questions</h3>
+<ul>
+<li><strong>Jan 2024 Q14:</strong> "Which statement about dynamic equilibrium is NOT true?" Answer: "A catalyst changes the position of equilibrium" — this is FALSE. Catalysts increase both rates equally; equilibrium position is unchanged.</li>
+</ul>
+<hr>
+<h2 id="def-99ii-constant-concentrations-at-equilibrium">9.9(ii) Constant Concentrations at Equilibrium</h2>
+<h3 id="def-core-definition-9">Core Definition</h3>
+<blockquote>
+<p>At equilibrium, the <strong>concentrations of reactants and products remain constant</strong> (not necessarily equal). This is because the forward and backward rates are equal, so any reactant consumed in the forward direction is immediately replaced by the backward reaction.</p>
+</blockquote>
+<h3 id="def-key-exam-points">Key Exam Points</h3>
+<ul>
+<li><strong>Constant ≠ Equal.</strong> The concentrations of reactants and products can be very different from each other — they just don't change over time.</li>
+<li>"Position of equilibrium" describes where the equilibrium lies — if products are favoured, we say the equilibrium lies to the <strong>right</strong>; if reactants are favoured, it lies to the <strong>left</strong>.</li>
+</ul>
+<hr>
+<h2 id="def-910-le-chateliers-principle">9.10 Le Chatelier's Principle</h2>
+<h3 id="def-core-definition-10">Core Definition</h3>
+<blockquote>
+<p><strong>Le Chatelier's principle:</strong> If a system at dynamic equilibrium is subjected to a change, the equilibrium position shifts to <strong>counteract</strong> (oppose) the imposed change.</p>
+</blockquote>
+<h3 id="def-effects-of-changes-complete-table">Effects of Changes (Complete Table)</h3>
+<table>
+<thead>
+<tr>
+<th>Change Applied</th>
+<th>Equilibrium Shift</th>
+<th style="text-align: center;">Effect on Yield</th>
+<th style="text-align: center;">Effect on Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Increase temperature</strong></td>
+<td>Shifts in <strong>endothermic</strong> direction</td>
+<td style="text-align: center;">Depends on ΔH of forward reaction</td>
+<td style="text-align: center;">Rate ↑ (always)</td>
+</tr>
+<tr>
+<td><strong>Decrease temperature</strong></td>
+<td>Shifts in <strong>exothermic</strong> direction</td>
+<td style="text-align: center;">Depends on ΔH of forward reaction</td>
+<td style="text-align: center;">Rate ↓ (always)</td>
+</tr>
+<tr>
+<td><strong>Increase pressure</strong></td>
+<td>Shifts to side with <strong>fewer gas moles</strong></td>
+<td style="text-align: center;">Depends on gas moles each side</td>
+<td style="text-align: center;">Rate ↑ (more collisions)</td>
+</tr>
+<tr>
+<td><strong>Decrease pressure</strong></td>
+<td>Shifts to side with <strong>more gas moles</strong></td>
+<td style="text-align: center;">Depends on gas moles each side</td>
+<td style="text-align: center;">Rate ↓</td>
+</tr>
+<tr>
+<td><strong>Increase [reactant]</strong> (add conc.)</td>
+<td>Shifts to <strong>right</strong> (products)</td>
+<td style="text-align: center;">Yield of products ↑</td>
+<td style="text-align: center;">Rate ↑</td>
+</tr>
+<tr>
+<td><strong>Decrease [reactant]</strong> (remove)</td>
+<td>Shifts to <strong>left</strong> (reactants)</td>
+<td style="text-align: center;">Yield of products ↓</td>
+<td style="text-align: center;">Rate ↓</td>
+</tr>
+<tr>
+<td><strong>Add catalyst</strong></td>
+<td><strong>No shift</strong></td>
+<td style="text-align: center;">No change</td>
+<td style="text-align: center;">Rate ↑ (both directions)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="def-justification-the-key-exam-requirement">JUSTIFICATION — The Key Exam Requirement</h3>
+<p>Edexcel mark schemes are <strong>extremely strict</strong> on Le Chatelier justifications. You must state:
+1. <strong>What change is applied</strong>
+2. <strong>Which direction the equilibrium shifts</strong>
+3. <strong>Why</strong> (referencing the principle)</p>
+<p><strong>Template for full-mark answers:</strong></p>
+<blockquote>
+<p>"Increasing the temperature shifts the equilibrium to the <strong>left</strong> (endothermic direction) because the system opposes the increase in temperature by absorbing heat. This <strong>decreases the yield</strong> of products."</p>
+</blockquote>
+<h3 id="def-real-exam-questions-8">Real Exam Questions</h3>
+<ul>
+<li>
+<p><strong>Oct 2023 Q11(a):</strong> "Effect of decreasing temperature on SO₂ + ½O₂ ⇌ SO₃ (ΔH = −99 kJ mol⁻¹)." Answer: Equilibrium shifts <strong>right</strong> (exothermic direction is favoured) → yield ↑ but rate ↓ → <strong>D</strong> (rate decreases, yield of SO₃ increases).</p>
+</li>
+<li>
+<p><strong>Oct 2023 Q11(b):</strong> "Effect of increasing pressure on same system (3 mol gas → 2 mol gas)." Answer: Equilibrium shifts <strong>right</strong> (fewer gas moles on product side) → yield ↑ and rate ↑ → <strong>B</strong>.</p>
+</li>
+<li>
+<p><strong>Oct 2023 Q12:</strong> "Effect of adding NaOH to HCrO₄⁻ ⇌ CrO₄²⁻ + H⁺ equilibrium." Answer: NaOH removes H⁺ → equilibrium shifts <strong>left</strong> → more yellow CrO₄²⁻ → <strong>C</strong>.</p>
+</li>
+<li>
+<p><strong>Jan 2023 Q22(a)(i):</strong> "Effect of excess steam on methane reforming." Answer: Shifts equilibrium <strong>right</strong> / increases H₂ yield. Explicitly NOT accepted: "reaction goes to completion."</p>
+</li>
+<li>
+<p><strong>Jan 2023 Q22(c):</strong> "Pressure in Haber process — advantage and disadvantage." Advantage: higher yield / faster rate. Disadvantage: more energy needed / expensive equipment required.</p>
+</li>
+<li>
+<p><strong>Jan 2023 Q22(f):</strong> "Adding water removes NO₂ from equilibrium." Answer: equilibrium shifts <strong>left</strong> (to replace the removed reactant) → yield of products (HNO₃, HNO₂) decreases. Two marks: identify removal + state shift direction.</p>
+</li>
+<li>
+<p><strong>Oct 2024 Q2(a):</strong> "Effect of decreasing temperature (ΔH = +206 kJ mol⁻¹, endothermic forward)." Answer: Rate ↓, yield ↓ (D) — lower T disfavours the endothermic forward direction.</p>
+</li>
+<li>
+<p><strong>Oct 2024 Q2(b):</strong> "Effect of increasing pressure (more gas moles on product side)." Answer: Rate ↑, yield ↓ (B) — increasing pressure favours the side with fewer gas moles (reactants).</p>
+</li>
+<li>
+<p><strong>Oct 2024 Q19(b)(ii):</strong> "Adding NaOH to Cl₂ + H₂O equilibrium." Answer: NaOH removes H⁺ (reacts with it) → equilibrium shifts <strong>right</strong> (to replace H⁺) → produces more OCl⁻/HOCl.</p>
+</li>
+<li>
+<p><strong>Jan 2024 Q24(b)(ii):</strong> "Why does adding acid to bleach release toxic Cl₂?" Three-step answer:
+  1. Adding acid (H⁺) shifts Eq.1 <strong>left</strong>: H⁺ + ClO⁻ → HClO
+  2. This shifts Eq.2 <strong>right</strong>: HClO + Cl⁻ + H⁺ → Cl₂ + H₂O
+  3. Toxic Cl₂(g) is released</p>
+</li>
+<li>
+<p><strong>Jun 2023 Q22(d):</strong> "Adding H⁺ to chlorine disinfectant equilibrium." Answer: Equilibrium shifts <strong>left</strong> → toxic Cl₂ released.</p>
+</li>
+</ul>
+<h3 id="def-common-le-chatelier-pitfalls">Common Le Chatelier Pitfalls</h3>
+<table>
+<thead>
+<tr>
+<th>Pitfall</th>
+<th>Papers</th>
+<th>Correct Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Saying equilibrium "moves to completion"</td>
+<td>Jan 2023</td>
+<td>Equilibrium NEVER goes to completion — it shifts, not completes</td>
+</tr>
+<tr>
+<td>Forgetting to mention rate effect</td>
+<td>Oct 2023 Q11</td>
+<td>Some questions ask for BOTH yield AND rate effects</td>
+</tr>
+<tr>
+<td>Confusing exo/endothermic direction</td>
+<td>Oct 2024 Q2(a)</td>
+<td>For endothermic forward: lower T → yield ↓ (shifts LEFT)</td>
+</tr>
+<tr>
+<td>Not counting gas moles correctly</td>
+<td>Oct 2024 Q2(b)</td>
+<td>Must count TOTAL moles of GAS on each side, not atoms</td>
+</tr>
+<tr>
+<td>Ignoring intermediate equilibrium steps</td>
+<td>Jan 2024 Q24(b)(ii)</td>
+<td>Must trace shift through each linked equilibrium</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="def-911-industrial-compromise-conditions-yield-vs-rate">9.11 Industrial Compromise Conditions — Yield vs Rate</h2>
+<h3 id="def-core-definition-11">Core Definition</h3>
+<blockquote>
+<p><strong>Compromise conditions:</strong> In industrial processes, the conditions chosen (temperature, pressure) represent a <strong>compromise</strong> between the conditions that give the <strong>maximum yield</strong> (from Le Chatelier's principle) and the conditions that give an <strong>acceptable rate</strong> (from kinetics/collision theory) and are <strong>economically viable</strong>.</p>
+</blockquote>
+<h3 id="def-the-classic-example-haber-process-n₂-3h₂-2nh₃-δh-92-kj-mol¹">The Classic Example: Haber Process (N₂ + 3H₂ ⇌ 2NH₃, ΔH = −92 kJ mol⁻¹)</h3>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th style="text-align: center;">Le Chatelier (max yield)</th>
+<th style="text-align: center;">Kinetics (max rate)</th>
+<th style="text-align: center;">Industrial Compromise</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Temperature</strong></td>
+<td style="text-align: center;">Low T (exothermic forward favoured)</td>
+<td style="text-align: center;">High T (more E ≥ Eₐ)</td>
+<td style="text-align: center;"><strong>~450 °C</strong> — moderate T giving acceptable rate with reasonable yield</td>
+</tr>
+<tr>
+<td><strong>Pressure</strong></td>
+<td style="text-align: center;">High P (4 mol → 2 mol gas)</td>
+<td style="text-align: center;">High P (more collisions)</td>
+<td style="text-align: center;"><strong>~200 atm</strong> — high enough for good yield, but higher P = much more expensive equipment</td>
+</tr>
+<tr>
+<td><strong>Catalyst</strong></td>
+<td style="text-align: center;">No effect on position</td>
+<td style="text-align: center;">Increases rate</td>
+<td style="text-align: center;"><strong>Iron (Fe)</strong> — allows lower T to be used while maintaining rate</td>
+</tr>
+</tbody>
+</table>
+<h3 id="def-real-exam-questions-9">Real Exam Questions</h3>
+<ul>
+<li>
+<p><strong>Jun 2024 Q19(c)(i):</strong> "Explain the temperature compromise for ethene hydration (C₂H₄ + H₂O ⇌ C₂H₅OH, exothermic)." Answer: Lower temperature favours the exothermic forward reaction (higher yield), but lower temperature gives a rate that is too slow (not economically viable). Both parts needed for 2 marks.</p>
+</li>
+<li>
+<p><strong>Jun 2024 Q19(c)(ii):</strong> "Why is &gt;7 MPa pressure suggested?" Answer: Increasing pressure shifts equilibrium to give a greater yield (fewer moles of gas on product side).</p>
+</li>
+<li>
+<p><strong>Jun 2024 Q19(c)(iv):</strong> "Why not exceed 7 MPa?" Answer: Higher pressures require special/expensive plant or equipment.</p>
+</li>
+<li>
+<p><strong>Jun 2024 Q19(b):</strong> "How does overall yield reach 95% if equilibrium gives less?" Answer: Ethanol (and excess water) condenses/liquefies, and unused ethene/reactants are <strong>recycled</strong>.</p>
+</li>
+<li>
+<p><strong>Jan 2023 Q22(c):</strong> "Pressure advantage and disadvantage in Haber process." Advantage: higher yield / faster rate. Disadvantage: more energy needed / expensive equipment.</p>
+</li>
+<li>
+<p><strong>Jan 2023 Q22(h):</strong> "Suggest advantages of locating multiple processes on the same site." Any two from: cheaper to produce intermediates, transport savings, waste reduction, energy from exothermic steps used in endothermic steps, smaller workforce, less land.</p>
+</li>
+</ul>
+<h3 id="def-the-recycle-concept">The "Recycle" Concept</h3>
+<ul>
+<li>Many industrial processes achieve higher overall yields than predicted by equilibrium alone by <strong>continuously removing products</strong> and <strong>recycling unreacted reactants</strong>.</li>
+<li>This is NOT a Le Chatelier shift — it is an engineering solution. But it often appears in equilibria questions.</li>
+</ul>
+<hr>
+<h2 id="def-quick-reference-definition-checklist">Quick-Reference Definition Checklist</h2>
+<p>Use this table to self-test. Can you define or explain each one without looking?</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Term</th>
+<th style="text-align: center;">Spec Point</th>
+<th style="text-align: center;">Can I Explain It?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Collision theory (with orientation)</td>
+<td style="text-align: center;">9.1</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Activation energy</td>
+<td style="text-align: center;">9.2</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Rate = 1/time (when valid)</td>
+<td style="text-align: center;">9.3(i)</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Rate from tangent/gradient</td>
+<td style="text-align: center;">9.3(ii)</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Maxwell–Boltzmann distribution features</td>
+<td style="text-align: center;">9.4</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Effect of temperature on M–B curve</td>
+<td style="text-align: center;">9.4</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Catalyst definition and properties</td>
+<td style="text-align: center;">9.5</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Reaction profile (uncat vs cat)</td>
+<td style="text-align: center;">9.6</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Catalyst sustainability argument</td>
+<td style="text-align: center;">9.7</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Catalyst action via M–B distribution</td>
+<td style="text-align: center;">9.8</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Dynamic equilibrium</td>
+<td style="text-align: center;">9.9(i)</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Constant concentrations ≠ equal concentrations</td>
+<td style="text-align: center;">9.9(ii)</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Le Chatelier's principle</td>
+<td style="text-align: center;">9.10</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Le Chatelier: temperature effect (with justification)</td>
+<td style="text-align: center;">9.10</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Le Chatelier: pressure effect (with justification)</td>
+<td style="text-align: center;">9.10</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Le Chatelier: concentration effect (with justification)</td>
+<td style="text-align: center;">9.10</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Industrial compromise: temperature</td>
+<td style="text-align: center;">9.11</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Industrial compromise: pressure</td>
+<td style="text-align: center;">9.11</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Role of catalysts in industrial processes</td>
+<td style="text-align: center;">9.11</td>
+<td style="text-align: center;">☐</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Recycle of unreacted reactants</td>
+<td style="text-align: center;">9.11</td>
+<td style="text-align: center;">☐</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="def-exam-statistics-chapter-28-across-7-papers">Exam Statistics — Chapter 2.8 Across 7 Papers</h2>
+<table>
+<thead>
+<tr>
+<th>Session</th>
+<th style="text-align: center;">2.8 Marks</th>
+<th>Key Topics Tested</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jun 2022</td>
+<td style="text-align: center;">8</td>
+<td>Le Chatelier, collision theory</td>
+</tr>
+<tr>
+<td>Jan 2023</td>
+<td style="text-align: center;">16</td>
+<td>M–B (2 MCQs), Le Chatelier (4 parts), reaction profile, catalyst sustainability, industrial compromise</td>
+</tr>
+<tr>
+<td>Jun 2023</td>
+<td style="text-align: center;">9</td>
+<td>M–B sketch, catalyst effect, Le Chatelier</td>
+</tr>
+<tr>
+<td>Oct 2023</td>
+<td style="text-align: center;">9</td>
+<td>Le Chatelier (3 MCQs), M–B catalyst explanation, equilibrium shift (CO₂)</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td style="text-align: center;">10</td>
+<td>Temperature/rate MCQ, dynamic equilibrium MCQ, equilibrium species, bleach equilibrium, M–B + catalyst (4 marks)</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td style="text-align: center;">14</td>
+<td>M–B (3 MCQs), industrial compromise (7 marks on ethene hydration)</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td style="text-align: center;">6</td>
+<td>M–B (2 MCQs), Le Chatelier (2 MCQs), equilibrium shift (1 structured)</td>
+</tr>
+<tr>
+<td><strong>Average</strong></td>
+<td style="text-align: center;"><strong>10.3</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Highest-yield subtopics:</strong> Le Chatelier's principle (~2.1 marks/paper), Maxwell–Boltzmann distribution (~2.6 marks/paper), industrial compromise conditions (~1–2 marks/paper when present in Section C).</p>
+<hr>
+<p><em>Definitions aligned to Pearson Edexcel International A Level Chemistry specification (2018). All mark scheme requirements verified against 7 past papers (Jun 2022 – Oct 2024).</em></p>
+</section>
+<section id="concepts">
+<h2>Concepts &amp; Worked Examples</h2>
+<h3 id="con-edexcel-ial-chemistry-wch12-spec-points-91911">Edexcel IAL Chemistry WCH12 — Spec Points 9.1–9.11</h3>
+<hr>
+<h2 id="con-how-to-use-this-guide">How to Use This Guide</h2>
+<p>This file contains <strong>worked examples</strong> with full mark-scheme-grade answers for every major concept in Chapter 2.8. Each example is drawn from or modelled on real Edexcel past paper questions (Jun 2022 – Oct 2024). Focus especially on the <strong>Le Chatelier justifications</strong> — these are the #1 area where students lose marks.</p>
+<hr>
+<h2 id="con-worked-example-1-maxwellboltzmann-distribution-sketches">Worked Example 1: Maxwell–Boltzmann Distribution Sketches</h2>
+<h3 id="con-1a-temperature-increase-higher-t">1A: Temperature Increase (Higher T)</h3>
+<p><strong>Question (modelled on Jun 2023 Q21(a)(i), Jun 2024 Q15(a), Oct 2024 Q1(a)):</strong></p>
+<blockquote>
+<p>Sketch the Maxwell–Boltzmann distribution at a higher temperature on the same axes as the original.</p>
+</blockquote>
+<p><strong>Step-by-step drawing guide:</strong></p>
+<pre><code>Fraction/Number of molecules
+  ^
+  |        Original T
+  |       /\
+  |      /  \            Higher T
+  |     /    \          /
+  |    /      \        /
+  |   /        \      /
+  |  /          \    /
+  | /            \  /
+  |/              \/
+  +-------------------&gt; Energy (E)
+  |     Eₐ (same for both)
+</code></pre>
+<p><strong>Critical features for full marks:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Requirement</th>
+<th>Common Error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Both curves start at origin</td>
+<td>Must begin at (0, 0)</td>
+<td>Drawing the higher-T curve starting above the axis</td>
+</tr>
+<tr>
+<td>Higher-T peak is <strong>lower</strong> and <strong>right-shifted</strong></td>
+<td>Peak must be to the RIGHT and BELOW original</td>
+<td>Drawing the peak higher (wrong direction)</td>
+</tr>
+<tr>
+<td>Both curves have the same area</td>
+<td>Same total number of molecules</td>
+<td>Making the higher-T curve have a larger area</td>
+</tr>
+<tr>
+<td>Both curves approach the same asymptote</td>
+<td>Right-hand tail never reaches x-axis</td>
+<td>Drawing the higher-T curve ending abruptly</td>
+</tr>
+<tr>
+<td>Eₐ line is unchanged</td>
+<td>Same vertical line for both curves</td>
+<td>Moving Eₐ when T changes (it doesn't!)</td>
+</tr>
+<tr>
+<td>More area to the RIGHT of Eₐ at higher T</td>
+<td>Shade or clearly show the difference</td>
+<td>Failing to show the key consequence</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mark scheme note (Jun 2023):</strong> "Do not award if curve right of peak drops below the 300 °C line" — the right tail must extend far enough.</p>
+<h3 id="con-1b-catalyst-added-same-temperature">1B: Catalyst Added (Same Temperature)</h3>
+<p><strong>Question (modelled on Oct 2024 Q1(b), Jun 2024 Q15(c)):</strong></p>
+<blockquote>
+<p>On the Maxwell–Boltzmann distribution, show the effect of adding a catalyst.</p>
+</blockquote>
+<p><strong>Step-by-step drawing guide:</strong></p>
+<pre><code>Fraction/Number of molecules
+  ^
+  |       /\
+  |      /  \
+  |     /    \    Eₐ(original)
+  |    /      \   |
+  |   /        \  |
+  |  /          \ |
+  | /            \|
+  |/          Eₐ(catalyst)|
+  +--|-----------|-------&gt; Energy (E)
+     |    |      |
+     |    Shaded  |
+     |    area    |
+     |  (more     |
+     |  molecules |
+     |  above new |
+     |  Eₐ)       |
+</code></pre>
+<p><strong>Critical features:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Requirement</th>
+<th>Common Error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The distribution curve is <strong>UNCHANGED</strong></td>
+<td>Same peak, same shape, same area</td>
+<td>Drawing a new, different curve (WRONG)</td>
+</tr>
+<tr>
+<td>Eₐ line shifts <strong>left</strong> (lower value)</td>
+<td>Draw a second vertical line to the LEFT of original</td>
+<td>Moving the curve instead of Eₐ</td>
+</tr>
+<tr>
+<td>More molecules are now above the new (lower) Eₐ</td>
+<td>Shade the additional area</td>
+<td>Not showing the consequence</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why the curve doesn't change:</strong> The catalyst doesn't give molecules more energy. It simply lowers the energy threshold they need to exceed. The same distribution of molecular energies exists, but now more of them are "energetic enough."</p>
+<h3 id="con-1c-combined-changes-fewer-molecules-lower-temperature">1C: Combined Changes — Fewer Molecules + Lower Temperature</h3>
+<p><strong>Question (Jan 2023 Q17(b)):</strong></p>
+<blockquote>
+<p>Some gas is removed from the container AND the temperature is decreased. What happens to the Maxwell–Boltzmann distribution?</p>
+</blockquote>
+<p><strong>Answer:</strong>
+1. <strong>Area decreases</strong> — fewer molecules in the container (total number reduced)
+2. <strong>Peak shifts left</strong> (and becomes slightly higher relative to the reduced area) — lower average energy at lower temperature</p>
+<p><strong>Mark scheme:</strong> Both changes must be identified. Area decrease alone scores 1/2. Peak shift alone scores 1/2.</p>
+<h3 id="con-1d-pressure-decrease">1D: Pressure Decrease</h3>
+<p><strong>Question (Jun 2024 Q15(b)):</strong></p>
+<blockquote>
+<p>The pressure of a gaseous system is decreased at constant temperature. Which values change?</p>
+</blockquote>
+<p><strong>Answer:</strong> <strong>None</strong> of these values change. Decreasing pressure reduces the total number of molecules (lower concentration) but does NOT change Eₐ, E_mode, or E_mean — these depend only on temperature. The DISTRIBUTION SHAPE (per molecule) is unchanged; only the y-axis (number of molecules at each energy) decreases.</p>
+<p><strong>Mark scheme answer:</strong> Only the total number of molecules decreases; Eₐ, E_mode, and E_mean are unchanged.</p>
+<hr>
+<h2 id="con-worked-example-2-rate-calculations-from-graph-tangents">Worked Example 2: Rate Calculations from Graph Tangents</h2>
+<h3 id="con-2a-rate-from-a-volumetime-graph">2A: Rate from a Volume–Time Graph</h3>
+<p><strong>Question (Jun 2023 Q15):</strong></p>
+<blockquote>
+<p>The graph shows the volume of gas (cm³) produced against time (minutes) for a reaction. What is the rate of reaction at point X (t = 2 min)?</p>
+</blockquote>
+<p><strong>Method:</strong></p>
+<pre><code>Volume (cm³)
+  ^
+30|                       .  .  .  .
+  |                     .
+25|                  .  ←── tangent at X
+  |                .
+20|             .X...............
+  |           .
+15|         .
+10|       .
+  |     .
+ 5|   .
+  +-----|-----|-----&gt; Time (min)
+        2     4
+</code></pre>
+<p><strong>Step 1:</strong> Draw a tangent at point X. The tangent should just touch the curve at X.</p>
+<p><strong>Step 2:</strong> Choose two well-separated points on the tangent:
+- Point 1: (0 min, 18.0 cm³)
+- Point 2: (4 min, 23.2 cm³)</p>
+<p><strong>Step 3:</strong> Calculate the gradient:</p>
+<pre><code>gradient = (y₂ − y₁) / (x₂ − x₁)
+        = (23.2 − 18.0) / (4 − 0)
+        = 5.2 / 4
+        = 1.30 cm³ min⁻¹
+</code></pre>
+<p><em>(Matches the exam answer of 1.3 cm³ min⁻¹; the method is what matters.)</em></p>
+<p><strong>Step 4:</strong> Include correct units → <strong>cm³ min⁻¹</strong> (or cm³ s⁻¹ if time is in seconds).</p>
+<h3 id="con-2b-identifying-rate-from-catalyst-data">2B: Identifying Rate from Catalyst Data</h3>
+<p><strong>Question (Jun 2023 Q14):</strong></p>
+<blockquote>
+<p>Reaction time without catalyst = 205 s. Reaction time with Cu²⁺ = 75 s. Reaction time with Pb²⁺ = 464 s. Which ion acts as a catalyst?</p>
+</blockquote>
+<p><strong>Answer:</strong>
+- Cu²⁺: time <strong>decreased</strong> from 205 s to 75 s → rate increased → <strong>catalyst</strong>
+- Pb²⁺: time <strong>increased</strong> from 205 s to 464 s → rate decreased → <strong>poison / inhibitor</strong></p>
+<p>Since rate ∝ 1/time:
+- Without: rate ∝ 1/205 = 0.00488
+- With Cu²⁺: rate ∝ 1/75 = 0.01333 (almost 3× faster)
+- With Pb²⁺: rate ∝ 1/464 = 0.00216 (less than half the original rate)</p>
+<p><strong>Mark scheme answer:</strong> Cu²⁺ is the catalyst → <strong>A</strong>.</p>
+<hr>
+<h2 id="con-worked-example-3-le-chatelier-predictions-with-full-justification">Worked Example 3: Le Chatelier Predictions with Full Justification</h2>
+<p>This is the most important worked example section. Edexcel consistently awards marks for the <strong>reasoning chain</strong>, not just the prediction.</p>
+<h3 id="con-3a-temperature-change-exothermic-forward-reaction">3A: Temperature Change — Exothermic Forward Reaction</h3>
+<p><strong>Question (Oct 2023 Q11(a)):</strong></p>
+<blockquote>
+<p>For the reaction SO₂(g) + ½O₂(g) ⇌ SO₃(g), ΔH = −99 kJ mol⁻¹, what is the effect of decreasing the temperature on the rate and the yield of SO₃?</p>
+</blockquote>
+<p><strong>Full-mark answer (2 parts required):</strong></p>
+<p><strong>Effect on rate:</strong>
+- Decreasing temperature decreases the rate of reaction because molecules have less kinetic energy and fewer molecules have energy ≥ Eₐ.</p>
+<p><strong>Effect on yield:</strong>
+- The forward reaction is exothermic. Decreasing temperature shifts the equilibrium to the <strong>right</strong> (in the exothermic direction) to oppose the temperature decrease. This <strong>increases</strong> the yield of SO₃.</p>
+<p><strong>Combined answer:</strong> Rate <strong>decreases</strong>, yield of SO₃ <strong>increases</strong> → <strong>D</strong>.</p>
+<p><strong>Mark scheme note:</strong> Students must give BOTH the rate effect AND the yield effect. Either alone scores 0/1 for a 1-mark MCQ.</p>
+<h3 id="con-3b-temperature-change-endothermic-forward-reaction">3B: Temperature Change — Endothermic Forward Reaction</h3>
+<p><strong>Question (Oct 2024 Q2(a)):</strong></p>
+<blockquote>
+<p>For a reaction where ΔH = +206 kJ mol⁻¹ (endothermic forward), what is the effect of decreasing the temperature?</p>
+</blockquote>
+<p><strong>Full-mark answer:</strong>
+- Rate <strong>decreases</strong> (lower T → fewer E ≥ Eₐ)
+- Yield <strong>decreases</strong> (lower T disfavours the endothermic forward reaction → equilibrium shifts LEFT, towards reactants)</p>
+<p><strong>Answer:</strong> Rate ↓, yield ↓ → <strong>D</strong>.</p>
+<p><strong>Common trap:</strong> Students assume "lower temperature always increases yield" — this is only true for EXOTHERMIC forward reactions. For endothermic forward reactions, lower T DECREASES yield.</p>
+<h3 id="con-3c-pressure-change-fewer-gas-moles-on-product-side">3C: Pressure Change — Fewer Gas Moles on Product Side</h3>
+<p><strong>Question (Oct 2023 Q11(b)):</strong></p>
+<blockquote>
+<p>For 2SO₂(g) + O₂(g) ⇌ 2SO₃(g) (3 mol gas → 2 mol gas), what is the effect of increasing the pressure?</p>
+</blockquote>
+<p><strong>Full-mark answer:</strong>
+- Rate <strong>increases</strong> (more molecules per unit volume → more frequent collisions)
+- Yield of SO₃ <strong>increases</strong> (increasing pressure favours the side with fewer gas moles → shifts right, from 4 mol to 2 mol)</p>
+<p><strong>Answer:</strong> Rate ↑, yield ↑ → <strong>B</strong>.</p>
+<h3 id="con-3d-pressure-change-more-gas-moles-on-product-side">3D: Pressure Change — More Gas Moles on Product Side</h3>
+<p><strong>Question (Oct 2024 Q2(b)):</strong></p>
+<blockquote>
+<p>For a reaction where the product side has MORE gas moles than the reactant side, what is the effect of increasing the pressure?</p>
+</blockquote>
+<p><strong>Full-mark answer:</strong>
+- Rate <strong>increases</strong> (always, with pressure)
+- Yield <strong>decreases</strong> (increasing pressure favours the side with FEWER gas moles → shifts LEFT, towards reactants)</p>
+<p><strong>Answer:</strong> Rate ↑, yield ↓ → <strong>B</strong>.</p>
+<p><strong>Common trap:</strong> Students always assume "higher pressure = higher yield" — this is only true if the product side has fewer gas moles. Always COUNT THE GAS MOLES on each side first.</p>
+<h3 id="con-3e-concentration-change-removing-a-reactant">3E: Concentration Change — Removing a Reactant</h3>
+<p><strong>Question (Jan 2023 Q22(f)):</strong></p>
+<blockquote>
+<p>In the equilibrium 2NO₂(g) + H₂O(l) ⇌ HNO₃(aq) + HNO₂(aq), water is added (which removes NO₂ from the gas phase by dissolving it). What happens?</p>
+</blockquote>
+<p><strong>Full-mark answer (2 marks):</strong>
+1. Adding water <strong>removes NO₂</strong> (reactant) from the equilibrium mixture
+2. The equilibrium shifts to the <strong>left</strong> (towards reactants) to oppose the removal (to replace the removed NO₂)
+3. This <strong>decreases</strong> the yield of products (HNO₃ and HNO₂)</p>
+<p><strong>Mark scheme requirement:</strong> Must identify what is removed AND the direction of shift. Either alone = 1/2.</p>
+<h3 id="con-3f-adding-a-base-to-an-acid-dependent-equilibrium">3F: Adding a Base to an Acid-Dependent Equilibrium</h3>
+<p><strong>Question (Oct 2024 Q19(b)(ii), modelled on Jan 2024 Q24(b)(ii)):</strong></p>
+<blockquote>
+<p>The equilibrium is Cl₂(g) + H₂O(l) ⇌ HClO(aq) + HCl(aq). What happens when NaOH is added?</p>
+</blockquote>
+<p><strong>Full-mark answer:</strong>
+1. NaOH reacts with / removes H⁺ (from HCl) from the equilibrium
+2. The equilibrium shifts to the <strong>right</strong> (to replace the removed H⁺)
+3. This produces more HClO (and more Cl⁻ as Cl⁻ is also in the system)</p>
+<p><strong>Extended version (Jan 2024 Q24(b)(ii), 3 marks):</strong>
+1. Adding acid adds H⁺, shifting Eq.1 <strong>left</strong>: H⁺ + ClO⁻ → HClO
+2. This causes Eq.2 to shift <strong>right</strong>: HClO + Cl⁻ + H⁺ → Cl₂ + H₂O
+3. Toxic Cl₂(g) is released</p>
+<h3 id="con-3g-the-industrial-compromise-full-worked-example">3G: The Industrial Compromise — Full Worked Example</h3>
+<p><strong>Question (Jun 2024 Q19(c), 7 marks total):</strong></p>
+<blockquote>
+<p>Ethene hydration: C₂H₄(g) + H₂O(g) ⇌ C₂H₅OH(g), ΔH is negative (exothermic).
+(i) Explain the temperature compromise (2 marks)
+(ii) Why is a pressure &gt; 7 MPa suggested? (2 marks)
+(iii) Why not exceed 7 MPa? (1 mark)
+(iv) Suggest one advantage and one disadvantage of using more water (2 marks)</p>
+</blockquote>
+<p><strong>(i) Temperature compromise (2 marks):</strong>
+- The forward reaction is exothermic, so lower temperature would give a <strong>higher yield</strong> (shifts equilibrium right)
+- However, lower temperature gives a <strong>rate that is too slow</strong> to be economically viable
+- Therefore a <strong>compromise temperature</strong> is used</p>
+<p><strong>(ii) Pressure &gt; 7 MPa (2 marks):</strong>
+- There are 2 mol of gas on the left (reactants) and 1 mol on the right (products)
+- Increasing pressure shifts the equilibrium to the <strong>right</strong> (fewer gas moles on product side), giving a <strong>greater yield</strong> of ethanol</p>
+<p><strong>(iii) Why not exceed 7 MPa (1 mark):</strong>
+- Higher pressures require <strong>special/expensive plant or equipment</strong>
+- (Also accepted: much higher energy costs to generate and maintain high pressure)</p>
+<p><strong>(iv) More water — advantage and disadvantage (2 marks):</strong>
+- <strong>Advantage:</strong> Pushes equilibrium to the right (increases yield) — water is a reactant
+- <strong>Disadvantage:</strong> More water is condensed with the ethanol product, making <strong>separation more difficult</strong> (or: catalyst may be washed from its support)</p>
+<hr>
+<h2 id="con-worked-example-4-reaction-profile-diagrams">Worked Example 4: Reaction Profile Diagrams</h2>
+<p><strong>Question (Jan 2023 Q22(d)(i), 3 marks):</strong></p>
+<blockquote>
+<p>Complete the reaction profile for the catalytic oxidation of NH₃ to NO. The uncatalysed activation energy is 290 kJ mol⁻¹ and the catalysed activation energy is 70 kJ mol⁻¹. ΔH = −905 kJ mol⁻¹.</p>
+</blockquote>
+<p><strong>Step-by-step drawing:</strong></p>
+<pre><code>Energy (kJ mol⁻¹)
+  ^
+  |  Reactants
+  |  ________          Uncatalysed pathway
+  |         \          ___
+  |          \        /   \  ΔH = −905 kJ mol⁻¹
+  |           \      /     \__________ Products
+  |            \    /
+  |             \  /  &lt;-- Catalysed pathway
+  |              \/
+  |    Ea(cat)=70    Ea(uncat)=290
+  +----------------------------------&gt; Reaction progress
+</code></pre>
+<p><strong>Marking points (3 marks):</strong>
+1. ΔH labelled with a downward arrow from reactants to products
+2. Two humps (profiles): the uncatalysed one much taller (Eₐ = 290), the catalysed one much shorter (Eₐ = 70)
+3. Correct relative scale — the catalysed peak must be visibly much lower than the uncatalysed peak
+4. <strong>Accuracy:</strong> ±1 small square on the graph paper</p>
+<p><strong>Key tips:</strong>
+- The reactant and product energy levels are the SAME for both pathways (catalyst doesn't change ΔH)
+- Only the height of the peak (activation energy) differs
+- Both profiles must start and end at the same levels</p>
+<hr>
+<h2 id="con-worked-example-5-catalyst-sustainability-argument">Worked Example 5: Catalyst Sustainability Argument</h2>
+<p><strong>Question (Jan 2023 Q22(d)(ii)):</strong></p>
+<blockquote>
+<p>Suggest why the use of a catalyst makes the industrial process more sustainable.</p>
+</blockquote>
+<p><strong>Full-mark answer (1 mark, choose ONE):</strong>
+- Less energy needed (because a lower temperature can be used while maintaining an acceptable rate)
+- Lower temperature required (reduces fuel consumption)
+- Less fuel burned (reduces CO₂ emissions)
+- Reduced carbon footprint</p>
+<p><strong>NOT accepted:</strong>
+- "The catalyst can be reused" — true but not a sustainability argument per se
+- "It lowers the activation energy" — this is the MECHANISM, not the sustainability benefit
+- "It increases the rate" — this is the FUNCTION, not the sustainability benefit</p>
+<p><strong>The key linkage:</strong> Lower Eₐ → lower T can be used → less energy/fuel → lower CO₂ emissions → more sustainable. You need the <strong>chain of reasoning</strong>.</p>
+<hr>
+<h2 id="con-worked-example-6-catalyst-explanation-using-maxwellboltzmann-3-marks">Worked Example 6: Catalyst Explanation Using Maxwell–Boltzmann (3 Marks)</h2>
+<p><strong>Question (Oct 2023 Q21(b)(i), Jan 2024 Q24(d)):</strong></p>
+<blockquote>
+<p>Explain how a catalyst increases the rate of a reaction, with reference to the Maxwell–Boltzmann distribution.</p>
+</blockquote>
+<p><strong>Full 3-mark answer:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Mark</th>
+<th>Statement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>The catalyst provides an alternative reaction pathway with a <strong>lower activation energy</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>A <strong>greater proportion</strong> of molecules now have energy <strong>≥ Eₐ</strong> (the new, lower value)</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Therefore there is a <strong>higher proportion of successful collisions</strong> per unit time, increasing the rate</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Alternative wording for Mark 3 (accepted):</strong>
+- "More molecules have sufficient energy to react upon collision"
+- "The rate of successful collisions increases"</p>
+<p><strong>NOT accepted:</strong>
+- "The catalyst gives molecules more energy" — it doesn't
+- "The distribution shifts" — it doesn't
+- "The catalyst lowers the temperature needed" — while true in industry, this is not what the M–B diagram shows</p>
+<p><strong>Diagram that scores full marks (Jan 2024 Q24(d), 4 marks):</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Mark</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Labelled axes (energy on x, number/fraction of molecules on y)</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Single Maxwell–Boltzmann curve starting at the origin</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>Catalyst provides lower Eₐ (shown as a vertical line moved to the left)</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td>More particles have E ≥ Eₐ with catalyst (shaded area or clear annotation)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="con-worked-example-7-dynamic-equilibrium-misconceptions">Worked Example 7: Dynamic Equilibrium Misconceptions</h2>
+<p><strong>Question (Jan 2024 Q14):</strong></p>
+<blockquote>
+<p>Which statement about dynamic equilibrium is NOT true?
+A. A catalyst changes the position of equilibrium
+B. At equilibrium, the concentrations of reactants and products are constant
+C. At equilibrium, the rate of the forward reaction equals the rate of the backward reaction
+D. Equilibrium can only be reached in a closed system</p>
+</blockquote>
+<p><strong>Answer: A</strong> — A catalyst does NOT change the position of equilibrium. It speeds up both forward and backward reactions equally.</p>
+<p><strong>Why the other options ARE true:</strong>
+- <strong>B:</strong> Correct — concentrations are constant (but NOT necessarily equal)
+- <strong>C:</strong> Correct — this is the defining feature of dynamic equilibrium
+- <strong>D:</strong> Correct — equilibrium requires a closed system so matter cannot escape</p>
+<p><strong>Exam insight:</strong> This is a classic "identify the false statement" question. Students often select C or D (which are true) because they seem "too simple." Always read carefully — the question asks which is NOT true.</p>
+<hr>
+<h2 id="con-worked-example-8-carbon-dioxide-and-ocean-acidification-equilibrium-application">Worked Example 8: Carbon Dioxide and Ocean Acidification (Equilibrium Application)</h2>
+<p><strong>Question (Oct 2023 Q20(c), 3 marks):</strong></p>
+<blockquote>
+<p>Explain why increasing the concentration of CO₂ in the atmosphere increases the acidity of seawater.
+Relevant equilibrium: CO₂(aq) + H₂O(l) ⇌ H₂CO₃(aq) ⇌ H⁺(aq) + HCO₃⁻(aq)</p>
+</blockquote>
+<p><strong>Full 3-mark answer:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Mark</th>
+<th>Statement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Increasing atmospheric CO₂ increases the concentration of <strong>dissolved CO₂</strong> in seawater</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>This shifts the first equilibrium to the <strong>right</strong>, increasing [H₂CO₃]</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>The increased [H₂CO₃] shifts the second equilibrium to the <strong>right</strong>, increasing [H⁺], so the acidity increases</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> Mark 3 depends on Mark 2 being correct (dependent marking).</p>
+<hr>
+<h2 id="con-worked-example-9-ethene-hydration-complete-industrial-equilibrium-analysis">Worked Example 9: Ethene Hydration — Complete Industrial Equilibrium Analysis</h2>
+<p><strong>Question (Jun 2024 Q19, 11 marks total — full question walkthrough):</strong></p>
+<blockquote>
+<p>Ethene is hydrated to ethanol: C₂H₄(g) + H₂O(g) ⇌ C₂H₅OH(g). The process uses a phosphoric acid catalyst.</p>
+</blockquote>
+<p><strong>(a) Identify the catalyst (1 mark):</strong>
+- Phosphoric(V) acid / H₃PO₄ (also accepted: sulfuric(VI) acid / H₂SO₄)</p>
+<p><strong>(b) How does overall yield reach 95% if equilibrium conversion is lower? (2 marks):</strong>
+1. Ethanol and excess water <strong>condense/liquefy</strong> (are removed from the gas phase)
+2. Unreacted <strong>ethene is recycled</strong> back into the reactor</p>
+<p><strong>(c)(i) Temperature compromise (2 marks):</strong>
+- Lower T favours the exothermic forward reaction → <strong>higher yield</strong>
+- But lower T gives a <strong>rate that is too slow</strong> → not economically viable
+- Therefore a <strong>compromise temperature</strong> is used</p>
+<p><strong>(c)(ii) Why &gt; 7 MPa? (2 marks):</strong>
+- 2 mol gas (reactants) → 1 mol gas (product)
+- Higher pressure shifts equilibrium <strong>right</strong> → <strong>greater yield</strong></p>
+<p><strong>(c)(iii) Waxy solid at very high pressure? (1 mark):</strong>
+- Poly(ethene) — formed by unintended polymerisation of ethene at extreme pressures</p>
+<p><strong>(c)(iv) Why not exceed 7 MPa? (1 mark):</strong>
+- Higher pressures require special/expensive <strong>plant or equipment</strong></p>
+<p><strong>(c)(v) More water — advantage and disadvantage (2 marks):</strong>
+- Advantage: pushes equilibrium right → <strong>increases yield</strong> (Le Chatelier: more reactant)
+- Disadvantage: more water condenses with ethanol → <strong>harder to separate</strong> / catalyst washed from support</p>
+<hr>
+<h2 id="con-exam-technique-summary-for-chapter-28">Exam Technique Summary for Chapter 2.8</h2>
+<h3 id="con-le-chatelier-the-3-step-justification-template">Le Chatelier — The 3-Step Justification Template</h3>
+<p>Whenever you are asked to "explain" the effect of a change on an equilibrium:</p>
+<ol>
+<li><strong>State the change applied</strong> (e.g., "temperature is decreased")</li>
+<li><strong>State the direction of shift</strong> (e.g., "equilibrium shifts to the left/right")</li>
+<li><strong>Give the reason</strong> (e.g., "to oppose the change / because the system opposes the decrease in temperature / because there are fewer gas moles on the product side")</li>
+</ol>
+<h3 id="con-maxwellboltzmann-decision-tree">Maxwell–Boltzmann — Decision Tree</h3>
+<p>When asked what happens to the M–B distribution:</p>
+<pre><code>What changed?
+├── Temperature ↑
+│   → Peak: lower, right-shifted
+│   → Area: same
+│   → Eₐ: unchanged
+│   → Proportion above Eₐ: increases
+├── Catalyst added
+│   → Curve: unchanged
+│   → Area: same
+│   → Eₐ: decreases (shifts left)
+│   → Proportion above Eₐ: increases
+├── Gas removed (pressure ↓ at const T)
+│   → Peak: lower (fewer molecules at all energies)
+│   → Area: decreases
+│   → Eₐ: unchanged (same threshold)
+│   → Shape (per molecule): same
+└── Pressure ↑ (more gas in same volume)
+    → Peak: higher (more molecules at all energies)
+    → Area: increases
+    → Eₐ: unchanged
+    → Shape (per molecule): same
+</code></pre>
+<h3 id="con-catalyst-what-to-say-vs-what-not-to-say">Catalyst — What to Say vs What NOT to Say</h3>
+<table>
+<thead>
+<tr>
+<th>Context</th>
+<th>DO Say</th>
+<th>DO NOT Say</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>How a catalyst works</td>
+<td>"Provides alternative pathway with lower Eₐ"</td>
+<td>"Gives molecules more energy"</td>
+</tr>
+<tr>
+<td>M–B explanation</td>
+<td>"Greater proportion of molecules have E ≥ Eₐ"</td>
+<td>"Distribution shifts to the right"</td>
+</tr>
+<tr>
+<td>Sustainability</td>
+<td>"Less energy needed / lower temperature / less CO₂"</td>
+<td>"Catalyst is reused" or "Lowers Eₐ"</td>
+</tr>
+<tr>
+<td>Equilibrium effect</td>
+<td>"No effect on equilibrium position"</td>
+<td>"Shifts equilibrium"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="con-rate-vs-yield-never-confuse-them">Rate vs Yield — Never Confuse Them</h3>
+<table>
+<thead>
+<tr>
+<th>Question Type</th>
+<th>Think About</th>
+<th>Keywords</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"What happens to the <strong>rate</strong>?"</td>
+<td>Kinetics / collision theory</td>
+<td>Faster collisions, more E ≥ Eₐ, more frequent collisions</td>
+</tr>
+<tr>
+<td>"What happens to the <strong>yield</strong>?"</td>
+<td>Le Chatelier / equilibrium position</td>
+<td>Equilibrium shifts, more product favoured</td>
+</tr>
+<tr>
+<td>"What is the <strong>compromise</strong>?"</td>
+<td>Both</td>
+<td>Rate too slow at low T, yield too low at high T</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><em>Worked examples verified against Edexcel IAL Chemistry WCH12 mark schemes, Jun 2022 – Oct 2024.</em></p>
+</section>
+<section id="exam">
+<h2>Exam Connections</h2>
+<p><strong>Edexcel IAL Chemistry WCH12 Unit 2 | Spec Points 9.1–9.11 | UNDERREPRESENTED (12.5%)</strong></p>
+<hr>
+<h2 id="exam-1-per-paper-mark-allocation-7-papers">1. Per-Paper Mark Allocation (7 Papers)</h2>
+<table>
+<thead>
+<tr>
+<th>Session</th>
+<th style="text-align: center;">ch2.8 Marks</th>
+<th style="text-align: center;">% of 80</th>
+<th>Key Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jun 2022</td>
+<td style="text-align: center;"><strong>8</strong></td>
+<td style="text-align: center;">10.0%</td>
+<td>Q10(a), Q11, Q15(b)(ii–iii), Q18(d)</td>
+</tr>
+<tr>
+<td>Jan 2023</td>
+<td style="text-align: center;"><strong>14</strong></td>
+<td style="text-align: center;">17.5%</td>
+<td>Q17(a,b), Q22(a)(i), Q22(c), Q22(d)(i–ii), Q22(e)(i), Q22(f), Q22(h)</td>
+</tr>
+<tr>
+<td>Jun 2023</td>
+<td style="text-align: center;"><strong>9</strong></td>
+<td style="text-align: center;">11.3%</td>
+<td>Q14, Q15, Q21(a)(i–ii), Q21(b), Q22(d)</td>
+</tr>
+<tr>
+<td>Oct 2023</td>
+<td style="text-align: center;"><strong>9</strong></td>
+<td style="text-align: center;">11.3%</td>
+<td>Q11(a,b), Q12, Q20(c), Q21(b)(i)</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td style="text-align: center;"><strong>10</strong></td>
+<td style="text-align: center;">12.5%</td>
+<td>Q13, Q14, Q24(b)(i–ii), Q24(d)</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td style="text-align: center;"><strong>14</strong></td>
+<td style="text-align: center;">17.5%</td>
+<td>Q15(a–c), Q19(a–v)</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td style="text-align: center;"><strong>6</strong></td>
+<td style="text-align: center;">7.5%</td>
+<td>Q1(a,b), Q2(a,b), Q19(b)(ii)</td>
+</tr>
+<tr>
+<td><strong>Average</strong></td>
+<td style="text-align: center;"><strong>10.0</strong></td>
+<td style="text-align: center;"><strong>12.5%</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="exam-trend-analysis">Trend Analysis</h3>
+<ul>
+<li><strong>Highest ever:</strong> Jan 2023 and Jun 2024 (14 marks each) — Section C was Haber/Ostwald (Jan 2023) and ethanol hydration (Jun 2024)</li>
+<li><strong>Lowest ever:</strong> Oct 2024 (6 marks, 7.5%) — only MCQs + one sub-part</li>
+<li><strong>This is the SMALLEST chapter by marks</strong> — but deceptively important because marks are often embedded in other questions</li>
+<li><strong>Never the sole focus of a large structured question</strong> — always integrated with industrial/Group chemistry contexts</li>
+<li><strong>Peaks when Section C uses industrial processes</strong> (Haber, Ostwald, Contact, ethanol hydration)</li>
+<li><strong>Expect 8–12 marks</strong> in most papers, with occasional spikes to 14–16 when industrial context demands it</li>
+</ul>
+<hr>
+<h2 id="exam-2-where-marks-typically-appear">2. Where Marks Typically Appear</h2>
+<h3 id="exam-21-mcqs-average-24-marks-per-paper">2.1 MCQs — Average 2–4 marks per paper</h3>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th style="text-align: center;">MCQ Marks</th>
+<th>Format</th>
+<th>Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jun 2022</td>
+<td style="text-align: center;">2</td>
+<td>MCQ</td>
+<td>Q10(a) (catalyst), Q11 (equilibrium shift)</td>
+</tr>
+<tr>
+<td>Jan 2023</td>
+<td style="text-align: center;">2</td>
+<td>MCQ</td>
+<td>Q17(a) (M-B origin), Q17(b) (M-B + cooling)</td>
+</tr>
+<tr>
+<td>Jun 2023</td>
+<td style="text-align: center;">2</td>
+<td>MCQ</td>
+<td>Q14 (catalyst from rate data), Q15 (rate from graph tangent)</td>
+</tr>
+<tr>
+<td>Oct 2023</td>
+<td style="text-align: center;">3</td>
+<td>MCQ</td>
+<td>Q11(a) (Le Chatelier T), Q11(b) (Le Chatelier P), Q12 (chromate equilibrium)</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td style="text-align: center;">2</td>
+<td>MCQ</td>
+<td>Q13 (temperature &amp; rate), Q14 (catalyst misconception)</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td style="text-align: center;">3</td>
+<td>MCQ</td>
+<td>Q15(a) (M-B + T), Q15(b) (M-B + P), Q15(c) (M-B + catalyst)</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td style="text-align: center;">4</td>
+<td>MCQ</td>
+<td>Q1(a) (M-B + T), Q1(b) (M-B + catalyst), Q2(a) (Le Chatelier T), Q2(b) (Le Chatelier P)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key patterns:</strong>
+- <strong>Maxwell-Boltzmann appears in 6/7 papers</strong> (missing only Jun 2022) — highly reliable MCQ topic
+- <strong>Le Chatelier's principle appears in 6/7 papers</strong> as MCQs
+- <strong>Catalyst misconception</strong> (does NOT affect equilibrium position) is tested repeatedly</p>
+<h3 id="exam-22-embedded-in-industrial-context-section-c-variable-210-marks">2.2 Embedded in Industrial Context (Section C) — Variable 2–10 marks</h3>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Context</th>
+<th style="text-align: center;">Marks</th>
+<th>Key Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jan 2023</td>
+<td>Haber process + Ostwald process</td>
+<td style="text-align: center;">10</td>
+<td>Q22(a)(i), Q22(c), Q22(d)(i–ii), Q22(e)(i), Q22(f), Q22(h)</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Ethene hydration (industrial ethanol)</td>
+<td style="text-align: center;">11</td>
+<td>Q19(a–v): catalyst ID, yield 95%, temperature compromise, pressure effects, recycling</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td>Bleach equilibrium + catalyst</td>
+<td style="text-align: center;">8</td>
+<td>Q24(b)(i–ii): ClO⁻/HClO equilibrium shifts, Q24(d): M-B + catalyst</td>
+</tr>
+<tr>
+<td>Jun 2022</td>
+<td>Ethanol from ethene</td>
+<td style="text-align: center;">2</td>
+<td>Q18(d): pressure effect on equilibrium yield</td>
+</tr>
+<tr>
+<td>Jun 2023</td>
+<td>Toilet cleaner (Cl₂/HClO equilibrium)</td>
+<td style="text-align: center;">2</td>
+<td>Q22(d): mixing acid → equilibrium shift → toxic Cl₂</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exam-23-embedded-in-other-structured-questions-25-marks">2.3 Embedded in Other Structured Questions — 2–5 marks</h3>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Context</th>
+<th style="text-align: center;">Marks</th>
+<th>Key Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jun 2022</td>
+<td>CaCO₃ + HCl rate experiment</td>
+<td style="text-align: center;">4</td>
+<td>Q15(b)(ii) tangent, Q15(b)(iii) concentration effect</td>
+</tr>
+<tr>
+<td>Jun 2023</td>
+<td>M-B distribution sketch + catalyst</td>
+<td style="text-align: center;">3</td>
+<td>Q21(a)(i) sketch, Q21(a)(ii) explanation, Q21(b) industrial advantage</td>
+</tr>
+<tr>
+<td>Oct 2023</td>
+<td>Carbonic acid equilibrium</td>
+<td style="text-align: center;">3</td>
+<td>Q20(c): CO₂ increase → H₂CO₃ equilibrium shift → acidity</td>
+</tr>
+<tr>
+<td>Oct 2023</td>
+<td>Catalyst + M-B explanation</td>
+<td style="text-align: center;">3</td>
+<td>Q21(b)(i): catalyst provides alternative pathway, lower Eₐ</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td>Le Chatelier with NaOH</td>
+<td style="text-align: center;">2</td>
+<td>Q19(b)(ii): NaOH removes H⁺ → equilibrium shifts right</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="exam-3-key-question-types">3. Key Question Types</h2>
+<h3 id="exam-31-maxwell-boltzmann-distribution-sketches-est-12-marks-total">3.1 Maxwell-Boltzmann Distribution Sketches — Est. 12 marks total</h3>
+<p>This is the <strong>most consistently tested</strong> sub-topic in ch2.8, appearing in 6/7 papers (all except Jun 2022).</p>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>What Was Asked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jan 2023</td>
+<td>Q17(a)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Distribution starts at origin because no molecule can have zero energy</td>
+</tr>
+<tr>
+<td>Jan 2023</td>
+<td>Q17(b)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Fewer molecules + cooling → smaller area, peak shifts left</td>
+</tr>
+<tr>
+<td>Jun 2023</td>
+<td>Q21(a)(i)</td>
+<td style="text-align: center;">1</td>
+<td>Sketch: Higher T → starts at origin, lower peak, shifted right, same asymptote</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td>Q24(d)</td>
+<td style="text-align: center;">4</td>
+<td>Draw full diagram: labelled axes, single curve, show catalyst lowering Eₐ, annotate that more particles have E ≥ Eₐ with catalyst</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Q15(a)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Higher T → E_mode and E_mean change; Eₐ stays same</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Q15(b)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Lower P → number of particles at ALL energy values decreases</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Q15(c)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Catalyst → only Eₐ changes (decreases); distribution curve unchanged</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td>Q1(a)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Higher T → peak becomes lower and further right</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td>Q1(b)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Catalyst → Eₐ moves left (decreases), peak stays same</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Full-Mark Answer Pattern: Maxwell-Boltzmann Sketch (2–4 marks)</strong></p>
+<pre><code>REQUIREMENTS:
+1. X-axis: &quot;energy&quot; or &quot;molecular energy&quot; (NOT &quot;time&quot; or &quot;concentration&quot;)
+2. Y-axis: &quot;number of molecules&quot; or &quot;fraction of molecules&quot; or &quot;probability&quot;
+3. Curve starts at the ORIGIN (never touching x-axis again on the right)
+4. Asymptotic to x-axis at high energies (curve approaches but never touches)
+
+For HIGHER TEMPERATURE:
+  • Lower, broader peak (more spread of energies)
+  • Peak shifts RIGHT (higher average energy)
+  • Starts at origin
+  • Same asymptote
+
+For CATALYST:
+  • Distribution curve is UNCHANGED
+  • Only Eₐ line shifts LEFT (lower activation energy)
+  • Shade or annotate the area beyond Eₐ (both lines) to show larger area with catalyst
+
+For LOWER PRESSURE:
+  • Fewer molecules → SMALLER area under curve
+  • Same shape (peak at same energy)
+  • &quot;All values decrease proportionally&quot;
+
+COMMON ERRORS:
+  ✗ Starting above origin
+  ✗ Making the curve cross the x-axis again (must be asymptotic)
+  ✗ Changing the curve shape for catalyst questions (curve doesn't change — only Eₐ does)
+  ✗ Shifting the peak left for higher temperature (opposite!)
+</code></pre>
+<h3 id="exam-32-le-chateliers-principle-predictions-est-25-marks-total">3.2 Le Chatelier's Principle Predictions — Est. 25 marks total</h3>
+<p>Appears in <strong>every single paper</strong> (7/7), as either MCQs or structured responses.</p>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>What Was Asked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jun 2022</td>
+<td>Q11</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Cooling darkens mixture → equilibrium shifts left → forward reaction is endothermic</td>
+</tr>
+<tr>
+<td>Jan 2023</td>
+<td>Q22(a)(i)</td>
+<td style="text-align: center;">1</td>
+<td>Excess steam → shifts equilibrium right → increases H₂ yield</td>
+</tr>
+<tr>
+<td>Jan 2023</td>
+<td>Q22(c)</td>
+<td style="text-align: center;">2</td>
+<td>Pressure advantage (higher yield/rate) + disadvantage (energy cost/expensive equipment)</td>
+</tr>
+<tr>
+<td>Jan 2023</td>
+<td>Q22(f)</td>
+<td style="text-align: center;">2</td>
+<td>Adding water removes NO₂ → equilibrium shifts right → more NO₂ yield</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td>Q14</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: FALSE statement — catalysts do NOT affect equilibrium position</td>
+</tr>
+<tr>
+<td>Oct 2023</td>
+<td>Q11(a)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Decreasing T → equilibrium shifts right (SO₂/O₂/SO₃ exothermic), but rate ↓</td>
+</tr>
+<tr>
+<td>Oct 2023</td>
+<td>Q11(b)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Increasing P → equilibrium shifts right (3 → 2 mol gas), rate ↑</td>
+</tr>
+<tr>
+<td>Oct 2023</td>
+<td>Q12</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: NaOH removes H⁺ → chromate-dichromate shifts left → more yellow CrO₄²⁻</td>
+</tr>
+<tr>
+<td>Oct 2023</td>
+<td>Q20(c)</td>
+<td style="text-align: center;">3</td>
+<td>CO₂ increase → H₂CO₃ equilibrium shifts right → [H⁺] increases → acidity ↑</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td>Q24(b)(ii)</td>
+<td style="text-align: center;">3</td>
+<td>Acid added to bleach: Eq.1 shifts left (HClO forms) → Eq.2 shifts right (Cl₂ released)</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Q19(c)(i)</td>
+<td style="text-align: center;">2</td>
+<td>Exothermic → lower T favoured but rate too slow → temperature compromise</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Q19(c)(ii)</td>
+<td style="text-align: center;">2</td>
+<td>&gt;7 MPa → fewer gas molecules on product side → higher yield</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td>Q2(a)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Endothermic forward → lower T → rate ↓, yield ↓</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td>Q2(b)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: More gas moles on product side → increasing P favours reactants → yield ↓</td>
+</tr>
+<tr>
+<td>Oct 2024</td>
+<td>Q19(b)(ii)</td>
+<td style="text-align: center;">2</td>
+<td>NaOH removes H⁺ from Cl₂ + H₂O → equilibrium shifts right</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Full-Mark Answer Pattern: Le Chatelier Explanation (2–3 marks)</strong></p>
+<pre><code>TWO-MARK STRUCTURE:
+  1. IDENTIFY the change (e.g. &quot;increasing temperature&quot;)
+  2. STATE the shift (e.g. &quot;equilibrium shifts to the LEFT/RIGHT&quot;)
+  3. LINK to the effect (e.g. &quot;yield of product INCREASES/DECREASES&quot;)
+  4. (Optional) Give the OPPOSING effect on rate
+
+THREE-MARK STRUCTURE (requires cause + reasoning):
+  1. State the change
+  2. State which direction is favoured and WHY (exothermic/endothermic, or gas moles)
+  3. State the consequence for yield
+
+TEMPERATURE:
+  ↑T → favours ENDOTHERMIC direction → shifts away from heat
+  ↓T → favours EXOTHERMIC direction → shifts toward heat
+
+PRESSURE:
+  ↑P → favours side with FEWER gas molecules
+  ↓P → favours side with MORE gas molecules
+
+CONCENTRATION:
+  Adding reactant → shifts RIGHT (toward products)
+  Removing product → shifts RIGHT (toward products)
+  Adding product → shifts LEFT (toward reactants)
+</code></pre>
+<h3 id="exam-33-reaction-profile-diagrams-est-6-marks-total">3.3 Reaction Profile Diagrams — Est. 6 marks total</h3>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>What Was Asked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jan 2023</td>
+<td>Q22(d)(i)</td>
+<td style="text-align: center;">3</td>
+<td>Draw uncatalysed + catalysed profiles with quantitative Eₐ labels (70 vs 290 kJ mol⁻¹)</td>
+</tr>
+<tr>
+<td>Jan 2023</td>
+<td>Q22(d)(ii)</td>
+<td style="text-align: center;">1</td>
+<td>Catalyst sustainability advantage: less energy needed / lower temperature</td>
+</tr>
+</tbody>
+</table>
+<!-- NOTE (R945): Jun 2024 Q1 (enthalpy level diagram) was previously listed here but is a ch2.6 Energetics question, not ch2.8. Removed. -->
+
+<p><strong>Full-Mark Answer Pattern: Reaction Profile (3–4 marks)</strong></p>
+<pre><code>REQUIREMENTS:
+1. Y-axis: &quot;enthalpy&quot; (NOT &quot;energy&quot; or &quot;ΔH&quot;)
+2. X-axis: &quot;reaction progress&quot; or &quot;extent of reaction&quot;
+3. Uncatalysed curve: higher peak (higher Eₐ)
+4. Catalysed curve: lower peak (lower Eₐ)
+5. Both curves start and end at same energy (ΔH is the same)
+6. Label Eₐ(catalyst) &lt; Eₐ(uncatalyst) if values given
+7. ΔH arrow between reactant and product levels (if exothermic, products lower)
+</code></pre>
+<h3 id="exam-34-rate-from-graphs-est-5-marks-total">3.4 Rate from Graphs — Est. 5 marks total</h3>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>What Was Asked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jun 2022</td>
+<td>Q15(b)(ii)</td>
+<td style="text-align: center;">3</td>
+<td>Draw tangent at t = 0 on CO₂ volume–time graph; calculate gradient = ~0.28 cm³ s⁻¹</td>
+</tr>
+<tr>
+<td>Jun 2022</td>
+<td>Q15(b)(iii)</td>
+<td style="text-align: center;">1</td>
+<td>Halving [HCl] halves initial rate AND halves final volume</td>
+</tr>
+<tr>
+<td>Jun 2023</td>
+<td>Q15</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Rate from gradient of tangent at point X on gas volume–time graph</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="exam-4-common-errors-and-misconceptions">4. Common Errors and Misconceptions</h2>
+<h3 id="exam-41-catalyst-misconceptions-tested-in-47-papers">4.1 Catalyst Misconceptions (Tested in 4/7 Papers!)</h3>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th>Misconception Tested</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jun 2022</td>
+<td>Q10(a)</td>
+<td>Catalyst does NOT increase average kinetic energy — only temperature does</td>
+</tr>
+<tr>
+<td>Jan 2023</td>
+<td>Q22(d)(ii)</td>
+<td>Sustainability advantage is "less energy needed", NOT "catalyst is reused" or "lowers Ea"</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td>Q14</td>
+<td>Catalyst does NOT affect position of equilibrium — only rate</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Q15(c)</td>
+<td>Catalyst only changes Eₐ — distribution curve is UNCHANGED</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Must memorise:</strong></p>
+<pre><code>What a catalyst DOES:
+  ✓ Provides alternative reaction pathway
+  ✓ Lowers activation energy
+  ✓ Increases rate of both forward AND backward reactions equally
+  ✓ Does NOT get used up
+  ✓ Can be recycled/reused
+
+What a catalyst does NOT do:
+  ✗ Change the position of equilibrium
+  ✗ Change the equilibrium constant
+  ✗ Change the yield of product
+  ✗ Change the average kinetic energy of molecules
+  ✗ Change the Maxwell-Boltzmann distribution curve shape
+  ✗ Change ΔH of the reaction
+</code></pre>
+<h3 id="exam-42-activation-energy-misconceptions">4.2 Activation Energy Misconceptions</h3>
+<table>
+<thead>
+<tr>
+<th>Paper</th>
+<th>Q</th>
+<th>Misconception</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jan 2024</td>
+<td>Q13</td>
+<td>Activation energy does NOT change with temperature — more particles simply HAVE enough energy</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Q15(a)</td>
+<td>Higher T changes E_mode and E_mean but NOT Eₐ</td>
+</tr>
+<tr>
+<td>Jun 2024</td>
+<td>Q15(c)</td>
+<td>Catalyst changes ONLY Eₐ — nothing else on the distribution changes</td>
+</tr>
+<tr>
+<td>Jan 2024</td>
+<td>Q13</td>
+<td>"Kinetic energy increases" alone is insufficient — must say "more particles have E ≥ Eₐ"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Critical distinction:</strong></p>
+<pre><code>TEMPERATURE increases → distribution CHANGES → Eₐ stays same → MORE particles exceed Eₐ
+CATALYST added         → distribution UNCHANGED → Eₐ DECREASES → MORE particles exceed Eₐ
+
+Both increase rate, but by DIFFERENT MECHANISMS
+</code></pre>
+<h3 id="exam-43-le-chatelier-common-errors">4.3 Le Chatelier Common Errors</h3>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Paper</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Equilibrium shifts to completion"</td>
+<td>Jan 2023 Q22(a)(i)</td>
+<td>Equilibrium shifts but NEVER goes to completion</td>
+</tr>
+<tr>
+<td>Mixing up rate vs yield</td>
+<td>All papers</td>
+<td>Higher T often increases rate BUT decreases yield (for exothermic)</td>
+</tr>
+<tr>
+<td>Forgetting endothermic/exothermic direction</td>
+<td>Oct 2024 Q2(a)</td>
+<td>Must identify which direction is endothermic FIRST</td>
+</tr>
+<tr>
+<td>Wrong gas mole counting</td>
+<td>Jun 2024 Q19(c)(ii), Oct 2024 Q2(b)</td>
+<td>Count TOTAL gas molecules on each side, not just different types</td>
+</tr>
+<tr>
+<td>Not stating OPPOSING effects</td>
+<td>Jan 2023 Q22(c)</td>
+<td>Temperature compromise: low T favoured but rate too slow</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exam-44-maxwell-boltzmann-sketching-errors">4.4 Maxwell-Boltzmann Sketching Errors</h3>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Paper</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Curve doesn't start at origin</td>
+<td>Jun 2023 Q21(a)(i)</td>
+<td>ALWAYS starts at origin (no molecule has zero energy)</td>
+</tr>
+<tr>
+<td>Curve crosses x-axis again</td>
+<td>All</td>
+<td>Must be asymptotic — never touches x-axis on right side</td>
+</tr>
+<tr>
+<td>Wrong peak direction for higher T</td>
+<td>Multiple</td>
+<td>Higher T = peak shifts RIGHT (higher energy), NOT left</td>
+</tr>
+<tr>
+<td>Changing distribution for catalyst</td>
+<td>Jun 2024 Q15(c), Oct 2024 Q1(b)</td>
+<td>Catalyst does NOT change the distribution — only lowers Eₐ line</td>
+</tr>
+<tr>
+<td>Shading wrong area</td>
+<td>Jan 2024 Q24(d)</td>
+<td>Shade area BEYOND Eₐ line (above activation energy), not below</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="exam-5-industrial-context-questions-predictable-pattern">5. Industrial Context Questions (Predictable Pattern)</h2>
+<h3 id="exam-where-ch28-marks-spike">Where ch2.8 Marks Spike</h3>
+<table>
+<thead>
+<tr>
+<th>Industrial Process</th>
+<th>Papers</th>
+<th style="text-align: center;">Total Marks</th>
+<th>Topics Tested</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Haber process</strong></td>
+<td>Jan 2023 Q22</td>
+<td style="text-align: center;">~8</td>
+<td>Le Chatelier (T, P), reaction profile, catalyst, yield vs rate compromise</td>
+</tr>
+<tr>
+<td><strong>Ethene hydration</strong></td>
+<td>Jun 2024 Q19</td>
+<td style="text-align: center;">11</td>
+<td>Catalyst (H₃PO₄), T compromise, P compromise, recycling, by-product</td>
+</tr>
+<tr>
+<td><strong>Bleach/chlorine equilibrium</strong></td>
+<td>Jan 2024 Q24, Jun 2023 Q22</td>
+<td style="text-align: center;">5</td>
+<td>Multiple equilibria linked, Le Chatelier chain, disproportionation</td>
+</tr>
+<tr>
+<td><strong>Contact process (SO₂/SO₃)</strong></td>
+<td>Oct 2023 Q11</td>
+<td style="text-align: center;">3</td>
+<td>Le Chatelier T and P (MCQ)</td>
+</tr>
+<tr>
+<td><strong>Ethanol from ethene</strong></td>
+<td>Jun 2022 Q18</td>
+<td style="text-align: center;">2</td>
+<td>Pressure effect on equilibrium</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exam-pattern-to-expect">Pattern to Expect</h3>
+<pre><code>When Section C uses an industrial process context:
+  1. Le Chatelier temperature effect (1–2 marks)
+  2. Le Chatelier pressure effect (1–2 marks)
+  3. Temperature/YIELD vs RATE compromise (2–3 marks)
+  4. Catalyst identification and/or advantage (1–2 marks)
+  5. Possibly: reaction profile diagram (3 marks)
+  6. Possibly: Maxwell-Boltzmann with catalyst (2–4 marks)
+  7. Possibly: recycling / sustainability advantage (1–2 marks)
+</code></pre>
+<hr>
+<h2 id="exam-6-revision-priority-ranking">6. Revision Priority Ranking</h2>
+<p>Based on frequency × marks across 7 papers:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Rank</th>
+<th>Topic</th>
+<th style="text-align: center;">Est. Total Marks</th>
+<th style="text-align: center;">Frequency</th>
+<th style="text-align: center;">Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td><strong>Le Chatelier's principle (T, P, concentration effects)</strong></td>
+<td style="text-align: center;">~25</td>
+<td style="text-align: center;">7/7 papers</td>
+<td style="text-align: center;">🔴 <strong>MASTER</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><strong>Maxwell-Boltzmann distribution sketches</strong></td>
+<td style="text-align: center;">~12</td>
+<td style="text-align: center;">6/7 papers</td>
+<td style="text-align: center;">🔴 <strong>MASTER</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td><strong>Catalyst effects (lowers Eₐ, doesn't shift equilibrium)</strong></td>
+<td style="text-align: center;">~8</td>
+<td style="text-align: center;">7/7 papers</td>
+<td style="text-align: center;">🔴 <strong>MASTER</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td><strong>Temperature/YIELD vs RATE compromise</strong></td>
+<td style="text-align: center;">~6</td>
+<td style="text-align: center;">4/7 papers</td>
+<td style="text-align: center;">🟡 <strong>KNOW</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td><strong>Reaction profile diagrams (uncatalysed vs catalysed)</strong></td>
+<td style="text-align: center;">~4</td>
+<td style="text-align: center;">1/7 papers</td>
+<td style="text-align: center;">🟢 <strong>REVIEW</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td><strong>Rate from graph (tangent)</strong></td>
+<td style="text-align: center;">~5</td>
+<td style="text-align: center;">2/7 papers</td>
+<td style="text-align: center;">🟡 <strong>KNOW</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td><strong>Equilibrium constant (Kc) concepts</strong></td>
+<td style="text-align: center;">~0</td>
+<td style="text-align: center;">0/7 papers</td>
+<td style="text-align: center;">⚪ <strong>NOT IN UNIT 2</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="exam-7-quick-reference-what-changes-vs-what-stays-the-same">7. Quick-Reference: What Changes vs What Stays the Same</h2>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th style="text-align: center;">Eₐ</th>
+<th style="text-align: center;">Distribution Curve</th>
+<th style="text-align: center;">Eₐ line position</th>
+<th style="text-align: center;">Equilibrium Position</th>
+<th style="text-align: center;">Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Higher T</strong></td>
+<td style="text-align: center;">Same</td>
+<td style="text-align: center;">Shifts right, lower peak</td>
+<td style="text-align: center;">Same</td>
+<td style="text-align: center;">Depends (favours endo)</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td><strong>Lower T</strong></td>
+<td style="text-align: center;">Same</td>
+<td style="text-align: center;">Shifts left, taller peak</td>
+<td style="text-align: center;">Same</td>
+<td style="text-align: center;">Depends (favours exo)</td>
+<td style="text-align: center;">↓</td>
+</tr>
+<tr>
+<td><strong>Catalyst</strong></td>
+<td style="text-align: center;">↓</td>
+<td style="text-align: center;">UNCHANGED</td>
+<td style="text-align: center;">Shifts LEFT</td>
+<td style="text-align: center;">NO CHANGE</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td><strong>Higher P</strong></td>
+<td style="text-align: center;">Same</td>
+<td style="text-align: center;">Same shape (more molecules per unit volume)</td>
+<td style="text-align: center;">Same</td>
+<td style="text-align: center;">Favours fewer gas moles</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td><strong>Higher [reactant]</strong></td>
+<td style="text-align: center;">Same</td>
+<td style="text-align: center;">Same</td>
+<td style="text-align: center;">Same</td>
+<td style="text-align: center;">Shifts RIGHT</td>
+<td style="text-align: center;">↑</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="exam-8-predictions-for-future-papers">8. Predictions for Future Papers</h2>
+<ol>
+<li><strong>Expect 8–14 marks</strong> — ch2.8 is consistently the smallest chapter but NEVER absent</li>
+<li><strong>MCQs are reliable:</strong> 2–4 MCQ marks on Maxwell-Boltzmann and/or Le Chatelier</li>
+<li><strong>If Section C is industrial:</strong> expect 8–12 embedded marks (Le Chatelier, catalyst, compromise)</li>
+<li><strong>If Section C is organic:</strong> expect only MCQ marks (4–6 total)</li>
+<li><strong>MUST know the catalyst misconception cold</strong> — tested in 4/7 papers, including as a FALSE statement MCQ</li>
+<li><strong>Maxwell-Boltzmann sketches</strong> are almost certain; practice higher T, lower P, and catalyst variations</li>
+<li><strong>Le Chatelier explanations</strong> always require a chain: change → direction of shift → reason → consequence</li>
+</ol>
+<hr>
+<h2 id="exam-9-detailed-question-by-question-reference-all-7-papers">9. Detailed Question-by-Question Reference: All 7 Papers</h2>
+<h3 id="exam-jun-2022-8-marks">Jun 2022 — 8 marks</h3>
+<table>
+<thead>
+<tr>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Topic</th>
+<th>Key Point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q10(a)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Catalyst</td>
+<td>Decreases activation energy, NOT average kinetic energy (D)</td>
+</tr>
+<tr>
+<td>Q11</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Equilibrium</td>
+<td>Cooling darkens → shifts left → forward is endothermic (A)</td>
+</tr>
+<tr>
+<td>Q15(b)(ii)</td>
+<td style="text-align: center;">3</td>
+<td>Rate from graph</td>
+<td>Tangent at t=0 on CO₂ volume–time graph; gradient ≈ 0.28 cm³ s⁻¹</td>
+</tr>
+<tr>
+<td>Q15(b)(iii)</td>
+<td style="text-align: center;">1</td>
+<td>Effect of conc.</td>
+<td>Halving [HCl] halves both rate and final CO₂ volume</td>
+</tr>
+<tr>
+<td>Q18(d)</td>
+<td style="text-align: center;">2</td>
+<td>Le Chatelier</td>
+<td>↑P: 2 mol → 1 mol gas → shifts right → ethanol yield ↑</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exam-jan-2023-14-marks-highest-section-c-haberostwald">Jan 2023 — 14 marks (highest — Section C = Haber/Ostwald)</h3>
+<table>
+<thead>
+<tr>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Topic</th>
+<th>Key Point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q17(a)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: M-B origin</td>
+<td>Starts at origin because no molecule has zero energy (B)</td>
+</tr>
+<tr>
+<td>Q17(b)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: M-B + cooling</td>
+<td>Fewer molecules + cooling → smaller area, peak shifts left (B)</td>
+</tr>
+<tr>
+<td>Q22(a)(i)</td>
+<td style="text-align: center;">1</td>
+<td>Le Chatelier</td>
+<td>Excess steam → equilibrium shifts right → H₂ yield ↑</td>
+</tr>
+<tr>
+<td>Q22(c)</td>
+<td style="text-align: center;">2</td>
+<td>Le Chatelier</td>
+<td>Pressure advantage (higher yield/rate) + disadvantage (energy cost)</td>
+</tr>
+<tr>
+<td>Q22(d)(i)</td>
+<td style="text-align: center;">3</td>
+<td>Reaction profile</td>
+<td>Draw uncatalysed + catalysed profiles; Eₐ values 70 vs 290 kJ mol⁻¹</td>
+</tr>
+<tr>
+<td>Q22(d)(ii)</td>
+<td style="text-align: center;">1</td>
+<td>Catalyst sustain.</td>
+<td>Less energy needed / lower temperature / less fuel</td>
+</tr>
+<tr>
+<td>Q22(e)(i)</td>
+<td style="text-align: center;">1</td>
+<td>Rate &amp; T</td>
+<td>High T → increase rate (more molecules E ≥ Eₐ)</td>
+</tr>
+<tr>
+<td>Q22(f)</td>
+<td style="text-align: center;">2</td>
+<td>Le Chatelier</td>
+<td>Adding water removes NO₂ → shifts right → NO₂ yield ↑</td>
+</tr>
+<tr>
+<td>Q22(h)</td>
+<td style="text-align: center;">2</td>
+<td>Industrial</td>
+<td>Same-site advantages: cheaper transport, waste reduction, energy from exothermic steps</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exam-jun-2023-9-marks">Jun 2023 — 9 marks</h3>
+<table>
+<thead>
+<tr>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Topic</th>
+<th>Key Point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q14</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Catalyst ID</td>
+<td>Cu²⁺ reduces time 205→75 s; Pb²⁺ is poison/inhibitor (A)</td>
+</tr>
+<tr>
+<td>Q15</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Rate from graph</td>
+<td>Gradient of tangent at point X on volume–time graph (A)</td>
+</tr>
+<tr>
+<td>Q21(a)(i)</td>
+<td style="text-align: center;">1</td>
+<td>M-B sketch</td>
+<td>Higher T: starts at origin, lower peak, shifted right, same asymptote</td>
+</tr>
+<tr>
+<td>Q21(a)(ii)</td>
+<td style="text-align: center;">2</td>
+<td>M-B explain</td>
+<td>Higher T → more above Eₐ; Catalyst lowers E₃ → more above Eₐ</td>
+</tr>
+<tr>
+<td>Q21(b)</td>
+<td style="text-align: center;">2</td>
+<td>Industrial</td>
+<td>H₂ useful by-product (advantage); higher energy costs (disadvantage)</td>
+</tr>
+<tr>
+<td>Q22(d)</td>
+<td style="text-align: center;">2</td>
+<td>Le Chatelier</td>
+<td>Mixing adds H⁺ → Cl₂ equilibrium shifts left → toxic Cl₂ released</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exam-oct-2023-9-marks">Oct 2023 — 9 marks</h3>
+<table>
+<thead>
+<tr>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Topic</th>
+<th>Key Point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q11(a)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Le Chatelier T</td>
+<td>Decreasing T: SO₂/O₂/SO₃ exothermic → shifts right (yield ↑), rate ↓ (D)</td>
+</tr>
+<tr>
+<td>Q11(b)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Le Chatelier P</td>
+<td>Increasing P: 3→2 mol gas → shifts right (yield ↑), rate ↑ (B)</td>
+</tr>
+<tr>
+<td>Q12</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Equilibrium</td>
+<td>NaOH removes H⁺ → chromate shifts left → more yellow CrO₄²⁻ (C)</td>
+</tr>
+<tr>
+<td>Q20(c)</td>
+<td style="text-align: center;">3</td>
+<td>Equilibrium</td>
+<td>CO₂ ↑ → H₂CO₃ equilibrium shifts right → [H⁺] ↑ → acidity ↑</td>
+</tr>
+<tr>
+<td>Q21(b)(i)</td>
+<td style="text-align: center;">3</td>
+<td>M-B + catalyst</td>
+<td>Alternative pathway, lower Eₐ, greater proportion above Eₐ</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exam-jan-2024-10-marks">Jan 2024 — 10 marks</h3>
+<table>
+<thead>
+<tr>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Topic</th>
+<th>Key Point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q13</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: T &amp; rate</td>
+<td>More particles have E ≥ Eₐ (NOT: Eₐ changes or just "KE increases") (D)</td>
+</tr>
+<tr>
+<td>Q14</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: FALSE statement</td>
+<td>Catalysts do NOT affect equilibrium position (A)</td>
+</tr>
+<tr>
+<td>Q24(b)(i)</td>
+<td style="text-align: center;">1</td>
+<td>Equilibrium</td>
+<td>ClO⁻ dominant at pH 12 (HClO pKa ≈ 7.5, ClO⁻ predominates)</td>
+</tr>
+<tr>
+<td>Q24(b)(ii)</td>
+<td style="text-align: center;">3</td>
+<td>Le Chatelier</td>
+<td>Acid → Eq.1 shifts left (HClO forms) → Eq.2 shifts right (Cl₂ released)</td>
+</tr>
+<tr>
+<td>Q24(d)</td>
+<td style="text-align: center;">4</td>
+<td>M-B + catalyst</td>
+<td>Draw full diagram: axes, curve, Eₐ lowered by catalyst, annotate more particles above Eₐ</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exam-jun-2024-14-marks">Jun 2024 — 14 marks</h3>
+<table>
+<thead>
+<tr>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Topic</th>
+<th>Key Point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q15(a)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: M-B + T</td>
+<td>Higher T: E_mode and E_mean change; Eₐ stays same (C)</td>
+</tr>
+<tr>
+<td>Q15(b)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: M-B + P</td>
+<td>Lower P: particles at ALL energy values decrease (D)</td>
+</tr>
+<tr>
+<td>Q15(c)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: M-B + catalyst</td>
+<td>Only Eₐ changes (decreases); distribution unchanged (A)</td>
+</tr>
+<tr>
+<td>Q19(a)</td>
+<td style="text-align: center;">1</td>
+<td>Catalyst ID</td>
+<td>H₃PO₄ (or H₂SO₄) for ethene hydration</td>
+</tr>
+<tr>
+<td>Q19(b)</td>
+<td style="text-align: center;">2</td>
+<td>Industrial yield</td>
+<td>Ethanol condensed + unreacted ethene recycled → 95% yield</td>
+</tr>
+<tr>
+<td>Q19(c)(i)</td>
+<td style="text-align: center;">2</td>
+<td>T compromise</td>
+<td>Exothermic → lower T favoured but rate too slow</td>
+</tr>
+<tr>
+<td>Q19(c)(ii)</td>
+<td style="text-align: center;">2</td>
+<td>P effect</td>
+<td>&gt;7 MPa → fewer gas moles on product side → higher yield</td>
+</tr>
+<tr>
+<td>Q19(c)(iii)</td>
+<td style="text-align: center;">1</td>
+<td>By-product</td>
+<td>Waxy solid = poly(ethene) at high P</td>
+</tr>
+<tr>
+<td>Q19(c)(iv)</td>
+<td style="text-align: center;">1</td>
+<td>P limit</td>
+<td>&gt;7 MPa requires expensive plant/equipment</td>
+</tr>
+<tr>
+<td>Q19(c)(v)</td>
+<td style="text-align: center;">2</td>
+<td>Excess water</td>
+<td>Advantage: pushes equilibrium right; Disadvantage: more to separate</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exam-oct-2024-6-marks-lowest">Oct 2024 — 6 marks (lowest)</h3>
+<table>
+<thead>
+<tr>
+<th>Q</th>
+<th style="text-align: center;">Marks</th>
+<th>Topic</th>
+<th>Key Point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1(a)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: M-B + T</td>
+<td>Higher T → peak becomes lower and further right (C)</td>
+</tr>
+<tr>
+<td>Q1(b)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: M-B + catalyst</td>
+<td>Eₐ moves left, peak stays same (C)</td>
+</tr>
+<tr>
+<td>Q2(a)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Le Chatelier T</td>
+<td>Endothermic forward → lower T → rate ↓, yield ↓ (D)</td>
+</tr>
+<tr>
+<td>Q2(b)</td>
+<td style="text-align: center;">1</td>
+<td>MCQ: Le Chatelier P</td>
+<td>More gas on product side → ↑P favours reactants → yield ↓ (B)</td>
+</tr>
+<tr>
+<td>Q19(b)(ii)</td>
+<td style="text-align: center;">2</td>
+<td>Le Chatelier</td>
+<td>NaOH removes H⁺ from Cl₂ + H₂O → equilibrium shifts right</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="exam-10-what-you-do-not-need-for-unit-2">10. What You Do NOT Need for Unit 2</h2>
+<ul>
+<li><strong>Kc equilibrium constant calculations</strong> — not in spec points 9.1–9.11</li>
+<li><strong>Rate equations / rate-determining step</strong> — not in Unit 2 (Unit 4 / WCH14)</li>
+<li><strong>Activation energy calculations from Arrhenius equation</strong> — not in Unit 2</li>
+<li><strong>Kp (gas equilibrium constant)</strong> — not in Unit 2</li>
+<li><strong>Half-life concepts</strong> — not in Unit 2</li>
+</ul>
+<hr>
+<h2 id="exam-11-checklist-am-i-exam-ready-for-ch28">11. Checklist: Am I Exam-Ready for ch2.8?</h2>
+<pre><code>□ Can I sketch a Maxwell-Boltzmann distribution with correct axes and shape?
+□ Can I modify the sketch correctly for higher T (broader, lower peak, shifted right)?
+□ Can I modify the sketch correctly for a catalyst (curve unchanged, Eₐ line shifts left)?
+□ Can I modify the sketch correctly for lower P (smaller area, same shape)?
+□ Can I explain Le Chatelier for temperature changes (with endo/exo direction)?
+□ Can I explain Le Chatelier for pressure changes (count gas moles)?
+□ Can I explain Le Chatelier for concentration changes?
+□ Do I know that catalysts do NOT change equilibrium position or yield?
+□ Do I know that activation energy does NOT change with temperature?
+□ Can I draw a reaction profile with uncatalysed and catalysed pathways?
+□ Can I explain the temperature/yield vs rate compromise in industrial processes?
+□ Can I calculate a rate from the gradient of a tangent on a concentration–time graph?
+□ Do I know that rate = 1/time is only valid for initial rate comparisons?
+</code></pre>
+<hr>
+<p><em>Generated from 7-paper analysis: Jun 2022 – Oct 2024. All specific paper references, mark allocations, and mark scheme requirements are sourced from actual WCH12 question papers and mark schemes.</em></p>
+</section>
+<footer>
+<p>Ch 2.8 Kinetics &amp; Equilibria Study Guide &middot; WCH12 IAL Chemistry &middot; 7 papers (Jun 2022 – Oct 2024)</p>
+</footer>
+</main>
+<script>
+(function(){
+  var saved=localStorage.getItem('wch12-theme');
+  if(saved==='dark')document.documentElement.setAttribute('data-theme','dark');
+  updateBtn();
+})();
+function toggleDark(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  if(isDark){document.documentElement.removeAttribute('data-theme');localStorage.setItem('wch12-theme','light')}
+  else{document.documentElement.setAttribute('data-theme','dark');localStorage.setItem('wch12-theme','dark')}
+  updateBtn();
+}
+function updateBtn(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  var b=document.getElementById('darkBtn');
+  if(b)b.textContent=isDark?'\u2600\ufe0f Light':'\ud83c\udf19 Dark';
+}
+function toggleSidebar(){
+  var sb=document.getElementById('sidebar'),ov=document.getElementById('overlay');
+  sb.classList.toggle('open');ov.classList.toggle('open');
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    var sb=document.getElementById('sidebar');
+    if(sb&&sb.classList.contains('open'))toggleSidebar();
+  }
+});
+function toggleProgress(qid,cb){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  if(cb.checked)saved[qid]=1;else delete saved[qid];
+  localStorage.setItem(key,JSON.stringify(saved));
+  updateProgBar();
+}
+function updateProgBar(){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  var total=document.querySelectorAll('.prog-table input[type="checkbox"]').length;
+  var done=Object.keys(saved).length;
+  var bar=document.getElementById('progFill');
+  if(bar&&total>0)bar.style.width=Math.round(done*100/total)+'%';
+  var txt=document.getElementById('progText');
+  if(txt)txt.textContent=done+' / '+total+' questions completed';
+}
+(function(){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  document.querySelectorAll('.prog-table input[type="checkbox"]').forEach(function(cb){
+    cb.checked=!!saved[cb.dataset.qid];
+    cb.addEventListener('change',function(){toggleProgress(cb.dataset.qid,cb)});
+  });
+  updateProgBar();
+})();
+</script>
+
+</body>
+</html>

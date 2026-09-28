@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>U2 Memorization Guide | WCH12 IAL Chemistry</title>
+<style>
+:root{--bg:#fafcfe;--surface:#fff;--text:#1e293b;--heading:#0f4c75;--heading2:#1b6ca8;--accent:#3b82f6;--accent2:#10b981;--border:#e2e8f0;--muted:#64748b;--tip-bg:#eff6ff;--tip-border:#bfdbfe;--warn-bg:#fefce8;--warn-border:#fde68a;--worked-bg:#f0fdf4;--worked-border:#bbf7d0;--sidebar-bg:#fff;--sidebar-shadow:0 4px 24px rgba(0,0,0,.1);--code-bg:#f1f5f9;--tbl-head:#eef2f7;--tbl-alt:#f8fafc}
+[data-theme="dark"]{--bg:#0f172a;--surface:#1e293b;--text:#e2e8f0;--heading:#93c5fd;--heading2:#7dd3fc;--accent:#60a5fa;--accent2:#34d399;--border:#334155;--muted:#94a3b8;--tip-bg:#1e3a5f;--tip-border:#2563eb;--warn-bg:#422006;--warn-border:#a16207;--worked-bg:#052e16;--worked-border:#16a34a;--sidebar-bg:#1e293b;--sidebar-shadow:0 4px 24px rgba(0,0,0,.4);--code-bg:#0f172a;--tbl-head:#1e3a5f;--tbl-alt:#162032}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding-top:52px}
+@media(max-width:480px){body{font-size:15px;padding-top:48px}}
+header{position:fixed;top:0;left:0;right:0;height:52px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;z-index:1000;padding:0 16px;gap:12px}
+#menuBtn{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text);padding:4px 8px;border-radius:6px;line-height:1}
+#menuBtn:hover{background:var(--code-bg)}
+#headerTitle{font-weight:700;font-size:.95rem;color:var(--heading);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+#darkBtn{margin-left:auto;background:none;border:1px solid var(--border);border-radius:6px;cursor:pointer;padding:4px 10px;font-size:.8rem;color:var(--text);white-space:nowrap}
+#darkBtn:hover{background:var(--code-bg)}
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:1100;display:none}
+#overlay.open{display:block}
+#sidebar{position:fixed;top:0;left:-340px;width:320px;max-width:85vw;height:100vh;background:var(--sidebar-bg);box-shadow:var(--sidebar-shadow);z-index:1200;overflow-y:auto;padding:16px 0;transition:left .25s ease}
+#sidebar.open{left:0}
+#sidebar .sb-head{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;border-bottom:1px solid var(--border);margin-bottom:8px}
+#sidebar .sb-head span{font-weight:700;color:var(--heading);font-size:.95rem}
+#sidebar .sb-close{background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text);padding:4px;line-height:1}
+#sidebar nav{padding:0 12px}
+#sidebar nav ul{list-style:none;padding:0;margin:0}
+#sidebar nav li{margin-bottom:2px}
+#sidebar nav a{display:block;padding:6px 10px;border-radius:6px;font-size:.82rem;color:var(--text);text-decoration:none;transition:background .15s;line-height:1.4}
+#sidebar nav a:hover{background:var(--code-bg)}
+#sidebar nav a.chapter{font-weight:700;color:var(--heading);font-size:.9rem;margin-top:10px;padding:8px 10px;border-radius:6px}
+#sidebar nav a.sub{padding-left:18px;font-size:.8rem;color:var(--muted)}
+main{max-width:900px;margin:0 auto;padding:24px 20px 60px}
+@media(max-width:600px){main{padding:16px 12px 40px}}
+.cover{text-align:center;padding:48px 20px 40px;border-bottom:2px solid var(--border);margin-bottom:32px}
+.cover h1{font-size:2rem;color:var(--heading);margin-bottom:8px;line-height:1.25}
+@media(max-width:480px){.cover h1{font-size:1.5rem}}
+.cover .subtitle{font-size:1rem;color:var(--muted);margin-bottom:16px}
+.cover .meta{display:inline-flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.cover .tag{background:var(--code-bg);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:.8rem;color:var(--muted)}
+.cover .stats{margin-top:20px;font-size:1.1rem;font-weight:700;color:var(--accent)}
+.cover .stats2{font-size:.85rem;color:var(--muted);font-weight:400;margin-top:4px}
+section{margin-bottom:40px}
+section h2{color:var(--heading);font-size:1.4rem;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid var(--accent);scroll-margin-top:64px}
+section h3{color:var(--heading2);font-size:1.15rem;margin:20px 0 8px;scroll-margin-top:64px}
+section h4{color:var(--heading);font-size:1.05rem;margin:16px 0 6px;scroll-margin-top:64px}
+section h5{color:var(--heading);font-size:1rem;margin:14px 0 6px;scroll-margin-top:64px}
+section p{margin-bottom:10px}
+section strong{color:var(--heading)}
+section em{font-style:italic;color:var(--heading2)}
+section code{background:var(--code-bg);padding:1px 5px;border-radius:4px;font-size:.92em;font-family:'SF Mono',Consolas,monospace}
+section pre{background:var(--code-bg);padding:12px 16px;border-radius:8px;overflow-x:auto;margin:12px 0;font-size:.88rem;line-height:1.5}
+section pre code{background:none;padding:0;font-size:1em}
+section ul,section ol{margin:8px 0 12px 24px}
+section li{margin-bottom:4px}
+section blockquote{border-left:4px solid var(--accent);background:var(--tip-bg);padding:10px 16px;margin:12px 0;border-radius:0 6px 6px 0;color:var(--text)}
+section blockquote p{margin:0}
+.tbl-wrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+@media(max-width:600px){table{font-size:.78rem}}
+th{background:var(--tbl-head);color:var(--heading);font-weight:600;text-align:left;padding:8px 10px;border:1px solid var(--border);white-space:nowrap}
+td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+tr:nth-child(even) td{background:var(--tbl-alt)}
+hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+sub,sup{font-size:.75em}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border)}
+@media print{header,#sidebar,#overlay,#darkBtn,nav,.no-print{display:none!important}body{padding-top:0}main{max-width:100%;padding:0}*{color:#000!important;background:#fff!important;background-color:#fff!important;background-image:none!important;text-shadow:none!important;box-shadow:none!important;border-color:#666!important}a{color:#000!important;text-decoration:underline!important}section{break-inside:avoid}h2,h3,h4{break-after:avoid}@page{margin:18mm 16mm}}
+
+</style>
+</head>
+<body>
+<header>
+<button id="menuBtn" onclick="toggleSidebar()" aria-label="Toggle navigation">&#9776;</button>
+<span id="headerTitle">U2 Memorization Guide</span>
+<button id="darkBtn" onclick="toggleDark()" aria-label="Toggle dark mode">&#127769; Dark</button>
+</header>
+<div id="overlay" onclick="toggleSidebar()"></div>
+
+<aside id="sidebar">
+<div class="sb-head"><span>U2 Index</span><button class="sb-close" onclick="toggleSidebar()" aria-label="Close">&#10005;</button></div>
+<nav>
+<a href="#cover" class="chapter" onclick="toggleSidebar()">Cover</a>
+<ul>
+</ul><a href="#s-wch12-edexcel-international-a-level-chemistry-unit-2-energetics-rate-equilibrium-organic-chemistry" class="chapter" onclick="toggleSidebar()">WCH12 | Edexcel International A-Level Chemistry | Unit 2: Energetics, Rate &amp;amp; Equilibrium, Organic Chemistry</a><ul>
+</ul><a href="#s-1-energetics-ch-26" class="chapter" onclick="toggleSidebar()">1. Energetics (Ch 2.6)</a><ul>
+<li><a href="#s-formulas-equations" onclick="toggleSidebar()">Formulas &amp;amp; Equations</a></li>
+<li><a href="#s-key-definitions" onclick="toggleSidebar()">Key Definitions</a></li>
+<li><a href="#s-key-facts-constants" onclick="toggleSidebar()">Key Facts &amp;amp; Constants</a></li>
+<li><a href="#s-common-exam-pitfalls" onclick="toggleSidebar()">Common Exam Pitfalls</a></li>
+</ul><a href="#s-2-kinetics-ch-28" class="chapter" onclick="toggleSidebar()">2. Kinetics (Ch 2.8)</a><ul>
+<li><a href="#s-formulas-equations-1" onclick="toggleSidebar()">Formulas &amp;amp; Equations</a></li>
+<li><a href="#s-key-definitions-1" onclick="toggleSidebar()">Key Definitions</a></li>
+<li><a href="#s-key-facts-constants-1" onclick="toggleSidebar()">Key Facts &amp;amp; Constants</a></li>
+<li><a href="#s-common-exam-pitfalls-1" onclick="toggleSidebar()">Common Exam Pitfalls</a></li>
+</ul><a href="#s-3-equilibrium-ch-28-continued" class="chapter" onclick="toggleSidebar()">3. Equilibrium (Ch 2.8) — Continued</a><ul>
+<li><a href="#s-le-chatelier-justification-template-3-mark-structure" onclick="toggleSidebar()">Le Chatelier Justification Template (3-Mark Structure)</a></li>
+<li><a href="#s-industrial-process-equilibrium-questions" onclick="toggleSidebar()">Industrial Process Equilibrium Questions</a></li>
+<li><a href="#s-what-changes-vs-what-stays-the-same-quick-reference" onclick="toggleSidebar()">What Changes vs What Stays the Same — Quick Reference</a></li>
+</ul><a href="#s-4-physical-chemistry-imf-redox-groups-1-2-7-ch-27" class="chapter" onclick="toggleSidebar()">4. Physical Chemistry: IMF, Redox, Groups 1, 2, 7 (Ch 2.7)</a><ul>
+<li><a href="#s-formulas-equations-2" onclick="toggleSidebar()">Formulas &amp;amp; Equations</a></li>
+<li><a href="#s-key-definitions-2" onclick="toggleSidebar()">Key Definitions</a></li>
+<li><a href="#s-key-facts-constants-2" onclick="toggleSidebar()">Key Facts &amp;amp; Constants</a></li>
+<li><a href="#s-qualitative-tests-observations" onclick="toggleSidebar()">Qualitative Tests &amp;amp; Observations</a></li>
+<li><a href="#s-common-exam-pitfalls-2" onclick="toggleSidebar()">Common Exam Pitfalls</a></li>
+</ul><a href="#s-5-organic-chemistry-alcohols-haloalkanes-analysis-ch-29" class="chapter" onclick="toggleSidebar()">5. Organic Chemistry: Alcohols, Haloalkanes &amp;amp; Analysis (Ch 2.9)</a><ul>
+<li><a href="#s-formulas-equations-3" onclick="toggleSidebar()">Formulas &amp;amp; Equations</a></li>
+<li><a href="#s-key-definitions-3" onclick="toggleSidebar()">Key Definitions</a></li>
+<li><a href="#s-key-facts-constants-3" onclick="toggleSidebar()">Key Facts &amp;amp; Constants</a></li>
+<li><a href="#s-sn2-mechanism-marking-points-checklist-68-points-for-34-marks" onclick="toggleSidebar()">SN2 Mechanism Marking Points Checklist (6–8 points for 3–4 marks)</a></li>
+<li><a href="#s-aqueous-vs-ethanolic-the-critical-distinction" onclick="toggleSidebar()">Aqueous vs Ethanolic — The Critical Distinction</a></li>
+<li><a href="#s-alcohol-identification-quick-decision" onclick="toggleSidebar()">Alcohol Identification — Quick Decision</a></li>
+<li><a href="#s-common-exam-pitfalls-3" onclick="toggleSidebar()">Common Exam Pitfalls</a></li>
+<li><a href="#s-quick-reference-functional-group-identification" onclick="toggleSidebar()">Quick Reference: Functional Group Identification</a></li>
+<li><a href="#s-ez-isomerism-from-elimination" onclick="toggleSidebar()">E/Z Isomerism from Elimination</a></li>
+<li><a href="#s-core-practicals" onclick="toggleSidebar()">Core Practicals</a></li>
+</ul><a href="#s-mark-scheme-carry-forward-rules" class="chapter" onclick="toggleSidebar()">Mark Scheme Carry-Forward Rules</a><ul>
+</ul><a href="#s-exam-strategy-what-changes-vs-what-stays-the-same" class="chapter" onclick="toggleSidebar()">Exam Strategy: What Changes vs What Stays the Same</a><ul>
+</ul>
+</nav>
+</aside>
+<main>
+<section class="cover" id="cover">
+<h1>U2 — Memorization Guide</h1>
+<p class="subtitle">WCH12 &middot; Edexcel International A-Level Chemistry</p>
+<p class="subtitle">Energetics, Rate, Equilibrium &amp; Organic Chemistry</p>
+<div class="meta">
+<span class="tag">Ch 2.6–2.9</span>
+<span class="tag">Formulas, Definitions, Facts &amp; Pitfalls</span>
+</div>
+</section>
+<section id="content">
+<h2 id="s-wch12-edexcel-international-a-level-chemistry-unit-2-energetics-rate-equilibrium-organic-chemistry">WCH12 | Edexcel International A-Level Chemistry | Unit 2: Energetics, Rate &amp; Equilibrium, Organic Chemistry</h2>
+<hr>
+<h2 id="s-1-energetics-ch-26">1. Energetics (Ch 2.6)</h2>
+<h3 id="s-formulas-equations">Formulas &amp; Equations</h3>
+<p><strong>Heat energy transferred:</strong>
+<code>q = m × c × ΔT</code>
+- <strong>q</strong> = heat energy transferred (J)
+- <strong>m</strong> = mass of SOLUTION being heated (g) — NOT the mass of the reactant/fuel
+- <strong>c</strong> = specific heat capacity (J g⁻¹ °C⁻¹); water = <strong>4.18 J g⁻¹ °C⁻¹</strong>
+- <strong>ΔT</strong> = temperature change (°C)
+- Use for calorimetry, combustion, neutralisation experiments</p>
+<p><strong>Enthalpy change per mole:</strong>
+<code>ΔH = −q / n</code> (exothermic = negative; drop negative for endothermic)
+- <strong>n</strong> = moles of limiting reactant (combustion: moles of fuel; neutralisation: moles of H₂O formed)
+- Final answer in <strong>kJ mol⁻¹</strong>, 2–3 SF</p>
+<p><strong>Hess's Law — Formation method:</strong>
+<code>ΔHr = ΣΔHf(products) − ΣΔHf(reactants)</code></p>
+<p><strong>Hess's Law — Combustion method:</strong>
+<code>ΔHr = ΣΔHc(reactants) − ΣΔHc(products)</code> ← NOTE: reversed vs formation</p>
+<p><strong>Bond enthalpy calculation:</strong>
+<code>ΔH = Σ(bond enthalpies of bonds broken) − Σ(bond enthalpies of bonds formed)</code>
+- Bonds broken = endothermic (+ve); bonds formed = exothermic (−ve)
+- For CₐH_b straight chain: C–C bonds = a − 1; C–H bonds = b</p>
+<p><strong>Percentage uncertainty (ΔT involves TWO readings):</strong>
+<code>% uncertainty = (2 × individual uncertainty / measured ΔT) × 100</code>
+- Each thermometer reading has uncertainty (e.g. ±0.05 °C); total = 2× individual</p>
+<p><strong>Percentage error (comparing to data book):</strong>
+<code>% error = |experimental value − data book value| / data book value × 100</code></p>
+<p><strong>Full-Mark Calorimetry Calculation Pattern (4–5 marks):</strong></p>
+<pre><code>Step 1: q = m × c × ΔT (J)
+Step 2: n = mass / Mᵣ  OR  n = c × V/1000
+Step 3: ΔH = −q / n
+Step 4: Convert J → kJ; apply sign; state units (kJ mol⁻¹); 2–3 SF
+</code></pre>
+<p><strong>Thermometric Titration:</strong>
+- Draw two lines of best fit (pre-endpoint and post-endpoint), extrapolate to find true ΔT
+- Use TOTAL mass of both solutions: m = (V₁ + V₂) × 1.00 g cm⁻³
+- Moles of water = moles of acid (or base) at endpoint</p>
+<p><strong>Mean bond enthalpy from atomisation data:</strong>
+<code>Bond enthalpy = [Σ(atomisation values for all atoms) − ΔHreaction] / number of that bond type</code></p>
+<hr>
+<h3 id="s-key-definitions">Key Definitions</h3>
+<p><strong>Standard conditions:</strong> 298 K (25 °C) and 100 kPa; 1 mol dm⁻³ for solutions; all substances in standard states. <em>"Room temperature" NOT accepted.</em></p>
+<p><strong>Standard state:</strong> The physical state of a substance under standard conditions (e.g. H₂(g), H₂O(l), NaCl(s), Br₂(l), C(s) as graphite).</p>
+<p><strong>Exothermic reaction:</strong> Heat energy is transferred to the surroundings. Products have LESS enthalpy than reactants. <strong>ΔH is negative.</strong></p>
+<p><strong>Endothermic reaction:</strong> Heat energy is absorbed from the surroundings. Products have MORE enthalpy than reactants. <strong>ΔH is positive.</strong></p>
+<p><strong>Standard enthalpy change of formation (ΔH°f):</strong> The enthalpy change when <strong>1 mole</strong> of a compound is formed from its <strong>elements</strong> in their <strong>standard states</strong> under standard conditions.
+- Must specify: (1) 1 mol of compound, (2) from elements, (3) in standard states</p>
+<p><strong>Standard enthalpy change of combustion (ΔH°c):</strong> The enthalpy change when <strong>1 mole</strong> of a substance reacts completely with <strong>oxygen</strong> under standard conditions.
+- Always negative; per mole of substance combusted, NOT per mole of O₂</p>
+<p><strong>Standard enthalpy change of neutralisation (ΔH°neut):</strong> The enthalpy change when <strong>1 mole of water</strong> is formed from the reaction between an acid and an alkali under standard conditions.
+- Key: per mole of <strong>water</strong> (not per mole of acid/base)</p>
+<p><strong>Standard enthalpy change of atomisation (ΔH°at):</strong> The enthalpy change when <strong>1 mole</strong> of gaseous atoms is formed from an element in its standard state under standard conditions.
+- Always positive; product is always gaseous atom(s)
+- Example: ½Br₂(l) → Br(g) — Br₂ is LIQUID at standard conditions</p>
+<p><strong>Bond enthalpy (bond dissociation enthalpy):</strong> The enthalpy change when one mole of a specific covalent bond in a gaseous molecule is broken.</p>
+<p><strong>Mean bond enthalpy:</strong> The average enthalpy change for breaking one mole of a particular type of bond, averaged over many different compounds (Data Booklet values).</p>
+<p><strong>Hess's Law:</strong> The total enthalpy change for a chemical reaction is independent of the route by which the chemical change occurs, provided the initial and final conditions are the same.</p>
+<p><strong>Enthalpy level diagram rules:</strong>
+- Y-axis must be labelled <strong>"enthalpy"</strong> (NOT "energy", "ΔH", "energy change")
+- Exothermic: products BELOW reactants; arrow points DOWN
+- Endothermic: products ABOVE reactants; arrow points UP
+- Arrow is <strong>single-headed</strong>, from reactants to products
+- Do NOT draw activation energy on a simple level diagram
+- With intermediate: overall ΔH spans initial reactants to final products (NOT to/from intermediate)</p>
+<p><strong>Reaction profile:</strong> Includes activation energy "hump"; y-axis = "enthalpy", x-axis = "reaction progress"; uncatalysed peak higher than catalysed peak; ΔH same for both.</p>
+<hr>
+<h3 id="s-key-facts-constants">Key Facts &amp; Constants</h3>
+<p><strong>Specific heat capacity of water:</strong> <code>4.18 J g⁻¹ °C⁻¹</code> (most commonly used; for dilute aqueous solutions assume water's value)</p>
+<p><strong>Standard conditions:</strong> <code>298 K, 100 kPa</code></p>
+<p><strong>Common bond enthalpies (kJ mol⁻¹):</strong>
+| Bond | Value |
+|------|:-----:|
+| C–C | 347 |
+| C–H | 413 |
+| C–F | 485 |
+| C–Cl | 339 |
+| C–Br | 276 |
+| C–I | 238 |
+| C=O | 805 |
+| O–H | 464 |
+| O=O | 498 |
+| F–F | 151 |
+| H–H | 436 |
+| Cl–Cl | 242 |
+| Br–Br | 193 |
+| S–S (in S₈) | 268 |</p>
+<p><strong>Standard enthalpy definitions — sign convention:</strong>
+| Type | Sign | Per Mole of |
+|------|:----:|:-----------:|
+| ΔHf (formation) | Can be ± | 1 mol of compound |
+| ΔHc (combustion) | Always − | 1 mol of substance |
+| ΔHneut (neutralisation) | Always − | 1 mol of H₂O |
+| ΔHat (atomisation) | Always + | 1 mol of gaseous atoms |</p>
+<p><strong>Combustion increment per CH₂ group:</strong> ~630 kJ mol⁻¹ (used for homologous series predictions)</p>
+<p><strong>Bond enthalpy limitations (2 marks):</strong>
+1. Mean bond enthalpies are <strong>averaged</strong> over many compounds (not specific to the reaction)
+2. Bond enthalpies are for the <strong>gas phase only</strong> (solids/liquids not accounted for)
+3. Enthalpies of vaporisation/fusion not included</p>
+<p><strong>Reasons experimental ΔH is LESS exothermic than data book (2 marks needed):</strong>
+- Heat loss to surroundings
+- Incomplete combustion
+- Evaporation of fuel (e.g. ethanol)
+- Heat absorbed by calorimeter (not accounted for)
+- NOT accepted: "not all fuel burned", "no lid", "water not stirred"</p>
+<hr>
+<h3 id="s-common-exam-pitfalls">Common Exam Pitfalls</h3>
+<table>
+<thead>
+<tr>
+<th>Pitfall</th>
+<th>Correct Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forgetting to divide q by moles</td>
+<td>q = mcΔT gives total joules; MUST divide by n</td>
+</tr>
+<tr>
+<td>Wrong sign for endothermic</td>
+<td>If products HIGHER than reactants → ΔH POSITIVE</td>
+</tr>
+<tr>
+<td>Including calorimeter/fuel mass in m</td>
+<td>Only SOLUTION mass in q = mcΔT</td>
+</tr>
+<tr>
+<td>Uncertainty: only single reading</td>
+<td>ΔT = two readings → total uncertainty = <strong>2 × individual</strong></td>
+</tr>
+<tr>
+<td>Wrong specific heat capacity</td>
+<td>Water = 4.18; use what question provides</td>
+</tr>
+<tr>
+<td>Adding fuel mass to water mass</td>
+<td>m = mass of water/solution ONLY</td>
+</tr>
+<tr>
+<td>1 mol of product for ΔHf</td>
+<td>Formation = exactly 1 mol from elements; 2 mol is NOT ΔHf</td>
+</tr>
+<tr>
+<td>Elements not in standard states</td>
+<td>O₂(g) not O(g); Br₂(l) not Br₂(g); C(s) graphite</td>
+</tr>
+<tr>
+<td>O₂ not O atoms</td>
+<td>Oxygen standard state = O₂(g)</td>
+</tr>
+<tr>
+<td>Hess formation formula direction</td>
+<td>ΔHr = ΣΔHf(products) − ΣΔHf(reactants)</td>
+</tr>
+<tr>
+<td>Hess combustion formula direction</td>
+<td>ΔHr = ΣΔHc(reactants) − ΣΔHc(products) — REVERSED</td>
+</tr>
+<tr>
+<td>Arrow reversed but sign not flipped</td>
+<td>When arrow direction reverses, sign FLIPS</td>
+</tr>
+<tr>
+<td>Bond enthalpy ≠ data book ΔH</td>
+<td>Bond enthalpies are averaged gas-phase values</td>
+</tr>
+<tr>
+<td>Thermometric titration: reading peak directly</td>
+<td>Must draw two lines of best fit and EXTRAPOLATE</td>
+</tr>
+<tr>
+<td>Y-axis label on enthalpy diagram</td>
+<td>Must be "enthalpy" — "energy" or "ΔH" penalised</td>
+</tr>
+<tr>
+<td>1 SF in final answer</td>
+<td>Penalised; use 2–3 SF</td>
+</tr>
+<tr>
+<td>Reading ΔT from graph peak</td>
+<td>Must extrapolate both lines to mixing point</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="s-2-kinetics-ch-28">2. Kinetics (Ch 2.8)</h2>
+<h3 id="s-formulas-equations-1">Formulas &amp; Equations</h3>
+<p><strong>Rate from 1/time:</strong>
+<code>Rate ∝ 1/time</code> — valid ONLY for comparing initial rates of similar reactions (e.g., CP5 precipitate times)</p>
+<p><strong>Rate from graph (instantaneous):</strong>
+<code>Rate = gradient of tangent at that point = Δy / Δx</code>
+- Units depend on graph axes (e.g., cm³ min⁻¹, mol dm⁻³ s⁻¹)
+- NOT average rate (total/total)</p>
+<p><strong>SN2 rate law:</strong>
+<code>Rate = k[halogenoalkane][nucleophile]</code> (second order)</p>
+<hr>
+<h3 id="s-key-definitions-1">Key Definitions</h3>
+<p><strong>Collision theory:</strong> For a reaction to occur, particles must collide with <strong>sufficient energy</strong> (≥ activation energy, Eₐ) and with the <strong>correct orientation</strong>.</p>
+<p><strong>Activation energy (Eₐ):</strong> The minimum energy that particles must have for a collision to be successful (to result in a reaction).
+- Eₐ is an <strong>intrinsic property</strong> — does NOT change with temperature, pressure, or concentration
+- Always a positive value
+- Lower Eₐ = faster reaction</p>
+<p><strong>Rate of reaction:</strong> The change in concentration (or amount) of a reactant or product per unit time. Instantaneous rate = gradient of tangent on a concentration–time or volume–time graph.</p>
+<p><strong>Maxwell–Boltzmann distribution:</strong> A graph showing the distribution of kinetic energies among molecules in a gas at a given temperature.
+- Y-axis: number/fraction of molecules; X-axis: energy
+- <strong>Starts at the origin</strong> (no molecule has zero energy)
+- <strong>Peak = most probable energy (E_mode)</strong>
+- <strong>Asymmetric</strong> with long tail to right; <strong>asymptotic</strong> (never reaches x-axis)
+- <strong>Area = total number of molecules</strong></p>
+<p><strong>Catalyst:</strong> A substance that increases the rate of a chemical reaction by providing an alternative reaction pathway with a <strong>lower activation energy</strong>. The catalyst is <strong>not consumed</strong> in the reaction and is <strong>regenerated</strong> at the end.
+- Does NOT change: equilibrium position, equilibrium constant, product yield, ΔH, average kinetic energy, M–B distribution curve
+- Does: lower Eₐ, increase rate of BOTH forward and backward reactions equally</p>
+<p><strong>Dynamic equilibrium:</strong> The state in a <strong>closed system</strong> where the rate of the forward reaction equals the rate of the backward reaction, and the concentrations of all reactants and products remain <strong>constant</strong> (not necessarily equal).
+- "Dynamic" = both reactions STILL occurring
+- Requires: closed system, reversible reaction, rate forward = rate backward, macroscopic properties constant</p>
+<p><strong>Le Chatelier's principle:</strong> If a system at dynamic equilibrium is subjected to a change, the equilibrium position shifts to <strong>counteract</strong> (oppose) the imposed change.</p>
+<p><strong>Compromise conditions:</strong> Industrial conditions (T, P) chosen as a compromise between maximum yield (from Le Chatelier) and acceptable rate (from kinetics) and economic viability.</p>
+<p><strong>Catalyst sustainability benefit:</strong> Catalysts allow lower operating temperatures → less energy/fuel consumed → reduced CO₂ emissions. NOT "catalyst is reused" or "lowers Eₐ" (those are mechanism, not sustainability).</p>
+<hr>
+<h3 id="s-key-facts-constants-1">Key Facts &amp; Constants</h3>
+<p><strong>Effects on rate and equilibrium:</strong>
+| Change | Collision Frequency | Proportion Successful | Rate | Equilibrium Shift |
+|--------|:---:|:---:|:---:|:---|
+| ↑ Concentration | ↑ | No change | ↑ | Right (products) |
+| ↑ Pressure (gas) | ↑ | No change | ↑ | Fewer gas moles side |
+| ↑ Temperature | ↑ | ↑ (more E ≥ Eₐ) | ↑↑ | Endothermic direction |
+| ↑ Surface area | ↑ | No change | ↑ | No effect |
+| Add catalyst | No change | ↑ (more molecules exceed the lowered Eₐ) | ↑ | <strong>No shift</strong> |</p>
+<p><strong>Maxwell–Boltzmann — Temperature increase:</strong>
+- Peak: <strong>lower and broader</strong>, shifts <strong>RIGHT</strong>
+- Area: <strong>same</strong> (same number of molecules)
+- Eₐ line: <strong>unchanged</strong>
+- More area to RIGHT of Eₐ (more molecules above Eₐ)</p>
+<p><strong>Maxwell–Boltzmann — Catalyst added:</strong>
+- Distribution curve: <strong>UNCHANGED</strong>
+- Eₐ line: shifts <strong>LEFT</strong> (lower value)
+- More molecules now have E ≥ new (lower) Eₐ</p>
+<p><strong>Maxwell–Boltzmann — Pressure decrease:</strong>
+- Area: <strong>decreases</strong> (fewer molecules)
+- Peak: <strong>lower</strong> (fewer at every energy)
+- Shape: same (per molecule)
+- Eₐ: unchanged</p>
+<p><strong>Le Chatelier — Temperature:</strong>
+- ↑T → favours <strong>endothermic</strong> direction
+- ↓T → favours <strong>exothermic</strong> direction</p>
+<p><strong>Le Chatelier — Pressure:</strong>
+- ↑P → favours side with <strong>fewer gas moles</strong>
+- ↓P → favours side with <strong>more gas moles</strong></p>
+<p><strong>Le Chatelier — Concentration:</strong>
+- Adding reactant → shifts RIGHT
+- Removing product → shifts RIGHT
+- Adding product → shifts LEFT</p>
+<p><strong>Le Chatelier — Catalyst:</strong>
+- <strong>No shift</strong> (speeds up both directions equally)</p>
+<p><strong>Haber process compromise:</strong>
+| Factor | Le Chatelier (max yield) | Kinetics (max rate) | Compromise |
+|--------|:---:|:---:|:---:|
+| Temperature | Low T (exothermic fwd) | High T (more E ≥ Eₐ) | ~450 °C |
+| Pressure | High P (4→2 mol gas) | High P (more collisions) | ~200 atm |
+| Catalyst | No effect | Increases rate | Iron (Fe) |</p>
+<p><strong>Ethene hydration: C₂H₄(g) + H₂O(g) ⇌ C₂H₅OH(g)</strong> — exothermic
+- Temperature compromise: lower T favoured (higher yield) but rate too slow
+- Pressure: 2 mol gas → 1 mol gas; &gt;7 MPa → higher yield; &gt;7 MPa = expensive equipment
+- Excess water: pushes equilibrium right (advantage); harder to separate (disadvantage)
+- Overall yield 95%: ethanol condenses/liquefies + unreacted ethene <strong>recycled</strong></p>
+<p><strong>What you do NOT need for Unit 2:</strong>
+- Kc equilibrium constant calculations
+- Rate equations / rate-determining step
+- Arrhenius equation
+- Kp (gas equilibrium constant)
+- Half-life concepts</p>
+<hr>
+<h3 id="s-common-exam-pitfalls-1">Common Exam Pitfalls</h3>
+<table>
+<thead>
+<tr>
+<th>Pitfall</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Temperature increases energy of collisions"</td>
+<td>Temperature changes PROPORTION above Eₐ, NOT Eₐ itself</td>
+</tr>
+<tr>
+<td>"Pressure increases energy of particles"</td>
+<td>Pressure only increases collision FREQUENCY</td>
+</tr>
+<tr>
+<td>Catalyst changes equilibrium position</td>
+<td>Catalysts do NOT shift equilibrium</td>
+</tr>
+<tr>
+<td>Catalyst gives molecules more energy</td>
+<td>Catalyst lowers Eₐ threshold; does NOT change molecular energies</td>
+</tr>
+<tr>
+<td>Catalyst changes M–B distribution</td>
+<td>Curve UNCHANGED; only Eₐ line shifts left</td>
+</tr>
+<tr>
+<td>Eₐ changes with temperature</td>
+<td>Eₐ is INTRINSIC — never changes with T, P, or concentration</td>
+</tr>
+<tr>
+<td>"Average KE increases" alone is sufficient</td>
+<td>Must say "more particles have E ≥ Eₐ"</td>
+</tr>
+<tr>
+<td>Equilibrium "goes to completion"</td>
+<td>Equilibrium shifts but NEVER goes to completion</td>
+</tr>
+<tr>
+<td>Lower T always increases yield</td>
+<td>Only for EXOTHERMIC forward; for endothermic forward → yield ↓</td>
+</tr>
+<tr>
+<td>Higher P always increases yield</td>
+<td>Only if product side has FEWER gas moles</td>
+</tr>
+<tr>
+<td>Not counting gas moles correctly</td>
+<td>Count TOTAL moles of GAS on each side</td>
+</tr>
+<tr>
+<td>Forgetting rate effect alongside yield</td>
+<td>Some questions ask for BOTH yield AND rate</td>
+</tr>
+<tr>
+<td>M–B curve starts above origin</td>
+<td>ALWAYS starts at origin</td>
+</tr>
+<tr>
+<td>M–B curve crosses x-axis again</td>
+<td>Must be asymptotic — never touches right side</td>
+</tr>
+<tr>
+<td>Higher T = peak shifts left</td>
+<td>Higher T = peak shifts RIGHT</td>
+</tr>
+<tr>
+<td>Drawing new M–B curve for catalyst</td>
+<td>Curve stays SAME; only Eₐ marker moves</td>
+</tr>
+<tr>
+<td>Shading wrong area on M–B</td>
+<td>Shade area BEYOND Eₐ (above activation energy)</td>
+</tr>
+<tr>
+<td>"Catalyst is reused" as sustainability argument</td>
+<td>Say "less energy needed / lower T / less CO₂"</td>
+</tr>
+<tr>
+<td>"Low Eₐ" as sustainability argument</td>
+<td>That's the mechanism; sustainability = lower T → less fuel → less CO₂</td>
+</tr>
+<tr>
+<td>Confusing rate with equilibrium position</td>
+<td>Rate = kinetics; yield = equilibrium; catalyst affects rate ONLY</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="s-3-equilibrium-ch-28-continued">3. Equilibrium (Ch 2.8) — Continued</h2>
+<h3 id="s-le-chatelier-justification-template-3-mark-structure">Le Chatelier Justification Template (3-Mark Structure)</h3>
+<pre><code>1. STATE the change (e.g., &quot;increasing temperature&quot;)
+2. STATE direction of shift (e.g., &quot;equilibrium shifts LEFT/RIGHT&quot;)
+3. GIVE the reason + consequence (e.g., &quot;to oppose the temperature decrease by absorbing heat; yield of products DECREASES&quot;)
+</code></pre>
+<h3 id="s-industrial-process-equilibrium-questions">Industrial Process Equilibrium Questions</h3>
+<p>When Section C uses industrial context, expect:
+1. Le Chatelier temperature effect (1–2 marks)
+2. Le Chatelier pressure effect (1–2 marks)
+3. Temperature YIELD vs RATE compromise (2–3 marks)
+4. Catalyst identification and/or advantage (1–2 marks)
+5. Possibly: reaction profile diagram (3 marks)
+6. Possibly: M–B with catalyst (2–4 marks)
+7. Possibly: recycling / sustainability (1–2 marks)</p>
+<h3 id="s-what-changes-vs-what-stays-the-same-quick-reference">What Changes vs What Stays the Same — Quick Reference</h3>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th style="text-align: center;">Eₐ</th>
+<th style="text-align: center;">Distribution Curve</th>
+<th style="text-align: center;">Equilibrium Position</th>
+<th style="text-align: center;">Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Higher T</td>
+<td style="text-align: center;">Same</td>
+<td style="text-align: center;">Shifts right, lower peak</td>
+<td style="text-align: center;">Depends (favours endo)</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td>Lower T</td>
+<td style="text-align: center;">Same</td>
+<td style="text-align: center;">Shifts left, taller peak</td>
+<td style="text-align: center;">Depends (favours exo)</td>
+<td style="text-align: center;">↓</td>
+</tr>
+<tr>
+<td>Catalyst</td>
+<td style="text-align: center;">↓</td>
+<td style="text-align: center;">UNCHANGED</td>
+<td style="text-align: center;">NO CHANGE</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td>Higher P</td>
+<td style="text-align: center;">Same</td>
+<td style="text-align: center;">Same shape</td>
+<td style="text-align: center;">Favours fewer gas moles</td>
+<td style="text-align: center;">↑</td>
+</tr>
+<tr>
+<td>Higher [reactant]</td>
+<td style="text-align: center;">Same</td>
+<td style="text-align: center;">Same</td>
+<td style="text-align: center;">Shifts RIGHT</td>
+<td style="text-align: center;">↑</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="s-4-physical-chemistry-imf-redox-groups-1-2-7-ch-27">4. Physical Chemistry: IMF, Redox, Groups 1, 2, 7 (Ch 2.7)</h2>
+<h3 id="s-formulas-equations-2">Formulas &amp; Equations</h3>
+<p><strong>Titration calculation pattern:</strong></p>
+<pre><code>Step 1: n(known) = c × V/1000
+Step 2: Use balanced equation mole ratio
+Step 3: Scale if aliquot (e.g., 25 cm³ of 250 cm³ → ×10)
+Step 4: Convert to required units (g dm⁻³, mol dm⁻³, %)
+</code></pre>
+<p><strong>Total volume trap:</strong> If 20 cm³ acid + 10 cm³ base → total = 30 cm³ for dilution calculations</p>
+<p><strong>Half-equation balancing (alkaline conditions):</strong>
+<code>O₂ + 2H₂O + 4e⁻ → 4OH⁻</code> (n = 4 electrons)</p>
+<p><strong>Concentrated H₂SO₄ + halide reactions:</strong></p>
+<pre><code>NaCl + conc H₂SO₄ → NaHSO₄ + HCl           (NOT redox — Cl⁻ too weak)
+NaBr + conc H₂SO₄ → NaHSO₄ + SO₂ + HBr + Br₂  (Br⁻ reduces H₂SO₄ to SO₂)
+NaI  + conc H₂SO₄ → NaHSO₄ + H₂S + HI + I₂    (I⁻ reduces H₂SO₄ to H₂S)
+</code></pre>
+<p><strong>Thermal decomposition patterns:</strong></p>
+<pre><code>Group 2 carbonates:   MCO₃ → MO + CO₂
+Group 2 nitrates:     M(NO₃)₂ → MO + 2NO₂ + ½O₂
+LiNO₃ (like Group 2): 4LiNO₃ → 2Li₂O + 4NO₂ + O₂
+NaNO₃ (Group 1):      2NaNO₃ → 2NaNO₂ + ½O₂  (nitrite, NOT oxide)
+</code></pre>
+<p><strong>Disproportionation equations:</strong></p>
+<pre><code>Cl₂ + H₂O → HClO + HCl                    (Cl: 0 → +1 and 0 → −1)
+Cl₂ + 2NaOH → NaCl + NaClO + H₂O          (Cl: 0 → −1 and 0 → +1)
+3NaClO → 2NaCl + NaClO₃                   (Cl: +1 → −1 and +1 → +5)
+</code></pre>
+<p><strong>Group 2 + water:</strong></p>
+<pre><code>Ca + 2H₂O → Ca(OH)₂ + H₂   (cold water; Ca(OH)₂ slightly soluble)
+Mg + H₂O(steam) → MgO + H₂  (steam only → oxide, NOT hydroxide)
+2Li + 2H₂O → 2LiOH + H₂     (with state symbols required)
+</code></pre>
+<p><strong>Reactions for CP4 qualitative tests:</strong></p>
+<pre><code>CO₃²⁻ + 2H⁺ → CO₂(g) + H₂O(l)          (effervescence, limewater cloudy)
+Ba²⁺(aq) + SO₄²⁻(aq) → BaSO₄(s)         (white ppt, insoluble in acid)
+NH₄⁺ + OH⁻ → NH₃(g) + H₂O              (damp red litmus turns blue)
+</code></pre>
+<hr>
+<h3 id="s-key-definitions-2">Key Definitions</h3>
+<p><strong>London forces (induced dipole–dipole forces):</strong> Weak intermolecular forces caused by the movement of electrons creating an instantaneous/temporary dipole, which induces a dipole in a neighbouring atom/molecule. Exist between ALL atoms and molecules.
+- Key points: electron motion → temporary dipole → induces dipole in neighbour → attraction
+- Strength increases with: more electrons, larger electron cloud, greater surface area, less branching
+- "Van der Waals forces" — Edexcel uses "London forces"</p>
+<p><strong>Permanent dipole–dipole forces:</strong> Attractive forces between the permanent dipoles in polar molecules (molecules with an uneven charge distribution). Always present IN ADDITION to London forces in polar molecules.</p>
+<p><strong>Hydrogen bonding:</strong> A strong intermolecular force when H is covalently bonded to F, O, or N and is attracted to a lone pair on F, O, or N in a DIFFERENT molecule.
+- H must be on F, O, or N (NOT C, P, S, Cl)
+- Strongest type of intermolecular force (but NOT a covalent bond)
+- Requires: lone pair + δ⁺H interaction
+- HF, H₂O, NH₃ have anomalously high b.p. due to H-bonding</p>
+<p><strong>Ion-dipole interactions:</strong> Forces between an ion and the partial charges on a polar molecule (e.g., Na⁺ attracted to δ⁻O in water). Important for dissolving ionic compounds in water.</p>
+<p><strong>Oxidation:</strong> Loss of electrons; increase in oxidation number.
+<strong>Reduction:</strong> Gain of electrons; decrease in oxidation number.
+<strong>Oxidising agent:</strong> The species that is reduced (gains electrons).
+<strong>Reducing agent:</strong> The species that is oxidised (loses electrons).</p>
+<p><strong>Disproportionation:</strong> A redox reaction in which the SAME element is both oxidised AND reduced simultaneously.
+- Key phrase: "The same element undergoes both oxidation and reduction"</p>
+<p><strong>Standard electrode potential:</strong> Not required for Unit 2 (Unit 4).</p>
+<p><strong>Trends in Group 2 (down the group):</strong>
+- Atomic/ionic radius increases
+- 1st ionisation energy decreases
+- Reactivity with water/acid increases
+- Thermal stability of carbonates/nitrates INCREASES (harder to decompose)
+- Solubility of hydroxides INCREASES
+- Solubility of sulfates DECREASES</p>
+<p><strong>Thermal decomposition explanation (3-mark chain):</strong></p>
+<pre><code>1. IONIC RADIUS: larger cation (e.g., Ca²⁺ &gt; Mg²⁺)
+2. POLARISING POWER: larger → LOWER polarising power → polarises anion LESS
+3. BOND WEAKENING: C–O (or N–O) bonds are LESS weakened → harder to break → higher decomposition T
+</code></pre>
+<p><strong>Diagonal relationship (Li/Mg):</strong>
+- LiNO₃ decomposes like Group 2 nitrates → Li₂O + NO₂ + O₂ (not NaNO₂ + ½O₂)
+- Both Li and Mg: carbonates decompose on heating; form normal oxides</p>
+<p><strong>Oxidation number rules:</strong>
+- Element = 0
+- Simple ion = charge (Na⁺ = +1, O²⁻ = −2)
+- O = −2 normally; <strong>−1 in peroxides</strong> (H₂O₂, Na₂O₂); −½ in superoxides
+- H = +1 normally; <strong>−1 in hydrides</strong> (NaH, CaH₂)
+- F = −1 ALWAYS (most electronegative)
+- Sum of oxidation numbers = overall charge
+- Roman numeral = oxidation number (e.g., chlorate(V) = Cl at +5)</p>
+<hr>
+<h3 id="s-key-facts-constants-2">Key Facts &amp; Constants</h3>
+<p><strong>CRITICAL Group 2 solubility trends (OPPOSITE):</strong></p>
+<pre><code>Hydroxide solubility:  Mg(OH)₂ &lt; Ca(OH)₂ &lt; Sr(OH)₂ &lt; Ba(OH)₂  (INCREASES ↓)
+Sulfate solubility:    MgSO₄  &gt; CaSO₄  &gt; SrSO₄  &gt; BaSO₄      (DECREASES ↓)
+</code></pre>
+<p><strong>Flame test colours:</strong>
+| Element | Colour |
+|---------|--------|
+| Li | Crimson |
+| Na | Yellow |
+| K | Lilac |
+| Ca | Orange-red / brick-red / red |
+| Sr | Red |
+| Ba | Green |</p>
+<p><strong>AgNO₃ precipitation test for halide ions (aqueous, acidified with dilute HNO₃):</strong>
+| Halide | Precipitate | Solubility in NH₃ |
+|--------|:-----------:|:------------------:|
+| Cl⁻ | White | Dissolves in excess |
+| Br⁻ | Cream | Partially dissolves |
+| I⁻ | Yellow | Does NOT dissolve |</p>
+<p><strong>Halogen displacement reactivity:</strong> F₂ &gt; Cl₂ &gt; Br₂ &gt; I₂ (stronger oxidising agent displaces weaker from solution)</p>
+<p><strong>I₂ in solvent:</strong>
+- In cyclohexane (non-polar): <strong>purple</strong>
+- In aqueous solution: <strong>brown/yellow</strong>
+- With starch: <strong>blue-black</strong></p>
+<p><strong>Group 7 trends down the group:</strong>
+- Boiling temperature ↑
+- Electronegativity ↓
+- Oxidising power ↓
+- Reactivity ↓
+- Atomic radius ↑
+- Electron affinity ↓</p>
+<p><strong>HX boiling point trend:</strong> HCl &lt; HBr &lt; HI &lt; HF
+- London forces increase Cl → I (more electrons)
+- HF anomaly: hydrogen bonding makes HF highest</p>
+<p><strong>Disproportionation examples tested:</strong>
+- Cl₂ + H₂O → HClO (+1) + HCl (−1)
+- Cl₂ + cold dilute NaOH → NaCl (−1) + NaClO (+1)
+- 3NaClO → 2NaCl (−1) + NaClO₃ (+5)</p>
+<p><strong>Methyl orange end-point:</strong> Yellow → <strong>ORANGE</strong> (NOT red — red = excess acid)</p>
+<p><strong>Peroxide oxidation numbers:</strong>
+- H₂O₂: O = −1, H = +1
+- Na₂O₂: O = −1, Na = +1</p>
+<p><strong>Hydride oxidation numbers:</strong>
+- NaH: H = −1, Na = +1</p>
+<hr>
+<h3 id="s-qualitative-tests-observations">Qualitative Tests &amp; Observations</h3>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Reagent</th>
+<th>Observation</th>
+<th>Exact Wording Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Carbonate</td>
+<td>Dilute HCl</td>
+<td>Effervescence; CO₂ turns limewater <strong>cloudy/milky</strong></td>
+<td>"Cloudy" or "milky" — NOT "becomes white"</td>
+</tr>
+<tr>
+<td>Sulfate</td>
+<td>BaCl₂ in dilute HNO₃</td>
+<td><strong>White precipitate</strong> (insoluble in acid)</td>
+<td></td>
+</tr>
+<tr>
+<td>Ammonium</td>
+<td>NaOH(aq) + warmth</td>
+<td><strong>Damp red litmus turns blue</strong></td>
+<td>NOT "blue litmus turns red"</td>
+</tr>
+<tr>
+<td>Flame test</td>
+<td>nichrome/platinum wire</td>
+<td>Li=crimson, Na=yellow, K=lilac, Ca=<strong>orange-red</strong>, Sr=red, Ba=green</td>
+<td>Ca: NOT "crimson" or "scarlet"</td>
+</tr>
+<tr>
+<td>Halide (Cl⁻)</td>
+<td>AgNO₃ + dilute HNO₃</td>
+<td>White ppt</td>
+<td>Dissolves in NH₃</td>
+</tr>
+<tr>
+<td>Halide (Br⁻)</td>
+<td>AgNO₃ + dilute HNO₃</td>
+<td>Cream ppt</td>
+<td>Partially dissolves</td>
+</tr>
+<tr>
+<td>Halide (I⁻)</td>
+<td>AgNO₃ + dilute HNO₃</td>
+<td><strong>Yellow</strong> ppt ("pale yellow" accepted)</td>
+<td>Does NOT dissolve in NH₃</td>
+</tr>
+<tr>
+<td>Limewater test</td>
+<td>CO₂ bubbled through</td>
+<td>Cloudy / milky / white precipitate</td>
+<td></td>
+</tr>
+<tr>
+<td>Neutralisation</td>
+<td>HCl + NaOH</td>
+<td>Temperature increase; H⁺ + OH⁻ → H₂O</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="s-common-exam-pitfalls-2">Common Exam Pitfalls</h3>
+<p><strong>Oxidation number traps:</strong>
+| Trap | Correct |
+|------|---------|
+| O is always −2 | O = −1 in peroxides (H₂O₂, Na₂O₂) |
+| H is always +1 | H = −1 in hydrides (NaH, CaH₂) |
+| Cl has only one oxidation state | Cl ranges from −1 to +7 |
+| Roman numeral miscount | K₂MnO₄ = Mn(VI); BaFeO₄ = Fe(VI) |</p>
+<p><strong>Group 2 trend traps:</strong>
+| Trap | Correct |
+|------|---------|
+| Hydroxide solubility decreases down group | It INCREASES (Ca(OH)₂ MORE soluble than Mg(OH)₂) |
+| Sulfate solubility increases down group | It DECREASES (BaSO₄ insoluble) |
+| Mg + cold water → Mg(OH)₂ | Mg + steam → MgO + H₂ (NOT hydroxide) |
+| All Group 1 nitrates → nitrites | LiNO₃ → oxide + NO₂ + O₂ (like Group 2) |
+| 1st IE: lower in group = lower IE | Mg &gt; Ca (smaller atomic radius = higher IE) |</p>
+<p><strong>Titration traps:</strong>
+| Trap | Correct |
+|------|---------|
+| Methyl orange end-point = red | Yellow → <strong>ORANGE</strong> (red = excess acid) |
+| Use only one volume for dilution | Total volume = both solutions combined |
+| Air bubble in burette → low reading | Anomalous first titre is too HIGH |
+| % uncertainty from one instrument only | Add pipette AND burette uncertainties |</p>
+<p><strong>IMF traps:</strong>
+| Trap | Correct |
+|------|---------|
+| H-bond with any polar bond | Only H on O, N, F |
+| "Stronger IMF" is sufficient | Must specify TYPE: "London forces" + "greater surface area" |
+| HF follows HX trend | HF highest b.p. due to H-bonding ANOMALY |
+| London forces only in non-polar molecules | In ALL molecules |</p>
+<p><strong>Redox/equation traps:</strong>
+| Trap | Correct |
+|------|---------|
+| "Redox" instead of "disproportionation" | Must use the WORD "disproportionation" |
+| Not counting oxidation numbers correctly | Show both states and state "same element" |
+| NaCl + conc H₂SO₄ is redox | It is NOT — Cl⁻ too weak a reducing agent |</p>
+<hr>
+<h2 id="s-5-organic-chemistry-alcohols-haloalkanes-analysis-ch-29">5. Organic Chemistry: Alcohols, Haloalkanes &amp; Analysis (Ch 2.9)</h2>
+<h3 id="s-formulas-equations-3">Formulas &amp; Equations</h3>
+<p><strong>SN2 mechanism — standard pattern:</strong></p>
+<pre><code>Nucleophile (lone pair) attacks δ⁺ carbon from opposite side to leaving group
+→ Curly arrow from lone pair to Cδ⁺
+→ Curly arrow from C–X bond to X (both electrons go to X)
+→ Products: R–Nu + X⁻
+</code></pre>
+<p><strong>SN2 with NH₃ — TWO steps:</strong></p>
+<pre><code>Step 1: NH₃ attacks → R–NH₃⁺ + Br⁻  (propylammonium ion)
+Step 2: Second NH₃ removes H⁺ → R–NH₂ + NH₄⁺  (propylamine)
+</code></pre>
+<p><strong>Halogenoalkane reactions:</strong></p>
+<pre><code>SUBSTITUTION (aqueous):
+  R–Br + NaOH(aq) → R–OH + NaBr        (heat under reflux)
+  R–Br + 2NH₃(ethanol) → R–NH₂ + NH₄Br (heat under PRESSURE / sealed tube)
+  R–Cl + KCN(ethanol) → R–CN + KCl      (heat)
+
+ELIMINATION (ethanolic):
+  R–CH₂–CHBr–R' + KOH(ethanol) → R–CH=CH–R' + KBr + H₂O  (heat)
+</code></pre>
+<p><strong>Alcohol reactions:</strong></p>
+<pre><code>PCl₅ test:    R–OH + PCl₅ → R–Cl + POCl₃ + HCl    (misty white fumes)
+Dehydration:  R–OH + H₃PO₄ → alkene + H₂O          (170 °C)
+
+Oxidation:
+  Primary + distillation:  RCH₂OH + [O] → RCHO + H₂O      (aldehyde, orange→green)
+  Primary + reflux:        RCH₂OH + 2[O] → RCOOH + H₂O     (carboxylic acid, orange→green)
+  Secondary + reflux:      R₂CHOH + [O] → R₂C=O + H₂O       (ketone, orange→green)
+  Tertiary:                NO REACTION (no colour change)
+
+[O] counting:
+  Primary alcohol → carboxylic acid: 2[O]
+  Secondary alcohol → ketone: 1[O]
+</code></pre>
+<p><strong>Ideal gas equation for Mᵣ:</strong>
+<code>pV = nRT → n = pV/RT → Mᵣ = mass/n</code></p>
+<p><strong>Inorganic tests for organic compounds:</strong></p>
+<pre><code>Br₂ water:     decolourised → C=C (alkene) present
+Na₂CO₃(aq):   effervescence → –COOH (carboxylic acid) present
+PCl₅:         misty white fumes → –OH (alcohol) present — works for ALL alcohol types
+K₂Cr₂O₇/H₂SO₄: orange→green → primary or secondary alcohol (NOT tertiary)
+AgNO₃(ethanol): precipitate → halogen present
+</code></pre>
+<hr>
+<h3 id="s-key-definitions-3">Key Definitions</h3>
+<p><strong>Substitution:</strong> A reaction where an atom or group is replaced by a different atom or group.</p>
+<p><strong>Elimination:</strong> A reaction where a small molecule (e.g., H₂O, HBr) is removed, forming a C=C double bond.</p>
+<p><strong>Addition:</strong> Two or more molecules combine to form a single larger molecule (across C=C).</p>
+<p><strong>Hydrolysis:</strong> A substitution reaction where a halogenoalkane reacts with water/aqueous hydroxide to form an alcohol.</p>
+<p><strong>Nucleophile:</strong> An electron-pair donor that attacks an electron-deficient (electrophilic) carbon atom.
+- Common: OH⁻, CN⁻, NH₃, H₂O</p>
+<p><strong>SN2 (substitution nucleophilic bimolecular):</strong> One-step mechanism; nucleophile attacks from opposite side to leaving group; transition state is trigonal bipyramidal (5 groups); <strong>inversion</strong> of configuration at chiral centre.
+- Rate = k[halogenoalkane][nucleophile]
+- Favoured by: primary halogenoalkanes, good nucleophiles</p>
+<p><strong>SN1 (substitution nucleophilic unimolecular):</strong> Two-step mechanism; C–X bond breaks first forming carbocation intermediate; nucleophile then attacks; <strong>racemisation</strong> at chiral centre.
+- Rate = k[halogenoalkane] only
+- Favoured by: tertiary halogenoalkanes, polar protic solvents</p>
+<p><strong>Primary (1°) halogenoalkane:</strong> Carbon bearing halogen attached to <strong>one</strong> (or zero) other carbons.
+<strong>Secondary (2°):</strong> Attached to <strong>two</strong> other carbons.
+<strong>Tertiary (3°):</strong> Attached to <strong>three</strong> other carbons.
+- Cyclohexyl bromide = <strong>secondary</strong> (C–Br carbon bonded to 2 ring C atoms)</p>
+<p><strong>Primary alcohol:</strong> –OH on carbon attached to ≤1 other carbon → oxidises to aldehyde then carboxylic acid.
+<strong>Secondary alcohol:</strong> –OH on carbon attached to 2 other carbons → oxidises to ketone ONLY.
+<strong>Tertiary alcohol:</strong> –OH on carbon attached to 3 other carbons → NOT oxidised by K₂Cr₂O₇.</p>
+<p><strong>Molecular ion peak (M⁺):</strong> Peak in mass spectrum of the unchanged molecule (lost one electron). m/z = relative molecular mass.</p>
+<p><strong>Fragmentation:</strong> Breaking of M⁺ into smaller pieces (fragment ions) with characteristic m/z values.</p>
+<p><strong>Base peak:</strong> Tallest peak in mass spectrum (100% relative abundance) = most stable fragment.</p>
+<p><strong>M+1 peak:</strong> Caused by ¹³C natural abundance (~1.1%). Ratio M+1/M⁺ ≈ 1.1% × number of carbon atoms.</p>
+<hr>
+<h3 id="s-key-facts-constants-3">Key Facts &amp; Constants</h3>
+<p><strong>C–X bond data:</strong>
+| Bond | EN Difference | Bond Enthalpy (kJ mol⁻¹) | Relative Rate |
+|------|:---:|:---:|:---:|
+| C–F | 1.43 | 485 (strongest) | Slowest SN2 |
+| C–Cl | 0.61 | 339 | |
+| C–Br | 0.37 | 276 | |
+| C–I | 0.08 | 238 (weakest) | Fastest SN2 |</p>
+<p><strong>Bond STRENGTH (not polarity) determines hydrolysis rate.</strong> Weaker bond → lower Eₐ → faster.</p>
+<p><strong>Hydrolysis rate ranking (structural):</strong>
+Tertiary (SN1, fast) &gt; Secondary &gt; Primary (SN2, slow)</p>
+<p><strong>AgNO₃ test — precipitate speed (1° haloalkane):</strong> Cl⁻ (slowest, white) &lt; Br⁻ (medium, cream) &lt; I⁻ (fastest, yellow)
+<strong>Tertiary iodoalkane = absolute fastest</strong> (SN1 + weakest C–I bond compound)</p>
+<p><strong>Alcohol oxidation summary:</strong>
+| Type | Mild (distillation) | Strong (reflux) |
+|------|:---:|:---:|
+| Primary | Aldehyde | Carboxylic acid |
+| Secondary | — | Ketone |
+| Tertiary | No reaction | No reaction |</p>
+<p><strong>Reagent for alcohol dehydration:</strong> Concentrated phosphoric(V) acid (H₃PO₄) at ~170 °C. NOT dilute H₂SO₄.</p>
+<p><strong>PCl₅ test:</strong> Works for ALL alcohol types (primary, secondary, tertiary). Observation: misty white fumes of HCl.</p>
+<p><strong>Tertiary alcohol → chloroalkane:</strong> ALL THREE reagents work: PCl₅, concentrated HCl, concentrated H₂SO₄ + KCl.</p>
+<p><strong>IR Absorption Ranges (Data Booklet):</strong>
+| Bond/Group | Range (cm⁻¹) | Appearance |
+|-----------|:---:|:---|
+| O–H (carboxylic acid) | 2500–3300 | Very broad |
+| O–H (alcohol) | 3750–3200 | Broad |
+| N–H | 3550–3200 | Medium, sharper than O–H |
+| C–H (alkene) | 3100–3000 | Medium |
+| C–H (alkane) | 2950–2850 | Medium-strong |
+| C–H (aldehyde) | 2775–2700 | Characteristic |
+| C≡N (nitrile) | 2260–2215 | Sharp |
+| C=O (aldehyde) | 1740–1720 | Strong |
+| C=O (ketone) | 1720–1700 | Strong |
+| C=O (carboxylic acid) | 1725–1700 | Strong |
+| C=O (ester) | 1750–1730 | Strong |
+| C=C (alkene) | 1680–1620 | Medium |
+| C–O (alcohol/ester/acid) | 1300–1000 | Strong |</p>
+<p><strong>IR diagnostic combinations:</strong>
+- Broad O–H (2500–3300) + C=O (~1700) = <strong>carboxylic acid</strong>
+- No O–H + C=O (1740–1720) + C–H (2775–2700) = <strong>aldehyde</strong>
+- No O–H + C=O (1720–1700) = <strong>ketone</strong>
+- N–H (3550–3200) + C≡N (2260–2215) = <strong>amine + nitrile</strong></p>
+<p><strong>Mass spec fragments:</strong>
+| m/z | Fragment | Source |
+|:---:|:---|:---|
+| 15 | CH₃⁺ | Methyl |
+| 17 | OH⁺ | Hydroxyl |
+| 29 | C₂H₅⁺ or CHO⁺ | Ethyl or aldehyde |
+| 31 | CH₂OH⁺ | <strong>Primary alcohol</strong> (α-cleavage) |
+| 41 | C₃H₅⁺ | Alkene/allyl fragment |
+| 43 | CH₃CO⁺ | Ketone/aldehyde (acetyl) |
+| 45 | COOH⁺ | Carboxylic acid |
+| 53 | C₄H₅⁺ | Loss of ·CH₃ from diene M⁺ |
+| 58 | C₃H₆O⁺ | M⁺ of propanone |
+| 60 | C₃H₈O⁺ | M⁺ of propan-1-ol |
+| 68 | C₅H₈⁺ | M⁺ of isoprene |
+| 86 | C₄H₆O₂⁺ | Molecular ion (e.g., but-2-enoic acid) |</p>
+<p><strong>CRITICAL IR exam point:</strong> C–H stretches MUST specify "in alkene" or "in alkane" — just "C–H stretch" scores zero.</p>
+<hr>
+<h3 id="s-sn2-mechanism-marking-points-checklist-68-points-for-34-marks">SN2 Mechanism Marking Points Checklist (6–8 points for 3–4 marks)</h3>
+<ol>
+<li><strong>Lone pair</strong> shown on nucleophile (NOT from the negative charge symbol)</li>
+<li><strong>δ⁺ on C</strong> and <strong>δ⁻ on X</strong> shown (dipole notation)</li>
+<li><strong>Curly arrow from lone pair to Cδ⁺</strong> (full-headed, NOT fishhook)</li>
+<li><strong>Curly arrow from C–X bond to X</strong> (both electrons to leaving group)</li>
+<li><strong>Organic product</strong> drawn correctly (structural formula, all atoms)</li>
+<li><strong>Leaving group as anion</strong> (Br⁻, Cl⁻ — must have charge)</li>
+<li>For NH₃ reactions: <strong>Second step</strong> — deprotonation by second NH₃ molecule</li>
+<li><strong>K⁺</strong> (spectator ion) should be ignored</li>
+</ol>
+<p><strong>Penalties:</strong> Fishhook arrows penalised ONCE; missing lone pair penalised ONCE; fragment charge omission penalised ONCE.</p>
+<hr>
+<h3 id="s-aqueous-vs-ethanolic-the-critical-distinction">Aqueous vs Ethanolic — The Critical Distinction</h3>
+<table>
+<thead>
+<tr>
+<th>Solvent</th>
+<th style="text-align: center;">Reaction Type</th>
+<th style="text-align: left;">Product</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aqueous</strong> NaOH/KOH</td>
+<td style="text-align: center;">Substitution (SN2)</td>
+<td style="text-align: left;">Alcohol</td>
+</tr>
+<tr>
+<td><strong>Ethanolic</strong> NaOH/KOH</td>
+<td style="text-align: center;">Elimination</td>
+<td style="text-align: left;">Alkene</td>
+</tr>
+<tr>
+<td><strong>Ethanol</strong> + NH₃ (pressure)</td>
+<td style="text-align: center;">Substitution (SN2)</td>
+<td style="text-align: left;">Amine</td>
+</tr>
+<tr>
+<td><strong>Ethanol</strong> + KCN</td>
+<td style="text-align: center;">Substitution (SN2)</td>
+<td style="text-align: left;">Nitrile</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NH₃ specifically:</strong> Heat under <strong>pressure</strong> / sealed tube in <strong>alcoholic</strong> solution. "Heat under reflux" is explicitly NOT awarded (NH₃ gas escapes through condenser).</p>
+<p><strong>Why amine yield is low:</strong> Excess ammonia leads to further substitution → secondary amine, tertiary amine, quaternary ammonium salt.</p>
+<p><strong>KCN importance in synthesis:</strong> CN⁻ substitution <strong>extends the carbon chain by one carbon</strong> (R–X → R–CN).</p>
+<hr>
+<h3 id="s-alcohol-identification-quick-decision">Alcohol Identification — Quick Decision</h3>
+<pre><code>What type of alcohol?
+├── Primary + K₂Cr₂O₇ (distillation) → Aldehyde (C=O at 1740–1720 cm⁻¹)
+├── Primary + K₂Cr₂O₇ (reflux) → Carboxylic acid (broad O–H + C=O ~1700)
+├── Secondary + K₂Cr₂O₇ (reflux) → Ketone (C=O at 1720–1700)
+└── Tertiary + K₂Cr₂O₇ → NO REACTION (no colour change)
+</code></pre>
+<p><strong>Best universal test for –OH:</strong> PCl₅ — works for primary, secondary, AND tertiary alcohols. Produces misty white fumes (HCl).</p>
+<hr>
+<h3 id="s-common-exam-pitfalls-3">Common Exam Pitfalls</h3>
+<p><strong>Mechanism traps:</strong>
+| Trap | Correct |
+|------|---------|
+| Half-headed (fishhook) arrows | Use FULL curly arrows for heterolytic fission |
+| Arrow from charge symbol | Arrow from visible LONE PAIR on nucleophile |
+| "Heat under reflux" for NH₃ | Heat under PRESSURE / sealed tube |
+| Confusing primary vs tertiary | Count bonds from halogen/–OH carbon to OTHER carbons |
+| Not showing NH₃ deprotonation step | Second NH₃ removes H⁺ from ammonium intermediate |
+| Spectator ion (K⁺) in mechanism | Ignore it; don't include in curly arrow diagram |</p>
+<p><strong>Spectroscopy traps:</strong>
+| Trap | Correct |
+|------|---------|
+| Wrong IR wavenumber ranges | Memorise Data Booklet values exactly |
+| Ketone vs aldehyde C=O confused | Ketone: 1720–1700; Aldehyde: 1740–1720 (20 cm⁻¹ difference) |
+| "C–H stretch" without context | Must say "C–H stretching IN ALKENE" or "IN ALKANE" |
+| Carboxylic acid not recognised | Broad O–H (2500–3300) + C=O (~1700) = carboxylic acid |
+| M+1 peak misinterpreted | Caused by ¹³C (~1.1% per carbon) |</p>
+<p><strong>Alcohol reaction traps:</strong>
+| Trap | Correct |
+|------|---------|
+| Ketone can be further oxidised | Propanone → NO colour change with K₂Cr₂O₇ |
+| [O] counting wrong | Primary = 2[O] per –OH; secondary = 1[O] per –OH |
+| Tertiary alcohol limited reagents | ALL work: PCl₅, conc. HCl, conc. H₂SO₄ + KCl |
+| KMnO₄ as specific –OH test | Also reacts with C=C — not diagnostic |
+| K₂Cr₂O₇ identifies all –OH | Does NOT work for tertiary alcohols |</p>
+<p><strong>Hydrolysis rate traps:</strong>
+| Trap | Correct |
+|------|---------|
+| Bond polarity determines rate | Bond STRENGTH (enthalpy) is the key factor |
+| "C–Cl is less polar" as explanation | Cl IS more electronegative; the issue is BOND STRENGTH |
+| Only ONE reason for rate comparison | Must give TWO distinct reasons (structural + halogen factor) |</p>
+<p><strong>Organic preparation techniques:</strong>
+- <strong>Reflux:</strong> heating with condenser — prevents volatile reagents escaping
+- <strong>Distillation:</strong> boiling + condensing — separates products by boiling point
+- <strong>Separating funnel:</strong> separates immiscible liquids
+- <strong>Drying:</strong> anhydrous MgSO₄ or Na₂SO₄ removes water traces</p>
+<hr>
+<h3 id="s-quick-reference-functional-group-identification">Quick Reference: Functional Group Identification</h3>
+<table>
+<thead>
+<tr>
+<th>Compound Type</th>
+<th>Test</th>
+<th>Observation</th>
+<th style="text-align: center;">Positive?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary alcohol</td>
+<td>K₂Cr₂O₇/H₂SO₄</td>
+<td>Orange → green</td>
+<td style="text-align: center;">✓ (distill → aldehyde; reflux → acid)</td>
+</tr>
+<tr>
+<td>Secondary alcohol</td>
+<td>K₂Cr₂O₇/H₂SO₄</td>
+<td>Orange → green</td>
+<td style="text-align: center;">✓ (ketone)</td>
+</tr>
+<tr>
+<td>Tertiary alcohol</td>
+<td>K₂Cr₂O₇/H₂SO₄</td>
+<td>No change</td>
+<td style="text-align: center;">✗</td>
+</tr>
+<tr>
+<td>Any alcohol</td>
+<td>PCl₅</td>
+<td>Misty white fumes</td>
+<td style="text-align: center;">✓ (all types)</td>
+</tr>
+<tr>
+<td>Alkene</td>
+<td>Br₂ water</td>
+<td>Decolourised</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Carboxylic acid</td>
+<td>Na₂CO₃</td>
+<td>Effervescence (CO₂)</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Carboxylic acid</td>
+<td>IR</td>
+<td>Broad O–H (2500–3300) + C=O (~1700)</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Nitrile</td>
+<td>IR</td>
+<td>Sharp peak at 2260–2215 cm⁻¹</td>
+<td style="text-align: center;">✓</td>
+</tr>
+<tr>
+<td>Amine</td>
+<td>IR</td>
+<td>N–H at 3550–3200 cm⁻¹</td>
+<td style="text-align: center;">✓</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="s-ez-isomerism-from-elimination">E/Z Isomerism from Elimination</h3>
+<ul>
+<li>Each alkene with different groups on both C=C sides has E and Z stereoisomers</li>
+<li>Example: CH₃CH₂CHBrCH₂CH₂CH₃ → hex-2-ene (E + Z) + hex-3-ene (E + Z) = <strong>4 products</strong></li>
+<li>Symmetrical halogenoalkanes → fewer products</li>
+<li>Branching near halogen → fewer elimination sites</li>
+</ul>
+<hr>
+<h3 id="s-core-practicals">Core Practicals</h3>
+<p><strong>CP2:</strong> Determination of enthalpy change using Hess's Law — calorimetry, extrapolation
+<strong>CP3:</strong> Finding concentration of HCl by titration — burette technique, concordant titres, indicator choice
+<strong>CP4:</strong> Identification of Group 2 cations and Group 7 anions — flame tests, precipitation, displacement
+<strong>CP5:</strong> Comparing rates of hydrolysis of halogenoalkanes using AgNO₃ in ethanol — same T, volume, concentration; time to precipitate; Rate ∝ 1/time
+<strong>CP7:</strong> Oxidation of primary alcohol to carboxylic acid using acidified K₂Cr₂O₇ under reflux — orange → green
+<strong>CP8:</strong> Analysis of unknown organic compound — test-tube reactions + IR + mass spectrometry + molecular formula deduction</p>
+<hr>
+<h2 id="s-mark-scheme-carry-forward-rules">Mark Scheme Carry-Forward Rules</h2>
+<p><strong>Where TE (transferred error) is applied:</strong>
+- Multi-step calculations: wrong q but correct ΔH = q/n → full marks for later steps
+- Hess's Law cycles: wrong value but correct calculation from it → score calculation marks
+- Bond enthalpy: one wrong value but correct total Σ → score for total</p>
+<p><strong>Where TE is NOT applied:</strong>
+- Signs (+/−): penalised independently
+- Significant figures: only 1 SF penalised; any reasonable SF otherwise accepted
+- Units: penalised once per paper (not per question)</p>
+<hr>
+<h2 id="s-exam-strategy-what-changes-vs-what-stays-the-same">Exam Strategy: What Changes vs What Stays the Same</h2>
+<table>
+<thead>
+<tr>
+<th>What Changes</th>
+<th>What Stays the Same</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T↑ → M-B peak shifts right, lower</td>
+<td>Eₐ (with T)</td>
+</tr>
+<tr>
+<td>Catalyst → Eₐ line shifts left</td>
+<td>M-B distribution curve (with catalyst)</td>
+</tr>
+<tr>
+<td>P↓ → fewer molecules, smaller area</td>
+<td>M-B shape per molecule, Eₐ</td>
+</tr>
+<tr>
+<td>Equilibrium shifts (Le Chatelier)</td>
+<td>ΔH (always), Kc (with T only, but not in U2)</td>
+</tr>
+<tr>
+<td>Rate changes</td>
+<td>Eₐ (with catalyst, concentration, pressure)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><em>Compiled from 7-paper analysis: Jun 2022 – Oct 2024. All definitions, mark scheme requirements, and exam pitfalls sourced from actual WCH12 question papers and mark schemes.</em></p>
+</section>
+<footer>
+<p>U2 Memorization Guide &middot; WCH12 IAL Chemistry &middot; Ch 2.6–2.9 &middot; Covers Energetics, Kinetics, Equilibrium, Organic</p>
+</footer>
+</main>
+<script>
+(function(){
+  var saved=localStorage.getItem('wch12-theme');
+  if(saved==='dark')document.documentElement.setAttribute('data-theme','dark');
+  updateBtn();
+})();
+function toggleDark(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  if(isDark){document.documentElement.removeAttribute('data-theme');localStorage.setItem('wch12-theme','light')}
+  else{document.documentElement.setAttribute('data-theme','dark');localStorage.setItem('wch12-theme','dark')}
+  updateBtn();
+}
+function updateBtn(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  var b=document.getElementById('darkBtn');
+  if(b)b.textContent=isDark?'\u2600\ufe0f Light':'\ud83c\udf19 Dark';
+}
+function toggleSidebar(){
+  var sb=document.getElementById('sidebar'),ov=document.getElementById('overlay');
+  sb.classList.toggle('open');ov.classList.toggle('open');
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    var sb=document.getElementById('sidebar');
+    if(sb&&sb.classList.contains('open'))toggleSidebar();
+  }
+});
+function toggleProgress(qid,cb){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  if(cb.checked)saved[qid]=1;else delete saved[qid];
+  localStorage.setItem(key,JSON.stringify(saved));
+  updateProgBar();
+}
+function updateProgBar(){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  var total=document.querySelectorAll('.prog-table input[type="checkbox"]').length;
+  var done=Object.keys(saved).length;
+  var bar=document.getElementById('progFill');
+  if(bar&&total>0)bar.style.width=Math.round(done*100/total)+'%';
+  var txt=document.getElementById('progText');
+  if(txt)txt.textContent=done+' / '+total+' questions completed';
+}
+(function(){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  document.querySelectorAll('.prog-table input[type="checkbox"]').forEach(function(cb){
+    cb.checked=!!saved[cb.dataset.qid];
+    cb.addEventListener('change',function(){toggleProgress(cb.dataset.qid,cb)});
+  });
+  updateProgBar();
+})();
+</script>
+
+</body>
+</html>

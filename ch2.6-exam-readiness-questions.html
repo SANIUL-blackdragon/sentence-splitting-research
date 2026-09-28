@@ -1,0 +1,2234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch 2.6 — Energetics — Exam Readiness Questions</title>
+<style>
+:root{--bg:#fafcfe;--surface:#fff;--text:#1e293b;--heading:#0f4c75;--heading2:#1b6ca8;--accent:#3b82f6;--accent2:#10b981;--border:#e2e8f0;--muted:#64748b;--tip-bg:#eff6ff;--tip-border:#bfdbfe;--warn-bg:#fefce8;--warn-border:#fde68a;--worked-bg:#f0fdf4;--worked-border:#bbf7d0;--sidebar-bg:#fff;--sidebar-shadow:0 4px 24px rgba(0,0,0,.1);--code-bg:#f1f5f9;--tbl-head:#eef2f7;--tbl-alt:#f8fafc;--card-bg:#fff;--card-shadow:0 1px 3px rgba(0,0,0,.06);--tier1-bg:#eff6ff;--tier1-border:#3b82f6;--tier1-fg:#1e40af;--tier2-bg:#f0fdf4;--tier2-border:#10b981;--tier2-fg:#065f46;--tier3-bg:#fef3c2;--tier3-border:#f43f5e;--tier3-fg:#9f1239;--b-QFR-bg:#dbeafe;--b-QFR-fg:#1e40af;--b-TDC-bg:#ede9fe;--b-TDC-fg:#5b21b6;--b-CAL-bg:#d1fae5;--b-CAL-fg:#065f46;--b-EXP-bg:#ffedd5;--b-EXP-fg:#9a3412;--b-WTE-bg:#ccfbf1;--b-WTE-fg:#115e59;--b-STE-bg:#fee2e2;--b-STE-fg:#991b1b;--b-DIA-bg:#e0e7ff;--b-DIA-fg:#3730a3;--b-SYN-bg:#fce7f3;--b-SYN-fg:#9d174d;--b-DER-bg:#fef3c7;--b-DER-fg:#92400e;--b-QWC-bg:#cffafe;--b-QWC-fg:#155e75;--b-GRD-bg:#ecfccb;--b-GRD-fg:#3f6212}
+[data-theme="dark"]{--bg:#0f172a;--surface:#1e293b;--text:#e2e8f0;--heading:#93c5fd;--heading2:#7dd3fc;--accent:#60a5fa;--accent2:#34d399;--border:#334155;--muted:#94a3b8;--tip-bg:#1e3a5f;--tip-border:#2563eb;--warn-bg:#422006;--warn-border:#a16207;--worked-bg:#052e16;--worked-border:#16a34a;--sidebar-bg:#1e293b;--sidebar-shadow:0 4px 24px rgba(0,0,0,.4);--code-bg:#0f172a;--tbl-head:#1e3a5f;--tbl-alt:#162032;--card-bg:#1e293b;--card-shadow:0 1px 3px rgba(0,0,0,.3);--tier1-bg:#1e3a5f;--tier1-border:#60a5fa;--tier1-fg:#bfdbfe;--tier2-bg:#052e16;--tier2-border:#34d399;--tier2-fg:#a7f3d0;--tier3-bg:#4c1d1d;--tier3-border:#fb7185;--tier3-fg:#fecdd3;--b-QFR-bg:#1e3a5f;--b-QFR-fg:#bfdbfe;--b-TDC-bg:#3b2a5e;--b-TDC-fg:#ddd6fe;--b-CAL-bg:#0c3a26;--b-CAL-fg:#a7f3d0;--b-EXP-bg:#5a2e0a;--b-EXP-fg:#fed7aa;--b-WTE-bg:#0c3a36;--b-WTE-fg:#99f6e4;--b-STE-bg:#5a1a1a;--b-STE-fg:#fecaca;--b-DIA-bg:#2a2e6a;--b-DIA-fg:#c7d2fe;--b-SYN-bg:#5a1d44;--b-SYN-fg:#fbcfe8;--b-DER-bg:#5a3e0a;--b-DER-fg:#fde68a;--b-QWC-bg:#0c4a52;--b-QWC-fg:#a5f3fc;--b-GRD-bg:#2a4310;--b-GRD-fg:#d9f99d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding-top:52px}
+@media(max-width:480px){body{font-size:15px;padding-top:48px}}
+header{position:fixed;top:0;left:0;right:0;height:52px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;z-index:1000;padding:0 16px;gap:12px}
+#menuBtn{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text);padding:4px 8px;border-radius:6px;line-height:1}
+#menuBtn:hover{background:var(--code-bg)}
+#headerTitle{font-weight:700;font-size:.95rem;color:var(--heading);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+#darkBtn{margin-left:auto;background:none;border:1px solid var(--border);border-radius:6px;cursor:pointer;padding:4px 10px;font-size:.8rem;color:var(--text);white-space:nowrap}
+#darkBtn:hover{background:var(--code-bg)}
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:1100;display:none}
+#overlay.open{display:block}
+#sidebar{position:fixed;top:0;left:-340px;width:320px;max-width:85vw;height:100vh;background:var(--sidebar-bg);box-shadow:var(--sidebar-shadow);z-index:1200;overflow-y:auto;padding:16px 0;transition:left .25s ease}
+#sidebar.open{left:0}
+#sidebar .sb-head{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;border-bottom:1px solid var(--border);margin-bottom:8px}
+#sidebar .sb-head span{font-weight:700;color:var(--heading);font-size:.95rem}
+#sidebar .sb-close{background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text);padding:4px;line-height:1}
+#sidebar nav{padding:0 12px}
+#sidebar nav ul{list-style:none;padding:0;margin:0}
+#sidebar nav li{margin-bottom:2px}
+#sidebar nav a{display:block;padding:6px 10px;border-radius:6px;font-size:.82rem;color:var(--text);text-decoration:none;transition:background .15s;line-height:1.4}
+#sidebar nav a:hover{background:var(--code-bg)}
+#sidebar nav a.chapter{font-weight:700;color:var(--heading);font-size:.9rem;margin-top:10px;padding:8px 10px;border-radius:6px}
+#sidebar nav a.q-link{padding-left:16px;font-size:.8rem;color:var(--muted)}
+#sidebar nav a.q-link .q-tag{font-weight:700;color:var(--heading2)}
+#sidebar nav a.q-link:hover{background:var(--code-bg);color:var(--text)}
+main{max-width:920px;margin:0 auto;padding:24px 20px 60px}
+@media(max-width:600px){main{padding:16px 12px 40px}}
+.cover{text-align:center;padding:48px 20px 40px;border-bottom:2px solid var(--border);margin-bottom:32px}
+.cover h1{font-size:2rem;color:var(--heading);margin-bottom:8px;line-height:1.25}
+@media(max-width:480px){.cover h1{font-size:1.5rem}}
+.cover .subtitle{font-size:1rem;color:var(--muted);margin-bottom:16px}
+.cover .meta{display:inline-flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.cover .tag{background:var(--code-bg);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:.8rem;color:var(--muted)}
+.cover .stats{margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cover .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 18px;min-width:100px}
+.cover .stat .num{font-size:1.5rem;font-weight:800;color:var(--accent);line-height:1.1}
+.cover .stat .lbl{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.intro{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:16px 20px;margin-bottom:24px;font-size:.92rem}
+.intro p{margin:0}
+section{margin-bottom:40px}
+section h2{color:var(--heading);font-size:1.4rem;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid var(--accent);scroll-margin-top:64px}
+section h3{color:var(--heading2);font-size:1.1rem;margin:16px 0 8px;scroll-margin-top:64px}
+.tbl-wrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+@media(max-width:600px){table{font-size:.78rem}}
+th{background:var(--tbl-head);color:var(--heading);font-weight:600;text-align:left;padding:8px 10px;border:1px solid var(--border);white-space:nowrap}
+td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+tr:nth-child(even) td{background:var(--tbl-alt)}
+td.num,th.num{text-align:center}
+tr.total td{font-weight:700;background:var(--tbl-head);color:var(--heading)}
+.qcard{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:18px;box-shadow:var(--card-shadow);scroll-margin-top:64px}
+@media(max-width:480px){.qcard{padding:14px}}
+.qcard-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.qnum{background:var(--heading);color:#fff;font-weight:700;font-size:.85rem;padding:3px 10px;border-radius:6px;letter-spacing:.02em}
+[data-theme="dark"] .qnum{background:var(--accent)}
+.badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.75rem;font-weight:700;letter-spacing:.05em;font-family:'SF Mono',Consolas,monospace}
+.badge-QFR{background:var(--b-QFR-bg);color:var(--b-QFR-fg)}.badge-TDC{background:var(--b-TDC-bg);color:var(--b-TDC-fg)}
+.badge-CAL{background:var(--b-CAL-bg);color:var(--b-CAL-fg)}.badge-EXP{background:var(--b-EXP-bg);color:var(--b-EXP-fg)}
+.badge-WTE{background:var(--b-WTE-bg);color:var(--b-WTE-fg)}.badge-STE{background:var(--b-STE-bg);color:var(--b-STE-fg)}
+.badge-DIA{background:var(--b-DIA-bg);color:var(--b-DIA-fg)}.badge-SYN{background:var(--b-SYN-bg);color:var(--b-SYN-fg)}
+.badge-DER{background:var(--b-DER-bg);color:var(--b-DER-fg)}.badge-QWC{background:var(--b-QWC-bg);color:var(--b-QWC-fg)}
+.badge-GRD{background:var(--b-GRD-bg);color:var(--b-GRD-fg)}
+.qspec{font-size:.8rem;color:var(--muted);font-weight:600;background:var(--code-bg);padding:2px 8px;border-radius:4px}
+.qmeta{margin-left:auto;font-size:.82rem;color:var(--muted);font-weight:600}
+@media(max-width:480px){.qmeta{margin-left:0;width:100%;font-size:.78rem}}
+.qmeta .marks{color:var(--accent);font-weight:700}
+.qtext{font-size:1rem;margin-bottom:12px;color:var(--text)}
+.qtext p{margin-bottom:6px}.qtext p:last-child{margin-bottom:0}
+.qtext strong{color:var(--heading)}.qtext em{color:var(--heading2);font-style:italic}
+.qtext code{background:var(--code-bg);padding:1px 5px;border-radius:4px;font-size:.9em}
+details.answer{margin-top:10px;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--bg)}
+details.answer>summary{cursor:pointer;padding:10px 14px;background:var(--code-bg);font-weight:700;color:var(--heading);font-size:.88rem;user-select:none;list-style:none;display:flex;align-items:center;gap:8px}
+details.answer>summary::-webkit-details-marker{display:none}
+details.answer>summary::before{content:"\25B6";font-size:.7rem;transition:transform .15s}
+details.answer[open]>summary::before{transform:rotate(90deg)}
+details.answer>summary:hover{background:var(--tbl-head)}
+.answer-body{padding:12px 16px 14px;font-size:.92rem}
+.answer-body p{margin-bottom:8px}.answer-body p:last-child{margin-bottom:0}
+.answer-body strong{color:var(--heading)}
+.answer-body code{background:var(--code-bg);padding:1px 5px;border-radius:4px;font-size:.88em}
+.answer-body ul,.answer-body ol{margin:4px 0 8px 22px}
+.answer-body li{margin-bottom:3px}
+.answer-body table{margin:8px 0;font-size:.85rem}
+.answer-body pre{background:var(--code-bg);padding:10px 14px;border-radius:8px;overflow-x:auto;margin:8px 0;font-size:.85rem;line-height:1.5}
+.ans{background:var(--worked-bg);border-left:4px solid var(--worked-border);border-radius:0 6px 6px 0;padding:10px 14px;margin:8px 0}
+.ans-label{font-weight:700;color:var(--heading2);margin-right:4px}
+.marking{margin:10px 0}
+.marking-title{font-weight:700;color:var(--heading);font-size:.85rem;margin-bottom:4px;text-transform:uppercase;letter-spacing:.03em}
+.marking ul{margin:4px 0 8px 22px}.marking li{margin-bottom:3px}
+hr{border:none;border-top:1px solid var(--border);margin:24px 0}
+sub,sup{font-size:.75em}
+.prog-table th,.prog-table td{text-align:center}
+.prog-table td.qcol{text-align:left;font-weight:600}
+.prog-table input[type="checkbox"]{width:18px;height:18px;cursor:pointer;accent-color:var(--accent)}
+.prog-table tr.t1-row td.qcol{color:var(--tier1-fg)}
+.prog-table tr.t2-row td.qcol{color:var(--tier2-fg)}
+.prog-table tr.t3-row td.qcol{color:var(--tier3-fg)}
+#progBar{width:100%;height:8px;background:var(--border);border-radius:4px;overflow:hidden;margin:12px 0}
+#progFill{height:100%;background:var(--accent);border-radius:4px;transition:width .3s;width:0}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border)}
+@media print{header,#sidebar,#overlay,#darkBtn,nav,.progress-tracker,.no-print{display:none!important}body{padding-top:0;background:#fff;color:#000}main{max-width:100%;padding:0}details.answer{break-inside:avoid}details.answer>summary{display:none}details.answer .answer-body{display:block!important}.qcard{break-inside:avoid;box-shadow:none;border:1px solid #ccc}.cover{break-after:avoid}*{color:#000!important;background:#fff!important;background-color:#fff!important;background-image:none!important;text-shadow:none!important;box-shadow:none!important;border-color:#666!important}.tier-banner,.qcard,.q-tag,.badge-tier1,.badge-tier2,.badge-tier3,.badge-marks,.badge-type,.prog-table tr.t1-row,.prog-table tr.t2-row,.prog-table tr.t3-row{color:#000!important;background:#f2f2f2!important;background-color:#f2f2f2!important;border:1px solid #666!important}.badge-tier1{border:1px solid #000!important}.badge-tier2{border:1px dashed #000!important}.badge-tier3{border:1px dotted #000!important}a{color:#000!important;text-decoration:underline!important}@page{margin:18mm 16mm}}
+
+</style>
+</head>
+<body>
+<header>
+<button id="menuBtn" onclick="toggleSidebar()" aria-label="Toggle navigation">&#9776;</button>
+<span id="headerTitle">Ch 2.6 — Energetics — Exam Readiness Questions</span>
+<button id="darkBtn" onclick="toggleDark()" aria-label="Toggle dark mode">&#127769; Dark</button>
+</header>
+<div id="overlay" onclick="toggleSidebar()"></div>
+
+<aside id="sidebar">
+<div class="sb-head"><span>Index</span><button class="sb-close" onclick="toggleSidebar()" aria-label="Close">&#10005;</button></div>
+<nav>
+<a href="#cover" class="chapter" onclick="toggleSidebar()">Cover</a>
+<ul><li><a href="#summary" onclick="toggleSidebar()">&#128202; Summary &amp; Progress Tracker</a></li></ul>
+<a href="#sec-s61" class="chapter" onclick="toggleSidebar()">§6.1 — Enthalpy Change and Standard Conditions</a>
+<ul>
+<li><a href="#q1" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q1 QFR</span> 1m</a></li>
+<li><a href="#q2" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q2 QFR</span> 1m</a></li>
+<li><a href="#q3" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q3 TDC</span> 1m</a></li>
+<li><a href="#q4" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q4 TDC</span> 1m</a></li>
+<li><a href="#q5" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q5 TDC</span> 2m</a></li>
+<li><a href="#q6" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q6 STE</span> 2m</a></li>
+<li><a href="#q7" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q7 SYN</span> 5m</a></li>
+</ul>
+<a href="#sec-s62" class="chapter" onclick="toggleSidebar()">§6.2 — Exothermic and Endothermic Reactions</a>
+<ul>
+<li><a href="#q8" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q8 QFR</span> 1m</a></li>
+<li><a href="#q9" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q9 TDC</span> 1m</a></li>
+<li><a href="#q10" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q10 EXP</span> 2m</a></li>
+</ul>
+<a href="#sec-s63" class="chapter" onclick="toggleSidebar()">§6.3 — Enthalpy Level Diagrams</a>
+<ul>
+<li><a href="#q11" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q11 QFR</span> 1m</a></li>
+<li><a href="#q12" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q12 TDC</span> 2m</a></li>
+<li><a href="#q13" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q13 WTE</span> 3m</a></li>
+<li><a href="#q14" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q14 TDC</span> 2m</a></li>
+<li><a href="#q15" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q15 STE</span> 3m</a></li>
+<li><a href="#q16" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q16 EXP</span> 2m</a></li>
+<li><a href="#q17" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q17 STE</span> 2m</a></li>
+</ul>
+<a href="#sec-s64" class="chapter" onclick="toggleSidebar()">§6.4(i) — Standard Enthalpy Change of Reaction, ΔH°r</a>
+<ul>
+<li><a href="#q18" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q18 EXP</span> 2m</a></li>
+<li><a href="#q19" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q19 DIA</span> 2m</a></li>
+</ul>
+<a href="#sec-s64-2" class="chapter" onclick="toggleSidebar()">§6.4(ii) — Standard Enthalpy Change of Formation, ΔH°f</a>
+<ul>
+<li><a href="#q20" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q20 QFR</span> 2m</a></li>
+<li><a href="#q21" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q21 TDC</span> 2m</a></li>
+<li><a href="#q22" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q22 WTE</span> 2m</a></li>
+</ul>
+<a href="#sec-s64-3" class="chapter" onclick="toggleSidebar()">§6.4(iii) — Standard Enthalpy Change of Combustion, ΔH°c</a>
+<ul>
+<li><a href="#q23" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q23 QFR</span> 2m</a></li>
+<li><a href="#q24" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q24 WTE</span> 2m</a></li>
+<li><a href="#q25" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q25 STE</span> 3m</a></li>
+</ul>
+<a href="#sec-s64-4" class="chapter" onclick="toggleSidebar()">§6.4(iv) — Standard Enthalpy Change of Neutralisation, ΔH°neut</a>
+<ul>
+<li><a href="#q26" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q26 QFR</span> 2m</a></li>
+<li><a href="#q27" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q27 WTE</span> 1m</a></li>
+<li><a href="#q28" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q28 TDC</span> 2m</a></li>
+<li><a href="#q29" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q29 EXP</span> 2m</a></li>
+</ul>
+<a href="#sec-s64-5" class="chapter" onclick="toggleSidebar()">§6.4(v) — Standard Enthalpy Change of Atomisation, ΔH°at</a>
+<ul>
+<li><a href="#q30" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q30 QFR</span> 2m</a></li>
+<li><a href="#q31" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q31 TDC</span> 3m</a></li>
+<li><a href="#q32" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q32 WTE</span> 2m</a></li>
+</ul>
+<a href="#sec-s65" class="chapter" onclick="toggleSidebar()">§6.5 — Calorimetry (q = mcΔT, ΔH = −q/n)</a>
+<ul>
+<li><a href="#q33" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q33 QFR</span> 1m</a></li>
+<li><a href="#q34" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q34 TDC</span> 1m</a></li>
+<li><a href="#q35" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q35 CAL</span> 4m</a></li>
+<li><a href="#q36" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q36 CAL</span> 4m</a></li>
+<li><a href="#q37" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q37 CAL</span> 5m</a></li>
+<li><a href="#q38" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q38 STE</span> 2m</a></li>
+<li><a href="#q39" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q39 EXP</span> 2m</a></li>
+<li><a href="#q40" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q40 EXP</span> 3m</a></li>
+<li><a href="#q41" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q41 SYN</span> 11m</a></li>
+<li><a href="#q42" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q42 SYN</span> 7m</a></li>
+<li><a href="#q43" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q43 DIA</span> 6m</a></li>
+<li><a href="#q44" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q44 SYN</span> 8m</a></li>
+</ul>
+<a href="#sec-s66" class="chapter" onclick="toggleSidebar()">§6.6–6.7 — Hess's Law (Cycles, Calculations, CP2)</a>
+<ul>
+<li><a href="#q45" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q45 QFR</span> 1m</a></li>
+<li><a href="#q46" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q46 QFR</span> 1m</a></li>
+<li><a href="#q47" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q47 TDC</span> 1m</a></li>
+<li><a href="#q48" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q48 CAL</span> 2m</a></li>
+<li><a href="#q49" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q49 STE</span> 1m</a></li>
+<li><a href="#q50" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q50 STE</span> 2m</a></li>
+<li><a href="#q51" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q51 STE</span> 2m</a></li>
+<li><a href="#q52" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q52 STE</span> 2m</a></li>
+<li><a href="#q53" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q53 TDC</span> 2m</a></li>
+<li><a href="#q54" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q54 CAL</span> 3m</a></li>
+<li><a href="#q55" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q55 DIA</span> 4m</a></li>
+<li><a href="#q56" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q56 SYN</span> 6m</a></li>
+<li><a href="#q57" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q57 SYN</span> 6m</a></li>
+</ul>
+<a href="#sec-s68" class="chapter" onclick="toggleSidebar()">§6.8 — Experimental Error and Uncertainty</a>
+<ul>
+<li><a href="#q58" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q58 QFR</span> 1m</a></li>
+<li><a href="#q59" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q59 TDC</span> 1m</a></li>
+<li><a href="#q60" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q60 CAL</span> 2m</a></li>
+<li><a href="#q61" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q61 EXP</span> 2m</a></li>
+<li><a href="#q62" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q62 STE</span> 2m</a></li>
+<li><a href="#q63" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q63 TDC</span> 2m</a></li>
+<li><a href="#q64" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q64 EXP</span> 2m</a></li>
+<li><a href="#q65" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q65 STE</span> 2m</a></li>
+<li><a href="#q66" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q66 EXP</span> 3m</a></li>
+<li><a href="#q67" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q67 SYN</span> 4m</a></li>
+</ul>
+<a href="#sec-s69" class="chapter" onclick="toggleSidebar()">§6.9 — Mean Bond Enthalpy</a>
+<ul>
+<li><a href="#q68" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q68 QFR</span> 1m</a></li>
+<li><a href="#q69" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q69 TDC</span> 1m</a></li>
+<li><a href="#q70" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q70 QFR</span> 1m</a></li>
+<li><a href="#q71" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q71 QFR</span> 1m</a></li>
+<li><a href="#q72" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q72 CAL</span> 2m</a></li>
+<li><a href="#q73" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q73 STE</span> 2m</a></li>
+<li><a href="#q74" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q74 STE</span> 2m</a></li>
+<li><a href="#q75" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q75 STE</span> 2m</a></li>
+<li><a href="#q76" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q76 CAL</span> 3m</a></li>
+<li><a href="#q77" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q77 CAL</span> 4m</a></li>
+<li><a href="#q78" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q78 EXP</span> 2m</a></li>
+</ul>
+<a href="#sec-s610" class="chapter" onclick="toggleSidebar()">§6.10 — Calculating Mean Bond Enthalpies from Atomisation Data</a>
+<ul>
+<li><a href="#q79" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q79 STE</span> 3m</a></li>
+<li><a href="#q80" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q80 DIA</span> 5m</a></li>
+<li><a href="#q81" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q81 STE</span> 2m</a></li>
+</ul>
+<a href="#sec-s69-2" class="chapter" onclick="toggleSidebar()">§6.9–6.10 — Bond Enthalpy Synthesis</a>
+<ul>
+<li><a href="#q82" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q82 SYN</span> 8m</a></li>
+<li><a href="#q83" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q83 SYN</span> 7m</a></li>
+</ul>
+<a href="#sec-s611" class="chapter" onclick="toggleSidebar()">§6.11 — Bond Enthalpy as a Reactivity Indicator</a>
+<ul>
+<li><a href="#q84" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q84 STE</span> 1m</a></li>
+<li><a href="#q85" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q85 DIA</span> 3m</a></li>
+<li><a href="#q86" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q86 SYN</span> 6m</a></li>
+</ul>
+</nav>
+</aside>
+<main>
+<section class="cover" id="cover">
+<h1>Chapter 2.6 — Energetics</h1>
+<p class="subtitle">WCH12 &middot; Edexcel IAL Chemistry Unit 2 &middot; Exam Readiness Questions</p>
+<div class="meta">
+<span class="tag">Spec Points 6.1–6.11</span>
+<span class="tag">7 Papers Analysed</span>
+<span class="tag">Jun 2022 – Oct 2024</span>
+</div>
+<div class="stats">
+<div class="stat"><div class="num">86</div><div class="lbl">Questions</div></div>
+<div class="stat"><div class="num">227</div><div class="lbl">Total Marks</div></div>
+<div class="stat"><div class="num">~454</div><div class="lbl">Minutes</div></div>
+</div>
+</section>
+<section id="summary">
+<h2>&#128202; Summary &amp; Progress Tracker</h2>
+<div class="intro">
+<p>This set contains <strong>86 questions</strong> totalling <strong>227 marks</strong>, with an estimated completion time of <strong>~454 minutes</strong>. Questions are organised by specification point and tagged by tier (T1 Foundation, T2 Application, T3 Integration) and type (QFR, TDC, CAL, EXP, WTE, STE, DIA, SYN, DER, QWC, GRD).</p>
+</div>
+<h3>Progress Tracker</h3>
+<p id="progText" style="font-size:.9rem;color:var(--muted);margin-bottom:6px">0 / 86 questions completed</p>
+<div id="progBar"><div id="progFill"></div></div>
+<div class="tbl-wrap">
+<table class="prog-table">
+<thead><tr><th class="qcol">Question</th><th>Type</th><th>Tier</th><th>Marks</th><th>Done</th></tr></thead>
+<tbody>
+<tr class="total"><td colspan="5" class="qcol">§6.1 — Enthalpy Change and Standard Conditions</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q1" style="text-decoration:none;color:inherit">Q1</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q1"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q2" style="text-decoration:none;color:inherit">Q2</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q2"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q3" style="text-decoration:none;color:inherit">Q3</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q3"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q4" style="text-decoration:none;color:inherit">Q4</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q4"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q5" style="text-decoration:none;color:inherit">Q5</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q5"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q6" style="text-decoration:none;color:inherit">Q6</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q6"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q7" style="text-decoration:none;color:inherit">Q7</a></td><td class="num">SYN</td><td class="num">T1</td><td class="num">5</td><td><input type="checkbox" data-qid="q7"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">§6.2 — Exothermic and Endothermic Reactions</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q8" style="text-decoration:none;color:inherit">Q8</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q8"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q9" style="text-decoration:none;color:inherit">Q9</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q9"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q10" style="text-decoration:none;color:inherit">Q10</a></td><td class="num">EXP</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q10"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">§6.3 — Enthalpy Level Diagrams</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q11" style="text-decoration:none;color:inherit">Q11</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q11"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q12" style="text-decoration:none;color:inherit">Q12</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q12"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q13" style="text-decoration:none;color:inherit">Q13</a></td><td class="num">WTE</td><td class="num">T1</td><td class="num">3</td><td><input type="checkbox" data-qid="q13"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q14" style="text-decoration:none;color:inherit">Q14</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q14"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q15" style="text-decoration:none;color:inherit">Q15</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">3</td><td><input type="checkbox" data-qid="q15"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q16" style="text-decoration:none;color:inherit">Q16</a></td><td class="num">EXP</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q16"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q17" style="text-decoration:none;color:inherit">Q17</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q17"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">§6.4(i) — Standard Enthalpy Change of Reaction, ΔH°r</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q18" style="text-decoration:none;color:inherit">Q18</a></td><td class="num">EXP</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q18"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q19" style="text-decoration:none;color:inherit">Q19</a></td><td class="num">DIA</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q19"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">§6.4(ii) — Standard Enthalpy Change of Formation, ΔH°f</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q20" style="text-decoration:none;color:inherit">Q20</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q20"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q21" style="text-decoration:none;color:inherit">Q21</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q21"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q22" style="text-decoration:none;color:inherit">Q22</a></td><td class="num">WTE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q22"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">§6.4(iii) — Standard Enthalpy Change of Combustion, ΔH°c</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q23" style="text-decoration:none;color:inherit">Q23</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q23"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q24" style="text-decoration:none;color:inherit">Q24</a></td><td class="num">WTE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q24"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q25" style="text-decoration:none;color:inherit">Q25</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">3</td><td><input type="checkbox" data-qid="q25"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">§6.4(iv) — Standard Enthalpy Change of Neutralisation, ΔH°neut</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q26" style="text-decoration:none;color:inherit">Q26</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q26"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q27" style="text-decoration:none;color:inherit">Q27</a></td><td class="num">WTE</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q27"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q28" style="text-decoration:none;color:inherit">Q28</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q28"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q29" style="text-decoration:none;color:inherit">Q29</a></td><td class="num">EXP</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q29"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">§6.4(v) — Standard Enthalpy Change of Atomisation, ΔH°at</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q30" style="text-decoration:none;color:inherit">Q30</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q30"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q31" style="text-decoration:none;color:inherit">Q31</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">3</td><td><input type="checkbox" data-qid="q31"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q32" style="text-decoration:none;color:inherit">Q32</a></td><td class="num">WTE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q32"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">§6.5 — Calorimetry (q = mcΔT, ΔH = −q/n)</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q33" style="text-decoration:none;color:inherit">Q33</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q33"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q34" style="text-decoration:none;color:inherit">Q34</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q34"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q35" style="text-decoration:none;color:inherit">Q35</a></td><td class="num">CAL</td><td class="num">T1</td><td class="num">4</td><td><input type="checkbox" data-qid="q35"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q36" style="text-decoration:none;color:inherit">Q36</a></td><td class="num">CAL</td><td class="num">T1</td><td class="num">4</td><td><input type="checkbox" data-qid="q36"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q37" style="text-decoration:none;color:inherit">Q37</a></td><td class="num">CAL</td><td class="num">T1</td><td class="num">5</td><td><input type="checkbox" data-qid="q37"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q38" style="text-decoration:none;color:inherit">Q38</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q38"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q39" style="text-decoration:none;color:inherit">Q39</a></td><td class="num">EXP</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q39"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q40" style="text-decoration:none;color:inherit">Q40</a></td><td class="num">EXP</td><td class="num">T1</td><td class="num">3</td><td><input type="checkbox" data-qid="q40"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q41" style="text-decoration:none;color:inherit">Q41</a></td><td class="num">SYN</td><td class="num">T1</td><td class="num">11</td><td><input type="checkbox" data-qid="q41"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q42" style="text-decoration:none;color:inherit">Q42</a></td><td class="num">SYN</td><td class="num">T1</td><td class="num">7</td><td><input type="checkbox" data-qid="q42"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q43" style="text-decoration:none;color:inherit">Q43</a></td><td class="num">DIA</td><td class="num">T1</td><td class="num">6</td><td><input type="checkbox" data-qid="q43"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q44" style="text-decoration:none;color:inherit">Q44</a></td><td class="num">SYN</td><td class="num">T1</td><td class="num">8</td><td><input type="checkbox" data-qid="q44"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">§6.6–6.7 — Hess's Law (Cycles, Calculations, CP2)</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q45" style="text-decoration:none;color:inherit">Q45</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q45"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q46" style="text-decoration:none;color:inherit">Q46</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q46"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q47" style="text-decoration:none;color:inherit">Q47</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q47"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q48" style="text-decoration:none;color:inherit">Q48</a></td><td class="num">CAL</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q48"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q49" style="text-decoration:none;color:inherit">Q49</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q49"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q50" style="text-decoration:none;color:inherit">Q50</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q50"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q51" style="text-decoration:none;color:inherit">Q51</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q51"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q52" style="text-decoration:none;color:inherit">Q52</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q52"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q53" style="text-decoration:none;color:inherit">Q53</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q53"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q54" style="text-decoration:none;color:inherit">Q54</a></td><td class="num">CAL</td><td class="num">T1</td><td class="num">3</td><td><input type="checkbox" data-qid="q54"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q55" style="text-decoration:none;color:inherit">Q55</a></td><td class="num">DIA</td><td class="num">T1</td><td class="num">4</td><td><input type="checkbox" data-qid="q55"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q56" style="text-decoration:none;color:inherit">Q56</a></td><td class="num">SYN</td><td class="num">T1</td><td class="num">6</td><td><input type="checkbox" data-qid="q56"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q57" style="text-decoration:none;color:inherit">Q57</a></td><td class="num">SYN</td><td class="num">T1</td><td class="num">6</td><td><input type="checkbox" data-qid="q57"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">§6.8 — Experimental Error and Uncertainty</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q58" style="text-decoration:none;color:inherit">Q58</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q58"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q59" style="text-decoration:none;color:inherit">Q59</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q59"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q60" style="text-decoration:none;color:inherit">Q60</a></td><td class="num">CAL</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q60"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q61" style="text-decoration:none;color:inherit">Q61</a></td><td class="num">EXP</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q61"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q62" style="text-decoration:none;color:inherit">Q62</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q62"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q63" style="text-decoration:none;color:inherit">Q63</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q63"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q64" style="text-decoration:none;color:inherit">Q64</a></td><td class="num">EXP</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q64"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q65" style="text-decoration:none;color:inherit">Q65</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q65"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q66" style="text-decoration:none;color:inherit">Q66</a></td><td class="num">EXP</td><td class="num">T1</td><td class="num">3</td><td><input type="checkbox" data-qid="q66"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q67" style="text-decoration:none;color:inherit">Q67</a></td><td class="num">SYN</td><td class="num">T1</td><td class="num">4</td><td><input type="checkbox" data-qid="q67"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">§6.9 — Mean Bond Enthalpy</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q68" style="text-decoration:none;color:inherit">Q68</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q68"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q69" style="text-decoration:none;color:inherit">Q69</a></td><td class="num">TDC</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q69"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q70" style="text-decoration:none;color:inherit">Q70</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q70"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q71" style="text-decoration:none;color:inherit">Q71</a></td><td class="num">QFR</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q71"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q72" style="text-decoration:none;color:inherit">Q72</a></td><td class="num">CAL</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q72"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q73" style="text-decoration:none;color:inherit">Q73</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q73"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q74" style="text-decoration:none;color:inherit">Q74</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q74"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q75" style="text-decoration:none;color:inherit">Q75</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q75"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q76" style="text-decoration:none;color:inherit">Q76</a></td><td class="num">CAL</td><td class="num">T1</td><td class="num">3</td><td><input type="checkbox" data-qid="q76"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q77" style="text-decoration:none;color:inherit">Q77</a></td><td class="num">CAL</td><td class="num">T1</td><td class="num">4</td><td><input type="checkbox" data-qid="q77"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q78" style="text-decoration:none;color:inherit">Q78</a></td><td class="num">EXP</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q78"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">§6.10 — Calculating Mean Bond Enthalpies from Atomisation Data</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q79" style="text-decoration:none;color:inherit">Q79</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">3</td><td><input type="checkbox" data-qid="q79"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q80" style="text-decoration:none;color:inherit">Q80</a></td><td class="num">DIA</td><td class="num">T1</td><td class="num">5</td><td><input type="checkbox" data-qid="q80"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q81" style="text-decoration:none;color:inherit">Q81</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">2</td><td><input type="checkbox" data-qid="q81"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">§6.9–6.10 — Bond Enthalpy Synthesis</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q82" style="text-decoration:none;color:inherit">Q82</a></td><td class="num">SYN</td><td class="num">T1</td><td class="num">8</td><td><input type="checkbox" data-qid="q82"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q83" style="text-decoration:none;color:inherit">Q83</a></td><td class="num">SYN</td><td class="num">T1</td><td class="num">7</td><td><input type="checkbox" data-qid="q83"></td></tr>
+<tr class="total"><td colspan="5" class="qcol">§6.11 — Bond Enthalpy as a Reactivity Indicator</td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q84" style="text-decoration:none;color:inherit">Q84</a></td><td class="num">STE</td><td class="num">T1</td><td class="num">1</td><td><input type="checkbox" data-qid="q84"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q85" style="text-decoration:none;color:inherit">Q85</a></td><td class="num">DIA</td><td class="num">T1</td><td class="num">3</td><td><input type="checkbox" data-qid="q85"></td></tr>
+<tr class="t1-row"><td class="qcol"><a href="#q86" style="text-decoration:none;color:inherit">Q86</a></td><td class="num">SYN</td><td class="num">T1</td><td class="num">6</td><td><input type="checkbox" data-qid="q86"></td></tr>
+</tbody></table></div>
+</section>
+<section id="sec-s61">
+<h2>§6.1 — Enthalpy Change and Standard Conditions</h2>
+<article class="qcard" id="q1">
+<div class="qcard-head">
+<span class="qnum">Q1</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§6.1</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the standard conditions used for enthalpy changes.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>298 K (or 25 °C) and 100 kPa.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>The mark scheme accepts "298 K and 100 kPa" in either order. Writing "25 °C" instead of "298 K" is also accepted. However, "room temperature" alone, "298°K" (incorrect unit notation), "1 atm", "normal conditions", or "STP" would all be rejected — the exact values 298 K and 100 kPa are required.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q2">
+<div class="qcard-head">
+<span class="qnum">Q2</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§6.1</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>Define the term enthalpy change (ΔH).</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The heat energy change at constant pressure. It is the difference between the enthalpy of the products and the enthalpy of the reactants.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Both parts are required for full marks: (1) "heat energy change at constant pressure" and (2) the description as "the difference between the enthalpy of the products and the enthalpy of the reactants." A student who only writes "energy change" without specifying "at constant pressure" would not score.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q3">
+<div class="qcard-head">
+<span class="qnum">Q3</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§6.1</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>A student is asked to identify the standard state of bromine at 298 K and 100 kPa. They write Br₂(g). Explain why this is incorrect and state the correct standard state.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Bromine is a liquid at 298 K and 100 kPa, so its correct standard state is Br₂(l), not Br₂(g).</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>The mark scheme explicitly lists Br₂(l) as an example of a standard state. A common error is assuming all diatomic elements are gases — bromine is a liquid under standard conditions. The student must give the correct physical state with the correct state symbol.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q4">
+<div class="qcard-head">
+<span class="qnum">Q4</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§6.1</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>Which equation correctly represents the standard enthalpy change of formation of Al₂O₃? A. 4Al(s) + 3O₂(g) → 2Al₂O₃(s) B. 2Al(g) + 1½O(g) → Al₂O₃(s) C. 2Al(s) + 1½O₂(g) → Al₂O₃(s) D. 2Al(s) + 1½O₂(g) → Al₂O₃(l)</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>C. 2Al(s) + 1½O₂(g) → Al₂O₃(s)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>The correct answer must satisfy three requirements simultaneously: (1) exactly 1 mol of product formed — option A forms 2 mol Al₂O₃ so is wrong; (2) elements in their standard states — option B uses Al(g) and O(g) instead of Al(s) and O₂(g); (3) correct state symbols for the product — option D has Al₂O₃(l) instead of Al₂O₃(s). Fractional coefficients (1½) are accepted in formation equations.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q5">
+<div class="qcard-head">
+<span class="qnum">Q5</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§6.1</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Which one of the following equations correctly represents the standard enthalpy of formation of copper(II) carbonate, CuCO₃? A. 2Cu(s) + 2C(s) + 3O₂(g) → 2CuCO₃(s) B. Cu(s) + C(s) + ³⁄₂O₂(g) → CuCO₃(s) C. Cu(s) + C(s) + ³⁄₂O(g) → CuCO₃(s) D. Cu(s) + C(s) + O₃(g) → CuCO₃(s)</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>B.</strong> Cu(s) + C(s) + ³⁄₂O₂(g) → CuCO₃(s)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>This is worth 2 marks: (1 mark) for identifying option B; (1 mark) for the justification. Option B is the only equation where all reactants are elements in their standard states (Cu, C, and O₂), exactly 1 mol of compound product is formed, and the equation is balanced. Option A forms 2 mol of product — standard enthalpy of formation is always per mole of product. Option C uses O(g) instead of O₂(g) — oxygen's standard state is O₂(g), not O(g). Option D uses O₃(g) which is not the standard state of oxygen.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q6">
+<div class="qcard-head">
+<span class="qnum">Q6</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§6.1</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student writes the following equation for the standard enthalpy change of formation of ethanol (C₂H₅OH): 2C(g) + 3H₂(g) + ½O₂(g) → C₂H₅OH(l) Identify the error and write the corrected equation. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The student has written C(g) instead of the correct standard state of carbon. The standard state of carbon is C(s) (solid graphite), not C(g). The corrected equation is:
+2C(s) + 3H₂(g) + ½O₂(g) → C₂H₅OH(l)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Mark 1 is for identifying the error: carbon must be in its standard state C(s), not C(g). This mirrors the trap highlighted where O₂(g) not O(g) is required — the same principle applies to all elements. Mark 2 is for writing the corrected equation with the proper standard state. Using atoms instead of elements in their standard states scores zero.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q7">
+<div class="qcard-head">
+<span class="qnum">Q7</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§6.1</span>
+<span class="qmeta"><span class="marks">5 marks</span> &middot; ~10 min</span>
+</div>
+<div class="qtext"><p>An exam question asks a student to write the equation for the standard enthalpy change of formation of nitrogen monoxide, NO(g). The student's working is shown below: Step 1: "Standard conditions are room temperature and 1 atm." Step 2: "The equation is: N(g) + O(g) → NO(g)" The examiner awards 0 marks. (a) State the correct standard conditions. <em>(1 mark)</em> (b) Identify two errors in the student's equation and explain why each loses a mark. <em>(2 marks)</em> (c) Write the correct equation for the standard enthalpy change of formation of NO(g). <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) 298 K (or 25 °C) and 100 kPa.
+(b) Error 1: N(g) is incorrect — nitrogen's standard state is N₂(g), not N(g). Elements must be in their standard states for a formation equation. Error 2: O(g) is incorrect — oxygen's standard state is O₂(g), not O(g). Additionally, the equation is unbalanced as written.
+(c) ½N₂(g) + ½O₂(g) → NO(g)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Part (a): 1 mark for stating 298 K and 100 kPa — "room temperature" and "1 atm" are both rejected. Part (b): 2 marks — 1 mark for identifying N(g) should be N₂(g) (elemental nitrogen is diatomic) and 1 mark for identifying O(g) should be O₂(g) (elemental oxygen is diatomic). Part (c): 2 marks — 1 mark for correct reactants as elements in standard states with state symbols, 1 mark for correctly balanced equation forming exactly 1 mol of NO(g). Fractional coefficients are accepted.</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s62">
+<h2>§6.2 — Exothermic and Endothermic Reactions</h2>
+<article class="qcard" id="q8">
+<div class="qcard-head">
+<span class="qnum">Q8</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§6.2</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>Define an exothermic reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>A reaction in which heat energy is transferred to the surroundings (ΔH is negative).</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>The key phrase required by the mark scheme is "heat energy is transferred to the surroundings" (or "heat energy is given out to the surroundings" / "heat is released to the surroundings"). Mentioning that ΔH is negative earns credit if the definition is incomplete, but is not a substitute for the core definition. Simply stating "ΔH is negative" without the heat transfer description is unlikely to score full marks.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q9">
+<div class="qcard-head">
+<span class="qnum">Q9</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§6.2</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>Which of the following processes is exothermic? A. Cl₂(g) → 2Cl(g) B. Cl(g) → Cl⁺(g) + e⁻ C. 2Cl(g) → Cl₂(g) D. Cl₂(g) → 2Cl⁺(g) + 2e⁻</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>C.</strong> 2Cl(g) → Cl₂(g)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Option C is the only exothermic process because it involves bond formation. When a Cl–Cl bond forms, energy is released to the surroundings. Options A, B, and D are all endothermic: A involves bond breaking, B involves ionisation energy (removing an electron), and D involves both bond breaking and ionisation — all of which require energy input.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q10">
+<div class="qcard-head">
+<span class="qnum">Q10</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§6.2</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Explain, in terms of bonds, why bond formation is always exothermic.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>During bond formation, attractive electrostatic forces are established between atoms, and energy is released as the new bond is formed. The bonded state has lower potential energy than the separated atoms, so the excess energy is transferred to the surroundings as heat.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Mark 1 is awarded for the idea that new bonds/forming bonds release energy (or that the bonded state is more stable/lower in energy). Mark 2 is awarded for the explanation in terms of electrostatic attraction being established (or that energy is transferred to the surroundings). Simply stating "bond forming is exothermic" without explanation would score zero. The key is explaining WHY — the electrostatic attraction between nuclei and shared electrons lowers the energy of the system.</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s63">
+<h2>§6.3 — Enthalpy Level Diagrams</h2>
+<article class="qcard" id="q11">
+<div class="qcard-head">
+<span class="qnum">Q11</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§6.3</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the label that must be used for the vertical axis of an enthalpy level diagram in an Edexcel IAL Chemistry exam.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>enthalpy</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>The mark scheme for Jun 2022 Q18(a)(iii) explicitly penalised any label other than "enthalpy". Answers of "energy", "energy change", "ΔH", or "heat energy" all score zero. The single word "enthalpy" (case-insensitive) is the only acceptable label.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q12">
+<div class="qcard-head">
+<span class="qnum">Q12</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§6.3</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Distinguish between an enthalpy level diagram and a reaction profile. State one key feature that is present on a reaction profile but must NOT be drawn on an enthalpy level diagram.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>An enthalpy level diagram shows only the start and end enthalpy as two horizontal lines with a single arrow between them. A reaction profile shows the full energy pathway from reactants to products, including the activation energy "hump" and possibly an intermediate. The activation energy hump must NOT be drawn on an enthalpy level diagram unless the question specifically asks for a reaction profile or activation energy diagram.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Mark 1 is awarded for correctly describing the difference: enthalpy level diagrams show only start and end points (two lines, one arrow) whereas reaction profiles show the full pathway with energy barriers. Mark 2 is awarded for identifying activation energy as the feature that must not appear on an enthalpy level diagram.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q13">
+<div class="qcard-head">
+<span class="qnum">Q13</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§6.3</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>Describe, in detail, the enthalpy level diagram you would draw for the complete combustion of octane, C₈H₁₈(l), given that ΔH꜀ = −5461 kJ mol⁻¹.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>A vertical y-axis is drawn and labelled "enthalpy". A horizontal line is drawn near the top of the diagram, labelled "Reactants: C₈H₁₈(l) + 12½O₂(g)". A second horizontal line is drawn significantly lower than the reactants line (because the reaction is highly exothermic), labelled "Products: 8CO₂(g) + 9H₂O(l)". A single-headed vertical arrow is drawn from the reactants line down to the products line, and this arrow is labelled "ΔH꜀ = −5461 kJ mol⁻¹". No activation energy hump is drawn.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Mark 1: Y-axis correctly labelled "enthalpy" (not "energy" or "ΔH"). Mark 2: Reactants line above products line (exothermic reaction), both correctly labelled with species and state symbols. Mark 3: Single-headed arrow from reactants to products correctly labelled with the appropriate subscript ΔH꜀ and the negative value.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q14">
+<div class="qcard-head">
+<span class="qnum">Q14</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§6.3</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student draws an enthalpy level diagram for the complete combustion of methane, ΔH꜀ = −890 kJ mol⁻¹. Which of the following descriptions of the arrow on the diagram is correct? A. A double-headed vertical arrow pointing from products to reactants, labelled −ΔH B. A single-headed vertical arrow pointing from reactants down to products, labelled ΔH꜀ = −890 kJ mol⁻¹ C. A single-headed vertical arrow pointing from products up to reactants, labelled ΔH꜀ = +890 kJ mol⁻¹ D. A double-headed vertical arrow between reactants and products, labelled −ΔH꜀ = −890 kJ mol⁻¹</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>B.</strong> A single-headed vertical arrow pointing from reactants down to products, labelled ΔH꜀ = −890 kJ mol⁻¹</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Two discriminations are tested here. First, the arrow must be single-headed — a double-headed arrow (A and D) scores zero. Second, the arrow goes from reactants to products and is labelled ΔH with its actual negative value — it is NOT labelled "−ΔH" (a double-negative). Option C reverses the direction. Only B satisfies both the single-headed requirement and correct direction/label.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q15">
+<div class="qcard-head">
+<span class="qnum">Q15</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§6.3</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A student draws the following description of their enthalpy level diagram for the combustion of propane (ΔH꜀ = −2220 kJ mol⁻¹): <em>"I drew a y-axis labelled 'energy change'. The products line was drawn above the reactants line. I used a double-headed arrow between the two lines and labelled it '−ΔH = −2220 kJ mol⁻¹'."</em> Identify three errors in the student's diagram. <em>(3 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ol>
+<li>The y-axis is labelled "energy change" — it must be labelled "enthalpy".</li>
+<li>The products line is above the reactants line — for an exothermic combustion reaction, the products line must be below the reactants line.</li>
+<li>A double-headed arrow is used — the arrow must be single-headed, going from reactants to products. (Alternatively: the arrow is labelled "−ΔH" — this is a double-negative; it should be labelled "ΔH꜀ = −2220 kJ mol⁻¹".)</li>
+</ol></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Each error identified scores 1 mark. Error 1 targets the mandatory "enthalpy" y-axis label (penalised in Jun 2022 Q18(a)(iii)). Error 2 tests that exothermic reactions have products below reactants. Error 3 tests either the single-headed arrow rule or the "−ΔH" double-negative pitfall — both are valid marks. A student giving any three distinct errors scores full marks.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q16">
+<div class="qcard-head">
+<span class="qnum">Q16</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§6.3</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A reaction proceeds via an intermediate. On the enthalpy level diagram, the intermediate has its own horizontal line between the reactants and products. Explain why the overall ΔH arrow must go from the reactant level to the product level, and NOT from the reactant level to the intermediate level.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The overall enthalpy change, ΔH, is defined as the difference in enthalpy between the final products and the initial reactants. The intermediate is a transient species that is neither a starting material nor a final product of the overall reaction. Therefore, the ΔH arrow must span from the initial reactant level to the final product level, representing the net enthalpy change for the overall reaction.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Mark 1: Stating that ΔH is defined between final products and initial reactants (not between reactants and intermediate). Mark 2: Explaining that the intermediate is not a starting material or final product of the overall reaction, so it is not part of the overall enthalpy change.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q17">
+<div class="qcard-head">
+<span class="qnum">Q17</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§6.3</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student examining a reaction profile diagram states: "The activation energy of this reaction is the same as the enthalpy change, ΔH." Explain why this statement is incorrect.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The activation energy (Eₐ) is the minimum energy required for reactants to react, represented by the height of the energy barrier (the "hump" on the reaction profile) above the reactant level. The enthalpy change (ΔH) is the overall difference in enthalpy between the products and the reactants, represented by the difference in the horizontal levels. These are different features of the diagram and are not the same quantity.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Mark 1 is for correctly describing what activation energy represents (energy barrier / minimum energy for reaction / the peak of the curve). Mark 2 is for correctly describing what ΔH represents (overall level difference between reactants and products). The student's error is a fundamental confusion between the vertical "hump" (Eₐ) and the horizontal level change (ΔH).</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s64">
+<h2>§6.4(i) — Standard Enthalpy Change of Reaction, ΔH°r</h2>
+<article class="qcard" id="q18">
+<div class="qcard-head">
+<span class="qnum">Q18</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§6.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>The standard enthalpy change of reaction for the equation 2H₂(g) + O₂(g) → 2H₂O(l) is −572 kJ mol⁻¹, whereas the standard enthalpy change of reaction for H₂(g) + ½O₂(g) → H₂O(l) is −286 kJ mol⁻¹. Explain why the two values are different even though both equations describe the same reaction.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The value of ΔH°r depends on the <strong>stoichiometry of the equation as written</strong>. The first equation shows the formation of <strong>2 moles</strong> of water, so its enthalpy change is <strong>twice</strong> the value for the formation of 1 mole of water shown in the second equation. This is because enthalpy is an extensive property — it is proportional to the amount of substance reacting.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p><strong>M1</strong> is awarded for stating that ΔH°r depends on the stoichiometric quantities in the equation. <strong>M2</strong> is awarded for explaining the mathematical relationship (the first equation produces twice as much water, so the enthalpy change is doubled). A student who believes both equations should give the same ΔH°r has not understood that the "per mol" in ΔH°r refers to the molar quantities as written in the specific equation, not per mole of a particular substance.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q19">
+<div class="qcard-head">
+<span class="qnum">Q19</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§6.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>The enthalpy level diagram below shows a two-step reaction A → C that proceeds through an intermediate B: - Level of A (reactants): −50 kJ mol⁻¹ - Level of B (intermediate): −180 kJ mol⁻¹ - Level of C (products): −320 kJ mol⁻¹ Arrow X points from level A down to level C (bypassing B). Arrow Y points from level A down to level B. Arrow Z points from level B down to level C. A student is asked to label the overall ΔH for the reaction A → C. Which arrow (X, Y, or Z) should they use, and what value should they write? Explain your reasoning. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The student should use <strong>Arrow X</strong> and label it <strong>ΔH = −270 kJ mol⁻¹</strong>.
+The overall ΔH for a reaction spans from the initial reactant level to the final product level, passing through (but not ending at) any intermediate. ΔH = final enthalpy − initial enthalpy = (−320) − (−50) = −270 kJ mol⁻¹.
+Arrow Y (−130 kJ mol⁻¹) represents only the first step (A → B), and Arrow Z (−140 kJ mol⁻¹) represents only the second step (B → C). The overall ΔH must connect reactants directly to products, consistent with Hess's Law.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p><strong>M1</strong> is awarded for selecting Arrow X and explaining that the overall ΔH arrow spans from reactants to products (not ending at the intermediate). <strong>M2</strong> is awarded for the correct calculation: (−320) − (−50) = −270 kJ mol⁻¹.</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s64-2">
+<h2>§6.4(ii) — Standard Enthalpy Change of Formation, ΔH°f</h2>
+<article class="qcard" id="q20">
+<div class="qcard-head">
+<span class="qnum">Q20</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§6.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State the meaning of the term standard enthalpy change of formation.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The enthalpy change when <strong>1 mole</strong> of a compound is formed from its <strong>elements</strong> in their <strong>standard states</strong> under standard conditions (100 kPa, 298 K).</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>This hits both mandatory marking points from the Jun 2024 / Jan 2024 mark scheme. <strong>M1</strong> is awarded for "1 mol" or "one mole" of the compound formed — omitting this loses this mark. <strong>M2</strong> is awarded for "elements in standard states" — writing "from its constituent elements" alone is NOT sufficient; the phrase "standard states" must appear.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q21">
+<div class="qcard-head">
+<span class="qnum">Q21</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§6.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student writes the following definition: <em>"The enthalpy change when a compound is formed from its constituent elements at room temperature and 1 atm."</em> This answer scores <strong>zero marks</strong>. Which two of the following corrections, if applied, would each independently recover one mark? A. Change "a compound" to "1 mole of a compound" B. Change "1 atm" to "100 kPa" C. Add the phrase "in their standard states" after "constituent elements" D. Change "room temperature" to "298 K"</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>A</strong> and <strong>C</strong>.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>From the Jan 2024 MS, the two mark points are: (1) "1 mol" / "one mole" of compound, and (2) "elements in standard states". Correction <strong>A</strong> restores the "1 mole" requirement (M1). Correction <strong>C</strong> restores the "elements in standard states" requirement (M2). While corrections <strong>B</strong> and <strong>D</strong> would make the definition more accurate regarding standard conditions, the mark scheme does <strong>not</strong> award separate marks for stating "100 kPa" and "298 K" in a definition question — those are covered by the umbrella term "standard conditions".</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q22">
+<div class="qcard-head">
+<span class="qnum">Q22</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§6.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Write a balanced equation, including state symbols, for the standard enthalpy change of formation of liquid methanol, CH₃OH.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>C(s) + 2H₂(g) + ½O₂(g) → CH₃OH(l)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p><strong>M1</strong> is awarded for the correct balanced equation with elements as reactants. Carbon must be C(s) (solid, its standard state), hydrogen must be H₂(g) (not H(g)), and oxygen must be O₂(g) (not O(g)). <strong>M2</strong> is awarded for correct state symbols throughout. Fractional coefficients (½O₂) are required and acceptable. The product must be 1 mole of CH₃OH.</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s64-3">
+<h2>§6.4(iii) — Standard Enthalpy Change of Combustion, ΔH°c</h2>
+<article class="qcard" id="q23">
+<div class="qcard-head">
+<span class="qnum">Q23</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§6.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State the meaning of the term standard enthalpy change of combustion.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The enthalpy change when <strong>1 mole</strong> of a substance reacts <strong>completely with oxygen</strong> under standard conditions (100 kPa, 298 K), with all reactants and products in their standard states.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p><strong>M1</strong> is awarded for "1 mole of substance". <strong>M2</strong> is awarded for "reacts completely with oxygen" (or "complete combustion"). Both elements must be present. A common error is omitting "completely" or "1 mole" — both cost marks.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q24">
+<div class="qcard-head">
+<span class="qnum">Q24</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§6.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Write a balanced equation, including state symbols, for the complete combustion of propan-1-ol, C₃H₇OH.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>C₃H₇OH(l) + 4½O₂(g) → 3CO₂(g) + 4H₂O(l)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p><strong>M1</strong> is awarded for the correctly balanced equation. Propan-1-ol contains 3 C and 8 H (C₃H₈O), so complete combustion requires 4½ O₂ (to give 3CO₂ + 4H₂O). <strong>M2</strong> is awarded for correct state symbols: the alcohol is a liquid (l), O₂ and CO₂ are gases (g), and water is produced as a liquid (l) under standard conditions.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q25">
+<div class="qcard-head">
+<span class="qnum">Q25</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§6.4</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A student is calculating the energy released when 2.00 g of 2,2,4-trimethylpentane (Mᵣ = 114) is combusted, given ΔH°c = −5470 kJ mol⁻¹. They write: <em>"Energy = 2.00 × 5470 = 10 940 kJ"</em> Identify <strong>two</strong> errors in the student's working and calculate the correct value. <em>(3 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>Error 1:</strong> The student has not converted mass to moles. Moles = mass / Mᵣ = 2.00 / 114 = 0.01754 mol.
+<strong>Error 2:</strong> The student has used a positive value (5470 kJ mol⁻¹) instead of the correct negative value (−5470 kJ mol⁻¹), losing the exothermic sign convention.
+<strong>Correct calculation:</strong>
+- n = 2.00 / 114 = <strong>0.01754 mol</strong>
+- Energy released = 0.01754 × 5470 = <strong>95.9 kJ</strong> (the negative sign indicates energy is released, so the magnitude of energy released is 95.9 kJ)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li><strong>M1</strong> for identifying the missing mole conversion (dividing mass by Mᵣ).</li>
+<li><strong>M2</strong> for identifying the sign error — using +5470 instead of −5470.</li>
+<li><strong>M3</strong> for the correct calculation: (2.00/114) × 5470 = 95.9 kJ.</li>
+</ul></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s64-4">
+<h2>§6.4(iv) — Standard Enthalpy Change of Neutralisation, ΔH°neut</h2>
+<article class="qcard" id="q26">
+<div class="qcard-head">
+<span class="qnum">Q26</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§6.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Define the standard enthalpy change of neutralisation, ΔH°neut.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The enthalpy change when <strong>1 mole of water</strong> is formed from the reaction between an acid and an alkali under standard conditions (100 kPa, 298 K), with all solutions at 1 mol dm⁻³.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li><strong>M1</strong> is awarded for specifying the enthalpy/heat energy change under <strong>standard conditions</strong> (298 K, 100 kPa).</li>
+<li><strong>M2</strong> is awarded for stating the change is <strong>per mole of water formed</strong> — writing "per mole of acid" or "per mole of alkali" would score zero for this mark.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q27">
+<div class="qcard-head">
+<span class="qnum">Q27</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§6.4</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>Write the ionic equation for the neutralisation of hydrochloric acid by sodium hydroxide.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>H⁺(aq) + OH⁻(aq) → H₂O(l)
+(Alternative acceptable: H₃O⁺(aq) + OH⁻(aq) → 2H₂O(l))</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>The net ionic equation for <strong>any</strong> strong acid–strong base neutralisation is always H⁺ + OH⁻ → H₂O. This strips away the spectator ions (Na⁺ and Cl⁻) and shows the essential reaction that defines ΔH°neut.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q28">
+<div class="qcard-head">
+<span class="qnum">Q28</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§6.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student writes the following definition in an exam: <em>"The standard enthalpy change of neutralisation is the enthalpy change when 1 mole of acid reacts with 1 mole of alkali under standard conditions."</em> Explain why this definition would <strong>not</strong> score full marks. State what is missing or incorrect. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The definition is incorrect because it defines the change per mole of acid/alkali rather than <strong>per mole of water formed</strong>. The standard enthalpy change of neutralisation must be defined as the enthalpy change when <strong>1 mole of water</strong> is formed from the reaction of an acid and an alkali. The student's version would give different values for reactions involving different stoichiometries (e.g., H₂SO₄ + 2NaOH produces 2 mol H₂O, so ΔH per mole of acid would differ from ΔH per mole of water).</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li><strong>M1</strong> for identifying the error: must be "per mole of <strong>water</strong> formed", not per mole of acid or alkali.</li>
+<li><strong>M2</strong> for explaining why this matters (different stoichiometries produce different amounts of water per mole of acid).</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q29">
+<div class="qcard-head">
+<span class="qnum">Q29</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§6.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>The standard enthalpy change of neutralisation for HCl(aq) + NaOH(aq) is −57.1 kJ mol⁻¹. The standard enthalpy change of neutralisation for HNO₃(aq) + KOH(aq) is also −57.1 kJ mol⁻¹. Explain why these two different reactions have the same ΔH°neut value. Your answer should refer to the ionic equation. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Both reactions involve strong acids and strong alkalis that are fully dissociated in solution. In each case, the only reaction that actually occurs is the same net ionic equation:
+H⁺(aq) + OH⁻(aq) → H₂O(l)
+The Na⁺, Cl⁻, K⁺, and NO₃⁻ ions are all spectator ions. Since the same ionic reaction occurs in both cases (forming 1 mole of water from H⁺ and OH⁻), the enthalpy change per mole of water formed is identical.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li><strong>M1</strong> for stating that both reactions involve fully dissociated strong acids and strong alkalis, so the net ionic equation is the same: H⁺(aq) + OH⁻(aq) → H₂O(l).</li>
+<li><strong>M2</strong> for explaining that the spectator ions do not take part in the reaction, so the enthalpy change depends only on the formation of 1 mole of water from H⁺ and OH⁻.</li>
+</ul></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s64-5">
+<h2>§6.4(v) — Standard Enthalpy Change of Atomisation, ΔH°at</h2>
+<article class="qcard" id="q30">
+<div class="qcard-head">
+<span class="qnum">Q30</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§6.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Define the standard enthalpy change of atomisation, ΔH°at.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The enthalpy change when <strong>1 mole of gaseous atoms</strong> is formed from an element in its <strong>standard state</strong> under standard conditions (100 kPa, 298 K).</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li><strong>M1</strong> is awarded for "1 mole of gaseous atoms" — the product must be a gaseous atom, not a molecule or atom in another state.</li>
+<li><strong>M2</strong> is awarded for specifying the element starts in its <strong>standard state</strong> — this is the state at 100 kPa, 298 K (e.g., Br₂(l) not Br₂(g) for bromine).</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q31">
+<div class="qcard-head">
+<span class="qnum">Q31</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§6.4</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A student is asked to select the equation that represents the standard enthalpy change of atomisation of bromine. Four equations are proposed: - <strong>A:</strong> Br₂(l) → 2Br(g)    ΔH = +193 kJ mol⁻¹ - <strong>B:</strong> ½Br₂(l) → Br(g)    ΔH = +96.5 kJ mol⁻¹ - <strong>C:</strong> ½Br₂(g) → Br(g)    ΔH = +111.9 kJ mol⁻¹ - <strong>D:</strong> Br₂(g) → 2Br(g)    ΔH = +193 kJ mol⁻¹ Which equation is correct? Explain why each of the other three is wrong. <em>(3 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Correct answer: <strong>B</strong> — ½Br₂(l) → Br(g).
+- <strong>A is wrong</strong> because it produces <strong>2 moles</strong> of gaseous atoms; the definition requires exactly <strong>1 mole</strong> of gaseous atoms.
+- <strong>C is wrong</strong> because bromine's standard state is <strong>Br₂(l)</strong> (liquid at 298 K), not Br₂(g). The starting state must be the standard state.
+- <strong>D is wrong</strong> for <strong>two</strong> reasons: it starts from Br₂(g) (not the standard state Br₂(l)) and produces 2 moles of gaseous atoms (not 1 mole).</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li><strong>M1</strong> for identifying B as correct, with reasoning (1 mol gaseous atoms from standard state).</li>
+<li><strong>M2</strong> for explaining A's error (2 mol, not 1 mol).</li>
+<li><strong>M3</strong> for explaining C's error (wrong standard state — Br₂(g) instead of Br₂(l)).</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q32">
+<div class="qcard-head">
+<span class="qnum">Q32</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§6.4</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student is asked to write an equation representing the standard enthalpy change of atomisation of the element <strong>phosphorus</strong>. Phosphorus exists as P₄(s) in its standard state. Write the correct equation. State symbols are required. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>¼P₄(s) → P(g)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li><strong>M1</strong> for starting with phosphorus in its standard state: P₄(s) — not P(s) and not P₄(g).</li>
+<li><strong>M2</strong> for producing exactly 1 mole of gaseous atoms: P(g), using the fraction ¼ to ensure only 1 mole of P(g) is produced.</li>
+</ul></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s65">
+<h2>§6.5 — Calorimetry (q = mcΔT, ΔH = −q/n)</h2>
+<article class="qcard" id="q33">
+<div class="qcard-head">
+<span class="qnum">Q33</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§6.5</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the value of the specific heat capacity of water, including its correct units.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>4.18 J g⁻¹ °C⁻¹ (or 4.18 J g⁻¹ K⁻¹)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>The mark scheme requires the numerical value (4.18) AND correct units. Either J g⁻¹ °C⁻¹ or J g⁻¹ K⁻¹ is accepted since a change of 1 °C equals a change of 1 K. Writing "4.18 J kg⁻¹ K⁻¹" would score zero — the per-gram unit is mandatory at this level.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q34">
+<div class="qcard-head">
+<span class="qnum">Q34</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§6.5</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>A student burns 0.250 g of methanol to heat 150.0 g of water in a calorimeter. Which value of <em>m</em> must be used in the calculation q = mcΔT? A. 0.250 g B. 150.0 g C. 150.250 g D. 75.0 g <em>(1 mark)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>B. 150.0 g</strong></p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>The calorimeter measures the heat absorbed by the <em>water/solution being heated</em>, not the mass of the fuel being burned. The mark scheme explicitly states: "Always use the mass of the solution being heated, NOT the mass of the solid or fuel being reacted/burned." Option C (adding both masses) is a common pitfall that the mark scheme specifically rejects.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q35">
+<div class="qcard-head">
+<span class="qnum">Q35</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§6.5</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>A student dissolves 4.25 g of NH₄NO₃(s) in 75.0 cm³ of water in a polystyrene cup. The temperature of the solution decreases by 5.40 °C. Calculate the enthalpy change of solution of NH₄NO₃. [Mᵣ of NH₄NO₃ = 80.0; specific heat capacity of water = 4.18 J g⁻¹ °C⁻¹; assume the density of the solution is 1.00 g cm⁻³]</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Step 1 — Energy absorbed by the solution:
+q = mcΔT = 75.0 × 4.18 × 5.40 = <strong>1691 J</strong> = <strong>1.691 kJ</strong>
+Step 2 — Moles of NH₄NO₃:
+n = m / Mᵣ = 4.25 / 80.0 = <strong>0.0531 mol</strong>
+Step 3 — Enthalpy change of solution:
+ΔH = +q / n = +1.691 / 0.0531 = <strong>+31.9 kJ mol⁻¹</strong> (to 3 significant figures)
+(The positive sign is required because the temperature decrease indicates an endothermic process.)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Mark 1: Correctly uses mass of solution (75.0 g) in q = mcΔT, not the mass of the solid. Mark 2: Correct calculation of q with correct units (J). Mark 3: Correct calculation of moles of NH₄NO₃. Mark 4: Correct ΔH = +q/n with positive sign (endothermic), conversion to kJ mol⁻¹, and appropriate significant figures.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q36">
+<div class="qcard-head">
+<span class="qnum">Q36</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§6.5</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>In a calorimetry experiment, 0.305 g of ethanol (Mᵣ = 46.0) was burned and used to heat 100.0 g of water. The temperature of the water increased by 13.2 °C. Calculate the enthalpy change of combustion of ethanol. Give your answer in kJ mol⁻¹ to 3 significant figures. <em>(4 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Calculation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Energy transferred to water</td>
+<td>q = m × c × ΔT = 100.0 × 4.18 × 13.2 = <strong>5517.6 J</strong></td>
+</tr>
+<tr>
+<td>Moles of ethanol burned</td>
+<td>n = m / Mᵣ = 0.305 / 46.0 = <strong>0.00663 mol</strong></td>
+</tr>
+<tr>
+<td>Enthalpy change per mole</td>
+<td>ΔH = −q / n = −5517.6 / 0.00663 = −831,780 J mol⁻¹</td>
+</tr>
+<tr>
+<td>Convert to kJ mol⁻¹</td>
+<td><strong>−832 kJ mol⁻¹</strong> (3 SF)</td>
+</tr>
+</tbody>
+</table></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li><strong>Mark 1:</strong> Correct substitution into q = mcΔT with correct values (100.0 g, 4.18, 13.2) — using only the water mass, NOT adding the ethanol mass.</li>
+<li><strong>Mark 2:</strong> Correct calculation of moles of ethanol (0.305 / 46.0 = 0.00663 mol).</li>
+<li><strong>Mark 3:</strong> Division of q by moles (energy per mole of ethanol).</li>
+<li><strong>Mark 4:</strong> Correct final answer with <strong>negative sign</strong> (exothermic), correct units (kJ mol⁻¹), and 3 significant figures.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q37">
+<div class="qcard-head">
+<span class="qnum">Q37</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§6.5</span>
+<span class="qmeta"><span class="marks">5 marks</span> &middot; ~10 min</span>
+</div>
+<div class="qtext"><p>A thermometric titration was carried out by adding HCl(aq) from a burette to 30.0 cm³ of 1.30 mol dm⁻³ ammonia solution, NH₃(aq). The maximum temperature reached was 27.6 °C and the initial temperature was 20.7 °C. The end-point of the titration occurred at 21.0 cm³ of HCl(aq) added. Calculate the enthalpy change of neutralisation for this reaction. Give your answer in kJ mol⁻¹. <em>(5 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Calculation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total mass of solution</td>
+<td>m = 30.0 + 21.0 = <strong>51.0 g</strong> (assume density = 1.00 g cm⁻³)</td>
+</tr>
+<tr>
+<td>Temperature change</td>
+<td>ΔT = 27.6 − 20.7 = <strong>6.9 °C</strong></td>
+</tr>
+<tr>
+<td>Energy transferred</td>
+<td>q = m × c × ΔT = 51.0 × 4.18 × 6.9 = <strong>1471 J</strong></td>
+</tr>
+<tr>
+<td>Moles of NH₃ neutralised at end-point</td>
+<td>n(NH₃) = c × V(NH₃) = 1.30 × 30.0 / 1000 = <strong>0.0390 mol</strong> (the 1.30 M concentration refers to the NH₃ analyte, not the HCl titrant; 21.0 cm³ is the volume of HCl added, not NH₃)</td>
+</tr>
+<tr>
+<td>Enthalpy change of neutralisation</td>
+<td>ΔH = −q / n = −1471 / 0.0390 = <strong>−37.7 kJ mol⁻¹</strong></td>
+</tr>
+</tbody>
+</table></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li><strong>Mark 1:</strong> Correct total mass of solution (51.0 g) by adding both volumes.</li>
+<li><strong>Mark 2:</strong> Correct ΔT = 6.9 °C.</li>
+<li><strong>Mark 3:</strong> Correct q = 51.0 × 4.18 × 6.9 = 1471 J.</li>
+<li><strong>Mark 4:</strong> Correct moles calculation: the 1.30 mol dm⁻³ is the <strong>NH₃</strong> concentration in the 30.0 cm³ analyte, so n(NH₃) = 1.30 × 30.0/1000 = 0.0390 mol (NOT 1.30 × 21.0/1000 — that would be moles of HCl only if HCl were also 1.30 M, which the question does not state).</li>
+<li><strong>Mark 5:</strong> Correct ΔH = −37.7 kJ mol⁻¹ with negative sign and appropriate significant figures. <em>(Note: this weak-base/strong-acid neutralisation is less exothermic than the strong-acid/strong-base data book value of ≈ −57 kJ mol⁻¹ because NH₃ is only partially dissociated; also no water is formed, the product is NH₄⁺(aq).)</em></li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q38">
+<div class="qcard-head">
+<span class="qnum">Q38</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§6.5</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student carries out a calorimetry experiment and obtains q = 5518 J for the energy transferred to the water during combustion of ethanol. The student then writes: &gt; ΔH = +5518 / 0.00663 = +832 kJ mol⁻¹ Identify <strong>two</strong> errors in the student's working. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ol>
+<li><strong>The sign is wrong.</strong> Combustion is exothermic, so ΔH must be <strong>negative</strong> (−832 kJ mol⁻¹), not positive. The formula is ΔH = <strong>−</strong>q / n.</li>
+<li><strong>The units are inconsistent / not converted.</strong> q is in joules (5518 J) but the final answer is stated in kJ mol⁻¹. The student should convert: 5518 J = 5.518 kJ, then ΔH = −5.518 / 0.00663 = −832 kJ mol⁻¹.</li>
+</ol></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li><strong>Mark 1:</strong> Identifying the incorrect sign — combustion is always exothermic (ΔH &lt; 0).</li>
+<li><strong>Mark 2:</strong> Identifying the unit inconsistency. The J → kJ conversion step must be shown.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q39">
+<div class="qcard-head">
+<span class="qnum">Q39</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§6.5</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student determines the enthalpy change of neutralisation using a thermometric titration with an aqueous acid solution. The specific heat capacity of the acid solution is 3.85 J g⁻¹ °C⁻¹, but the student uses 4.18 J g⁻¹ °C⁻¹ (the value for water) in their calculation of q = mcΔT. Explain whether this error causes the calculated ΔH value to be more exothermic or less exothermic than the true value. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Using a specific heat capacity value that is <strong>too high</strong> (4.18 instead of 3.85) means the calculated value of q = mcΔT will be <strong>too large</strong> (overestimated). Since ΔH = −q/n, a larger q gives a more negative ΔH value. Therefore, the calculated ΔH will be <strong>more exothermic</strong> (more negative) than the true value.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li><strong>Mark 1:</strong> Correctly states that q will be <strong>overestimated / too large</strong> because c is in the numerator of q = mcΔT and a larger c increases the calculated energy transfer.</li>
+<li><strong>Mark 2:</strong> Correctly links the overestimated q to the ΔH calculation — since ΔH = −q/n, a larger q gives a more negative (more exothermic) ΔH.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q40">
+<div class="qcard-head">
+<span class="qnum">Q40</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§6.5</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>In a thermometric titration, the temperature of the reaction mixture does not reach its true maximum value at any point during the experiment. Explain why, and describe how extrapolation of the graph corrects for this.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Heat is continuously lost to the surroundings throughout the experiment. This means the measured temperature at every point is lower than it would be in a perfectly insulated system. The true maximum temperature (and true ΔT) was never actually recorded. By drawing two lines of best fit (before and after the end-point) and extrapolating both back to the time of mixing, the graph method estimates what the temperature change would have been if no heat loss had occurred. The difference between the extrapolated lines at the mixing point gives the true ΔT.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Mark 1: Identifies the cause — continuous heat loss to the surroundings during the experiment. Mark 2: Explains the consequence — the recorded temperatures are lower than the true values. Mark 3: Explains how extrapolation corrects this — by extending both lines of best fit back to the time of mixing, the true ΔT (without heat loss) is estimated.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q41">
+<div class="qcard-head">
+<span class="qnum">Q41</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§6.5</span>
+<span class="qmeta"><span class="marks">11 marks</span> &middot; ~22 min</span>
+</div>
+<div class="qtext"><p>A student uses a simple calorimeter to determine the enthalpy change of combustion of methanol, CH₃OH. The following results were obtained: | Measurement | Value | |---|---| | Mass of water in calorimeter | 150.0 g | | Initial temperature of water | 19.5 °C | | Maximum temperature of water | 34.8 °C | | Mass of methanol burner before combustion | 85.42 g | | Mass of methanol burner after combustion | 84.86 g | | Temperature readings measured to ±0.5 °C | | | Mass readings measured to ±0.01 g | | (a) Calculate the enthalpy change of combustion of methanol. Give your answer in kJ mol⁻¹ to 3 significant figures. <em>(4 marks)</em> (b) The accepted literature value for the enthalpy change of combustion of methanol is −726 kJ mol⁻¹. Calculate the percentage difference between the experimental and literature values. <em>(1 mark)</em> (c) Calculate the percentage uncertainty in the temperature change measurement. <em>(2 marks)</em> (d) State <strong>two</strong> reasons, other than random measurement uncertainty, why the experimental value is less exothermic than the literature value. For each reason, explain how it causes the experimental ΔH to be less exothermic. <em>(4 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>(a) Enthalpy change of combustion (4 marks):</strong>
+| Step | Calculation |
+|------|------------|
+| Mass of methanol burned | 85.42 − 84.86 = <strong>0.56 g</strong> |
+| Temperature change | ΔT = 34.8 − 19.5 = <strong>15.3 °C</strong> |
+| Energy transferred | q = m × c × ΔT = 150.0 × 4.18 × 15.3 = <strong>9593.1 J</strong> = <strong>9.593 kJ</strong> |
+| Moles of methanol | n = 0.56 / 32.0 = <strong>0.01750 mol</strong> |
+| ΔH combustion | ΔH = −q / n = −9.593 / 0.01750 = <strong>−548 kJ mol⁻¹</strong> (3 SF) |
+<strong>(b) Percentage difference (1 mark):</strong>
+Percentage difference = |−548 − (−726)| / 726 × 100 = 178 / 726 × 100 = <strong>24.5%</strong>
+<strong>(c) Percentage uncertainty in ΔT (2 marks):</strong>
+The temperature change is calculated from two readings: ΔT = T_final − T_initial. Each reading has an uncertainty of ±0.5 °C, so the absolute uncertainty in ΔT = 0.5 + 0.5 = ±1.0 °C.
+Percentage uncertainty in ΔT = (1.0 / 15.3) × 100 = <strong>6.54%</strong>
+<strong>(d) Two reasons for the experimental value being less exothermic (4 marks):</strong>
+1. <strong>Heat loss to the surroundings.</strong> Not all the heat released by combustion is transferred to the water — some is lost to the calorimeter, the air, and the apparatus. This means the measured temperature rise (and therefore q) is smaller than it should be, making the calculated |ΔH| smaller (less exothermic).
+2. <strong>Incomplete combustion.</strong> Methanol may not burn completely, producing carbon monoxide or carbon (soot) instead of only CO₂ and H₂O. Incomplete combustion releases less energy per mole of fuel than complete combustion, so the measured ΔH is less exothermic than the literature value.
+(Other acceptable: evaporation of methanol from the wick before/during combustion reducing the measured mass loss.)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li><strong>Part (a) — 4 marks:</strong> (1) Correct mass of methanol burned. (2) Correct ΔT. (3) Correct q using ONLY the water mass (150.0 g). (4) Correct ΔH with negative sign, kJ mol⁻¹, 3 SF.</li>
+<li><strong>Part (b) — 1 mark:</strong> Correct percentage difference using the literature value as the denominator.</li>
+<li><strong>Part (c) — 2 marks:</strong> (1) Correctly identifies that the absolute uncertainty in ΔT is ±1.0 °C (sum of the two reading uncertainties). (2) Correct percentage: (1.0/15.3) × 100 = 6.54%.</li>
+<li><strong>Part (d) — 4 marks (2 per reason):</strong> Each reason requires (i) identifying the source of error AND (ii) explaining how it makes the value less exothermic.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q42">
+<div class="qcard-head">
+<span class="qnum">Q42</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§6.5</span>
+<span class="qmeta"><span class="marks">7 marks</span> &middot; ~14 min</span>
+</div>
+<div class="qtext"><p>A student carries out an experiment to determine the enthalpy change of neutralisation between HCl(aq) and NaOH(aq). They add 25.0 cm³ of 1.00 mol dm⁻³ NaOH(aq) to 25.0 cm³ of 1.00 mol dm⁻³ HCl(aq) in a polystyrene cup. The temperature rises from 20.2 °C to 26.8 °C. Each temperature reading has an uncertainty of ±0.5 °C. <strong>(a)</strong> Calculate the enthalpy change of neutralisation. [Assume the density of the solution is 1.00 g cm⁻³ and c = 4.18 J g⁻¹ °C⁻¹] <em>(4 marks)</em> <strong>(b)</strong> Calculate the percentage uncertainty in the temperature change. <em>(1 mark)</em> <strong>(c)</strong> The data book value for this neutralisation is −57.1 kJ mol⁻¹. Suggest two reasons, other than random measurement uncertainty, why the student's experimental value is likely to be less exothermic than the data book value. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>(a)</strong>
+Total volume of solution = 25.0 + 25.0 = 50.0 cm³
+Mass of solution = 50.0 g (density 1.00 g cm⁻³)
+ΔT = 26.8 − 20.2 = 6.6 °C
+q = mcΔT = 50.0 × 4.18 × 6.6 = <strong>1379 J</strong> = <strong>1.379 kJ</strong>
+n(NaOH) = n(HCl) = 1.00 × 25.0/1000 = 0.0250 mol
+ΔH = −q / n = −1.379 / 0.0250 = <strong>−55.2 kJ mol⁻¹</strong> (to 3 s.f.) — slightly less exothermic than the data book value (−57.1), consistent with the heat-loss premise in part (c).
+<strong>(b)</strong>
+Absolute uncertainty in ΔT = 2 × 0.5 = 1.0 °C
+Percentage uncertainty = (1.0 / 6.6) × 100 = <strong>15%</strong> (to 2 s.f.; 15.15% to 4 s.f.)
+<strong>(c)</strong>
+1. <strong>Heat loss to the surroundings</strong> — some energy released heats the air and the polystyrene cup rather than being recorded by the thermometer.
+2. <strong>Heat absorbed by the calorimeter</strong> — the polystyrene cup has a heat capacity that is not accounted for in q = mcΔT, so the total energy absorbed is underestimated.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Part (a) — 4 marks for correct total volume/mass, q, moles, and ΔH with negative sign. Part (b) — 1 mark for (2 × 0.5 / 6.6) × 100 = 15%. Part (c) — 2 marks for two distinct, MS-acceptable reasons.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q43">
+<div class="qcard-head">
+<span class="qnum">Q43</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§6.5</span>
+<span class="qmeta"><span class="marks">6 marks</span> &middot; ~12 min</span>
+</div>
+<div class="qtext"><p>In a thermometric titration, a student added 25.0 cm³ of 1.20 mol dm⁻³ HCl(aq) to 20.0 cm³ of NaOH(aq). The temperature–volume graph showed a maximum temperature of 28.5 °C at an end-point of 15.0 cm³ of acid added. The initial temperature was 22.0 °C. (a) Calculate the enthalpy of neutralisation. <em>(4 marks)</em> (b) The thermometer used had an uncertainty of ±0.5 °C. Calculate the percentage uncertainty in ΔT and hence the percentage uncertainty in ΔH. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>(a) Enthalpy of neutralisation:</strong>
+Total volume at end-point = 20.0 + 15.0 = 35.0 cm³
+Mass of solution = 35.0 g (density = 1.00 g cm⁻³)
+ΔT = 28.5 − 22.0 = 6.5 °C
+q = m × c × ΔT = 35.0 × 4.18 × 6.5 = 951.05 J = 0.951 kJ
+Moles of acid at end-point = 1.20 × 15.0 / 1000 = 0.0180 mol
+ΔH = −q / n = −0.951 / 0.0180 = <strong>−52.8 kJ mol⁻¹</strong>
+<strong>(b) Percentage uncertainty:</strong>
+Uncertainty in ΔT = ±0.5 °C (the ΔT is read from the graph as a single measured quantity, the rise from the extrapolated baseline to the maximum)
+Percentage uncertainty in ΔT = (0.5 / 6.5) × 100 = <strong>7.69%</strong>
+Percentage uncertainty in ΔH = 7.69% (same, since ΔH ∝ ΔT)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Part (a): 4 marks — correct total mass (35.0 g from combined volumes), correct ΔT, correct q, correct ΔH with negative sign. The student must use the volume at the end-point (15.0 cm³), not the total acid volume (25.0 cm³).
+Part (b): 2 marks — correct % uncertainty and correctly stating % uncertainty in ΔH equals % uncertainty in ΔT.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q44">
+<div class="qcard-head">
+<span class="qnum">Q44</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§6.5</span>
+<span class="qmeta"><span class="marks">8 marks</span> &middot; ~16 min</span>
+</div>
+<div class="qtext"><p>A student investigates the enthalpy of combustion of propan-1-ol. They record the following data: - Mass of propan-1-ol burned: 0.520 g - Volume of water heated: 150.0 cm³ - Initial temperature of water: 19.5 °C - Maximum temperature of water: 34.0 °C - Thermometer uncertainty: ±0.5 °C - Mass balance uncertainty: ±0.005 g (a) Calculate the student's experimental value for the enthalpy of combustion of propan-1-ol. (Mₜ(C₃H₇OH) = 60.0 g mol⁻¹) <em>(4 marks)</em> (b) The accepted value for the enthalpy of combustion of propan-1-ol is −2021 kJ mol⁻¹. Calculate the percentage error in the student's result. <em>(1 mark)</em> (c) The student claims that the largest source of error is the mass measurement. Use calculations to evaluate this claim, stating the percentage uncertainty from the mass measurement and comparing it to the percentage uncertainty from the temperature measurement. <em>(3 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>(a) Experimental ΔHc:</strong>
+Mass of solution = 150.0 g (density = 1.00 g cm⁻³)
+ΔT = 34.0 − 19.5 = 14.5 °C
+q = m × c × ΔT = 150.0 × 4.18 × 14.5 = 9091.5 J = 9.092 kJ
+n(C₃H₇OH) = 0.520 / 60.0 = 0.00867 mol
+ΔHc = −q / n = −9.092 / 0.00867 = <strong>−1049 kJ mol⁻¹</strong> (to 3 SF)
+<strong>(b) Percentage error:</strong>
+Percentage error = (|−1049 − (−2021)| / 2021) × 100 = (972 / 2021) × 100 = <strong>48.1%</strong>
+<strong>(c) Evaluation of error sources:</strong>
+<strong>Percentage uncertainty from temperature:</strong>
+ΔT = 14.5 °C; uncertainty in ΔT = ±0.5 °C
+% uncertainty in ΔT = (0.5 / 14.5) × 100 = 3.45%
+Since ΔH ∝ ΔT: % uncertainty in ΔH from temperature = 3.45%
+<strong>Percentage uncertainty from mass of fuel:</strong>
+Uncertainty in mass = ±0.005 g
+% uncertainty in mass = (0.005 / 0.520) × 100 = 0.962%
+<strong>Comparison:</strong>
+The percentage uncertainty from temperature (3.45%) is significantly larger than from mass (0.962%). Therefore, the student's claim is <strong>incorrect</strong> — the temperature measurement is the larger source of uncertainty. The large percentage error (48.1%) compared to the combined uncertainties suggests that <strong>heat loss to surroundings</strong> is the dominant source of error, not instrumental uncertainties.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Part (a): 4 marks — mass, ΔT, q, and ΔH with sign/units/SF. Part (b): 1 mark for correct percentage error using accepted value as denominator. Part (c): 3 marks — Mark 1 for % uncertainty from temperature, Mark 2 for % uncertainty from mass, Mark 3 for evaluation comparing the two and concluding the claim is wrong.</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s66">
+<h2>§6.6–6.7 — Hess's Law (Cycles, Calculations, CP2)</h2>
+<article class="qcard" id="q45">
+<div class="qcard-head">
+<span class="qnum">Q45</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§6.6</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State Hess's Law.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The total enthalpy change for a chemical reaction is independent of the route by which the chemical change occurs, provided the initial and final conditions are the same.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>The mark-scheme requires the exact wording including the critical qualifier "provided the initial and final conditions are the same." A response stating only "the enthalpy change is the same regardless of the route taken" would be rejected because it omits this essential condition.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q46">
+<div class="qcard-head">
+<span class="qnum">Q46</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§6.6</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the general expression used to calculate the standard enthalpy change of reaction, ΔHᵣ, from standard enthalpy of formation values.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>ΔHᵣ = ΣΔHf(products) − ΣΔHf(reactants)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>The mark scheme requires the exact formula with "products minus reactants" ordering. Writing "reactants minus products" or omitting the summation notation (Σ) may lose the mark.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q47">
+<div class="qcard-head">
+<span class="qnum">Q47</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§6.6</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>A student needs to calculate ΔHᵣ for a reaction using standard enthalpy of <strong>combustion</strong> data. Which expression is correct? A) ΔHᵣ = ΣΔHc(products) − ΣΔHc(reactants) B) ΔHᵣ = ΣΔHc(reactants) − ΣΔHc(products) C) ΔHᵣ = ΣΔHc(products) + ΣΔHc(reactants) D) ΔHᵣ = ΣΔHf(reactants) − ΣΔHf(products)</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>B</strong></p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>The combustion formula is the <strong>opposite</strong> of the formation formula. For formation data: ΔHᵣ = ΣΔHf(products) − ΣΔHf(reactants). For combustion data: ΔHᵣ = ΣΔHc(reactants) − ΣΔHc(products). Option A reverses the sign and would give the wrong answer. This is one of the most common sign-error traps in exam performance.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q48">
+<div class="qcard-head">
+<span class="qnum">Q48</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§6.6</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Calculate the enthalpy change for the thermal decomposition of magnesium carbonate. MgCO₃(s) → MgO(s) + CO₂(g) Given: ΔHf(MgCO₃) = −1096 kJ mol⁻¹, ΔHf(MgO) = −602 kJ mol⁻¹, ΔHf(CO₂) = −394 kJ mol⁻¹ <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>ΔHr = ΣΔHf(products) − ΣΔHf(reactants)
+ΔHr = [ΔHf(MgO) + ΔHf(CO₂)] − [ΔHf(MgCO₃)]
+ΔHr = [(−602) + (−394)] − [(−1096)]
+ΔHr = (−996) − (−1096)
+ΔHr = −996 + 1096
+ΔHr = <strong>+100 kJ mol⁻¹</strong></p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>1 mark for correct substitution into the formula (products − reactants with correct signs). 1 mark for the final answer of +100 kJ mol⁻¹ with correct sign and units (kJ mol⁻¹). The positive sign is essential — thermal decomposition is endothermic.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q49">
+<div class="qcard-head">
+<span class="qnum">Q49</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§6.6</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>A student states Hess's Law as follows: <em>"The enthalpy change for a reaction is independent of the route taken, provided the temperature is 298 K and the pressure is 100 kPa."</em> Identify the error in this statement. <em>(1 mark)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The condition should be "provided initial and final conditions are the same", not a specific fixed temperature and pressure. Hess's Law applies to any consistent starting and ending conditions — it is not restricted to 298 K and 100 kPa.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>The exact MS wording for Hess's Law is "The enthalpy change for a reaction is independent of the route taken, provided initial and final conditions are the same." The student has confused standard conditions (298 K, 100 kPa) with the general condition required by Hess's Law.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q50">
+<div class="qcard-head">
+<span class="qnum">Q50</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§6.6</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student calculates the enthalpy change for the reaction: 2H₂(g) + O₂(g) → 2H₂O(l) Given ΔHf(H₂O, l) = −286 kJ mol⁻¹, the student writes: ΔHᵣ = (−286) − 0 = <strong>−286 kJ mol⁻¹</strong> Identify the error and give the correct answer. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The student forgot to multiply ΔHf(H₂O, l) by the stoichiometric coefficient of <strong>2</strong> in the balanced equation. [1 mark]
+Correct calculation:
+ΔHᵣ = 2 × (−286) − 0 = <strong>−572 kJ mol⁻¹</strong> [1 mark]</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>This targets the common mistake of forgetting to multiply ΔHf values by their stoichiometric coefficients. The balanced equation shows 2 mol of H₂O(l) as product, so the formation enthalpy must be multiplied by 2. Elements in their standard states (H₂(g), O₂(g)) have ΔHf = 0.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q51">
+<div class="qcard-head">
+<span class="qnum">Q51</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§6.6</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student constructs a Hess cycle for the dissolution of NH₄NO₃(s). The standard enthalpy of formation of NH₄NO₃(s) is +220.2 kJ mol⁻¹. On the cycle, the student draws an arrow from NH₄NO₃(s) up to the elements in their standard states and labels it "+220.2 kJ mol⁻¹". Identify the error the student has made and state the correct value.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The arrow from NH₄NO₃(s) to the elements represents the reverse of the formation reaction. When the direction of the arrow is reversed, the sign of the enthalpy change must also be reversed. The correct value for this arrow is −220.2 kJ mol⁻¹, not +220.2 kJ mol⁻¹.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Mark 1: Identifies that the sign must be reversed when the arrow direction is reversed. Mark 2: States the correct value of −220.2 kJ mol⁻¹.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q52">
+<div class="qcard-head">
+<span class="qnum">Q52</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§6.6</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student constructs a Hess cycle using combustion data and calculates: ΔHr = ΣΔHc(products) − ΣΔHc(reactants). Identify the error in the student's working and write the correct expression.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The student has used the formula the wrong way round. They have applied the formation formula structure (products minus reactants) to combustion data.
+The correct expression is: <strong>ΔHr = ΣΔHc(reactants) − ΣΔHc(products)</strong>
+The order is REVERSED for combustion data compared to formation data.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>1 mark for identifying that the subtraction order is reversed. 1 mark for writing the correct formula. This directly targets the Hess's Law sign-reversal trap — in a Hess cycle using combustion data, the combustion products sit at the bottom, so the route goes down from reactants and up to products, resulting in reactants − products.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q53">
+<div class="qcard-head">
+<span class="qnum">Q53</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§6.6</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student constructs the following Hess cycle to find the enthalpy change of hydration, ΔHhyd, of anhydrous MgSO₄: <code>MgSO₄(s) + 7H₂O(l)  ──ΔHhyd──→  MgSO₄·7H₂O(s) |                                    | | ΔHsoln(anhyd) = −85.2              | ΔHsoln(hydrated) = +15.8 |                                    | v                                    v MgSO₄(aq)  +  7H₂O(l)</code> Which equation correctly applies Hess's Law to this cycle? <em>(2 marks)</em> A. ΔHhyd = ΔHsoln(anhyd) + ΔHsoln(hydrated) B. ΔHhyd = ΔHsoln(anhyd) − ΔHsoln(hydrated) C. ΔHhyd = −ΔHsoln(anhyd) + ΔHsoln(hydrated) D. ΔHhyd = ΔHsoln(hydrated) − ΔHsoln(anhyd)</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>B.</strong> ΔHhyd = ΔHsoln(anhyd) − ΔHsoln(hydrated)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Following the two routes from MgSO₄(s) + 7H₂O(l) to MgSO₄(aq) + 7H₂O(l): Route 1 (via dissolution of anhydrous salt) = ΔHsoln(anhyd) = −85.2 kJ mol⁻¹. Route 2 (via hydration then dissolution of hydrated salt) = ΔHhyd + ΔHsoln(hydrated). Setting routes equal: ΔHsoln(anhyd) = ΔHhyd + ΔHsoln(hydrated), therefore ΔHhyd = ΔHsoln(anhyd) − ΔHsoln(hydrated).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q54">
+<div class="qcard-head">
+<span class="qnum">Q54</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§6.6</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>The enthalpy change of solution of anhydrous MgSO₄ is −85.2 kJ mol⁻¹. The enthalpy change of solution of MgSO₄·7H₂O is +15.8 kJ mol⁻¹. Use these values to calculate the enthalpy change of hydration of MgSO₄.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>By Hess's Law, following both routes from MgSO₄(s) + 7H₂O(l) to MgSO₄(aq) + 7H₂O(l):
+Route 1 (dissolve anhydrous): ΔHsoln(anhyd) = −85.2 kJ mol⁻¹
+Route 2 (hydrate then dissolve hydrated): ΔHhyd + ΔHsoln(hydrated)
+Therefore: ΔHsoln(anhyd) = ΔHhyd + ΔHsoln(hydrated)
+−85.2 = ΔHhyd + 15.8
+ΔHhyd = −85.2 − 15.8 = <strong>−101.0 kJ mol⁻¹</strong></p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>1 mark for writing the correct Hess equation: ΔHsoln(anhyd) = ΔHhyd + ΔHsoln(hydrated). 1 mark for correct rearrangement. 1 mark for the correct numerical calculation yielding −101.0 kJ mol⁻¹ with correct sign.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q55">
+<div class="qcard-head">
+<span class="qnum">Q55</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§6.6</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>The following experimental data were obtained for reactions involving calcium compounds: - Reaction 1: Ca(OH)₂(s) + 2HCl(aq) → CaCl₂(aq) + 2H₂O(l), ΔH₁ = −130 kJ mol⁻¹ - Reaction 2: CaO(s) + 2HCl(aq) → CaCl₂(aq) + H₂O(l), ΔH₂ = −195 kJ mol⁻¹ Use Hess's Law to calculate the enthalpy change for: CaO(s) + H₂O(l) → Ca(OH)₂(s) <em>(4 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>Step 1:</strong> Identify the target reaction and the two given reactions that share a common intermediate (CaCl₂(aq)).
+<strong>Step 2:</strong> Construct the indirect route:
+- From CaO(s) + H₂O(l), add 2HCl(aq) and use Reaction 2:
+CaO(s) + 2HCl(aq) → CaCl₂(aq) + H₂O(l) → ΔH = −195 kJ mol⁻¹
+Resulting species: CaCl₂(aq) + 2H₂O(l)
+- From CaCl₂(aq) + 2H₂O(l), reverse Reaction 1:
+CaCl₂(aq) + 2H₂O(l) → Ca(OH)₂(s) + 2HCl(aq) → ΔH = +130 kJ mol⁻¹
+<strong>Step 3:</strong> Apply Hess's Law:
+ΔHr = ΔH₂ + (−ΔH₁)
+ΔHr = (−195) + (+130)
+ΔHr = <strong>−65 kJ mol⁻¹</strong> (exothermic — consistent with the well-known exothermic slaking of lime)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>1 mark for identifying CaCl₂(aq) as the common intermediate and constructing a valid indirect route. 1 mark for correctly reversing Reaction 1 and changing its sign from −130 to +130 kJ mol⁻¹. 1 mark for correct addition: −195 + 130. 1 mark for the final answer of −65 kJ mol⁻¹ with correct sign and units.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q56">
+<div class="qcard-head">
+<span class="qnum">Q56</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§6.6</span>
+<span class="qmeta"><span class="marks">6 marks</span> &middot; ~12 min</span>
+</div>
+<div class="qtext"><p>The standard enthalpy of formation of ethane, C₂H₆(g), is to be determined indirectly using standard enthalpy of combustion data. Given: - ΔHc(C₂H₆) = −1560 kJ mol⁻¹ - ΔHc(C) = −394 kJ mol⁻¹ - ΔHc(H₂) = −286 kJ mol⁻¹ (a) Write the balanced equation with state symbols for the standard enthalpy of formation of ethane. <em>(1 mark)</em> (b) Calculate ΔHf(C₂H₆) using the combustion data and Hess's Law. Show full working. <em>(3 marks)</em> (c) State two rules from the key rules for constructing Hess cycles that are essential for ensuring this calculation is valid. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>(a)</strong> 2C(s) + 3H₂(g) → C₂H₆(g)
+<strong>(b)</strong>
+The formation reaction is: 2C(s) + 3H₂(g) → C₂H₆(g)
+ΔHf = ΣΔHc(reactants) − ΣΔHc(products)
+ΔHf = [2 × ΔHc(C) + 3 × ΔHc(H₂)] − [ΔHc(C₂H₆)]
+ΔHf = [2 × (−394) + 3 × (−286)] − [(−1560)]
+ΔHf = [(−788) + (−858)] − [(−1560)]
+ΔHf = (−1646) − (−1560)
+ΔHf = −1646 + 1560
+ΔHf = <strong>−86 kJ mol⁻¹</strong>
+<strong>(c)</strong>
+Rule 1: Elements always go at the top of the cycle — here C(s) and H₂(g) are at the top, allowing the ΔHc arrows to flow down to combustion products.
+Rule 5: The sum of ΔH values along any route from start to finish must be the same — this is the fundamental principle that allows us to equate the direct formation route with the indirect combustion route.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p><strong>(a)</strong> 1 mark for the balanced equation with correct state symbols. Elements must be in standard states — C(s) not C(g), H₂(g) not H(g).
+<strong>(b)</strong> 1 mark for correct formula with the REVERSAL. 1 mark for correct substitution including multiplying ΔHc(C) by 2 and ΔHc(H₂) by 3. 1 mark for final answer of −86 kJ mol⁻¹.
+<strong>(c)</strong> 1 mark per rule stated in terms from the specification's key rules.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q57">
+<div class="qcard-head">
+<span class="qnum">Q57</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§6.6</span>
+<span class="qmeta"><span class="marks">6 marks</span> &middot; ~12 min</span>
+</div>
+<div class="qtext"><p>A student investigates the enthalpy change of hydration of Na₂SO₄ to form Na₂SO₄·10H₂O. They carry out two calorimetry experiments and obtain the following results: | Experiment | Reaction | ΔH / kJ mol⁻¹ | |---|---|---| | 1 | Na₂SO₄(s) → Na₂SO₄(aq) | −2.4 | | 2 | Na₂SO₄·10H₂O(s) → Na₂SO₄(aq) + 10H₂O(l) | +78.7 | (a) Calculate the enthalpy change of hydration of Na₂SO₄. <em>(2 marks)</em> (b) The literature value for the enthalpy change of hydration of Na₂SO₄ is −81.4 kJ mol⁻¹. The student's calculated value differs from this. State whether the difference is likely to be due to the use of average bond enthalpies or to experimental error in calorimetry. Explain your reasoning. <em>(2 marks)</em> (c) State whether the enthalpy change of hydration of Na₂SO₄ is exothermic or endothermic. Explain your answer in terms of bond breaking and bond forming. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>(a)</strong> ΔHhyd = ΔHsoln(anhyd) − ΔHsoln(hydrated) = −2.4 − (+78.7) = <strong>−81.1 kJ mol⁻¹</strong>
+<strong>(b)</strong> The difference is due to experimental error in calorimetry. This is not a bond enthalpy calculation — the method uses experimental enthalpy changes of solution measured by calorimetry, not average bond enthalpy data. The small discrepancy (−81.1 vs −81.4 kJ mol⁻¹, a difference of only 0.3 kJ mol⁻¹) is within expected experimental uncertainty from calorimetry measurements.
+<strong>(c)</strong> The enthalpy change of hydration is exothermic (ΔH is negative). During hydration, ion–dipole bonds form between Na⁺/SO₄²⁻ ions and water molecules. Bond forming releases energy to the surroundings. Although some energy is required to separate water molecules from each other, more energy is released by forming the new ion–dipole bonds than is absorbed, giving a net release of energy (negative ΔH).</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Part (a): 1 mark for correct Hess equation. 1 mark for correct calculation. Part (b): 1 mark for correctly identifying experimental error. 1 mark for the explanation. Part (c): 1 mark for "exothermic". 1 mark for the explanation in terms of ion–dipole bond formation.</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s68">
+<h2>§6.8 — Experimental Error and Uncertainty</h2>
+<article class="qcard" id="q58">
+<div class="qcard-head">
+<span class="qnum">Q58</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§6.8</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>When a temperature rise ΔT is obtained by subtracting the initial temperature from the final temperature, and each reading has an absolute uncertainty of ±δ, state the expression for the total absolute uncertainty in ΔT.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>±2δ</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>The mark scheme requires the student to recognise that when ΔT = T_final − T_initial, the absolute uncertainties of the two independent readings are added. The answer "±2δ" (or equivalently "±(δ + δ)") is the only acceptable form. Writing just "±δ" would score zero.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q59">
+<div class="qcard-head">
+<span class="qnum">Q59</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§6.8</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>A student is asked to write the expression for the percentage uncertainty in the energy transferred, q, during a calorimetry experiment. The mass (m) and specific heat capacity (c) are measured precisely and have negligible uncertainty. Which of the following is correct? <strong>A:</strong> % uncertainty in q = (% uncertainty in m) + (% uncertainty in c) + (% uncertainty in ΔT) <strong>B:</strong> % uncertainty in q = % uncertainty in ΔT only <strong>C:</strong> % uncertainty in q = (2 × % uncertainty in ΔT) <strong>D:</strong> % uncertainty in q = % uncertainty in ΔT × % uncertainty in m × % uncertainty in c</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>B</strong></p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>When quantities are multiplied or divided, their percentage uncertainties are added. However, since m and c have negligible (effectively zero) uncertainty, the only remaining contribution is from ΔT. Option C incorrectly doubles the uncertainty. Option D incorrectly multiplies the percentage uncertainties rather than adding them.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q60">
+<div class="qcard-head">
+<span class="qnum">Q60</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§6.8</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>An experiment gives an enthalpy of combustion for methanol of −185 kJ mol⁻¹. The data book value is −217 kJ mol⁻¹. Calculate the percentage error in the experimental result.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>% error = |experimental − data book| / |data book| × 100
+% error = |−185 − (−217)| / |−217| × 100
+% error = 32 / 217 × 100
+% error = <strong>14.7%</strong></p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Mark 1: Correct absolute difference in the numerator (|−185 − (−217)| = 32). Mark 2: The data book value (217) is correctly used as the denominator, giving 14.7%. Using the experimental value (185) as the denominator is the most common error — it gives 17.3%, which scores zero for this mark.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q61">
+<div class="qcard-head">
+<span class="qnum">Q61</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§6.8</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>In a calorimetry experiment to determine the enthalpy change of combustion of an alcohol, the experimentally determined value is less exothermic (less negative) than the accepted data book value. Explain why heat loss to the surroundings causes this difference.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Some of the heat/energy released by the combustion reaction is transferred to the surroundings (air, calorimeter apparatus) rather than being absorbed by the water. (1 mark)
+Therefore the measured temperature rise of the water is smaller than it should be, so the calculated energy transferred to the water (q = mcΔT) is too low, making the magnitude of ΔH too small / the value less exothermic. (1 mark)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Mark 1 is for identifying the mechanism: heat is lost to surroundings and does not reach the water. Mark 2 is for the consequence: smaller ΔT → smaller q → smaller |ΔH| → less exothermic. The causal chain must be clear.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q62">
+<div class="qcard-head">
+<span class="qnum">Q62</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§6.8</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student carries out a calorimetry experiment. They measure the initial temperature as 22.0 °C and the final temperature as 37.2 °C, using a thermometer with an absolute uncertainty of ±0.5 °C for each reading. The student calculates the percentage uncertainty in ΔT as follows: ΔT = 37.2 − 22.0 = 15.2 °C % uncertainty in ΔT = (0.5 / 15.2) × 100 = 3.3% Identify the error in the student's calculation and give the correct value. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The student has not doubled the absolute uncertainty. Since ΔT is calculated from two separate temperature readings, each with uncertainty ±0.5 °C, the total absolute uncertainty in ΔT is ±(0.5 + 0.5) = ±1.0 °C. (1 mark)
+Correct calculation:
+% uncertainty in ΔT = (1.0 / 15.2) × 100 = <strong>6.6%</strong> (1 mark)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li>Mark 1: Identifies that the absolute uncertainty should be doubled (to ±1.0 °C) because ΔT is derived from two independent readings.</li>
+<li>Mark 2: Correct substitution and answer of 6.6%.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q63">
+<div class="qcard-head">
+<span class="qnum">Q63</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§6.8</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student is asked to explain why their experimental value of ΔHc for ethanol is less exothermic than the data book value. Which of the following responses would be <strong>rejected</strong> by the mark scheme? Select all that apply. A. Heat loss to the surroundings B. Incomplete combustion of the fuel C. Not all the ethanol was burned D. Evaporation of ethanol from the wick <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>C only</strong> is rejected.
+- A is accepted — heat loss to surroundings is a standard MS-acceptable reason.
+- B is accepted — incomplete combustion is a standard MS-acceptable reason.
+- C is rejected — "not all ethanol burned" is not accepted because the mass of ethanol used is already accounted for in the calculation.
+- D is accepted — evaporation of ethanol from the wick is a standard MS-acceptable reason.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>This directly mirrors the MS guidance from Jun 2022 Q18(b)(iii). The mark scheme explicitly rejects "not all ethanol burned" because the mass used is included in the denominator of the ΔH calculation, so this does not explain the discrepancy.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q64">
+<div class="qcard-head">
+<span class="qnum">Q64</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§6.8</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>In a calorimetry experiment, a student calculates ΔHc of a fuel using q = mcΔT, considering only the heat absorbed by the water. Explain why the calculated ΔH value is less exothermic (less negative) than the true value.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Energy is also absorbed by the calorimeter (e.g. the polystyrene cup and thermometer), so the total heat capacity is greater than just the water <strong>(1)</strong>. The calculated energy transfer is therefore an underestimate, meaning the actual ΔH is more exothermic (more negative) than calculated <strong>(2)</strong>.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Mark 1: Identifies that energy is absorbed by the calorimeter, not just the water. Mark 2: Explains the logical consequence — the calculated energy transfer is too small, so the true ΔH must be more negative.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q65">
+<div class="qcard-head">
+<span class="qnum">Q65</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§6.8</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student calculates the percentage error in their experimental ΔH value as follows: % error = |−185 − (−217)| / |−185| × 100 = 32 / 185 × 100 = 17.3% Identify the error in this calculation and state the correct percentage error. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The student has used the experimental value (185) as the denominator <strong>(1)</strong>. The data book/accepted value must be used as the denominator.
+Correct calculation: 32 / 217 × 100 = <strong>14.7%</strong> <strong>(1)</strong></p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Mark 1: Identifies the specific error — wrong denominator. Mark 2: Provides the correct % error of 14.7%.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q66">
+<div class="qcard-head">
+<span class="qnum">Q66</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§6.8</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>In a calorimetry experiment to determine the enthalpy of combustion of methanol, a student obtains a value of −580 kJ mol⁻¹. The accepted data book value is −726 kJ mol⁻¹. Explain why the experimental value is less exothermic than the data book value.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Any two of the following:
+1. <strong>Heat loss to the surroundings</strong> — some of the energy released by combustion heats the air and apparatus rather than the water, so less temperature rise is recorded.
+2. <strong>Incomplete combustion</strong> — if the methanol does not burn completely (producing CO or soot), less energy is released per mole of fuel.
+3. <strong>Evaporation of the fuel</strong> — methanol may evaporate from the wick without being combusted, so the mass loss recorded is greater than the mass actually burned, making ΔH appear less exothermic.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Each valid explanation scores 1 mark. These are the three standard MS-acceptable reasons. Vague answers such as "no lid on beaker" (subsumed under heat loss) or "not all fuel burned" (rejected) would not score.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q67">
+<div class="qcard-head">
+<span class="qnum">Q67</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§6.8</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>A student determines the enthalpy change of combustion of methanol by calorimetry and obtains an experimental value of −620 kJ mol⁻¹. The data book value is −726 kJ mol⁻¹. The percentage uncertainty in the result is 6.5%. (a) Calculate the percentage error of the experimental result compared to the data book value. <em>(1 mark)</em> (b) The student suggests that heat loss to the surroundings is the main reason for the difference. Use the percentage uncertainty and percentage error to evaluate this suggestion. <em>(2 marks)</em> (c) If the student's calorimeter has a significant heat capacity (i.e., it absorbs some heat), state the correct expression for the total energy released by the combustion reaction. <em>(1 mark)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) % error = |−620 − (−726)| / |−726| × 100 = 106 / 726 × 100 = <strong>14.6%</strong>
+(b) The percentage error (14.6%) is <strong>significantly greater</strong> than the percentage uncertainty (6.5%). This means random/measurement errors alone cannot account for the difference. There must be a <strong>systematic error</strong> present, such as heat loss to the surroundings, incomplete combustion, or evaporation of fuel. The suggestion is therefore <strong>supported</strong> — systematic errors are the dominant cause of the discrepancy.
+(c) <strong>q_total = q_water + q_calorimeter</strong></p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>(a): The data book value is ALWAYS the denominator. (b): The key evaluation skill is comparing % error to % uncertainty. If % error &gt;&gt; % uncertainty, systematic errors dominate. (c): When the calorimeter has significant heat capacity, the heat absorbed by the calorimeter must be added to the heat absorbed by the water.</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s69">
+<h2>§6.9 — Mean Bond Enthalpy</h2>
+<article class="qcard" id="q68">
+<div class="qcard-head">
+<span class="qnum">Q68</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§6.9</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the meaning of the term mean bond enthalpy.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The mean bond enthalpy is the average energy required to break one mole of a given type of bond in the gaseous state, averaged over a range of compounds containing that bond.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>"Energy required to break one mole" is the core definition required by Edexcel mark schemes. The qualifier "in the gaseous state" is essential. "Average/mean" is also required because these are averaged values, not exact values for a single compound.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q69">
+<div class="qcard-head">
+<span class="qnum">Q69</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§6.9</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>Which of the following statements correctly defines mean bond enthalpy? A: The enthalpy change when one mole of a specific covalent bond in a molecule in the gaseous state is broken. B: The average value of the bond enthalpy of a particular type of bond, averaged over a range of different compounds. C: The energy required to break one mole of bonds averaged over different molecules in the liquid state. D: The enthalpy change when all bonds in one mole of a gaseous molecule are broken.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>B</strong></p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Option B is the only statement containing both required mark-scheme elements: "average value" and "averaged over a range of different compounds." Option A is the definition of <strong>bond enthalpy</strong> (specific bond, not average). Option C introduces the wrong state (liquid). Option D describes <strong>enthalpy of atomisation</strong>.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q70">
+<div class="qcard-head">
+<span class="qnum">Q70</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§6.9</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>State the equation used to calculate the enthalpy change of a reaction using mean bond enthalpy data.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>ΔH = Σ(bonds broken) − Σ(bonds formed)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>The formula must use "Σ" (sigma, meaning sum of) and the subtraction must be bonds broken minus bonds formed. Writing it as Σ(formed) − Σ(broken) would score zero because it reverses the sign convention.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q71">
+<div class="qcard-head">
+<span class="qnum">Q71</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§6.9</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>Explain why all bond enthalpy values quoted in a Data Booklet are positive.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Bond enthalpy is defined as the energy required to break a bond, which is always an endothermic process (energy must be supplied). Therefore bond enthalpy values are always positive.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>The mark scheme requires the student to state that bond enthalpy refers to bond breaking (an endothermic process requiring energy input). A student who writes "because energy is released" would score zero.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q72">
+<div class="qcard-head">
+<span class="qnum">Q72</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§6.9</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State the number of C–C bonds and the number of C–H bonds in one molecule of octane, C₈H₁₈.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Number of C–C bonds = 7
+Number of C–H bonds = 18</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>For a straight-chain alkane with n carbon atoms, the number of C–C bonds = n − 1 = 8 − 1 = 7. The number of C–H bonds is given directly by the subscript of H: 18. A common error is guessing 8 C–C bonds (confusing the number of carbons with the number of bonds between them).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q73">
+<div class="qcard-head">
+<span class="qnum">Q73</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§6.9</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student carries out a bond enthalpy calculation for the combustion of a hydrocarbon. For O₂, they use O–O = 146 kJ mol⁻¹ instead of O=O = 498 kJ mol⁻¹. Explain why this is incorrect and state the effect on their calculated ΔH value.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Oxygen exists as O₂ molecules containing a <strong>double bond</strong> (O=O). The student should use the O=O bond enthalpy of 498 kJ mol⁻¹, not the O–O single bond enthalpy of 146 kJ mol⁻¹. Using the lower O–O value means the student underestimates the energy required to break the O=O bonds in O₂, so Σ(bonds broken) is too small. Since ΔH = Σ(broken) − Σ(formed), the calculated ΔH will be <strong>less exothermic (less negative)</strong> than the correct value.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li><strong>Mark 1:</strong> Identifies the specific error — O₂ has a double bond, O=O (498 kJ mol⁻¹), not O–O (146 kJ mol⁻¹).</li>
+<li><strong>Mark 2:</strong> Correctly predicts the effect: underestimating bonds broken makes ΔH less exothermic.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q74">
+<div class="qcard-head">
+<span class="qnum">Q74</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§6.9</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student calculates the enthalpy change for a reaction using bond enthalpies and writes: ΔH = Σ(bond enthalpies of bonds formed) − Σ(bond enthalpies of bonds broken) Identify the error and write the correct formula. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The student has reversed the terms in the formula. The correct formula is:
+<strong>ΔH = Σ(bonds broken) − Σ(bonds formed)</strong>
+Energy is absorbed (positive) to break bonds and energy is released (negative) when bonds form. Therefore bonds broken are added and bonds formed are subtracted.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Mark 1: Identification of the error — the terms are in the wrong order. Mark 2: The correct formula, ΔH = Σ(bonds broken) − Σ(bonds formed).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q75">
+<div class="qcard-head">
+<span class="qnum">Q75</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§6.9</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student calculates the enthalpy change for the combustion of octane, C₈H₁₈(l), using mean bond enthalpies. Their working states: "Bonds broken = 7 × C–C + 18 × C–H + 25/2 × O=O". Identify the error in this working.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The error is that the student has used bond enthalpy data for octane <strong>in the liquid state</strong>. Mean bond enthalpies apply only to substances in the <strong>gaseous state</strong>. Because octane is given as C₈H₁₈(l), the enthalpy of vaporisation of octane must be included to account for the energy required to convert it to the gaseous state before bonds can be broken. Without this correction, the calculated ΔH will be inaccurate. This is a stated limitation of using mean bond enthalpy data.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li><strong>Mark 1:</strong> Identifies that bond enthalpies apply only to gases and the reactant is a liquid.</li>
+<li><strong>Mark 2:</strong> Explains the consequence or the correction needed (enthalpy of vaporisation must be added).</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q76">
+<div class="qcard-head">
+<span class="qnum">Q76</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§6.9</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>The reaction S₈(s) + 24F₂(g) → 8SF₆(g) has ΔH = −9672 kJ mol⁻¹. Given that S–S = 268 kJ mol⁻¹ and F–F = 151 kJ mol⁻¹, calculate the mean S–F bond enthalpy.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Working</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bonds broken (per mole of S₈)</td>
+<td>8 × 268 + 24 × 151 = 2144 + 3624 = <strong>5768 kJ mol⁻¹</strong></td>
+</tr>
+<tr>
+<td>Using ΔH = Σ(broken) − Σ(formed): −9672 = 5768 − Σ(formed)</td>
+<td>Σ(formed) = 5768 + 9672 = <strong>15440 kJ mol⁻¹</strong></td>
+</tr>
+<tr>
+<td>Number of S–F bonds formed (per mole of S₈)</td>
+<td>8 × 6 = <strong>48 bonds</strong></td>
+</tr>
+<tr>
+<td>Mean S–F bond enthalpy</td>
+<td>15440 / 48 = <strong>322 kJ mol⁻¹</strong></td>
+</tr>
+</tbody>
+</table></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li><strong>Mark 1:</strong> Correct calculation of total bonds broken (5768 kJ mol⁻¹), counting all 8 S–S bonds and all 24 F–F bonds.</li>
+<li><strong>Mark 2:</strong> Correct rearrangement of ΔH = Σ(broken) − Σ(formed) to find Σ(formed) = 15440 kJ mol⁻¹.</li>
+<li><strong>Mark 3:</strong> Division by the correct number of S–F bonds (48, not 6 or 8) to give <strong>322 kJ mol⁻¹</strong>.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q77">
+<div class="qcard-head">
+<span class="qnum">Q77</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§6.9</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>Use the following mean bond enthalpy data to calculate the enthalpy of combustion of butane, C₄H₁₀(g). | Bond | Mean Bond Enthalpy / kJ mol⁻¹ | |------|:---------------------------:| | C–C  | 347                        | | C–H  | 413                        | | O=O  | 498                        | | C=O  | 805                        | | O–H  | 464                        |</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Equation: C₄H₁₀(g) + 6½O₂(g) → 4CO₂(g) + 5H₂O(g)
+<strong>Bonds broken:</strong>
+3 × C–C = 3 × 347 = 1041
+10 × C–H = 10 × 413 = 4130
+6.5 × O=O = 6.5 × 498 = 3237
+<strong>Total broken = 8408 kJ mol⁻¹</strong>
+<strong>Bonds formed:</strong>
+8 × C=O = 8 × 805 = 6440
+10 × O–H = 10 × 464 = 4640
+<strong>Total formed = 11080 kJ mol⁻¹</strong>
+<strong>ΔHc</strong> = 8408 − 11080 = <strong>−2672 kJ mol⁻¹</strong></p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Mark 1: Correct identification and counting of bonds broken — C₄H₁₀ contains 3 C–C bonds and 10 C–H bonds; 6½ O₂ gives 6.5 O=O bonds. Mark 2: Correct identification and counting of bonds formed — 4CO₂ gives 8 C=O bonds; 5H₂O(g) gives 10 O–H bonds. Mark 3: Correct multiplication and totals. Mark 4: Correct subtraction (broken − formed) yielding a negative value (−2672 kJ mol⁻¹). State symbols are specified for water as (g) because mean bond enthalpy data applies to gaseous species.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q78">
+<div class="qcard-head">
+<span class="qnum">Q78</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§6.9</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>State two limitations of using mean bond enthalpy data to calculate enthalpy changes for reactions.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>Any two from:
+1. Bond enthalpy data is for the gas phase, but the actual reactants and/or products may be liquids or solids.
+2. Bond enthalpy values are averaged (mean values) — the actual bond strength in a specific molecule may differ from the average.
+3. Bond enthalpies can vary with the molecular environment (neighbouring atoms affect bond strength).</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Any two distinct points score 1 mark each. Point 1 (gas phase limitation) is the most frequently tested. Point 2 (average values) directly explains why calculated ΔH from bond enthalpies differs from literature ΔHf values. Points that simply rephrase the same idea would not score two separate marks.</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s610">
+<h2>§6.10 — Calculating Mean Bond Enthalpies from Atomisation Data</h2>
+<article class="qcard" id="q79">
+<div class="qcard-head">
+<span class="qnum">Q79</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§6.10</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>A student is asked to calculate the mean bond enthalpy of the C–C bond using the following data: - Enthalpy of atomisation of C₂H₅OH(g) = 3322 kJ mol⁻¹ - Enthalpy of atomisation of CH₃OH(g) = 2105 kJ mol⁻¹ - Mean bond enthalpy of C–H = 435 kJ mol⁻¹ The student writes: &gt; "C₂H₅OH has one more C atom than CH₃OH. The difference in atomisation energy gives the C–C bond enthalpy directly: &gt; BE(C–C) = 3322 − 2105 = 1217 kJ mol⁻¹" Identify the error in the student's reasoning and calculate the correct value. <em>(3 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The extra carbon atom in C₂H₅OH contributes <strong>both</strong> one C–C bond <strong>and</strong> two additional C–H bonds (to satisfy carbon's tetravalency). The student has incorrectly assumed the entire atomisation energy difference is due to the C–C bond alone. (1 mark)
+Correct approach:
+The difference in atomisation energy = 3322 − 2105 = <strong>1217 kJ mol⁻¹</strong>
+This difference equals: BE(C–C) + 2 × BE(C–H) = 1217 (1 mark)
+BE(C–C) + 2(435) = 1217
+BE(C–C) = 1217 − 870 = <strong>347 kJ mol⁻¹</strong> (1 mark)</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li>Mark 1: Identifies the specific error — the student forgot to account for the two additional C–H bonds.</li>
+<li>Mark 2: Sets up the correct equation BE(C–C) + 2 × BE(C–H) = 1217.</li>
+<li>Mark 3: Correct arithmetic leading to 347 kJ mol⁻¹.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q80">
+<div class="qcard-head">
+<span class="qnum">Q80</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§6.10</span>
+<span class="qmeta"><span class="marks">5 marks</span> &middot; ~10 min</span>
+</div>
+<div class="qtext"><p>Use the following atomisation enthalpy data to calculate the mean C–H bond enthalpy and the mean O–H bond enthalpy, then the C–O bond enthalpy, and finally the C–C bond enthalpy. | Species | Atomisation reaction | ΔHₐₜ / kJ mol⁻¹ | |---------|---------------------|------------------| | H₂O | H₂O(g) → 2H(g) + O(g) | 928 | | CH₄ | CH₄(g) → C(g) + 4H(g) | 1740 | | CH₃OH | CH₃OH(g) → C(g) + 4H(g) + O(g) | 2105 | | C₂H₅OH | C₂H₅OH(g) → 2C(g) + 6H(g) + O(g) | 3322 |</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <table>
+<thead>
+<tr>
+<th>Bond</th>
+<th>Working</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O–H</td>
+<td>928 / 2 = 464 kJ mol⁻¹</td>
+<td><strong>464 kJ mol⁻¹</strong></td>
+</tr>
+<tr>
+<td>C–H</td>
+<td>1740 / 4 = 435 kJ mol⁻¹</td>
+<td><strong>435 kJ mol⁻¹</strong></td>
+</tr>
+<tr>
+<td>C–O</td>
+<td>2105 = 3(435) + C–O + 464 → C–O = 2105 − 1769 = <strong>336 kJ mol⁻¹</strong></td>
+<td><strong>336 kJ mol⁻¹</strong></td>
+</tr>
+<tr>
+<td>C–C</td>
+<td>3322 = C–C + 5(435) + 336 + 464 → C–C = 3322 − 2975 = <strong>347 kJ mol⁻¹</strong></td>
+<td><strong>347 kJ mol⁻¹</strong></td>
+</tr>
+</tbody>
+</table></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li><strong>Mark 1:</strong> Correctly calculates O–H = 464 kJ mol⁻¹ by dividing the atomisation enthalpy of water by the number of O–H bonds broken (2).</li>
+<li><strong>Mark 2:</strong> Correctly calculates C–H = 435 kJ mol⁻¹ by dividing the atomisation enthalpy of methane by the number of C–H bonds broken (4).</li>
+<li><strong>Mark 3:</strong> Correctly identifies the bonds in CH₃OH (3 C–H, 1 C–O, 1 O–H) and calculates C–O = 336 kJ mol⁻¹.</li>
+<li><strong>Mark 4:</strong> Correctly identifies the bonds in C₂H₅OH (1 C–C, 5 C–H, 1 C–O, 1 O–H).</li>
+<li><strong>Mark 5:</strong> Correct arithmetic leading to C–C = 347 kJ mol⁻¹ with units.</li>
+</ul></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q81">
+<div class="qcard-head">
+<span class="qnum">Q81</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§6.10</span>
+<span class="qmeta"><span class="marks">2 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>A student is asked to calculate a mean bond enthalpy from atomisation data. They write: "C₂H₅OH(g) → 2C(g) + 6H(g) + O(g) means ΔHₐₜ = C–C bond enthalpy." Identify two errors in this statement.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <ol>
+<li><strong>ΔHₐₜ does not equal just the C–C bond enthalpy.</strong> The atomisation enthalpy of C₂H₅OH equals the sum of ALL bond enthalpies broken: C–C + 5 × C–H + C–O + O–H. It is not equal to a single bond enthalpy.</li>
+<li><strong>Atomisation is not the same as bond enthalpy.</strong> Atomisation of a compound breaks ALL bonds to produce gaseous atoms. A single bond enthalpy is the energy to break just one mole of that specific bond. The student has confused the total atomisation enthalpy with an individual bond enthalpy.</li>
+</ol></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><ul>
+<li><strong>Mark 1:</strong> Identifies that ΔHₐₜ equals the sum of ALL bond enthalpies in the molecule, not just C–C.</li>
+<li><strong>Mark 2:</strong> Explains the conceptual distinction between atomisation (breaking ALL bonds) and bond enthalpy (breaking one type of bond).</li>
+</ul></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s69-2">
+<h2>§6.9–6.10 — Bond Enthalpy Synthesis</h2>
+<article class="qcard" id="q82">
+<div class="qcard-head">
+<span class="qnum">Q82</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§6.9</span>
+<span class="qmeta"><span class="marks">8 marks</span> &middot; ~16 min</span>
+</div>
+<div class="qtext"><p>Octane (C₈H₁₈) undergoes complete combustion. The following data is available: | Bond | Bond enthalpy / kJ mol⁻¹ | |------|--------------------------| | C–C  | 347                      | | C–H  | 413                      | | O=O  | 498                      | | C=O  | 805                      | | O–H  | 464                      | (a) Write the balanced equation for the complete combustion of octane, including state symbols. <em>(1 mark)</em> (b) Calculate ΔH for this reaction using mean bond enthalpies. Show all working. <em>(4 marks)</em> (c) The data book value of ΔHc for octane is −5470 kJ mol⁻¹. Your calculated value is less exothermic. Explain two reasons why the bond enthalpy method gives a different result from the data book value. <em>(2 marks)</em> (d) State one change that could be made to the bond enthalpy method to obtain a value closer to the data book value. <em>(1 mark)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>(a)</strong> C₈H₁₈(l) + 12½O₂(g) → 8CO₂(g) + 9H₂O(l)
+<strong>(b)</strong>
+Bonds broken:
+- 7 C–C: 7 × 347 = 2429 kJ mol⁻¹
+- 18 C–H: 18 × 413 = 7434 kJ mol⁻¹
+- 12.5 O=O: 12.5 × 498 = 6225 kJ mol⁻¹
+Σ(broken) = 16088 kJ mol⁻¹
+Bonds formed:
+- 16 C=O: 16 × 805 = 12880 kJ mol⁻¹
+- 18 O–H: 18 × 464 = 8352 kJ mol⁻¹
+Σ(formed) = 21232 kJ mol⁻¹
+ΔH = 16088 − 21232 = <strong>−5144 kJ mol⁻¹</strong>
+<strong>(c)</strong>
+1. Mean bond enthalpies are averaged over many different compounds, so the actual bond energies in octane, CO₂, and H₂O may differ from the average values used.
+2. Bond enthalpy data is for the gas phase, but octane is a liquid and water is produced as a liquid; the enthalpies of vaporisation of octane and the enthalpy of condensation of water are not included in the calculation.
+<strong>(d)</strong> Include the enthalpy of vaporisation of octane (to convert liquid octane to gaseous octane before breaking bonds) and the enthalpy of condensation of water (energy released when gaseous water condenses to liquid).</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Part (a): 1 mark for correct state symbols — (l) for octane and water, (g) for O₂ and CO₂. Part (b): 4 marks for correct bond counting, formula application, and final answer. Part (c): 2 marks for two distinct explanations. Part (d): 1 mark for any valid suggestion.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q83">
+<div class="qcard-head">
+<span class="qnum">Q83</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§6.9</span>
+<span class="qmeta"><span class="marks">7 marks</span> &middot; ~14 min</span>
+</div>
+<div class="qtext"><p>(a) Use the following mean bond enthalpy data to calculate the enthalpy change for the reaction: N₂(g) + 3H₂(g) → 2NH₃(g) | Bond | Mean Bond Enthalpy / kJ mol⁻¹ | |------|:---------------------------:| | N≡N  | 945                        | | H–H  | 436                        | | N–H  | 391                        | (b) The literature value for the enthalpy change of this reaction is −92 kJ mol⁻¹. Calculate the percentage difference between your answer to (a) and the literature value. Use the literature value as the denominator. <em>(1 mark)</em> (c) Explain why the value calculated using mean bond enthalpies in (a) differs from the literature value. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p><strong>(a)</strong>
+Bonds broken:
+1 × N≡N = 1 × 945 = 945
+3 × H–H = 3 × 436 = 1308
+<strong>Total broken = 2253 kJ mol⁻¹</strong>
+Bonds formed:
+6 × N–H = 6 × 391 = 2346
+<strong>Total formed = 2346 kJ mol⁻¹</strong>
+ΔH = 2253 − 2346 = <strong>−93 kJ mol⁻¹</strong>
+<strong>(b)</strong>
+% difference = |−93 − (−92)| / |−92| × 100 = 1 / 92 × 100 = <strong>1.1%</strong>
+<strong>(c)</strong>
+Mean bond enthalpies are average values taken from a range of different compounds <strong>(1)</strong>. The actual N–H bond enthalpy in NH₃ may differ from this average, so calculations using mean bond enthalpies give only approximate values <strong>(1)</strong>.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Part (a): 4 marks — Mark 1 for correct bond counting. Mark 2 for correct multiplication and totals. Mark 3 for correct subtraction order (broken − formed). Mark 4 for correct negative sign. Part (b): 1 mark for correct % difference using the literature value as the denominator. Part (c): 2 marks — Mark 1 for stating mean bond enthalpies are averages; Mark 2 for explaining this leads to approximate values.</p></div>
+</div>
+</details>
+</article>
+</section><section id="sec-s611">
+<h2>§6.11 — Bond Enthalpy as a Reactivity Indicator</h2>
+<article class="qcard" id="q84">
+<div class="qcard-head">
+<span class="qnum">Q84</span>
+<span class="badge badge-STE">STE</span>
+<span class="qspec">§6.11</span>
+<span class="qmeta"><span class="marks">1 mark</span> &middot; ~2 min</span>
+</div>
+<div class="qtext"><p>A student wrote the following answer to the question "Explain why iodoethane hydrolyses faster than chloroethane": <em>"The C–I bond has a lower bond enthalpy than the C–Cl bond."</em> Identify what is missing from this answer that would cause it to lose a mark. <em>(1 mark)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>The student has not linked the weaker/lower bond enthalpy to reactivity — they must state that the weaker C–I bond is broken more easily, leading to a lower activation energy and therefore a faster reaction.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>The causal chain required is: weaker bond → lower activation energy → faster reaction. The student's answer stops at stating a fact about bond enthalpy without making the reactivity connection, so it would not receive the explanation mark.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q85">
+<div class="qcard-head">
+<span class="qnum">Q85</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§6.11</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~6 min</span>
+</div>
+<div class="qtext"><p>The table below shows mean C–X bond enthalpies for four halogenoalkanes: | Halogenoalkane | Mean C–X Bond Enthalpy / kJ mol⁻¹ | |:-|:-:| | CH₃F (fluoromethane) | 467 | | CH₃Cl (chloromethane) | 327 | | CH₃Br (bromomethane) | 285 | | CH₃I (iodomethane) | 213 | (a) Predict the order of reactivity of these four halogenoalkanes in hydrolysis reactions, from slowest to fastest. <em>(1 mark)</em> (b) Explain the trend in reactivity using the bond enthalpy data. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) CH₃F &lt; CH₃Cl &lt; CH₃Br &lt; CH₃I (slowest to fastest)
+(b) As the C–X bond enthalpy decreases from C–F to C–I, the bond becomes weaker and is broken more easily. The weaker bond leads to a lower activation energy for the bond-breaking step, resulting in a faster rate of hydrolysis.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Part (a) — 1 mark for the correct order. Part (b) — 2 marks: (1) identifying that lower bond enthalpy means a weaker bond that is broken more easily, and (2) linking this to lower activation energy and faster reaction rate. Simply stating "lower bond enthalpy = faster" without the activation energy link would only score 1 mark.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q86">
+<div class="qcard-head">
+<span class="qnum">Q86</span>
+<span class="badge badge-SYN">SYN</span>
+<span class="qspec">§6.11</span>
+<span class="qmeta"><span class="marks">6 marks</span> &middot; ~12 min</span>
+</div>
+<div class="qtext"><p>Consider the hydrolysis of three halogenoalkanes with aqueous NaOH: - Compound A: 1-chloropropane (primary) - Compound B: 2-bromopropane (secondary) - Compound C: 2-iodo-2-methylpropane (tertiary) (a) Rank these compounds from slowest to fastest for hydrolysis. Justify your answer by considering both bond enthalpy and structural factors. <em>(4 marks)</em> (b) A student claims: "Compound B will react faster than Compound A solely because the C–Br bond is weaker than the C–Cl bond." Evaluate this claim. <em>(2 marks)</em></p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <p>(a) Slowest to fastest: Compound A &lt; Compound B &lt; Compound C.
+- Compound C reacts fastest because: (1) the C–I bond is the weakest of the three, requiring the lowest activation energy to break, and (2) it is a tertiary halogenoalkane that reacts via the SN1 mechanism, forming a stable tertiary carbocation intermediate.
+- Compound B reacts at an intermediate rate because: (1) the C–Br bond is weaker than C–Cl but stronger than C–I, and (2) it is a secondary halogenoalkane, which can react via SN1 or SN2 depending on conditions, but is less stabilised than tertiary.
+- Compound A reacts slowest because: (1) the C–Cl bond is the strongest, requiring the highest activation energy, and (2) it is a primary halogenoalkane that can only react via the slower SN2 mechanism.
+(b) The claim is partially correct but incomplete. The weaker C–Br bond (compared to C–Cl) is one factor favouring faster reaction of Compound B. However, the structural factor (secondary vs primary) also contributes: secondary halogenoalkanes can form more stable carbocations than primary ones, further increasing the rate. The full explanation requires both bond enthalpy and structural considerations. The student's claim uses "solely" which is the flag — both factors must be considered.</p></div>
+<div class="marking"><div class="marking-title">Why this scores full marks</div><p>Part (a) — 4 marks distributed as: 1 mark for correct order; 1 mark for bond enthalpy reasoning; 1 mark for structural/mechanism reasoning; 1 mark for synthesising both factors. Part (b) — 2 marks: 1 mark for acknowledging the bond enthalpy factor, 1 mark for identifying the missing structural factor.</p></div>
+</div>
+</details>
+</article>
+</section>
+<footer>
+<p>Ch 2.6 Energetics — Exam Readiness Questions &middot; WCH12 IAL Chemistry &middot; 7 papers analysed (Jun 2022 – Oct 2024)</p>
+</footer>
+</main>
+<script>
+(function(){
+  var saved=localStorage.getItem('wch12-theme');
+  if(saved==='dark')document.documentElement.setAttribute('data-theme','dark');
+  updateBtn();
+})();
+function toggleDark(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  if(isDark){document.documentElement.removeAttribute('data-theme');localStorage.setItem('wch12-theme','light')}
+  else{document.documentElement.setAttribute('data-theme','dark');localStorage.setItem('wch12-theme','dark')}
+  updateBtn();
+}
+function updateBtn(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  var b=document.getElementById('darkBtn');
+  if(b)b.textContent=isDark?'\u2600\ufe0f Light':'\ud83c\udf19 Dark';
+}
+function toggleSidebar(){
+  var sb=document.getElementById('sidebar'),ov=document.getElementById('overlay');
+  sb.classList.toggle('open');ov.classList.toggle('open');
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    var sb=document.getElementById('sidebar');
+    if(sb&&sb.classList.contains('open'))toggleSidebar();
+  }
+});
+function toggleProgress(qid,cb){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  if(cb.checked)saved[qid]=1;else delete saved[qid];
+  localStorage.setItem(key,JSON.stringify(saved));
+  updateProgBar();
+}
+function updateProgBar(){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  var total=document.querySelectorAll('.prog-table input[type="checkbox"]').length;
+  var done=Object.keys(saved).length;
+  var bar=document.getElementById('progFill');
+  if(bar&&total>0)bar.style.width=Math.round(done*100/total)+'%';
+  var txt=document.getElementById('progText');
+  if(txt)txt.textContent=done+' / '+total+' questions completed';
+}
+(function(){
+  var key='wch12-prog-'+location.pathname;
+  var saved=JSON.parse(localStorage.getItem(key)||'{}');
+  document.querySelectorAll('.prog-table input[type="checkbox"]').forEach(function(cb){
+    cb.checked=!!saved[cb.dataset.qid];
+    cb.addEventListener('change',function(){toggleProgress(cb.dataset.qid,cb)});
+  });
+  updateProgBar();
+})();
+</script>
+
+</body>
+</html>
