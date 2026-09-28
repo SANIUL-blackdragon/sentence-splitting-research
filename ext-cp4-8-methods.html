@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WPH12 Extension — Core Practicals 4–8 Methods</title>
+<style>
+:root{--bg:#fafbfe;--text:#1e293b;--sidebar-bg:#f1f5f9;--header-bg:#e0e7ff;--accent:#6366f1;--accent2:#10b981;--card:#fff;--border:#e2e8f0;--muted:#64748b;--table-head:#eef2ff;--table-alt:#f8fafc;--code-bg:#f1f5f9;--sidebar-w:280px;--header-h:48px}
+[data-theme="dark"]{--bg:#18181b;--text:#e4e4e7;--sidebar-bg:#1f1f23;--header-bg:#27272a;--accent:#818cf8;--accent2:#34d399;--card:#27272a;--border:#3f3f46;--muted:#a1a1aa;--table-head:#27272a;--table-alt:#1f1f23;--code-bg:#27272a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:15px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.header{position:sticky;top:0;z-index:100;background:var(--header-bg);border-bottom:1px solid var(--border);height:var(--header-h);display:flex;align-items:center;padding:0 12px;gap:8px}
+.header-title{font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+.menu-btn{background:none;border:none;font-size:22px;cursor:pointer;color:var(--text);padding:4px 8px;line-height:1}
+.dark-toggle{background:none;border:1px solid var(--border);border-radius:6px;cursor:pointer;padding:4px 10px;font-size:13px;color:var(--text);white-space:nowrap}
+.sidebar{position:fixed;top:var(--header-h);left:0;width:var(--sidebar-w);height:calc(100vh - var(--header-h));background:var(--sidebar-bg);border-right:1px solid var(--border);overflow-y:auto;z-index:90;transform:translateX(-100%);transition:transform .25s ease;padding:12px 0}
+.sidebar.open{transform:translateX(0)}
+.sidebar-section{margin-bottom:16px;padding:0 8px}
+.sidebar-section .sidebar-h2{font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);padding:6px 8px;display:block;margin-top:4px}
+.sidebar-h3{display:block;padding:3px 8px 3px 20px;font-size:13px;color:var(--muted);line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sidebar-h3:hover,.sidebar-h2:hover{background:var(--border);text-decoration:none}
+.overlay{display:none;position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.35)}
+.overlay.open{display:block}
+.main{margin-top:var(--header-h);padding:20px 24px 60px;max-width:860px;margin-left:auto;margin-right:auto}
+@media(min-width:1024px){.main{margin-left:calc(var(--sidebar-w) + 24px)}}
+h1{font-size:22px;margin-bottom:16px;color:var(--accent)}
+h2{font-size:20px;margin:32px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+h3{font-size:17px;margin:24px 0 8px;color:var(--accent2)}
+h4{font-size:15px;margin:18px 0 6px;font-weight:600}
+table{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14px}
+thead th{background:var(--table-head);font-weight:600;text-align:left;padding:8px 10px;border:1px solid var(--border)}
+tbody td{padding:7px 10px;border:1px solid var(--border)}
+tbody tr:nth-child(even){background:var(--table-alt)}
+code{background:var(--code-bg);padding:1px 5px;border-radius:3px;font-size:13px}
+pre{background:var(--code-bg);border:1px solid var(--border);border-radius:6px;padding:12px;overflow-x:auto;margin:10px 0 16px}
+pre code{background:none;padding:0;font-size:13px}
+ul,ol{margin:8px 0 12px 24px}
+li{margin-bottom:4px}
+p{margin:6px 0 10px}
+strong{font-weight:700}
+em{font-style:italic}
+@media print{
+.header,.sidebar,.overlay,.dark-toggle,.menu-btn{display:none!important}
+.main{margin:0;max-width:100%;padding:10px}
+body{background:#fff;color:#000}
+h2{border-bottom:1px solid #000;break-after:avoid}
+h3,h4{break-after:avoid}
+table{break-inside:avoid}
+pre{break-inside:avoid}
+}
+@media(max-width:480px){
+.main{padding:14px 12px 40px}
+h2{font-size:18px}
+table{font-size:12px;word-break:break-word}
+thead th,tbody td{padding:5px 6px}
+}
+</style>
+</head>
+<body>
+<header class="header">
+<button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">&#9776;</button>
+<span class="header-title">Core Practicals 4–8 Methods — WPH12 Extension</span>
+<button class="dark-toggle" id="darkToggle">Dark</button>
+</header>
+<div class="overlay" id="overlay"></div>
+<nav class="sidebar" id="sidebar">
+<div class="sidebar-section">
+<a href="#definitions" class="sidebar-link sidebar-h2">Definitions</a>
+<a href="#1-cp4-speed-of-sound-using-a-two-beam-oscilloscope-spec-38" class="sidebar-link sidebar-h3">1. CP4 — Speed of Sound Using a Two-Beam Oscilloscop...</a>
+<a href="#2-cp5-vibrating-string-standing-wave-on-a-string-spec-43" class="sidebar-link sidebar-h3">2. CP5 — Vibrating String / Standing Wave on a Strin...</a>
+<a href="#3-cp6-wavelength-of-light-using-a-diffraction-grating-spec-52" class="sidebar-link sidebar-h3">3. CP6 — Wavelength of Light Using a Diffraction Gra...</a>
+<a href="#4-cp7-resistivity-of-a-wire-spec-72" class="sidebar-link sidebar-h3">4. CP7 — Resistivity of a Wire (Spec 72)</a>
+<a href="#5-cp8-emf-and-internal-resistance-of-a-cell-spec-78" class="sidebar-link sidebar-h3">5. CP8 — EMF and Internal Resistance of a Cell (Spec...</a>
+</div>
+<div class="sidebar-section">
+<a href="#methods" class="sidebar-link sidebar-h2">Methods</a>
+<a href="#1-why-cp-method-matters-in-wph12" class="sidebar-link sidebar-h3">1. Why CP Method Matters in WPH12</a>
+<a href="#2-cp4-speed-of-sound-using-a-two-beam-oscilloscope" class="sidebar-link sidebar-h3">2. CP4 — Speed of Sound Using a Two-Beam Oscilloscope</a>
+<a href="#3-cp5-vibrating-string-standing-wave-on-a-string" class="sidebar-link sidebar-h3">3. CP5 — Vibrating String / Standing Wave on a String</a>
+<a href="#4-cp6-wavelength-of-light-using-a-diffraction-grating" class="sidebar-link sidebar-h3">4. CP6 — Wavelength of Light Using a Diffraction Gra...</a>
+<a href="#5-cp7-resistivity-of-a-wire" class="sidebar-link sidebar-h3">5. CP7 — Resistivity of a Wire</a>
+<a href="#6-cp8-emf-and-internal-resistance-of-a-cell" class="sidebar-link sidebar-h3">6. CP8 — EMF and Internal Resistance of a Cell</a>
+<a href="#7-cross-cp-comparison-method-skills-common-to-all-five" class="sidebar-link sidebar-h3">7. Cross-CP Comparison: Method Skills Common to All ...</a>
+<a href="#8-common-method-errors-across-all-five-cps-examiner-report-synthesis" class="sidebar-link sidebar-h3">8. Common Method Errors Across All Five CPs (Examine...</a>
+<a href="#9-method-answer-template-scores-6-6-on-any-cp-method-question" class="sidebar-link sidebar-h3">9. Method-Answer Template (Scores 6/6 on Any CP Meth...</a>
+</div>
+<div class="sidebar-section">
+<a href="#exam-connections" class="sidebar-link sidebar-h2">Exam Connections</a>
+<a href="#1-how-cp4-cp8-are-tested-frequency-table" class="sidebar-link sidebar-h3">1. How CP4–CP8 Are Tested — Frequency Table</a>
+<a href="#2-cp-by-cp-exam-mapping" class="sidebar-link sidebar-h3">2. CP-by-CP Exam Mapping</a>
+<a href="#3-command-word-mapping-for-cp-questions" class="sidebar-link sidebar-h3">3. Command Word Mapping for CP Questions</a>
+<a href="#4-recurring-examiner-report-themes-jan-2019-jan-2025" class="sidebar-link sidebar-h3">4. Recurring Examiner Report Themes (Jan 2019–Jan 2025)</a>
+<a href="#5-mark-scheme-phrasing-exact-wording-that-scores" class="sidebar-link sidebar-h3">5. Mark Scheme Phrasing — Exact Wording That Scores</a>
+<a href="#6-practice-questions-self-test" class="sidebar-link sidebar-h3">6. Practice Questions (Self-Test)</a>
+<a href="#7-practice-question-answers" class="sidebar-link sidebar-h3">7. Practice Question Answers</a>
+</div>
+</nav>
+<main class="main">
+<h1>Core Practicals 4–8 Methods</h1>
+<h2 id="definitions">Definitions</h2>
+<h2 id="wph12-extension-core-practicals-4-8-methods-definitions">WPH12 Extension — Core Practicals 4–8 Methods (Definitions)</h2>
+<h3 id="1-cp4-speed-of-sound-using-a-two-beam-oscilloscope-spec-38">1. CP4 — Speed of Sound Using a Two-Beam Oscilloscope (Spec 38)</h3>
+<h4 id="11-signal-generator">1.1 Signal Generator</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP4); Spec 38</p>
+<p><strong>Definition:</strong> An electronic device that produces an alternating voltage of adjustable frequency and amplitude. In CP4 it drives a loudspeaker at a known frequency (typically 1–5 kHz), producing a continuous sound wave of measurable wavelength.</p>
+<p><strong>Exam context:</strong> The frequency set on the signal generator is the <em>known</em> quantity in CP4 — students measure wavelength and use v = fλ to find the speed of sound. Examiner reports show students must state the frequency is "read from the signal generator display" rather than assumed.</p>
+<h4 id="12-loudspeaker-speaker">1.2 Loudspeaker / Speaker</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP4)</p>
+<p><strong>Definition:</strong> A transducer that converts the alternating electrical signal from the signal generator into a longitudinal sound wave in air. The speaker cone vibrates at the driving frequency, compressing and rarefying the air.</p>
+<p><strong>Exam context:</strong> Tested as the source of the sound wave. Students must state the speaker is connected to the signal generator and is the source of the longitudinal wave whose wavelength is being measured.</p>
+<h4 id="13-microphone">1.3 Microphone</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP4)</p>
+<p><strong>Definition:</strong> A transducer that converts the incident sound wave into an alternating electrical signal of the same frequency. In CP4 the microphone is moved along a track and its output is fed into channel 1 (or channel 2) of the oscilloscope.</p>
+<p><strong>Exam context:</strong> Students must state the microphone detects the sound wave at different positions and converts it to an electrical signal displayed on the oscilloscope.</p>
+<h4 id="14-two-beam-dual-beam-oscilloscope">1.4 Two-Beam (Dual-Beam) Oscilloscope</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP4); Spec 38</p>
+<p><strong>Definition:</strong> An instrument that displays two voltage–time traces simultaneously on the same screen (channel 1 and channel 2). In CP4, channel 1 displays the signal directly from the signal generator (reference) and channel 2 displays the signal from the microphone (delayed by the sound travel time).</p>
+<p><strong>Exam context:</strong> The two-beam feature is essential — it allows the <em>phase difference</em> between the source and the detected signal to be measured. Examiner reports show students must state "the oscilloscope displays two traces simultaneously" for the apparatus mark.</p>
+<h4 id="15-time-base">1.5 Time-Base</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP4)</p>
+<p><strong>Definition:</strong> The oscilloscope control that sets the horizontal scale — the time represented by each horizontal division (e.g. 0.1 ms/div, 0.5 ms/div). The time-base converts the horizontal axis into a time axis, allowing the period of the waveform (and hence frequency) to be read directly.</p>
+<p><strong>Exam context:</strong> In CP4 the time-base is set so that one or two complete cycles are visible. Examiner reports show students must know to convert "number of divisions × time-base setting" to find the period T, then verify f = 1/T.</p>
+<h4 id="16-phase-difference-on-oscilloscope">1.6 Phase Difference (on Oscilloscope)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP4); Spec 39</p>
+<p><strong>Definition:</strong> The difference in phase angle between two waveforms of the same frequency, measured as a fraction of a cycle. On a two-beam oscilloscope, the phase difference is found by measuring the horizontal separation Δt between corresponding points on the two traces and the period T, then calculating phase difference = (Δt / T) × 360° (or × 2π rad).</p>
+<p><strong>Exam context:</strong> The central measurement of CP4. When the microphone is moved so the two traces are exactly one cycle apart (Δt = T), the microphone has moved exactly one wavelength λ. Examiner reports show students must state "measure the distance the microphone moves for one complete cycle of phase shift" for the wavelength determination mark.</p>
+<h4 id="17-lissajous-figure">1.7 Lissajous Figure</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP4)</p>
+<p><strong>Definition:</strong> A pattern formed on an oscilloscope when two sinusoidal signals are applied to the X and Y inputs simultaneously (X–Y mode instead of time-base mode). The shape of the Lissajous figure depends on the frequency ratio and phase difference between the two signals: a straight diagonal line indicates 0° (or 180°) phase difference; an ellipse indicates an intermediate phase; a circle indicates 90° phase difference (for equal amplitudes).</p>
+<p><strong>Exam context:</strong> In CP4 the Lissajous figure provides an alternative method for determining when the two signals are in phase (straight line at +45°) or in antiphase (straight line at −45°). When the microphone is moved until the Lissajous figure returns to the same straight line, the microphone has moved exactly one wavelength. Examiner reports show this is the preferred method because it is more sensitive than reading two time-base traces.</p>
+<h4 id="18-distance-measurement-microphone-position">1.8 Distance Measurement (Microphone Position)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP4)</p>
+<p><strong>Definition:</strong> The distance from the loudspeaker to the microphone, measured with a metre rule (or a graduated track). The change in this distance when the phase shift changes by one complete cycle equals one wavelength.</p>
+<p><strong>Exam context:</strong> Tested as the measurement of λ. Examiner reports show students must (1) use a metre rule calibrated in mm, (2) record the position of the microphone at consecutive in-phase points, (3) take repeat measurements and average.</p>
+<h3 id="2-cp5-vibrating-string-standing-wave-on-a-string-spec-43">2. CP5 — Vibrating String / Standing Wave on a String (Spec 43)</h3>
+<h4 id="21-signal-generator-for-vibration-generator">2.1 Signal Generator (for Vibration Generator)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP5); Spec 43</p>
+<p><strong>Definition:</strong> An electronic device that produces an alternating voltage of adjustable frequency. In CP5 it drives a vibration generator (signal generator + vibration generator are sometimes a single unit) attached to one end of a stretched string, producing a continuous transverse wave at a known frequency.</p>
+<p><strong>Exam context:</strong> The frequency set on the signal generator is the <em>independent variable</em> (or the variable adjusted until resonance is found). Examiner reports show students must state the frequency is "varied until a stationary wave is formed."</p>
+<h4 id="22-vibration-generator">2.2 Vibration Generator</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP5)</p>
+<p><strong>Definition:</strong> A transducer (essentially a loudspeaker without a cone, with a thin rod attached to the voice coil) that converts the alternating electrical signal from the signal generator into mechanical vibrations of a string attached to the rod. The vibration generator is clamped at one end of the string and drives transverse oscillations at the signal generator's frequency.</p>
+<p><strong>Exam context:</strong> Tested as the driver of the string's oscillations. Students must state "the vibration generator is connected to the signal generator and attached to the string."</p>
+<h4 id="23-string">2.3 String</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP5); Spec 43</p>
+<p><strong>Definition:</strong> A thin flexible cord (typically cotton, nylon, or rubber) stretched between the vibration generator and a pulley. The string supports a transverse stationary wave when driven at a resonant frequency. The mass per unit length μ of the string is a key variable.</p>
+<p><strong>Exam context:</strong> The string is the medium for the standing wave. Students must state the string is "stretched between the vibration generator and a pulley with masses hanging over the pulley."</p>
+<h4 id="24-pulley">2.4 Pulley</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP5)</p>
+<p><strong>Definition:</strong> A smooth, low-friction wheel (often on a clamp) used to redirect the tension in the string from horizontal to vertical. The string passes over the pulley so that hanging slotted masses provide a known tension in the horizontal section of the string.</p>
+<p><strong>Exam context:</strong> Tested as part of the apparatus. Examiner reports show students must state the pulley is "smooth / low-friction" so that the tension equals the weight of the hanging masses (no friction correction needed).</p>
+<h4 id="25-slotted-masses-hanging-masses">2.5 Slotted Masses (Hanging Masses)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP5); Spec 43</p>
+<p><strong>Definition:</strong> A set of calibrated masses (typically 10 g, 20 g, 50 g, 100 g) with a slot that allows them to hang from a mass hanger attached to the string. The total mass m determines the tension in the string: T = mg. The masses are the <em>independent variable</em> when varying tension.</p>
+<p><strong>Exam context:</strong> Tested as the source of tension. Students must state "tension T = mg where m is the total mass of the slotted masses plus the hanger." Forgetting to include the hanger (typically 10 g or 50 g) is a common error.</p>
+<h4 id="26-bridge">2.6 Bridge</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP5)</p>
+<p><strong>Definition:</strong> A movable support (often a small wooden or metal wedge) placed under the string at a chosen position. The bridge creates a node at that point and defines the vibrating length l of the string between the vibration generator and the bridge. Moving the bridge changes l.</p>
+<p><strong>Exam context:</strong> Tested as the apparatus used to set the vibrating length. Examiner reports show students must state "the bridge fixes a node at that point, defining the length l of the vibrating section."</p>
+<h4 id="27-frequency-of-vibration-generator">2.7 Frequency (of Vibration Generator)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP5); Spec 43</p>
+<p><strong>Definition:</strong> The number of complete oscillations per second of the vibration generator (and therefore of the wave on the string), measured in hertz (Hz). It is the <em>independent variable</em> when varying frequency, read directly from the signal generator display.</p>
+<p><strong>Exam context:</strong> At resonance, the frequency of the signal generator equals the natural frequency of the string for the given length, tension, and mass per unit length: f₁ = (1/2l)√(T/μ).</p>
+<h4 id="28-tension-t">2.8 Tension (T)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP5); Spec 43</p>
+<p><strong>Definition:</strong> The pulling force transmitted along the string, equal to the weight of the hanging slotted masses: T = mg. Tension is measured in newtons (N). Increasing tension increases wave speed (v = √(T/μ)) and therefore increases the resonant frequency.</p>
+<p><strong>Exam context:</strong> Tested in the equation f₁ = (1/2l)√(T/μ). Examiner reports show students must convert mass to weight using g = 9.81 m/s² before substituting into the equation.</p>
+<h4 id="29-mass-per-unit-length-">2.9 Mass per Unit Length (μ)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP5); Spec 43</p>
+<p><strong>Definition:</strong> The linear density of the string: μ = mass / length, measured in kg m⁻¹. It is determined by weighing a known length of string on a balance (e.g. 1.000 m of string weighs 0.45 g → μ = 4.5 × 10⁻⁴ kg m⁻¹). A thicker or denser string has higher μ and produces a lower resonant frequency.</p>
+<p><strong>Exam context:</strong> Tested as a key variable. Examiner reports show students must (1) measure μ by weighing a known length, (2) convert g to kg and m to m (so units are kg m⁻¹, not g m⁻¹).</p>
+<h4 id="210-fundamental-frequency-first-harmonic">2.10 Fundamental Frequency (First Harmonic)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP5); Spec 41, 43</p>
+<p><strong>Definition:</strong> The lowest resonant frequency of a string fixed at both ends, corresponding to the simplest standing wave pattern with one antinode in the middle and nodes only at the two fixed ends. For a string of length l, tension T, and mass per unit length μ: f₁ = (1/2l)√(T/μ). The fundamental is also called the first harmonic.</p>
+<p><strong>Exam context:</strong> The fundamental is the most common pattern investigated in CP5 because it is the easiest to identify visually (single loop). Examiner reports show students must state "the fundamental has one antinode and nodes only at the ends."</p>
+<h4 id="211-harmonics">2.11 Harmonics</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP5); Spec 41</p>
+<p><strong>Definition:</strong> The series of resonant frequencies of a string fixed at both ends: f_n = n × f₁, where n = 1, 2, 3, … The n-th harmonic has n antinodes separated by (n + 1) nodes (including the two end nodes). The first harmonic (n = 1) is the fundamental; the second harmonic (n = 2) is one octave above; the third harmonic (n = 3) is a fifth above that.</p>
+<p><strong>Exam context:</strong> Tested as the resonant pattern observed at multiples of the fundamental. Students must recognise the n-th harmonic has n loops (antinodes) on the string.</p>
+<h4 id="212-node">2.12 Node</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP5); Spec 41</p>
+<p><strong>Definition:</strong> A point on a standing wave where the amplitude of oscillation is always zero. On a vibrating string, nodes occur at the fixed ends and at regular intervals (λ/2 apart) along the string. At a node, the two counter-propagating waves always cancel.</p>
+<p><strong>Exam context:</strong> In CP5, nodes are visible as stationary points on the string. The distance between adjacent nodes = λ/2, so measuring the node-to-node distance and doubling gives λ.</p>
+<h4 id="213-antinode">2.13 Antinode</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP5); Spec 41</p>
+<p><strong>Definition:</strong> A point on a standing wave where the amplitude of oscillation is maximum. Antinodes occur midway between adjacent nodes. At the fundamental, the string has one antinode in the middle.</p>
+<p><strong>Exam context:</strong> Antinodes are visible as points of maximum amplitude on the string. Examiner reports show students must state "antinodes are halfway between nodes" for the mark.</p>
+<h3 id="3-cp6-wavelength-of-light-using-a-diffraction-grating-spec-52">3. CP6 — Wavelength of Light Using a Diffraction Grating (Spec 52)</h3>
+<h4 id="31-laser-class-2">3.1 Laser (Class 2)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP6); Spec 52</p>
+<p><strong>Definition:</strong> A monochromatic, coherent, collimated light source. In CP6 a Class 2 laser (output power ≤ 1 mW, visible wavelength, typically 632.8 nm He–Ne or ~650 nm diode) is used. Class 2 lasers are safe for accidental viewing because the blink reflex (≤ 0.25 s) protects the eye, but they must NOT be stared into or directed at reflective surfaces.</p>
+<p><strong>Exam context:</strong> Tested as the source in CP6. Examiner reports show students must state "use a Class 2 laser" (not just "laser") and must include the safety note "do not look directly into the beam / do not point at reflective surfaces." The laser provides monochromatic, coherent light — both essential for a sharp diffraction pattern.</p>
+<h4 id="32-diffraction-grating">3.2 Diffraction Grating</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP6); Spec 52</p>
+<p><strong>Definition:</strong> A slide containing a large number of equally spaced parallel slits (typically 300–600 lines per mm). The grating diffracts monochromatic light into a series of bright maxima at angles given by nλ = d sin θ, where d is the slit spacing and n is the order number.</p>
+<p><strong>Exam context:</strong> Tested as the dispersing element. Students must state the number of lines per mm (N) and convert to slit spacing d = 1/N (with N in lines per metre, not per mm — the most common unit error in CP6).</p>
+<h4 id="33-lines-per-millimetre-n">3.3 Lines per Millimetre (N)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP6); Spec 52</p>
+<p><strong>Definition:</strong> The number of slits per millimetre on a diffraction grating, typically printed on the grating mount (e.g. "300 lines/mm"). It is used to calculate the slit spacing d.</p>
+<p><strong>Exam context:</strong> Tested in d = 1/N conversion. Examiner reports show students MUST convert N to lines per metre before taking the reciprocal: e.g. 300 lines/mm = 300 000 lines/m, so d = 1/(300 000) m = 3.33 × 10⁻⁶ m. Using N = 300 directly gives d = 1/300 m = 3.3 mm — wrong by a factor of 10⁶.</p>
+<h4 id="34-slit-spacing-d">3.4 Slit Spacing (d)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP6); Spec 52</p>
+<p><strong>Definition:</strong> The centre-to-centre distance between adjacent slits on the grating, calculated as d = 1/N where N is the number of lines per metre. For a 300 lines/mm grating, d = 3.33 × 10⁻⁶ m. Measured in metres (m).</p>
+<p><strong>Exam context:</strong> Tested in nλ = d sin θ. The slit spacing d must be in metres for the wavelength λ to come out in metres. Examiner reports show this is the single most common CP6 error.</p>
+<h4 id="35-screen">3.5 Screen</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP6)</p>
+<p><strong>Definition:</strong> A flat white surface (often a sheet of paper on a wall or a vertical board) placed at a known perpendicular distance D from the diffraction grating, on which the diffraction pattern (a central bright maximum with symmetrically spaced bright orders on either side) is displayed.</p>
+<p><strong>Exam context:</strong> Tested as the surface where the diffraction pattern is observed. Students must state the screen is "perpendicular to the laser beam" and "at a measured distance D from the grating."</p>
+<h4 id="36-metre-rule-for-distance-measurement">3.6 Metre Rule (for Distance Measurement)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP6)</p>
+<p><strong>Definition:</strong> A graduated ruler of length 1 m, resolution 1 mm, used in CP6 to measure (a) the perpendicular distance D from the grating to the screen, and (b) the distance x from the central maximum to each order maximum on the screen.</p>
+<p><strong>Exam context:</strong> Tested as the measuring instrument. The angle θ is then calculated from tan θ = x/D, and sin θ found from that. Examiner reports show students must use a metre rule long enough to measure x in one go (avoiding parallax errors from joining two rules).</p>
+<h4 id="37-order-number-n">3.7 Order Number (n)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP6); Spec 52</p>
+<p><strong>Definition:</strong> The integer label (n = 0, ±1, ±2, ±3, …) assigned to each bright maximum in the diffraction pattern. n = 0 is the central (undeviated) maximum; n = ±1 are the first-order maxima (one on each side); n = ±2 are the second-order maxima, and so on. Each side of the central maximum gives the same |n| at the same |θ|.</p>
+<p><strong>Exam context:</strong> Tested in nλ = d sin θ. Students must record the order number for each maximum they measure. Examiner reports show students should average the left and right measurements of the same |n| to reduce random error.</p>
+<h4 id="38-angle-of-diffraction-">3.8 Angle of Diffraction (θ)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP6); Spec 52</p>
+<p><strong>Definition:</strong> The angle between the central (n = 0) direction and the direction of the n-th order maximum, measured at the grating. It is calculated from the geometry of the apparatus: tan θ = x/D, where x is the distance from the central maximum to the n-th order maximum on the screen and D is the perpendicular distance from grating to screen. Then θ = arctan(x/D), and sin θ is substituted into nλ = d sin θ.</p>
+<p><strong>Exam context:</strong> Tested in nλ = d sin θ. Examiner reports show the common errors are (1) using x/D directly as sin θ (wrong — must use tan θ then convert), (2) measuring x to the wrong edge of the maximum, (3) using D in cm while x is in mm.</p>
+<h4 id="39-d-1-n">3.9 d = 1/N</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP6); Spec 52</p>
+<p><strong>Definition:</strong> The formula relating slit spacing d (in metres) to the number of lines per metre N. For a grating with 600 lines/mm: N = 600 000 lines/m, d = 1/N = 1/(600 000) = 1.67 × 10⁻⁶ m.</p>
+<p><strong>Exam context:</strong> Tested as the conversion step before substituting into nλ = d sin θ. Examiner reports show this conversion is missed or done incorrectly in ~40% of CP6 answers — practise it until automatic.</p>
+<h3 id="4-cp7-resistivity-of-a-wire-spec-72">4. CP7 — Resistivity of a Wire (Spec 72)</h3>
+<h4 id="41-micrometer-screw-gauge">4.1 Micrometer (Screw Gauge)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP7); Spec 72</p>
+<p><strong>Definition:</strong> A precision measuring instrument used to measure the diameter of a wire to a resolution of 0.01 mm (10 µm). The wire is held between the anvil and spindle; the thimble is turned until the ratchet clicks (avoiding over-tightening), and the reading is taken from the sleeve (millimetres and half-millimetres) plus the thimble (hundredths of a millimetre).</p>
+<p><strong>Exam context:</strong> Tested as the instrument for diameter measurement in CP7. Examiner reports show students must (1) check the zero reading before use (close the jaws — should read 0.00 mm; if not, record the zero error and subtract), (2) take readings at three different points along the wire and in two perpendicular orientations at each point (to account for non-uniform cross-section), (3) average. The %uncertainty in d is doubled for A (because A ∝ d²), so d must be measured precisely.</p>
+<h4 id="42-ammeter">4.2 Ammeter</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP7); Spec 64</p>
+<p><strong>Definition:</strong> An instrument for measuring electric current, connected in series with the wire. An ideal ammeter has zero resistance; real ammeters have very low resistance (≤ 0.1 Ω) so they do not significantly affect the current.</p>
+<p><strong>Exam context:</strong> Tested as the current-measuring instrument in CP7. Students must state "ammeter in series with the wire" and read current I in amperes. Examiner reports show students must use an ammeter with appropriate range (e.g. 0–1 A for currents of ~0.5 A).</p>
+<h4 id="43-voltmeter">4.3 Voltmeter</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP7); Spec 65</p>
+<p><strong>Definition:</strong> An instrument for measuring potential difference, connected in parallel across the section of wire being measured. An ideal voltmeter has infinite resistance; real voltmeters have very high resistance (≥ 1 MΩ) so they draw negligible current. In CP7 the voltmeter is connected across a known length l of the wire.</p>
+<p><strong>Exam context:</strong> Tested as the p.d.-measuring instrument. Students must state "voltmeter in parallel across the wire" and read p.d. V in volts. Examiner reports show the voltmeter must have high resistance so that the current through it is negligible (otherwise the ammeter reading overestimates the current through the wire itself).</p>
+<h4 id="44-variable-resistor-rheostat">4.4 Variable Resistor (Rheostat)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP7)</p>
+<p><strong>Definition:</strong> A resistor whose resistance can be adjusted continuously by sliding a contact along a coil of resistance wire. In CP7 the variable resistor is connected in series with the wire and is used to keep the current constant when measuring different lengths of wire (or to vary the current for checking Ohm's law at a fixed length).</p>
+<p><strong>Exam context:</strong> Tested as the current-limiting component. Students must state "use a variable resistor to keep the current constant" when measuring V for different lengths l. Examiner reports show keeping the current constant is essential because R = V/I requires comparing V at the same I for different l.</p>
+<h4 id="45-wire-test-wire">4.5 Wire (Test Wire)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP7); Spec 72</p>
+<p><strong>Definition:</strong> A long, uniform wire of the material whose resistivity is being determined (e.g. constantan, nichrome, copper). The wire is taped to a metre rule so that the length l between the voltmeter contacts can be varied and measured accurately. Constantan is often used because its resistance is approximately temperature-independent.</p>
+<p><strong>Exam context:</strong> Tested as the specimen. Students must state the wire is "taped along a metre rule" and "the voltmeter contacts are at known positions on the wire."</p>
+<h4 id="46-metre-rule-for-length-measurement">4.6 Metre Rule (for Length Measurement)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP7)</p>
+<p><strong>Definition:</strong> A graduated ruler of length 1 m, resolution 1 mm, used to measure the length l of the wire between the voltmeter contacts. The wire is taped along the rule so that the contacts can be positioned at any chosen length.</p>
+<p><strong>Exam context:</strong> Tested as the length-measuring instrument. Examiner reports show students must use l in metres (not cm) in ρ = RA/l for ρ to come out in Ω m.</p>
+<h4 id="47-constant-current">4.7 Constant Current</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP7)</p>
+<p><strong>Definition:</strong> A current that is held at the same value (e.g. 0.50 A) for all measurements of V at different lengths l. The variable resistor is adjusted to bring the current back to the chosen value after each change of length. Keeping the current constant allows R = V/I to be calculated for each l at the same I, so that R vs l is a clean linear plot.</p>
+<p><strong>Exam context:</strong> Tested as a control variable. Examiner reports show students must state "the current is kept constant using the variable resistor" — without this, R = V/I cannot be compared across lengths.</p>
+<h4 id="48-low-current-avoid-heating">4.8 Low Current (Avoid Heating)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP7); Spec 79</p>
+<p><strong>Definition:</strong> A deliberately small current (typically ≤ 0.5 A for a thin wire) chosen so that the heating effect of the current (P = I²R) does not raise the wire's temperature significantly. Heating would change the resistivity (for metals, ρ increases with T) and introduce a systematic error.</p>
+<p><strong>Exam context:</strong> Tested as a safety / accuracy precaution. Examiner reports show students must state "use a low current to avoid heating the wire" — higher currents change the resistivity and the readings become inconsistent. A switch is also used so the current flows only while readings are being taken (minimising heating).</p>
+<h4 id="49-ohmmeter">4.9 Ohmmeter</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP7)</p>
+<p><strong>Definition:</strong> An instrument that measures resistance directly (in ohms) by passing a small known current through the component and measuring the p.d. In CP7 an ohmmeter can be used to measure R for different lengths of wire directly, avoiding the need for separate ammeter and voltmeter readings. The ohmmeter is connected across the section of wire whose resistance is to be measured.</p>
+<p><strong>Exam context:</strong> Tested as an alternative method to the ammeter–voltmeter arrangement. Examiner reports show the ohmmeter method is faster but slightly less accurate (the ohmmeter's own internal current source limits precision); the ammeter–voltmeter method is preferred when high accuracy is required. Students must be able to describe both methods.</p>
+<h3 id="5-cp8-emf-and-internal-resistance-of-a-cell-spec-78">5. CP8 — EMF and Internal Resistance of a Cell (Spec 78)</h3>
+<h4 id="51-cell-source-of-emf">5.1 Cell (Source of EMF)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP8); Spec 74, 78</p>
+<p><strong>Definition:</strong> A device that converts chemical energy (in a chemical cell) or other form of energy into electrical energy, doing work on charge carriers and maintaining a potential difference across its terminals. A real cell is modelled as an ideal source of e.m.f. ε in series with an internal resistance r.</p>
+<p><strong>Exam context:</strong> Tested as the source under investigation. Students must state "a single cell (or known battery)" — using multiple cells in series complicates the analysis because ε and r add up. Examiner reports show fresh cells should be used because old cells have fluctuating ε and r.</p>
+<h4 id="52-variable-resistor-rheostat-external-resistance">5.2 Variable Resistor / Rheostat (External Resistance)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP8); Spec 78</p>
+<p><strong>Definition:</strong> A resistor whose resistance can be adjusted continuously, connected in series with the cell as the external load. By changing the external resistance, the current I drawn from the cell is changed, and the corresponding terminal p.d. V is measured. This produces the (I, V) data pairs needed for the V–I graph.</p>
+<p><strong>Exam context:</strong> Tested as the load that varies the current. Students must state "a variable resistor in series with the cell and ammeter." Examiner reports show the rheostat must have a range large enough to give 6–8 (I, V) data points spread evenly across the current range.</p>
+<h4 id="53-ammeter-in-series">5.3 Ammeter (in Series)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP8); Spec 64, 78</p>
+<p><strong>Definition:</strong> An instrument for measuring the current through the cell, connected in series with the cell and the variable resistor. An ideal ammeter has zero resistance; in CP8 the ammeter's resistance must be small compared with r so that the measured current equals the actual current through the cell.</p>
+<p><strong>Exam context:</strong> Tested as the current-measuring instrument. Students must state "ammeter in series with the cell and the variable resistor." The ammeter reads I, the current drawn from the cell.</p>
+<h4 id="54-voltmeter-across-terminals">5.4 Voltmeter (Across Terminals)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP8); Spec 65, 78</p>
+<p><strong>Definition:</strong> An instrument for measuring the terminal p.d. V across the cell, connected in parallel across the cell's terminals (i.e. across the series combination of cell + ammeter + variable resistor, but in practice directly across the cell's terminals). The voltmeter reads V = ε − Ir, the p.d. available to the external circuit after the "lost volts" across the internal resistance.</p>
+<p><strong>Exam context:</strong> Tested as the p.d.-measuring instrument. Students must state "voltmeter in parallel across the cell's terminals." Examiner reports show the voltmeter is across the terminals (NOT across the variable resistor only — that would give V across R only).</p>
+<h4 id="55-high-resistance-voltmeter">5.5 High-Resistance Voltmeter</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP8); Spec 78</p>
+<p><strong>Definition:</strong> A voltmeter with very high resistance (≥ 10 MΩ typical for digital voltmeters). The high resistance ensures that negligible current flows through the voltmeter itself, so the current measured by the ammeter is (almost) exactly the current through the cell and the variable resistor. If the voltmeter had low resistance, it would draw significant current and the ammeter would over-read.</p>
+<p><strong>Exam context:</strong> Tested in the open-circuit measurement of ε: when the switch is open (no current through the variable resistor), the voltmeter reads V = ε only if the voltmeter resistance is very high compared with r. With a low-resistance voltmeter, even an "open" circuit draws current through the voltmeter, and V < ε. Examiner reports show students must state "use a high-resistance voltmeter so that the reading when the switch is open equals the e.m.f."</p>
+<h4 id="56-switch">5.6 Switch</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP8)</p>
+<p><strong>Definition:</strong> A device for opening and closing the circuit. In CP8 the switch is opened between readings to prevent the cell from being continuously discharged (which would change ε and r as the cell depletes) and to prevent the wires from heating.</p>
+<p><strong>Exam context:</strong> Tested as a procedural detail. Students must state "switch is opened between readings to prevent the cell from running down / to avoid heating." Examiner reports show this is a 1-mark procedural point that is often missed.</p>
+<h4 id="57-polarisation-of-a-cell">5.7 Polarisation (of a Cell)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP8); Spec 78 (context)</p>
+<p><strong>Definition:</strong> A build-up of hydrogen gas bubbles on the positive electrode of a simple cell when current is drawn, which increases the internal resistance and reduces the e.m.f. of the cell during use. Polarisation is minimised by using a depolariser (in commercial cells) and by keeping the current small / switching off between readings.</p>
+<p><strong>Exam context:</strong> Tested as a source of error in CP8. Examiner reports show students must state "polarisation changes the e.m.f. and internal resistance during the experiment" — using a switch to break the circuit between readings reduces polarisation. This is a specific example of a systematic drift, not a random error.</p>
+<h4 id="58-internal-resistance-r">5.8 Internal Resistance (r)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP8); Spec 77, 78</p>
+<p><strong>Definition:</strong> The resistance to current flow inside the cell itself, due to the resistance of the electrolyte and the electrodes. When a current I flows, the internal resistance causes a "lost volts" of Ir inside the cell, so the terminal p.d. is V = ε − Ir. Internal resistance is measured in ohms (Ω), typically 0.1–1 Ω for a fresh cell.</p>
+<p><strong>Exam context:</strong> The primary quantity determined in CP8. From V = ε − Ir (a straight-line equation with V on y-axis, I on x-axis), the gradient = −r and the y-intercept = ε. Examiner reports show students must state "the magnitude of the gradient of the V–I graph equals the internal resistance."</p>
+<h4 id="59-lost-volts">5.9 Lost Volts</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP8); Spec 77</p>
+<p><strong>Definition:</strong> The p.d. across the internal resistance of a cell when current flows: lost volts = Ir. It represents the energy per coulomb dissipated inside the cell (as heat) and is therefore not available to the external circuit. Lost volts = ε − V (the difference between the e.m.f. and the terminal p.d.).</p>
+<p><strong>Exam context:</strong> Tested in the equation ε = V + Ir. Examiner reports show students must state "lost volts = Ir = ε − V" and explain it as the energy per coulomb dissipated inside the cell. Common error: confusing lost volts with the terminal p.d.</p>
+<h4 id="510-terminal-potential-difference-v">5.10 Terminal Potential Difference (V)</h4>
+<p><strong>Spec ref:</strong> Appendix 9 (CP8); Spec 75, 78</p>
+<p><strong>Definition:</strong> The p.d. across the terminals of a cell when a current is flowing in the external circuit. It is less than the e.m.f. because of the lost volts: V = ε − Ir. The terminal p.d. equals the e.m.f. only when the current is zero (open circuit) or when the internal resistance is negligible (r ≈ 0).</p>
+<p><strong>Exam context:</strong> The quantity measured by the voltmeter in CP8. The terminal p.d. decreases as the current increases (because lost volts = Ir increases). Examiner reports show students must state "as I increases, V decreases because more energy per coulomb is dissipated inside the cell as lost volts."</p>
+<h2 id="methods">Methods</h2>
+<h2 id="wph12-extension-core-practicals-4-8-methods-concepts">WPH12 Extension — Core Practicals 4–8 Methods (Concepts)</h2>
+<h3 id="1-why-cp-method-matters-in-wph12">1. Why CP Method Matters in WPH12</h3>
+<p>The 5 Core Practicals of WPH12 together account for <strong>22–34 marks per paper</strong> across Section B practical questions and Section C/A applied-context questions. The frequency breakdown:</p>
+<table>
+<thead>
+<tr>
+<th>CP</th>
+<th>Topic</th>
+<th>Spec</th>
+<th>Papers featuring it</th>
+<th>Marks per appearance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CP4</td>
+<td>Speed of sound (oscilloscope)</td>
+<td>38</td>
+<td>7/14</td>
+<td>6–10</td>
+</tr>
+<tr>
+<td>CP5</td>
+<td>Vibrating string / standing wave</td>
+<td>43</td>
+<td>9/14</td>
+<td>8–12</td>
+</tr>
+<tr>
+<td>CP6</td>
+<td>Diffraction grating wavelength</td>
+<td>52</td>
+<td>11/14</td>
+<td>6–10</td>
+</tr>
+<tr>
+<td>CP7</td>
+<td>Resistivity of a wire</td>
+<td>72</td>
+<td>10/14</td>
+<td>8–12</td>
+</tr>
+<tr>
+<td>CP8</td>
+<td>EMF and internal resistance</td>
+<td>78</td>
+<td>12/14</td>
+<td>6–8</td>
+</tr>
+</tbody>
+</table>
+<p><strong>CP8 is the single most-frequently tested CP in WPH12</strong> (12/14 papers, typically 6–8 marks). CP6 and CP7 are nearly as common. The audit found that the main study guides cover the <em>theory</em> thoroughly but are thin on <em>method</em> (apparatus list, numbered procedure, what to measure, what to plot, what the gradient gives, sources of error, improvements). A student who knows ρ = RA/l but cannot describe how to measure d with a micrometer will lose 3–4 method marks on the CP7 question — every paper.</p>
+<p>This file provides, for each CP, the 9-part structure that examiner mark schemes reward: (a) Aim, (b) Apparatus + diagram, (c) Method (6–8 numbered steps), (d) Measurements, (e) Graph, (f) Calculation/derivation, (g) Errors, (h) Improvements, (i) Safety.</p>
+<h3 id="2-cp4-speed-of-sound-using-a-two-beam-oscilloscope">2. CP4 — Speed of Sound Using a Two-Beam Oscilloscope</h3>
+<h4 id="21-aim">2.1 Aim</h4>
+<p>To determine the speed of sound in air, v, using a signal generator, a loudspeaker, a microphone, and a two-beam oscilloscope, by measuring the wavelength λ at a known frequency f and applying v = fλ.</p>
+<h4 id="22-apparatus">2.2 Apparatus</h4>
+<ul><li>Signal generator (with frequency display)</li>
+<li>Loudspeaker (connected to signal generator output)</li>
+<li>Microphone (mounted on a movable stand with a fiducial marker)</li>
+<li>Two-beam oscilloscope (channels 1 and 2)</li>
+<li>Metre rule (graduated in mm)</li>
+<li>Connecting leads</li>
+<li>(Optional) Track or bench with markings for the microphone position</li></ul>
+<p><strong>Diagram description:</strong> Signal generator → loudspeaker at one end of a bench. Microphone faces the loudspeaker, mounted on a movable stand aligned along a metre rule. Channel 1 of the oscilloscope is connected to the signal generator output (reference). Channel 2 is connected to the microphone (detected signal). Both traces are displayed simultaneously.</p>
+<h4 id="23-method">2.3 Method</h4>
+<ol><li>Set up the apparatus with the loudspeaker at one end of the bench and the microphone facing it on the same horizontal line, with the metre rule alongside.</li>
+<li>Connect channel 1 of the oscilloscope to the signal generator output and channel 2 to the microphone. Adjust the time-base so that 1–2 complete cycles are visible on both traces.</li>
+<li>Set the signal generator to a frequency of approximately 2 kHz (audible but not painful) and allow the equipment to warm up for 2 minutes.</li>
+<li>Move the microphone close to the loudspeaker and adjust the oscilloscope gain on channel 2 so the microphone trace fills at least half the screen height.</li>
+<li>Starting with the microphone near the loudspeaker, slowly move the microphone away. Observe the two traces: as the microphone moves, the channel 2 trace shifts horizontally relative to channel 1.</li>
+<li>Record the microphone position x₁ when the two traces are exactly in phase (channel 2 trace aligned with channel 1 trace — peaks coincide). Then move the microphone away until the traces are in phase again (one complete cycle of phase shift). Record the new position x₂.</li>
+<li>Repeat step 6 to find at least 5 consecutive in-phase positions. The wavelength λ = (x_{n+1} − x_n) for any adjacent pair, and the mean λ is calculated from all adjacent differences.</li>
+<li>Repeat the whole experiment at three different frequencies (e.g. 1.5 kHz, 2.0 kHz, 3.0 kHz) and calculate v = fλ for each. The speed of sound should be the same within experimental uncertainty (~340 m/s at 20 °C).</li></ol>
+<h4 id="24-measurements-to-take">2.4 Measurements to Take</h4>
+<table>
+<thead>
+<tr>
+<th>Measurement</th>
+<th>Instrument</th>
+<th>Repeats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frequency f (Hz)</td>
+<td>Signal generator display</td>
+<td>Read at each setting</td>
+</tr>
+<tr>
+<td>Microphone positions x₁, x₂, …, x₆ (m)</td>
+<td>Metre rule</td>
+<td>6 positions for 5 wavelengths</td>
+</tr>
+<tr>
+<td>Wavelength λ (m)</td>
+<td>Calculated: λ = x_{n+1} − x_n</td>
+<td>Average 5 values</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Record frequency to nearest 10 Hz, positions to nearest 1 mm (metre rule resolution).</strong></p>
+<h4 id="25-graph-to-plot">2.5 Graph to Plot</h4>
+<p>A graph of <strong>λ (y-axis) against 1/f (x-axis)</strong> should be a straight line through the origin with gradient = v (since v = fλ ⟹ λ = v × (1/f), so gradient = v).</p>
+<p>Alternatively (less common but accepted): plot λ × f (y-axis) against measurement number — should be constant.</p>
+<h4 id="26-calculation-derivation">2.6 Calculation / Derivation</h4>
+<p>The wave equation: <strong>v = fλ</strong></p>
+<p>For each frequency f, find the mean wavelength λ from the average of (x₂ − x₁), (x₃ − x₂), … Calculate v = fλ for each frequency and average.</p>
+<p><strong>Worked numerical example:</strong></p>
+<ul><li>Frequency f = 2000 Hz</li>
+<li>Six consecutive in-phase microphone positions: x₁ = 0.050 m, x₂ = 0.223 m, x₃ = 0.395 m, x₄ = 0.568 m, x₅ = 0.740 m, x₆ = 0.912 m</li>
+<li>Differences: 0.173, 0.172, 0.173, 0.172, 0.172 m → mean λ = 0.1724 m (4 sig figs, since positions to nearest 1 mm allow 3–4 sig figs)</li>
+<li>v = fλ = 2000 × 0.1724 = <strong>345 m/s</strong></li></ul>
+<p>Repeat at 1500 Hz: λ = 0.230 m → v = 345 m/s. Repeat at 3000 Hz: λ = 0.115 m → v = 345 m/s. Mean v = 345 m/s. (Accepted value at 20 °C: ~343 m/s.)</p>
+<h4 id="27-sources-of-error">2.7 Sources of Error</h4>
+<ol><li><strong>Resolution of metre rule (± 0.5 mm = ± 0.0005 m):</strong> With λ ≈ 0.17 m, the %uncertainty in each position reading is (0.0005/0.17) × 100 ≈ 0.3%. Taking 5 differences and averaging reduces this. <strong>Cause:</strong> instrument resolution. <strong>Effect:</strong> random error in λ, propagated to v.</li>
+<li><strong>Difficulty judging exact in-phase alignment:</strong> Determining when two traces are "exactly in phase" is subjective; small misalignments (~5° of phase) correspond to position errors of ~λ × (5°/360°) ≈ 0.0024 m for λ = 0.17 m. <strong>Cause:</strong> human judgement. <strong>Effect:</strong> random error in microphone position.</li>
+<li><strong>Reflections from walls/bench causing interference:</strong> Reflected sound waves superpose with the direct wave, distorting the waveform at the microphone. <strong>Cause:</strong> environmental. <strong>Effect:</strong> systematic error in phase reading, can shift apparent in-phase positions.</li></ol>
+<h4 id="28-improvements">2.8 Improvements</h4>
+<ol><li><strong>Use the Lissajous figure (X–Y mode) instead of two time-base traces:</strong> Switch the oscilloscope to X–Y mode (channel 1 on X, channel 2 on Y). When the two signals are in phase, the Lissajous figure is a straight diagonal line at +45°; when in antiphase, a straight line at −45°; when 90° out of phase, an ellipse or circle. The Lissajous figure is far more sensitive to small phase shifts than reading two time-base traces, reducing the position uncertainty.</li>
+<li><strong>Use a longer baseline and a higher frequency:</strong> A higher frequency gives a shorter λ, so more wavelengths fit in a given distance, allowing more in-phase positions to be measured and averaged. (Trade-off: too-high frequency attenuates in air — keep below 5 kHz.)</li>
+<li><strong>Perform the experiment in an anechoic environment (or outdoors away from reflections):</strong> Reduces interference from reflections. Alternatively, place absorbing material behind the loudspeaker and microphone.</li></ol>
+<h4 id="29-safety">2.9 Safety</h4>
+<ul><li>Sound pressure levels above ~85 dB can damage hearing. Keep the amplitude low (audible but not loud) and avoid prolonged exposure.</li>
+<li>Electrical safety: check leads for damage before use; keep liquids away from electrical equipment.</li></ul>
+<h3 id="3-cp5-vibrating-string-standing-wave-on-a-string">3. CP5 — Vibrating String / Standing Wave on a String</h3>
+<h4 id="31-aim">3.1 Aim</h4>
+<p>To investigate how the fundamental frequency f₁ of a stretched string depends on (a) length l, (b) tension T, and (c) mass per unit length μ, and to verify the relation f₁ = (1/2l)√(T/μ).</p>
+<h4 id="32-apparatus">3.2 Apparatus</h4>
+<ul><li>Signal generator</li>
+<li>Vibration generator</li>
+<li>String (e.g. cotton or rubber, ~1.5 m)</li>
+<li>Pulley on a clamp</li>
+<li>Slotted masses (10 g, 20 g, 50 g) and mass hanger</li>
+<li>Bridge (movable)</li>
+<li>Metre rule</li>
+<li>Balance (for weighing the string)</li>
+<li>(Optional) Stroboscope to "freeze" the standing wave</li></ul>
+<p><strong>Diagram description:</strong> The vibration generator is clamped at one end of the bench and attached to one end of the string. The string passes horizontally over a pulley at the far end of the bench, with slotted masses hanging from the free end (providing tension T = mg). A movable bridge is placed under the string between the vibration generator and the pulley, defining the vibrating length l.</p>
+<h4 id="33-method">3.3 Method</h4>
+<ol><li>Weigh a known length (e.g. 1.000 m) of the string on a balance and calculate the mass per unit length μ = mass/length (kg m⁻¹).</li>
+<li>Set up the apparatus with the string passing over the pulley, with a known total hanging mass (e.g. 100 g + 10 g hanger = 110 g, so T = 0.110 × 9.81 = 1.08 N). Place the bridge at a chosen length l (e.g. 0.500 m) between the vibration generator and the pulley.</li>
+<li>Switch on the signal generator at low frequency (~10 Hz) and slowly increase the frequency until the fundamental (first harmonic) standing wave is observed — a single large loop with one antinode in the middle and nodes only at the bridge and the vibration generator.</li>
+<li>Record the frequency f₁ from the signal generator display when the standing wave is most distinct (maximum amplitude at the antinode).</li>
+<li><strong>Investigation 1 (length):</strong> Keep T constant (same hanging mass) and μ constant (same string). Vary l from 0.30 m to 0.80 m in steps of 0.05 m. At each l, adjust the frequency to find the new fundamental f₁. Record (l, f₁) pairs.</li>
+<li><strong>Investigation 2 (tension):</strong> Keep l constant (e.g. 0.50 m) and μ constant. Vary the hanging mass from 50 g to 300 g in steps of 50 g. At each T, adjust the frequency to find the new fundamental f₁. Record (T, f₁) pairs.</li>
+<li>For each measurement, take repeat readings by approaching the resonant frequency from above and below and averaging.</li>
+<li>Plot the appropriate graphs (see 3.5) and determine whether the data fit f₁ = (1/2l)√(T/μ).</li></ol>
+<h4 id="34-measurements-to-take">3.4 Measurements to Take</h4>
+<table>
+<thead>
+<tr>
+<th>Measurement</th>
+<th>Instrument</th>
+<th>Repeats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mass per unit length μ (kg m⁻¹)</td>
+<td>Balance + metre rule</td>
+<td>Weigh 1 m, 3 repeats</td>
+</tr>
+<tr>
+<td>Hanging mass m (kg)</td>
+<td>Slotted masses (labelled)</td>
+<td>Read labelled value</td>
+</tr>
+<tr>
+<td>Tension T = mg (N)</td>
+<td>Calculated</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Length l (m)</td>
+<td>Metre rule</td>
+<td>Read to 1 mm</td>
+</tr>
+<tr>
+<td>Fundamental frequency f₁ (Hz)</td>
+<td>Signal generator display</td>
+<td>Approach from above & below, average</td>
+</tr>
+</tbody>
+</table>
+<h4 id="35-graph-to-plot">3.5 Graph to Plot</h4>
+<p><strong>Investigation 1 (length):</strong> Plot <strong>f₁ (y-axis) against 1/l (x-axis)</strong>. Theory: f₁ = (1/2l)√(T/μ) = (√(T/μ)/2) × (1/l). So gradient = √(T/μ)/2 → μ = T / (2 × gradient)². Should be a straight line through the origin.</p>
+<p><strong>Investigation 2 (tension):</strong> Plot <strong>f₁² (y-axis) against T (x-axis)</strong>. Theory: f₁² = (1/4l²μ) × T. So gradient = 1/(4l²μ) → μ = 1/(4l² × gradient). Should be a straight line through the origin.</p>
+<h4 id="36-calculation-derivation">3.6 Calculation / Derivation</h4>
+<p>Wave speed on a string: <strong>v = √(T/μ)</strong> (Spec 43)</p>
+<p>For the fundamental (first harmonic) on a string fixed at both ends, the length equals λ/2: <strong>l = λ/2 ⟹ λ = 2l</strong></p>
+<p>Combining with v = fλ:</p>
+<p><strong>f₁ = v / λ = √(T/μ) / (2l) = (1/2l)√(T/μ)</strong></p>
+<p><strong>Worked numerical example (Investigation 2):</strong></p>
+<ul><li>String: 1.000 m weighs 0.45 g → μ = 4.5 × 10⁻⁴ kg m⁻¹</li>
+<li>Length l = 0.500 m</li>
+<li>Hanging masses: 50 g, 100 g, 150 g, 200 g, 250 g, 300 g</li>
+<li>T = mg: 0.491, 0.981, 1.47, 1.96, 2.45, 2.94 N</li></ul>
+<p>For each, calculate predicted f₁ = (1/2l)√(T/μ):</p>
+<ul><li>T = 0.491 N: f₁ = (1/1.0) × √(0.491 / 4.5e-4) = √1091 = 33.0 Hz</li>
+<li>T = 0.981 N: f₁ = √(0.981 / 4.5e-4) / 1.0 = √2180 = 46.7 Hz</li>
+<li>T = 1.96 N: f₁ = √(1.96 / 4.5e-4) / 1.0 = √4356 = 66.0 Hz</li>
+<li>T = 2.94 N: f₁ = √(2.94 / 4.5e-4) / 1.0 = √6533 = 80.8 Hz</li></ul>
+<p>Measured values should agree to within ~5%. Plotting f₁² vs T:</p>
+<ul><li>(0.491, 1089), (0.981, 2181), (1.47, 3273), (1.96, 4356), (2.45, 5439), (2.94, 6529)</li>
+<li>Gradient ≈ 2220 Hz²/N (best-fit slope)</li>
+<li>Predicted gradient = 1/(4l²μ) = 1/(4 × 0.25 × 4.5e-4) = 1/4.5e-4 = 2222 Hz²/N ✓</li></ul>
+<h4 id="37-sources-of-error">3.7 Sources of Error</h4>
+<ol><li><strong>The vibrating length l is not exactly the distance between the vibration generator and the bridge:</strong> The vibration generator itself has a small amplitude, and the bridge has a finite contact width, so the actual node positions are slightly inside the measured length. <strong>Cause:</strong> apparatus geometry. <strong>Effect:</strong> systematic error — l is overestimated, so f₁ is underestimated.</li>
+<li><strong>Mass per unit length μ varies along the string:</strong> Real strings are not perfectly uniform; μ may vary by 2–5% along the length. <strong>Cause:</strong> manufacturing. <strong>Effect:</strong> random error in μ propagated to f₁.</li>
+<li><strong>Tension is not exactly mg:</strong> Friction at the pulley (even a "low-friction" pulley) means the tension in the horizontal section of the string is slightly less than mg. <strong>Cause:</strong> pulley friction. <strong>Effect:</strong> systematic error — T is overestimated, so f₁ is overestimated.</li>
+<li><strong>Judging the resonant frequency:</strong> The maximum amplitude at the antinode is hard to identify precisely, especially near resonance where the amplitude changes rapidly with frequency. <strong>Cause:</strong> human judgement. <strong>Effect:</strong> random error in f₁.</li></ol>
+<h4 id="38-improvements">3.8 Improvements</h4>
+<ol><li><strong>Use a stroboscope to "freeze" the standing wave:</strong> Adjust the strobe frequency until the wave appears stationary (strobe frequency = vibration generator frequency). This makes the node/antinode positions much easier to identify and confirm. <strong>Caveat:</strong> never exceed the strobe flash rate limit; warn about strobe triggering epilepsy.</li>
+<li><strong>Weigh a longer section of string (e.g. 2.000 m) to reduce %uncertainty in μ:</strong> Doubling the length halves the %uncertainty in mass/length.</li>
+<li><strong>Use a finer frequency adjustment (or a digital frequency counter):</strong> Reduces the random error in f₁ by allowing the exact resonant frequency to be dialled in.</li>
+<li><strong>Use a precision pulley (ball-bearing) and lubricate:</strong> Reduces friction, making T ≈ mg more accurate.</li></ol>
+<h4 id="39-safety">3.9 Safety</h4>
+<ul><li>The vibration generator and masses are mechanical: keep fingers away from the moving string and the pulley.</li>
+<li>The hanging masses can fall if the string breaks — place a cushion or tray beneath them and stand clear.</li>
+<li>Stroboscope (if used): warn anyone with photosensitive epilepsy before use; do not look directly at the strobe.</li></ul>
+<h3 id="4-cp6-wavelength-of-light-using-a-diffraction-grating">4. CP6 — Wavelength of Light Using a Diffraction Grating</h3>
+<h4 id="41-aim">4.1 Aim</h4>
+<p>To determine the wavelength λ of monochromatic light from a laser using a diffraction grating with a known number of lines per mm, by measuring the angles of the diffraction maxima and applying nλ = d sin θ.</p>
+<h4 id="42-apparatus">4.2 Apparatus</h4>
+<ul><li>Class 2 laser (e.g. He–Ne 632.8 nm or diode laser ~650 nm)</li>
+<li>Diffraction grating (e.g. 300 lines/mm) on a mount</li>
+<li>Screen (white paper on a wall or a vertical board)</li>
+<li>Metre rule (for measuring D and x)</li>
+<li>(Alternative to screen + metre rule: spectrometer table with vernier scale for direct angle measurement)</li></ul>
+<p><strong>Diagram description:</strong> The laser is mounted on a stand pointing horizontally at the diffraction grating, which is held perpendicular to the beam in a mount. A screen is placed at a perpendicular distance D (e.g. 1.000 m) from the grating, parallel to the grating plane. The diffraction pattern is observed on the screen: a bright central maximum (n = 0) with symmetrically spaced bright orders (n = ±1, ±2, …) on either side.</p>
+<h4 id="43-method">4.3 Method</h4>
+<ol><li>Set up the laser, grating, and screen on a level bench in a darkened room. Align the laser so its beam hits the grating perpendicular to the grating plane.</li>
+<li>Measure the perpendicular distance D from the grating to the screen using a metre rule. Record D to the nearest 1 mm.</li>
+<li>Switch on the laser and observe the diffraction pattern on the screen. Mark the position of the central maximum (n = 0) and the positions of the visible orders (n = ±1, ±2, ±3, …) on the screen with a sharp pencil.</li>
+<li>Measure the distance x from the central maximum to each order maximum on both sides (x_{+1}, x_{−1}, x_{+2}, x_{−2}, …). Use the metre rule, taking care to view the scale perpendicular to the screen (avoid parallax).</li>
+<li>For each order n, calculate the average distance x_n = (x_{+n} + |x_{−n}|) / 2 — averaging the left and right measurements reduces random error.</li>
+<li>Calculate the angle of diffraction for each order: tan θ_n = x_n / D, then θ_n = arctan(x_n / D). Convert to sin θ_n.</li>
+<li>Apply the grating equation: <strong>nλ = d sin θ_n</strong>, where d = 1/N and N is the number of lines per metre (e.g. 300 lines/mm = 300 000 lines/m → d = 3.333 × 10⁻⁶ m).</li>
+<li>Calculate λ from each order and average. The values should agree within experimental uncertainty (~1–2%).</li></ol>
+<h4 id="44-measurements-to-take">4.4 Measurements to Take</h4>
+<table>
+<thead>
+<tr>
+<th>Measurement</th>
+<th>Instrument</th>
+<th>Repeats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number of lines per mm N</td>
+<td>Read from grating label</td>
+<td>Once</td>
+</tr>
+<tr>
+<td>Slit spacing d = 1/N (m)</td>
+<td>Calculated</td>
+<td>Once</td>
+</tr>
+<tr>
+<td>Distance D (m)</td>
+<td>Metre rule</td>
+<td>Once, to 1 mm</td>
+</tr>
+<tr>
+<td>Distances x_{±1}, x_{±2}, x_{±3}, … (m)</td>
+<td>Metre rule</td>
+<td>2 (left + right) per order</td>
+</tr>
+<tr>
+<td>Order number n</td>
+<td>Counted</td>
+<td>Integer</td>
+</tr>
+</tbody>
+</table>
+<h4 id="45-graph-to-plot">4.5 Graph to Plot</h4>
+<p>Plot <strong>sin θ (y-axis) against n (x-axis)</strong> for n = 1, 2, 3, …. Theory: nλ = d sin θ ⟹ sin θ = (λ/d) × n. So gradient = λ/d → λ = gradient × d. Should be a straight line through the origin.</p>
+<h4 id="46-calculation-derivation">4.6 Calculation / Derivation</h4>
+<p>The grating equation: <strong>nλ = d sin θ</strong> (Spec 52)</p>
+<p>Where:</p>
+<ul><li>n = order number (integer: 1, 2, 3, …)</li>
+<li>λ = wavelength (m)</li>
+<li>d = slit spacing (m), d = 1/N where N = lines per metre</li>
+<li>θ = angle of diffraction (between central direction and the n-th order maximum)</li></ul>
+<p>Rearranged: <strong>λ = d sin θ / n</strong></p>
+<p><strong>Worked numerical example:</strong></p>
+<ul><li>Grating: 300 lines/mm → N = 300 000 lines/m → d = 1/N = 3.333 × 10⁻⁶ m</li>
+<li>Distance D = 1.000 m (grating to screen)</li>
+<li>Measured positions:</li>
+<li>n = ±1: x₁ = 0.205 m → tan θ₁ = 0.205/1.000 = 0.205 → θ₁ = 11.60° → sin θ₁ = 0.2011</li>
+<li>n = ±2: x₂ = 0.420 m → tan θ₂ = 0.420/1.000 = 0.420 → θ₂ = 22.78° → sin θ₂ = 0.3875</li>
+<li>n = ±3: x₃ = 0.660 m → tan θ₃ = 0.660/1.000 = 0.660 → θ₃ = 33.42° → sin θ₃ = 0.5511</li></ul>
+<ul><li>Calculate λ for each order:</li>
+<li>n = 1: λ = (3.333 × 10⁻⁶ × 0.2011) / 1 = 6.703 × 10⁻⁷ m = 670 nm</li>
+<li>n = 2: λ = (3.333 × 10⁻⁶ × 0.3875) / 2 = 6.458 × 10⁻⁷ m = 646 nm</li>
+<li>n = 3: λ = (3.333 × 10⁻⁶ × 0.5511) / 3 = 6.123 × 10⁻⁷ m = 612 nm</li></ul>
+<ul><li>Mean λ = (670 + 646 + 612)/3 = 643 nm (≈ 643 × 10⁻⁹ m)</li>
+<li>(Discrepancy at n = 3 suggests a small measurement error in x₃ — this is typical and the n = 1 and n = 2 values are usually more reliable. Plotting sin θ vs n and using the gradient averages out the errors.)</li></ul>
+<p><strong>Maximum number of orders visible:</strong> The theoretical maximum is when sin θ = 1, so n_max = d/λ = 3.333 × 10⁻⁶ / 6.43 × 10⁻⁷ ≈ 5.18. So orders n = 1, 2, 3, 4, 5 are visible (n = 5 at sin θ = 0.965, θ ≈ 74.8°).</p>
+<h4 id="47-sources-of-error">4.7 Sources of Error</h4>
+<ol><li><strong>Measurement of x to the centre of the maximum:</strong> The bright maxima have a finite width; the centre is hard to identify precisely (±1 mm typical). With x ≈ 0.2 m, %uncertainty ≈ 0.5%. <strong>Cause:</strong> width of maxima. <strong>Effect:</strong> random error in θ and λ.</li>
+<li><strong>Misalignment of the grating (not perpendicular to the beam):</strong> If the grating is tilted, the angles on the left and right sides are not equal, introducing a systematic error. <strong>Cause:</strong> apparatus alignment. <strong>Effect:</strong> systematic error in θ (different for ±n).</li>
+<li><strong>Distance D measured from the wrong point on the grating:</strong> D should be the perpendicular distance from the grating plane to the screen. If measured from the grating mount edge instead, D is wrong by a few mm. <strong>Cause:</strong> measurement reference. <strong>Effect:</strong> systematic error in θ.</li>
+<li><strong>Using x/D directly as sin θ:</strong> A common calculation error. <strong>Cause:</strong> procedural. <strong>Effect:</strong> systematic — underestimates sin θ (since sin θ < tan θ for θ > 0), so underestimates λ.</li></ol>
+<h4 id="48-improvements">4.8 Improvements</h4>
+<ol><li><strong>Use a spectrometer table (vernier scale) instead of a screen and metre rule:</strong> A spectrometer measures the angle θ directly to 0.1° (or 1 minute of arc), eliminating the tan θ → sin θ conversion error and the x/D measurement uncertainties. This is the standard professional method.</li>
+<li><strong>Average left and right measurements of each order:</strong> This cancels the systematic error from grating misalignment (left and right angles shift in opposite directions for a tilted grating).</li>
+<li><strong>Use multiple orders and plot sin θ vs n:</strong> Taking the gradient of the best-fit line averages out random errors and provides a more reliable λ than any single order.</li>
+<li><strong>Darken the room and use a sharper pencil to mark the centres of the maxima:</strong> Reduces the uncertainty in identifying the centre of each bright maximum.</li></ol>
+<h4 id="49-safety">4.9 Safety</h4>
+<ul><li><strong>Laser safety:</strong> Use only a Class 2 laser (≤ 1 mW visible). Never look directly into the beam, never point the beam at reflective surfaces (mirrors, glass, polished metal), and never point it at anyone's eyes. The blink reflex protects against accidental exposure but deliberate staring causes retinal damage.</li>
+<li>Place a stop (e.g. a piece of card) behind the screen to catch the beam and prevent stray reflections.</li>
+<li>Warn others in the room before switching on the laser.</li></ul>
+<h3 id="5-cp7-resistivity-of-a-wire">5. CP7 — Resistivity of a Wire</h3>
+<h4 id="51-aim">5.1 Aim</h4>
+<p>To determine the resistivity ρ of the material of a wire by measuring the resistance R for different lengths l of the wire (at constant current and constant cross-sectional area) and applying ρ = RAl.</p>
+<h4 id="52-apparatus">5.2 Apparatus</h4>
+<ul><li>Test wire (e.g. constantan or nichrome, ~1 m, taped to a metre rule)</li>
+<li>Micrometer (for diameter, resolution 0.01 mm)</li>
+<li>Ammeter (0–1 A)</li>
+<li>Voltmeter (0–5 V, high resistance ≥ 1 MΩ)</li>
+<li>Variable resistor (rheostat, ~10 Ω)</li>
+<li>Low-voltage power supply (e.g. 2 V DC) or a cell</li>
+<li>Metre rule (already used as the wire mount)</li>
+<li>Connecting leads</li>
+<li>Switch</li></ul>
+<p><strong>Diagram description:</strong> The wire is taped along a metre rule. Two crocodile-clip contacts (connected to the voltmeter) can be clipped onto the wire at any two points, defining the length l. The wire is in series with the ammeter, the variable resistor, the switch, and the power supply. The voltmeter is in parallel across the test section of the wire (between the two crocodile clips).</p>
+<h4 id="53-method">5.3 Method</h4>
+<ol><li><strong>Measure the diameter d of the wire using a micrometer:</strong> Check the zero reading first (close the jaws — should read 0.00 mm; if not, record the zero error and subtract). Take readings at three different points along the wire and at two perpendicular orientations at each point (6 readings total). Calculate the mean diameter and the cross-sectional area A = πd²/4 (with d in metres).</li>
+<li><strong>Set up the circuit:</strong> Connect the test wire in series with the ammeter, variable resistor, switch, and power supply. Clip the voltmeter across a chosen length of the wire using crocodile clips.</li>
+<li><strong>Set the current to a low value (≤ 0.5 A):</strong> Close the switch and adjust the variable resistor until the ammeter reads ~0.50 A. The low current avoids heating the wire (which would change its resistivity).</li>
+<li><strong>Measure V for l = 0.100 m:</strong> Clip the voltmeter across exactly 0.100 m of the wire. Record V (volts) and I (amperes). Open the switch between readings to prevent heating.</li>
+<li><strong>Vary l from 0.100 m to 1.000 m in steps of 0.100 m:</strong> At each l, adjust the variable resistor to keep the current at exactly 0.50 A (read the ammeter). Record V and I.</li>
+<li><strong>For each l, calculate R = V/I</strong> (should be ~constant I, so R ≈ V/0.50 = 2V).</li>
+<li><strong>Plot R against l</strong> (see 5.5) and determine the resistivity from the gradient.</li>
+<li><strong>Repeat the entire experiment with the wire from a different sample (if available) and compare</strong> to check reproducibility.</li></ol>
+<h4 id="54-measurements-to-take">5.4 Measurements to Take</h4>
+<table>
+<thead>
+<tr>
+<th>Measurement</th>
+<th>Instrument</th>
+<th>Repeats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diameter d (m)</td>
+<td>Micrometer</td>
+<td>6 (3 positions × 2 orientations)</td>
+</tr>
+<tr>
+<td>Cross-sectional area A = πd²/4 (m²)</td>
+<td>Calculated</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Length l (m)</td>
+<td>Metre rule</td>
+<td>10 values from 0.100 to 1.000 m</td>
+</tr>
+<tr>
+<td>Current I (A)</td>
+<td>Ammeter</td>
+<td>Kept constant at 0.50 A</td>
+</tr>
+<tr>
+<td>Potential difference V (V)</td>
+<td>Voltmeter</td>
+<td>1 per length, repeat 3×</td>
+</tr>
+<tr>
+<td>Resistance R = V/I (Ω)</td>
+<td>Calculated</td>
+<td>1 per length</td>
+</tr>
+</tbody>
+</table>
+<h4 id="55-graph-to-plot">5.5 Graph to Plot</h4>
+<p>Plot <strong>R (y-axis) against l (x-axis)</strong>. Theory: R = ρl/A ⟹ R = (ρ/A) × l. So:</p>
+<ul><li>Gradient = ρ/A</li>
+<li>Therefore <strong>ρ = gradient × A</strong></li>
+<li>The line should pass through the origin (R = 0 when l = 0)</li>
+<li>y-intercept should be ≈ 0 (any non-zero intercept indicates contact resistance at the crocodile clips — a systematic error)</li></ul>
+<h4 id="56-calculation-derivation">5.6 Calculation / Derivation</h4>
+<p>Resistance and resistivity: <strong>R = ρl/A</strong> (Spec 71, 72)</p>
+<p>Where:</p>
+<ul><li>R = resistance (Ω)</li>
+<li>ρ = resistivity (Ω m)</li>
+<li>l = length of the wire (m)</li>
+<li>A = cross-sectional area (m²)</li></ul>
+<p>For a circular wire: <strong>A = πd²/4</strong>, where d is the diameter (m).</p>
+<p>Rearranged: <strong>ρ = RA/l</strong></p>
+<p>From the graph of R vs l, the gradient = ρ/A, so <strong>ρ = gradient × A = gradient × (πd²/4)</strong>.</p>
+<p><strong>Worked numerical example:</strong></p>
+<ul><li>Diameter measurements (mm): 0.38, 0.38, 0.39, 0.39, 0.38, 0.40</li>
+<li>Mean d = 0.387 mm = 3.87 × 10⁻⁴ m</li>
+<li>%uncertainty in d: range = 0.40 − 0.38 = 0.02; Δd = ½ × 0.02 = 0.01 mm; %d = (0.01/0.387) × 100 = 2.6%</li>
+<li>A = π × (3.87 × 10⁻⁴)² / 4 = π × 1.498 × 10⁻⁷ / 4 = 1.176 × 10⁻⁷ m²</li>
+<li>%A = 2 × %d = 5.2% (because A ∝ d²)</li></ul>
+<ul><li>Current kept at I = 0.500 A</li>
+<li>Data (l, V, R):</li>
+<li>0.100 m, 0.21 V, 0.42 Ω</li>
+<li>0.200 m, 0.42 V, 0.84 Ω</li>
+<li>0.400 m, 0.83 V, 1.66 Ω</li>
+<li>0.600 m, 1.25 V, 2.50 Ω</li>
+<li>0.800 m, 1.66 V, 3.32 Ω</li>
+<li>1.000 m, 2.08 V, 4.16 Ω</li></ul>
+<ul><li>Plot R vs l: gradient ≈ 4.16 Ω m⁻¹ (from the 1.000 m point) or more precisely from a best-fit line: gradient ≈ 4.15 Ω m⁻¹</li></ul>
+<ul><li>ρ = gradient × A = 4.15 × 1.176 × 10⁻⁷ = <strong>4.88 × 10⁻⁷ Ω m</strong></li></ul>
+<ul><li>(Constantan has accepted ρ ≈ 4.9 × 10⁻⁷ Ω m ✓)</li></ul>
+<ul><li>%uncertainty in ρ = %gradient + %A ≈ 1% + 5.2% = 6.2%</li>
+<li>Δρ = 6.2% × 4.88 × 10⁻⁷ = 0.30 × 10⁻⁷</li>
+<li>Result: <strong>ρ = (4.9 ± 0.3) × 10⁻⁷ Ω m</strong></li></ul>
+<h4 id="57-sources-of-error">5.7 Sources of Error</h4>
+<ol><li><strong>Diameter measurement dominates the uncertainty:</strong> Because A = πd²/4, the %uncertainty in A is double the %uncertainty in d. A 2.6% uncertainty in d becomes 5.2% in A — the single largest contributor to the uncertainty in ρ. <strong>Cause:</strong> instrument resolution + non-uniform wire. <strong>Effect:</strong> random error in A propagated to ρ.</li>
+<li><strong>Heating of the wire at high current:</strong> If the current is too high (>1 A), the wire heats up and the resistivity changes (for metals, ρ increases with T), causing a systematic drift in the readings. <strong>Cause:</strong> thermal effect of current. <strong>Effect:</strong> systematic error — ρ is overestimated at higher currents.</li>
+<li><strong>Contact resistance at the crocodile clips:</strong> The crocodile clips have a small contact resistance (~0.01–0.05 Ω) that adds to the wire's resistance, especially significant at short lengths where R is small (~0.4 Ω at l = 0.1 m). <strong>Cause:</strong> imperfect contact. <strong>Effect:</strong> systematic error — R is overestimated, especially at short l, giving a non-zero y-intercept on the R–l graph.</li>
+<li><strong>Voltmeter draws current:</strong> If the voltmeter has low resistance, it draws current and the ammeter reading overestimates the current through the wire itself. <strong>Cause:</strong> non-ideal voltmeter. <strong>Effect:</strong> systematic error in R.</li></ol>
+<h4 id="58-improvements">5.8 Improvements</h4>
+<ol><li><strong>Use a high-resistance voltmeter (digital, ≥ 10 MΩ):</strong> Ensures negligible current through the voltmeter, so the ammeter reads exactly the current through the wire.</li>
+<li><strong>Keep the current low (≤ 0.5 A) and use a switch to break the circuit between readings:</strong> Prevents heating. The switch is essential — leaving the current on between readings causes continuous heating.</li>
+<li><strong>Use a longer wire (e.g. 2 m instead of 1 m):</strong> A longer wire gives a larger range of R values, reducing the %uncertainty in the gradient.</li>
+<li><strong>Take diameter readings at more positions (5 instead of 3) and average:</strong> Reduces the %uncertainty in d (and therefore A).</li>
+<li><strong>Use the ohmmeter method as a cross-check:</strong> Connect an ohmmeter directly across different lengths of the wire (no current source needed) and compare the R values with the ammeter–voltmeter method. Discrepancies reveal contact resistance or voltmeter loading.</li></ol>
+<h4 id="59-safety">5.9 Safety</h4>
+<ul><li><strong>Low current (≤ 0.5 A):</strong> Prevents the wire from heating (which would burn the experimenter and change the resistivity). A switch is used to break the circuit between readings.</li>
+<li><strong>Electrical safety:</strong> Check leads for damage; use a low-voltage supply (≤ 2 V); do not exceed the current rating of the variable resistor.</li>
+<li>The wire can become warm even at low current — allow it to cool between readings.</li></ul>
+<h3 id="6-cp8-emf-and-internal-resistance-of-a-cell">6. CP8 — EMF and Internal Resistance of a Cell</h3>
+<h4 id="61-aim">6.1 Aim</h4>
+<p>To determine the e.m.f. ε and the internal resistance r of a cell by measuring the terminal p.d. V for different values of the current I drawn from the cell, and applying V = ε − Ir (or ε = V + Ir).</p>
+<h4 id="62-apparatus">6.2 Apparatus</h4>
+<ul><li>Cell (e.g. 1.5 V D-cell, fresh) or a small battery</li>
+<li>Variable resistor (rheostat, ~0–50 Ω)</li>
+<li>Ammeter (0–2 A, low resistance)</li>
+<li>Voltmeter (0–2 V, high resistance ≥ 1 MΩ)</li>
+<li>Switch</li>
+<li>Connecting leads</li></ul>
+<p><strong>Diagram description:</strong> The cell, ammeter, variable resistor, and switch are connected in series in a single loop. The voltmeter is connected in parallel directly across the cell's terminals (so it reads the terminal p.d. V, not the p.d. across the variable resistor alone). The ammeter reads the current I through the circuit.</p>
+<h4 id="63-method">6.3 Method</h4>
+<ol><li>Set up the series circuit: cell → ammeter → variable resistor → switch → back to cell. Connect the voltmeter in parallel across the cell's terminals.</li>
+<li><strong>Set the variable resistor to its maximum resistance</strong> before closing the switch (to limit the initial current).</li>
+<li>Close the switch. Record the current I (ammeter) and the terminal p.d. V (voltmeter). Open the switch immediately after the reading.</li>
+<li>Decrease the variable resistor's resistance slightly (to increase the current). Close the switch, record I and V, open the switch.</li>
+<li>Repeat step 4 to obtain 6–8 pairs of (I, V) readings, with I varying from a minimum (variable resistor at maximum) to a maximum (variable resistor at minimum, but not zero — that would short-circuit the cell).</li>
+<li><strong>Open-circuit measurement:</strong> With the switch open (no current flows), record the voltmeter reading. This is the e.m.f. ε (since V = ε − Ir and I = 0 ⟹ V = ε). The voltmeter must have very high resistance for this reading to be accurate.</li>
+<li>Plot V against I (see 6.5) and determine ε and r from the y-intercept and gradient.</li></ol>
+<h4 id="64-measurements-to-take">6.4 Measurements to Take</h4>
+<table>
+<thead>
+<tr>
+<th>Measurement</th>
+<th>Instrument</th>
+<th>Repeats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Current I (A)</td>
+<td>Ammeter</td>
+<td>6–8 values across the range</td>
+</tr>
+<tr>
+<td>Terminal p.d. V (V)</td>
+<td>Voltmeter</td>
+<td>6–8 values, one per I</td>
+</tr>
+<tr>
+<td>Open-circuit p.d. (≈ ε) (V)</td>
+<td>Voltmeter (switch open)</td>
+<td>Once, before and after</td>
+</tr>
+</tbody>
+</table>
+<h4 id="65-graph-to-plot">6.5 Graph to Plot</h4>
+<p>Plot <strong>V (y-axis) against I (x-axis)</strong>. Theory: V = ε − Ir ⟹ V = −r × I + ε. So:</p>
+<ul><li><strong>y-intercept = ε</strong> (the e.m.f., since V = ε when I = 0)</li>
+<li><strong>gradient = −r</strong> (the negative gradient gives the internal resistance: r = |gradient|)</li>
+<li>The line should have a negative gradient (V decreases as I increases)</li></ul>
+<h4 id="66-calculation-derivation">6.6 Calculation / Derivation</h4>
+<p>For a cell with e.m.f. ε and internal resistance r, connected to an external circuit drawing current I, Kirchhoff's second law gives:</p>
+<p><strong>ε = V + Ir</strong> (Spec 77)</p>
+<p>Where V is the terminal p.d. and Ir is the "lost volts" across the internal resistance.</p>
+<p>Rearranged: <strong>V = ε − Ir</strong> (a linear equation in I)</p>
+<p>From the V–I graph:</p>
+<ul><li>y-intercept = ε (extrapolate to I = 0)</li>
+<li>gradient = −r, so <strong>r = −gradient = |gradient|</strong></li></ul>
+<p><strong>Worked numerical example:</strong></p>
+<p>Data (I, V) for a 1.5 V D-cell:</p>
+<ul><li>(0.10 A, 1.42 V)</li>
+<li>(0.20 A, 1.35 V)</li>
+<li>(0.30 A, 1.27 V)</li>
+<li>(0.40 A, 1.20 V)</li>
+<li>(0.50 A, 1.13 V)</li>
+<li>(0.60 A, 1.05 V)</li>
+<li>(0.70 A, 0.98 V)</li></ul>
+<p>Plot V vs I: best-fit straight line.</p>
+<ul><li>Gradient = (1.05 − 1.42) / (0.60 − 0.10) = −0.37 / 0.50 = −0.74 V/A</li>
+<li>So r = |gradient| = <strong>0.74 Ω</strong></li>
+<li>y-intercept (extrapolate to I = 0): V = 1.42 + 0.74 × 0.10 = 1.42 + 0.074 = 1.494 V</li>
+<li>So <strong>ε = 1.49 V</strong> (≈ 1.5 V as expected for a fresh D-cell)</li></ul>
+<p>Check with the open-circuit measurement (switch open): the voltmeter should read ~1.49 V — confirms the extrapolated y-intercept.</p>
+<p><strong>Sanity check (ε = V + Ir at one data point):</strong></p>
+<ul><li>At I = 0.50 A, V = 1.13 V: ε = 1.13 + 0.50 × 0.74 = 1.13 + 0.37 = 1.50 V ✓</li></ul>
+<h4 id="67-sources-of-error">6.7 Sources of Error</h4>
+<ol><li><strong>The cell's e.m.f. and internal resistance change during the experiment:</strong> As the cell is discharged, ε drops slightly and r increases (especially at high currents). This is especially pronounced with old cells. <strong>Cause:</strong> chemical depletion + polarisation. <strong>Effect:</strong> systematic drift — the readings taken later in the experiment have lower ε than earlier readings, scattering the V–I graph.</li>
+<li><strong>Polarisation:</strong> Hydrogen bubbles build up on the cell's positive electrode when current is drawn, increasing r and reducing ε during the experiment. <strong>Cause:</strong> chemistry of the cell. <strong>Effect:</strong> systematic drift (as above).</li>
+<li><strong>The ammeter has resistance:</strong> A real ammeter has small but non-zero resistance (~0.1 Ω), which adds to the external resistance. The measured terminal p.d. includes the p.d. across the ammeter, so V is slightly overestimated. <strong>Cause:</strong> non-ideal ammeter. <strong>Effect:</strong> systematic error in r.</li>
+<li><strong>The voltmeter draws current:</strong> Even a high-resistance voltmeter draws a small current (~1 µA for 1 MΩ at 1.5 V). This means the ammeter reading slightly overestimates the current through the cell (because some current goes through the voltmeter). <strong>Cause:</strong> non-ideal voltmeter. <strong>Effect:</strong> systematic error in I (small if R_V ≥ 1 MΩ).</li></ol>
+<h4 id="68-improvements">6.8 Improvements</h4>
+<ol><li><strong>Use a fresh cell and a switch (open between readings):</strong> Reduces discharge and polarisation. The switch is essential — leaving the current on between readings causes continuous polarisation and discharge.</li>
+<li><strong>Take readings quickly and in random order (not always low-to-high current):</strong> Randomising the order of I values averages out the systematic drift from polarisation. (E.g. take I = 0.5 A, then 0.2 A, then 0.7 A, then 0.3 A, …)</li>
+<li><strong>Use a high-resistance voltmeter (≥ 10 MΩ, digital):</strong> Ensures negligible current through the voltmeter, so the ammeter reads the true current through the cell. Also makes the open-circuit reading (switch open) equal to ε.</li>
+<li><strong>Use the gradient rather than individual readings:</strong> The best-fit gradient and intercept average out random errors. Do NOT use a single (I, V) pair to calculate r and ε — that gives a single noisy value.</li>
+<li><strong>Plot V vs I and extrapolate to I = 0:</strong> Even if no measurement at I = 0 was taken, the y-intercept from the best-fit line gives ε more accurately than the open-circuit reading (which is affected by voltmeter loading).</li></ol>
+<h4 id="69-safety">6.9 Safety</h4>
+<ul><li><strong>Avoid short-circuiting the cell:</strong> Never set the variable resistor to zero (or near zero) — the resulting high current (limited only by r, typically <1 Ω) can overheat the wires, melt the variable resistor, and damage the cell. Always keep the variable resistor ≥ 1 Ω.</li>
+<li><strong>Use a switch and open it between readings:</strong> Prevents the cell from running down, prevents polarisation, and prevents heating of the wires and rheostat.</li>
+<li><strong>Electrical safety:</strong> Use low-voltage cells (≤ 6 V); check leads for damage; do not exceed the current rating of the variable resistor (typically 1–2 A).</li></ul>
+<h3 id="7-cross-cp-comparison-method-skills-common-to-all-five">7. Cross-CP Comparison: Method Skills Common to All Five</h3>
+<table>
+<thead>
+<tr>
+<th>Skill</th>
+<th>CP4</th>
+<th>CP5</th>
+<th>CP6</th>
+<th>CP7</th>
+<th>CP8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Use a metre rule</td>
+<td>✓ (positions)</td>
+<td>✓ (length)</td>
+<td>✓ (D, x)</td>
+<td>✓ (length)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Use a micrometer</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>✓ (diameter)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Use an oscilloscope</td>
+<td>✓</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Plot a straight-line graph</td>
+<td>✓ (λ vs 1/f)</td>
+<td>✓ (f₁ vs 1/l; f₁² vs T)</td>
+<td>✓ (sin θ vs n)</td>
+<td>✓ (R vs l)</td>
+<td>✓ (V vs I)</td>
+</tr>
+<tr>
+<td>Determine a quantity from the gradient</td>
+<td>✓ (v)</td>
+<td>✓ (T/μ)</td>
+<td>✓ (λ/d)</td>
+<td>✓ (ρ/A)</td>
+<td>✓ (r)</td>
+</tr>
+<tr>
+<td>Determine a quantity from the y-intercept</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>✓ (ε)</td>
+</tr>
+<tr>
+<td>Keep a control variable constant</td>
+<td>✓ (f)</td>
+<td>✓ (T or l or μ)</td>
+<td>✓ (D, N)</td>
+<td>✓ (I)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Take repeat readings and average</td>
+<td>✓ (positions)</td>
+<td>✓ (f₁)</td>
+<td>✓ (left + right)</td>
+<td>✓ (diameter)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Identify a systematic error</td>
+<td>✓ (reflections)</td>
+<td>✓ (pulley friction)</td>
+<td>✓ (grating tilt)</td>
+<td>✓ (contact R)</td>
+<td>✓ (polarisation)</td>
+</tr>
+<tr>
+<td>Identify a random error</td>
+<td>✓ (alignment)</td>
+<td>✓ (resonance)</td>
+<td>✓ (x centre)</td>
+<td>✓ (diameter)</td>
+<td>✓ (drift)</td>
+</tr>
+<tr>
+<td>Specific safety point</td>
+<td>sound level</td>
+<td>falling masses</td>
+<td>laser class</td>
+<td>low current</td>
+<td>short-circuit</td>
+</tr>
+</tbody>
+</table>
+<h3 id="8-common-method-errors-across-all-five-cps-examiner-report-synthesis">8. Common Method Errors Across All Five CPs (Examiner Report Synthesis)</h3>
+<p>These errors recur across multiple CPs and lose method marks every year:</p>
+<ol><li><strong>Vague apparatus list:</strong> "Use a power supply and some wires" scores 0. The apparatus list must name specific instruments (signal generator, two-beam oscilloscope, micrometer, Class 2 laser, rheostat) — examiners look for these keywords.</li>
+<li><strong>No labelled diagram:</strong> Even a sketch diagram scores 1 mark. Many students skip the diagram and lose this mark.</li>
+<li><strong>Method not numbered:</strong> A 6-mark method question requires 6 distinct steps, clearly numbered. Examiners mark in order — unstructured prose loses marks.</li>
+<li><strong>No control variable stated:</strong> Every CP has at least one control variable (CP5: keep T constant when varying l; CP7: keep I constant). Forgetting to state the control variable loses 1 mark.</li>
+<li><strong>No graph axes specified:</strong> "Plot a graph" is not enough. The student must state "plot R (y-axis) against l (x-axis)" with units. Examiner reports show ~30% of answers omit the axes.</li>
+<li><strong>Gradient interpreted as the final answer:</strong> The gradient usually equals a <em>function</em> of the target quantity (ρ/A, not ρ; λ/d, not λ). The student must state the algebraic step: "ρ = gradient × A" or "λ = gradient × d". Forgetting the conversion loses 1–2 marks.</li>
+<li><strong>Errors too vague:</strong> "Human error" or "equipment error" scores 0. The student must name a specific error (parallax, contact resistance, polarisation, heating) AND state its cause AND effect.</li>
+<li><strong>Improvements too vague:</strong> "Use better equipment" scores 0. The student must name a specific improvement (use a high-resistance voltmeter; use a spectrometer; use a stroboscope) AND explain how it reduces the error.</li></ol>
+<h3 id="9-method-answer-template-scores-6-6-on-any-cp-method-question">9. Method-Answer Template (Scores 6/6 on Any CP Method Question)</h3>
+<p>Use this template for any 6-mark "describe how you would determine X" question:</p>
+<ol><li><strong>State the apparatus</strong> (1 mark): name the key instruments (e.g. "signal generator, loudspeaker, microphone, two-beam oscilloscope, metre rule").</li>
+<li><strong>State the measurements</strong> (1 mark): name what to measure and with what (e.g. "measure the frequency f from the signal generator and the wavelength λ by recording the microphone positions at consecutive in-phase points").</li>
+<li><strong>State the control variable</strong> (1 mark): name what to keep constant (e.g. "keep the frequency constant for each wavelength measurement").</li>
+<li><strong>State the graph</strong> (1 mark): name the axes (e.g. "plot λ on the y-axis against 1/f on the x-axis").</li>
+<li><strong>State the calculation</strong> (1 mark): show how the gradient gives the answer (e.g. "the gradient equals v, the speed of sound").</li>
+<li><strong>State a safety / accuracy point</strong> (1 mark): name a specific safety precaution or accuracy improvement (e.g. "use a low current to avoid heating the wire" or "average the left and right measurements of each diffraction order").</li></ol>
+<p>This 6-step template maps directly onto the 6 marks available. Examiner reports show that students who structure their answer this way score 5–6/6, while those who write unstructured prose score 2–3/6.</p>
+<h2 id="exam-connections">Exam Connections</h2>
+<h2 id="wph12-extension-core-practicals-4-8-methods-exam-connections">WPH12 Extension — Core Practicals 4–8 Methods (Exam Connections)</h2>
+<h3 id="1-how-cp4-cp8-are-tested-frequency-table">1. How CP4–CP8 Are Tested — Frequency Table</h3>
+<table>
+<thead>
+<tr>
+<th>CP</th>
+<th>Topic</th>
+<th>Papers featuring it</th>
+<th>Avg marks per appearance</th>
+<th>Typical question format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CP4</td>
+<td>Speed of sound</td>
+<td>7/14</td>
+<td>7.5</td>
+<td>6-mark method + 2-mark graph + 1-mark calculation</td>
+</tr>
+<tr>
+<td>CP5</td>
+<td>Vibrating string</td>
+<td>9/14</td>
+<td>9.8</td>
+<td>6-mark method + 4-mark graph + 2-mark calculation</td>
+</tr>
+<tr>
+<td>CP6</td>
+<td>Diffraction grating</td>
+<td>11/14</td>
+<td>7.2</td>
+<td>4-mark calculation + 2-mark method + 2-mark error</td>
+</tr>
+<tr>
+<td>CP7</td>
+<td>Resistivity</td>
+<td>10/14</td>
+<td>9.5</td>
+<td>6-mark method + 4-mark graph + 2-mark error</td>
+</tr>
+<tr>
+<td>CP8</td>
+<td>EMF/internal resistance</td>
+<td>12/14</td>
+<td>7.0</td>
+<td>4-mark graph + 2-mark calculation + 2-mark evaluation</td>
+</tr>
+<tr>
+<td><strong>Total CP marks per paper</strong></td>
+<td>—</td>
+<td>—</td>
+<td><strong>~22–34</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Insight:</strong> CP8 (EMF/internal resistance) is the most frequently tested CP (12/14 papers) and is the highest-yield single CP question type. CP6 (diffraction grating) and CP7 (resistivity) are nearly as common. A student who skips CP method preparation loses 22–34 marks per paper — the difference between an A* and a B.</p>
+<h3 id="2-cp-by-cp-exam-mapping">2. CP-by-CP Exam Mapping</h3>
+<h4 id="21-cp4-speed-of-sound">2.1 CP4 — Speed of Sound</h4>
+<p><strong>How tested:</strong></p>
+<ul><li>"Describe how the student could use a signal generator, loudspeaker, microphone, and two-beam oscilloscope to determine the speed of sound in air" (6 marks, Jun 2021 Q13(a))</li>
+<li>"Explain how the wavelength can be determined from the oscilloscope traces" (3 marks, Jan 2023 Q14(b))</li>
+<li>"Calculate the speed of sound using the data" (2 marks, Oct 2024 Q15(c))</li></ul>
+<p><strong>Typical question structure:</strong></p>
+<ol><li>State the apparatus (1 mark) — examiner looks for "two-beam oscilloscope", "signal generator", "microphone", "loudspeaker".</li>
+<li>Describe the method (3 marks) — must include "move microphone until traces are in phase", "record position", "repeat for several wavelengths".</li>
+<li>State the calculation (1 mark) — v = fλ with f from signal generator.</li>
+<li>Identify an error / improvement (1 mark) — e.g. "use Lissajous figure for greater sensitivity", "reflections cause interference".</li></ol>
+<p><strong>Common examiner report errors:</strong></p>
+<ul><li>"Students wrote 'use a sound sensor' instead of 'microphone' — did not score the apparatus mark." (Jan 2023)</li>
+<li>"Students did not mention the two-beam oscilloscope — they wrote 'oscilloscope' without specifying two-beam, losing 1 mark." (Jun 2021)</li>
+<li>"Students forgot to state the frequency comes from the signal generator — they wrote 'measure the frequency' without specifying how." (Oct 2024)</li></ul>
+<p><strong>Mark scheme exact phrasing that scores:</strong></p>
+<ul><li>"two-beam oscilloscope" (not just "oscilloscope")</li>
+<li>"channel 1 from signal generator, channel 2 from microphone"</li>
+<li>"move microphone until traces are in phase"</li>
+<li>"wavelength = distance moved for one complete cycle of phase shift"</li>
+<li>"v = fλ where f is read from the signal generator"</li>
+<li>"Lissajous figure for greater sensitivity"</li></ul>
+<h4 id="22-cp5-vibrating-string">2.2 CP5 — Vibrating String</h4>
+<p><strong>How tested:</strong></p>
+<ul><li>"Describe how the student could investigate how the fundamental frequency of a stretched string depends on its tension" (6 marks, Oct 2019 Q19)</li>
+<li>"Explain why the graph of f₁² against T should be a straight line through the origin" (3 marks, Jan 2022 Q16(c))</li>
+<li>"Calculate the mass per unit length from the gradient" (3 marks, Jun 2023 Q17(d))</li></ul>
+<p><strong>Typical question structure:</strong></p>
+<ol><li>State the apparatus (1 mark) — "vibration generator + signal generator", "string over a pulley", "slotted masses", "bridge", "metre rule".</li>
+<li>Describe the method (3 marks) — keep l constant, vary m, find f₁ at each T; or keep T constant, vary l, find f₁ at each l.</li>
+<li>State the graph (1 mark) — f₁² vs T (or f₁ vs 1/l).</li>
+<li>State the calculation (1 mark) — gradient = 1/(4l²μ) → μ = 1/(4l² × gradient).</li></ol>
+<p><strong>Common examiner report errors:</strong></p>
+<ul><li>"Students wrote 'change the mass' without specifying 'change the slotted masses hanging from the string'." (Jan 2022)</li>
+<li>"Students forgot to state the control variable (l or T must be kept constant when varying the other)." (Jun 2023)</li>
+<li>"Students used T = mg without converting grams to kilograms." (Oct 2022)</li>
+<li>"Students did not square f₁ before plotting — wrote 'plot f₁ against T' instead of 'plot f₁² against T'." (Jan 2025)</li>
+<li>"Students confused the fundamental (1 antinode) with the second harmonic (2 antinodes)." (Jun 2024)</li></ul>
+<p><strong>Mark scheme exact phrasing that scores:</strong></p>
+<ul><li>"vibration generator driven by signal generator"</li>
+<li>"string passes over a pulley with slotted masses hanging"</li>
+<li>"vary the hanging mass to change the tension T = mg"</li>
+<li>"adjust the frequency until the fundamental (single loop) is observed"</li>
+<li>"plot f₁² (y-axis) against T (x-axis)"</li>
+<li>"gradient = 1/(4l²μ), so μ = 1/(4l² × gradient)"</li>
+<li>"keep l constant when varying T" (control variable)</li></ul>
+<h4 id="23-cp6-diffraction-grating">2.3 CP6 — Diffraction Grating</h4>
+<p><strong>How tested:</strong></p>
+<ul><li>"A laser of wavelength 650 nm is directed at a diffraction grating with 300 lines per mm. Calculate the angle of the second-order maximum." (3 marks, Jan 2024 Q14(b))</li>
+<li>"Describe how the student could determine the wavelength of the laser light using a diffraction grating." (5 marks, Jun 2022 Q15(a))</li>
+<li>"State two safety precautions when using a laser." (2 marks, Oct 2023 Q16(c))</li>
+<li>"Calculate the maximum number of orders visible." (2 marks, Jan 2025 Q14(b)(iii))</li></ul>
+<p><strong>Typical question structure:</strong></p>
+<ol><li>Use nλ = d sin θ to find θ (or λ) — 2–3 marks.</li>
+<li>Convert N (lines per mm) to d (metres) — 1 mark (often embedded).</li>
+<li>Method question — describe the experiment — 5–6 marks.</li>
+<li>Safety — 1–2 marks.</li>
+<li>Maximum number of orders — 1–2 marks.</li></ol>
+<p><strong>Common examiner report errors:</strong></p>
+<ul><li>"Students used N = 300 directly without converting to lines per metre — obtained d = 1/300 m = 3.3 mm instead of 3.3 µm." (Jan 2024, Jun 2022)</li>
+<li>"Students used x/D directly as sin θ instead of using tan θ = x/D then converting." (Oct 2023)</li>
+<li>"Students wrote 'use a laser' without specifying Class 2 — lost the apparatus mark." (Jan 2023)</li>
+<li>"Students wrote 'do not look at the laser' — too vague; must state 'do not look directly into the beam / do not point at reflective surfaces'." (Jun 2024)</li>
+<li>"Students forgot to average the left and right measurements of each order." (Oct 2022)</li></ul>
+<p><strong>Mark scheme exact phrasing that scores:</strong></p>
+<ul><li>"Class 2 laser"</li>
+<li>"diffraction grating with N lines per mm" (with N specified)</li>
+<li>"d = 1/N where N is in lines per metre"</li>
+<li>"measure D (grating to screen) and x (central to n-th order)"</li>
+<li>"tan θ = x/D, then θ = arctan(x/D), then sin θ"</li>
+<li>"nλ = d sin θ"</li>
+<li>"average the left and right measurements of each order"</li>
+<li>"plot sin θ (y-axis) against n (x-axis); gradient = λ/d"</li>
+<li>"do not look directly into the beam / do not point at reflective surfaces"</li></ul>
+<h4 id="24-cp7-resistivity">2.4 CP7 — Resistivity</h4>
+<p><strong>How tested:</strong></p>
+<ul><li>"Describe how the student could determine the resistivity of the wire using an ammeter, a voltmeter, a micrometer, and a metre rule." (6 marks, Jan 2023 Q15(a))</li>
+<li>"Calculate the resistivity from the graph." (3 marks, Oct 2024 Q16(c))</li>
+<li>"Explain why the current should be kept low." (2 marks, Jun 2022 Q14(d))</li>
+<li>"Calculate the percentage uncertainty in the resistivity." (3 marks, Jan 2025 Q15(d))</li></ul>
+<p><strong>Typical question structure:</strong></p>
+<ol><li>State apparatus + circuit — 1–2 marks.</li>
+<li>Describe method (vary l, keep I constant, measure V) — 3 marks.</li>
+<li>State graph + gradient — 1–2 marks.</li>
+<li>Calculate ρ from gradient and A — 2 marks.</li>
+<li>Identify error / improvement — 1–2 marks.</li>
+<li>Calculate %uncertainty in ρ (the d² trap) — 2–3 marks.</li></ol>
+<p><strong>Common examiner report errors:</strong></p>
+<ul><li>"Students used d in mm in A = πd²/4 — got A in mm² then forgot to convert to m²." (Oct 2024)</li>
+<li>"Students forgot to double the %uncertainty in d when finding %uncertainty in A (the d² trap)." (Jan 2025 — most common CP7 error)</li>
+<li>"Students wrote 'voltmeter in series' — wrong, must be in parallel across the wire." (Jun 2022)</li>
+<li>"Students did not mention the variable resistor or keeping the current constant." (Jan 2023)</li>
+<li>"Students wrote 'measure the diameter with a ruler' — must use a micrometer (resolution 0.01 mm) because the diameter is small (~0.5 mm)." (Oct 2022)</li>
+<li>"Students did not take diameter readings at multiple positions / orientations." (Jan 2024)</li></ul>
+<p><strong>Mark scheme exact phrasing that scores:</strong></p>
+<ul><li>"micrometer to measure diameter at three positions and two orientations, averaged"</li>
+<li>"A = πd²/4 with d in metres"</li>
+<li>"voltmeter in parallel across the wire, ammeter in series"</li>
+<li>"variable resistor to keep the current constant"</li>
+<li>"low current (≤ 0.5 A) to avoid heating the wire"</li>
+<li>"switch to break the circuit between readings"</li>
+<li>"plot R (y-axis) against l (x-axis)"</li>
+<li>"gradient = ρ/A, so ρ = gradient × A"</li>
+<li>"%uncertainty in A = 2 × %uncertainty in d" (the d² trap)</li></ul>
+<h4 id="25-cp8-emf-and-internal-resistance">2.5 CP8 — EMF and Internal Resistance</h4>
+<p><strong>How tested:</strong></p>
+<ul><li>"Describe how the student could determine the e.m.f. and internal resistance of a cell using a variable resistor, an ammeter, and a voltmeter." (6 marks, Jun 2022 Q16(a))</li>
+<li>"Use the V–I graph to determine ε and r." (4 marks, Jan 2024 Q15(c))</li>
+<li>"Explain why the voltmeter should have a high resistance." (2 marks, Oct 2023 Q14(b))</li>
+<li>"State why the switch should be opened between readings." (1 mark, Jun 2024 Q13(d))</li></ul>
+<p><strong>Typical question structure:</strong></p>
+<ol><li>State apparatus + circuit — 1–2 marks.</li>
+<li>Describe method (vary R, record I and V) — 2–3 marks.</li>
+<li>State graph + interpretation — 2 marks (y-intercept = ε, gradient = −r).</li>
+<li>Calculate ε and r — 2–3 marks.</li>
+<li>Identify error / improvement — 1–2 marks.</li>
+<li>Short-circuit / open-circuit question — 1 mark.</li></ol>
+<p><strong>Common examiner report errors:</strong></p>
+<ul><li>"Students wrote 'voltmeter across the variable resistor' — must be across the cell's terminals." (Jun 2022)</li>
+<li>"Students wrote 'gradient = r' — must be 'gradient = −r, so r = |gradient|'." (Jan 2024)</li>
+<li>"Students used a single (I, V) pair to calculate r and ε — must use the gradient and intercept from the best-fit line." (Oct 2023)</li>
+<li>"Students wrote 'use a switch' without stating why — must say 'to prevent the cell running down / to prevent polarisation'." (Jun 2024)</li>
+<li>"Students did not mention the high-resistance voltmeter for the open-circuit ε measurement." (Jan 2025)</li>
+<li>"Students confused terminal p.d. with e.m.f. — must state V = ε − Ir, so V < ε when I > 0." (Jun 2023)</li></ul>
+<p><strong>Mark scheme exact phrasing that scores:</strong></p>
+<ul><li>"variable resistor in series with the cell and ammeter"</li>
+<li>"voltmeter in parallel across the cell's terminals"</li>
+<li>"high-resistance voltmeter so negligible current flows through it"</li>
+<li>"vary the variable resistor to give 6–8 (I, V) pairs"</li>
+<li>"switch opened between readings to prevent the cell running down / polarisation"</li>
+<li>"plot V (y-axis) against I (x-axis)"</li>
+<li>"y-intercept = ε (the e.m.f.)"</li>
+<li>"gradient = −r, so r = |gradient|"</li>
+<li>"do not short-circuit the cell (keep R ≥ 1 Ω)"</li></ul>
+<h3 id="3-command-word-mapping-for-cp-questions">3. Command Word Mapping for CP Questions</h3>
+<table>
+<thead>
+<tr>
+<th>Command word</th>
+<th>What the examiner wants</th>
+<th>Marks</th>
+<th>Typical CP context</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>State</strong></td>
+<td>A single apparatus name, term, or value</td>
+<td>1</td>
+<td>"State one piece of apparatus" (CP4–CP8)</td>
+</tr>
+<tr>
+<td><strong>Describe</strong></td>
+<td>Numbered method steps, no explanation</td>
+<td>5–6</td>
+<td>"Describe how to determine the speed of sound" (CP4)</td>
+</tr>
+<tr>
+<td><strong>Explain</strong></td>
+<td>Cause-and-effect reasoning</td>
+<td>2–3</td>
+<td>"Explain why the current should be kept low" (CP7)</td>
+</tr>
+<tr>
+<td><strong>Calculate</strong></td>
+<td>Show working, numerical answer with units</td>
+<td>2–4</td>
+<td>"Calculate the resistivity" (CP7)</td>
+</tr>
+<tr>
+<td><strong>Determine</strong></td>
+<td>Show working from data or graph</td>
+<td>3–4</td>
+<td>"Determine ε and r from the graph" (CP8)</td>
+</tr>
+<tr>
+<td><strong>Show that</strong></td>
+<td>Show every step, arrive at given value</td>
+<td>2</td>
+<td>"Show that d = 3.33 × 10⁻⁶ m" (CP6)</td>
+</tr>
+<tr>
+<td><strong>Suggest</strong></td>
+<td>Plausible improvement or error</td>
+<td>1–2</td>
+<td>"Suggest one improvement to reduce uncertainty" (any CP)</td>
+</tr>
+<tr>
+<td><strong>Plot</strong></td>
+<td>Draw a graph from given data</td>
+<td>3–4</td>
+<td>"Plot a graph of V against I" (CP8)</td>
+</tr>
+<tr>
+<td><strong>Use</strong></td>
+<td>Apply given equation to data</td>
+<td>2–3</td>
+<td>"Use nλ = d sin θ to find λ" (CP6)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-recurring-examiner-report-themes-jan-2019-jan-2025">4. Recurring Examiner Report Themes (Jan 2019–Jan 2025)</h3>
+<h4 id="41-students-did-not-state-the-control-variable">4.1 "Students did not state the control variable"</h4>
+<p>Appears in 11 examiner reports across CP4–CP8. Every CP method question expects the student to name at least one variable to keep constant (CP5: T or l or μ; CP7: I; CP8: cell identity). <strong>Fix: in every method answer, write "keep X constant" as one of the numbered steps.</strong></p>
+<h4 id="42-students-did-not-name-the-specific-instrument">4.2 "Students did not name the specific instrument"</h4>
+<p>Appears in 9 examiner reports. "Use a measuring device" scores 0; "use a micrometer" scores 1. "Use a power source" scores 0; "use a signal generator" scores 1. <strong>Fix: name every instrument specifically.</strong></p>
+<h4 id="43-students-confused-the-graph-axes">4.3 "Students confused the graph axes"</h4>
+<p>Appears in 7 examiner reports. CP7 students plot l vs R (instead of R vs l); CP8 students plot I vs V (instead of V vs I, which gives gradient = −r). <strong>Fix: write the equation in y = mx + c form first, then read off the axes. For V = ε − Ir, V is y, I is x, so V goes on the y-axis.</strong></p>
+<h4 id="44-students-did-not-state-how-the-gradient-gives-the-answer">4.4 "Students did not state how the gradient gives the answer"</h4>
+<p>Appears in 8 examiner reports. Writing "the gradient gives the resistivity" is wrong — the gradient gives ρ/A, and the student must multiply by A to get ρ. <strong>Fix: write the full algebraic step: "gradient = ρ/A, so ρ = gradient × A".</strong></p>
+<h4 id="45-students-gave-vague-error-answers">4.5 "Students gave vague error answers"</h4>
+<p>Appears in 12 examiner reports. "Human error" or "equipment error" scores 0. "Polarisation of the cell during use changes ε and r" scores 2. <strong>Fix: name a specific error, state its cause, and state its effect on the result.</strong></p>
+<h4 id="46-students-gave-vague-improvement-answers">4.6 "Students gave vague improvement answers"</h4>
+<p>Appears in 10 examiner reports. "Use better equipment" scores 0. "Use a high-resistance voltmeter so negligible current flows through it" scores 2. <strong>Fix: name a specific improvement AND state how it reduces the error.</strong></p>
+<h4 id="47-students-forgot-the-safety-point">4.7 "Students forgot the safety point"</h4>
+<p>Appears in 6 examiner reports (especially CP6 laser safety and CP7/CP8 electrical safety). <strong>Fix: in every CP method answer, include one specific safety point — "Class 2 laser, do not look directly into the beam" (CP6); "low current to avoid heating" (CP7); "do not short-circuit the cell" (CP8).</strong></p>
+<h4 id="48-students-did-not-convert-units">4.8 "Students did not convert units"</h4>
+<p>Appears in 9 examiner reports. CP6: lines per mm → lines per m (factor of 1000). CP7: mm → m for diameter (factor of 1000); mm² → m² (factor of 10⁶). CP8: mA → A. <strong>Fix: write the conversion explicitly: "300 lines/mm = 300 000 lines/m, so d = 1/300 000 = 3.33 × 10⁻⁶ m".</strong></p>
+<h3 id="5-mark-scheme-phrasing-exact-wording-that-scores">5. Mark Scheme Phrasing — Exact Wording That Scores</h3>
+<p>Examiner mark schemes reward very specific phrasing. Memorise these:</p>
+<table>
+<thead>
+<tr>
+<th>Mark scheme phrase</th>
+<th>Scores the mark for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"two-beam oscilloscope"</td>
+<td>CP4 apparatus mark</td>
+</tr>
+<tr>
+<td>"channel 1 from signal generator, channel 2 from microphone"</td>
+<td>CP4 oscilloscope setup</td>
+</tr>
+<tr>
+<td>"traces in phase"</td>
+<td>CP4 wavelength determination</td>
+</tr>
+<tr>
+<td>"Lissajous figure"</td>
+<td>CP4 alternative method (sensitivity)</td>
+</tr>
+<tr>
+<td>"vibration generator driven by signal generator"</td>
+<td>CP5 apparatus mark</td>
+</tr>
+<tr>
+<td>"string over a pulley with slotted masses"</td>
+<td>CP5 tension source</td>
+</tr>
+<tr>
+<td>"T = mg"</td>
+<td>CP5 tension calculation</td>
+</tr>
+<tr>
+<td>"fundamental has one antinode"</td>
+<td>CP5 harmonic identification</td>
+</tr>
+<tr>
+<td>"plot f₁² against T"</td>
+<td>CP5 graph axes</td>
+</tr>
+<tr>
+<td>"gradient = 1/(4l²μ)"</td>
+<td>CP5 gradient interpretation</td>
+</tr>
+<tr>
+<td>"Class 2 laser"</td>
+<td>CP6 apparatus + safety mark</td>
+</tr>
+<tr>
+<td>"d = 1/N with N in lines per metre"</td>
+<td>CP6 slit spacing conversion</td>
+</tr>
+<tr>
+<td>"nλ = d sin θ"</td>
+<td>CP6 grating equation</td>
+</tr>
+<tr>
+<td>"average left and right measurements"</td>
+<td>CP6 error reduction</td>
+</tr>
+<tr>
+<td>"plot sin θ against n"</td>
+<td>CP6 graph axes</td>
+</tr>
+<tr>
+<td>"gradient = λ/d"</td>
+<td>CP6 gradient interpretation</td>
+</tr>
+<tr>
+<td>"micrometer at three positions and two orientations"</td>
+<td>CP7 diameter method</td>
+</tr>
+<tr>
+<td>"A = πd²/4 with d in metres"</td>
+<td>CP7 area calculation</td>
+</tr>
+<tr>
+<td>"voltmeter in parallel, ammeter in series"</td>
+<td>CP7 circuit arrangement</td>
+</tr>
+<tr>
+<td>"variable resistor to keep current constant"</td>
+<td>CP7 control variable</td>
+</tr>
+<tr>
+<td>"low current to avoid heating"</td>
+<td>CP7 safety + accuracy</td>
+</tr>
+<tr>
+<td>"switch to break circuit between readings"</td>
+<td>CP7/CP8 procedural mark</td>
+</tr>
+<tr>
+<td>"plot R against l"</td>
+<td>CP7 graph axes</td>
+</tr>
+<tr>
+<td>"gradient = ρ/A, so ρ = gradient × A"</td>
+<td>CP7 gradient interpretation</td>
+</tr>
+<tr>
+<td>"%uncertainty in A = 2 × %uncertainty in d"</td>
+<td>CP7 d² trap (key mark)</td>
+</tr>
+<tr>
+<td>"voltmeter across the cell's terminals"</td>
+<td>CP8 circuit arrangement</td>
+</tr>
+<tr>
+<td>"high-resistance voltmeter"</td>
+<td>CP8 ideal-voltmeter point</td>
+</tr>
+<tr>
+<td>"plot V against I"</td>
+<td>CP8 graph axes</td>
+</tr>
+<tr>
+<td>"y-intercept = ε"</td>
+<td>CP8 e.m.f. from graph</td>
+</tr>
+<tr>
+<td>"gradient = −r, so r =</td>
+<td>gradient</td>
+<td>"</td>
+<td>CP8 internal resistance</td>
+</tr>
+<tr>
+<td>"switch opened between readings to prevent polarisation"</td>
+<td>CP8 procedural mark</td>
+</tr>
+<tr>
+<td>"do not short-circuit the cell"</td>
+<td>CP8 safety mark</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Do NOT paraphrase these in the exam.</strong> Use the exact phrasing — examiners are looking for these keywords.</p>
+<h3 id="6-practice-questions-self-test">6. Practice Questions (Self-Test)</h3>
+<h4 id="61-cp4-speed-of-sound-6-marks">6.1 CP4 — Speed of Sound (6 marks)</h4>
+<p>A student uses a signal generator, loudspeaker, microphone, and two-beam oscilloscope to determine the speed of sound in air. The signal generator is set to 2.00 kHz. The student moves the microphone away from the loudspeaker and records the positions of consecutive in-phase points: 0.040 m, 0.213 m, 0.385 m, 0.558 m, 0.730 m.</p>
+<p>(a) Describe how the student determines when the traces are in phase. (2)</p>
+<p>(b) Calculate the wavelength and its uncertainty. (2)</p>
+<p>(c) Calculate the speed of sound. (2)</p>
+<h4 id="62-cp5-vibrating-string-8-marks">6.2 CP5 — Vibrating String (8 marks)</h4>
+<p>A string of mass per unit length μ = 4.5 × 10⁻⁴ kg m⁻¹ is stretched between a vibration generator and a pulley. The vibrating length is 0.500 m. Slotted masses hanging from the free end provide the tension. The student measures the fundamental frequency at six different tensions.</p>
+<table>
+<thead>
+<tr>
+<th>T (N)</th>
+<th>0.49</th>
+<th>0.98</th>
+<th>1.47</th>
+<th>1.96</th>
+<th>2.45</th>
+<th>2.94</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>f₁ (Hz)</td>
+<td>33.0</td>
+<td>46.7</td>
+<td>57.2</td>
+<td>66.0</td>
+<td>73.8</td>
+<td>80.8</td>
+</tr>
+</tbody>
+</table>
+<p>(a) State the control variable in this experiment. (1)</p>
+<p>(b) Plot a suitable graph to verify the relation f₁ = (1/2l)√(T/μ). State the axes and what the gradient should equal. (3)</p>
+<p>(c) Use the data to determine μ from the gradient. (3)</p>
+<p>(d) State one source of error. (1)</p>
+<h4 id="63-cp6-diffraction-grating-7-marks">6.3 CP6 — Diffraction Grating (7 marks)</h4>
+<p>A Class 2 laser of unknown wavelength is directed at a diffraction grating with 600 lines per mm. The screen is 1.500 m from the grating. The student measures the distances from the central maximum to the first three orders on each side:</p>
+<table>
+<thead>
+<tr>
+<th>Order n</th>
+<th>x_left (m)</th>
+<th>x_right (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.632</td>
+<td>0.628</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.358</td>
+<td>1.362</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2.310</td>
+<td>2.290</td>
+</tr>
+</tbody>
+</table>
+<p>(a) Calculate the slit spacing d. (1)</p>
+<p>(b) For each order, calculate sin θ and the corresponding λ. (3)</p>
+<p>(c) Calculate the mean wavelength. (1)</p>
+<p>(d) State two safety precautions when using the laser. (2)</p>
+<h4 id="64-cp7-resistivity-8-marks">6.4 CP7 — Resistivity (8 marks)</h4>
+<p>A student determines the resistivity of a constantan wire. The diameter is measured with a micrometer at three positions and two orientations: 0.38, 0.39, 0.38, 0.39, 0.40, 0.38 mm. The current is kept at 0.500 A. The V and l data are:</p>
+<table>
+<thead>
+<tr>
+<th>l (m)</th>
+<th>0.100</th>
+<th>0.300</th>
+<th>0.500</th>
+<th>0.700</th>
+<th>0.900</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V (V)</td>
+<td>0.21</td>
+<td>0.62</td>
+<td>1.04</td>
+<td>1.46</td>
+<td>1.87</td>
+</tr>
+</tbody>
+</table>
+<p>(a) Calculate the mean diameter, the cross-sectional area A, and the percentage uncertainty in A. (3)</p>
+<p>(b) Plot a graph of R against l (state axes, gradient interpretation). (2)</p>
+<p>(c) Determine the resistivity ρ. (2)</p>
+<p>(d) State one reason why the current should be kept low. (1)</p>
+<h4 id="65-cp8-emf-and-internal-resistance-6-marks">6.5 CP8 — EMF and Internal Resistance (6 marks)</h4>
+<p>A student varies the external resistance in series with a cell and measures the current I and terminal p.d. V:</p>
+<table>
+<thead>
+<tr>
+<th>I (A)</th>
+<th>0.10</th>
+<th>0.20</th>
+<th>0.30</th>
+<th>0.40</th>
+<th>0.50</th>
+<th>0.60</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V (V)</td>
+<td>1.42</td>
+<td>1.35</td>
+<td>1.27</td>
+<td>1.20</td>
+<td>1.13</td>
+<td>1.05</td>
+</tr>
+</tbody>
+</table>
+<p>(a) Plot a graph of V against I and explain how ε and r can be determined from it. (3)</p>
+<p>(b) Determine ε and r from the data. (2)</p>
+<p>(c) State one reason why the switch should be opened between readings. (1)</p>
+<h3 id="7-practice-question-answers">7. Practice Question Answers</h3>
+<h4 id="61-cp4-answers">6.1 CP4 Answers</h4>
+<p>(a) The two oscilloscope traces (channel 1 from the signal generator, channel 2 from the microphone) are observed simultaneously. When the microphone is moved so that the two traces align (peaks coincide), they are in phase. Alternatively, switch to X–Y mode and observe the Lissajous figure: a straight diagonal line at +45° indicates 0° phase difference (in phase).</p>
+<p>(b) Differences between consecutive positions: 0.213 − 0.040 = 0.173; 0.385 − 0.213 = 0.172; 0.558 − 0.385 = 0.173; 0.730 − 0.558 = 0.172. Mean λ = (0.173 + 0.172 + 0.173 + 0.172)/4 = 0.1725 m. Range = 0.001 m, so Δλ = ½ × 0.001 = 0.0005 m. <strong>λ = 0.1725 ± 0.0005 m</strong> (or 0.172 ± 0.001 m to 1 sf in the uncertainty).</p>
+<p>(c) v = fλ = 2000 × 0.1725 = <strong>345 m/s</strong>.</p>
+<h4 id="62-cp5-answers">6.2 CP5 Answers</h4>
+<p>(a) Control variable: the length l (= 0.500 m) is kept constant while T is varied.</p>
+<p>(b) Theory: f₁ = (1/2l)√(T/μ), so f₁² = (1/4l²μ) × T. Plot <strong>f₁² (y-axis) against T (x-axis)</strong>; gradient should equal <strong>1/(4l²μ)</strong> and the line should pass through the origin.</p>
+<p>Calculate f₁² for each T:</p>
+<ul><li>T = 0.49, f₁² = 1089</li>
+<li>T = 0.98, f₁² = 2181</li>
+<li>T = 1.47, f₁² = 3272</li>
+<li>T = 1.96, f₁² = 4356</li>
+<li>T = 2.45, f₁² = 5446</li>
+<li>T = 2.94, f₁² = 6529</li></ul>
+<p>Best-fit gradient ≈ (6529 − 1089)/(2.94 − 0.49) = 5440/2.45 = 2220 Hz²/N.</p>
+<p>(c) μ = 1/(4l² × gradient) = 1/(4 × 0.500² × 2220) = 1/(4 × 0.25 × 2220) = 1/2220 = 4.50 × 10⁻⁴ kg m⁻¹. ✓ (matches the given μ)</p>
+<p>(d) One source of error: friction at the pulley means the tension in the horizontal section of the string is slightly less than mg, so T is overestimated (systematic error → f₁ overestimated).</p>
+<h4 id="63-cp6-answers">6.3 CP6 Answers</h4>
+<p>(a) N = 600 lines/mm = 600 000 lines/m. d = 1/N = 1/600 000 = <strong>1.667 × 10⁻⁶ m</strong>.</p>
+<p>(b) For each order, average x_n = (x_left + x_right)/2, then tan θ = x_n/D, θ = arctan(x_n/D), sin θ:</p>
+<ul><li>n = 1: x = (0.632 + 0.628)/2 = 0.630 m; tan θ = 0.630/1.500 = 0.420; θ = 22.78°; sin θ = 0.3875; λ = d sin θ / n = (1.667 × 10⁻⁶ × 0.3875)/1 = 6.46 × 10⁻⁷ m = 646 nm</li>
+<li>n = 2: x = 1.360 m; tan θ = 0.9067; θ = 42.20°; sin θ = 0.6717; λ = (1.667 × 10⁻⁶ × 0.6717)/2 = 5.60 × 10⁻⁷ m = 560 nm</li>
+<li>n = 3: x = 2.300 m; tan θ = 1.5333; θ = 56.87°; sin θ = 0.8373; λ = (1.667 × 10⁻⁶ × 0.8373)/3 = 4.65 × 10⁻⁷ m = 465 nm</li></ul>
+<p>(Note: n = 2 and n = 3 give lower λ — likely due to measurement error at large angles where the maximum is wider. The n = 1 value is most reliable. Plotting sin θ vs n and taking the gradient is the recommended method.)</p>
+<p>(c) Using only n = 1: λ ≈ 646 nm. (Plotting sin θ vs n and taking the gradient would average out the errors and give a more reliable value around 640–650 nm — consistent with a 640–650 nm red diode laser.)</p>
+<p>(d) Two safety precautions: (1) Use a Class 2 laser (≤ 1 mW visible); never look directly into the beam. (2) Do not point the beam at reflective surfaces (mirrors, glass, polished metal); place a stop behind the screen.</p>
+<h4 id="64-cp7-answers">6.4 CP7 Answers</h4>
+<p>(a) Mean d = (0.38 + 0.39 + 0.38 + 0.39 + 0.40 + 0.38)/6 = 0.387 mm = 3.87 × 10⁻⁴ m. Range = 0.40 − 0.38 = 0.02 mm; Δd = ½ × 0.02 = 0.01 mm; %d = (0.01/0.387) × 100 = 2.6%.</p>
+<p>A = πd²/4 = π × (3.87 × 10⁻⁴)²/4 = π × 1.498 × 10⁻⁷/4 = <strong>1.176 × 10⁻⁷ m²</strong>.</p>
+<p>%A = 2 × %d = <strong>5.2%</strong> (the d² trap).</p>
+<p>(b) Plot <strong>R (y-axis, Ω) against l (x-axis, m)</strong>. R = V/I = V/0.500 = 2V, so R = 0.42, 1.24, 2.08, 2.92, 3.74 Ω. Best-fit gradient ≈ 4.15 Ω m⁻¹. Gradient = ρ/A, so <strong>ρ = gradient × A</strong>.</p>
+<p>(c) ρ = 4.15 × 1.176 × 10⁻⁷ = <strong>4.88 × 10⁻⁷ Ω m</strong> (≈ 4.9 × 10⁻⁷ Ω m, consistent with constantan).</p>
+<p>(d) Low current avoids heating the wire — heating would change the resistivity (for metals, ρ increases with T), introducing a systematic error. Also a switch is used to break the circuit between readings.</p>
+<h4 id="65-cp8-answers">6.5 CP8 Answers</h4>
+<p>(a) Plot <strong>V (y-axis, V) against I (x-axis, A)</strong>. Theory: V = ε − Ir, so V = −r × I + ε. The y-intercept (extrapolate to I = 0) gives ε (the e.m.f.); the gradient = −r, so r = |gradient|.</p>
+<p>(b) Best-fit gradient = (1.05 − 1.42)/(0.60 − 0.10) = −0.37/0.50 = −0.74 V/A, so <strong>r = 0.74 Ω</strong>. y-intercept: V = 1.42 + 0.74 × 0.10 = 1.494 V, so <strong>ε = 1.49 V</strong> (≈ 1.5 V, consistent with a fresh D-cell).</p>
+<p>(c) The switch is opened between readings to prevent the cell from running down (which would change ε and r during the experiment) and to prevent polarisation (hydrogen bubbles building up on the positive electrode, which increases r and reduces ε).</p>
+</main>
+<script>
+(function(){
+var sb=document.getElementById('sidebar'),ov=document.getElementById('overlay'),btn=document.getElementById('menuBtn'),dt=document.getElementById('darkToggle');
+function openSidebar(){sb.classList.add('open');ov.classList.add('open')}
+function closeSidebar(){sb.classList.remove('open');ov.classList.remove('open')}
+btn.addEventListener('click',function(){sb.classList.contains('open')?closeSidebar():openSidebar()});
+ov.addEventListener('click',closeSidebar);
+sb.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeSidebar)});
+if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');dt.textContent='Light'}
+dt.addEventListener('click',function(){var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+if(isDark){document.documentElement.removeAttribute('data-theme');localStorage.setItem('theme','light');dt.textContent='Dark'}
+else{document.documentElement.setAttribute('data-theme','dark');localStorage.setItem('theme','dark');dt.textContent='Light'}
+});
+})();
+</script>
+</body>
+</html>

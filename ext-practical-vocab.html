@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WPH12 Extension — Practical Techniques Vocabulary</title>
+<style>
+:root{--bg:#fafbfe;--text:#1e293b;--heading:#0f172a;--accent:#3b82f6;--accent2:#10b981;--accent3:#f59e0b;--card:#fff;--border:#e2e8f0;--sidebar-bg:#f1f5f9;--code-bg:#f0f4f8;--table-stripe:#f8fafc;--link:#2563eb;--muted:#64748b}
+[data-theme="dark"]{--bg:#18181b;--text:#e4e4e7;--heading:#fafafa;--accent:#60a5fa;--accent2:#34d399;--accent3:#fbbf24;--card:#27272a;--border:#3f3f46;--sidebar-bg:#1f1f23;--code-bg:#2a2a2e;--table-stripe:#222225;--link:#93c5fd;--muted:#a1a1aa}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:16px;transition:background .3s,color .3s}
+.header{position:sticky;top:0;z-index:100;background:var(--card);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 16px;height:48px;gap:12px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.header .toggle-sb{background:none;border:none;font-size:20px;cursor:pointer;color:var(--text);padding:4px 8px;border-radius:4px}
+.header .toggle-sb:hover{background:var(--sidebar-bg)}
+.header .htitle{font-size:15px;font-weight:700;color:var(--heading);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.header .spacer{flex:1}
+.dark-btn{background:none;border:1px solid var(--border);cursor:pointer;font-size:14px;padding:4px 10px;border-radius:6px;color:var(--text);transition:all .2s}
+.dark-btn:hover{background:var(--sidebar-bg)}
+.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:200}
+.sidebar-overlay.open{display:block}
+.sidebar{position:fixed;top:48px;left:0;width:280px;height:calc(100vh - 48px);background:var(--sidebar-bg);border-right:1px solid var(--border);overflow-y:auto;z-index:201;transform:translateX(-100%);transition:transform .25s ease;padding:12px 0}
+.sidebar.open{transform:translateX(0)}
+.sidebar a{display:block;padding:6px 20px;color:var(--text);text-decoration:none;font-size:13px;line-height:1.4;transition:background .15s}
+.sidebar a:hover,.sidebar a:focus{background:var(--border);outline:none}
+.sidebar .sb-h2{font-weight:700;font-size:13px;margin-top:10px;padding:4px 20px;color:var(--accent)}
+.sidebar .sb-h3{padding-left:32px;font-size:12px;color:var(--muted)}
+.main{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+.main h1{font-size:24px;font-weight:800;color:var(--heading);margin-bottom:4px}
+.main .subtitle{color:var(--muted);font-size:14px;margin-bottom:24px}
+h2{font-size:20px;font-weight:700;color:var(--heading);margin:36px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+h3{font-size:17px;font-weight:600;color:var(--heading);margin:24px 0 8px}
+h4{font-size:15px;font-weight:600;color:var(--heading);margin:18px 0 6px}
+p{margin:8px 0}
+strong{color:var(--heading)}
+em{font-style:italic}
+ul,ol{margin:6px 0 6px 24px}
+li{margin:3px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;overflow-x:auto;display:block}
+thead{background:var(--accent);color:#fff}
+th,td{padding:8px 10px;border:1px solid var(--border);text-align:left}
+tbody tr:nth-child(even){background:var(--table-stripe)}
+code{background:var(--code-bg);padding:1px 5px;border-radius:3px;font-size:0.9em;font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
+pre{background:var(--code-bg);padding:14px 16px;border-radius:6px;overflow-x:auto;margin:10px 0;font-size:13px;line-height:1.5;border:1px solid var(--border)}
+pre code{background:none;padding:0;font-size:inherit}
+blockquote{border-left:4px solid var(--accent);padding:8px 16px;margin:10px 0;background:var(--card);color:var(--muted);border-radius:0 4px 4px 0}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+hr{border:none;border-top:1px solid var(--border);margin:24px 0}
+.callout{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent3);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-size:14px}
+.callout strong{color:var(--accent3)}
+.footer{text-align:center;padding:20px 16px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:40px}
+@media(max-width:600px){.main{padding:12px 10px 40px}.main h1{font-size:20px}h2{font-size:17px}h3{font-size:15px}th,td{padding:6px 7px;font-size:12px}.sidebar{width:260px}}
+@media print{.header,.sidebar,.sidebar-overlay,.dark-btn,.footer{display:none!important}.main{max-width:100%;padding:10px 0}body{background:#fff;color:#000}h2{border-bottom:1.5pt solid #000}table,th,td{border:1px solid #000!important}thead{background:#ddd!important;color:#000!important}a{color:#000;text-decoration:none}pre{border:1px solid #ccc;background:#f5f5f5}}
+</style>
+</head>
+<body>
+<header class="header">
+<button class="toggle-sb" onclick="toggleSidebar()" aria-label="Toggle sidebar">&#9776;</button>
+<span class="htitle">WPH12 Extension — Practical Techniques Vocabulary</span>
+<div class="spacer"></div>
+<button class="dark-btn" onclick="toggleDark()" aria-label="Toggle dark mode">&#9789;</button>
+</header>
+<div class="sidebar-overlay" id="sbOverlay" onclick="toggleSidebar()"></div>
+<nav class="sidebar" id="sb">
+<a href="#def-recap" class="sb-h2">Part I — Definitions</a>
+<a href="#def-recap" class="sb-h3">Recap Terms (WPH11)</a>
+<a href="#def-resolution" class="sb-h3">Instrument Resolution Table</a>
+<a href="#def-new-terms" class="sb-h3">New WPH12-Specific Terms</a>
+<a href="#def-experimental" class="sb-h3">Experimental Design Terms</a>
+<a href="#def-av" class="sb-h3">Ammeter &amp; Voltmeter</a>
+<a href="#def-scope" class="sb-h3">Oscilloscope Terms</a>
+<a href="#def-mic" class="sb-h3">Micrometer Terms</a>
+<a href="#def-protractor" class="sb-h3">Protractor &amp; Laser</a>
+<a href="#def-wire" class="sb-h3">Wire &amp; Crocodile Clips</a>
+<a href="#def-glossary" class="sb-h3">Quick-Reference Glossary</a>
+<a href="#con-why" class="sb-h2">Part II — Concepts</a>
+<a href="#con-why" class="sb-h3">Why Practical Vocab Matters</a>
+<a href="#con-parallax" class="sb-h3">Parallax Error</a>
+<a href="#con-zero" class="sb-h3">Zero Error in Micrometer</a>
+<a href="#con-amm" class="sb-h3">Ammeter Placement</a>
+<a href="#con-volt" class="sb-h3">Voltmeter Placement</a>
+<a href="#con-repeats" class="sb-h3">Repeat Readings per CP</a>
+<a href="#con-controls" class="sb-h3">Control Variables per CP</a>
+<a href="#con-anomalies" class="sb-h3">Identifying Anomalies</a>
+<a href="#con-fair" class="sb-h3">Fair Test</a>
+<a href="#con-errors" class="sb-h3">Common Examiner Errors</a>
+<a href="#con-6mark" class="sb-h3">Worked 6-Mark Question</a>
+<a href="#con-tree" class="sb-h3">Decision Tree</a>
+<a href="#exam-freq" class="sb-h2">Part III — Exam Connections</a>
+<a href="#exam-freq" class="sb-h3">Frequency Table</a>
+<a href="#exam-map" class="sb-h3">Definition Exam Mapping</a>
+<a href="#exam-cmd" class="sb-h3">Command Word Mapping</a>
+<a href="#exam-themes" class="sb-h3">Examiner Report Themes</a>
+<a href="#exam-scores" class="sb-h3">Phrasing That Scores</a>
+<a href="#exam-rejects" class="sb-h3">Phrasing That Does Not Score</a>
+<a href="#exam-practice" class="sb-h3">Practice Questions</a>
+<a href="#exam-answers" class="sb-h3">Answers</a>
+<a href="#exam-checklist" class="sb-h3">Final Checklist</a>
+</nav>
+<main class="main">
+
+<h1>WPH12 Extension — Practical Techniques Vocabulary</h1>
+<p class="subtitle">WPH12 Core Practicals CP4–CP8: definitions, concepts, and exam connections for practical-method vocabulary</p>
+
+<!-- ======================== PART I — DEFINITIONS ======================== -->
+<h2 id="def-recap">Part I — Definitions</h2>
+
+<h3 id="def-recap">1. Recap Terms (defined fully in WPH11 ext-uncertainty)</h3>
+<p>These terms are tested identically in WPH12 — only the practical context differs. The WPH11 definitions apply verbatim; the WPH12 column here adds the new context.</p>
+
+<h4>1.1 Random Error</h4>
+<p><strong>Spec ref:</strong> Appendix 10</p>
+<p><strong>Definition (recap):</strong> Unpredictable variations in measurements caused by fluctuations in reading, environmental conditions, or instrument limitations. Scatter readings around the true value; reduced by repeats and a mean. See <code>wph11/ext-uncertainty-definitions.md</code>.</p>
+<p><strong>WPH12 practical context:</strong> Judging the position of a maximum on an oscilloscope trace by eye (CP4); reading a peak in f when adjusting string length (CP5); positioning a protractor for the diffracted ray (CP6); contact pressure on crocodile clips altering R (CP7); fluctuating V reading as a cell polarises (CP8).</p>
+
+<h4>1.2 Systematic Error</h4>
+<p><strong>Spec ref:</strong> Appendix 10</p>
+<p><strong>Definition (recap):</strong> A consistent, repeatable error that shifts all readings by the same amount or in the same direction. Not reduced by repeats. See <code>wph11/ext-uncertainty-definitions.md</code>.</p>
+<p><strong>WPH12 practical context:</strong> Oscilloscope time-base miscalibration (every period reading is offset by the same factor — CP4); signal generator dial mislabelled (CP4/CP5); protractor zero not aligned with the straight-through beam (CP6 — every angle is offset by a constant); micrometer with a zero offset (CP7); voltmeter with a constant calibration offset (CP8).</p>
+
+<h4>1.3 Precision</h4>
+<p><strong>Spec ref:</strong> Appendix 10</p>
+<p><strong>Definition (recap):</strong> The degree to which repeated measurements cluster closely together (small spread, small range). May still be inaccurate if a systematic error is present. See <code>wph11/ext-uncertainty-definitions.md</code>.</p>
+<p><strong>WPH12 practical context:</strong> Repeat diameter readings within ± 0.01 mm on a micrometer (CP7) are precise; repeat V readings within ± 0.05 V on a school voltmeter (CP8) are precise. A precise cluster of V readings that are all 0.2 V too high indicates a zero error, not low precision.</p>
+
+<h4>1.4 Accuracy</h4>
+<p><strong>Spec ref:</strong> Appendix 10</p>
+<p><strong>Definition (recap):</strong> The degree to which a measured value (or mean) agrees with the true value. Improved by reducing systematic errors and calibrating instruments. See <code>wph11/ext-uncertainty-definitions.md</code>.</p>
+<p><strong>WPH12 practical context:</strong> A measured resistivity for copper of 1.72 &times; 10<sup>-8</sup> &Omega;&middot;m agrees with the data book value (1.68 &times; 10<sup>-8</sup> &Omega;&middot;m) — accurate. A measured wavelength of 633 nm for a He-Ne laser (true 632.8 nm) — accurate. Accuracy is checked by comparison to a known standard, NOT by repeating.</p>
+
+<h4>1.5 Resolution</h4>
+<p><strong>Spec ref:</strong> Appendix 10</p>
+<p><strong>Definition (recap):</strong> The smallest change in the measured quantity that an instrument can detect and display. Sets the minimum uncertainty for a single reading. See <code>wph11/ext-uncertainty-definitions.md</code>.</p>
+<p><strong>WPH12 practical context:</strong> Each WPH12 instrument has its own resolution — see the Instrument Resolution Table below.</p>
+
+<h4>1.6 Repeatability</h4>
+<p><strong>Spec ref:</strong> Appendix 10</p>
+<p><strong>Definition (recap):</strong> The ability to obtain the same measurement (within uncertainty) when the same experimenter repeats the measurement using the same method and equipment. See <code>wph11/ext-uncertainty-definitions.md</code>.</p>
+<p><strong>WPH12 practical context:</strong> &ldquo;Explain how the student could show that the frequency measurement was repeatable&rdquo; (CP5) — repeat the measurement with the same length, tension, and &mu;, and compare the range to the oscilloscope time-base uncertainty.</p>
+
+<hr>
+
+<h3 id="def-resolution">2. WPH12 Instrument Resolution Table</h3>
+<p>This table consolidates the resolution of every instrument used in CP4–CP8. Memorise the values — examiners ask &ldquo;state the resolution of the &hellip;&rdquo; as a 1-mark recall question.</p>
+
+<table>
+<thead>
+<tr><th>Instrument</th><th>Resolution</th><th>Used in</th><th>Single-reading absolute uncertainty</th></tr>
+</thead>
+<tbody>
+<tr><td>Metre rule (analogue)</td><td>1 mm</td><td>CP4, CP5, CP7</td><td>&plusmn; 0.5 mm (half resolution)</td></tr>
+<tr><td>Tape measure</td><td>1 cm</td><td>CP4 (longer distances)</td><td>&plusmn; 0.5 cm</td></tr>
+<tr><td>Micrometer screw gauge</td><td>0.01 mm (10 &mu;m)</td><td>CP7 (wire diameter)</td><td>&plusmn; 0.01 mm (digital) or &plusmn; 0.005 mm (analogue)</td></tr>
+<tr><td>Vernier calliper</td><td>0.1 mm</td><td>CP7 (alternative to micrometer)</td><td>&plusmn; 0.05 mm</td></tr>
+<tr><td>Protractor (large)</td><td>1&deg;</td><td>CP6 (diffraction angle)</td><td>&plusmn; 0.5&deg;</td></tr>
+<tr><td>Digital ammeter</td><td>0.01 A (typical school)</td><td>CP8</td><td>&plusmn; 0.01 A</td></tr>
+<tr><td>Digital voltmeter</td><td>0.01 V (typical school)</td><td>CP7, CP8</td><td>&plusmn; 0.01 V</td></tr>
+<tr><td>Ohmmeter</td><td>0.1 &Omega; (typical)</td><td>CP7 (alternative method)</td><td>&plusmn; 0.1 &Omega;</td></tr>
+<tr><td>Oscilloscope time-base</td><td>depends on setting (e.g. 1 ms/div)</td><td>CP4, CP5</td><td>&plusmn; time-base setting (1 div)</td></tr>
+<tr><td>Oscilloscope Y-gain</td><td>depends on setting (e.g. 0.5 V/div)</td><td>CP4</td><td>&plusmn; Y-gain setting (1 div)</td></tr>
+<tr><td>Signal generator dial</td><td>10 Hz (typical)</td><td>CP4, CP5</td><td>&plusmn; 5 Hz (do NOT use the dial)</td></tr>
+<tr><td>Stopwatch</td><td>0.01 s</td><td>CP4 (alternative)</td><td>&plusmn; 0.2 s (human reaction dominates)</td></tr>
+<tr><td>Top-pan balance</td><td>0.01 g</td><td>CP5 (mass &rarr; tension)</td><td>&plusmn; 0.01 g</td></tr>
+</tbody>
+</table>
+
+<div class="callout"><strong>Examiner trap (CP8):</strong> Students sometimes state the ammeter resolution as &plusmn; 0.0001 A because the digital display shows 4 decimal places — most school ammeters only resolve to &plusmn; 0.01 A. Use the smallest displayed increment, not the number of decimal places on the display.</div>
+
+<hr>
+
+<h3 id="def-new-terms">3. New WPH12-Specific Practical Terms</h3>
+
+<h4>3.1 Parallax Error (WPH12 contexts)</h4>
+<p><strong>Spec ref:</strong> Appendix 10</p>
+<p><strong>Definition:</strong> A systematic reading error caused by viewing a scale from an angle rather than perpendicular to it, causing the reading to appear higher or lower than the true value. Eliminated by positioning the eye directly in line with the scale (or using a mirror scale). Full definition in <code>wph11/ext-uncertainty-definitions.md</code>.</p>
+<p><strong>WPH12 practical contexts:</strong></p>
+<ul>
+<li><strong>Oscilloscope screen reading (CP4, CP5):</strong> The CRT/LCD screen of an oscilloscope is a 2D display with depth. Viewing from the side shifts the apparent position of a waveform peak against the graticule lines. <strong>Correct technique:</strong> position the eye perpendicular to the centre of the screen, looking straight at the peak.</li>
+<li><strong>Protractor angle reading (CP6):</strong> The diffracted ray is marked on paper; the angle is read off a protractor placed flat. Viewing the protractor from the side makes the angle appear larger or smaller. <strong>Correct technique:</strong> view the protractor from directly above, eye perpendicular to the paper.</li>
+<li><strong>Meter scale reading (CP7 ammeter/voltmeter):</strong> Analogue meters have a needle and a curved scale. Reading from below or above introduces parallax. Most analogue meters have a mirror strip — close one eye and align the needle with its reflection.</li>
+<li><strong>Metre rule reading (CP5 string length, CP7 wire length):</strong> Viewing a metre rule from an angle shifts the apparent position of the bridge or node.</li>
+</ul>
+<p><strong>Exam context:</strong> &ldquo;State how the student should position their eye when reading the angle on the protractor&rdquo; (1 mark, CP6). Expected answer: &ldquo;directly above the protractor, perpendicular to the paper&rdquo; — vague answers like &ldquo;carefully&rdquo; score 0.</p>
+
+<h4>3.2 Zero Error (WPH12 contexts)</h4>
+<p><strong>Spec ref:</strong> Appendix 10</p>
+<p><strong>Definition:</strong> A specific type of systematic error where an instrument reads a non-zero value when the measured quantity is actually zero. Shifts all readings by a constant offset and must be corrected by zeroing the instrument before use OR subtracting the offset from all readings. Full definition in <code>wph11/ext-uncertainty-definitions.md</code>.</p>
+<p><strong>WPH12 practical contexts:</strong></p>
+<ul>
+<li><strong>Micrometer zero error (CP7):</strong> Close the micrometer jaws gently (using the ratchet, not the thimble). Check the reading: a true-zero micrometer reads 0.00 mm. If it reads +0.02 mm (positive zero error), subtract 0.02 mm from every diameter reading. If it reads &minus;0.03 mm (negative), add 0.03 mm. <strong>Examiner trap:</strong> students state &ldquo;zero the micrometer&rdquo; but cannot explain what to do if non-adjustable — the answer is &ldquo;subtract the offset from every reading.&rdquo;</li>
+<li><strong>Ammeter zero error (CP8):</strong> With the circuit open (no current), the ammeter should read 0.00 A. If it reads 0.05 A, subtract 0.05 A from every current reading. Many digital ammeters have a &ldquo;REL&rdquo; button that zeroes the display.</li>
+<li><strong>Voltmeter zero error (CP7, CP8):</strong> With the voltmeter leads shorted together (no p.d.), the voltmeter should read 0.00 V. If it reads 0.1 V, subtract 0.1 V from every reading.</li>
+<li><strong>Oscilloscope trace zero error (CP4, CP5):</strong> With no input signal, the trace should sit on the centre horizontal line. If not, use the Y-shift control to centre it before taking measurements.</li>
+</ul>
+<p><strong>Exam context:</strong> &ldquo;The student did not check the zero reading of the micrometer before use. State the type of error this introduces and explain how to correct it&rdquo; (2 marks, CP7 — 6 of 13 papers). Expected answer: &ldquo;systematic (zero) error (1 mark); check the micrometer with jaws closed and subtract the offset from every reading (1 mark).&rdquo;</p>
+
+<h4>3.3 Calibration</h4>
+<p><strong>Spec ref:</strong> Appendix 10</p>
+<p><strong>Definition:</strong> The process of checking an instrument&rsquo;s readings against a known standard (or a more accurate reference instrument) and adjusting the instrument so that it reads correctly across its range. Calibration eliminates systematic errors due to drift, ageing, or factory misalignment. An instrument is &ldquo;calibrated&rdquo; if its readings match the standard within the manufacturer&rsquo;s stated tolerance.</p>
+<p><strong>WPH12 practical contexts:</strong></p>
+<ul>
+<li><strong>Calibrating an ammeter (CP8):</strong> Pass a known current through the ammeter (using a standard cell and a standard resistor in series) and check the reading against the calculated current I = V/R.</li>
+<li><strong>Calibrating a voltmeter (CP7, CP8):</strong> Connect across a standard cell of known e.m.f. (e.g. a Weston cell = 1.0183 V) and check the reading.</li>
+<li><strong>Calibrating an oscilloscope time-base (CP4, CP5):</strong> Feed in a signal of known frequency (e.g. 1.000 kHz calibration output) and check that one cycle occupies the expected number of divisions.</li>
+<li><strong>Calibrating a signal generator:</strong> Compare the dial frequency against a calibrated oscilloscope. School signal generators are often off by 5–10%.</li>
+</ul>
+<p><strong>Exam context:</strong> &ldquo;Describe how the student could check the accuracy of the voltmeter&rdquo; (2 marks). Expected answer: &ldquo;connect the voltmeter across a standard cell of known e.m.f.; compare the reading with the standard value; if they disagree, the voltmeter is not calibrated.&rdquo; Note: calibration is about ACCURACY, not precision.</p>
+
+<h4>3.4 Repeat Readings</h4>
+<p><strong>Spec ref:</strong> Appendix 10</p>
+<p><strong>Definition:</strong> Taking multiple measurements of the same quantity under the same conditions and calculating the mean. Repeat readings (i) reduce the effect of random errors, (ii) allow identification of anomalies, (iii) allow the absolute uncertainty to be calculated as &frac12; &times; range. The minimum acceptable number of repeats in WPH12 practicals is 3; 5 or more is preferred.</p>
+<p><strong>WPH12 practical contexts:</strong></p>
+<ul>
+<li><strong>CP4 (speed of sound):</strong> Repeat the microphone-position measurement at least 3 times for each antinode. Measure several intervals and take the mean to reduce the random error in judging &ldquo;in-phase&rdquo; position by eye.</li>
+<li><strong>CP5 (vibrating string):</strong> Repeat the frequency measurement at each length L at least 3 times. The fundamental is identified by ear; repeat the tuning and the oscilloscope reading.</li>
+<li><strong>CP6 (diffraction grating):</strong> Repeat the angle measurement for each order n at least 3 times.</li>
+<li><strong>CP7 (resistivity):</strong> Measure diameter at 3 (or 5) positions along the wire AND at 2 orientations (rotate 90&deg;). Measure R for each length at least 3 times.</li>
+<li><strong>CP8 (e.m.f./internal resistance):</strong> For each variable resistor setting, record V and I at least 3 times and take the mean.</li>
+</ul>
+<p><strong>Exam context:</strong> &ldquo;Suggest why the student repeated the readings and took a mean&rdquo; (2 marks, 9 of 13 papers). Expected answer: &ldquo;to reduce the effect of random errors (1 mark) AND to allow the identification of anomalies / calculate the uncertainty from &frac12; &times; range (1 mark).&rdquo; The phrase &ldquo;to make it accurate&rdquo; alone scores 0.</p>
+
+<h4>3.5 Anomalous Result (Outlier)</h4>
+<p><strong>Spec ref:</strong> Appendix 10</p>
+<p><strong>Definition:</strong> A reading that differs significantly from the other repeat readings and is judged to be invalid (e.g. due to a misreading, a one-off measurement error, or a transient disturbance). Anomalies are excluded from the mean AND from the range calculation.</p>
+<p><strong>WPH12 practical contexts:</strong></p>
+<ul>
+<li><strong>CP7:</strong> Diameter readings: 0.24, 0.25, 0.24, 0.39, 0.25 mm. The 0.39 mm reading is anomalous — exclude it before calculating the mean.</li>
+<li><strong>CP8:</strong> V readings for the same R setting: 1.48, 1.49, 1.47, 1.02 V. The 1.02 V is anomalous — exclude it.</li>
+<li><strong>CP6:</strong> &theta; readings for n = 1: 18.2&deg;, 18.4&deg;, 18.3&deg;, 22.0&deg;. The 22.0&deg; is anomalous — exclude it.</li>
+</ul>
+<p><strong>How to identify an anomaly (3 acceptable criteria):</strong></p>
+<ol>
+<li>The reading differs from the mean of the others by more than 2 standard deviations.</li>
+<li>The reading differs from the other readings by more than the absolute uncertainty of the others (i.e. more than &frac12; &times; range of the others).</li>
+<li>The reading is more than double the spread of the others (rule of thumb).</li>
+</ol>
+<p><strong>How to handle an anomaly:</strong></p>
+<ol>
+<li>Note the value.</li>
+<li>State why it is anomalous (compare to others).</li>
+<li>Exclude it from the mean AND from the range.</li>
+<li>Recalculate the mean and uncertainty using the remaining readings.</li>
+<li>If possible, repeat the measurement to replace the anomaly — but never silently delete data.</li>
+</ol>
+<p><strong>Exam context:</strong> &ldquo;Identify the anomalous reading in the table&rdquo; (1 mark, 7 of 13 papers) + &ldquo;Explain whether this reading should be included in the mean&rdquo; (1 mark). Expected answer: &ldquo;the value X (1 mark); it differs from the others by more than the range of the others, so exclude it (1 mark).&rdquo;</p>
+
+<hr>
+
+<h3 id="def-experimental">4. Experimental Design Terms</h3>
+<p>These terms are NEW (not covered in WPH11 ext-uncertainty). They are tested in 6-mark QWC practical-method questions and in &ldquo;design an experiment&rdquo; extension questions.</p>
+
+<h4>4.1 Independent Variable</h4>
+<p><strong>Spec ref:</strong> Appendix 10</p>
+<p><strong>Definition:</strong> The variable that the experimenter deliberately changes during an experiment. It is plotted on the x-axis of a graph (the &ldquo;input&rdquo; variable). Only ONE independent variable should be changed at a time in a valid experiment (this is the basis of a &ldquo;fair test&rdquo;).</p>
+<p><strong>WPH12 practical contexts:</strong></p>
+<ul>
+<li>CP4: the position of the microphone along the ruler (x-axis: distance / m).</li>
+<li>CP5: the length L of the vibrating portion of the string (x-axis: L / m).</li>
+<li>CP6: the order number n (x-axis: n) when investigating the spacing of maxima.</li>
+<li>CP7: the length L of the wire (x-axis: L / m), for the R-vs-L method.</li>
+<li>CP8: the current I (x-axis: I / A), varied by changing the variable resistor setting.</li>
+</ul>
+
+<h4>4.2 Dependent Variable</h4>
+<p><strong>Spec ref:</strong> Appendix 10</p>
+<p><strong>Definition:</strong> The variable that is measured in response to changes in the independent variable. It is plotted on the y-axis of a graph (the &ldquo;output&rdquo; variable). The dependent variable is what the experimenter MEASURES, not what they change.</p>
+<p><strong>WPH12 practical contexts:</strong></p>
+<ul>
+<li>CP4: the position of the antinode for a given frequency.</li>
+<li>CP5: the fundamental frequency f (y-axis: f / Hz), measured using an oscilloscope.</li>
+<li>CP6: the angle &theta; to the nth-order maximum (y-axis: sin &theta;).</li>
+<li>CP7: the resistance R (y-axis: R / &Omega;), measured using an ohmmeter or V/I.</li>
+<li>CP8: the terminal p.d. V (y-axis: V / V), measured by the voltmeter in parallel across the cell.</li>
+</ul>
+
+<h4>4.3 Control Variable</h4>
+<p><strong>Spec ref:</strong> Appendix 10</p>
+<p><strong>Definition:</strong> A variable that is kept constant during an experiment to ensure that it does not affect the dependent variable. Identifying control variables is essential for a valid experiment. If a control variable changes during the experiment, it becomes a confounding variable — the experiment is no longer a fair test.</p>
+<p><strong>WPH12 practical contexts (per CP):</strong></p>
+<ul>
+<li><strong>CP4:</strong> frequency f (kept constant); temperature of the air; same oscilloscope settings.</li>
+<li><strong>CP5:</strong> when varying L &rarr; keep T (tension) and &mu; (same string) constant. When varying T &rarr; keep L and &mu; constant.</li>
+<li><strong>CP6:</strong> the wavelength &lambda; (same laser); distance from grating to screen D.</li>
+<li><strong>CP7:</strong> the temperature of the wire (keep current low to avoid heating); the same wire; same apparatus.</li>
+<li><strong>CP8:</strong> the same cell; temperature of the cell; let the cell recover between readings.</li>
+</ul>
+<p><strong>Exam context:</strong> &ldquo;State one control variable in this experiment&rdquo; (1 mark, 11 of 13 papers — extremely common). Name a SPECIFIC variable (e.g. &ldquo;temperature of the wire&rdquo;) — vague answers like &ldquo;keep everything else the same&rdquo; score 0.</p>
+
+<h4>4.4 Fair Test</h4>
+<p><strong>Definition:</strong> An experiment is a &ldquo;fair test&rdquo; if ONLY the independent variable is changed; all control variables are held constant. A fair test ensures that any change in the dependent variable is caused by the change in the independent variable (cause-and-effect), not by a confounding variable.</p>
+<p><strong>WPH12 practical contexts:</strong></p>
+<ul>
+<li>CP5: a fair test of &ldquo;how does f depend on L?&rdquo; requires T and &mu; are held constant.</li>
+<li>CP7: a fair test of &ldquo;how does R depend on L?&rdquo; requires d and &rho; are constant. If the wire heats up (because high current), the test is not fair.</li>
+<li>CP8: a fair test of &ldquo;how does V depend on I?&rdquo; requires &epsilon; and r are constant. If the cell polarises significantly, the test is not fair.</li>
+</ul>
+<p><strong>Exam context:</strong> &ldquo;Explain why this experiment is a fair test&rdquo; (2 marks). Expected answer: &ldquo;only the independent variable (X) is changed (1 mark) AND all control variables (Y, Z) are held constant (1 mark).&rdquo;</p>
+
+<h4>4.5 Validity</h4>
+<p><strong>Definition:</strong> An experiment is &ldquo;valid&rdquo; if it measures what it claims to measure — i.e. the dependent variable is genuinely caused by the independent variable, the control variables are held constant (fair test), and the measurement technique is appropriate. Threats: (i) confounding variables not controlled, (ii) systematic errors, (iii) inappropriate apparatus.</p>
+<p><strong>WPH12 practical contexts:</strong></p>
+<ul>
+<li>CP7: if the student uses a metre rule to measure the wire diameter (instead of a micrometer), the diameter uncertainty is ~50% — the experiment is essentially invalid.</li>
+<li>CP8: if the voltmeter has low resistance (comparable to r), the voltmeter draws significant current and the measured V is not the true terminal p.d. — the experiment is invalid.</li>
+</ul>
+
+<h4>4.6 Reliability</h4>
+<p><strong>Definition:</strong> The degree to which repeated measurements (or repeated whole experiments) produce the same result. Improved by: (i) taking repeat readings and a mean, (ii) using instruments with appropriate resolution, (iii) controlling variables carefully, (iv) using a large sample size. Reliability is NOT the same as accuracy — a reliable experiment can be reliably wrong (high precision, low accuracy due to systematic error).</p>
+<p><strong>WPH12 practical contexts:</strong></p>
+<ul>
+<li>CP4: the speed-of-sound measurement is reliable if repeating the experiment with a different frequency gives the same v (&asymp; 340 m/s).</li>
+<li>CP7: reliable if measuring copper gives 1.7 &times; 10<sup>-8</sup> &Omega;&middot;m every time — even if slightly off due to zero error, the consistency makes it reliable.</li>
+<li>CP8: reliable if repeating with a different cell of the same type gives a similar r.</li>
+</ul>
+
+<hr>
+
+<h3 id="def-av">5. Ammeter and Voltmeter — Practical Definitions</h3>
+
+<h4>5.1 Ammeter</h4>
+<p><strong>Spec ref:</strong> Appendix 9, Spec 64</p>
+<p><strong>Definition:</strong> A device used to measure electric current. Connected in SERIES with the component whose current is being measured — the same current must flow through the ammeter and the component. An ideal ammeter has zero resistance so that it does not reduce the current in the circuit. Real ammeters have a small resistance (typically &lt; 1 &Omega;) which causes a small voltage drop (V = IR) and slightly reduces the current.</p>
+<p><strong>WPH12 practical context (CP8):</strong> The ammeter is connected in series with the cell and the variable resistor. For accurate results, R_A should be much less than r (the internal resistance).</p>
+<p><strong>Common student error:</strong> Drawing the ammeter in parallel with the cell — this short-circuits the ammeter (will read a very high current and may blow its fuse).</p>
+
+<h4>5.2 Voltmeter</h4>
+<p><strong>Spec ref:</strong> Appendix 9, Spec 65</p>
+<p><strong>Definition:</strong> A device used to measure potential difference. Connected in PARALLEL across the component whose p.d. is being measured. An ideal voltmeter has infinite resistance so that it draws no current and does not alter the circuit. Real voltmeters have a large but finite resistance (typically 10 k&Omega; – 10 M&Omega;).</p>
+<p><strong>WPH12 practical context (CP8):</strong> The voltmeter is connected in parallel across the cell terminals. For accurate results, R_V should be much greater than the external circuit resistance, so the voltmeter draws negligible current.</p>
+<p><strong>Common student error:</strong> Drawing the voltmeter in series with the cell — this breaks the circuit (no current flows) and the voltmeter reads the full e.m.f. regardless of the variable resistor setting.</p>
+
+<hr>
+
+<h3 id="def-scope">6. Oscilloscope — Practical Terms</h3>
+
+<h4>6.1 Time-base</h4>
+<p><strong>Definition:</strong> The oscilloscope control that sets the time per horizontal division (e.g. 1 ms/div, 0.1 ms/div). The period T = (number of horizontal divisions per cycle) &times; (time-base setting). The frequency f = 1/T.</p>
+<p><strong>WPH12 context (CP4):</strong> Set the time-base so that 2–4 complete cycles are visible. Count the divisions in one cycle (or N cycles — more accurate, divide by N) and multiply by the time-base.</p>
+
+<h4>6.2 Y-gain</h4>
+<p><strong>Definition:</strong> The oscilloscope control that sets the voltage per vertical division (e.g. 0.5 V/div, 1 V/div). Peak voltage V_p = (vertical divisions from centre to peak) &times; (Y-gain setting).</p>
+<p><strong>WPH12 context (CP4):</strong> Used to measure the amplitude of the microphone signal. Setting Y-gain too high makes the trace too small; too low clips the trace.</p>
+
+<h4>6.3 Reading an Oscilloscope Trace</h4>
+<p><strong>Worked procedure:</strong></p>
+<ol>
+<li>Identify the centre horizontal graticule line (the 0 V line).</li>
+<li>Count horizontal divisions for N complete cycles (e.g. 3 cycles span 12 divisions).</li>
+<li>Period T = (12 / 3) &times; (time-base) = 4 &times; time-base.</li>
+<li>Frequency f = 1/T.</li>
+<li>Count vertical divisions from centre line to a peak.</li>
+<li>Peak voltage V_p = (vertical divisions) &times; (Y-gain).</li>
+</ol>
+<div class="callout"><strong>Examiner trap (Jun 2024 Q15a):</strong> Using only one cycle to find T (large % uncertainty) instead of averaging over several cycles. Using 3+ cycles is mandatory for the working mark.</div>
+
+<hr>
+
+<h3 id="def-mic">7. Micrometer — Practical Terms</h3>
+
+<h4>7.1 Parts of a Micrometer</h4>
+<p><strong>Definition:</strong> A precision instrument for measuring small dimensions (0–25 mm) to a resolution of 0.01 mm (10 &mu;m). Parts: (i) anvil (fixed), (ii) spindle (movable), (iii) sleeve (linear scale, 0.5 mm divisions), (iv) thimble (rotating scale, 50 divisions = 0.01 mm each), (v) ratchet (slips at constant pressure to prevent over-tightening).</p>
+<p><strong>WPH12 context (CP7):</strong> Used to measure the diameter d of the resistance wire. Read the sleeve (number of 0.5 mm divisions visible) + the thimble (number of 0.01 mm divisions aligned with the reference line).</p>
+
+<h4>7.2 Correct Micrometer Technique</h4>
+<ol>
+<li>Close the jaws gently using the RATCHET (not the thimble) — over-tightening deforms the wire and the anvils.</li>
+<li>Check the zero reading with jaws closed (zero error check).</li>
+<li>Place the wire between the anvil and spindle, perpendicular to the axis.</li>
+<li>Close the jaws using the ratchet until it slips (1–3 clicks).</li>
+<li>Read the sleeve + thimble.</li>
+<li>Rotate the wire 90&deg; and repeat (to check for non-circular cross-section).</li>
+<li>Move to a different position along the wire and repeat (at least 3 positions, ideally 5).</li>
+<li>Subtract the zero error from every reading.</li>
+<li>Calculate the mean diameter.</li>
+</ol>
+
+<h4>7.3 Reading a Micrometer (Worked Example)</h4>
+<p>Sleeve shows 4.5 mm (4 full mm + the 0.5 mm division visible). Thimble line 23 aligns with the reference. Reading = 4.5 + (23 &times; 0.01) = 4.5 + 0.23 = <strong>4.73 mm</strong>. If the zero error was +0.02 mm, corrected reading = 4.73 &minus; 0.02 = <strong>4.71 mm</strong>.</p>
+
+<hr>
+
+<h3 id="def-protractor">8. Protractor and Laser Alignment — Practical Terms</h3>
+
+<h4>8.1 Protractor Use in CP6</h4>
+<p><strong>Definition:</strong> A circular or semicircular instrument used to measure angles, with a resolution of typically 1&deg;. For CP6, the protractor is placed with its centre at the diffraction grating, and the angle to each diffracted maximum is measured from the straight-through (n = 0) beam.</p>
+<p><strong>Sources of error:</strong></p>
+<ul>
+<li>Parallax — view from directly above.</li>
+<li>The protractor centre is not exactly at the grating position.</li>
+<li>The straight-through beam is not aligned with the protractor&rsquo;s 0&deg; mark (systematic zero error).</li>
+<li>Pencil line has finite thickness, introducing angular uncertainty (~0.5&deg; at D = 30 cm if line is 1 mm thick).</li>
+</ul>
+
+<h4>8.2 Laser Alignment in CP6</h4>
+<p><strong>Definition:</strong> Positioning the laser so that the beam hits the diffraction grating at normal incidence (perpendicular to the grating plane) and the diffracted maxima appear symmetrically. Misalignment causes asymmetric angles and invalidates the n&lambda; = d sin &theta; calculation.</p>
+<p><strong>WPH12 context (CP6):</strong> Verify alignment by checking that the n = +1 and n = &minus;1 maxima are at the same angle on either side. If not, adjust the laser or grating.</p>
+<p><strong>Safety note:</strong> Class 2 lasers (&le; 1 mW visible) are used — safe for accidental eye exposure (blink reflex protects) but never look directly into the beam or specular reflections.</p>
+
+<hr>
+
+<h3 id="def-wire">9. Wire Alignment and Crocodile Clip Placement — CP7 Practical Terms</h3>
+
+<h4>9.1 Wire Alignment in CP7</h4>
+<p><strong>Definition:</strong> The resistance wire must be taut and straight along the metre rule, with the length L measured between two clearly defined points (typically the inside edges of two crocodile clips). A kinked or slack wire gives an incorrect L.</p>
+<p><strong>WPH12 context (CP7):</strong> Hang the wire vertically with a small mass (e.g. 100 g) on the free end to keep it taut, OR tape it to a metre rule with slight tension.</p>
+
+<h4>9.2 Crocodile Clip Placement</h4>
+<p><strong>Definition:</strong> Crocodile clips make electrical contact at a small region (typically 1–2 mm wide), introducing uncertainty in L. The contact length varies with pressure and orientation, leading to random errors in L of &plusmn; 1–2 mm. Mitigation: use the inside edge of each clip as the reference point.</p>
+<p><strong>WPH12 context (CP7):</strong> For L = 1.000 m, an uncertainty of &plusmn; 2 mm gives 0.2% uncertainty in L — usually negligible. But for short L (e.g. 0.100 m), the clip uncertainty dominates (2%).</p>
+
+<hr>
+
+<h3 id="def-glossary">10. Quick-Reference Glossary</h3>
+<table>
+<thead>
+<tr><th>Term</th><th>One-line definition</th><th>WPH12 CP context</th></tr>
+</thead>
+<tbody>
+<tr><td>Parallax error</td><td>Reading error from viewing scale at an angle</td><td>CP4 (oscilloscope), CP6 (protractor)</td></tr>
+<tr><td>Zero error</td><td>Instrument reads non-zero at zero quantity</td><td>CP7 (micrometer), CP8 (ammeter/voltmeter)</td></tr>
+<tr><td>Resolution</td><td>Smallest increment an instrument can display</td><td>All CPs</td></tr>
+<tr><td>Precision</td><td>Tight clustering of repeats</td><td>All CPs</td></tr>
+<tr><td>Accuracy</td><td>Closeness to true value</td><td>All CPs</td></tr>
+<tr><td>Random error</td><td>Unpredictable scatter</td><td>All CPs — reduced by repeats</td></tr>
+<tr><td>Systematic error</td><td>Consistent offset</td><td>CP7 (zero error), CP4 (calibration)</td></tr>
+<tr><td>Repeat readings</td><td>Multiple measurements under same conditions</td><td>All CPs — min 3 repeats</td></tr>
+<tr><td>Anomalous result</td><td>Reading differing significantly from others</td><td>CP7 (diameter), CP8 (V)</td></tr>
+<tr><td>Fair test</td><td>Only independent variable changed</td><td>All CPs</td></tr>
+<tr><td>Independent variable</td><td>Variable deliberately changed</td><td>All CPs — x-axis</td></tr>
+<tr><td>Dependent variable</td><td>Variable measured</td><td>All CPs — y-axis</td></tr>
+<tr><td>Control variable</td><td>Variable kept constant</td><td>All CPs</td></tr>
+<tr><td>Validity</td><td>Experiment measures what it claims</td><td>CP7, CP8</td></tr>
+<tr><td>Reliability</td><td>Consistency of repeats</td><td>All CPs</td></tr>
+<tr><td>Calibration</td><td>Checking instrument against a standard</td><td>CP8 (standard cell)</td></tr>
+<tr><td>Ammeter</td><td>Series, ideal R = 0</td><td>CP7, CP8</td></tr>
+<tr><td>Voltmeter</td><td>Parallel, ideal R = &infin;</td><td>CP7, CP8</td></tr>
+<tr><td>Time-base</td><td>Oscilloscope: time per horizontal division</td><td>CP4, CP5</td></tr>
+<tr><td>Y-gain</td><td>Oscilloscope: voltage per vertical division</td><td>CP4</td></tr>
+<tr><td>Crocodile clip</td><td>Contact for wire length measurement</td><td>CP7</td></tr>
+</tbody>
+</table>
+
+<!-- ======================== PART II — CONCEPTS ======================== -->
+<h2 id="con-why">Part II — Concepts</h2>
+
+<h3 id="con-why">1. Why Practical Vocabulary Matters in WPH12</h3>
+<p>Every WPH12/01 paper has at least one Section B practical-method question worth 6–10 marks (CP4/CP5/CP6/CP7/CP8). The 6-mark QWC question is also often a practical-method question. Practical-vocabulary marks are scattered through these questions:</p>
+<ul>
+<li><strong>2 marks</strong> for identifying independent / dependent / control variables.</li>
+<li><strong>2 marks</strong> for describing how to take repeat readings and handle anomalies.</li>
+<li><strong>2 marks</strong> for naming a source of error and explaining how to reduce it.</li>
+<li><strong>1 mark</strong> for stating the resolution of an instrument.</li>
+<li><strong>1 mark</strong> for stating a safety precaution (especially laser in CP6).</li>
+<li><strong>2–3 marks</strong> for evaluation: validity, reliability, fair test, improvement.</li>
+</ul>
+<p>Total practical-vocabulary marks per WPH12 paper: <strong>~8–12 marks</strong> — about 10–15% of the 80-mark paper. A student who knows the physics content but uses vague language (&ldquo;be careful&rdquo;, &ldquo;use good equipment&rdquo;) loses these marks; a student who uses precise vocabulary scores them.</p>
+
+<hr>
+
+<h3 id="con-parallax">2. Parallax Error in WPH12 Contexts — Correct vs Incorrect Technique</h3>
+
+<h4>2.1 Oscilloscope Screen Reading (CP4, CP5)</h4>
+<p>The oscilloscope screen is a 2D display with depth. When reading the position of a waveform peak against the graticule lines, viewing from the side shifts the apparent position.</p>
+<p><strong>Incorrect technique:</strong> Sitting to one side of the oscilloscope and reading the trace at a ~45&deg; angle. The peak appears at division 4.3 when it is actually at 4.5 — a parallax error of ~0.2 divisions (5% error on a 4 ms wave at 1 ms/div).</p>
+<p><strong>Correct technique:</strong></p>
+<ol>
+<li>Position the eye perpendicular to the centre of the screen, directly in front of the trace.</li>
+<li>Close one eye to remove binocular parallax.</li>
+<li>Use a sharp pencil to mark the peak position (if printing) or read directly.</li>
+<li>Average over 3–5 cycles to reduce random error in judging the peak position.</li>
+</ol>
+<p><strong>Examiner phrasing that scores (CP4, 1 mark):</strong> &ldquo;view the screen perpendicular to the face, eye level with the centre of the trace.&rdquo;</p>
+
+<h4>2.2 Protractor Angle Reading (CP6)</h4>
+<p><strong>Incorrect technique:</strong> Reading the protractor while seated (eye at ~45&deg; to the paper). An angle of 18.5&deg; appears as 19&deg; (parallax shift ~0.5&deg;).</p>
+<p><strong>Correct technique:</strong></p>
+<ol>
+<li>Stand over the protractor so the eye is directly above the angle being read.</li>
+<li>Read where the pencil line crosses the protractor scale, viewing perpendicular to the paper.</li>
+<li>Repeat the reading at 3 different positions and take the mean.</li>
+</ol>
+<p><strong>Examiner phrasing that scores (CP6, 1 mark):</strong> &ldquo;view the protractor from directly above, eye perpendicular to the paper.&rdquo;</p>
+
+<h4>2.3 Meter Scale Reading (CP7, CP8)</h4>
+<p>Analogue meters are particularly prone to parallax. The needle is a small height above the scale.</p>
+<p><strong>Correct technique:</strong></p>
+<ol>
+<li>Position the eye level with the needle (so the needle appears as a thin line, not a shadow).</li>
+<li>Use the mirror strip behind the needle. Close one eye and align the needle with its reflection — when they coincide, parallax is eliminated.</li>
+<li>Read the scale at the point of coincidence.</li>
+</ol>
+<p><strong>Note:</strong> Digital meters do NOT have parallax error (the reading is displayed as digits). This is one reason digital meters are preferred in WPH12 practicals.</p>
+
+<hr>
+
+<h3 id="con-zero">3. Zero Error in Micrometer (CP7) — Step-by-Step</h3>
+<p>The CP7 resistivity question appears in roughly half of all WPH12 papers, and the micrometer zero-error check is the single most commonly tested practical-vocabulary point (6 of 13 papers).</p>
+
+<h4>3.1 Procedure for Checking Zero Error</h4>
+<ol>
+<li><strong>Clean the anvils:</strong> wipe with a clean cloth or lens tissue to remove dust/oil.</li>
+<li><strong>Close the jaws using the ratchet:</strong> turn the ratchet (NOT the thimble) until it slips with 1–3 clicks.</li>
+<li><strong>Read the micrometer:</strong>
+<ul>
+<li>If thimble zero aligns with the sleeve reference AND sleeve shows 0.0 mm &rarr; <strong>no zero error</strong>.</li>
+<li>If thimble reads +2 (0.02 mm aligned) AND sleeve shows 0.0 mm &rarr; <strong>positive zero error of +0.02 mm</strong>.</li>
+<li>If thimble reads &minus;3 (0.47 mm aligned, thimble past zero) AND sleeve shows 0.5 mm &rarr; <strong>negative zero error of &minus;0.03 mm</strong>.</li>
+</ul>
+</li>
+<li><strong>Record the zero error with sign.</strong> Repeat 2–3 times to confirm.</li>
+</ol>
+
+<h4>3.2 Correcting for Zero Error</h4>
+<p>The corrected reading = measured reading &minus; zero error.</p>
+<ul>
+<li><strong>Worked example (positive zero error):</strong> Zero error = +0.02 mm. Measured diameter = 0.27 mm. Corrected = 0.27 &minus; 0.02 = <strong>0.25 mm</strong>.</li>
+<li><strong>Worked example (negative zero error):</strong> Zero error = &minus;0.03 mm. Measured diameter = 0.27 mm. Corrected = 0.27 &minus; (&minus;0.03) = 0.27 + 0.03 = <strong>0.30 mm</strong>.</li>
+</ul>
+
+<h4>3.3 Common Student Errors</h4>
+<ul>
+<li><strong>Error 1:</strong> Saying &ldquo;zero the micrometer&rdquo; without explaining how. Mark scheme requires: (a) &ldquo;turn the thimble using the adjusting spanner&rdquo; (if adjustable) OR (b) &ldquo;subtract the offset from every reading&rdquo; (if not). Just &ldquo;zero it&rdquo; scores 0.</li>
+<li><strong>Error 2:</strong> Adding a positive zero error instead of subtracting. A positive zero error means the micrometer reads HIGH — you must subtract.</li>
+<li><strong>Error 3:</strong> Forgetting to check zero BEFORE taking any measurements.</li>
+<li><strong>Error 4:</strong> Using the thimble to close the jaws (over-tightens) instead of the ratchet.</li>
+</ul>
+
+<h4>3.4 Examiner Phrasing that Scores (CP7)</h4>
+<p><strong>Question (2 marks):</strong> &ldquo;The student did not check the zero reading of the micrometer. State the type of error this introduces and explain how to correct it.&rdquo;</p>
+<p><strong>Full-mark answer:</strong></p>
+<ul>
+<li>Systematic (zero) error (1 mark)</li>
+<li>Check the zero reading with the jaws closed (using the ratchet); if the reading is non-zero, subtract this offset from every diameter reading (1 mark)</li>
+</ul>
+<p><strong>Scores 0:</strong> &ldquo;It causes inaccuracy. The student should be more careful.&rdquo; (vague, no specific error type or correction).</p>
+
+<hr>
+
+<h3 id="con-amm">4. Ammeter Placement (CP7, CP8) — Always in Series</h3>
+
+<h4>4.1 Correct Circuit Diagram for CP8</h4>
+<pre><code>   +--[A]--[variable resistor]--+
+   |                            |
+   |                            |
+   +---------[cell, e, r]-------+
+               |
+             [V]   (voltmeter in PARALLEL across cell terminals)</code></pre>
+<p>The ammeter is in SERIES with the cell and the variable resistor — the same current flows through all three. The voltmeter is in PARALLEL across the cell terminals.</p>
+
+<h4>4.2 Why Series?</h4>
+<p>Current is the same at all points in a series circuit (charge conservation). To measure the current through the cell, the ammeter must be in the same single loop.</p>
+<p>If the ammeter were in parallel with the cell:</p>
+<ul>
+<li>The ammeter (R_A &lt; 1 &Omega;) would short-circuit the cell.</li>
+<li>Almost all current would flow through the ammeter, not through the variable resistor.</li>
+<li>The reading would NOT be the current through the variable resistor.</li>
+</ul>
+
+<h4>4.3 Ideal Ammeter — Zero Resistance</h4>
+<p>An ideal ammeter has zero resistance so it does not reduce the current. A real ammeter has R_A ~ 0.1–1 &Omega;, which adds to total resistance and slightly reduces current. For accurate CP8 results, R_A should be much less than r.</p>
+
+<h4>4.4 Worked Example — Effect of Ammeter Resistance</h4>
+<p>A cell has &epsilon; = 1.5 V, r = 1.0 &Omega;. Variable resistor = 5.0 &Omega;. Ammeter has R_A = 0.5 &Omega;.</p>
+<ul>
+<li>True current (no ammeter): I = 1.5 / 6.0 = 0.250 A.</li>
+<li>Measured current: I = 1.5 / 6.5 = 0.231 A.</li>
+<li>The ammeter reduces the current by 7.6% — significant.</li>
+</ul>
+<p>If R_A were 0.01 &Omega; (high-quality ammeter): I = 1.5 / 6.01 = 0.2496 A — only 0.16% reduction. The ideal-ammeter approximation is valid.</p>
+
+<hr>
+
+<h3 id="con-volt">5. Voltmeter Placement (CP7, CP8) — Always in Parallel</h3>
+
+<h4>5.1 Why Parallel?</h4>
+<p>Potential difference is the energy per unit charge between two points. The voltmeter must be connected across those two points — i.e. in parallel with the component.</p>
+<p>If the voltmeter were in series with the cell:</p>
+<ul>
+<li>The voltmeter (R_V ~ 10 k&Omega; – 10 M&Omega;) would dominate the circuit resistance.</li>
+<li>Almost no current would flow.</li>
+<li>The reading would NOT reflect the effect of the variable resistor.</li>
+</ul>
+
+<h4>5.2 Ideal Voltmeter — Infinite Resistance</h4>
+<p>An ideal voltmeter has infinite resistance so it draws no current. A real voltmeter has a large but finite resistance — it draws a small current, slightly reducing terminal p.d. For accurate CP8 results, R_V should be much greater than R_var.</p>
+
+<h4>5.3 Worked Example — Effect of Voltmeter Resistance</h4>
+<p>&epsilon; = 1.5 V, r = 1.0 &Omega;. Variable resistor = 100 &Omega;. R_V = 10 k&Omega;.</p>
+<ul>
+<li>Effective external resistance: R_eff = (100 &times; 10000) / 10100 = 99.0 &Omega;.</li>
+<li>Current: I = 1.5 / 100.0 = 0.0150 A.</li>
+<li>Terminal p.d.: V = 1.5 &minus; 0.0150 &times; 1.0 = 1.485 V — negligible error (R_V >> R_var).</li>
+</ul>
+<p>But if R_V = 1 k&Omega; (poor voltmeter) and r = 10 &Omega;: the voltmeter causes a 1% error — significant.</p>
+
+<h4>5.4 Common Student Errors (CP8)</h4>
+<ul>
+<li><strong>Drawing the voltmeter in series with the cell</strong> — very common (~30% of scripts). This breaks the circuit.</li>
+<li><strong>Drawing the voltmeter across the variable resistor instead of the cell.</strong> This measures V across R_var, not the terminal p.d.</li>
+<li><strong>Drawing the ammeter in parallel with the cell.</strong> This short-circuits the ammeter.</li>
+</ul>
+
+<hr>
+
+<h3 id="con-repeats">6. Repeat Readings in Each Core Practical</h3>
+
+<h4>6.1 CP4 — Speed of Sound (Oscilloscope Method)</h4>
+<p><strong>What to repeat:</strong> The position of the microphone for two successive antinodes. Distance = &lambda;/2.</p>
+<p><strong>Why repeat:</strong> The &ldquo;in-phase&rdquo; position is judged by eye — random error of &plusmn; 1–2 mm. Repeats reduce this.</p>
+<p><strong>How to repeat:</strong></p>
+<ol>
+<li>Find an in-phase position; record x_1.</li>
+<li>Move to the next in-phase position; record x_2.</li>
+<li>&lambda;/2 = x_2 &minus; x_1.</li>
+<li>Repeat steps 1–3 at least 3 times.</li>
+<li>Better: measure across N antinode intervals (N = 4 or 5) and divide by N — reduces random error by factor N.</li>
+</ol>
+
+<h4>6.2 CP5 — Vibrating String Frequency at Each Length</h4>
+<p><strong>What to repeat:</strong> The fundamental frequency f at each length L.</p>
+<p><strong>Why repeat:</strong> Tuning to the fundamental by ear — random error of &plusmn; 5–10 Hz.</p>
+<p><strong>How to repeat:</strong></p>
+<ol>
+<li>Adjust signal generator / bridge position until the fundamental is heard.</li>
+<li>Read T from oscilloscope; f = 1/T.</li>
+<li>Repeat the tuning 3 times (re-tune each time — do NOT just copy the same reading).</li>
+<li>Take the mean f. Repeat for 6–8 different values of L.</li>
+</ol>
+
+<h4>6.3 CP6 — Diffraction Grating Angle for Each Order</h4>
+<p><strong>What to repeat:</strong> The angle &theta; for each order n.</p>
+<p><strong>Why repeat:</strong> Aligning the protractor with the diffracted ray has random error of &plusmn; 0.5&deg;.</p>
+<p><strong>How to repeat:</strong></p>
+<ol>
+<li>Mark the centre of the nth-order maximum on the paper.</li>
+<li>Draw a line from grating centre to the dot; measure &theta;.</li>
+<li>Repeat marking 3 times (re-identify the maximum each time).</li>
+<li>Take the mean &theta;. Also measure on both sides and average to reduce systematic misalignment.</li>
+</ol>
+
+<h4>6.4 CP7 — Wire Diameter at 3+ Points Along the Wire</h4>
+<p><strong>What to repeat:</strong> Diameter d at multiple positions AND multiple orientations.</p>
+<p><strong>Why repeat:</strong> Wire may have non-circular cross-section (~5% elliptical) and diameter may vary along the length (~2–5%).</p>
+<p><strong>How to repeat:</strong></p>
+<ol>
+<li>Measure d at position 1, orientation A (0&deg;).</li>
+<li>Rotate wire 90&deg; (orientation B); measure d again.</li>
+<li>Move to position 2, repeat. Then position 3.</li>
+<li>Take the mean of all 6 readings (3 positions &times; 2 orientations).</li>
+</ol>
+<p><strong>Examiner note:</strong> &ldquo;Measure the diameter at multiple positions and orientations, take the mean&rdquo; is the most common CP7 mark-scheme phrase.</p>
+
+<h4>6.5 CP8 — V and I for Each Resistance Setting</h4>
+<p><strong>What to repeat:</strong> V and I for each setting of the variable resistor.</p>
+<p><strong>Why repeat:</strong> Cell polarises — e.m.f. drops and r increases over time.</p>
+<p><strong>How to repeat:</strong></p>
+<ol>
+<li>Set variable resistor; wait 5 seconds for stabilisation.</li>
+<li>Record V and I.</li>
+<li>Switch off for 30 seconds (let cell recover).</li>
+<li>Repeat steps 1–3 twice more; take mean V and mean I.</li>
+<li>Change variable resistor and repeat for 6–8 different settings.</li>
+<li>Plot V (y-axis) vs I (x-axis); gradient = &minus;r, y-intercept = &epsilon;.</li>
+</ol>
+
+<hr>
+
+<h3 id="con-controls">7. Control Variables — Per CP</h3>
+<table>
+<thead>
+<tr><th>CP</th><th>Independent variable</th><th>Dependent variable</th><th>Key control variables</th></tr>
+</thead>
+<tbody>
+<tr><td>CP4 (speed of sound)</td><td>Microphone position</td><td>Distance between antinodes (&rarr; &lambda;)</td><td>Frequency f; temperature; same oscilloscope settings</td></tr>
+<tr><td>CP5 (vibrating string)</td><td>Length L (or T, or &mu;)</td><td>Fundamental frequency f</td><td>T (if L is independent) and &mu;; temperature</td></tr>
+<tr><td>CP6 (diffraction grating)</td><td>Order n (or grating spacing d)</td><td>Angle &theta;</td><td>Wavelength &lambda; (same laser); distance D; same grating</td></tr>
+<tr><td>CP7 (resistivity)</td><td>Wire length L</td><td>Resistance R</td><td>Diameter d (micrometer mean); temperature (low current); same wire</td></tr>
+<tr><td>CP8 (e.m.f./internal r)</td><td>Current I (via variable resistor)</td><td>Terminal p.d. V</td><td>Same cell; temperature; cell recovery; same meters</td></tr>
+</tbody>
+</table>
+<div class="callout"><strong>Examiner tip:</strong> If asked to &ldquo;state one control variable&rdquo; (1 mark), pick the one with the LARGEST physical effect. For CP7, &ldquo;temperature of the wire&rdquo; is the best answer. For CP4, &ldquo;frequency of the signal generator&rdquo; is best.</div>
+
+<hr>
+
+<h3 id="con-anomalies">8. Identifying Anomalies in Data Tables — Worked Examples</h3>
+
+<h4>8.1 Example 1 (CP7 Diameter)</h4>
+<p>Diameter readings (mm): 0.24, 0.25, 0.24, 0.39, 0.25, 0.24, 0.25.</p>
+<p><strong>Identification:</strong> 0.39 mm is anomalous — differs from others by 0.14–0.15 mm, while others differ by only 0.01 mm. It is 14&times; the spread of the others.</p>
+<p><strong>Likely cause:</strong> Reading at a kink in the wire, or thimble misread (0.39 instead of 0.29).</p>
+<p><strong>Action:</strong> Exclude 0.39. Recalculate:</p>
+<ul>
+<li>Mean = (0.24 + 0.25 + 0.24 + 0.25 + 0.24 + 0.25) / 6 = 0.245 mm.</li>
+<li>Range = 0.25 &minus; 0.24 = 0.01 mm. Absolute uncertainty = &frac12; &times; 0.01 = 0.005 mm.</li>
+<li>Result: <strong>d = 0.245 &plusmn; 0.005 mm</strong> (or 0.25 &plusmn; 0.01 mm to 2 sig figs).</li>
+</ul>
+<p><strong>If 0.39 were included (wrong):</strong> Mean = 0.266 mm; uncertainty = &plusmn; 0.075 mm — the mean is biased high and uncertainty is 15&times; larger.</p>
+
+<h4>8.2 Example 2 (CP8 Voltage)</h4>
+<p>V readings (V): 1.48, 1.49, 1.47, 1.02, 1.48, 1.49.</p>
+<p><strong>Identification:</strong> 1.02 V is anomalous — differs from others by ~0.46 V; others differ by only 0.02 V.</p>
+<p><strong>Likely cause:</strong> Cell momentarily disconnected, or variable resistor bumped.</p>
+<p><strong>Action:</strong> Exclude 1.02 V. Mean = (1.48 + 1.49 + 1.47 + 1.48 + 1.49) / 5 = 1.482 V. Range = 0.02 V. Result: <strong>V = 1.48 &plusmn; 0.01 V</strong>.</p>
+
+<h4>8.3 Example 3 (CP6 Angle)</h4>
+<p>&theta; readings for n = 1 (degrees): 18.2, 18.4, 18.3, 22.0, 18.3.</p>
+<p><strong>Identification:</strong> 22.0&deg; is anomalous — differs by ~3.7&deg; while others differ by 0.2&deg;.</p>
+<p><strong>Action:</strong> Exclude 22.0&deg;. Mean = 18.3&deg;. Range = 0.2&deg;. Result: <strong>&theta; = 18.3 &plusmn; 0.1&deg;</strong>.</p>
+
+<h4>8.4 Borderline Cases — When NOT to Exclude</h4>
+<p>Readings: 0.24, 0.25, 0.24, 0.27, 0.25, 0.24, 0.25.</p>
+<p>0.27 differs from the mean (0.245) by 0.025 mm. Std dev = 0.005 mm (of others). 2 std dev = 0.010 mm. 0.27 is 5 std dev above &rarr; <strong>anomalous; exclude it</strong>.</p>
+<p>Readings: 0.24, 0.25, 0.26, 0.24, 0.25, 0.24, 0.25.</p>
+<p>0.26 is within 2 std dev of the mean &rarr; <strong>NOT anomalous; keep it</strong>.</p>
+<p><strong>Rule of thumb:</strong> If in doubt, keep the reading. Excluding data without strong justification is itself an error.</p>
+
+<hr>
+
+<h3 id="con-fair">9. Fair Test — What It Means and Why It Matters</h3>
+
+<h4>9.1 The Principle</h4>
+<p>A fair test ensures that any observed change in the dependent variable is CAUSED BY the change in the independent variable — not by a confounding variable. If two variables change simultaneously, you cannot determine which caused the change.</p>
+
+<h4>9.2 Worked Example — CP5 (Vibrating String)</h4>
+<p><strong>Investigation:</strong> How does the fundamental frequency f depend on length L?</p>
+<p><strong>Correct fair test:</strong> Independent = L; Dependent = f; Control = T (same mass), &mu; (same string), temperature.</p>
+<p><strong>Incorrect (not a fair test):</strong> Student varies L AND adds more mass to the hanger. When L decreases and f increases, the student cannot tell whether f increased because L decreased OR because T increased. The conclusion is INVALIDATED.</p>
+<p><strong>Examiner phrasing (CP5, 2 marks):</strong> &ldquo;Only L is changed; T and &mu; are held constant, so any change in f is due to L alone.&rdquo;</p>
+
+<h4>9.3 Worked Example — CP7 (Resistivity)</h4>
+<p><strong>Investigation:</strong> How does resistance R depend on length L?</p>
+<p><strong>Correct fair test:</strong> Independent = L; Dependent = R; Control = d (micrometer, same wire), T (low current), material, same apparatus.</p>
+<p><strong>Incorrect (not a fair test):</strong> Student uses high current so the wire heats up. As L increases, R increases both because L increased AND because &rho; increased with temperature. The R-vs-L graph is not linear — the deviation indicates fair-test failure.</p>
+<p><strong>Mitigation:</strong> Use low current (&lt; 0.5 A); let the wire cool between readings; switch off between readings.</p>
+
+<h4>9.4 Why Fair Test Matters for the Mark Scheme</h4>
+<p>In the 6-mark QWC practical-method question, the fair-test criterion is implicit:</p>
+<ol>
+<li>State the independent variable (1 mark).</li>
+<li>State the dependent variable and how it is measured (1 mark).</li>
+<li>State 2+ control variables and how each is held constant (2 marks).</li>
+<li>Describe the measurement procedure (1 mark).</li>
+<li>Describe the analysis — graph, gradient, equation (1 mark).</li>
+</ol>
+<p>A student who does NOT identify and control variables loses 2 marks immediately.</p>
+
+<hr>
+
+<h3 id="con-errors">10. Common Examiner Errors — Mark Scheme Rejections</h3>
+
+<h4>10.1 &ldquo;Vague Improvement Answers&rdquo; (11 of 13 papers)</h4>
+<p><strong>Student writes:</strong> &ldquo;Use better equipment.&rdquo; / &ldquo;Be more careful.&rdquo; / &ldquo;Take more readings.&rdquo;</p>
+<p><strong>Why it scores 0:</strong> No specific equipment named, no explanation of HOW the improvement reduces uncertainty/error.</p>
+<p><strong>Full-mark version:</strong> &ldquo;Use a light gate instead of a stopwatch (1 mark) — this reduces the timing uncertainty from &plusmn; 0.2 s (human reaction) to &plusmn; 0.001 s (light gate resolution) (1 mark).&rdquo;</p>
+
+<h4>10.2 &ldquo;Identifying the Wrong Variable Type&rdquo; (5 of 13 papers)</h4>
+<p><strong>Student writes:</strong> &ldquo;Independent variable: resistivity.&rdquo; / &ldquo;Dependent variable: the gradient.&rdquo;</p>
+<p><strong>Why it scores 0:</strong> Resistivity is the CALCULATED quantity, not a measured variable. The gradient is derived from the graph.</p>
+<p><strong>Fix:</strong> Independent = what you CHANGE (L). Dependent = what you MEASURE with an instrument (R).</p>
+
+<h4>10.3 &ldquo;Confusing Precision and Accuracy&rdquo; (4 of 13 papers)</h4>
+<p><strong>Student writes:</strong> &ldquo;Repeating improves accuracy.&rdquo;</p>
+<p><strong>Why it scores 0:</strong> Repeating improves PRECISION (reduces random error), not accuracy.</p>
+<p><strong>Correct:</strong> &ldquo;Repeating reduces the effect of random errors (1 mark) and allows anomalies to be identified (1 mark).&rdquo;</p>
+
+<h4>10.4 &ldquo;Drawing the Voltmeter in Series&rdquo; (3 of 13 papers)</h4>
+<p><strong>Why it scores 0:</strong> A voltmeter in series breaks the circuit (almost no current flows). Voltmeter = parallel; ammeter = series.</p>
+
+<h4>10.5 &ldquo;Not Naming the Specific Control Variable&rdquo; (8 of 13 papers)</h4>
+<p><strong>Student writes:</strong> &ldquo;Keep everything else the same.&rdquo;</p>
+<p><strong>Why it scores 0:</strong> Must name a SPECIFIC variable (e.g. &ldquo;temperature of the wire&rdquo;).</p>
+
+<h4>10.6 &ldquo;Not Checking Zero Error Before Readings&rdquo; (4 of 13 papers, CP7)</h4>
+<p><strong>Correct:</strong> &ldquo;First, close the jaws (using the ratchet) and check the zero reading. Then take diameter measurements. Subtract the zero error (if any) from each reading.&rdquo;</p>
+
+<h4>10.7 &ldquo;Excluding a Reading Without Justification&rdquo; (3 of 13 papers)</h4>
+<p><strong>Student writes:</strong> &ldquo;I exclude the 0.39 mm reading because it is wrong.&rdquo;</p>
+<p><strong>Fix:</strong> &ldquo;0.39 mm differs from the other readings (which range from 0.24 to 0.25 mm) by more than the range of the other readings.&rdquo;</p>
+
+<hr>
+
+<h3 id="con-6mark">11. Worked Example — Full 6-Mark CP7 Method Question</h3>
+<p><strong>Question (6 marks, CP7, Oct 2019 Q13 style):</strong> Describe how you would determine the resistivity &rho; of a metal wire using a micrometer, a metre rule, an ohmmeter, and a power supply.</p>
+<p><strong>Full-mark L3 answer:</strong></p>
+<ol>
+<li><strong>Independent variable:</strong> the length L of the wire (varied by moving one crocodile clip, 0.100 m to 1.000 m in 0.100 m steps).</li>
+<li><strong>Dependent variable:</strong> the resistance R, measured using an ohmmeter connected across the wire between the two crocodile clips.</li>
+<li><strong>Control variables:</strong> the diameter d (same wire — measured at 3 positions &times; 2 orientations with micrometer, mean taken); the temperature of the wire (low current, switch off between readings); the material.</li>
+<li><strong>Micrometer zero-error check:</strong> before measuring d, close jaws using the ratchet and check the zero reading. If non-zero, subtract this offset from every diameter reading.</li>
+<li><strong>Procedure:</strong> Measure d at 3 positions &times; 2 orientations (6 readings); take the mean. Set L = 0.100 m, record R. Repeat for L = 0.200, 0.300, &hellip;, 1.000 m. Repeat R 3 times at each L and take the mean.</li>
+<li><strong>Analysis:</strong> Plot R (y-axis) vs L (x-axis). Gradient = &rho;/A. Calculate &rho; = gradient &times; A = gradient &times; &pi;d&sup2;/4.</li>
+</ol>
+<p><strong>Mark breakdown:</strong> B1: independent and dependent variables. B1: control variables named (temperature AND diameter/material). M1: micrometer zero-error check AND measurement at multiple positions/orientations. M1: range of L (&ge; 6 readings), repeat readings. M1: graph of R vs L. B1: gradient = &rho;/A &rarr; &rho; = gradient &times; &pi;d&sup2;/4. <strong>Total: 6/6.</strong></p>
+
+<hr>
+
+<h3 id="con-tree">12. Quick Reference: Practical Vocab Decision Tree</h3>
+<pre><code>When you see a practical-method question, ask:
+
+1. What is the INDEPENDENT variable?
+   +-- What does the experimenter CHANGE? -&gt; x-axis
+
+2. What is the DEPENDENT variable?
+   +-- What does the experimenter MEASURE with an instrument? -&gt; y-axis
+
+3. What are the CONTROL variables (name 2+)?
+   +-- What else could affect the dependent variable? Hold these constant.
+
+4. What is the RESOLUTION of each instrument?
+   +-- State in mm / deg / V / A / s
+
+5. How are REPEAT READINGS taken?
+   +-- "Repeat 3 times and take the mean" + identify anomalies + 1/2 x range
+
+6. What is the ZERO ERROR check (if micrometer, ammeter, voltmeter)?
+   +-- Check before measurement, subtract offset from every reading
+
+7. How is PARALLAX avoided?
+   +-- "View perpendicular to the scale" - eye level, mirror scale
+
+8. What is the FAIR TEST criterion?
+   +-- Only the independent variable changes; controls held constant
+
+9. Is the experiment VALID?
+   +-- Does it actually measure what it claims?
+
+10. Is the experiment RELIABLE?
+    +-- Small range of repeats = reliable. No repeats = cannot assess.
+
+11. What is one SOURCE OF ERROR and how is it reduced?
+    +-- Name specific error + specific reduction (NOT "be more careful")
+
+12. What is one SAFETY precaution (especially CP6 laser)?
+    +-- "Do not look directly into the laser beam; wear laser safety goggles"</code></pre>
+
+<!-- ======================== PART III — EXAM CONNECTIONS ======================== -->
+<h2 id="exam-freq">Part III — Exam Connections</h2>
+
+<h3 id="exam-freq">1. How Practical Vocabulary Is Tested — Frequency Table</h3>
+<table>
+<thead>
+<tr><th>Practical-vocab skill</th><th>Papers tested</th><th>Avg marks</th><th>Section</th></tr>
+</thead>
+<tbody>
+<tr><td>State independent / dependent / control variables</td><td>11/13</td><td>2.0</td><td>B (CP4-CP8 method)</td></tr>
+<tr><td>Describe how to take repeat readings</td><td>9/13</td><td>1.5</td><td>B (any CP)</td></tr>
+<tr><td>Identify anomaly and explain exclusion</td><td>7/13</td><td>1.5</td><td>B (data table)</td></tr>
+<tr><td>State source of error + reduction</td><td>11/13</td><td>2.0</td><td>B (evaluation)</td></tr>
+<tr><td>State resolution of an instrument</td><td>6/13</td><td>1.0</td><td>A or B</td></tr>
+<tr><td>Describe zero-error check</td><td>6/13</td><td>1.7</td><td>B (CP7, CP8)</td></tr>
+<tr><td>Describe parallax avoidance</td><td>4/13</td><td>1.0</td><td>B (CP4, CP6)</td></tr>
+<tr><td>Describe ammeter / voltmeter placement</td><td>8/13</td><td>1.5</td><td>B (CP7, CP8)</td></tr>
+<tr><td>Describe improvement (specific + reasoning)</td><td>11/13</td><td>2.0</td><td>B (evaluation)</td></tr>
+<tr><td>State validity / reliability</td><td>4/13</td><td>2.0</td><td>B (evaluation)</td></tr>
+<tr><td>State safety precaution</td><td>5/13</td><td>1.0</td><td>B (CP6, CP8)</td></tr>
+<tr><td>Describe fair test</td><td>3/13</td><td>1.5</td><td>B (CP5, CP7)</td></tr>
+</tbody>
+</table>
+<div class="callout"><strong>Insight:</strong> Practical vocabulary accounts for ~18 marks per WPH12 paper — about 22% of the 80-mark paper. A student who knows the physics content but cannot use precise practical vocabulary loses ~18 marks — typically the difference between A* and A grades.</div>
+
+<hr>
+
+<h3 id="exam-map">2. Definition-by-Definition Exam Mapping</h3>
+
+<h4>2.1 Independent / Dependent / Control Variables</h4>
+<p><strong>How tested (11/13 papers):</strong></p>
+<ul>
+<li>&ldquo;State the independent variable in this experiment&rdquo; (1 mark)</li>
+<li>&ldquo;State one control variable&rdquo; (1 mark — extremely common)</li>
+<li>&ldquo;State the dependent variable and how it is measured&rdquo; (2 marks)</li>
+</ul>
+<p><strong>Full-mark answer requirements:</strong></p>
+<ul>
+<li>Independent variable: a quantity the experimenter deliberately CHANGES. Must be a directly set quantity (e.g. L, R_var, T, f), NOT a calculated quantity.</li>
+<li>Dependent variable: a quantity the experimenter MEASURES with an instrument (e.g. R from ohmmeter, V from voltmeter, f from oscilloscope, &theta; from protractor). NOT a calculated quantity like &rho;, &epsilon;, r.</li>
+<li>Control variable: a SPECIFIC named quantity held constant (e.g. &ldquo;temperature of the wire&rdquo;, not &ldquo;everything else&rdquo;).</li>
+</ul>
+<p><strong>Common pitfall:</strong> Students state &ldquo;the independent variable is the resistivity&rdquo; — &rho; is the calculated result, not a variable the experimenter changes.</p>
+
+<h4>2.2 Repeat Readings</h4>
+<p><strong>How tested (9/13 papers):</strong></p>
+<ul>
+<li>&ldquo;Suggest why the student repeated the readings and took a mean&rdquo; (2 marks)</li>
+<li>&ldquo;Describe how the student should take repeat readings&rdquo; (2 marks)</li>
+</ul>
+<p><strong>Full-mark answer:</strong></p>
+<ul>
+<li>To reduce the effect of random errors (1 mark)</li>
+<li>AND to allow identification of anomalies / calculate uncertainty from &frac12; &times; range (1 mark)</li>
+</ul>
+<p><strong>Common pitfall:</strong> Saying &ldquo;to make it accurate&rdquo; — examiners explicitly reject this. Repeats improve PRECISION, not accuracy.</p>
+
+<h4>2.3 Anomaly Identification</h4>
+<p><strong>How tested (7/13 papers):</strong></p>
+<ul>
+<li>&ldquo;Identify the anomalous reading&rdquo; (1 mark)</li>
+<li>&ldquo;Explain whether this reading should be included in the mean&rdquo; (1 mark)</li>
+</ul>
+<p><strong>Full-mark answer:</strong></p>
+<ul>
+<li>Name the anomalous value (e.g. &ldquo;0.39 mm&rdquo;)</li>
+<li>Justify: &ldquo;differs from the other readings by more than the range of the other readings&rdquo;</li>
+<li>State action: &ldquo;exclude from the mean AND from the range; recalculate&rdquo;</li>
+</ul>
+<p><strong>Common pitfall:</strong> Excluding a reading within normal spread. Only exclude clear outliers.</p>
+
+<h4>2.4 Resolution of an Instrument</h4>
+<p><strong>How tested (6/13 papers):</strong></p>
+<ul>
+<li>&ldquo;State the resolution of the voltmeter&rdquo; (1 mark)</li>
+<li>&ldquo;State the resolution of the micrometer&rdquo; (1 mark)</li>
+<li>&ldquo;State the reading on the oscilloscope and its uncertainty&rdquo; (2 marks)</li>
+</ul>
+<p><strong>Full-mark answer:</strong></p>
+<ul>
+<li>Digital instrument: smallest displayed increment (e.g. 0.01 V).</li>
+<li>Analogue instrument: half the smallest scale division (e.g. &plusmn; 0.5 mm for a metre rule).</li>
+<li>Oscilloscope: the time-base (ms/div) or Y-gain (V/div) setting.</li>
+</ul>
+
+<h4>2.5 Zero Error</h4>
+<p><strong>How tested (6/13 papers, CP7-heavy):</strong></p>
+<ul>
+<li>&ldquo;State the type of error and explain how to correct it&rdquo; (2 marks)</li>
+<li>&ldquo;Explain why the student should check the zero reading&rdquo; (2 marks)</li>
+</ul>
+<p><strong>Full-mark answer:</strong> Systematic (zero) error (1 mark); check the zero reading with jaws closed; subtract the offset from every reading (1 mark).</p>
+<p><strong>Common pitfall:</strong> Saying &ldquo;zero the micrometer&rdquo; without explaining how. Either &ldquo;use the adjusting spanner&rdquo; (if adjustable) OR &ldquo;subtract the offset&rdquo; (if not). Vague &ldquo;zero it&rdquo; scores 0.</p>
+
+<h4>2.6 Parallax Error</h4>
+<p><strong>How tested (4/13 papers):</strong></p>
+<ul>
+<li>&ldquo;State how the student should position their eye&rdquo; (1 mark)</li>
+<li>&ldquo;State one source of error and how to reduce it&rdquo; (2 marks)</li>
+</ul>
+<p><strong>Full-mark answer:</strong> Identify parallax (1 mark); &ldquo;view the screen / protractor perpendicular to the face / from directly above&rdquo; (1 mark).</p>
+
+<h4>2.7 Ammeter / Voltmeter Placement</h4>
+<p><strong>How tested (8/13 papers):</strong></p>
+<ul>
+<li>&ldquo;Draw a circuit diagram&rdquo; (3 marks)</li>
+<li>&ldquo;Explain why the ammeter must be in series&rdquo; (1 mark)</li>
+<li>&ldquo;Explain why an ideal voltmeter has infinite resistance&rdquo; (2 marks)</li>
+</ul>
+<p><strong>Full-mark answer (ammeter in series):</strong> The ammeter measures current; current must be the same through the ammeter and the component, so they must be in series. An ideal ammeter has zero resistance so it does not reduce the current.</p>
+<p><strong>Full-mark answer (voltmeter in parallel):</strong> The voltmeter measures p.d.; it must be across the component (in parallel). An ideal voltmeter has infinite resistance so it draws no current and does not alter the circuit.</p>
+<p><strong>Common pitfall:</strong> Drawing the voltmeter in series — the most common circuit-drawing error.</p>
+
+<h4>2.8 Source of Error and Reduction</h4>
+<p><strong>How tested (11/13 papers):</strong></p>
+<ul>
+<li>&ldquo;State one source of error and suggest how it can be reduced&rdquo; (2 marks)</li>
+<li>&ldquo;Suggest two improvements&rdquo; (2 marks)</li>
+</ul>
+<p><strong>Full-mark answer structure (always 2 marks):</strong></p>
+<ol>
+<li>Name the SPECIFIC error or improvement (1 mark)</li>
+<li>Explain HOW it reduces the error / uncertainty (1 mark)</li>
+</ol>
+<p><strong>Common pitfall:</strong> Vague answers like &ldquo;use better equipment&rdquo;, &ldquo;be more careful&rdquo; — all score 0.</p>
+
+<h4>2.9 Validity and Reliability</h4>
+<p><strong>How tested (4/13 papers):</strong></p>
+<ul>
+<li>&ldquo;State whether the conclusion is valid. Justify&rdquo; (2 marks)</li>
+<li>&ldquo;Explain whether the results are reliable&rdquo; (2 marks)</li>
+</ul>
+<p><strong>Common pitfall:</strong> Confusing validity and reliability. Validity = &ldquo;does it measure what it claims?&rdquo; (systematic errors). Reliability = &ldquo;do repeats agree?&rdquo; (random error spread).</p>
+
+<h4>2.10 Fair Test</h4>
+<p><strong>How tested (3/13 papers):</strong></p>
+<ul>
+<li>&ldquo;Explain why this experiment is a fair test&rdquo; (2 marks)</li>
+</ul>
+<p><strong>Full-mark answer:</strong> Only the independent variable is changed (1 mark); all control variables are held constant (1 mark).</p>
+
+<h4>2.11 Safety (CP6 Laser, CP8 Electrical)</h4>
+<p><strong>How tested (5/13 papers):</strong></p>
+<ul>
+<li>&ldquo;State one safety precaution when using the laser&rdquo; (1 mark, CP6)</li>
+<li>&ldquo;State one safety precaution in this electrical experiment&rdquo; (1 mark, CP8)</li>
+</ul>
+<p><strong>Full-mark answers:</strong></p>
+<ul>
+<li>CP6 laser: &ldquo;Do not look directly into the laser beam&rdquo; / &ldquo;wear laser safety goggles&rdquo; / &ldquo;place a stop behind the screen&rdquo;</li>
+<li>CP8 electrical: &ldquo;Switch off if current exceeds X A&rdquo; / &ldquo;do not touch bare wires&rdquo; / &ldquo;use a fuse&rdquo;</li>
+</ul>
+
+<hr>
+
+<h3 id="exam-cmd">3. Command Word Mapping for Practical-Vocabulary Questions</h3>
+<table>
+<thead>
+<tr><th>Command word</th><th>What the examiner wants</th><th>Marks</th><th>Context</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>State</strong></td><td>A single value, term, or named variable; no working</td><td>1</td><td>&ldquo;State the resolution&rdquo; / &ldquo;State one control variable&rdquo;</td></tr>
+<tr><td><strong>Describe</strong></td><td>A procedure or method, in sequence, naming apparatus</td><td>2–4</td><td>&ldquo;Describe how to determine resistivity&rdquo;</td></tr>
+<tr><td><strong>Explain</strong></td><td>Cause-and-effect reasoning; &ldquo;why&rdquo;</td><td>2</td><td>&ldquo;Explain why the ammeter must be in series&rdquo;</td></tr>
+<tr><td><strong>Suggest</strong></td><td>A plausible improvement or source of error; not in the spec</td><td>1–2</td><td>&ldquo;Suggest one source of error and how to reduce it&rdquo;</td></tr>
+<tr><td><strong>Identify</strong></td><td>Pick out a specific item from data</td><td>1</td><td>&ldquo;Identify the anomalous reading&rdquo;</td></tr>
+<tr><td><strong>Calculate</strong></td><td>Show working, numerical answer</td><td>2–3</td><td>&ldquo;Calculate the mean diameter and its uncertainty&rdquo;</td></tr>
+<tr><td><strong>Discuss</strong></td><td>Give arguments for and against; evaluate</td><td>2–3</td><td>&ldquo;Discuss whether the conclusion is valid&rdquo;</td></tr>
+<tr><td><strong>Evaluate</strong></td><td>Judge the experiment; comment on limitations and improvements</td><td>3–4</td><td>&ldquo;Evaluate the experiment. Suggest two improvements.&rdquo;</td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<h3 id="exam-themes">4. Recurring Examiner Report Themes (Jan 2019–Jun 2025)</h3>
+
+<h4>4.1 &ldquo;Vague improvement answers&rdquo; (11/13 papers)</h4>
+<p>Students write &ldquo;use better equipment&rdquo; or &ldquo;be more careful&rdquo; — both score 0. <strong>Fix:</strong> always name a SPECIFIC improvement AND explain HOW it reduces the error/uncertainty. Use the 2-mark structure: (named improvement) + (mechanistic/quantitative explanation).</p>
+
+<h4>4.2 &ldquo;Wrong variable identification&rdquo; (5/13 papers)</h4>
+<p>Students state the calculated quantity (&rho;, &epsilon;, r) as the independent or dependent variable. <strong>Fix:</strong> the independent variable is what you CHANGE; the dependent variable is what you MEASURE with an instrument.</p>
+
+<h4>4.3 &ldquo;Confused precision and accuracy&rdquo; (4/13 papers)</h4>
+<p>Students write &ldquo;repeats improve accuracy&rdquo; — examiners explicitly reject this. <strong>Fix:</strong> use &ldquo;repeats reduce the effect of random errors&rdquo; verbatim.</p>
+
+<h4>4.4 &ldquo;Voltmeter drawn in series&rdquo; (3/13 papers)</h4>
+<p>~30% of scripts have the voltmeter in series with the cell. <strong>Fix:</strong> memorise the CP8 circuit — voltmeter in PARALLEL; ammeter in SERIES.</p>
+
+<h4>4.5 &ldquo;Control variable not specific&rdquo; (8/13 papers)</h4>
+<p>Students write &ldquo;keep everything else the same&rdquo;. <strong>Fix:</strong> name the SPECIFIC control variable (e.g. &ldquo;temperature of the wire&rdquo;, &ldquo;tension in the string&rdquo;).</p>
+
+<h4>4.6 &ldquo;Zero error not checked before measurement&rdquo; (4/13 papers, CP7)</h4>
+<p>Students describe checking AFTER taking readings. <strong>Fix:</strong> check BEFORE any measurements — describe the order explicitly.</p>
+
+<h4>4.7 &ldquo;Anomaly excluded without justification&rdquo; (3/13 papers)</h4>
+<p>Students write &ldquo;I exclude 0.39 mm because it is wrong&rdquo;. <strong>Fix:</strong> &ldquo;0.39 mm differs from the other readings (0.24–0.25 mm) by more than the range of the others (0.01 mm).&rdquo;</p>
+
+<h4>4.8 &ldquo;Oscilloscope reading from one cycle only&rdquo; (3/13 papers, CP4)</h4>
+<p><strong>Fix:</strong> measure across N cycles (3+) and divide by N — reduces random error in judging the peak position.</p>
+
+<h4>4.9 &ldquo;Safety precaution vague&rdquo; (3/13 papers, CP6)</h4>
+<p><strong>Fix:</strong> name a SPECIFIC action — &ldquo;do not look directly into the beam&rdquo;, &ldquo;wear laser safety goggles&rdquo;.</p>
+
+<h4>4.10 &ldquo;Calibration not distinguished from zeroing&rdquo; (2/13 papers)</h4>
+<p>Students say &ldquo;calibrate the voltmeter by zeroing it&rdquo;. <strong>Fix:</strong> zeroing is the ZERO-ERROR check (one point); calibration checks across the WHOLE range against a standard.</p>
+
+<hr>
+
+<h3 id="exam-scores">5. Mark Scheme Phrasing — Exact Wording That Scores</h3>
+<p>Examiner mark schemes reward very specific phrasing. Memorise these:</p>
+<table>
+<thead>
+<tr><th>Mark scheme phrase</th><th>Scores the mark for</th></tr>
+</thead>
+<tbody>
+<tr><td>&ldquo;systematic (zero) error&rdquo;</td><td>Identifying the type of error from a zero-reading issue</td></tr>
+<tr><td>&ldquo;subtract the offset from every reading&rdquo;</td><td>How to correct a zero error</td></tr>
+<tr><td>&ldquo;view perpendicular to the screen / scale&rdquo;</td><td>How to avoid parallax</td></tr>
+<tr><td>&ldquo;view from directly above&rdquo;</td><td>Protractor reading (CP6)</td></tr>
+<tr><td>&ldquo;close the jaws using the ratchet&rdquo;</td><td>Micrometer technique (CP7)</td></tr>
+<tr><td>&ldquo;measure at multiple positions and orientations, take the mean&rdquo;</td><td>CP7 diameter measurement</td></tr>
+<tr><td>&ldquo;in series&rdquo;</td><td>Ammeter placement</td></tr>
+<tr><td>&ldquo;in parallel&rdquo;</td><td>Voltmeter placement</td></tr>
+<tr><td>&ldquo;ideal ammeter has zero resistance&rdquo;</td><td>Why ammeter does not affect the circuit</td></tr>
+<tr><td>&ldquo;ideal voltmeter has infinite resistance&rdquo;</td><td>Why voltmeter does not affect the circuit</td></tr>
+<tr><td>&ldquo;to reduce the effect of random errors&rdquo;</td><td>Why repeats are taken</td></tr>
+<tr><td>&ldquo;differs from the others by more than the range&rdquo;</td><td>Justifying anomaly exclusion</td></tr>
+<tr><td>&ldquo;only the independent variable is changed&rdquo;</td><td>Fair test criterion</td></tr>
+<tr><td>&ldquo;all control variables held constant&rdquo;</td><td>Fair test criterion</td></tr>
+<tr><td>&ldquo;use a high-resistance voltmeter&rdquo;</td><td>CP8 improvement</td></tr>
+<tr><td>&ldquo;use a light gate&rdquo;</td><td>CP4 timing improvement</td></tr>
+<tr><td>&ldquo;use a longer wire&rdquo;</td><td>CP7 improvement (reduces % uncertainty)</td></tr>
+<tr><td>&ldquo;low current to avoid heating&rdquo;</td><td>CP7 temperature control</td></tr>
+<tr><td>&ldquo;switch off between readings&rdquo;</td><td>CP8 polarisation control</td></tr>
+<tr><td>&ldquo;do not look directly into the beam&rdquo;</td><td>CP6 laser safety</td></tr>
+<tr><td>&ldquo;view the oscilloscope perpendicular to the screen&rdquo;</td><td>CP4 / CP5 oscilloscope reading</td></tr>
+</tbody>
+</table>
+<p><strong>Do NOT paraphrase these in the exam.</strong> Use the exact phrasing — examiners are looking for these keywords.</p>
+
+<hr>
+
+<h3 id="exam-rejects">6. Mark Scheme Phrasing That Does NOT Score (Common Rejections)</h3>
+<table>
+<thead>
+<tr><th>Student phrase</th><th>Why it scores 0</th><th>What to write instead</th></tr>
+</thead>
+<tbody>
+<tr><td>&ldquo;use better equipment&rdquo;</td><td>No specific equipment named</td><td>&ldquo;Use a micrometer instead of a vernier calliper&rdquo;</td></tr>
+<tr><td>&ldquo;be more careful&rdquo;</td><td>No specific technique</td><td>&ldquo;View perpendicular to the screen to avoid parallax&rdquo;</td></tr>
+<tr><td>&ldquo;take more readings&rdquo;</td><td>Does not explain why</td><td>&ldquo;Take 5 repeats and calculate the mean to reduce the effect of random errors&rdquo;</td></tr>
+<tr><td>&ldquo;zero the micrometer&rdquo;</td><td>No explanation of how</td><td>&ldquo;Close the jaws with the ratchet and check zero; subtract the offset&rdquo;</td></tr>
+<tr><td>&ldquo;control everything else&rdquo;</td><td>No specific variable named</td><td>&ldquo;Keep the temperature of the wire constant by using a low current&rdquo;</td></tr>
+<tr><td>&ldquo;to make it accurate&rdquo;</td><td>Wrong concept</td><td>&ldquo;To reduce the effect of random errors&rdquo;</td></tr>
+<tr><td>&ldquo;be careful with the laser&rdquo;</td><td>No specific safety action</td><td>&ldquo;Do not look directly into the laser beam&rdquo;</td></tr>
+<tr><td>&ldquo;the experiment is fair&rdquo;</td><td>No justification</td><td>&ldquo;Only the independent variable is changed; all control variables are held constant&rdquo;</td></tr>
+<tr><td>&ldquo;valid because it was done well&rdquo;</td><td>No specific reason</td><td>&ldquo;Valid because the voltmeter has high resistance, so V is the true terminal p.d.&rdquo;</td></tr>
+<tr><td>&ldquo;reliable because results are good&rdquo;</td><td>No specific evidence</td><td>&ldquo;Reliable because the repeat readings have a small range (0.02 V)&rdquo;</td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<h3 id="exam-practice">7. Practice Questions (Self-Test)</h3>
+
+<h4>7.1 (CP7 resistivity, 6 marks)</h4>
+<p>A student investigates the resistivity of a copper wire using a micrometer, a metre rule, an ohmmeter, and a power supply.</p>
+<p>(a) State the independent variable, the dependent variable, and two control variables. (4)</p>
+<p>(b) Describe how the student should use the micrometer to measure the diameter of the wire. (2)</p>
+
+<h4>7.2 (CP8 e.m.f./internal resistance, 5 marks)</h4>
+<p>A student determines &epsilon; and r of a cell using a variable resistor, an ammeter, and a voltmeter.</p>
+<p>(a) Draw a circuit diagram for the experiment. Label the ammeter (A), voltmeter (V), cell (&epsilon;, r), and variable resistor (R). (3)</p>
+<p>(b) Explain why the voltmeter should have a very high resistance. (2)</p>
+
+<h4>7.3 (CP4 oscilloscope, 4 marks)</h4>
+<p>A student uses a signal generator, a loudspeaker, a microphone, and an oscilloscope to determine the speed of sound. The time-base is set to 0.5 ms/div. The trace shows 3 complete cycles spanning 12 divisions.</p>
+<p>(a) Calculate the frequency of the sound wave. (2)</p>
+<p>(b) State one source of error in reading the oscilloscope trace and explain how to reduce it. (2)</p>
+
+<h4>7.4 (CP6 diffraction grating, 4 marks)</h4>
+<p>A student uses a laser of wavelength 633 nm and a diffraction grating with 300 lines per mm.</p>
+<p>(a) State one safety precaution when using the laser. (1)</p>
+<p>(b) The first-order maximum is observed at &theta; = 10.8&deg;. Calculate the wavelength. (2)</p>
+<p>(c) State how the student should position their eye when reading the angle on the protractor. (1)</p>
+
+<h4>7.5 (Anomaly and repeats, 4 marks)</h4>
+<p>A student measures the diameter of a wire at 5 positions and obtains (in mm): 0.24, 0.25, 0.39, 0.24, 0.25.</p>
+<p>(a) Identify the anomalous reading and explain whether it should be included in the mean. (2)</p>
+<p>(b) Calculate the mean diameter and its absolute uncertainty, using the remaining readings. (2)</p>
+
+<hr>
+
+<h3 id="exam-answers">8. Answers to Practice Questions</h3>
+
+<h4>8.1 CP7 (6 marks)</h4>
+<p><strong>(a) (4 marks):</strong></p>
+<ul>
+<li>Independent variable: length L of the wire (1)</li>
+<li>Dependent variable: resistance R (measured by ohmmeter) (1)</li>
+<li>Control variable 1: temperature of the wire (kept low by using a small current) (1)</li>
+<li>Control variable 2: diameter d / material of the wire (same wire throughout) (1)</li>
+</ul>
+<p><strong>(b) (2 marks):</strong></p>
+<ul>
+<li>Close the jaws of the micrometer using the ratchet (NOT the thimble) and check the zero reading. If non-zero, record the zero error. (1)</li>
+<li>Measure the diameter at 3 different positions along the wire and at 2 orientations (rotating the wire 90&deg;) at each position; take the mean of the 6 readings after subtracting the zero error. (1)</li>
+</ul>
+
+<h4>8.2 CP8 (5 marks)</h4>
+<p><strong>(a) (3 marks):</strong></p>
+<pre><code>   +--[A]--[R variable]--+
+   |                      |
+   |                      |
+   +------[e, r cell]-----+
+              |
+            [V]  (in parallel across cell terminals)</code></pre>
+<ul>
+<li>Ammeter in series with the cell and variable resistor (1)</li>
+<li>Voltmeter in parallel across the cell terminals (1)</li>
+<li>Variable resistor in series with the cell (1)</li>
+</ul>
+<p><strong>(b) (2 marks):</strong></p>
+<ul>
+<li>A real voltmeter draws a small current, which adds to the current through the cell and reduces the measured terminal p.d. (1)</li>
+<li>A very high-resistance voltmeter draws negligible current, so the measured V is the true terminal p.d. (1)</li>
+</ul>
+
+<h4>8.3 CP4 (4 marks)</h4>
+<p><strong>(a) (2 marks):</strong></p>
+<ul>
+<li>Period T = (12 divisions / 3 cycles) &times; 0.5 ms/div = 4 &times; 0.5 ms = 2.0 ms = 2.0 &times; 10<sup>-3</sup> s (1)</li>
+<li>Frequency f = 1/T = 1 / (2.0 &times; 10<sup>-3</sup>) = 500 Hz (1)</li>
+</ul>
+<p><strong>(b) (2 marks):</strong></p>
+<ul>
+<li>Source of error: parallax error from viewing the oscilloscope screen from an angle (1)</li>
+<li>Reduction: position the eye perpendicular to the centre of the screen, directly in front of the trace (1)</li>
+</ul>
+<p>(Acceptable alternative: &ldquo;Reading from one cycle only / random error in judging peak&rdquo; &rarr; &ldquo;Measure across N cycles (3+) and divide by N.&rdquo;)</p>
+
+<h4>8.4 CP6 (4 marks)</h4>
+<p><strong>(a) (1 mark):</strong> Do not look directly into the laser beam. (Acceptable: &ldquo;Wear laser safety goggles&rdquo; / &ldquo;Place a beam stop behind the screen.&rdquo;)</p>
+<p><strong>(b) (2 marks):</strong></p>
+<ul>
+<li>Grating spacing d = 1 / (300 lines per mm) = 1/300 mm = 3.33 &times; 10<sup>-6</sup> m (1)</li>
+<li>&lambda; = d sin &theta; / n = (3.33 &times; 10<sup>-6</sup>) &times; sin(10.8&deg;) / 1 = 3.33 &times; 10<sup>-6</sup> &times; 0.1874 = 6.24 &times; 10<sup>-7</sup> m = 624 nm (1)</li>
+</ul>
+<p><strong>(c) (1 mark):</strong> View the protractor from directly above, with the eye perpendicular to the paper.</p>
+
+<h4>8.5 Anomaly and Repeats (4 marks)</h4>
+<p><strong>(a) (2 marks):</strong></p>
+<ul>
+<li>Anomalous reading: 0.39 mm (1)</li>
+<li>Justification: it differs from the other readings (0.24–0.25 mm) by 0.14–0.15 mm, which is more than the range of the other readings (0.01 mm); exclude it from the mean and range calculation. (1)</li>
+</ul>
+<p><strong>(b) (2 marks):</strong></p>
+<ul>
+<li>Mean = (0.24 + 0.25 + 0.24 + 0.25) / 4 = 0.245 mm &rarr; 0.25 mm (to 2 sig figs, matching the uncertainty) (1)</li>
+<li>Range = 0.25 &minus; 0.24 = 0.01 mm; absolute uncertainty = &frac12; &times; 0.01 = 0.005 mm &rarr; 0.01 mm. Result: <strong>d = 0.25 &plusmn; 0.01 mm</strong>. (1)</li>
+</ul>
+
+<hr>
+
+<h3 id="exam-checklist">9. Final Checklist — Before the Exam</h3>
+<p>Before the WPH12 exam, ensure you can:</p>
+<ul>
+<li>State the resolution of: metre rule (1 mm), micrometer (0.01 mm), protractor (1&deg;), digital ammeter (0.01 A), digital voltmeter (0.01 V), oscilloscope time-base (depends on setting).</li>
+<li>Recite the WPH11 uncertainty definitions for precision, accuracy, resolution, random error, systematic error, zero error, parallax error.</li>
+<li>Recite the WPH12-specific contexts for each: oscilloscope screen, protractor, micrometer, ammeter/voltmeter.</li>
+<li>Draw the CP8 circuit from memory: ammeter in series, voltmeter in parallel across the cell, variable resistor in series.</li>
+<li>Describe the micrometer zero-error check procedure in 4 steps: clean, close with ratchet, read zero, subtract offset.</li>
+<li>Describe the diameter measurement protocol: 3 positions &times; 2 orientations = 6 readings, take the mean.</li>
+<li>State the 2 most important control variables for each CP (see the table above).</li>
+<li>Use the standard phrasing: &ldquo;to reduce the effect of random errors&rdquo;, &ldquo;differs from the others by more than the range&rdquo;, &ldquo;only the independent variable is changed&rdquo;, &ldquo;view perpendicular to the screen&rdquo;.</li>
+<li>Identify anomalies using quantitative comparison (range or 2 std dev), NOT &ldquo;it looks wrong&rdquo;.</li>
+<li>For improvement questions: name a SPECIFIC improvement AND explain HOW it reduces the error/uncertainty.</li>
+<li>For safety: name a SPECIFIC action (&ldquo;do not look into the beam&rdquo;), not &ldquo;be careful&rdquo;.</li>
+<li>Use the 6-mark QWC practical-method structure: independent &rarr; dependent &rarr; 2 controls &rarr; apparatus &rarr; procedure (with repeats) &rarr; analysis (graph + equation).</li>
+</ul>
+
+</main>
+
+<footer class="footer">WPH12 Extension &mdash; Practical Techniques Vocabulary &bull; Pearson Edexcel IAL Physics &bull; Core Practicals CP4&ndash;CP8</footer>
+
+<script>
+(function(){
+var dk=localStorage.getItem('theme');
+if(dk==='dark')document.documentElement.setAttribute('data-theme','dark');
+})();
+function toggleDark(){
+var h=document.documentElement,a=h.getAttribute('data-theme');
+if(a==='dark'){h.removeAttribute('data-theme');localStorage.setItem('theme','light')}
+else{h.setAttribute('data-theme','dark');localStorage.setItem('theme','dark')}
+}
+function toggleSidebar(){
+var s=document.getElementById('sb'),o=document.getElementById('sbOverlay');
+s.classList.toggle('open');o.classList.toggle('open');
+}
+document.querySelectorAll('.sidebar a').forEach(function(a){
+a.addEventListener('click',function(){toggleSidebar()});
+});
+</script>
+</body>
+</html>

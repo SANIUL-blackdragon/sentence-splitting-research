@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waves &amp; Quanta — formulas, chains &amp; proportionalities</title>
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --ink:#1A1D23;
+    --muted:#5E6470;
+    --hair:#E8E5DE;
+    --hair2:#D8D5CC;
+    --wash:#F7F6F2;
+    --cobalt:#1E56C8;
+    --cobalt-soft:#BFD2F2;
+    --cobalt-wash:#EEF3FC;
+    --ember:#C2491B;
+    --ember-soft:#F0D5C4;
+    --ember-wash:#FBF3ED;
+    --mono:ui-monospace,"SF Mono","Cascadia Mono","JetBrains Mono",Menlo,Consolas,monospace;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);color:var(--ink);
+    font:16px/1.65 var(--sans);
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--cobalt-wash);color:var(--cobalt)}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;border-radius:3px}
+
+  .shell{max-width:1180px;margin:0 auto;padding:0 28px}
+
+  /* ---------- masthead ---------- */
+  .topbar{border-bottom:1px solid var(--hair)}
+  .topbar-in{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;gap:16px}
+  .wordmark{font:700 12px var(--mono);letter-spacing:.22em;text-transform:uppercase}
+  .wordmark b{color:var(--cobalt)}
+  .topbar-r{font:11.5px var(--mono);color:var(--muted);letter-spacing:.08em}
+
+  .hero{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center;padding:72px 0 68px}
+  .hero-eyebrow{font:600 11.5px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+  .hero-eyebrow em{color:var(--cobalt);font-style:normal}
+  h1{font:600 clamp(2.5rem,4.6vw,3.55rem)/1.04 var(--serif);letter-spacing:-.015em}
+  h1 .amp{color:var(--cobalt);font-style:italic;font-weight:400}
+  .squig{display:block;width:190px;height:12px;margin:14px 0 0 4px}
+  .deck{margin-top:22px;font-size:1.06rem;color:var(--muted);max-width:34em}
+  .deck strong{color:var(--ink);font-weight:600}
+  .legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px}
+  .legend span{display:inline-flex;align-items:center;gap:8px;font:12px var(--mono);color:var(--muted)}
+  .sw{width:11px;height:11px;border-radius:50%;flex:none}
+  .sw.b{background:var(--cobalt)}
+  .sw.o{background:var(--ember)}
+  .sw.r{background:transparent;border:2px solid var(--hair2);border-radius:50%}
+  .hero-hint{margin-top:26px;font:12.5px var(--mono);color:var(--muted);border-top:1px dashed var(--hair2);padding-top:14px;max-width:36em}
+  .hero-hint b{color:var(--cobalt);font-weight:600}
+
+  /* ---------- the bench ---------- */
+  .bench{border:1px solid var(--hair2);border-radius:14px;overflow:hidden;background:var(--paper);box-shadow:0 1px 2px rgba(26,29,35,.04)}
+  .bench-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 18px;background:var(--wash);border-bottom:1px solid var(--hair)}
+  .bench-head .t{font:600 11px var(--mono);letter-spacing:.18em;text-transform:uppercase}
+  .bench-head .s{font:11px var(--mono);color:var(--muted)}
+  canvas#wave{display:block;width:100%;height:232px}
+  .knobs{padding:16px 18px 6px;display:grid;gap:12px}
+  .knob{display:grid;grid-template-columns:110px 1fr 84px;align-items:center;gap:14px}
+  .knob label{font:600 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .knob input[type=range]{width:100%;accent-color:var(--cobalt);height:22px}
+  .knob output{font:12.5px var(--mono);text-align:right;color:var(--ink)}
+  .reads{display:flex;flex-wrap:wrap;gap:6px 26px;padding:12px 18px 16px;border-top:1px dashed var(--hair)}
+  .reads span{font:12.5px var(--mono);color:var(--muted)}
+  .reads b{color:var(--cobalt);font-weight:600}
+
+  /* ---------- body layout ---------- */
+  .bodygrid{display:grid;grid-template-columns:200px minmax(0,1fr);gap:64px;padding-bottom:40px}
+  aside nav{position:sticky;top:32px}
+  .toc-t{font:600 10.5px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+  .toc{list-style:none}
+  .toc a{display:flex;gap:10px;padding:5px 0 5px 12px;font:12.5px var(--mono);color:var(--muted);text-decoration:none;border-left:2px solid transparent}
+  .toc a i{font-style:normal;color:var(--hair2);font-weight:700;transition:color .15s}
+  .toc a:hover{color:var(--ink)}
+  .toc a.on{color:var(--cobalt);border-left-color:var(--cobalt)}
+  .toc a.on i{color:var(--cobalt)}
+  .toc-mini{display:none}
+
+  /* ---------- sections ---------- */
+  .sec{border-top:1px solid var(--hair);padding:52px 0 10px}
+  .eyebrow{font:700 11px var(--mono);letter-spacing:.22em;color:var(--cobalt);margin-bottom:8px}
+  h2{font:600 1.6rem/1.2 var(--serif);letter-spacing:-.01em;margin-bottom:10px}
+  .intro{color:var(--muted);font-size:.95rem;max-width:44em;margin-bottom:8px}
+
+  h3.sh{display:flex;align-items:center;gap:12px;font:600 .74rem var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin:34px 0 4px}
+  h3.sh::after{content:"";flex:1;height:1px;background:var(--hair)}
+
+  .tag{font:600 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:99px;border:1px solid;flex:none}
+  .tag.dir{color:var(--cobalt);border-color:var(--cobalt-soft);background:var(--cobalt-wash)}
+  .tag.inv{color:var(--ember);border-color:var(--ember-soft);background:var(--ember-wash)}
+
+  /* ---------- formula cards ---------- */
+  .fcard{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(190px,.85fr);gap:0 26px;border:1px solid var(--hair);border-radius:12px;padding:18px 22px;margin:14px 0;background:var(--paper);transition:border-color .15s}
+  .fcard:hover{border-color:var(--hair2)}
+  .eqwrap{min-width:0;align-self:center}
+  .eq{font-family:var(--serif);font-size:clamp(1.12rem,1.9vw,1.32rem);line-height:1.5;overflow-x:auto;padding:4px 2px;scrollbar-width:thin}
+  .eq i{padding:0 .02em}
+  .eq sub,.eq sup{font-size:.66em;font-style:normal;font-family:var(--serif)}
+  .eq .rm{font-style:normal}
+  .vars{list-style:none;border-left:1px dashed var(--hair2);padding-left:22px;align-self:center;font-size:.85rem}
+  .vars li{display:flex;gap:9px;padding:2.5px 0;color:var(--muted)}
+  .vars b{font:600 12.5px var(--mono);color:var(--ink);flex:none;min-width:2.4em}
+  .note{grid-column:1/-1;font-size:.9rem;color:var(--muted);border-top:1px dashed var(--hair);margin-top:14px;padding-top:12px}
+  .pdir{color:var(--cobalt);font-weight:600;font-family:var(--serif);font-style:italic;white-space:nowrap}
+  .pinv{color:var(--ember);font-weight:600;font-family:var(--serif);font-style:italic;white-space:nowrap}
+  .chainref{font:600 11px var(--mono);color:var(--cobalt);text-decoration:none;border:1px solid var(--cobalt-soft);background:var(--cobalt-wash);border-radius:99px;padding:2px 10px;white-space:nowrap}
+  .chainref:hover{border-color:var(--cobalt)}
+
+  /* fractions & roots */
+  .frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;margin:0 .22em;line-height:1.25}
+  .frac .n{padding:0 .35em;border-bottom:1.3px solid currentColor}
+  .frac .d{padding:0 .35em}
+  .frac.txt{font-size:.72em;line-height:1.35}
+  .sqrt{display:inline-flex;align-items:stretch;margin:0 .06em}
+  .sqrt::before{content:"√";font-size:1.38em;line-height:1;transform:translateY(.02em)}
+  .sqrt .r{border-top:1.3px solid currentColor;padding:.1em .25em 0 .12em;margin-left:-2px;display:inline-flex;align-items:center}
+  .pm{font-size:1.85em;font-weight:200;line-height:0;vertical-align:-.12em;margin:0 -.04em}
+
+  /* ---------- callout ---------- */
+  .trap{border:1px solid var(--ember-soft);border-left:3px solid var(--ember);background:var(--ember-wash);border-radius:0 12px 12px 0;padding:15px 20px;margin:20px 0;font-size:.92rem}
+  .trap .tt{font:700 11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ember);display:block;margin-bottom:5px}
+
+  /* ---------- chains ---------- */
+  .chain{margin:20px 0 8px;padding-left:28px;border-left:2px solid var(--hair2);display:flex;flex-direction:column}
+  .cstep{padding:11px 0}
+  .cstep .eq{font-size:1.16rem}
+  .cstep p{font-size:.86rem;color:var(--muted);margin-top:3px}
+  .ctag{font:700 10px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:2px}
+  .clink{position:relative;font:600 10.5px var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--cobalt);padding:3px 0}
+  .clink::before{content:"";position:absolute;left:-28px;top:50%;width:9px;height:9px;border-radius:50%;background:var(--paper);border:2px solid var(--cobalt);transform:translate(-50%,-50%)}
+  .cstep.result{background:var(--cobalt-wash);border:1px solid var(--cobalt-soft);border-radius:12px;padding:15px 20px;margin:6px 0 12px}
+  .cstep.result .ctag{color:var(--cobalt)}
+  .cstep.result p{color:#3D5C9E}
+
+  /* ---------- lists & figures ---------- */
+  .plain{margin:12px 0 12px 4px;list-style:none}
+  .plain li{padding:5px 0 5px 22px;position:relative;color:var(--ink);font-size:.95rem}
+  .plain li::before{content:"";position:absolute;left:2px;top:.85em;width:8px;height:2px;background:var(--hair2)}
+  .fig{border:1px solid var(--hair);border-radius:12px;padding:20px 20px 14px;margin:20px 0}
+  .fig svg{display:block;width:100%;height:auto}
+  .fig figcaption{font:12px var(--mono);color:var(--muted);margin-top:12px;border-top:1px dashed var(--hair);padding-top:10px}
+  .fig figcaption b{color:var(--cobalt)}
+
+  /* ---------- tables ---------- */
+  table{width:100%;border-collapse:collapse;margin:16px 0}
+  th{font:600 10.5px var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 14px;border-bottom:1.5px solid var(--hair2)}
+  td{padding:12px 14px;border-bottom:1px solid var(--hair);font-size:.93rem;vertical-align:top}
+  td.math{font-family:var(--serif);font-size:1.05rem;white-space:nowrap}
+  td.mono{font:13px var(--mono)}
+  td .u,td.mono .u{color:var(--muted)}
+  .cond{color:var(--muted);font-size:.88rem}
+  .tblwrap{overflow-x:auto}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--hair);margin-top:36px;padding:26px 0 44px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer p{font:11.5px var(--mono);color:var(--muted);letter-spacing:.05em}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr;gap:44px;padding:52px 0 52px}
+    .bodygrid{grid-template-columns:1fr;gap:0}
+    aside{display:none}
+    .toc-mini{display:block;margin:26px 0 4px;border:1px solid var(--hair);border-radius:12px}
+    .toc-mini summary{cursor:pointer;font:600 11px var(--mono);letter-spacing:.16em;text-transform:uppercase;padding:13px 18px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+    .toc-mini summary::after{content:"+";color:var(--cobalt);font-size:15px}
+    .toc-mini[open] summary::after{content:"–"}
+    .toc-mini ul{list-style:none;padding:4px 18px 14px;columns:2;column-gap:28px}
+    .toc-mini a{display:block;font:12.5px var(--mono);color:var(--muted);text-decoration:none;padding:4px 0}
+    .toc-mini a:hover{color:var(--cobalt)}
+  }
+  @media (max-width:700px){
+    .fcard{grid-template-columns:1fr}
+    .vars{border-left:0;border-top:1px dashed var(--hair2);padding:12px 0 0;margin-top:12px}
+    .toc-mini ul{columns:1}
+    .knob{grid-template-columns:90px 1fr 74px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .fcard,.toc a i{transition:none}
+  }
+  @media print{
+    aside,.toc-mini,.bench{display:none}
+    .bodygrid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="shell topbar-in">
+    <span class="wordmark">Waves <b>&amp;</b> Quanta</span>
+    <span class="topbar-r">revision reference · 13 sections · white bench</span>
+  </div>
+</header>
+
+<div class="shell">
+
+  <!-- ============ HERO ============ -->
+  <div class="hero">
+    <div>
+      <p class="hero-eyebrow">Waves · Optics · Quantum — <em>every relationship, wired together</em></p>
+      <h1>Waves <span class="amp">&amp;</span> Quanta</h1>
+      <svg class="squig" viewBox="0 0 220 12" aria-hidden="true">
+        <path d="M3 6 Q 17 -2 31 6 T 59 6 T 87 6 T 115 6 T 143 6 T 171 6 T 199 6 T 217 6" fill="none" stroke="#1E56C8" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <p class="deck">Thirteen sections of formulas with their variables, derived chains laid out step by step, and every proportionality <strong>colour-coded</strong> — cobalt for direct, ember for inverse — so the relationships are impossible to miss.</p>
+      <div class="legend" aria-label="Colour code">
+        <span><i class="sw b"></i>direct ∝ &nbsp;(both grow together)</span>
+        <span><i class="sw o"></i>inverse ∝ &nbsp;(one rises, one falls)</span>
+        <span><i class="sw r"></i>chain step &nbsp;(§13)</span>
+      </div>
+      <p class="hero-hint">The bench on the right obeys <b>v&nbsp;=&nbsp;fλ</b> with v pinned at 3.0 m s⁻¹. Raise the frequency and watch the wavelength shrink — that is an inverse proportionality, live.</p>
+    </div>
+
+    <div class="bench">
+      <div class="bench-head">
+        <span class="t">Proportionality bench</span>
+        <span class="s">v = fλ · v fixed at 3.0 m s⁻¹</span>
+      </div>
+      <canvas id="wave" role="img" aria-label="Animated sine wave. Increasing frequency shortens the wavelength; increasing amplitude increases intensity with the square of amplitude."></canvas>
+      <div class="knobs">
+        <div class="knob">
+          <label for="fSl">frequency f</label>
+          <input type="range" id="fSl" min="0.5" max="3" step="0.05" value="1.5" aria-label="Frequency in hertz">
+          <output id="fOut" for="fSl">1.50 Hz</output>
+        </div>
+        <div class="knob">
+          <label for="aSl">amplitude A</label>
+          <input type="range" id="aSl" min="0.15" max="1" step="0.05" value="0.5" aria-label="Amplitude, arbitrary units">
+          <output id="aOut" for="aSl">0.50</output>
+        </div>
+      </div>
+      <div class="reads">
+        <span id="readV">v = fλ → 3.0 = <b>1.50 Hz</b> × <b>2.00 m</b></span>
+        <span id="readI">A = 0.50 → relative intensity <b>×1.00</b> · double A ⇒ ×4 I</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bodygrid">
+
+    <!-- ============ CONTENTS ============ -->
+    <aside aria-label="Contents">
+      <nav>
+        <p class="toc-t">Contents</p>
+        <ul class="toc">
+          <li><a href="#s1"><i>01</i>Fundamental constants</a></li>
+          <li><a href="#s2"><i>02</i>Core wave properties</a></li>
+          <li><a href="#s3"><i>03</i>Intensity &amp; amplitude</a></li>
+          <li><a href="#s4"><i>04</i>Refraction &amp; TIR</a></li>
+          <li><a href="#s5"><i>05</i>Stationary waves &amp; strings</a></li>
+          <li><a href="#s6"><i>06</i>Interference &amp; diffraction</a></li>
+          <li><a href="#s7"><i>07</i>Polarisation</a></li>
+          <li><a href="#s8"><i>08</i>Pulse-echo &amp; ultrasound</a></li>
+          <li><a href="#s9"><i>09</i>Photons &amp; photoelectric</a></li>
+          <li><a href="#s10"><i>10</i>Wave-particle duality</a></li>
+          <li><a href="#s11"><i>11</i>Atomic line spectra</a></li>
+          <li><a href="#s12"><i>12</i>Proportionality summary</a></li>
+          <li><a href="#s13"><i>13</i>Formula chains</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <details class="toc-mini">
+        <summary>Contents — 13 sections</summary>
+        <ul>
+          <li><a href="#s1">01 Constants</a></li>
+          <li><a href="#s2">02 Core waves</a></li>
+          <li><a href="#s3">03 Intensity</a></li>
+          <li><a href="#s4">04 Refraction</a></li>
+          <li><a href="#s5">05 Strings</a></li>
+          <li><a href="#s6">06 Interference</a></li>
+          <li><a href="#s7">07 Polarisation</a></li>
+          <li><a href="#s8">08 Pulse-echo</a></li>
+          <li><a href="#s9">09 Photons</a></li>
+          <li><a href="#s10">10 Duality</a></li>
+          <li><a href="#s11">11 Line spectra</a></li>
+          <li><a href="#s12">12 ∝ summary</a></li>
+          <li><a href="#s13">13 Chains</a></li>
+        </ul>
+      </details>
+
+      <!-- ============ 01 CONSTANTS ============ -->
+      <section class="sec" id="s1">
+        <p class="eyebrow">§ 01</p>
+        <h2>Fundamental constants</h2>
+        <p class="intro">The fixed cast. Every formula on this page is built from these five values.</p>
+        <div class="tblwrap">
+        <table>
+          <thead><tr><th>Constant</th><th>Symbol</th><th>Value</th><th>Units</th></tr></thead>
+          <tbody>
+            <tr><td>Planck constant</td><td class="math"><i>h</i></td><td class="mono">6.63 × 10<sup>−34</sup></td><td class="mono"><span class="u">J s</span></td></tr>
+            <tr><td>Speed of light in vacuum</td><td class="math"><i>c</i></td><td class="mono">3.00 × 10<sup>8</sup></td><td class="mono"><span class="u">m s⁻¹</span></td></tr>
+            <tr><td>Elementary charge</td><td class="math"><i>e</i></td><td class="mono">1.60 × 10<sup>−19</sup></td><td class="mono"><span class="u">C</span></td></tr>
+            <tr><td>Electron mass</td><td class="math"><i>m</i><sub>e</sub></td><td class="mono">9.11 × 10<sup>−31</sup></td><td class="mono"><span class="u">kg</span></td></tr>
+            <tr><td>Electronvolt–joule conversion</td><td class="math">—</td><td class="mono">1 eV = 1.60 × 10<sup>−19</sup></td><td class="mono"><span class="u">J</span></td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+
+      <!-- ============ 02 CORE WAVES ============ -->
+      <section class="sec" id="s2">
+        <p class="eyebrow">§ 02</p>
+        <h2>Core wave properties</h2>
+
+        <h3 class="sh">Frequency &amp; period <span class="tag inv">inversely proportional</span></h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>f</i> = <span class="frac"><span class="n">1</span><span class="d"><i>T</i></span></span> &nbsp;&nbsp;·&nbsp;&nbsp; <i>T</i> = <span class="frac"><span class="n">1</span><span class="d"><i>f</i></span></span></p></div>
+          <ul class="vars">
+            <li><b>f</b><span>frequency, Hz</span></li>
+            <li><b>T</b><span>period, s</span></li>
+          </ul>
+        </div>
+
+        <h3 class="sh">Universal wave equation</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>v</i> = <i>f</i> <i>λ</i></p></div>
+          <ul class="vars">
+            <li><b>v</b><span>wave speed, m s⁻¹</span></li>
+            <li><b>f</b><span>frequency, Hz</span></li>
+            <li><b>λ</b><span>wavelength, m</span></li>
+          </ul>
+          <p class="note">For a given medium, <i>v</i> is constant. If <i>f</i> is fixed, then <span class="pdir">v ∝ λ</span>. The bench above runs this equation with v pinned — drag the frequency and λ answers immediately.</p>
+        </div>
+      </section>
+
+      <!-- ============ 03 INTENSITY ============ -->
+      <section class="sec" id="s3">
+        <p class="eyebrow">§ 03</p>
+        <h2>Intensity, amplitude &amp; the inverse-square law</h2>
+
+        <h3 class="sh">Intensity definition</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>I</i> = <span class="frac"><span class="n"><i>P</i></span><span class="d"><i>A</i></span></span></p></div>
+          <ul class="vars">
+            <li><b>I</b><span>intensity, W m⁻²</span></li>
+            <li><b>P</b><span>power, W</span></li>
+            <li><b>A</b><span>area, m²</span></li>
+          </ul>
+        </div>
+
+        <h3 class="sh">Intensity &amp; amplitude <span class="tag dir">∝ A²</span></h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>I</i> <span class="pdir">∝</span> <i>A</i><sup>2</sup></p></div>
+          <ul class="vars">
+            <li><b>A</b><span>amplitude, m</span></li>
+          </ul>
+          <p class="note">Doubling amplitude increases intensity by a factor of 4 — try it on the bench: the intensity readout squares whatever you do to A.</p>
+        </div>
+
+        <h3 class="sh">Inverse-square law for a point source <span class="tag inv">∝ 1/r²</span></h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>I</i> <span class="pinv">∝</span> <span class="frac"><span class="n">1</span><span class="d"><i>r</i><sup>2</sup></span></span> &nbsp;&nbsp;·&nbsp;&nbsp; <i>I</i> = <span class="frac"><span class="n"><i>P</i></span><span class="d">4π<i>r</i><sup>2</sup></span></span></p></div>
+          <ul class="vars">
+            <li><b>r</b><span>distance from source, m</span></li>
+            <li><b>P</b><span>power, W</span></li>
+          </ul>
+          <p class="note">The 4π<i>r</i>² is the area of a sphere — radiation from a point source spreads over it, so intensity falls with the square of distance.</p>
+        </div>
+
+        <div class="fig">
+          <svg viewBox="0 0 320 200" aria-label="Radiation from a point source spreading over spheres of increasing radius, intensity falling as 1 over r squared">
+            <g stroke="#D8D5CC" stroke-width="1">
+              <line x1="45" y1="100" x2="180" y2="100"/>
+              <line x1="45" y1="100" x2="172" y2="72"/>
+              <line x1="45" y1="100" x2="172" y2="128"/>
+              <line x1="45" y1="100" x2="156" y2="45"/>
+              <line x1="45" y1="100" x2="156" y2="155"/>
+            </g>
+            <g fill="none" stroke="#1A1D23" stroke-width="1.6">
+              <path d="M 73.3 71.7 A 40 40 0 0 1 73.3 128.3"/>
+              <path d="M 101.6 43.4 A 80 80 0 0 1 101.6 156.6"/>
+              <path d="M 129.9 15.1 A 120 120 0 0 1 129.9 184.9"/>
+            </g>
+            <circle cx="45" cy="100" r="4.5" fill="#1E56C8"/>
+            <g font-family="ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#5E6470">
+              <text x="82" y="90">I</text>
+              <text x="110" y="90">I/4</text>
+              <text x="138" y="90">I/9</text>
+              <text x="38" y="122" fill="#1E56C8" font-weight="bold">P</text>
+            </g>
+          </svg>
+          <figcaption>Same power, three spheres. Double the radius and the area quadruples — <b>I ∝ 1/r²</b>.</figcaption>
+        </div>
+
+        <h3 class="sh">Effective intensity on an angled surface</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>I</i><sub>eff</sub> = <i>I</i> cos <i>θ</i></p></div>
+          <ul class="vars">
+            <li><b>θ</b><span>angle between radiation and the normal to the surface</span></li>
+          </ul>
+        </div>
+
+        <h3 class="sh">Efficiency</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq">Efficiency = <span class="frac txt"><span class="n">Useful Power Output</span><span class="d">Total Power Input</span></span> × 100%</p></div>
+        </div>
+      </section>
+
+      <!-- ============ 04 REFRACTION ============ -->
+      <section class="sec" id="s4">
+        <p class="eyebrow">§ 04</p>
+        <h2>Refraction, Snell’s law &amp; total internal reflection</h2>
+
+        <h3 class="sh">Refractive index <span class="tag inv">n ∝ 1/v</span></h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>n</i> = <span class="frac"><span class="n"><i>c</i></span><span class="d"><i>v</i></span></span></p></div>
+          <ul class="vars">
+            <li><b>n</b><span>refractive index, dimensionless</span></li>
+            <li><b>c</b><span>speed of light in vacuum, m s⁻¹</span></li>
+            <li><b>v</b><span>speed of light in the material, m s⁻¹</span></li>
+          </ul>
+          <p class="note">Higher <i>n</i> means slower light speed in the material.</p>
+        </div>
+
+        <h3 class="sh">Snell’s law</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>n</i><sub>1</sub> sin <i>θ</i><sub>1</sub> = <i>n</i><sub>2</sub> sin <i>θ</i><sub>2</sub></p></div>
+          <ul class="vars">
+            <li><b>n₁</b><span>refractive index of incident medium</span></li>
+            <li><b>θ₁</b><span>angle of incidence from the normal</span></li>
+            <li><b>n₂</b><span>refractive index of refracted medium</span></li>
+            <li><b>θ₂</b><span>angle of refraction from the normal</span></li>
+          </ul>
+          <p class="note">If light enters a denser medium, <i>n</i><sub>2</sub> &gt; <i>n</i><sub>1</sub>, so it bends towards the normal.</p>
+        </div>
+
+        <h3 class="sh">Critical angle</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq">sin <i>C</i> = <span class="frac"><span class="n"><i>n</i><sub>2</sub></span><span class="d"><i>n</i><sub>1</sub></span></span> &nbsp;&nbsp;·&nbsp;&nbsp; <span class="rm">into air/vacuum (</span><i>n</i><sub>2</sub> = 1<span class="rm">):</span> &nbsp; sin <i>C</i> = <span class="frac"><span class="n">1</span><span class="d"><i>n</i></span></span></p></div>
+          <ul class="vars">
+            <li><b>C</b><span>critical angle</span></li>
+          </ul>
+        </div>
+
+        <h3 class="sh">Conditions for total internal reflection</h3>
+        <ul class="plain">
+          <li><i>n</i><sub>1</sub> &gt; <i>n</i><sub>2</sub> &nbsp;— light travels in the denser medium</li>
+          <li>Angle of incidence &gt; <i>C</i></li>
+        </ul>
+      </section>
+
+      <!-- ============ 05 STRINGS ============ -->
+      <section class="sec" id="s5">
+        <p class="eyebrow">§ 05</p>
+        <h2>Stationary waves &amp; strings</h2>
+
+        <h3 class="sh">Mass per unit length</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>μ</i> = <span class="frac txt"><span class="n">mass</span><span class="d">length</span></span></p></div>
+          <ul class="vars">
+            <li><b>μ</b><span>mass per unit length, kg m⁻¹</span></li>
+          </ul>
+        </div>
+
+        <h3 class="sh">Wave speed on a string</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>v</i> = <span class="sqrt"><span class="r"><span class="frac"><span class="n"><i>T</i></span><span class="d"><i>μ</i></span></span></span></span></p></div>
+          <ul class="vars">
+            <li><b>T</b><span>tension, N</span></li>
+            <li><b>μ</b><span>mass per unit length, kg m⁻¹</span></li>
+          </ul>
+          <p class="note"><span class="pdir">v ∝ √T</span> &nbsp;·&nbsp; <span class="pinv">v ∝ 1/√μ</span> — a heavier string plays slower.</p>
+        </div>
+
+        <h3 class="sh">Fundamental frequency</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>f</i><sub>1</sub> = <span class="frac"><span class="n"><i>v</i></span><span class="d">2<i>L</i></span></span> &nbsp;&nbsp;·&nbsp;&nbsp; <i>f</i><sub>1</sub> = <span class="frac"><span class="n">1</span><span class="d">2<i>L</i></span></span> <span class="sqrt"><span class="r"><span class="frac"><span class="n"><i>T</i></span><span class="d"><i>μ</i></span></span></span></span></p></div>
+          <ul class="vars">
+            <li><b>L</b><span>length of string, m</span></li>
+            <li><b>v</b><span>wave speed on the string</span></li>
+          </ul>
+        </div>
+
+        <h3 class="sh">Harmonics</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>f</i><sub>n</sub> = <i>n</i> <i>f</i><sub>1</sub> &nbsp;&nbsp;·&nbsp;&nbsp; <i>λ</i><sub>n</sub> = <span class="frac"><span class="n">2<i>L</i></span><span class="d"><i>n</i></span></span></p></div>
+          <ul class="vars">
+            <li><b>n</b><span>harmonic number, 1, 2, 3, …</span></li>
+          </ul>
+          <p class="note">Each harmonic packs one more half-wavelength into the same string.</p>
+        </div>
+
+        <div class="fig">
+          <svg viewBox="0 0 640 200" aria-label="First three harmonics of a stretched string, with nodes marked as dots">
+            <g stroke="#E8E5DE" stroke-width="1">
+              <line x1="40" y1="42" x2="360" y2="42"/>
+              <line x1="40" y1="102" x2="360" y2="102"/>
+              <line x1="40" y1="162" x2="360" y2="162"/>
+            </g>
+            <g fill="none" stroke="#1A1D23" stroke-width="2">
+              <path d="M40 42 Q190 -12 340 42"/>
+              <path d="M40 102 Q115 48 190 102 Q265 156 340 102"/>
+              <path d="M40 162 Q90 108 140 162 Q190 216 240 162 Q290 108 340 162"/>
+            </g>
+            <g fill="#1E56C8">
+              <circle cx="40" cy="42" r="4"/><circle cx="340" cy="42" r="4"/>
+              <circle cx="40" cy="102" r="4"/><circle cx="190" cy="102" r="4"/><circle cx="340" cy="102" r="4"/>
+              <circle cx="40" cy="162" r="4"/><circle cx="140" cy="162" r="4"/><circle cx="240" cy="162" r="4"/><circle cx="340" cy="162" r="4"/>
+            </g>
+            <g font-family="ui-monospace,Menlo,Consolas,monospace" font-size="12.5" fill="#5E6470">
+              <text x="382" y="46">n = 1 · λ₁ = 2L · f₁</text>
+              <text x="382" y="106">n = 2 · λ₂ = 2L/2 · f₂ = 2f₁</text>
+              <text x="382" y="166">n = 3 · λ₃ = 2L/3 · f₃ = 3f₁</text>
+            </g>
+          </svg>
+          <figcaption><b>•</b> nodes — adjacent nodes sit <b>λ/2</b> apart; a node and its neighbouring antinode sit <b>λ/4</b> apart.</figcaption>
+        </div>
+
+        <h3 class="sh">Derived chain — fundamental frequency squared <a class="chainref" href="#c2">chain · §13</a></h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>f</i><sup>2</sup> = <span class="frac"><span class="n"><i>T</i></span><span class="d">4<i>L</i><sup>2</sup> <i>μ</i></span></span></p></div>
+          <ul class="vars">
+            <li><b>f</b><span>fundamental frequency, Hz</span></li>
+          </ul>
+          <p class="note">Combining <i>v</i> = <i>f</i><i>λ</i>, <i>λ</i> = 2<i>L</i> and <i>v</i> = √(<i>T</i>/<i>μ</i>). This shows <span class="pinv">f ∝ 1/L</span>, <span class="pinv">f ∝ 1/√μ</span> and <span class="pdir">f ∝ √T</span>.</p>
+        </div>
+      </section>
+
+      <!-- ============ 06 INTERFERENCE ============ -->
+      <section class="sec" id="s6">
+        <p class="eyebrow">§ 06</p>
+        <h2>Interference, diffraction &amp; beats</h2>
+
+        <h3 class="sh">Path difference &amp; phase difference <span class="tag dir">Δφ ∝ Δx</span></h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq">Δ<i>φ</i> = <span class="frac"><span class="n">2π</span><span class="d"><i>λ</i></span></span> × Δ<i>x</i></p></div>
+          <ul class="vars">
+            <li><b>Δφ</b><span>phase difference, rad</span></li>
+            <li><b>Δx</b><span>path difference, m</span></li>
+            <li><b>λ</b><span>wavelength, m</span></li>
+          </ul>
+          <p class="note">Constructive: Δ<i>x</i> = <i>n</i><i>λ</i> &nbsp;·&nbsp; Destructive: Δ<i>x</i> = (<i>n</i> + ½)<i>λ</i>, with <i>n</i> = 0, 1, 2, …</p>
+        </div>
+
+        <h3 class="sh">Young’s double-slit fringe spacing</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>w</i> = <span class="frac"><span class="n"><i>λ</i> <i>D</i></span><span class="d"><i>s</i></span></span></p></div>
+          <ul class="vars">
+            <li><b>w</b><span>fringe spacing, m</span></li>
+            <li><b>D</b><span>distance from slits to screen, m</span></li>
+            <li><b>s</b><span>slit separation, m</span></li>
+          </ul>
+          <p class="note">Valid when <i>D</i> ≫ <i>s</i>.</p>
+        </div>
+
+        <h3 class="sh">Beat frequency</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>f</i><sub>beat</sub> = | <i>f</i><sub>1</sub> − <i>f</i><sub>2</sub> |</p></div>
+          <ul class="vars">
+            <li><b>f_beat</b><span>number of loudness variations per second, Hz</span></li>
+          </ul>
+        </div>
+
+        <h3 class="sh">Diffraction grating equation</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>n</i><i>λ</i> = <i>d</i> sin <i>θ</i></p></div>
+          <ul class="vars">
+            <li><b>n</b><span>order number, 0, 1, 2, …</span></li>
+            <li><b>λ</b><span>wavelength, m</span></li>
+            <li><b>d</b><span>slit spacing, m</span></li>
+            <li><b>θ</b><span>angle from normal</span></li>
+          </ul>
+        </div>
+
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>d</i> = <span class="frac"><span class="n">1</span><span class="d"><i>N</i></span></span> &nbsp;&nbsp;·&nbsp;&nbsp; <span class="rm">lines per mm:</span> &nbsp; <i>d</i> = <span class="frac"><span class="n">1</span><span class="d"><i>N</i> × 10<sup>3</sup></span></span> &nbsp;&nbsp;·&nbsp;&nbsp; <i>n</i><sub>max</sub> = <span class="frac"><span class="n"><i>d</i></span><span class="d"><i>λ</i></span></span></p></div>
+          <ul class="vars">
+            <li><b>N</b><span>lines per metre (or per mm)</span></li>
+          </ul>
+          <p class="note">Maximum order: set <i>θ</i> = 90°, then <b>round down</b> to the nearest integer.</p>
+        </div>
+
+        <h3 class="sh">Single-slit diffraction — first minimum</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq">sin <i>θ</i> = <span class="frac"><span class="n"><i>λ</i></span><span class="d"><i>a</i></span></span> &nbsp;&nbsp;·&nbsp;&nbsp; <i>θ</i> ≈ <span class="frac"><span class="n">2<i>λ</i></span><span class="d"><i>a</i></span></span></p></div>
+          <ul class="vars">
+            <li><b>a</b><span>slit width, m</span></li>
+            <li><b>θ</b><span>total angular width of central bright fringe, rad</span></li>
+          </ul>
+          <p class="note">Narrower slit gives a wider central maximum. The ≈ form is valid for small angles.</p>
+        </div>
+      </section>
+
+      <!-- ============ 07 POLARISATION ============ -->
+      <section class="sec" id="s7">
+        <p class="eyebrow">§ 07</p>
+        <h2>Polarisation</h2>
+
+        <h3 class="sh">Single filter on unpolarised light</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>I</i> = <span class="frac"><span class="n"><i>I</i><sub>0</sub></span><span class="d">2</span></span></p></div>
+          <ul class="vars">
+            <li><b>I₀</b><span>incident intensity</span></li>
+            <li><b>I</b><span>transmitted intensity after one filter</span></li>
+          </ul>
+          <p class="note">This is independent of filter orientation.</p>
+        </div>
+
+        <h3 class="sh">Malus’s law — between two filters</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>I</i> = <i>I</i><sub>0</sub> cos<sup>2</sup> <i>θ</i></p></div>
+          <ul class="vars">
+            <li><b>I₀</b><span>intensity after the first filter</span></li>
+            <li><b>I</b><span>intensity after the second filter</span></li>
+            <li><b>θ</b><span>angle between the transmission axes of the two filters</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ 08 PULSE-ECHO ============ -->
+      <section class="sec" id="s8">
+        <p class="eyebrow">§ 08</p>
+        <h2>Pulse-echo &amp; ultrasound</h2>
+
+        <div class="trap">
+          <span class="tt">The factor-of-2 trap</span>
+          The pulse travels to the surface <em>and back</em> — the measured time is round-trip, so the distance divides by 2.
+        </div>
+
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>d</i> = <span class="frac"><span class="n"><i>v</i> <i>t</i></span><span class="d">2</span></span></p></div>
+          <ul class="vars">
+            <li><b>d</b><span>distance to reflecting surface, m</span></li>
+            <li><b>v</b><span>speed of pulse, m s⁻¹</span></li>
+            <li><b>t</b><span>round-trip time, s</span></li>
+          </ul>
+        </div>
+
+        <h3 class="sh">Acoustic impedance</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>Z</i> = <i>ρ</i> <i>c</i></p></div>
+          <ul class="vars">
+            <li><b>Z</b><span>acoustic impedance, kg m⁻² s⁻¹</span></li>
+            <li><b>ρ</b><span>density, kg m⁻³</span></li>
+            <li><b>c</b><span>speed of sound in the medium, m s⁻¹</span></li>
+          </ul>
+        </div>
+
+        <h3 class="sh">Intensity reflection coefficient</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><span class="frac"><span class="n"><i>I</i><sub>r</sub></span><span class="d"><i>I</i><sub>i</sub></span></span> = <span class="pm">(</span><span class="frac"><span class="n"><i>Z</i><sub>2</sub> − <i>Z</i><sub>1</sub></span><span class="d"><i>Z</i><sub>2</sub> + <i>Z</i><sub>1</sub></span></span><span class="pm">)</span><sup>2</sup></p></div>
+          <ul class="vars">
+            <li><b>I_r</b><span>reflected intensity</span></li>
+            <li><b>I_i</b><span>incident intensity</span></li>
+            <li><b>Z₁</b><span>impedance of first medium</span></li>
+            <li><b>Z₂</b><span>impedance of second medium</span></li>
+          </ul>
+          <p class="note">Larger impedance mismatch gives greater reflection.</p>
+        </div>
+      </section>
+
+      <!-- ============ 09 PHOTONS ============ -->
+      <section class="sec" id="s9">
+        <p class="eyebrow">§ 09</p>
+        <h2>Photons &amp; the photoelectric effect</h2>
+
+        <h3 class="sh">Photon energy <span class="tag dir">∝ f</span> <span class="tag inv">∝ 1/λ</span></h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>E</i> = <i>h</i><i>f</i> = <span class="frac"><span class="n"><i>h</i><i>c</i></span><span class="d"><i>λ</i></span></span></p></div>
+          <ul class="vars">
+            <li><b>E</b><span>photon energy, J</span></li>
+            <li><b>h</b><span>Planck constant</span></li>
+            <li><b>f</b><span>frequency, Hz</span></li>
+            <li><b>λ</b><span>wavelength, m</span></li>
+            <li><b>c</b><span>speed of light</span></li>
+          </ul>
+          <p class="note"><span class="pdir">E ∝ f</span> &nbsp;·&nbsp; <span class="pinv">E ∝ 1/λ</span></p>
+        </div>
+
+        <h3 class="sh">Work function &amp; threshold frequency</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>φ</i> = <i>h</i> <i>f</i><sub>0</sub></p></div>
+          <ul class="vars">
+            <li><b>φ</b><span>work function, J or eV</span></li>
+            <li><b>f₀</b><span>threshold frequency, Hz</span></li>
+          </ul>
+        </div>
+
+        <h3 class="sh">Einstein’s photoelectric equation</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>h</i><i>f</i> = <i>φ</i> + <span class="frac"><span class="n">1</span><span class="d">2</span></span> <i>m</i> <i>v</i><sub>max</sub><sup>2</sup> &nbsp;&nbsp;·&nbsp;&nbsp; <span class="frac"><span class="n">1</span><span class="d">2</span></span> <i>m</i> <i>v</i><sub>max</sub><sup>2</sup> = <i>h</i><i>f</i> − <i>φ</i></p></div>
+          <ul class="vars">
+            <li><b>v_max</b><span>maximum photoelectron speed, m s⁻¹</span></li>
+          </ul>
+        </div>
+
+        <h3 class="sh">Stopping potential</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>e</i> <i>V</i><sub>s</sub> = <span class="frac"><span class="n">1</span><span class="d">2</span></span> <i>m</i> <i>v</i><sub>max</sub><sup>2</sup> = <i>h</i><i>f</i> − <i>φ</i></p></div>
+          <ul class="vars">
+            <li><b>V_s</b><span>stopping potential, V</span></li>
+            <li><b>e</b><span>elementary charge</span></li>
+          </ul>
+          <p class="note">Graph of KE<sub>max</sub> against frequency has <b>gradient <i>h</i></b>.</p>
+        </div>
+
+        <h3 class="sh">Intensity &amp; photoelectrons</h3>
+        <ul class="plain">
+          <li>Intensity <span class="pdir">∝</span> number of photons per second</li>
+          <li>Intensity <span class="pdir">∝</span> photocurrent</li>
+          <li>Intensity does <strong style="color:var(--ember)">not</strong> affect KE<sub>max</sub></li>
+        </ul>
+
+        <h3 class="sh">Number of photons <a class="chainref" href="#c4">chain · §13</a></h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>N</i> = <span class="frac"><span class="n">Total Energy</span><span class="d"><i>E</i><sub>photon</sub></span></span> = <span class="frac"><span class="n"><i>P</i> <i>t</i></span><span class="d"><i>h</i><i>f</i></span></span></p></div>
+          <ul class="vars">
+            <li><b>P</b><span>power, W</span></li>
+            <li><b>t</b><span>time, s</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ 10 DUALITY ============ -->
+      <section class="sec" id="s10">
+        <p class="eyebrow">§ 10</p>
+        <h2>Wave-particle duality &amp; the de Broglie wavelength</h2>
+
+        <h3 class="sh">de Broglie wavelength <span class="tag inv">∝ 1/p</span></h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>λ</i> = <span class="frac"><span class="n"><i>h</i></span><span class="d"><i>p</i></span></span> = <span class="frac"><span class="n"><i>h</i></span><span class="d"><i>m</i> <i>v</i></span></span></p></div>
+          <ul class="vars">
+            <li><b>λ</b><span>de Broglie wavelength, m</span></li>
+            <li><b>p</b><span>momentum, kg m s⁻¹</span></li>
+            <li><b>m</b><span>particle mass, kg</span></li>
+            <li><b>v</b><span>particle velocity, m s⁻¹</span></li>
+          </ul>
+        </div>
+
+        <h3 class="sh">Derived chain for accelerated electrons <a class="chainref" href="#c3">chain · §13</a></h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>λ</i> = <span class="frac"><span class="n"><i>h</i></span><span class="d"><span class="sqrt"><span class="r">2<i>m</i><i>e</i><i>V</i></span></span></span></span></p></div>
+          <ul class="vars">
+            <li><b>V</b><span>accelerating voltage, V</span></li>
+          </ul>
+          <p class="note">Using <i>eV</i> = ½<i>mv</i>², <i>p</i> = <i>mv</i> and <i>λ</i> = <i>h</i>/<i>p</i>.</p>
+        </div>
+      </section>
+
+      <!-- ============ 11 SPECTRA ============ -->
+      <section class="sec" id="s11">
+        <p class="eyebrow">§ 11</p>
+        <h2>Atomic line spectra</h2>
+
+        <h3 class="sh">Photon emission / absorption energy</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq">Δ<i>E</i> = <i>E</i><sub>upper</sub> − <i>E</i><sub>lower</sub> = <i>h</i><i>f</i> = <span class="frac"><span class="n"><i>h</i><i>c</i></span><span class="d"><i>λ</i></span></span></p></div>
+          <ul class="vars">
+            <li><b>ΔE</b><span>energy gap between levels, J</span></li>
+          </ul>
+          <p class="note">Longest wavelength = smallest Δ<i>E</i> &nbsp;·&nbsp; shortest wavelength = largest Δ<i>E</i>.</p>
+        </div>
+
+        <h3 class="sh">Number of possible spectral lines from an excited state</h3>
+        <div class="fcard">
+          <div class="eqwrap"><p class="eq"><i>N</i> = <span class="frac"><span class="n"><i>n</i>(<i>n</i> − 1)</span><span class="d">2</span></span></p></div>
+          <ul class="vars">
+            <li><b>n</b><span>principal quantum number of highest excited level</span></li>
+          </ul>
+          <p class="note">Example: <i>n</i> = 4 gives <i>N</i> = 6 possible emitted frequencies.</p>
+        </div>
+      </section>
+
+      <!-- ============ 12 SUMMARY ============ -->
+      <section class="sec" id="s12">
+        <p class="eyebrow">§ 12</p>
+        <h2>Summary of proportional relationships</h2>
+        <p class="intro">The whole page in one table. Cobalt rows grow together; ember rows trade against each other.</p>
+        <div class="tblwrap">
+        <table>
+          <thead><tr><th>Relationship</th><th>Proportionality</th><th>Condition</th></tr></thead>
+          <tbody>
+            <tr><td>Frequency and period</td><td class="math"><span class="pinv">f ∝ 1/T</span></td><td class="cond">Inversely proportional</td></tr>
+            <tr><td>Wave speed and tension</td><td class="math"><span class="pdir">v ∝ √T</span></td><td class="cond">On a string</td></tr>
+            <tr><td>Wave speed and mass density</td><td class="math"><span class="pinv">v ∝ 1/√μ</span></td><td class="cond">Heavier string = slower</td></tr>
+            <tr><td>Intensity and amplitude</td><td class="math"><span class="pdir">I ∝ A²</span></td><td class="cond">Double amplitude = 4× intensity</td></tr>
+            <tr><td>Intensity and distance</td><td class="math"><span class="pinv">I ∝ 1/r²</span></td><td class="cond">Point source</td></tr>
+            <tr><td>Photon energy and frequency</td><td class="math"><span class="pdir">E ∝ f</span></td><td class="cond">Directly proportional</td></tr>
+            <tr><td>Photon energy and wavelength</td><td class="math"><span class="pinv">E ∝ 1/λ</span></td><td class="cond">Inversely proportional</td></tr>
+            <tr><td>Max KE and frequency</td><td class="math"><span class="pdir">KE<sub style="font-size:.7em">max</sub> ∝ f</span></td><td class="cond">Gradient = h</td></tr>
+            <tr><td>Path difference and phase difference</td><td class="math"><span class="pdir">Δφ ∝ Δx</span></td><td class="cond">2π/λ proportionality</td></tr>
+            <tr><td>Refractive index and speed</td><td class="math"><span class="pinv">n ∝ 1/v</span></td><td class="cond">Higher n = slower light</td></tr>
+            <tr><td>Grating angle and wavelength</td><td class="math"><span class="pdir">sin θ ∝ λ</span></td><td class="cond">For fixed d</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+
+      <!-- ============ 13 CHAINS ============ -->
+      <section class="sec" id="s13">
+        <p class="eyebrow">§ 13</p>
+        <h2>Formula chains &amp; how they combine</h2>
+        <p class="intro">Five derivations, each followed down the rail from givens to result.</p>
+
+        <h3 class="sh" id="c1">Refraction chain</h3>
+        <div class="chain">
+          <div class="cstep"><span class="ctag">Given</span><p class="eq"><i>n</i> = <span class="frac"><span class="n"><i>c</i></span><span class="d"><i>v</i></span></span></p></div>
+          <div class="cstep"><span class="ctag">Given</span><p class="eq"><i>v</i> = <i>f</i> <i>λ</i></p></div>
+          <div class="clink">Combine — light enters glass</div>
+          <div class="cstep"><p><i>v</i> decreases · <i>f</i> stays constant · therefore <i>λ</i> decreases proportionally</p></div>
+          <div class="cstep result"><span class="ctag">Result</span><p class="eq"><i>λ</i><sub>glass</sub> = <span class="frac"><span class="n"><i>λ</i><sub>air</sub></span><span class="d"><i>n</i></span></span></p></div>
+        </div>
+
+        <h3 class="sh" id="c2">Stationary wave string chain</h3>
+        <div class="chain">
+          <div class="cstep"><span class="ctag">Given</span><p class="eq"><i>f</i><sub>1</sub> = <span class="frac"><span class="n"><i>v</i></span><span class="d">2<i>L</i></span></span> &nbsp;·&nbsp; <i>v</i> = <span class="sqrt"><span class="r"><span class="frac"><span class="n"><i>T</i></span><span class="d"><i>μ</i></span></span></span></span></p></div>
+          <div class="clink">Substitute</div>
+          <div class="cstep"><p class="eq"><i>f</i><sub>1</sub> = <span class="frac"><span class="n">1</span><span class="d">2<i>L</i></span></span> <span class="sqrt"><span class="r"><span class="frac"><span class="n"><i>T</i></span><span class="d"><i>μ</i></span></span></span></span></p></div>
+          <div class="clink">Square</div>
+          <div class="cstep result"><span class="ctag">Result</span><p class="eq"><i>f</i><sub>1</sub><sup>2</sup> = <span class="frac"><span class="n"><i>T</i></span><span class="d">4<i>L</i><sup>2</sup> <i>μ</i></span></span></p><p><span class="pinv">f ∝ 1/L</span> · <span class="pinv">f ∝ 1/√μ</span> · <span class="pdir">f ∝ √T</span></p></div>
+        </div>
+
+        <h3 class="sh" id="c3">de Broglie chain</h3>
+        <div class="chain">
+          <div class="cstep"><span class="ctag">Given</span><p class="eq"><i>e</i><i>V</i> = <span class="frac"><span class="n">1</span><span class="d">2</span></span> <i>m</i><i>v</i><sup>2</sup></p></div>
+          <div class="cstep"><span class="ctag">Given</span><p class="eq"><i>p</i> = <i>m</i> <i>v</i></p></div>
+          <div class="cstep"><span class="ctag">Given</span><p class="eq"><i>λ</i> = <span class="frac"><span class="n"><i>h</i></span><span class="d"><i>p</i></span></span></p></div>
+          <div class="clink">Combine all three</div>
+          <div class="cstep result"><span class="ctag">Result</span><p class="eq"><i>λ</i> = <span class="frac"><span class="n"><i>h</i></span><span class="d"><span class="sqrt"><span class="r">2<i>m</i><i>e</i><i>V</i></span></span></span></span></p></div>
+        </div>
+
+        <h3 class="sh" id="c4">Photon counting chain</h3>
+        <div class="chain">
+          <div class="cstep"><span class="ctag">Total energy</span><p class="eq"><i>P</i> × <i>t</i></p></div>
+          <div class="cstep"><span class="ctag">Energy per photon</span><p class="eq"><i>h</i><i>f</i></p></div>
+          <div class="clink">Divide</div>
+          <div class="cstep result"><span class="ctag">Result</span><p class="eq"><i>N</i> = <span class="frac"><span class="n"><i>P</i> <i>t</i></span><span class="d"><i>h</i><i>f</i></span></span></p></div>
+        </div>
+
+        <h3 class="sh" id="c5">Diffraction grating geometry chain</h3>
+        <div class="chain">
+          <div class="cstep"><span class="ctag">Given</span><p class="eq">tan <i>θ</i> = <span class="frac"><span class="n"><i>x</i></span><span class="d"><i>D</i></span></span></p></div>
+          <div class="cstep"><span class="ctag">Given</span><p class="eq"><i>n</i><i>λ</i> = <i>d</i> sin <i>θ</i></p></div>
+          <div class="clink">Combine</div>
+          <div class="cstep result"><span class="ctag">Result</span><p class="eq"><i>λ</i> = <span class="frac"><span class="n"><i>d</i> sin <span class="rm">(</span>arctan(<i>x</i>/<i>D</i>)<span class="rm">)</span></span><span class="d"><i>n</i></span></span></p><p>Always calculate tan <i>θ</i> first from distances, then convert to sin <i>θ</i>.</p></div>
+        </div>
+      </section>
+
+      <footer>
+        <p>Waves &amp; Quanta — a revision reference</p>
+        <p>constants to 3 s.f. · 1 eV = 1.60 × 10⁻¹⁹ J</p>
+      </footer>
+    </main>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- proportionality bench ---------- */
+  var cv = document.getElementById('wave');
+  var ctx = cv.getContext('2d');
+  var V = 3.0, SPAN = 6, BASE = 0.5;
+  var f = 1.5, A = 0.5, t = 0;
+  var fSl = document.getElementById('fSl'),
+      aSl = document.getElementById('aSl'),
+      fOut = document.getElementById('fOut'),
+      aOut = document.getElementById('aOut'),
+      readV = document.getElementById('readV'),
+      readI = document.getElementById('readI');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function resize(){
+    var d = Math.min(window.devicePixelRatio || 1, 2);
+    var w = cv.clientWidth, h = 232;
+    cv.width = w * d; cv.height = h * d;
+    ctx.setTransform(d, 0, 0, d, 0, 0);
+  }
+
+  function draw(){
+    var w = cv.clientWidth, h = 232;
+    ctx.clearRect(0, 0, w, h);
+    var ppm = w / SPAN;
+    var mid = h * 0.60;
+    var upp = (h * 0.42) / 1.25;
+
+    /* graph-paper grid */
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = '#EDEBE4';
+    for (var m = 0; m <= SPAN + 0.001; m += 0.5){
+      var gx = Math.round(m * ppm) + 0.5;
+      ctx.beginPath(); ctx.moveTo(gx, 8); ctx.lineTo(gx, h - 8); ctx.stroke();
+    }
+    ctx.strokeStyle = '#D8D5CC';
+    ctx.beginPath(); ctx.moveTo(0, Math.round(mid) + 0.5); ctx.lineTo(w, Math.round(mid) + 0.5); ctx.stroke();
+
+    /* the wave */
+    var lam = V / f, k = 2 * Math.PI / lam, om = 2 * Math.PI * f;
+    ctx.strokeStyle = '#1A1D23';
+    ctx.lineWidth = 2.2;
+    ctx.beginPath();
+    for (var x = 0; x <= w; x += 2){
+      var xm = x / ppm;
+      var y = mid - A * upp * Math.sin(k * xm - om * t);
+      if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+
+    /* wavelength bracket between adjacent peaks */
+    if (lam <= SPAN - 0.8){
+      var p = ((Math.PI / 2 + om * t) % (2 * Math.PI)) / k;
+      if (p < 0.35) p += lam;
+      var p2 = p + lam;
+      if (p2 <= SPAN - 0.15){
+        var x1 = p * ppm, x2 = p2 * ppm, by = 16;
+        ctx.strokeStyle = '#1E56C8';
+        ctx.lineWidth = 1.4;
+        ctx.beginPath();
+        ctx.moveTo(x1, by - 5); ctx.lineTo(x1, by + 5);
+        ctx.moveTo(x2, by - 5); ctx.lineTo(x2, by + 5);
+        ctx.moveTo(x1, by); ctx.lineTo(x2, by);
+        ctx.stroke();
+        ctx.fillStyle = '#1E56C8';
+        ctx.font = '11px ui-monospace, Menlo, Consolas, monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('\u03BB = ' + lam.toFixed(2) + ' m', (x1 + x2) / 2, by - 6);
+      }
+    }
+  }
+
+  function out(){
+    var lam = V / f;
+    fOut.textContent = f.toFixed(2) + ' Hz';
+    aOut.textContent = A.toFixed(2);
+    readV.innerHTML = 'v = f\u03BB \u2192 3.0 = <b>' + f.toFixed(2) + ' Hz</b> \u00D7 <b>' + lam.toFixed(2) + ' m</b>';
+    var rel = Math.pow(A / BASE, 2);
+    readI.innerHTML = 'A = ' + A.toFixed(2) + ' \u2192 relative intensity <b>\u00D7' + rel.toFixed(2) + '</b> \u00B7 double A \u21D2 \u00D74 I';
+  }
+
+  function update(){ out(); draw(); }
+
+  fSl.addEventListener('input', function(){ f = parseFloat(fSl.value); update(); });
+  aSl.addEventListener('input', function(){ A = parseFloat(aSl.value); update(); });
+  window.addEventListener('resize', function(){ resize(); draw(); });
+
+  resize(); out(); draw();
+  if (!reduced.matches){
+    (function loop(){ t += 1 / 60; draw(); requestAnimationFrame(loop); })();
+  }
+
+  /* ---------- contents scrollspy ---------- */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          links.forEach(function(l){ l.classList.remove('on'); });
+          var l = map[e.target.id];
+          if (l) l.classList.add('on');
+        }
+      });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+    document.querySelectorAll('main section[id]').forEach(function(s){ io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>

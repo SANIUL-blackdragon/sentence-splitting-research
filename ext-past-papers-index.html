@@ -1,0 +1,2191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WPH12 Extension — Past Papers Index & Study Framework — Extension Study Guide</title>
+<style>
+:root{--bg:#fafcfe;--surface:#fff;--text:#1e293b;--heading:#0f4c75;--heading2:#1b6ca8;--accent:#3b82f6;--border:#e2e8f0;--muted:#64748b;--code-bg:#f1f5f9;--tbl-head:#eef2f7;--tbl-alt:#f8fafc}
+[data-theme="dark"]{--bg:#0f172a;--surface:#1e293b;--text:#e2e8f0;--heading:#7dd3fc;--heading2:#93c5fd;--accent:#60a5fa;--border:#334155;--muted:#94a3b8;--code-bg:#334155;--tbl-head:#1e293b;--tbl-alt:#172033}
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;margin:0;max-width:850px;margin:0 auto;padding:1rem 1.5rem 4rem}
+h1{color:var(--heading);font-size:1.8rem;border-bottom:2px solid var(--accent);padding-bottom:.3rem;margin-top:2rem}
+h2{color:var(--heading2);font-size:1.4rem;margin-top:1.8rem;border-left:4px solid var(--accent);padding-left:.6rem}
+h3{color:var(--heading);font-size:1.1rem;margin-top:1.2rem}
+p{margin:.6rem 0}
+strong{color:var(--heading)}
+em{color:var(--muted)}
+code{background:var(--code-bg);padding:.1rem .3rem;border-radius:3px;font-family:monospace;font-size:.9em}
+pre{background:var(--code-bg);padding:.8rem;border-radius:5px;overflow-x:auto;font-family:monospace}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.9rem}
+th{background:var(--tbl-head);color:var(--heading);padding:.5rem;text-align:left;border:1px solid var(--border)}
+td{padding:.5rem;border:1px solid var(--border)}
+tbody tr:nth-child(even){background:var(--tbl-alt)}
+hr{border:none;border-top:1px solid var(--border);margin:2rem 0}
+ul,ol{margin:.6rem 0;padding-left:1.5rem}
+li{margin:.3rem 0}
+header{position:sticky;top:0;background:var(--bg);z-index:10;padding:.8rem 0;border-bottom:1px solid var(--border);margin-bottom:1rem}
+header h1{margin-top:0;font-size:1.2rem;border:none;display:inline}
+.toggle{float:right;background:var(--accent);color:#fff;border:none;padding:.3rem .8rem;border-radius:4px;cursor:pointer;font-size:.85rem}
+@media print{header{position:static}.toggle{display:none}body{max-width:none}}
+</style>
+</head>
+<body data-theme="light">
+<header>
+<h1>WPH12 Extension — Past Papers Index & Study Framework</h1>
+<button class="toggle" onclick="var b=document.body;if(b.dataset.theme=='light'){b.dataset.theme='dark';this.textContent='☀ Light'}else{b.dataset.theme='light';this.textContent='🌙 Dark'}">🌙 Dark</button>
+</header>
+<main>
+<h2>WPH12 Extension — Past Papers Index &amp; Study Framework</h2>
+<p><strong>Scope:</strong> Vocabulary for sourcing, sitting, marking and learning from real Edexcel International A-level (IAL) Physics Unit 2 (WPH12/01) examination papers. This extension is the Unit 2 counterpart of the WPH11 <code>ext-past-papers-index</code> set: same framework, adapted for the Waves and Electricity content of Unit 2.</p>
+<p><strong>Source:</strong> Pearson Edexcel IAL Physics specification (admin &amp; assessment guidance), the 13 WPH12/01 paper+mark-scheme pairs held in <code>output/past-papers/physics/wph12/</code>, and the cross-paper statistics already compiled in <code>ch2.3-definitions.md</code>, <code>ch2.4-definitions.md</code>, <code>ch2.3-exam-connection.md</code>, <code>ch2.4-exam-connection.md</code> and <code>ext-uncertainty-exam-connections.md</code> (WPH11 version, methodology applies here too).</p>
+<p><strong>Purpose:</strong> Exam-ready definitions for every term a student needs in order to find, file, sit, mark and learn from WPH12 past papers. Real Pearson papers are copyrighted and must be sourced externally — this file is an index/framework, not a reproduction of any paper.</p>
+<hr>
+<h2>1. Paper Identity &amp; Code Terms</h2>
+<h3>1.1 Paper Code (WPH12/01)</h3>
+<p><strong>Pearson Edexcel ref:</strong> Unit 2: Waves and Electricity — written examination.</p>
+<p><strong>Definition:</strong> The unique four-character + two-digit code that identifies a specific Pearson Edexcel IAL Physics Unit 2 paper. <code>WPH12</code> denotes Physics Unit 2 (Waves and Electricity). The <code>/01</code> suffix denotes the standard (January or May/June or October) sitting variant. Other variants (<code>/02</code>, <code>/R</code>) exist for re-sit or regional alternatives but <code>/01</code> is the version almost universally sat.</p>
+<p><strong>WPH12 Exam context:</strong> Every paper in the repo is filed as <code>WPH12_&lt;session&gt;_qp.pdf</code> and <code>WPH12_&lt;session&gt;_ms.pdf</code>. Students must verify they are sitting/printed the <code>/01</code> variant when practising — the alternative variants test the same spec but with different question wording. WPH12/01 is paired with WPH11/01 (Unit 1) to form the AS-level Physics aggregation; both must be sat before progressing to A2 (WPH14/15/16).</p>
+<h3>1.2 Unit 2 (Waves and Electricity)</h3>
+<p><strong>Pearson Edexcel ref:</strong> Specification §2.3 (spec points 33–63) + §2.4 (spec points 64–80) — 48 outcomes total.</p>
+<p><strong>Definition:</strong> The second AS-level unit of the IAL Physics qualification, covering 31 waves-and-light outcomes (wave properties, longitudinal/transverse, superposition, stationary waves, refraction, diffraction, polarisation, wave-particle duality, photoelectric effect, atomic line spectra) and 17 electricity outcomes (current, p.d., resistance, resistivity, Kirchhoff's laws, series/parallel, power, internal resistance, potential dividers, V-I graphs, sensor circuits). Assessed by a single 1 h 30 min written paper worth 80 raw marks.</p>
+<p><strong>WPH12 Exam context:</strong> A student cannot pass WPH12 by knowing only waves OR only electricity — every paper tests both strands. Cross-paper statistics in <code>ch2.3-definitions.md</code> and <code>ch2.4-definitions.md</code> show ~56 marks of waves content and ~29 marks of electricity content per paper on average, summing (with cross-cutting uncertainty and practical skills marks) to the full 80. The waves strand is therefore roughly twice as heavy as the electricity strand — a fact that must drive revision time allocation.</p>
+<h3>1.3 Sitting</h3>
+<p><strong>Pearson Edexcel ref:</strong> Assessment administration calendar.</p>
+<p><strong>Definition:</strong> A single examination event on a specific date. The IAL Physics calendar normally offers three sittings per year: <strong>January</strong>, <strong>May/June</strong> and <strong>October</strong>. Each sitting produces its own paper and mark scheme. WPH12/01 has been sat at every available sitting since the qualification was introduced (January 2019 was the first WPH12 sitting of the 2018 specification).</p>
+<p><strong>WPH12 Exam context:</strong> "How many sittings of WPH12/01 are available from Jan 2019 to Jan 2026?" → 20 sittings (Jan 2019, Jun 2019, Oct 2019, Jan 2020, Oct 2020, Jan 2021, Oct 2021, Jan 2022, Jun 2022, Oct 2022, Jan 2023, Jun 2023, Oct 2023, Jan 2024, Jun 2024, Oct 2024, Jan 2025, Jun 2025, Oct 2025, Jan 2026). Jun 2020 was cancelled globally due to COVID-19 — there is no Jun 2020 paper. May/June 2021 was replaced with adapted assessment / centre-assessed grades in many regions for IAL Physics and is excluded from the standard 20-sitting count (see §3.5 below).</p>
+<h3>1.4 Session</h3>
+<p><strong>Pearson Edexcel ref:</strong> Results release windows.</p>
+<p><strong>Definition:</strong> Used interchangeably with "sitting" but more formally denotes the administrative window (registration → exam → results) tied to a sitting. The three sessions per year are: January session (results in March), May/June session (results in August), October session (results in January). A paper is identified by its session — e.g. "the January 2024 paper" or "Jan 2024 WPH12/01".</p>
+<p><strong>WPH12 Exam context:</strong> Students should aim to sit the real WPH12/01 paper in the session that aligns with their school's exam calendar. Most international schools enter students for the May/June session; January and October are commonly used for re-sits. The October session is particularly popular for IAL Physics because the May/June results (released in August) allow time for re-sit preparation.</p>
+<hr>
+<h2>2. Paper Structure Terms</h2>
+<h3>2.1 Section A</h3>
+<p><strong>Pearson Edexcel ref:</strong> WPH12/01 paper front cover — "Section A".</p>
+<p><strong>Definition:</strong> The first section of the WPH12/01 paper, worth 40 marks, consisting of ~10 short-answer multiple-choice questions (MCQs, 1 mark each, ~10 marks total) plus structured short-answer questions testing breadth across the spec. Questions are typically 1–4 marks each, with little scaffolding.</p>
+<p><strong>WPH12 Exam context:</strong> Section A rewards rapid recall and procedural fluency. Cross-paper statistics (see <code>ch2.3-exam-connection.md</code> and <code>ch2.4-exam-connection.md</code>) show every Section A contains at least one MCQ on wave properties (1 mark, e.g. Oct 2022 Q1 — wave speed quantities, Jan 2022 Q2 — de Broglie expression, Jun 2022 Q2 — what cannot be found from a displacement–time graph), at least one MCQ on circuits (1 mark, e.g. phase/path difference, drift velocity), and at least one structured short-answer on resistivity or photoelectric effect. Time guidance: complete Section A in ~50 minutes (≈1.25 min per mark).</p>
+<h3>2.2 Section B</h3>
+<p><strong>Pearson Edexcel ref:</strong> WPH12/01 paper front cover — "Section B".</p>
+<p><strong>Definition:</strong> The second section of the WPH12/01 paper, worth 40 marks, consisting of 2–3 extended-response questions of 10–16 marks each. Questions are context-rich (a real-world scenario — a CD diffraction grating, an optical fibre with cladding, a strain gauge, a solar cell, a stationary wave in a closed tube) and require sustained multi-step reasoning, often with a Quality of Written Communication (QWC) mark.</p>
+<p><strong>WPH12 Exam context:</strong> Section B is where most students lose marks. The cross-paper analysis shows every Section B contains one practical/data question (CP5 standing wave, CP6 diffraction grating, CP7 resistivity, OR CP8 internal resistance) worth 12–18 marks, including 4–8 uncertainty marks (see <code>ext-uncertainty-definitions.md</code>). QWC questions in WPH12 typically occur in Section B and are worth 6 marks each (e.g. Oct 2022 Q15a(ii) beats, Jun 2025 Q17a stationary wave formation, Oct 2023 Q17a wave-particle duality). Time guidance: complete Section B in ~40 minutes (≈1 min per mark, leaving 10 minutes checking).</p>
+<h3>2.3 Multiple-Choice Question (MCQ)</h3>
+<p><strong>Pearson Edexcel ref:</strong> Section A format.</p>
+<p><strong>Definition:</strong> A question with 4 lettered options (A–D) where only one is correct. MCQs in WPH12 are worth 1 mark each, with ~10 MCQs per paper in Section A. There is no negative marking — students should never leave an MCQ blank.</p>
+<p><strong>WPH12 Exam context:</strong> The existing ch2.3 and ch2.4 exam-connection files cite 30+ distinct MCQs across the 13 in-repo papers. Recurring MCQ patterns include: wave-property identification (Oct 2022 Q1, Jan 2022 Q2, Jun 2022 Q2, Oct 2023 Q8, Jan 2023 Q2), displacement-zero trap (Oct 2022 Q4, Jan 2022 Q13), diffraction-vs-refraction (Oct 2022 Q8), phase/path difference (Jan 2022 Q9, Jun 2025 Q7, Jan 2025 Q4, Jan 2025 Q7), distance between adjacent nodes (Oct 2023 Q6), longest-wavelength trap (Oct 2022 Q2). MCQs are 10–13 marks per paper (~13% of total) and disproportionately reward fluency over deep reasoning.</p>
+<h3>2.4 Quality of Written Communication (QWC) Question</h3>
+<p><strong>Pearson Edexcel ref:</strong> QWC guidance — Appendix to specification.</p>
+<p><strong>Definition:</strong> A question (or part-question) explicitly marked for the structure, clarity and spelling of the written response in addition to physics content. QWC questions are worth 6 marks total: up to 4 marks for Indicative Content (IC) physics points and up to 2 marks for the structure (coherent linkage with connective words such as "because", "therefore", "so").</p>
+<p><strong>WPH12 Exam context:</strong> Approximately one to two QWC questions per WPH12 paper. The ch2.4 exam-connection file documents 4 Ch 2.4 QWC questions across 13 papers (Oct 2019 Q14a — NTC thermistor; Jun 2022 Q15a — Kirchhoff's laws; Jun 2023 Q14 — LDR circuit power; Jan 2025 Q16b — LDR + internal resistance), and the ch2.3 exam-connection file documents a similar density of Ch 2.3 QWC questions (Oct 2022 Q15a(ii) beats; Jan 2023 Q15a interference at harbour; Jun 2025 Q17a stationary wave; Oct 2023 Q17a wave-particle duality; Jun 2025 Q19b wave-particle comparison). Topics are split roughly 50/50 between waves (beats, harbour interference, stationary waves, wave-particle duality) and electricity (Kirchhoff, LDR, thermistor circuits).</p>
+<hr>
+<h2>3. Marking &amp; Grading Terms</h2>
+<h3>3.1 Raw Mark</h3>
+<p><strong>Pearson Edexcel ref:</strong> Assessment reporting.</p>
+<p><strong>Definition:</strong> The actual mark a candidate scores on the paper out of the maximum (80 for WPH12/01). Raw marks are what the examiner writes on the script and what the mark scheme totals. Raw marks are NOT the same as uniform marks (UMS) or grades.</p>
+<p><strong>WPH12 Exam context:</strong> When a student completes a past paper for practice, the only meaningful score is the raw mark out of 80. To predict a grade, the student must compare the raw mark to the published grade boundary for that specific paper (see §3.4 below).</p>
+<h3>3.2 Uniform Mark Scale (UMS)</h3>
+<p><strong>Pearson Edexcel ref:</strong> IAL uniform mark conversion.</p>
+<p><strong>Definition:</strong> A scaled mark that adjusts for variation in paper difficulty across sittings, so that the same UMS corresponds to the same grade in every session. For WPH12 (an AS unit), UMS ranges 0–120 (where 96 = A, 84 = B, 72 = C, 60 = D, 48 = E). The conversion from raw → UMS is published by Pearson with the grade boundaries.</p>
+<p><strong>WPH12 Exam context:</strong> UMS matters for the final AS/A-level aggregate, NOT for raw practice scoring. A student scoring 60/80 raw on a "hard" WPH12 paper may receive a higher UMS than the same raw score on an "easy" paper. Students should track raw marks during practice and use UMS only when comparing their school's predicted grade.</p>
+<h3>3.3 Grade Boundary</h3>
+<p><strong>Pearson Edexcel ref:</strong> Grade boundary documents — published per session.</p>
+<p><strong>Definition:</strong> The minimum raw mark required to achieve a given grade on a specific paper in a specific session. Grade boundaries are NOT fixed — they are set by Pearson after each session based on statistical analysis of candidate performance and paper difficulty. Boundaries are published ~6 weeks after results day, alongside the mark scheme.</p>
+<p><strong>WPH12 Exam context:</strong> For WPH12/01 the typical raw-mark ranges are:</p>
+<ul>
+<li>A<em> boundary: ~75–80% (60–64 / 80) — note: A</em> is awarded at A2 level on the aggregate, not on the AS unit itself, but Pearson publishes an indicative A* raw mark for AS units to support tracking.</li>
+<li>A boundary: ~65–70% (52–56 / 80)</li>
+<li>B boundary: ~55–60% (44–48 / 80)</li>
+<li>C boundary: ~50–55% (40–44 / 80)</li>
+<li>D boundary: ~45–50% (36–40 / 80)</li>
+<li>E boundary: ~40–45% (32–36 / 80)</li>
+</ul>
+<p>These ranges vary by ±3 marks between sessions. The WPH12 boundaries tend to sit 0–2 marks lower than the WPH11 boundaries at the A and A* levels because WPH12 has a slightly larger Section B practical/uncertainty load that students find harder. Always consult the official boundary document for the specific paper being sat.</p>
+<h3>3.4 A* Boundary</h3>
+<p><strong>Pearson Edexcel ref:</strong> A* awarding rules — IAL specification.</p>
+<p><strong>Definition:</strong> The minimum raw mark (or UMS) required to achieve the A<em> grade. For IAL Physics, A</em> is awarded at A2 level based on: (a) an A grade overall across all 6 units, AND (b) ≥90% UMS averaged across the A2 units (WPH14, WPH15, WPH16). The AS units (WPH11, WPH12, WPH13) do NOT carry A* on their own — they cap at A.</p>
+<p><strong>WPH12 Exam context:</strong> Pearson still publishes an indicative A<em> raw boundary for AS units so students can track progress toward the final A</em> target. For WPH12/01 this indicative boundary typically sits at 60–64/80 (75–80%). Treating this indicative boundary as a target during practice is a sound strategy. A student targeting A<em> overall should aim for ≥64/80 on WPH12/01 to keep the A</em> achievable on the A2 aggregate.</p>
+<h3>3.5 COVID-Adjusted Grading</h3>
+<p><strong>Pearson Edexcel ref:</strong> Special arrangements 2020/2021.</p>
+<p><strong>Definition:</strong> The modified grading process applied to the Oct 2020, Jan 2021 and (where sat) Jun 2021 sessions in response to the COVID-19 pandemic. Pearson reduced content (some spec points were examined less heavily), widened grade boundaries, and in some regions replaced the exam with centre-assessed grades. These adjustments make the 2020–2021 sessions atypical and statistically NOT comparable to pre-2020 or post-2021 sessions.</p>
+<p><strong>WPH12 Exam context:</strong> The WPH12 repo does NOT contain the COVID-affected sessions (Oct 2020, Jan 2021, Jun 2021) — they are missing from <code>output/past-papers/physics/wph12/</code>. The cross-paper statistics in <code>ch2.3-definitions.md</code> and <code>ch2.4-definitions.md</code> describe "13 papers" — all of which are non-COVID papers. Students should:</p>
+<ul>
+<li>USE COVID papers for content/topic practice (the physics is unchanged), if they can be sourced externally.</li>
+<li>EXCLUDE COVID papers from grade-boundary trend analysis (boundaries were inflated by ~3–5 marks at the A boundary).</li>
+<li>EXCLUDE COVID papers from "which topics are most heavily tested" statistics (topic weighting was modified).</li>
+</ul>
+<hr>
+<h2>4. Examiner Feedback Terms</h2>
+<h3>4.1 Mark Scheme (MS)</h3>
+<p><strong>Pearson Edexcel ref:</strong> Mark scheme document — published per paper.</p>
+<p><strong>Definition:</strong> The official document, released by Pearson alongside results (~6 weeks after the exam), that specifies exactly how each question is marked. For each question it lists: the correct answer(s), the marks available, the acceptable alternative answers, and the <strong>mark scheme wording</strong> (the exact phrasing that must appear in a response to score each mark). Mark schemes also include "guidance" notes clarifying what does NOT score.</p>
+<p><strong>WPH12 Exam context:</strong> Mark schemes are pedantic. The recurring examiner-report theme (across both ch2.3 and ch2.4) is "students gave the right idea but the wrong phrasing". For 2-mark questions, the mark scheme typically has 3 acceptable points and the candidate needs any 2 — students should learn to identify all acceptable points, not just one. The ch2.3 and ch2.4 exam-connection files document the exact mark-scheme wording for ~80 distinct question types across the 13 in-repo papers.</p>
+<h3>4.2 Examiner Report (ER)</h3>
+<p><strong>Pearson Edexcel ref:</strong> Principal Examiner report — published per paper.</p>
+<p><strong>Definition:</strong> The official narrative document, published alongside the mark scheme, in which the Principal Examiner for WPH12 reports on candidate performance for that specific sitting. For each question the report describes: the average mark scored, common errors, misconceptions observed, examples of strong responses, and advice for future candidates. Examiner reports are the single most valuable study resource after the papers themselves.</p>
+<p><strong>WPH12 Exam context:</strong> Examiner reports are the source of every "common error" cited in the WPH12 study guides (e.g. "students omitted 'perpendicular to the direction of travel' in the polarisation definition" appears in the Jun 2025 examiner report — see <code>ch2.3-definitions.md</code> §7; "students used diameter instead of radius in A = πr²" appears in 4+ examiner reports — see <code>ch2.4-exam-connection.md</code> §1). Reading the examiner report for a paper immediately after self-marking the paper doubles the learning value of the practice session.</p>
+<h3>4.3 Mark Scheme Wording (Indicative Content)</h3>
+<p><strong>Pearson Edexcel ref:</strong> Mark scheme notation — underlined phrases.</p>
+<p><strong>Definition:</strong> The exact phrases listed in a mark scheme that an examiner will accept for a mark. In the published mark schemes, indicative content is often underlined to show the keywords the examiner is searching for. Synonyms may or may not be accepted — the mark scheme lists the accepted variants.</p>
+<p><strong>WPH12 Exam context:</strong> Examples from the existing study guides:</p>
+<ul>
+<li>Polarisation (Jun 2025 Q12b(i), 3 marks): must include "perpendicular to the direction of travel/propagation" — omitting this loses a mark (<code>ch2.3-definitions.md</code> §7).</li>
+<li>Resistivity definition (Jun 2024 Q14a(i), 1 mark): "a property of the material, independent of its dimensions" — saying "resistance per unit length" does NOT score (<code>ch2.4-exam-connection.md</code> §1).</li>
+<li>QWC structure marks (all WPH12 QWC questions): must use connective language ("because", "therefore", "so", "which means"); listing isolated physics points scores 0/2 for structure even if the physics content is correct (<code>ch2.3-exam-connection.md</code> §3, <code>ch2.4-exam-connection.md</code> QWC section).</li>
+<li>Photoelectric effect one-to-one interaction: "a single photon interacts with a single electron" — paraphrasing as "photons hit electrons" does NOT score (<code>ch2.3-definitions.md</code> §12).</li>
+</ul>
+<h3>4.4 Principal Examiner</h3>
+<p><strong>Pearson Edexcel ref:</strong> Senior examiner role.</p>
+<p><strong>Definition:</strong> The senior examiner responsible for setting the paper, training the team of assistant examiners, writing the mark scheme, and authoring the examiner report. The Principal Examiner's name appears on the front of the mark scheme. The same Principal Examiner often oversees WPH12 across multiple sittings, which is why certain question styles recur.</p>
+<p><strong>WPH12 Exam context:</strong> When a particular phrasing or question style appears repeatedly across sittings (e.g. the "show that" question with intermediate values required — appearing in 13/13 papers; the d-vs-1/d diffraction grating trap — appearing in Oct 2022 Q18c, Jun 2023 and Jan 2025 Q14b(i)), it reflects the Principal Examiner's preference. Students who study the last 5 sittings are effectively studying the current Principal Examiner's style.</p>
+<hr>
+<h2>5. Practice &amp; Study Terms</h2>
+<h3>5.1 Past Paper</h3>
+<p><strong>Pearson Edexcel ref:</strong> Pearson publishes past papers on its website ~6 weeks after results, freely downloadable (registration required) for student practice.</p>
+<p><strong>Definition:</strong> A real WPH12/01 examination paper from a previous sitting, used by students for timed practice and revision. "Past paper" collectively refers to the question paper (QP), mark scheme (MS), and examiner report (ER) for a single sitting. Pearson retains past papers on its website indefinitely.</p>
+<p><strong>WPH12 Exam context:</strong> The existing WPH12 study-guide ERQ files (<code>ch2.3-exam-readiness-questions.md</code>, <code>ch2.4-exam-readiness-questions.md</code>) are practice questions written by the team, NOT real Pearson papers. The complete index of every WPH12/01 paper from Jan 2019 → Jan 2026 (20 sittings, of which 13 are in the repo) is in <code>ext-past-papers-index-exam-connections.md</code> §1.</p>
+<h3>5.2 Question Paper (QP)</h3>
+<p><strong>Pearson Edexcel ref:</strong> The actual exam booklet.</p>
+<p><strong>Definition:</strong> The physical (or PDF) examination paper as the candidate receives it: cover sheet with paper code, instructions, formula sheet (Appendix 8 of the spec), Section A questions, Section B questions, and any data/figure pages. For WPH12/01 the QP is typically 24–32 pages long, slightly longer than WPH11 because the waves content often requires more figures (wave diagrams, ray diagrams, energy-level diagrams, circuit diagrams).</p>
+<p><strong>WPH12 Exam context:</strong> When sitting a past paper for practice, the student should print the QP (not just read on screen) and write answers on the paper as in the real exam. Screen-based practice does not build the handwriting speed or spatial awareness required for the real exam. The formula sheet on the front of the WPH12/01 paper includes the wave equation v = fλ, Snell's law n₁ sin θ₁ = n₂ sin θ₂, the diffraction grating equation nλ = d sin θ, the photoelectric equation hf = φ + ½mv²_max, the de Broglie equation λ = h/p, the resistivity equation R = ρL/A, the drift velocity equation I = nAve, and the power equations P = IV = I²R = V²/R — students must know which equation to use without looking it up.</p>
+<h3>5.3 Timed Practice</h3>
+<p><strong>Pearson Edexcel ref:</strong> Exam-condition simulation.</p>
+<p><strong>Definition:</strong> Completing a past paper under examination conditions: 1 hour 30 minutes (90 minutes) total, no breaks, no textbook, no notes, no phone, only an approved calculator and the Pearson data sheet. The student must finish within 90 minutes, even if some questions are unanswered, to build time discipline.</p>
+<p><strong>WPH12 Exam context:</strong> Untimed practice inflates scores by 8–12 marks (a 10–15% overestimate) because students linger on hard questions. The real paper rewards disciplined time allocation — see <code>ext-past-papers-index-concepts.md</code> §2 for the timed-practice method.</p>
+<h3>5.4 Self-Marking</h3>
+<p><strong>Pearson Edexcel ref:</strong> Practical study method.</p>
+<p><strong>Definition:</strong> The student marks their own completed past paper using the official mark scheme, awarding marks strictly per the mark scheme wording (no half-marks, no "I had the right idea"). Self-marking forces the student to confront the gap between their answer and the mark scheme wording — this is where most learning happens.</p>
+<p><strong>WPH12 Exam context:</strong> Self-marking is most effective when done immediately after the timed practice session, while the student remembers their reasoning. Marking delayed by a day or more loses ~50% of the learning value. See <code>ext-past-papers-index-concepts.md</code> §3 for the mark-scheme analysis technique, including the three-layer mark-scheme read and the phrase-bank construction method.</p>
+<h3>5.5 Repo (Past Papers Repository)</h3>
+<p><strong>Project-specific term:</strong> <code>output/past-papers/physics/wph12/</code>.</p>
+<p><strong>Definition:</strong> The local folder within this project that stores the sourced WPH12/01 past papers. Each session has its own sub-folder (e.g. <code>jan2024/</code>) containing the question paper (<code>WPH12_jan2024_qp.pdf</code>) and mark scheme (<code>WPH12_jan2024_ms.pdf</code>). Some folders also contain the examiner report (<code>er.pdf</code>).</p>
+<p><strong>WPH12 Exam context:</strong> As of the time of writing, the repo holds 13 sessions (Jun 2019, Oct 2019, Jan 2022, Jun 2022, Oct 2022, Jan 2023, Jun 2023, Oct 2023, Jan 2024, Jun 2024, Oct 2024, Jan 2025, Jun 2025) — i.e. 26 PDF files (13 QP + 13 MS). Missing published sessions to source externally: Jan 2019, Jan 2020, Oct 2020 (COVID), Jan 2021 (COVID), Oct 2021, Oct 2025 (6 missing published sessions). Jun 2021 (COVID) is referenced in <code>ch2.4-content.md</code> but is not in the repo and is treated as a non-standard sitting for IAL Physics. Jan 2026 has not yet been sat. See the master index in <code>ext-past-papers-index-exam-connections.md</code> §1.</p><hr><h2>WPH12 Extension — Past Papers Index &amp; Study Framework (Concepts)</h2>
+<p><strong>Scope:</strong> How to use real WPH12/01 past papers, mark schemes and examiner reports effectively — the working method that turns "I have 13 papers in the repo" into "I am exam-ready." This file connects the definitions in <code>ext-past-papers-index-definitions.md</code> into a structured practice routine.</p>
+<p><strong>Source:</strong> Pearson Edexcel IAL Physics admin guidance + the 13 WPH12/01 papers held in <code>output/past-papers/physics/wph12/</code> + the cross-paper statistics already compiled in <code>ch2.3-definitions.md</code>, <code>ch2.4-definitions.md</code>, <code>ch2.3-exam-connection.md</code> and <code>ch2.4-exam-connection.md</code>.</p>
+<hr>
+<h2>1. Why Past Papers Are the Highest-Yield Activity</h2>
+<p>Every mark available in WPH12/01 has been earned by some combination of (a) physics content knowledge (waves + electricity), (b) procedural fluency in standard calculations (Snell's law, diffraction grating, resistivity, internal resistance, drift velocity), (c) exam technique (timing, command-word response, mark-scheme phrasing) and (d) practical skills (uncertainty, graphing, evaluation, CP5/CP6/CP7/CP8 method).</p>
+<p>The existing study guides (<code>ch2.3-<em></code>, <code>ch2.4-</em></code>, <code>ext-uncertainty-<em></code>, <code>ext-cp4-8-methods-</em></code>) cover (a), (b) and (d). They cannot, by themselves, develop (c) — exam technique. Exam technique is a learned skill that requires repeated exposure to real papers under timed conditions, followed by careful self-marking and study of the examiner report.</p>
+<p>A student who has worked through 8–10 past papers (timed + self-marked + examiner report read) typically scores 10–15 raw marks higher than an equally-prepared student who has only completed practice questions from the study guides. This is the difference between a B and an A*.</p>
+<p>For WPH12 specifically, exam-technique matters MORE than for WPH11 because:</p>
+<ul>
+<li>The waves content includes high-mark QWC questions (6 marks each) where structure/connective language is decisive.</li>
+<li>The electricity content includes 3–4 mark "show that" calculations where every intermediate value must be shown.</li>
+<li>The cross-strand practical questions (CP5–CP8) require fluency in BOTH content strands simultaneously (e.g. a CP6 diffraction grating question combines wave physics with measurement uncertainty).</li>
+</ul>
+<hr>
+<h2>2. The Timed Practice Method</h2>
+<h3>2.1 Setup — Replicating Exam Conditions</h3>
+<p>The goal of timed practice is to reproduce the cognitive and physiological conditions of the real exam, so the brain builds the right automaticity.</p>
+<p><strong>Required conditions:</strong></p>
+<ol>
+<li><strong>Time:</strong> 1 hour 30 minutes (90 minutes) total. Use a countdown timer visible at all times. No pausing.</li>
+<li><strong>No aids:</strong> Only an approved calculator (the one to be used in the real exam), the Pearson data sheet (or Appendix 8 of the spec), pen, pencil, ruler, protractor (for ray diagrams), eraser. No textbook, no notes, no phone, no internet.</li>
+<li><strong>Environment:</strong> A quiet room, sitting at a desk, door closed. No music. No drinks break.</li>
+<li><strong>Materials:</strong> Print the question paper (do not read on screen). Write answers on the printed paper as in the real exam. Use the same pen/pencil you will use in the exam. Have spare pens/pencils within reach.</li>
+<li><strong>Mental state:</strong> Sit the paper at the same time of day as the real exam (most IAL papers are sat mid-morning, ~09:00–10:30 local time). Do not eat a heavy meal immediately before.</li>
+</ol>
+<h3>2.2 Time Allocation Within the 90 Minutes</h3>
+<table><thead><tr>
+<th>Section</th>
+<th>Marks</th>
+<th>Suggested time</th>
+<th>Pace</th>
+</tr></thead><tbody>
+<tr>
+<td>Section A (MCQs + structured short answer)</td>
+<td>40</td>
+<td>50 min</td>
+<td>1.25 min/mark</td>
+</tr>
+<tr>
+<td>Section B (extended response)</td>
+<td>40</td>
+<td>35 min</td>
+<td>0.9 min/mark</td>
+</tr>
+<tr>
+<td>Checking / buffer</td>
+<td>—</td>
+<td>5 min</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>80</strong></td>
+<td><strong>90 min</strong></td>
+<td>—</td>
+</tr>
+</tbody></table>
+<p><strong>Practical tip:</strong> Set the timer to 50 minutes for Section A. When the timer rings, move to Section B regardless of whether Section A is complete. This forces the discipline of not over-investing in any single MCQ. The remaining 40 minutes is for Section B + checking.</p>
+<h3>2.3 In-the-Moment Decision Rules</h3>
+<p>These are the rules that separate A/A* students from B students under time pressure:</p>
+<ol>
+<li><strong>MCQ rule:</strong> If you cannot solve an MCQ in 90 seconds, circle the question, mark your best guess in pencil, and move on. Return only if time remains at the end. Never leave an MCQ blank — there is no negative marking.</li>
+<li><strong>"Show that" rule:</strong> A "show that" question gives the answer. Use the given answer as a check — work backwards if forward working stalls. The mark is for the working, not the answer. Example: Jan 2025 Q17c(i) "show that f² = T/(4L²μ)" — write v = fλ, then λ = 4L (closed tube fundamental), then v = √(T/μ), then substitute and rearrange to f² = T/(4L²μ). Every step is shown.</li>
+<li><strong>"State" rule:</strong> A "state" question wants one phrase, no working. Do not write a paragraph. If you cannot answer in one line, you are overcomplicating it.</li>
+<li><strong>"Calculate" rule:</strong> Show every step. Even if the calculator gives the answer in one keystroke, write the substituted formula first (e.g. <code>nλ = d sin θ → 2 × 550 × 10⁻⁹ = (1/300 000) × sin θ → sin θ = 0.330 → θ = 19.3°</code>), then the result with units. Method marks are awarded even if the arithmetic is wrong.</li>
+<li><strong>Stuck rule:</strong> If a question has not yielded a useful equation after 60 seconds of thinking, move to the next question. Return with fresh eyes later — most "stuck" moments resolve themselves after a 2-minute break on a different question.</li>
+<li><strong>Last 5 minutes rule:</strong> Use the final 5 minutes to (a) fill in any blank MCQs with a best guess, (b) check that every numerical answer has units, (c) check that every calculated answer has appropriate sig figs (see <code>ext-uncertainty-concepts.md</code> §7), (d) verify any ray-diagram angles are measured from the normal (not from the surface — the angle-from-surface trap appears in 7+ papers per <code>ch2.3-definitions.md</code> §6).</li>
+</ol>
+<hr>
+<h2>3. The Mark Scheme Analysis Technique</h2>
+<h3>3.1 Why Self-Marking Must Be Ruthless</h3>
+<p>The single most common mistake in self-marking is generosity — awarding marks for "having the right idea" when the mark scheme requires a specific phrase or numerical value. This generosity inflates the practice score by 5–10 marks and gives a false sense of readiness.</p>
+<p><strong>Rule:</strong> Mark as the examiner would mark. If the answer does not contain the mark scheme wording (or an accepted alternative listed in the mark scheme), score 0 for that mark — even if you "knew what you meant."</p>
+<h3>3.2 The Three-Layer Mark Scheme Read</h3>
+<p>For every question, work through the mark scheme in three layers:</p>
+<p><strong>Layer 1 — The mark allocation.</strong> Identify how many marks are available and what each mark is for. A 3-mark "calculate" question typically has: 1 method mark (correct equation/substitution), 1 processing mark (correct arithmetic), 1 answer mark (correct value with units and sig figs). Knowing this structure tells you what to write even when you cannot solve the question fully.</p>
+<p><strong>Layer 2 — The indicative content.</strong> Underlined phrases in the mark scheme are the keywords the examiner is searching for. For 2-mark "explain" or "describe" questions, the mark scheme typically lists 3 acceptable points and the candidate scores 2 for any 2 — but only if the exact phrasing (or an accepted variant) is present. <strong>Students should rewrite their answer using the mark scheme wording</strong> to internalise the phrasing.</p>
+<p><strong>Layer 3 — The "guidance" notes.</strong> Mark schemes include "guidance" or "do not accept" notes specifying what does NOT score. Examples from the existing WPH12 study guides:</p>
+<ul>
+<li>Oct 2022 Q13b(i): mark scheme explicitly rejects using diameter directly in A = πr² (<code>ch2.4-exam-connection.md</code> §1).</li>
+<li>Jun 2025 Q12b(i): polarisation definition must include "perpendicular to the direction of travel/propagation" — omitting this loses a mark (<code>ch2.3-definitions.md</code> §7).</li>
+<li>All WPH12 QWC questions: isolated bullet points with no connective language score 0/2 for structure even if every physics point is correct (<code>ch2.4-exam-connection.md</code> QWC section).</li>
+</ul>
+<h3>3.3 Building a "Phrase Bank"</h3>
+<p>After marking each paper, extract every mark scheme phrase that you did NOT use in your answer (or used a paraphrase of). Write these phrases into a dedicated notebook (or text file). Review the phrase bank weekly. After 5 papers the phrase bank will contain ~80 phrases — these are the exact wordings that score.</p>
+<p><strong>Example phrase-bank entries from the existing WPH12 study guides:</strong></p>
+<table><thead><tr>
+<th>Question type</th>
+<th>Phrase that scores</th>
+<th>Phrase that does NOT score</th>
+</tr></thead><tbody>
+<tr>
+<td>Polarisation</td>
+<td>"Oscillations restricted to one plane perpendicular to the direction of travel"</td>
+<td>"Oscillations in one direction only"</td>
+</tr>
+<tr>
+<td>Why metal resistance increases with T</td>
+<td>"Lattice ions vibrate more, more frequent electron collisions, drift velocity decreases"</td>
+<td>"Atoms move more so resistance goes up"</td>
+</tr>
+<tr>
+<td>Resistivity definition</td>
+<td>"Property of the material, independent of dimensions"</td>
+<td>"Resistance per unit length"</td>
+</tr>
+<tr>
+<td>Drift velocity equation</td>
+<td>"I = nAve where n is number density, A is area, v is drift velocity, e is electron charge"</td>
+<td>"I = nve" (missing A)</td>
+</tr>
+<tr>
+<td>Photoelectric one-to-one</td>
+<td>"A single photon interacts with a single electron"</td>
+<td>"Photons hit electrons"</td>
+</tr>
+<tr>
+<td>QWC structure marks</td>
+<td>"Because / therefore / so / which means" (causal connectives)</td>
+<td>"And / also / plus" (additive list)</td>
+</tr>
+<tr>
+<td>Why stationary wave forms</td>
+<td>"Incident and reflected waves superpose; nodes form where destructive interference is permanent"</td>
+<td>"Waves bounce back and overlap"</td>
+</tr>
+<tr>
+<td>Total internal reflection condition</td>
+<td>"Light must travel from denser to less dense medium AND angle of incidence &gt; critical angle"</td>
+<td>"Angle is bigger than critical angle"</td>
+</tr>
+<tr>
+<td>Beats explanation</td>
+<td>"Sources incoherent → phase difference changes → alternating constructive/destructive interference"</td>
+<td>"Two frequencies make a beat"</td>
+</tr>
+<tr>
+<td>Path difference for destructive</td>
+<td>"(n + ½)λ"</td>
+<td>"nλ/2" (wrong — half-integer, not half-wavelength of integer)</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>4. The Examiner Report Study Method</h2>
+<h3>4.1 Reading the Examiner Report in Three Passes</h3>
+<p>The examiner report is typically 6–10 pages long. Read it in three passes:</p>
+<p><strong>Pass 1 — Overview (5 min):</strong> Read the opening section (the Principal Examiner's general comments on the sitting). This identifies the overall difficulty of the paper, the average mark, and the Principal Examiner's headline concerns. Use this to contextualise your own score — if the report says "this paper was found harder than usual by candidates" and you scored 60/80, your performance is stronger than 60/80 would suggest in a typical year.</p>
+<p><strong>Pass 2 — Question-by-question (30 min):</strong> For every question you attempted, read the examiner's commentary on that question. Note:</p>
+<ul>
+<li>The average mark scored by candidates (the report often says "average 1.2/3" or "this question was poorly answered").</li>
+<li>The specific errors candidates made (the report names them — these are your future errors to avoid).</li>
+<li>The "what separated high-scoring candidates" commentary (these are the moves you should replicate).</li>
+</ul>
+<p><strong>Pass 3 — Action extraction (10 min):</strong> Convert every reported error into a personal action item. For example, if the report says "students forgot to halve the diameter before using A = πr²", write on a sticky note: <strong>"Circle every diameter; halve it before any area calculation."</strong> Stick this note on the inside cover of your formula sheet for the next paper.</p>
+<h3>4.2 The "Two Papers, Same Topic" Comparison</h3>
+<p>The most powerful use of examiner reports is to compare how the same topic was tested across two sittings. For example, the diffraction-grating question appears in 7+ of the 13 in-repo papers — see <code>ch2.3-exam-connection.md</code> §8. Reading the examiner reports for these papers in sequence shows the evolving pattern of:</p>
+<ul>
+<li>Which step students most often missed (the d-vs-1/d trap — reported in Oct 2022 Q18c, Jun 2023, Jan 2025 Q14b(i)).</li>
+<li>Which phrasing the examiner rewarded in the most recent sitting (which predicts the next sitting).</li>
+<li>Whether the "show that" variant or the "calculate" variant was used (which predicts the next question type).</li>
+</ul>
+<p>After 5 such comparisons the student can predict the mark scheme for the next sitting's diffraction-grating question with ~70% accuracy.</p>
+<p>Similarly for resistivity: the resistivity question appears in 10 of 13 in-repo papers — see <code>ch2.4-exam-connection.md</code> §1. The recurring patterns (graphical method, gradient interpretation, diameter→radius conversion, identify-the-material variant) become visible after reading 3+ examiner reports.</p>
+<hr>
+<h2>5. Grade Boundary Trends 2019–2025</h2>
+<h3>5.1 Typical Raw-Mark Boundaries (WPH12/01)</h3>
+<p>The table below shows the typical raw-mark ranges for each grade boundary based on publicly available Pearson grade-boundary documents. <strong>These are ranges, not exact values</strong> — every session varies. Always check the official boundary document for the specific paper being sat.</p>
+<table><thead><tr>
+<th>Grade</th>
+<th>Typical raw mark (/80)</th>
+<th>Typical %</th>
+<th>Indicative range across 13 non-COVID sessions</th>
+</tr></thead><tbody>
+<tr>
+<td>A* (indicative)</td>
+<td>60–64</td>
+<td>75–80%</td>
+<td>59–65</td>
+</tr>
+<tr>
+<td>A</td>
+<td>52–56</td>
+<td>65–70%</td>
+<td>50–58</td>
+</tr>
+<tr>
+<td>B</td>
+<td>44–48</td>
+<td>55–60%</td>
+<td>42–50</td>
+</tr>
+<tr>
+<td>C</td>
+<td>40–44</td>
+<td>50–55%</td>
+<td>38–46</td>
+</tr>
+<tr>
+<td>D</td>
+<td>36–40</td>
+<td>45–50%</td>
+<td>34–42</td>
+</tr>
+<tr>
+<td>E</td>
+<td>32–36</td>
+<td>40–45%</td>
+<td>30–38</td>
+</tr>
+</tbody></table>
+<p><strong>Source of variation:</strong> Boundary shifts reflect paper difficulty (a hard paper → lower boundaries) and candidate cohort performance. A swing of ±3 marks (out of 80) between the easiest and hardest sessions in a year is normal. WPH12 boundaries tend to sit 0–2 marks lower than WPH11 boundaries at the A and A* levels because the WPH12 Section B has a slightly larger practical/uncertainty load that students find harder.</p>
+<h3>5.2 Reading the Trend — January vs May/June vs October</h3>
+<p>Across the 13 non-COVID sessions in the repo (Jun 2019, Oct 2019, Jan 2022, Jun 2022, Oct 2022, Jan 2023, Jun 2023, Oct 2023, Jan 2024, Jun 2024, Oct 2024, Jan 2025, Jun 2025), a soft trend is observable:</p>
+<ul>
+<li><strong>January sessions</strong> tend to have marginally lower A boundaries (by 1–2 marks) because the January cohort is dominated by re-sit candidates, who on average score lower than first-time May/June candidates.</li>
+<li><strong>May/June sessions</strong> have the largest candidature and the most stable boundaries — these are the "reference" sessions for trend analysis.</li>
+<li><strong>October sessions</strong> sit between January and May/June in both candidature size and boundary stability.</li>
+</ul>
+<p>This trend is small and should NOT be used to predict a specific boundary for an upcoming paper. It is mentioned only so students understand why their January practice paper might show a 53/80 A boundary while their May/June practice paper might show a 55/80 A boundary for the same quality of work.</p>
+<h3>5.3 Predicting the Final Grade from Practice Scores</h3>
+<p>After completing 5+ timed papers, plot your raw scores on a graph. The trend line (ignoring the first paper, which is always an outlier low) is the best predictor of the actual exam score. Apply the following correction:</p>
+<ul>
+<li>If your average raw score on the last 3 timed papers sits at or above the indicative A<em> boundary (60–64/80), you are on track for A</em>.</li>
+<li>If your average sits at the A boundary (52–56/80), you are on track for A and should target the specific mark categories where you lose marks most often.</li>
+<li>If your average sits below the A boundary, prioritise the topic with the highest mark-density per study hour — usually Section B practical uncertainty (see <code>ext-uncertainty-definitions.md</code>) or resistivity (see <code>ch2.4-exam-connection.md</code> §1, which shows resistivity is the highest-yield Ch 2.4 topic at 26 marks across 10/13 papers).</li>
+</ul>
+<hr>
+<h2>6. COVID-Affected Sessions — What to Use and What to Discard</h2>
+<h3>6.1 Sessions Flagged as COVID-Affected</h3>
+<p>The following sessions are COVID-affected for WPH12/01 — none of them are in the repo at the time of writing, but if sourced externally they should be treated with caution:</p>
+<table><thead><tr>
+<th>Session</th>
+<th>Repo status</th>
+<th>COVID impact</th>
+<th>Use for trend analysis?</th>
+</tr></thead><tbody>
+<tr>
+<td>Oct 2020</td>
+<td>❌ Missing</td>
+<td>Reduced content; widened boundaries</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Jan 2021</td>
+<td>❌ Missing</td>
+<td>Adapted assessment; some regions centre-assessed</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Jun 2021</td>
+<td>❌ Missing (referenced in ch2.4-content.md)</td>
+<td>Adapted assessment; lower candidature; treated as non-standard for IAL Physics</td>
+<td>No</td>
+</tr>
+</tbody></table>
+<p>These 3 sessions are excluded from the cross-paper statistics in <code>ch2.3-definitions.md</code> and <code>ch2.4-definitions.md</code> (which describe "13 papers" — all of which are non-COVID papers in the repo).</p>
+<h3>6.2 What to Use COVID Papers For</h3>
+<p>COVID papers are still real Pearson papers — the physics is unchanged. Use them for:</p>
+<ul>
+<li><strong>Content/topic practice:</strong> Sitting a COVID paper under timed conditions develops the same exam technique as any other paper.</li>
+<li><strong>Mark-scheme wording:</strong> The mark schemes for COVID papers use the same indicative phrasing as non-COVID papers — the phrase bank you build from a COVID paper is just as valid.</li>
+<li><strong>Examiner report insights:</strong> COVID examiner reports often explicitly contrast COVID-cohort errors with pre-COVID-cohort errors — useful diagnostic information.</li>
+</ul>
+<h3>6.3 What NOT to Use COVID Papers For</h3>
+<ul>
+<li><strong>Grade boundary trend analysis:</strong> Boundaries in 2020–2021 were inflated by ~3–5 marks at the A boundary. Treat any COVID score with this caveat.</li>
+<li><strong>Topic weighting statistics:</strong> Pearson reduced the weighting of some topics in COVID papers (e.g. fewer multi-step Section B questions). A COVID paper is therefore NOT representative of the typical topic distribution.</li>
+<li><strong>Time-trend extrapolation:</strong> Do not include COVID scores in any "my score over time" graph. Plot COVID scores as a separate series, with a different colour, to avoid contaminating the trend.</li>
+</ul>
+<hr>
+<h2>7. Which Papers to Prioritise</h2>
+<h3>7.1 The "Most Recent 5" Rule</h3>
+<p>The Principal Examiner for WPH12 typically rotates every 3–5 years, and within a Principal Examiner's tenure the question style is stable. The most recent 5 sittings are therefore the best predictor of the next sitting's style.</p>
+<p>For a student preparing for the <strong>January 2026</strong> sitting, the priority papers are:</p>
+<ol>
+<li><strong>Jun 2025</strong> (most recent large-cohort sitting in the repo — most representative of current style).</li>
+<li><strong>Jan 2025</strong> (most recent January sitting — same session style as the upcoming exam).</li>
+<li><strong>Oct 2024</strong> (most recent October sitting).</li>
+<li><strong>May/Jun 2024</strong> (one year before the target).</li>
+<li><strong>Jan 2024</strong> (one year before the most recent January sitting).</li>
+</ol>
+<p>These 5 papers should be sat first, under timed conditions, in the final 8 weeks before the exam (see §9 below).</p>
+<h3>7.2 The "Same Session, Last Year" Rule</h3>
+<p>When preparing for a specific session (e.g. January), the same session one year prior (e.g. previous January) is disproportionately valuable because:</p>
+<ul>
+<li>January papers tend to share structural features (specific Section B question types) that recur.</li>
+<li>The Principal Examiner often reuses question "shells" (different numbers, same scenario) within the same session across consecutive years.</li>
+</ul>
+<p><strong>For January 2026 preparation:</strong> sit Jan 2025, Jan 2024, Jan 2023, Jan 2022 in sequence. Compare the four papers' Section B questions side-by-side — the pattern of recurring scenarios becomes visible.</p>
+<h3>7.3 The "Skip the COVID" Rule for the First Practice Papers</h3>
+<p>For the first 2–3 timed practice papers (when the student is still building exam technique), use non-COVID papers exclusively. COVID papers' content reductions make them slightly easier, which can mask technique weaknesses. Reserve COVID papers (if sourced externally) for later in the practice sequence when the student is already confident.</p>
+<hr>
+<h2>8. Tracking Progress Across Papers</h2>
+<h3>8.1 The Progress Spreadsheet</h3>
+<p>Maintain a single spreadsheet (or markdown table) with one row per paper sat and the following columns:</p>
+<table><thead><tr>
+<th>Date sat</th>
+<th>Session</th>
+<th>Raw mark (/80)</th>
+<th>A boundary for that paper</th>
+<th>Margin vs A</th>
+<th>Section A mark (/40)</th>
+<th>Section B mark (/40)</th>
+<th>Uncertainty marks lost</th>
+<th>Waves marks lost</th>
+<th>Electricity marks lost</th>
+<th>QWC marks lost</th>
+<th>Notes</th>
+</tr></thead><tbody>
+</tbody></table>
+<p>Fill in the spreadsheet immediately after self-marking each paper. After 5 entries the patterns become visible:</p>
+<ul>
+<li>A consistent negative margin vs A → too weak on content; revisit <code>ch2.3-<em></code> or <code>ch2.4-</em></code>.</li>
+<li>Consistently strong Section A but weak Section B → exam-technique issue; the issue is multi-step reasoning, not content.</li>
+<li>Consistently weak Section A but strong Section B → fluency issue; the issue is rapid recall, not deep reasoning.</li>
+<li>High "uncertainty marks lost" → work through <code>ext-uncertainty-*</code> end to end.</li>
+<li>High "waves marks lost" → review <code>ch2.3-*</code> and the wave-specific MCQ traps in <code>ch2.3-exam-connection.md</code>.</li>
+<li>High "electricity marks lost" → review <code>ch2.4-*</code>, especially resistivity (§1) and internal resistance (§3) which are the highest-yield Ch 2.4 topics.</li>
+<li>High "QWC marks lost" → drill the connective-language structure pattern in <code>ext-circuits-qwc-*</code> and the QWC examples in <code>ch2.3-exam-connection.md</code>.</li>
+</ul>
+<h3>8.2 The Weekly Review</h3>
+<p>Once per week, review the spreadsheet and answer three questions:</p>
+<ol>
+<li><strong>Which mark category did I lose the most marks in this week?</strong> → That is next week's study focus.</li>
+<li><strong>Which paper showed my highest margin vs A?</strong> → That paper's strengths should be reproduced.</li>
+<li><strong>Am I on track for my target grade?</strong> → If margin-vs-target is consistently negative, increase study intensity.</li>
+</ol>
+<h3>8.3 The Pre-Exam Confidence Check</h3>
+<p>In the final week before the exam, sit the most recent available paper under exam conditions and self-mark. The result of this paper is the most accurate single predictor of exam-day performance. If the result is at or above target, the student is ready. If below target, focus the final 3 days on the highest-impact weakness (typically uncertainty, resistivity, or a specific waves topic).</p>
+<hr>
+<h2>9. Cross-Paper Topic Frequency Table</h2>
+<p>The table below aggregates the topic frequency across the 13 WPH12/01 papers held in the repo (Jun 2019 → Jun 2025, all non-COVID). Source: cross-paper statistics compiled in <code>ch2.3-definitions.md</code> (727 marks total, avg 55.9/session) and <code>ch2.4-definitions.md</code> (376 marks total, avg 28.9/session), and cross-referenced with <code>ch2.3-exam-connection.md</code> and <code>ch2.4-exam-connection.md</code>.</p>
+<h3>9.1 Waves Strand (Ch 2.3 — Spec 33–63) — 727 marks total across 13 papers (avg 55.9/session)</h3>
+<table><thead><tr>
+<th>Topic</th>
+<th>Spec ref</th>
+<th>Papers tested</th>
+<th>Total marks</th>
+<th>Avg per session</th>
+<th>Priority for revision</th>
+</tr></thead><tbody>
+<tr>
+<td>Photoelectric Effect (threshold f, work function, hf = φ + ½mv²_max)</td>
+<td>2.3 §59–62</td>
+<td>13/13</td>
+<td>~138</td>
+<td>~10.6</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td>Refraction, Snell's Law, TIR, Critical Angle</td>
+<td>2.3 §45–48</td>
+<td>13/13</td>
+<td>~96</td>
+<td>~7.4</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td>Diffraction &amp; Diffraction Grating (nλ = d sin θ)</td>
+<td>2.3 §50–52</td>
+<td>12/13</td>
+<td>~85</td>
+<td>~6.5</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td>Stationary/Standing Waves (strings, tubes, harmonics)</td>
+<td>2.3 §41–43</td>
+<td>12/13</td>
+<td>~83</td>
+<td>~6.4</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td>Wave Properties (v = fλ, amplitude, frequency, period)</td>
+<td>2.3 §33–34</td>
+<td>13/13</td>
+<td>~65</td>
+<td>~5.0</td>
+<td>🟠 High</td>
+</tr>
+<tr>
+<td>Coherence, Superposition, Interference (path diff, phase diff)</td>
+<td>2.3 §39–40</td>
+<td>11/13</td>
+<td>~58</td>
+<td>~4.5</td>
+<td>🟠 High</td>
+</tr>
+<tr>
+<td>Longitudinal/Transverse Waves &amp; Polarisation</td>
+<td>2.3 §35–37, 49</td>
+<td>12/13</td>
+<td>~52</td>
+<td>~4.0</td>
+<td>🟠 High</td>
+</tr>
+<tr>
+<td>Atomic Line Spectra &amp; Energy Levels (ΔE = hf)</td>
+<td>2.3 §63</td>
+<td>11/13</td>
+<td>~56</td>
+<td>~4.3</td>
+<td>🟠 High</td>
+</tr>
+<tr>
+<td>Wave-Particle Duality &amp; de Broglie (λ = h/p)</td>
+<td>2.3 §53–54</td>
+<td>9/13</td>
+<td>~42</td>
+<td>~3.2</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>Photon Model (E = hf, photon counting)</td>
+<td>2.3 §57–58</td>
+<td>9/13</td>
+<td>~28</td>
+<td>~2.2</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>Pulse-Echo (d = vt/2, resolution)</td>
+<td>2.3 §55–56</td>
+<td>7/13</td>
+<td>~22</td>
+<td>~1.7</td>
+<td>🟡 Medium</td>
+</tr>
+</tbody></table>
+<h3>9.2 Electricity Strand (Ch 2.4 — Spec 64–80) — 376 marks total across 13 papers (avg 28.9/session)</h3>
+<table><thead><tr>
+<th>Topic</th>
+<th>Spec ref</th>
+<th>Papers tested</th>
+<th>Total marks</th>
+<th>Avg per session</th>
+<th>Priority for revision</th>
+</tr></thead><tbody>
+<tr>
+<td>Resistivity (R = ρL/A, graphical method, identify material)</td>
+<td>2.4 §71</td>
+<td>10/13</td>
+<td>~26</td>
+<td>~2.0</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td>Potential Dividers &amp; Sensor Circuits (LDR, NTC thermistor)</td>
+<td>2.4 §80</td>
+<td>8/13</td>
+<td>~29</td>
+<td>~2.2</td>
+<td>🟠 High</td>
+</tr>
+<tr>
+<td>Electrical Power (P = IV = I²R = V²/R, energy)</td>
+<td>2.4 §76</td>
+<td>9/13</td>
+<td>~24</td>
+<td>~1.8</td>
+<td>🟠 High</td>
+</tr>
+<tr>
+<td>E.m.f. &amp; Internal Resistance (V = ε − Ir, terminal p.d.)</td>
+<td>2.4 §77</td>
+<td>9/13</td>
+<td>~23</td>
+<td>~1.8</td>
+<td>🟠 High</td>
+</tr>
+<tr>
+<td>Series/Parallel Circuits (R_series, 1/R_parallel, mixed)</td>
+<td>2.4 §68</td>
+<td>9/13</td>
+<td>~23</td>
+<td>~1.8</td>
+<td>🟠 High</td>
+</tr>
+<tr>
+<td>Drift Velocity (I = nAve, number density)</td>
+<td>2.4 §70</td>
+<td>8/13</td>
+<td>~23</td>
+<td>~1.8</td>
+<td>🟠 High</td>
+</tr>
+<tr>
+<td>R-temperature &amp; R-illumination models</td>
+<td>2.4 §69, 78–79</td>
+<td>9/13</td>
+<td>~26</td>
+<td>~2.0</td>
+<td>🟠 High</td>
+</tr>
+<tr>
+<td>Kirchhoff's Laws (charge + energy conservation)</td>
+<td>2.4 §67a, 67b</td>
+<td>5/13</td>
+<td>~16</td>
+<td>~1.2</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>Electric Current (I = ΔQ/Δt, conventional current)</td>
+<td>2.4 §64</td>
+<td>7/13</td>
+<td>~15</td>
+<td>~1.2</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>Potential Difference (V = W/Q, volt)</td>
+<td>2.4 §65</td>
+<td>6/13</td>
+<td>~14</td>
+<td>~1.1</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>I-V Characteristics (ohmic, filament, diode, thermistor)</td>
+<td>2.4 §66, 72–74</td>
+<td>7/13</td>
+<td>~12</td>
+<td>~0.9</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>Potential Along Uniform Wire</td>
+<td>2.4 §75</td>
+<td>3/13</td>
+<td>~5</td>
+<td>~0.4</td>
+<td>• Lighter</td>
+</tr>
+</tbody></table>
+<h3>9.3 Cross-Cutting Practical &amp; Uncertainty Topics</h3>
+<table><thead><tr>
+<th>Topic</th>
+<th>Source</th>
+<th>Papers tested</th>
+<th>Total marks</th>
+<th>Avg per session</th>
+<th>Priority</th>
+</tr></thead><tbody>
+<tr>
+<td>Uncertainty (absolute, %, combinations, gradient, t² trap)</td>
+<td>ext-uncertainty-*</td>
+<td>13/13</td>
+<td>~80</td>
+<td>~6.2</td>
+<td>🔴 Critical</td>
+</tr>
+<tr>
+<td>CP5 Standing Wave on a String (variation with L, T, μ)</td>
+<td>spec App 9 (CP5)</td>
+<td>6/13</td>
+<td>~24</td>
+<td>~1.8</td>
+<td>🟠 High</td>
+</tr>
+<tr>
+<td>CP6 Wavelength of Light Using Diffraction Grating</td>
+<td>spec App 9 (CP6)</td>
+<td>7/13</td>
+<td>~28</td>
+<td>~2.2</td>
+<td>🟠 High</td>
+</tr>
+<tr>
+<td>CP7 Resistivity of a Wire (R vs L graph, gradient = ρ/A)</td>
+<td>spec App 9 (CP7)</td>
+<td>5/13</td>
+<td>~22</td>
+<td>~1.7</td>
+<td>🟠 High</td>
+</tr>
+<tr>
+<td>CP8 Internal Resistance of a Cell (V vs I graph, gradient = −r)</td>
+<td>spec App 9 (CP8)</td>
+<td>4/13</td>
+<td>~18</td>
+<td>~1.4</td>
+<td>🟡 Medium</td>
+</tr>
+</tbody></table>
+<h3>9.4 Reading the Frequency Table</h3>
+<p>The five "Critical" topics in §9.1 (photoelectric effect, refraction/TIR, diffraction grating, stationary waves, wave properties) together account for ~467 marks per session of the 727-mark Ch 2.3 average (≈64% of waves content). The single "Critical" topic in §9.2 (resistivity) plus the high-yield cluster (potential dividers, power, e.m.f./internal resistance, series/parallel, drift velocity, R-temperature/illumination) accounts for ~174 marks per session of the 376-mark Ch 2.4 average (≈46% of electricity content). The cross-cutting uncertainty load (~80 marks/session) brings the total "high-yield" content to roughly 60–65 marks out of every 80-mark paper.</p>
+<p>A student who masters these topics to A* standard cannot score below ~65/80, regardless of weaknesses elsewhere. This is where to invest the bulk of revision time.</p>
+<h3>9.5 The "Always-Tested" Sub-Topics</h3>
+<p>Within the Critical/High topics, the following sub-topics appear in EVERY paper and are worth ~1–4 marks each:</p>
+<ul>
+<li>One wave-property MCQ (v = fλ or "what is constant when light enters glass" — frequency — see <code>ch2.3-exam-connection.md</code> §1).</li>
+<li>One refraction/Snell's law calculation (2–4 marks) — angle-from-surface trap on at least one of these.</li>
+<li>One diffraction-grating calculation (3–5 marks) — d-vs-1/d conversion trap.</li>
+<li>One photoelectric-effect calculation (3–5 marks) — eV ↔ joules conversion, threshold frequency.</li>
+<li>One resistivity calculation OR resistivity graphical question (2–5 marks) — diameter→radius conversion.</li>
+<li>One V-I graph or sensor-circuit question (2–4 marks) — thermistor or LDR.</li>
+<li>One CP5/CP6/CP7/CP8 practical-method question (4–8 marks) — apparatus, method, uncertainty.</li>
+<li>One "suggest an improvement" question (1–2 marks).</li>
+</ul>
+<p>These eight sub-topics together account for ~25–35 marks per paper — almost half the total. They are the highest-yield targets for the final 2 weeks of revision.</p>
+<h3>9.6 Connecting Topic Frequency to Past Paper Selection</h3>
+<p>When selecting which papers to sit, prioritise papers that test the student's weakest Critical topic. For example, if a student's progress spreadsheet shows weak resistivity marks, prioritise papers known to have heavy resistivity content:</p>
+<ul>
+<li>Jun 2024 Q14(a)(i) + (ii) + (d) — definition + graphical method + parallel-circuit deduction (10 marks total).</li>
+<li>Oct 2024 Q15(a) + (b) — strain gauge resistivity from data set + R vs l² graph (7 marks).</li>
+<li>Jan 2024 Q16a + Q15b — cable length from resistivity + R vs l² (6 marks).</li>
+<li>Jan 2022 Q11a — resistivity of nichrome wire (2 marks).</li>
+<li>Oct 2023 Q13a — manganin wire resistivity (3 marks).</li>
+</ul>
+<p>These question references are taken from the cross-paper mapping in <code>ch2.4-exam-connection.md</code> §1. The full per-paper topic mapping is in <code>ext-past-papers-index-exam-connections.md</code> §2.</p><hr><h2>WPH12 Extension — Past Papers Index &amp; Study Framework (Exam Connections)</h2>
+<p><strong>Scope:</strong> The master index of every WPH12/01 paper from January 2019 to January 2026, with in-repo status, key topics tested, notable questions and indicative grade boundaries for each sitting. This is the operational deliverable that turns the abstract Gap #1 ("we need every past paper") into a concrete sourcing and study plan.</p>
+<p><strong>Source:</strong> 13 WPH12/01 paper+mark-scheme pairs held in <code>output/past-papers/physics/wph12/</code> + cross-paper statistics already compiled in <code>ch2.3-definitions.md</code>, <code>ch2.4-definitions.md</code>, <code>ch2.3-exam-connection.md</code>, <code>ch2.4-exam-connection.md</code> and <code>ch2.4-content.md</code>.</p>
+<p><strong>Constraint:</strong> Real Pearson papers are copyrighted. This file is an INDEX/FRAMEWORK only — it does not reproduce any paper. Question numbers and topics referenced below are taken from the cross-paper analyses already published in the existing study guides; the papers themselves must be sourced from the official Pearson qualification page (registration required) or a school exam officer.</p>
+<hr>
+<h2>1. Master Index — All WPH12/01 Sessions Jan 2019 → Jan 2026</h2>
+<p>The Pearson Edexcel IAL Physics calendar normally offers three sittings per year: January, May/June and October. From Jan 2019 to Jan 2026 inclusive, this gives 20 sittings, of which:</p>
+<ul>
+<li><strong>13 sessions are present in the repo</strong> (26 PDF files: 13 question papers + 13 mark schemes).</li>
+<li><strong>6 sessions are missing and need to be sourced externally</strong> (Jan 2019, Jan 2020, Oct 2020 COVID, Jan 2021 COVID, Oct 2021, Oct 2025).</li>
+<li><strong>1 session has not yet been sat</strong> (Jan 2026) — paper does not exist at time of writing.</li>
+</ul>
+<p>Note: May/June 2020 was cancelled globally due to COVID-19 (no paper exists). May/June 2021 was replaced with adapted assessment / centre-assessed grades in most regions for IAL Physics and is excluded from the standard 20-sitting count; some centres did receive an adapted WPH12 paper for Jun 2021, and team-internal analysis files (<code>ch2.4-content.md</code>) reference Jun 2021 questions, but the paper is not in the repo and is treated as non-standard.</p>
+<table><thead><tr>
+<th>#</th>
+<th>Session</th>
+<th>Paper code</th>
+<th>Repo status</th>
+<th>COVID-affected</th>
+<th>Repo path</th>
+</tr></thead><tbody>
+<tr>
+<td>1</td>
+<td>Jan 2019</td>
+<td>WPH12/01</td>
+<td>❌ Missing</td>
+<td>No</td>
+<td>—</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Jun 2019</td>
+<td>WPH12/01</td>
+<td>✅ In repo</td>
+<td>No</td>
+<td><code>jun2019/</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Oct 2019</td>
+<td>WPH12/01</td>
+<td>✅ In repo</td>
+<td>No</td>
+<td><code>oct2019/</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Jan 2020</td>
+<td>WPH12/01</td>
+<td>❌ Missing</td>
+<td>No</td>
+<td>—</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Oct 2020</td>
+<td>WPH12/01</td>
+<td>❌ Missing</td>
+<td><strong>Yes</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Jan 2021</td>
+<td>WPH12/01</td>
+<td>❌ Missing</td>
+<td><strong>Yes</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Oct 2021</td>
+<td>WPH12/01</td>
+<td>❌ Missing</td>
+<td>No</td>
+<td>—</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Jan 2022</td>
+<td>WPH12/01</td>
+<td>✅ In repo</td>
+<td>No</td>
+<td><code>jan2022/</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Jun 2022</td>
+<td>WPH12/01</td>
+<td>✅ In repo</td>
+<td>No</td>
+<td><code>jun2022/</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Oct 2022</td>
+<td>WPH12/01</td>
+<td>✅ In repo</td>
+<td>No</td>
+<td><code>oct2022/</code></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Jan 2023</td>
+<td>WPH12/01</td>
+<td>✅ In repo</td>
+<td>No</td>
+<td><code>jan2023/</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td>May/Jun 2023</td>
+<td>WPH12/01</td>
+<td>✅ In repo</td>
+<td>No</td>
+<td><code>jun2023/</code></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Oct 2023</td>
+<td>WPH12/01</td>
+<td>✅ In repo</td>
+<td>No</td>
+<td><code>oct2023/</code></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Jan 2024</td>
+<td>WPH12/01</td>
+<td>✅ In repo</td>
+<td>No</td>
+<td><code>jan2024/</code></td>
+</tr>
+<tr>
+<td>15</td>
+<td>May/Jun 2024</td>
+<td>WPH12/01</td>
+<td>✅ In repo</td>
+<td>No</td>
+<td><code>jun2024/</code></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Oct 2024</td>
+<td>WPH12/01</td>
+<td>✅ In repo</td>
+<td>No</td>
+<td><code>oct2024/</code></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Jan 2025</td>
+<td>WPH12/01</td>
+<td>✅ In repo</td>
+<td>No</td>
+<td><code>jan2025/</code></td>
+</tr>
+<tr>
+<td>18</td>
+<td>May/Jun 2025</td>
+<td>WPH12/01</td>
+<td>✅ In repo</td>
+<td>No</td>
+<td><code>jun2025/</code></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Oct 2025</td>
+<td>WPH12/01</td>
+<td>❌ Missing</td>
+<td>No</td>
+<td>—</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Jan 2026</td>
+<td>WPH12/01</td>
+<td>⏳ Not yet sat</td>
+<td>No</td>
+<td>—</td>
+</tr>
+</tbody></table>
+<p><strong>Repo coverage:</strong> 13/19 published sessions present (68%). Missing published sessions to source: 6 (Jan 2019, Jan 2020, Oct 2020, Jan 2021, Oct 2021, Oct 2025). Future session not yet sat: 1 (Jan 2026).</p>
+<hr>
+<h2>2. Per-Paper Details (with Notable Questions)</h2>
+<p>For each in-repo paper (and for missing sessions where team-internal analysis references exist), the table below lists: (a) the principal Section B context scenarios, (b) notable questions referenced in the existing study guides, and (c) indicative grade boundary ranges (these vary by session — see <code>ext-past-papers-index-concepts.md</code> §5).</p>
+<p><strong>Grade boundary legend</strong> (raw marks / 80 — ranges only, not exact values):</p>
+<ul>
+<li>A* (indicative): 60–64 (75–80%)</li>
+<li>A: 52–56 (65–70%)</li>
+<li>B: 44–48 (55–60%)</li>
+<li>C: 40–44 (50–55%)</li>
+</ul>
+<h3>2.1 Jan 2019 — NOT IN REPO (source externally)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>January 2019 (first sitting of the 2018-spec WPH12)</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>❌ Missing — source from Pearson qualification page</td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>Likely wave properties + v = fλ, refraction/Snell's law, photoelectric effect, resistivity, CP6 or CP7 practical (pattern established by later sessions)</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Not analysed in existing study guides (paper not in repo)</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~59–62, A ~51–54, B ~43–46 (typical January session, lower-bound tendency; first sitting of new spec may have slightly lower boundaries)</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>Source QP + MS from Pearson. Add to <code>jan2019/</code> folder. Cross-reference into ch2.3/ch2.4 stats once analysed.</td>
+</tr>
+</tbody></table>
+<h3>2.2 Jun 2019 — IN REPO (<code>jun2019/</code>)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>May/June 2019</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>✅ <code>jun2019/WPH12_jun2019_qp.pdf</code> + <code>WPH12_jun2019_ms.pdf</code></td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>Photoelectric effect (Q14 — 6m QWC), resistivity identify-the-metal (Q11 — 3m), polarisation single-filter trap, pulse-echo factor-of-2 trap</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Q11 (3m): resistivity calculation R = ρL/A used to identify metal from resistivity table. Q14 (6m QWC): photoelectric effect explanation — canonical QWC reference for Ch 2.3. Polarisation single-filter trap (single filter transmits 50% of unpolarised light; Malus's law applies only between two filters). Pulse-echo factor-of-2 trap: d = vt/2, NOT vt.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~61–63, A ~53–55, B ~45–47 (May/June session, stable boundaries)</td>
+</tr>
+<tr>
+<td>Priority for practice</td>
+<td>🟡 Medium — first sitting in the analysis window; useful as a baseline. Q14 is the canonical photoelectric QWC reference.</td>
+</tr>
+</tbody></table>
+<h3>2.3 Oct 2019 — IN REPO (<code>oct2019/</code>)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>October 2019</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>✅ <code>oct2019/WPH12_oct2019_qp.pdf</code> + <code>WPH12_oct2019_ms.pdf</code></td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>Polarisation by reflection + Brewster's angle (Q18 — 11m extended response), NTC thermistor potential divider QWC (Q14a — 6m), CP7 resistivity practical (Q15a instruments, Q15b graphical method)</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Q14a (6m QWC): NTC thermistor potential divider for air conditioning switch — canonical Ch 2.4 QWC reference (spec 69, 75, 80). Q15a (3m): instruments for CP7 resistivity practical. Q15b (3m): graphical method for resistivity (plot R vs L, gradient = ρ/A). Q18 (11m): polarisation by reflection, Brewster's angle context — extended transverse wave testing. Pulse-echo factor-of-2 trap.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~60–63, A ~52–55, B ~44–47</td>
+</tr>
+<tr>
+<td>Priority for practice</td>
+<td>🟠 High — Q14a is the canonical NTC thermistor QWC; Q18 is the canonical polarisation extended question; Q15 is the canonical CP7 method question.</td>
+</tr>
+</tbody></table>
+<h3>2.4 Jan 2020 — NOT IN REPO (source externally)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>January 2020</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>❌ Missing — source from Pearson qualification page (or school exam officer)</td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>Define p.d./current (Q1(a), Q11(a)), equivalent resistance series-parallel (Q11 — 4m), V-I graph interpretation ε and r (Q12 — 5m), LDR potential divider (Q13 — 4m), drift velocity comparison (Q11(b) — 3m), diameter from resistivity (Q12 — 3m), metal vs semiconductor I-V (Q12(c) — 2m), uniform wire potential (Q13(b) — 2m)</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Q1(a) (1m): define current — MS requires "rate of flow of charge" specifically (saying "electrons moving" does NOT score). Q11 (4m): equivalent resistance of series-parallel network. Q12 (5m): V-I graph interpretation to find ε and r — canonical graphical method for internal resistance. Q13 (4m): LDR potential divider, V_out for different light levels. Q12(c) (2m): compare metal and semiconductor I-V characteristics.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~60–62, A ~52–54, B ~44–46</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>Source QP + MS from Pearson. Add to <code>jan2020/</code> folder. Cross-reference into ch2.4 stats — this paper is already partially referenced in <code>ch2.4-content.md</code> and <code>ch2.4-exam-readiness-questions.md</code> (team-internal analysis based on externally sourced material).</td>
+</tr>
+</tbody></table>
+<h3>2.5 Oct 2020 — NOT IN REPO (source externally) — COVID-AFFECTED</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>October 2020</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>❌ Missing — source from Pearson qualification page. EXCLUDE from trend analysis.</td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td><strong>Yes — adapted content, widened boundaries.</strong></td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>Derive I = nqvA (Q11 — 3m), thermistor potential divider (Q12 — 3m), cell + parallel resistors power (Q13 — 6m), current splitting in parallel (Q14 — 4m), drift velocity derivation, thermistor I-V characteristics, uncertainty in diameter measurement</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Q4(a) (1m): state command word question. Q11 (3m): derive I = nqvA from first principles — canonical drift velocity derivation. Q11(a) (1m): calculate charge transferred. Q11(c) (2m): explain thermistor resistance change with temperature. Q12 (3m): thermistor potential divider, explain sensitivity. Q12(a) (1m): identify I-V characteristic of thermistor from graph. Q13 (6m): cell connected to two parallel resistors, find current and power. Q13(a) (3m): explain why measuring diameter is the largest source of uncertainty in resistivity experiment. Q13(b) (3m): compare power dissipated in two parallel resistors. Q14 (4m): current splitting in parallel branches.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~62–65, A ~54–57, B ~46–49 (inflated ~3 marks vs non-COVID)</td>
+</tr>
+<tr>
+<td>Priority for practice</td>
+<td>🟡 Medium — useful for drift velocity derivation practice (Q11) but DO NOT use for boundary trend analysis.</td>
+</tr>
+</tbody></table>
+<h3>2.6 Jan 2021 — NOT IN REPO (source externally) — COVID-AFFECTED</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>January 2021</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>❌ Missing — source from Pearson qualification page. EXCLUDE from trend analysis.</td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td><strong>Yes — adapted assessment, some regions centre-assessed.</strong></td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>State command word question (Q2(a)), explain how (Q2(c)) — topic details not extracted into team study guides</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Q2(a) (1m): state command word question (referenced in <code>ch2.4-exam-readiness-questions.md</code>). Q2(c) (3m): "Explain how" command word — typical 3-mark explain-the-mechanism question.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~63–66, A ~55–58, B ~47–50 (inflated ~3 marks)</td>
+</tr>
+<tr>
+<td>Priority for practice</td>
+<td>🟡 Medium — limited topic analysis available in team study guides; useful for COVID-era command-word practice.</td>
+</tr>
+</tbody></table>
+<h3>2.7 Oct 2021 — NOT IN REPO (source externally)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>October 2021 (first post-COVID-return standard session)</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>❌ Missing — source from Pearson qualification page.</td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No (post-COVID return to standard assessment)</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>Diffraction pattern through single narrow slit (Q15c — 3m describe)</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Q15c (3m): "Describe the diffraction pattern produced when monochromatic light passes through a single narrow slit" — canonical single-slit diffraction description (referenced in <code>ext-waves-supplement-exam-connections.md</code>). Requires: central bright fringe widest, alternating bright/dark fringes, intensity decreasing with angle, fringes getting narrower as slit width increases.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~61–63, A ~53–55, B ~45–47</td>
+</tr>
+<tr>
+<td>Priority for practice</td>
+<td>🟠 High — Q15c is the canonical single-slit diffraction description; Oct 2021 is the first post-COVID standard session and sets the pattern for subsequent papers.</td>
+</tr>
+</tbody></table>
+<h3>2.8 Jan 2022 — IN REPO (<code>jan2022/</code>)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>January 2022</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>✅ <code>jan2022/WPH12_jan2022_qp.pdf</code> + <code>WPH12_jan2022_ms.pdf</code></td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>De Broglie MCQ (Q2 — 1m), phase/path difference MCQ (Q9 — 1m), displacement-zero MCQ (Q13 — 1m), transverse wave definition (Q14 — 1m), wave speed on string from d vs 1/f graph (Q15b — 5m), amplitude vs instantaneous displacement (Q16(c)(ii) — 2m), resistivity of nichrome (Q11a — 2m)</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Q2 (1m): de Broglie expression — v = h/(m_e λ); must use electron mass (9.11 × 10⁻³¹ kg), NOT electron charge. Q9 (1m): phase difference for path difference of λ/8 → π/4. Q13 (1m): displacement is zero at centre of both compression and rarefaction. Q14 (1m): transverse wave definition — "oscillations perpendicular to the direction of energy transfer". Q15b (5m): wave speed on string — gradient of d vs 1/f graph gives λ, then v = gradient × f. Q16(c)(ii) (2m): amplitude = MAXIMUM displacement, not the displacement at one instant. Q11a (2m): resistivity of nichrome wire, ρ = RA/l = 1.1 × 10⁻⁶ Ωm.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~60–62, A ~52–54, B ~44–46</td>
+</tr>
+<tr>
+<td>Priority for practice</td>
+<td>🟠 High — Q15b is the canonical wave-speed-on-string graphical question; Q11a is the canonical resistivity calculation.</td>
+</tr>
+</tbody></table>
+<h3>2.9 Jun 2022 — IN REPO (<code>jun2022/</code>)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>May/June 2022</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>✅ <code>jun2022/WPH12_jun2022_qp.pdf</code> + <code>WPH12_jun2022_ms.pdf</code></td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>Displacement-time graph MCQ (Q2 — 1m), amplitude vs displacement (Q16(c)(ii) — 2m), Kirchhoff's laws QWC (Q15a — 6m), tungsten filament resistivity (Q13b(ii) — 3m), polarisation single-filter trap</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Q2 (1m): what cannot be found from displacement-time graph — wavelength (needs spatial info). Q13b(ii) (3m): temperature of tungsten filament from resistivity table. Q15a (6m QWC): Kirchhoff's laws — charge conservation (1st law) and energy conservation (2nd law). Canonical Ch 2.4 QWC reference (spec 64, 65, 75).</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~61–63, A ~53–55, B ~45–47</td>
+</tr>
+<tr>
+<td>Priority for practice</td>
+<td>🟠 High — Q15a is the canonical Kirchhoff's laws QWC; Q13b(ii) is the canonical resistivity-temperature deduction.</td>
+</tr>
+</tbody></table>
+<h3>2.10 Oct 2022 — IN REPO (<code>oct2022/</code>)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>October 2022</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>✅ <code>oct2022/WPH12_oct2022_qp.pdf</code> + <code>WPH12_oct2022_ms.pdf</code></td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>Wave speed MCQ (Q1 — 1m), longest-wavelength MCQ (Q2 — 1m), displacement-zero MCQ (Q4 — 1m), diffraction-vs-refraction MCQ (Q8 — 1m), beats QWC (Q15a(ii) — 6m), critical angle with cladding (Q16a), diffraction grating (Q18c — 4m), show that A from diameter (Q13b(i) — 2m), copper wire length (Q13b(ii) — 2m)</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Q1 (1m): wave speed needs period AND wavelength; amplitude irrelevant. Q2 (1m): longest wavelength = lowest frequency = smallest ΔE between adjacent energy levels. Q4 (1m): displacement is zero at centre of compression AND rarefaction. Q8 (1m): diffraction does NOT occur at a glass block — refraction does. Q13b(i) (2m): show that A = 1.8 × 10⁻⁸ m² from diameter 0.15 mm — MS does NOT award mark if diameter used directly in A = πd² (must use radius). Q13b(ii) (2m): length of copper wire from R = ρL/A. Q15a(ii) (6m QWC): beats — incoherent sources → changing phase difference → alternating constructive/destructive interference → beats. Q16a: critical angle with cladding — n₁ sin C = n₂ sin 90°. Q18c (4m): diffraction grating — work backwards from grating data to verify stated line spacing; d-vs-1/d trap.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~61–63, A ~53–55, B ~45–47</td>
+</tr>
+<tr>
+<td>Priority for practice</td>
+<td>🔴 Critical — Q15a(ii) is the canonical beats QWC; Q18c is the canonical diffraction-grating d-vs-1/d trap; Q13b(i) is the canonical diameter→radius conversion trap.</td>
+</tr>
+</tbody></table>
+<h3>2.11 Jan 2023 — IN REPO (<code>jan2023/</code>)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>January 2023</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>✅ <code>jan2023/WPH12_jan2023_qp.pdf</code> + <code>WPH12_jan2023_ms.pdf</code></td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>Constant-frequency MCQ (Q2 — 1m), harbour interference QWC (Q15a — 6m), resistance in series circuit (Q13b — 1m), pulse-echo factor-of-2 trap</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Q2 (1m): which quantity constant when light enters glass — frequency (source property). Q13b (1m): table entry — resistance in series circuit (includes ρL/A reasoning). Q15a (6m QWC): interference and diffraction through harbour gaps — path difference, coherence, constructive/destructive at harbour mouth. Canonical interference QWC. Pulse-echo factor-of-2 trap: d = vt/2.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~60–62, A ~52–54, B ~44–46</td>
+</tr>
+<tr>
+<td>Priority for practice</td>
+<td>🟠 High — Q15a is the canonical harbour-interference QWC; useful for two-source interference practice.</td>
+</tr>
+</tbody></table>
+<h3>2.12 May/Jun 2023 — IN REPO (<code>jun2023/</code>)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>May/June 2023</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>✅ <code>jun2023/WPH12_jun2023_qp.pdf</code> + <code>WPH12_jun2023_ms.pdf</code></td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>LDR circuit power explanation QWC (Q14 — 6m), interference QWC (Q14*), longest-wavelength trap, diffraction grating d-vs-1/d trap</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Q14 (6m QWC): LDR circuit power explanation — when light intensity changes, R_LDR changes, V across LDR changes, current changes, power dissipated changes. Canonical Ch 2.4 QWC (spec 80, 75, 69). Longest-wavelength trap (longest λ = lowest f = smallest ΔE). Diffraction grating d-vs-1/d conversion trap.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~61–63, A ~53–55, B ~45–47</td>
+</tr>
+<tr>
+<td>Priority for practice</td>
+<td>🟠 High — Q14 is the canonical LDR-circuit-power QWC; useful for diffraction-grating conversion practice.</td>
+</tr>
+</tbody></table>
+<h3>2.13 Oct 2023 — IN REPO (<code>oct2023/</code>)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>October 2023</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>✅ <code>oct2023/WPH12_oct2023_qp.pdf</code> + <code>WPH12_oct2023_ms.pdf</code></td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>Distance between adjacent nodes MCQ (Q6 — 1m), constant-frequency MCQ (Q8 — 1m), intensity with cos 60° solar panel trap (Q16c — 4m), wave-particle duality QWC (Q17a — 6m), manganin wire resistivity (Q13a — 3m), drift velocity question (Q10)</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Q6 (1m): distance between adjacent nodes = λ/2, NOT λ. Q8 (1m): frequency constant when light enters glass. Q10: drift velocity question (referenced in <code>ch2.4-exam-readiness-questions.md</code>). Q13a (3m): resistivity of manganin wire at given length. Q16c (4m): intensity with cos 60° solar panel trap — effective intensity = I cos θ where θ is angle of incidence from normal. Q17a (6m QWC): wave-particle duality — must state what wave model predicts AND what particle model explains. Canonical wave-particle QWC.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~61–64, A ~53–56, B ~45–48</td>
+</tr>
+<tr>
+<td>Priority for practice</td>
+<td>🔴 Critical — Q6 is the canonical adjacent-nodes-distance MCQ; Q16c is the canonical intensity cos θ trap; Q17a is the canonical wave-particle duality QWC.</td>
+</tr>
+</tbody></table>
+<h3>2.14 Jan 2024 — IN REPO (<code>jan2024/</code>)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>January 2024</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>✅ <code>jan2024/WPH12_jan2024_qp.pdf</code> + <code>WPH12_jan2024_ms.pdf</code></td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>Cable length from resistivity (Q16a — 3m), R vs l² relationship (Q15b — 3m)</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Q15b (3m): R vs l² graph to confirm resistivity — gradient interpretation = ρ/A (graphical method). Q16a (3m): cable length from resistivity, diameter, R using R = ρL/A.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~61–63, A ~53–55, B ~45–47</td>
+</tr>
+<tr>
+<td>Priority for practice</td>
+<td>🟠 High — Q15b is the canonical R vs l² graphical method for resistivity; Q16a is a standard cable-length resistivity calculation.</td>
+</tr>
+</tbody></table>
+<h3>2.15 May/Jun 2024 — IN REPO (<code>jun2024/</code>)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>May/June 2024</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>✅ <code>jun2024/WPH12_jun2024_qp.pdf</code> + <code>WPH12_jun2024_ms.pdf</code></td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>Resistivity definition (Q14a(i) — 1m), graphical method for resistivity (Q14a(ii) — 4m), parallel circuits + power deduction (Q14d — 5m), wave speed on string with length-doubling red herring (Q8 — 4m)</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Q8 (4m): v = √(T/μ) — length-doubling red herring (length doesn't affect v; only T and μ do). Q14a(i) (1m): definition of resistivity — "property of the material, independent of its dimensions". Q14a(ii) (4m): graphical method for resistivity from data set. Q14d (5m): resistivity + parallel circuits + power combined deduction.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~61–64, A ~53–56, B ~45–48</td>
+</tr>
+<tr>
+<td>Priority for practice</td>
+<td>🔴 Critical — Q14a(i) is the canonical resistivity definition question; Q14a(ii) + Q14d together form the highest-yield resistivity question in the 13-paper analysis (10 marks total); Q8 is the canonical length-doubling red herring.</td>
+</tr>
+</tbody></table>
+<h3>2.16 Oct 2024 — IN REPO (<code>oct2024/</code>)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>October 2024</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>✅ <code>oct2024/WPH12_oct2024_qp.pdf</code> + <code>WPH12_oct2024_ms.pdf</code></td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>Strain gauge resistivity from data set (Q15a — 4m), R vs l² graph to confirm resistivity (Q15b — 3m)</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Q15a (4m): resistivity of strain gauge from data set — full data analysis including R = V/I, A = πd²/4, ρ = RA/l. Q15b (3m): R vs l² graph to confirm resistivity — gradient = ρ/A.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~61–64, A ~53–56, B ~45–48</td>
+</tr>
+<tr>
+<td>Priority for practice</td>
+<td>🔴 Critical — Q15a + Q15b together form a 7-mark resistivity question; the strain gauge context is a current Principal Examiner favourite.</td>
+</tr>
+</tbody></table>
+<h3>2.17 Jan 2025 — IN REPO (<code>jan2025/</code>)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>January 2025</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>✅ <code>jan2025/WPH12_jan2025_qp.pdf</code> + <code>WPH12_jan2025_ms.pdf</code></td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>Antiphase superposition MCQ (Q4 — 1m), stationary wave phase/amplitude MCQ (Q7 — 1m), diffraction grating calculation (Q14b — 4m), lines/mm conversion (Q14b(i) — 4m), show that f² = T/(4L²μ) (Q17c(i) — 3m), angle-from-surface (Q18a — 50°→40° from normal), optical fibre multimode dispersion (Q18c — 5m), wave-particle QWC (Q19b — 6m), resistivity of constantan (Q13b — 3m), LDR + internal resistance QWC (Q16b — 6m)</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Q4 (1m): superposition after half-wavelength movement — waves overlap in antiphase → destructive interference → string appears flat. Q7 (1m): phase difference and amplitude on stationary wave — points between same nodes: in phase (0°). Q13b (3m): resistivity of constantan wire given l, d, V, I. Q14b (4m): grating calculation — tan θ → sin θ → nλ = d sin θ. Q14b(i) (4m): convert to lines per mm — full chain required. Q16b (6m QWC): LDR + internal resistance, terminal p.d. — canonical Ch 2.4 QWC (spec 77, 80). Q17c(i) (3m): show that f² = T/(4L²μ) — chain v = fλ, λ = 4L (closed tube fundamental), v = √(T/μ). Q18a: angle-from-surface trap — 50° from surface → 40° from normal. Q18c (5m): optical fibre multimode dispersion — pulse broadening and intensity loss due to TIR at cladding boundary. Q19b (6m QWC): wave-particle comparison.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~61–64, A ~53–56, B ~45–48</td>
+</tr>
+<tr>
+<td>Priority for practice</td>
+<td>🔴 Critical — Q14b + Q14b(i) is the canonical diffraction-grating full-chain calculation; Q17c(i) is the canonical "show that" derivation; Q18c is the canonical optical-fibre dispersion question; Q19b is the canonical wave-particle QWC; Q16b is the canonical LDR + internal resistance QWC. Highest-yield paper in the analysis window.</td>
+</tr>
+</tbody></table>
+<h3>2.18 May/Jun 2025 — IN REPO (<code>jun2025/</code>)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>May/June 2025</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>✅ <code>jun2025/WPH12_jun2025_qp.pdf</code> + <code>WPH12_jun2025_ms.pdf</code></td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>Phase/path difference MCQ (Q7 — 1m), polarisation definition (Q12b(i) — 3m), pulse-echo crack trap (Q13a), de Broglie from eV (Q15b(i)), stationary wave in closed tube QWC (Q17a — 6m), line spectra photon emission (Q18a — 2m), photon counting (Q18b(ii)), wave-particle comparison QWC (Q19b — 6m), resistivity of nichrome (Q11 — 3m)</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Q7 (1m): phase difference of π for path difference of λ/2 → antiphase. Q11 (3m): resistivity of nichrome wire given l, d, V, I. Q12b(i) (3m): difference between unpolarised and polarised light — must include "perpendicular to the direction of travel/propagation". Q13a: pulse-echo crack trap — crack may NOT be detected if round-trip time less than pulse duration (echo overlaps outgoing pulse). Q15b(i): de Broglie from eV — chain eV → joules → velocity (½mv² = eV) → λ = h/(mv). Q17a (6m QWC): formation of stationary wave in closed tube — node at closed end, antinode at open end. Q18a (2m): line spectra photon emission — excitation → de-excitation → photon emitted. Q18b(ii): photon counting (total energy / energy per photon = number of photons). Q19b (6m QWC): wave-particle comparison — what wave model predicts AND what particle model explains.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~61–64, A ~53–56, B ~45–48</td>
+</tr>
+<tr>
+<td>Priority for practice</td>
+<td>🔴 Critical — most recent large-cohort sitting in the repo; most representative of current Principal Examiner style. Q17a + Q19b are the canonical waves QWC questions for current style.</td>
+</tr>
+</tbody></table>
+<h3>2.19 Oct 2025 — NOT IN REPO (source externally)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>October 2025</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>❌ Missing — source from Pearson qualification page after results release (~January 2026)</td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>Expected (based on October session pattern and recent Principal Examiner style): full 80-mark paper covering waves (~55 marks) + electricity (~25 marks) + uncertainty (~10 marks). Likely one CP5/CP6/CP7/CP8 practical question.</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Not analysed — paper not in repo.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~60–63, A ~52–55, B ~44–47 (October session tendency: marginally lower)</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>Source QP + MS from Pearson. Add to <code>oct2025/</code> folder. Critical for Jan 2026 preparation (most recent sitting before the target exam).</td>
+</tr>
+</tbody></table>
+<h3>2.20 Jan 2026 — NOT YET SAT (future sitting)</h3>
+<table><thead><tr>
+<th>Field</th>
+<th>Value</th>
+</tr></thead><tbody>
+<tr>
+<td>Paper code</td>
+<td>WPH12/01</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>January 2026</td>
+</tr>
+<tr>
+<td>Repo status</td>
+<td>⏳ Not yet sat — paper does not exist at time of writing. Will be sat in mid-January 2026; released to centres shortly after.</td>
+</tr>
+<tr>
+<td>COVID-affected</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Key topics</td>
+<td>Predicted (based on 13-paper trend in <code>ch2.3-exam-connection.md</code> and <code>ch2.4-exam-connection.md</code>): photoelectric effect (probability ~100%, appears in every paper), refraction/TIR (probability ~100%), diffraction grating (probability ~92%, 12/13 papers), stationary waves (probability ~92%), resistivity (probability ~77%, 10/13 papers), potential divider/LDR/thermistor (probability ~62%, 8/13 papers), drift velocity (probability ~62%), one CP5/CP6/CP7/CP8 practical question (probability ~100%).</td>
+</tr>
+<tr>
+<td>Notable questions</td>
+<td>Not applicable — paper not yet sat.</td>
+</tr>
+<tr>
+<td>Indicative boundaries</td>
+<td>A* ~60–63, A ~52–55, B ~44–47 (predicted range; subject to Principal Examiner adjustment)</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>Cannot be sourced until after the January 2026 sitting. After the exam, the paper is leaked by students online almost immediately (avoid — these are not official versions); the OFFICIAL QP+MS will be released by Pearson ~6 weeks after results (i.e. ~March 2026). For students sitting this paper, the preparation strategy is to perfect the Jun 2019–Jun 2025 papers (13 sessions in repo).</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>3. Papers to Source — Checklist</h2>
+<p>The following sessions are NOT in the repo and must be sourced externally. Each session requires two PDFs (question paper + mark scheme) — total 12 PDFs to source for the 6 published missing sessions. Jan 2026 cannot be sourced until after the sitting.</p>
+<h3>3.1 Sourcing Priority Order</h3>
+<table><thead><tr>
+<th>Priority</th>
+<th>Session</th>
+<th>Why this priority</th>
+<th>Where to source</th>
+</tr></thead><tbody>
+<tr>
+<td>🔴 1</td>
+<td>Oct 2025</td>
+<td>Most recent sitting overall — most representative of current Principal Examiner style</td>
+<td>Pearson qualification page (free, registration required); school exam officer</td>
+</tr>
+<tr>
+<td>🔴 2</td>
+<td>Oct 2021</td>
+<td>First post-COVID standard session — sets the pattern for subsequent papers; useful for current style baseline</td>
+<td>Pearson qualification page; school exam officer</td>
+</tr>
+<tr>
+<td>🟠 3</td>
+<td>Jan 2020</td>
+<td>Earliest non-COVID missing session in the analysis window — completes the 2019/2020 trend baseline; team study guides already reference its questions</td>
+<td>Pearson qualification page; exam-officer access</td>
+</tr>
+<tr>
+<td>🟠 4</td>
+<td>Jan 2019</td>
+<td>First sitting of the 2018 spec — useful for spec-change baseline</td>
+<td>Pearson qualification page; some legacy papers may require exam-officer access</td>
+</tr>
+<tr>
+<td>🟡 5</td>
+<td>Oct 2020 (COVID)</td>
+<td>COVID-affected — useful for content practice but EXCLUDE from trend analysis</td>
+<td>Pearson qualification page; exam-officer access</td>
+</tr>
+<tr>
+<td>🟡 6</td>
+<td>Jan 2021 (COVID)</td>
+<td>COVID-affected — useful for content practice but EXCLUDE from trend analysis</td>
+<td>Pearson qualification page; exam-officer access</td>
+</tr>
+<tr>
+<td>⏳ 7</td>
+<td>Jan 2026</td>
+<td>Future sitting — cannot be sourced until ~March 2026</td>
+<td>Pearson qualification page after release</td>
+</tr>
+</tbody></table>
+<h3>3.2 Sourcing Procedure</h3>
+<p>For each missing session:</p>
+<ol>
+<li><strong>Identify the source.</strong> Pearson Edexcel publishes IAL past papers on the qualification page (search "Pearson Edexcel International A Level Physics qualification page"). The page lists past papers by unit and session. Papers are PDFs, free to download, registration required.</li>
+<li><strong>Download two files per session:</strong> the question paper (QP) and the mark scheme (MS). Some sessions also have an examiner report (ER) — download if available.</li>
+<li><strong>File the PDFs in the correct repo location</strong> using the established naming convention:</li>
+<li><code>output/past-papers/physics/wph12/oct2025/WPH12_oct2025_qp.pdf</code></li>
+<li><code>output/past-papers/physics/wph12/oct2025/WPH12_oct2025_ms.pdf</code></li>
+<li>(and equivalent for oct2021, jan2020, jan2019, oct2020, jan2021)</li>
+<li><strong>Update this index.</strong> Move the session row from "❌ Missing" to "✅ In repo" in the master table in §1.</li>
+<li><strong>Update the cross-paper statistics</strong> in <code>ch2.3-definitions.md</code>, <code>ch2.4-definitions.md</code>, <code>ch2.3-exam-connection.md</code> and <code>ch2.4-exam-connection.md</code> to include the newly sourced paper (increment the "papers tested" counts and add the new question references).</li>
+<li><strong>(Optional) Run the analysis pipeline.</strong> The existing analysis scripts (see <code>output/analysis/physics/</code>) can extract topic coverage from the new paper.</li>
+</ol>
+<h3>3.3 Sessions NOT to Source (or to deprioritise)</h3>
+<ul>
+<li><strong>Jun 2020:</strong> Globally cancelled due to COVID-19. No WPH12/01 paper exists for this session. Do not attempt to source.</li>
+<li><strong>May/June 2021:</strong> Replaced with adapted assessment / centre-assessed grades in most regions for IAL Physics. Some centres did receive an adapted WPH12 paper; team-internal analysis files (<code>ch2.4-content.md</code>) reference Jun 2021 questions (Q11–Q15), suggesting the adapted paper was at least partially distributed. If sourced externally, treat as COVID-affected and EXCLUDE from trend analysis.</li>
+<li><strong>Jan 2026:</strong> Will exist only after the sitting. Cannot be sourced at time of writing.</li>
+</ul>
+<hr>
+<h2>4. 8-Week Study Schedule Template</h2>
+<p>This schedule assumes the student has completed first-pass content study of <code>ch2.3-<em></code> and <code>ch2.4-</em></code> (i.e. is already familiar with the spec content) and is now in the final 8-week revision window before the exam. The goal is to sit <strong>8–10 timed past papers</strong> (roughly 1–1.25 per week) with full self-marking and examiner-report study.</p>
+<h3>4.1 Weekly Schedule</h3>
+<table><thead><tr>
+<th>Week</th>
+<th>Timed paper to sit</th>
+<th>Self-mark + ER study focus</th>
+<th>Content revision focus</th>
+</tr></thead><tbody>
+<tr>
+<td>1 (–8 wks)</td>
+<td>Jun 2024 (in repo)</td>
+<td>Mark scheme wording for resistivity + graphical method</td>
+<td>Waves — wave properties + v = fλ</td>
+</tr>
+<tr>
+<td>2 (–7 wks)</td>
+<td>Jan 2025 (in repo)</td>
+<td>Mark scheme wording for diffraction grating + optical fibre</td>
+<td>Waves — refraction, TIR, Snell's law</td>
+</tr>
+<tr>
+<td>3 (–6 wks)</td>
+<td>Oct 2024 (in repo)</td>
+<td>Mark scheme wording for strain gauge resistivity</td>
+<td>Waves — stationary waves + harmonics</td>
+</tr>
+<tr>
+<td>4 (–5 wks)</td>
+<td>Jun 2025 (in repo)</td>
+<td>Mark scheme wording for polarisation + QWC structure</td>
+<td>Waves — photoelectric effect + wave-particle duality</td>
+</tr>
+<tr>
+<td>5 (–4 wks)</td>
+<td>Oct 2023 (in repo)</td>
+<td>Mark scheme wording for intensity cos θ trap + wave-particle QWC</td>
+<td>Electricity — resistivity + drift velocity</td>
+</tr>
+<tr>
+<td>6 (–3 wks)</td>
+<td>Oct 2022 (in repo)</td>
+<td>Mark scheme wording for beats QWC + diffraction grating d-vs-1/d</td>
+<td>Electricity — Kirchhoff + series/parallel</td>
+</tr>
+<tr>
+<td>7 (–2 wks)</td>
+<td>Oct 2025 (if sourced) OR Jun 2022 (in repo)</td>
+<td>Examiner report comparison with previous papers</td>
+<td>Electricity — potential dividers + internal resistance</td>
+</tr>
+<tr>
+<td>8 (–1 wk)</td>
+<td>Jan 2025 (re-sit, in repo) OR Oct 2021 (if sourced)</td>
+<td>Final confidence check; no new content</td>
+<td>Light review only; sleep priority</td>
+</tr>
+</tbody></table>
+<h3>4.2 Weekly Rhythm</h3>
+<p>Within each week, follow this rhythm:</p>
+<ul>
+<li><strong>Day 1 (e.g. Saturday):</strong> Sit the week's timed paper under exam conditions (90 minutes, no breaks). Self-mark immediately.</li>
+<li><strong>Day 2 (Sunday):</strong> Read the examiner report for the paper. Extract mark scheme phrases into the phrase bank. Add a row to the progress spreadsheet.</li>
+<li><strong>Day 3 (Monday):</strong> Targeted content revision on the weakest topic from Day 1's paper.</li>
+<li><strong>Day 4 (Tuesday):</strong> Re-attempt only the questions lost on Day 1, this time without time pressure. Compare with Day 1's answers.</li>
+<li><strong>Day 5 (Wednesday):</strong> Targeted content revision on the second-weakest topic.</li>
+<li><strong>Day 6 (Thursday):</strong> Sit a Section A only (40 marks, 50 minutes) from a second paper to maintain MCQ fluency.</li>
+<li><strong>Day 7 (Friday):</strong> Rest. Light review of the phrase bank.</li>
+</ul>
+<h3>4.3 Adaptation Rules</h3>
+<ul>
+<li>If the student's margin-vs-A on any week's paper is below −8 (i.e. more than 8 marks below the A boundary), add an extra content-revision day and skip the Day 6 Section A practice.</li>
+<li>If the student's margin-vs-A on any week's paper is above +5, advance the next week's paper to the current week (sit two papers that week) and use the saved week for an additional mock.</li>
+<li>If two consecutive papers show the same content weakness, suspend the schedule for one week and re-study that topic from the relevant chapter study guide (<code>ch2.3-<em></code> for waves, <code>ch2.4-</em></code> for electricity).</li>
+</ul>
+<hr>
+<h2>5. Self-Assessment Tracker Template</h2>
+<p>The tracker below is a markdown template the student can copy into a personal study file (or spreadsheet) and update after each timed paper.</p>
+<h3>5.1 Per-Paper Tracker Row</h3>
+<pre><table><thead><tr>
+<th>Date sat</th>
+<th>Session</th>
+<th>Raw /80</th>
+<th>A* bd</th>
+<th>A bd</th>
+<th>Margin vs A*</th>
+<th>Margin vs A</th>
+<th>Section A /40</th>
+<th>Section B /40</th>
+<th>Uncertainty lost</th>
+<th>Waves lost</th>
+<th>Electricity lost</th>
+<th>QWC lost</th>
+<th>Notes</th>
+</tr></thead><tbody>
+</tbody></table></pre>
+<p><strong>Field guidance:</strong></p>
+<ul>
+<li><code>A<em> bd</code> / <code>A bd</code>: The indicative A</em> and A boundaries for that specific session (see §2 of this file).</li>
+<li><code>Margin vs A<em></code> = Raw − A</em> bd. Positive ⇒ on track for A*; negative ⇒ gap to close.</li>
+<li><code>Margin vs A</code> = Raw − A bd. Positive ⇒ on track for A; negative ⇒ at risk of B.</li>
+<li><code>Uncertainty lost</code> / <code>Waves lost</code> / <code>Electricity lost</code> / <code>QWC lost</code>: Sum of marks lost in each category. Use to identify the highest-yield focus for the next week. The waves/electricity split is WPH12-specific (the equivalent WPH11 split is mechanics/materials).</li>
+</ul>
+<h3>5.2 Aggregate Progress Tracker</h3>
+<p>After 5+ papers, fill in this aggregate table:</p>
+<pre><table><thead><tr>
+<th>Sessions sat</th>
+<th>Mean raw /80</th>
+<th>Mean margin vs A*</th>
+<th>Mean Section A /40</th>
+<th>Mean Section B /40</th>
+<th>Most-lost category</th>
+<th>Trend</th>
+</tr></thead><tbody>
+</tbody></table></pre>
+<p><strong>Decision rules from the aggregate:</strong></p>
+<ul>
+<li>Mean margin vs A* ≥ 0 ⇒ ready for the exam; maintain with light practice.</li>
+<li>Mean margin vs A* in [−5, 0] ⇒ on the cusp; focus on the most-lost category.</li>
+<li>Mean margin vs A* in [−10, −5] ⇒ behind target; suspend new papers for one week and revise the most-lost category.</li>
+<li>Mean margin vs A* &lt; −10 ⇒ significant gap; seek additional support (teacher tutoring) and consider deferring the sitting if possible.</li>
+</ul>
+<h3>5.3 Topic Confidence Self-Rating</h3>
+<p>After each paper, rate the student's confidence in each Critical/High-yield topic (see §9 of <code>ext-past-papers-index-concepts.md</code>) on a 1–5 scale:</p>
+<pre><table><thead><tr>
+<th>Date</th>
+<th>Photoelectric</th>
+<th>Refraction/TIR</th>
+<th>Diffraction grating</th>
+<th>Stationary waves</th>
+<th>Resistivity</th>
+<th>Potential divider</th>
+<th>Internal resistance</th>
+<th>Drift velocity</th>
+<th>Uncertainty</th>
+</tr></thead><tbody>
+</tbody></table></pre>
+<p>A rating of 1 = "lost most marks", 5 = "scored full marks". Track the trend over 5+ papers — a Critical topic rated ≤3 for two consecutive papers becomes the next week's revision focus.</p>
+<hr>
+<h2>6. Connecting Past Papers to the Existing Study Guides</h2>
+<p>The existing WPH12 study guides are designed to be used in conjunction with past papers — not as a replacement. The mapping below shows which study guide to consult for each topic weakness identified in the self-assessment tracker.</p>
+<table><thead><tr>
+<th>Weakness identified</th>
+<th>Study guide to consult</th>
+<th>Section</th>
+</tr></thead><tbody>
+<tr>
+<td>Wave properties (v = fλ, amplitude, frequency, period)</td>
+<td><code>ch2.3-definitions.md</code></td>
+<td>§1 (Wave Properties)</td>
+</tr>
+<tr>
+<td>Longitudinal/transverse waves, polarisation</td>
+<td><code>ch2.3-definitions.md</code></td>
+<td>§2 (Longitudinal/Transverse) + §7 (Polarisation)</td>
+</tr>
+<tr>
+<td>Coherence, superposition, interference, path/phase difference</td>
+<td><code>ch2.3-definitions.md</code></td>
+<td>§3 (Superposition)</td>
+</tr>
+<tr>
+<td>Beats</td>
+<td><code>ch2.3-definitions.md</code></td>
+<td>§3 (Beats)</td>
+</tr>
+<tr>
+<td>Stationary waves (strings, tubes, harmonics)</td>
+<td><code>ch2.3-definitions.md</code></td>
+<td>§4 (Stationary Waves)</td>
+</tr>
+<tr>
+<td>Intensity, inverse square law, cos θ solar panel trap</td>
+<td><code>ch2.3-definitions.md</code></td>
+<td>§5 (Intensity)</td>
+</tr>
+<tr>
+<td>Refraction, Snell's law, critical angle, TIR</td>
+<td><code>ch2.3-definitions.md</code></td>
+<td>§6 (Refraction)</td>
+</tr>
+<tr>
+<td>Diffraction, diffraction grating, d vs 1/d trap</td>
+<td><code>ch2.3-definitions.md</code></td>
+<td>§8 (Diffraction)</td>
+</tr>
+<tr>
+<td>Wave-particle duality, de Broglie wavelength</td>
+<td><code>ch2.3-definitions.md</code></td>
+<td>§9 (Wave-Particle Duality)</td>
+</tr>
+<tr>
+<td>Pulse-echo, factor-of-2 trap, resolution</td>
+<td><code>ch2.3-definitions.md</code></td>
+<td>§10 (Pulse-Echo)</td>
+</tr>
+<tr>
+<td>Photon model, E = hf, photon counting</td>
+<td><code>ch2.3-definitions.md</code></td>
+<td>§11 (Photon Model)</td>
+</tr>
+<tr>
+<td>Photoelectric effect, threshold frequency, work function</td>
+<td><code>ch2.3-definitions.md</code></td>
+<td>§12 (Photoelectric Effect)</td>
+</tr>
+<tr>
+<td>Atomic line spectra, energy levels, electron transitions</td>
+<td><code>ch2.3-definitions.md</code></td>
+<td>§13 (Atomic Line Spectra)</td>
+</tr>
+<tr>
+<td>Electric current, charge, conventional current</td>
+<td><code>ch2.4-definitions.md</code></td>
+<td>§1 (Current)</td>
+</tr>
+<tr>
+<td>Potential difference, e.m.f., V = W/Q</td>
+<td><code>ch2.4-definitions.md</code></td>
+<td>§1 (P.D.)</td>
+</tr>
+<tr>
+<td>Resistance, Ohm's law, R = V/I</td>
+<td><code>ch2.4-definitions.md</code></td>
+<td>§2 (Resistance)</td>
+</tr>
+<tr>
+<td>Kirchhoff's laws (1st: charge; 2nd: energy)</td>
+<td><code>ch2.4-definitions.md</code></td>
+<td>§3 (Kirchhoff)</td>
+</tr>
+<tr>
+<td>Series and parallel circuits, mixed circuits</td>
+<td><code>ch2.4-definitions.md</code></td>
+<td>§4 (Series/Parallel)</td>
+</tr>
+<tr>
+<td>Resistivity (R = ρL/A, graphical method)</td>
+<td><code>ch2.4-definitions.md</code> + <code>ch2.4-exam-connection.md</code></td>
+<td>§1 (Resistivity)</td>
+</tr>
+<tr>
+<td>Drift velocity (I = nAve, number density)</td>
+<td><code>ch2.4-definitions.md</code></td>
+<td>(Drift Velocity section)</td>
+</tr>
+<tr>
+<td>Power (P = IV = I²R = V²/R), energy</td>
+<td><code>ch2.4-definitions.md</code></td>
+<td>(Power section)</td>
+</tr>
+<tr>
+<td>Internal resistance, terminal p.d., V = ε − Ir</td>
+<td><code>ch2.4-definitions.md</code></td>
+<td>(Internal Resistance section)</td>
+</tr>
+<tr>
+<td>Potential dividers, LDR, NTC thermistor, sensor circuits</td>
+<td><code>ch2.4-definitions.md</code></td>
+<td>(Potential Divider section)</td>
+</tr>
+<tr>
+<td>V-I graphs (ohmic, filament, diode, thermistor)</td>
+<td><code>ch2.4-definitions.md</code></td>
+<td>(I-V Characteristics section)</td>
+</tr>
+<tr>
+<td>Resistance-temperature and resistance-illumination</td>
+<td><code>ch2.4-definitions.md</code></td>
+<td>(R-T / R-illumination section)</td>
+</tr>
+<tr>
+<td>Absolute / percentage uncertainty from repeats</td>
+<td><code>ext-uncertainty-definitions.md</code></td>
+<td>§2–5</td>
+</tr>
+<tr>
+<td>Combining uncertainties (powers, t² trap)</td>
+<td><code>ext-uncertainty-concepts.md</code></td>
+<td>§4</td>
+</tr>
+<tr>
+<td>Gradient uncertainty (worst acceptable lines)</td>
+<td><code>ext-uncertainty-concepts.md</code></td>
+<td>§5</td>
+</tr>
+<tr>
+<td>Random vs systematic error diagnosis</td>
+<td><code>ext-uncertainty-concepts.md</code></td>
+<td>§6</td>
+</tr>
+<tr>
+<td>Significant figures / prefix conversions</td>
+<td><code>ext-uncertainty-concepts.md</code></td>
+<td>§7–8</td>
+</tr>
+<tr>
+<td>CP4 speed of sound (two-beam oscilloscope)</td>
+<td><code>ext-cp4-8-methods-definitions.md</code></td>
+<td>§1 (CP4)</td>
+</tr>
+<tr>
+<td>CP5 standing wave on a string</td>
+<td><code>ext-cp4-8-methods-definitions.md</code></td>
+<td>§2 (CP5)</td>
+</tr>
+<tr>
+<td>CP6 wavelength using diffraction grating</td>
+<td><code>ext-cp4-8-methods-definitions.md</code></td>
+<td>§3 (CP6)</td>
+</tr>
+<tr>
+<td>CP7 resistivity of a wire</td>
+<td><code>ext-cp4-8-methods-definitions.md</code></td>
+<td>§4 (CP7)</td>
+</tr>
+<tr>
+<td>CP8 e.m.f. and internal resistance of a cell</td>
+<td><code>ext-cp4-8-methods-definitions.md</code></td>
+<td>§5 (CP8)</td>
+</tr>
+<tr>
+<td>Circuits QWC question structure (LDR, thermistor, Kirchhoff)</td>
+<td><code>ext-circuits-qwc-definitions.md</code> + <code>ext-circuits-qwc-concepts.md</code></td>
+<td>QWC structure pattern</td>
+</tr>
+<tr>
+<td>Waves-supplement topics (single-slit diffraction, ray diagrams, etc.)</td>
+<td><code>ext-waves-supplement-definitions.md</code> + <code>ext-waves-supplement-concepts.md</code></td>
+<td>Topic-specific sections</td>
+</tr>
+<tr>
+<td>MCQ technique (elimination, estimation, unit checking)</td>
+<td><code>ext-mcq-practice-*</code> (planned)</td>
+<td>All sections</td>
+</tr>
+<tr>
+<td>Maths skills (sig figs, standard form, prefix conversion, gradient)</td>
+<td><code>ext-maths-skills-*</code> (planned)</td>
+<td>All sections</td>
+</tr>
+<tr>
+<td>Reference data (constants, calculator rules, command words, glossary)</td>
+<td><code>ext-reference-*</code> (planned)</td>
+<td>All sections</td>
+</tr>
+</tbody></table>
+<p><strong>Study workflow:</strong> When the self-assessment tracker identifies a weakness, the student should:</p>
+<ol>
+<li>Read the relevant study-guide section (from the table above).</li>
+<li>Work through the worked examples in the corresponding <code>-concepts.md</code> file.</li>
+<li>Re-attempt the relevant past-paper question(s) that exposed the weakness.</li>
+<li>Re-rate the topic confidence in §5.3 above — the rating should improve by ≥1 within one week.</li>
+</ol>
+<hr>
+<h2>7. Final Notes &amp; Limitations</h2>
+<h3>7.1 What This Extension Set Does NOT Provide</h3>
+<ul>
+<li><strong>Real Pearson past paper content.</strong> This file is an INDEX/FRAMEWORK only. Real WPH12/01 papers are copyrighted by Pearson Education and must be sourced externally from the official Pearson qualification page or a school exam officer.</li>
+<li><strong>Exact grade boundary values.</strong> All boundary values in this file are indicative ranges based on typical WPH12/01 patterns. Exact values vary by session and are published by Pearson alongside results. The ranges used (A* 60–64, A 52–56, B 44–48) match those specified in the task brief.</li>
+<li><strong>A substitute for the existing study guides.</strong> This extension is a META-resource (how to use past papers). The physics content itself remains in <code>ch2.3-<em></code>, <code>ch2.4-</em></code>, <code>ext-uncertainty-<em></code>, <code>ext-cp4-8-methods-</em></code>, <code>ext-circuits-qwc-<em></code> and <code>ext-waves-supplement-</em></code>.</li>
+<li><strong>A prediction of the Jan 2026 paper.</strong> Predicted question patterns (see §2.20) are based on probability from the 13-paper trend, NOT on any inside information. The actual Jan 2026 paper will differ.</li>
+</ul>
+<h3>7.2 What This Extension Set DOES Provide</h3>
+<ul>
+<li>A complete index of all 20 WPH12/01 sittings from Jan 2019 to Jan 2026.</li>
+<li>In-repo status for each session (13/19 published sessions present, 6 to source, 1 future).</li>
+<li>Per-paper topic and notable-question references, drawn from the cross-paper analyses already published in the existing study guides (<code>ch2.3-exam-connection.md</code>, <code>ch2.4-exam-connection.md</code>, <code>ch2.4-content.md</code>, <code>ch2.4-exam-readiness-questions.md</code>).</li>
+<li>A practical 8-week study schedule with weekly timed-paper targets.</li>
+<li>A self-assessment tracker template for monitoring progress, including the WPH12-specific waves/electricity/QWC mark-category split.</li>
+<li>A mapping from identified weaknesses to the relevant study-guide section, including the existing 4 extension sets (<code>ext-uncertainty-<em></code>, <code>ext-cp4-8-methods-</em></code>, <code>ext-circuits-qwc-<em></code>, <code>ext-waves-supplement-</em></code>) and 2 planned extension sets (<code>ext-mcq-practice-<em></code>, <code>ext-maths-skills-</em></code> / <code>ext-reference-*</code>).</li>
+</ul>
+<h3>7.3 Sourcing the Missing Papers — Final Action</h3>
+<p>To bring the repo to 100% coverage of all available published WPH12/01 papers (19/19, excluding the future Jan 2026 sitting), the following six actions are required:</p>
+<ol>
+<li><strong>Source Jan 2019</strong> QP + MS from Pearson. Add to <code>output/past-papers/physics/wph12/jan2019/</code>.</li>
+<li><strong>Source Jan 2020</strong> QP + MS from Pearson. Add to <code>output/past-papers/physics/wph12/jan2020/</code>.</li>
+<li><strong>Source Oct 2020</strong> QP + MS from Pearson (COVID-affected). Add to <code>output/past-papers/physics/wph12/oct2020/</code>. EXCLUDE from trend analysis.</li>
+<li><strong>Source Jan 2021</strong> QP + MS from Pearson (COVID-affected). Add to <code>output/past-papers/physics/wph12/jan2021/</code>. EXCLUDE from trend analysis.</li>
+<li><strong>Source Oct 2021</strong> QP + MS from Pearson. Add to <code>output/past-papers/physics/wph12/oct2021/</code>.</li>
+<li><strong>Source Oct 2025</strong> QP + MS from Pearson (post-Jan 2026 results). Add to <code>output/past-papers/physics/wph12/oct2025/</code>.</li>
+</ol>
+<p>Once these six sessions are sourced, the repo will hold 19 PDF pairs (38 files) covering the full analysis window. The cross-paper statistics in <code>ch2.3-definitions.md</code> and <code>ch2.4-definitions.md</code> can then be extended from 13 non-COVID papers to 17 (adding Jan 2019, Jan 2020, Oct 2021, Oct 2025 to the non-COVID analysis; excluding the 2 COVID sessions Oct 2020 + Jan 2021), improving the statistical confidence of every "X/13 papers" claim in the existing study guides.</p>
+<h3>7.4 Comparison with the WPH11 Past-Papers-Index Set</h3>
+<p>This WPH12 set mirrors the WPH11 <code>ext-past-papers-index</code> set (Gap #1 framework) but adapted for the Unit 2 content:</p>
+<ul>
+<li><strong>Repo coverage differs:</strong> WPH11 has 17/19 published sessions present (89%); WPH12 has 13/19 (68%). The 6 missing WPH12 sessions (vs WPH11's 3) reflect the lower priority historically given to WPH12 sourcing — the team should prioritise closing this gap.</li>
+<li><strong>Topic split differs:</strong> WPH11 is mechanics + materials (~58/22 marks per paper); WPH12 is waves + electricity (~56/29 marks per paper). The waves strand of WPH12 is roughly twice as heavy as the electricity strand, mirroring the mechanics-vs-materials ratio in WPH11.</li>
+<li><strong>Grade boundary range:</strong> WPH12 boundaries tend to sit 0–2 marks lower than WPH11 boundaries at the A and A* levels because the WPH12 Section B has a slightly larger practical/uncertainty load that students find harder.</li>
+<li><strong>COVID-affected sessions:</strong> Same three sessions (Oct 2020, Jan 2021, Jun 2021) treated as COVID-affected for both WPH11 and WPH12. For WPH12, none of these COVID sessions are in the repo; for WPH11, all three are in the repo.</li>
+</ul>
+</main>
+</body>
+</html>

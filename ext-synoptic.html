@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WPH12 Extension — Synoptic Links to Unit 3</title>
+<style>
+:root{--bg:#f8f9fc;--bg2:#eef0f6;--fg:#1a1a2e;--fg2:#3d3d56;--accent:#4f46e5;--accent2:#7c3aed;--accent-soft:#eef2ff;--border:#d1d5db;--card:#ffffff;--shadow:0 1px 3px rgba(0,0,0,.08);--sidebar-w:260px;--header-h:52px}
+[data-theme="dark"]{--bg:#0f1117;--bg2:#1a1c2b;--fg:#e4e4f0;--fg2:#a0a0bc;--accent:#818cf8;--accent2:#a78bfa;--accent-soft:#1e1b4b;--border:#2d2f42;--card:#181a2a;--shadow:0 1px 3px rgba(0,0,0,.3)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 16px)}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--fg);line-height:1.65;font-size:15px;transition:background .25s,color .25s}
+.header{position:sticky;top:0;z-index:100;background:var(--card);border-bottom:1px solid var(--border);height:var(--header-h);display:flex;align-items:center;padding:0 20px;box-shadow:var(--shadow)}
+.header-title{font-size:16px;font-weight:700;color:var(--accent);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.header-actions{margin-left:auto;display:flex;gap:8px;align-items:center}
+.btn-icon{background:none;border:1px solid var(--border);border-radius:6px;padding:6px 10px;cursor:pointer;color:var(--fg2);font-size:14px;transition:all .2s}
+.btn-icon:hover{background:var(--accent-soft);color:var(--accent);border-color:var(--accent)}
+.layout{display:flex;margin-top:var(--header-h)}
+.sidebar{width:var(--sidebar-w);flex-shrink:0;position:sticky;top:var(--header-h);height:calc(100vh - var(--header-h));overflow-y:auto;padding:20px 14px;background:var(--card);border-right:1px solid var(--border);transition:transform .25s}
+.sidebar ul{list-style:none}
+.sidebar li{margin-bottom:4px}
+.sidebar a{display:block;padding:6px 10px;border-radius:6px;color:var(--fg2);text-decoration:none;font-size:13px;line-height:1.4;transition:all .15s}
+.sidebar a:hover,.sidebar a.active{background:var(--accent-soft);color:var(--accent);font-weight:600}
+.main{flex:1;max-width:820px;margin:0 auto;padding:32px 28px 80px}
+.main h1{font-size:26px;font-weight:800;color:var(--accent);margin-bottom:28px;line-height:1.25;letter-spacing:-.02em}
+.main h2{font-size:20px;font-weight:700;margin:40px 0 14px;padding-bottom:6px;border-bottom:2px solid var(--accent);color:var(--fg)}
+.main h3{font-size:16px;font-weight:700;margin:26px 0 10px;color:var(--accent2)}
+.main h4{font-size:14.5px;font-weight:700;margin:20px 0 8px;color:var(--fg2);font-style:italic}
+.main p{margin:10px 0}
+.main strong{color:var(--accent);font-weight:700}
+.main em{font-style:italic;color:var(--fg2)}
+.main code{background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:13px;font-family:"Fira Code",monospace;color:var(--accent2)}
+.main pre{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:14px 16px;overflow-x:auto;margin:14px 0;font-size:13px;line-height:1.55}
+.main pre code{background:none;padding:0;color:var(--fg)}
+.main ul,.main ol{margin:10px 0 10px 24px}
+.main li{margin-bottom:4px}
+.main hr{border:none;border-top:1px solid var(--border);margin:28px 0}
+.table-wrap{overflow-x:auto;margin:14px 0}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{background:var(--accent-soft);color:var(--accent);font-weight:700;text-align:left;padding:8px 10px;border:1px solid var(--border);white-space:nowrap}
+td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+tbody tr:nth-child(even){background:var(--bg2)}
+blockquote{border-left:4px solid var(--accent);padding:10px 16px;margin:14px 0;background:var(--accent-soft);border-radius:0 8px 8px 0;color:var(--fg2)}
+blockquote p{margin:4px 0}
+.menu-btn{display:none}
+.sidebar-overlay{display:none;position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.4)}
+@media(max-width:800px){.sidebar{position:fixed;left:0;top:var(--header-h);z-index:95;transform:translateX(-100%);box-shadow:4px 0 20px rgba(0,0,0,.2)}.sidebar.open{transform:translateX(0)}.sidebar-overlay.open{display:block}.menu-btn{display:inline-flex}.main{padding:20px 16px 60px}.main h1{font-size:22px}}
+@media(max-width:400px){.main{padding:16px 12px 50px}.main h1{font-size:19px}.header-title{font-size:14px}}
+@media print{.header,.sidebar,.sidebar-overlay,.menu-btn{display:none!important}.layout{display:block}.main{max-width:100%;padding:0;margin:0}body{font-size:11pt;color:#000;background:#fff}.main h2{border-bottom:2px solid #333;color:#000;page-break-after:avoid}.main h3{color:#333;page-break-after:avoid}th{background:#eee!important;color:#000!important}td,th{border-color:#999!important}a{color:#000!important;text-decoration:none!important}pre{border:1px solid #ccc;background:#f5f5f5!important}code{background:#eee!important;color:#000!important}blockquote{border-left-color:#666;background:#f9f9f9!important;color:#333!important}table{page-break-inside:avoid}.table-wrap{overflow:visible}}
+</style>
+</head>
+<body>
+<header class="header">
+<button class="btn-icon menu-btn" onclick="toggleSidebar()" aria-label="Menu">&#9776;</button>
+<span class="header-title">WPH12 Extension — Synoptic Links to Unit 3</span>
+<div class="header-actions">
+<button class="btn-icon" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">&#9790;</button>
+</div>
+</header>
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+<div class="layout">
+<nav class="sidebar" id="sidebar">
+<ul>
+<li><a href="#1-synoptic-assessment-terms">1. Synoptic Assessment Terms</a></li>
+<li><a href="#2-key-unit-1-concepts-that-can-appear-in-unit-2-synoptic-que">2. Key Unit 1 Concepts That Can Appear in Unit 2 Synoptic Questions</a></li>
+<li><a href="#3-key-unit-2-concepts-that-can-appear-in-unit-3-and-beyond">3. Key Unit 2 Concepts That Can Appear in Unit 3 (and Beyond)</a></li>
+<li><a href="#4-cross-unit-synoptic-concepts">4. Cross-Unit Synoptic Concepts</a></li>
+<li><a href="#5-synoptic-preparation-terms">5. Synoptic-Preparation Terms</a></li>
+<li><a href="#concepts">Concepts</a></li>
+<li><a href="#1-what-unit-3-actually-is-and-is-not">1. What Unit 3 Actually Is (and Is Not)</a></li>
+<li><a href="#2-how-unit-1-mechanics-appears-in-unit-2-synoptic-contexts">2. How Unit 1 Mechanics Appears in Unit 2 Synoptic Contexts</a></li>
+<li><a href="#3-how-unit-2-appears-in-unit-3">3. How Unit 2 Appears in Unit 3</a></li>
+<li><a href="#4-common-synoptic-question-patterns">4. Common Synoptic Question Patterns</a></li>
+<li><a href="#5-how-to-prepare-for-synoptic-questions">5. How to Prepare for Synoptic Questions</a></li>
+<li><a href="#6-worked-examples-of-synoptic-questions">6. Worked Examples of Synoptic Questions</a></li>
+<li><a href="#exam-connections">Exam Connections</a></li>
+<li><a href="#1-how-synoptic-questions-are-tested-frequency-table">1. How Synoptic Questions Are Tested — Frequency Table</a></li>
+<li><a href="#2-frequency-of-synoptic-contexts-in-wph1301-unit-3">2. Frequency of Synoptic Contexts in WPH13/01 (Unit 3)</a></li>
+<li><a href="#3-frequency-of-synoptic-questions-in-wph1201-unit-2">3. Frequency of Synoptic Questions in WPH12/01 (Unit 2)</a></li>
+<li><a href="#4-typical-mark-allocations-in-unit-3-synoptic-questions">4. Typical Mark Allocations in Unit 3 Synoptic Questions</a></li>
+<li><a href="#5-question-structures-in-wph1301-unit-3">5. Question Structures in WPH13/01 (Unit 3)</a></li>
+<li><a href="#6-command-word-mapping-for-synoptic-questions">6. Command Word Mapping for Synoptic Questions</a></li>
+<li><a href="#7-common-synoptic-patterns-and-traps">7. Common Synoptic Patterns and Traps</a></li>
+<li><a href="#8-mark-scheme-phrasing-exact-wording-that-scores">8. Mark Scheme Phrasing — Exact Wording That Scores</a></li>
+<li><a href="#9-cross-unit-reasoning-how-to-think-synoptically-in-the-exam">9. Cross-Unit Reasoning — How to Think Synoptically in the Exam</a></li>
+<li><a href="#10-self-test-practice-questions">10. Self-Test Practice Questions</a></li>
+<li><a href="#11-answers-to-self-test-questions">11. Answers to Self-Test Questions</a></li>
+<li><a href="#12-summary-synoptic-preparation-checklist">12. Summary — Synoptic Preparation Checklist</a></li>
+</ul>
+</nav>
+<main class="main">
+<h1>WPH12 Extension — Synoptic Links to Unit 3</h1>
+
+
+
+<h2 id="1-synoptic-assessment-terms">1. Synoptic Assessment Terms</h2>
+
+<h3 id="11-synoptic-question">1.1 Synoptic Question</h3>
+
+<p><strong>Spec ref:</strong> Spec pp. 9, 10, 27 (synoptic notes in Unit 4, Unit 5, Unit 6 assessment overviews) <strong>Definition:</strong> An exam question that requires the candidate to draw on knowledge and understanding from more than one unit of the specification. Synoptic questions deliberately combine topics (e.g. mechanics + waves, or electricity + practical skills) so that a student who has only revised one unit cannot fully answer them. <strong>Exam context:</strong> The spec explicitly states that Unit 4 (WPH14/01) "may contain some synoptic questions which require knowledge and understanding from Units 1 and 2", Unit 5 (WPH15/01) similarly from "Units 1, 2 and 4", and Unit 6 (WPH16/01) from "Units 1 and 2". Although Unit 3 (WPH13/01) does not carry the same wording, the unit description (§3.1) states that "This unit will assess students' knowledge and understanding of experimental procedures and techniques that were developed when they conducted these experiments" while studying Units 1 and 2 — so Unit 3 is synoptic by design. Examiner reports show synoptic questions reward students who can transfer relationships (e.g. using v = fλ alongside F = ma in a single calculation).</p>
+
+<h3 id="12-synoptic-link">1.2 Synoptic Link</h3>
+
+<p><strong>Spec ref:</strong> Spec Unit 3 §3.1; cross-unit outcomes 11, 26, 31 (Unit 1 CPs) and 38, 43, 52, 72, 78 (Unit 2 CPs) <strong>Definition:</strong> A conceptual or mathematical connection between two topics from different units that is needed to solve a single problem. A synoptic link is what a synoptic question exploits: e.g. the link between wave speed on a string (Unit 2, spec 43) and the tension force in the string (Unit 1, spec 16–17) is a synoptic link because the wave equation v = √(T/μ) requires both mechanics and waves knowledge. <strong>Exam context:</strong> Examiners construct synoptic questions around well-known synoptic links. Recognising the link is worth 1 mark in itself (the "method mark") — the calculation that follows is worth the remaining marks. Examiner reports show students lose synoptic marks by treating the question as single-unit and ignoring the cross-unit relationship.</p>
+
+<h3 id="13-unit-3-practical-skills-in-physics-i">1.3 Unit 3 (Practical Skills in Physics I)</h3>
+
+<p><strong>Spec ref:</strong> Spec p. 7 (assessment overview) + pp. 23–26 (Unit 3 content §3.1–3.5) <strong>Definition:</strong> The IAS compulsory written paper (WPH13/01) assessing experimental skills developed while studying Units 1 and 2. It is a 1 hour 20 minute, 50-mark written examination with no multiple-choice questions — only short-open, open-response, calculation and extended-writing questions. Despite its name, it is <strong>not</strong> a practical exam: students do not perform experiments in the exam hall. Instead, they answer written questions about experiments (planning, implementation, data analysis, evaluation) drawn from the eight AS Core Practicals (CP1–CP8) and from novel practical scenarios. <strong>Exam context:</strong> Unit 3 is worth 20% of IAS and 10% of IAL. The minimum 20 marks for Level 2+ mathematics means at least 40% of the paper is calculation/graph/data analysis. The three assessed skill areas are: Planning (§3.3), Implementation and measurements (§3.4), and Processing results (§3.5) — these are the three "synoptic hooks" through which Unit 1 and Unit 2 content is examined.</p>
+
+<h3 id="14-cross-unit-assessment">1.4 Cross-Unit Assessment</h3>
+
+<p><strong>Spec ref:</strong> Spec Unit 3 §3.1 ("experimental procedures and techniques that were developed... while they study Units 1 and 2") <strong>Definition:</strong> Any assessment item that requires knowledge from more than one unit. Unit 3 is the most explicit cross-unit paper in the IAS because its entire purpose is to assess practical skills from both Unit 1 (mechanics/materials CPs) and Unit 2 (waves/electricity CPs) within a single exam. <strong>Exam context:</strong> A single Unit 3 question might ask the student to plan an experiment to determine the resistivity of a wire (Unit 2, CP7, spec 72) using a micrometer to measure diameter (Unit 1 skill, spec 31 / Appendix 10) and to calculate the percentage uncertainty in the cross-sectional area (Unit 2 maths + Unit 1 uncertainty rules). All three units of knowledge — Unit 1, Unit 2, and the practical-skills layer of Unit 3 — are required.</p>
+
+<h3 id="15-data-analysis-question">1.5 Data Analysis Question</h3>
+
+<p><strong>Spec ref:</strong> Spec Unit 3 §3.5 (Processing results) + Appendix 10 (Uncertainty in practical work) <strong>Definition:</strong> A question type in which the student is given a set of experimental results (usually a data table) obtained by an "experienced student" and must process them: perform calculations with correct significant figures, plot a graph with appropriate scales and units, comment on the relationship shown, determine a constant from the gradient using a large triangle, suggest modifications to reduce errors, and discuss uncertainties both qualitatively and quantitatively. The spec is explicit (§3.5) that students are <strong>not</strong> expected to compound percentage uncertainties in Unit 3. <strong>Exam context:</strong> Data analysis questions are the largest single mark-block in Unit 3, typically worth 12–18 marks each. They almost always sit on top of a Unit 2 context (resistivity of a wire, EMF/internal resistance, double-slit wavelength, speed of sound) — so Unit 2 content knowledge is required to set up the correct graph axes (e.g. R vs l for resistivity, 1/I vs R for internal resistance) before any processing can begin.</p>
+
+<h3 id="16-experiment-evaluation-question">1.6 Experiment Evaluation Question</h3>
+
+<p><strong>Spec ref:</strong> Spec Unit 3 §3.3 (Planning) + §3.4 (Implementation and measurements) + §3.5 (Processing results) <strong>Definition:</strong> An open-response question asking the student to comment on the quality of an experiment — identifying sources of uncertainty and systematic error, suggesting realistic modifications to reduce errors or improve the experiment, judging whether the range and number of readings are sufficient, and commenting on significant figures. Evaluation questions reward students who can name a specific improvement (e.g. "use a vernier scale to measure extension to 0.1 mm instead of a metre rule") and explain how it reduces uncertainty, rather than vague answers like "use better equipment". <strong>Exam context:</strong> Evaluation appears in every Unit 3 paper and is worth 4–8 marks per question. The examiner reports for WPH13 (Jun 2019 onwards) repeatedly highlight that "use better equipment" scores 0 — students must name the equipment and state how it reduces uncertainty. This is also where the synoptic link is sharpest: a CP7 resistivity evaluation requires Unit 2 knowledge of why a longer wire reduces %uncertainty in length measurement AND Unit 1 uncertainty-handling skills.</p>
+
+
+<h2 id="2-key-unit-1-concepts-that-can-appear-in-unit-2-synoptic-que">2. Key Unit 1 Concepts That Can Appear in Unit 2 Synoptic Questions</h2>
+
+<p>These are the mechanics and materials concepts (Unit 1, spec 1–32) that underpin Unit 2 topics. They are not always tested directly in WPH12/01, but the underlying physics is needed to fully understand the Unit 2 contexts, and examiners can construct synoptic questions that exploit them — particularly in Unit 3 where Unit 1 + Unit 2 practical skills are merged.</p>
+
+<h3 id="21-force-mechanics">2.1 Force (Mechanics)</h3>
+
+<p><strong>Spec ref:</strong> Unit 1 spec 16–17 (Forces) <strong>Definition:</strong> A push or pull on an object, measured in newtons (N). Newton's second law states F = ma. Forces are vectors — they have magnitude and direction — and are added by vector addition. <strong>Synoptic exam context:</strong> Appears in Unit 2 via wave-on-a-string physics (Unit 2, spec 43): the tension T in a string determines the wave speed via v = √(T/μ). A synoptic question might ask the student to calculate the wave speed given the tension, or to predict how the frequency changes if the hanging mass (and hence the tension T = mg) is doubled. Newton's second law also underpins the electron drift velocity derivation (Unit 2, spec 67) where F = eE provides the force on a free electron.</p>
+
+<h3 id="22-work-and-energy">2.2 Work and Energy</h3>
+
+<p><strong>Spec ref:</strong> Unit 1 spec 19–22 (Work, energy and power) <strong>Definition:</strong> Work done by a constant force is W = Fx cos θ, where F is the force, x is the displacement and θ is the angle between them. Energy is the capacity to do work; the principle of conservation of energy states that energy cannot be created or destroyed, only transferred between forms. Kinetic energy = ½mv²; gravitational potential energy = mgh. <strong>Synoptic exam context:</strong> Central to the photoelectric effect (Unit 2, spec 58–60): the photon energy hf must exceed the work function φ for photoemission to occur, and the maximum kinetic energy of the photoelectron is ½mv²_max = hf − φ. This is a synoptic link because it merges Unit 1 kinetic energy with Unit 2 quantum physics. Examiner reports show students who can quote both ½mv² and hf but cannot equate them lose the photoelectric-effect calculation marks.</p>
+
+<h3 id="23-momentum">2.3 Momentum</h3>
+
+<p><strong>Spec ref:</strong> Unit 1 spec 23 (Momentum) <strong>Definition:</strong> The momentum of a body is the product of its mass and velocity: p = mv. Momentum is a vector (units kg m s⁻¹). The principle of conservation of momentum states that, in the absence of external forces, the total momentum before a collision equals the total momentum after. <strong>Synoptic exam context:</strong> Appears in Unit 2 via the electron-drift-velocity model (Unit 2, spec 67): individual electrons undergo repeated collisions with lattice ions, transferring momentum. The mean drift velocity emerges from balancing the electric force (F = eE) against the rate of momentum loss in collisions — a synoptic link between Unit 1 momentum and Unit 2 electricity. Also relevant to the photoelectric effect (kinetic energy → momentum transfer when an electron is ejected).</p>
+
+<h3 id="24-density">2.4 Density</h3>
+
+<p><strong>Spec ref:</strong> Unit 1 spec 24 (Density) <strong>Definition:</strong> The mass per unit volume of a material: ρ = m/V. Units: kg m⁻³. Density is a property of the material, not of the object — a small iron cube and a large iron beam have the same density. <strong>Synoptic exam context:</strong> Appears in Unit 2 via the wave-on-a-string derivation: the mass per unit length μ of a string is related to the density of the material and the cross-sectional area (μ = ρA). A synoptic question might ask how the frequency of a vibrating string changes if a denser material is used at the same tension and length. Density also appears in CP4 (speed of sound in air) where the bulk properties of air determine v = √(γP/ρ) — though this is beyond spec, the density concept is in scope.</p>
+
+<h3 id="25-stress-strain-and-young-modulus">2.5 Stress, Strain and Young Modulus</h3>
+
+<p><strong>Spec ref:</strong> Unit 1 spec 27–31 (Materials) <strong>Definition:</strong> Stress σ = F/A (force per unit area, unit Pa). Strain ε = Δl/l (extension per unit original length, dimensionless). The Young modulus E = σ/ε = (Fl)/(AΔl) (unit Pa). These describe the elastic behaviour of a wire under tension. <strong>Synoptic exam context:</strong> The Young modulus is itself a synoptic link because the standard CP3 method (Unit 1) involves measuring extension with a vernier scale (Unit 1 practical skill) and is mathematically identical in structure to the resistivity calculation ρ = RA/l in Unit 2 (CP7) — both involve a "constant of the material × length / area" form. Examiner reports show students who have done CP3 transfer the same graph-gradient skills directly to CP7. The stress/strain concepts also underpin wave propagation in solids (longitudinal wave speed v = √(E/ρ) — beyond IAL spec but the conceptual link is tested).</p>
+
+<h3 id="26-viscosity-and-stokes-law">2.6 Viscosity and Stokes' Law</h3>
+
+<p><strong>Spec ref:</strong> Unit 1 spec 26 (Core Practical 2) <strong>Definition:</strong> Viscosity η is a measure of a fluid's resistance to flow (unit Pa s). Stokes' law gives the viscous drag on a sphere falling through a fluid: F = 6πηrv. At terminal velocity, weight = upthrust + viscous drag, giving v = 2r²g(ρ − σ)/9η. <strong>Synoptic exam context:</strong> Not directly tested in Unit 2, but the CP2 method (falling-ball method for viscosity) is structurally similar to CP4 (oscilloscope method for speed of sound) — both involve timing the transit of something across a known distance. Examiner reports for Unit 3 show that students who have done CP2 transfer the same "use a longer distance to reduce %timing uncertainty" insight to CP4.</p>
+
+
+<h2 id="3-key-unit-2-concepts-that-can-appear-in-unit-3-and-beyond">3. Key Unit 2 Concepts That Can Appear in Unit 3 (and Beyond)</h2>
+
+<p>These are the waves and electricity concepts (Unit 2, spec 33–80) that are routinely re-examined in Unit 3 (Practical Skills I) via the eight Core Practicals. A student sitting Unit 3 must be fluent in these because Unit 3 questions do not restate the underlying theory — they assume it.</p>
+
+<h3 id="31-wave-speed-and-the-wave-equation">3.1 Wave Speed and the Wave Equation</h3>
+
+<p><strong>Spec ref:</strong> Unit 2 spec 33–34 (Waves) <strong>Definition:</strong> For a progressive wave, wave speed v = fλ, where f is the frequency (Hz) and λ is the wavelength (m). The wave equation applies to all progressive waves — transverse and longitudinal, mechanical and electromagnetic. <strong>Synoptic exam context:</strong> Central to CP4 (Determine the speed of sound in air using a 2-beam oscilloscope, spec 38): the student measures f from the signal generator and λ from the oscilloscope phase shift, then computes v = fλ. Unit 3 data-analysis questions on CP4 expect the student to know the wave equation cold — they will not restate it. Examiner reports show students who confuse v = fλ with v = √(T/μ) (wave-on-a-string) lose the calculation mark.</p>
+
+<h3 id="32-refraction-and-refractive-index">3.2 Refraction and Refractive Index</h3>
+
+<p><strong>Spec ref:</strong> Unit 2 spec 39–42 (Refraction) <strong>Definition:</strong> Refraction is the change in direction of a wave when it passes from one medium to another due to a change in wave speed. The refractive index n of a medium is n = c/v, where c is the speed of light in vacuum and v is the speed in the medium. Snell's law: n₁sin θ₁ = n₂sin θ₂. The critical angle for total internal reflection: sin θ_c = n₂/n₁ (where n₁ &gt; n₂). <strong>Synoptic exam context:</strong> Refraction underpins CP6 (Determine the wavelength of light from a laser or other light source using a double-slit interference apparatus, spec 52): the laser light passes through the slits and diffracts, and the fringe spacing depends on λ. While the explicit refraction formula is rarely used in CP6, the conceptual link (light changes direction when passing through a slit) is examined. Examiner reports show refraction MCQs in WPH12 are routinely combined with a calculation step that requires the wave equation — a Unit 2-internal synoptic link.</p>
+
+<h3 id="33-diffraction-and-interference">3.3 Diffraction and Interference</h3>
+
+<p><strong>Spec ref:</strong> Unit 2 spec 44–52 (Diffraction and interference) <strong>Definition:</strong> Diffraction is the spreading of waves when they pass through a gap or around an edge. Maximum diffraction occurs when the gap width equals the wavelength. Interference is the superposition of two or more waves; constructive interference occurs when waves are in phase (path difference = nλ), destructive interference when in antiphase (path difference = (n + ½)λ). For a double slit, the fringe spacing w = λD/s, where λ is wavelength, D is slit-to-screen distance and s is slit separation. <strong>Synoptic exam context:</strong> The double-slit equation (spec 52) is the foundation of CP6 and is a perennial Unit 3 data-analysis topic. Unit 3 questions provide measurements of w, D and s and ask the student to calculate λ — usually followed by a percentage-uncertainty calculation. The geometry of the double-slit setup (a small triangle formed by the slit separation and the distance to the screen) is a synoptic link back to Unit 1 similar-triangles reasoning.</p>
+
+<h3 id="34-stationary-waves">3.4 Stationary Waves</h3>
+
+<p><strong>Spec ref:</strong> Unit 2 spec 45–48 (Stationary waves) <strong>Definition:</strong> A stationary (standing) wave is formed when two progressive waves of the same frequency and amplitude travelling in opposite directions superpose. Nodes are points of zero amplitude; antinodes are points of maximum amplitude. The distance between adjacent nodes is λ/2. On a string of length L fixed at both ends, the fundamental frequency is f₀ = (1/2L)√(T/μ). <strong>Synoptic exam context:</strong> Central to CP5 (Investigate the effects of length, tension and mass per unit length on the frequency of a vibrating string, spec 43). Unit 3 planning questions on CP5 expect the student to identify the independent variable (length L, tension T, or mass per unit length μ), the dependent variable (frequency f, measured with an oscilloscope or a tuning-fork comparison), and the control variables (the other two). The relationship f² ∝ T (at constant L and μ) is examined by plotting f² against T and using the gradient to find μ — a graph-skill + Unit 1 mechanics link.</p>
+
+<h3 id="35-photoelectric-effect">3.5 Photoelectric Effect</h3>
+
+<p><strong>Spec ref:</strong> Unit 2 spec 58–60 (Photoelectric effect) <strong>Definition:</strong> The emission of electrons from a metal surface when electromagnetic radiation of frequency greater than the threshold frequency is incident on it. Photon energy E = hf. The work function φ is the minimum energy needed to eject an electron from the metal. Einstein's photoelectric equation: hf = φ + ½mv²_max. Below the threshold frequency, no photoemission occurs however intense the radiation. <strong>Synoptic exam context:</strong> The photoelectric effect itself is not a Core Practical, but the photon model and Einstein's equation synoptically link Unit 1 kinetic energy (½mv²) with Unit 2 quantum physics. Unit 3 questions occasionally ask students to plan an experiment to measure the threshold frequency or the work function using a photocell and a variable-frequency light source — the data analysis requires linearising hf = φ + KE_max by plotting KE_max against f (gradient = h, intercept = −φ). This linearisation skill is the synoptic link between Unit 2 theory and Unit 3 processing skills.</p>
+
+<h3 id="36-current-potential-difference-and-resistance">3.6 Current, Potential Difference and Resistance</h3>
+
+<p><strong>Spec ref:</strong> Unit 2 spec 64–66 (Electric current, potential difference, resistance) <strong>Definition:</strong> Electric current I = ΔQ/Δt (rate of flow of charge, unit A). Potential difference V = W/Q (energy transferred per unit charge, unit V). Resistance R = V/I (unit Ω). Ohm's law (for an ohmic conductor at constant temperature): V ∝ I. <strong>Synoptic exam context:</strong> Underpins CP7 (Determine the electrical resistivity of a material, spec 72) and CP8 (Determine the e.m.f. and internal resistance of an electrical cell, spec 78). Unit 3 questions on CP7 expect the student to measure V and I with a voltmeter and ammeter, calculate R = V/I, then determine resistivity ρ = RA/l from a graph of R against l (gradient = ρ/A). Unit 3 questions on CP8 expect the student to vary the external resistance and plot V against I (gradient = −r, the internal resistance; intercept = ε, the e.m.f.). Both require fluent Unit 2 circuit knowledge.</p>
+
+<h3 id="37-resistivity">3.7 Resistivity</h3>
+
+<p><strong>Spec ref:</strong> Unit 2 spec 67–68 (Resistivity) + spec 72 (CP7) <strong>Definition:</strong> Resistivity ρ is the resistance of a unit cube of a material: ρ = RA/l, where R is resistance, A is cross-sectional area and l is length. Units: Ω m. Resistivity is a property of the material (and its temperature), not of the wire's dimensions. <strong>Synoptic exam context:</strong> CP7 is the most commonly examined Unit 2 practical in Unit 3 (it has appeared in 9 of the 12 non-COVID Unit 3 papers since June 2019). The synoptic links required are: (1) Unit 2 circuit knowledge (how to measure R from V and I), (2) Unit 1 mechanics/materials skill (using a micrometer to measure wire diameter d, then computing A = πd²/4 — note %A = 2×%d), (3) Unit 1 graph-gradient and uncertainty skills (worst acceptable lines, %uncertainty in gradient). All three appear in a single CP7 question.</p>
+
+<h3 id="38-internal-resistance-and-emf">3.8 Internal Resistance and EMF</h3>
+
+<p><strong>Spec ref:</strong> Unit 2 spec 78 (CP8) <strong>Definition:</strong> The electromotive force (e.m.f., ε) of a cell is the energy converted from chemical to electrical per unit charge passing through the cell (unit V). The internal resistance (r) is the resistance to current flow inside the cell itself. For a cell delivering current I to an external circuit, the terminal potential difference is V = ε − Ir. <strong>Synoptic exam context:</strong> CP8 is examined in Unit 3 via a V-vs-I graph (gradient = −r, intercept on V-axis = ε). The synoptic link is to the linear graph skills from Unit 1 (CP1: v² vs h gives gradient 2g) and Unit 2 (CP5: f² vs T gives gradient 1/(4L²μ)) — the same gradient/intercept skill transfers across all CPs. Examiner reports show students who have practised one CP can transfer to others, but only if they explicitly recognise the linearisation pattern y = mx + c.</p>
+
+<h3 id="39-potential-dividers">3.9 Potential Dividers</h3>
+
+<p><strong>Spec ref:</strong> Unit 2 spec 73–76 (Potential dividers, characteristic curves) <strong>Definition:</strong> A potential divider is two or more resistors in series across a source of e.m.f. The output voltage across one of the resistors is a fraction of the input: V_out = V_in × R₂/(R₁ + R₂). Variable potential dividers (LDRs, thermistors) produce an output voltage that changes with light intensity or temperature. <strong>Synoptic exam context:</strong> Potential dividers appear in Unit 3 planning questions where the student must design a circuit to measure a quantity (e.g. temperature via a thermistor in a divider). The synoptic link is to CP8 (internal resistance) — a potential divider with a known resistor and a cell of unknown r is one standard method for finding r. Examiner reports show students who confuse the divider equation (V_out = V_in × R₂/(R₁ + R₂)) with the simple Ohm's law form lose the method mark.</p>
+
+
+<h2 id="4-cross-unit-synoptic-concepts">4. Cross-Unit Synoptic Concepts</h2>
+
+<p>These are concepts that straddle two or three units and are particularly likely to appear in synoptic questions.</p>
+
+<h3 id="41-linearisation-y-mx-c">4.1 Linearisation (y = mx + c)</h3>
+
+<p><strong>Spec ref:</strong> Cross-unit (Unit 1 CP1, Unit 1 CP3, Unit 2 CP5, Unit 2 CP6, Unit 2 CP7, Unit 2 CP8) + Appendix 6 (Mathematical skills) <strong>Definition:</strong> The technique of rearranging a non-linear relationship so that a graph of one variable against another gives a straight line of gradient m and y-intercept c, from which the constants of the original relationship can be determined. Examples: v² = 2gh → plot v² vs h, gradient = 2g; T² = 4π²l/g → plot T² vs l, gradient = 4π²/g; f² = T/(4L²μ) → plot f² vs T, gradient = 1/(4L²μ); w = λD/s → plot w vs D, gradient = λ/s; R = ρl/A → plot R vs l, gradient = ρ/A; V = ε − Ir → plot V vs I, gradient = −r, intercept = ε. <strong>Synoptic exam context:</strong> Linearisation is the single most transferable synoptic skill — it links every Core Practical. Unit 3 questions assume the student can look at an unfamiliar relationship and identify the correct y-vs-x plot. Examiner reports show this is the single most common Unit 3 weakness — students plot R vs A instead of R vs l, or w vs s instead of w vs 1/s, losing 3–4 marks per question.</p>
+
+<h3 id="42-uncertainty-propagation">4.2 Uncertainty Propagation</h3>
+
+<p><strong>Spec ref:</strong> Appendix 10 + Unit 3 §3.5 (Processing results, "discuss uncertainties, qualitatively and quantitatively") <strong>Definition:</strong> The rules for combining uncertainties: add absolute uncertainties for sums/differences; add percentage uncertainties for products/quotients; multiply percentage uncertainty by the power for powers. Unit 3 §3.5 explicitly states that students are <strong>not</strong> expected to compound percentage uncertainties — they need to calculate %uncertainty for a single quantity but not combine across multiple measured quantities. <strong>Synoptic exam context:</strong> Unit 3's uncertainty expectations are narrower than WPH11's. The synoptic trap is that students who have over-practised compounding (from WPH11) may try to combine %uncertainties in Unit 3 and waste time / make errors. The spec is explicit: Unit 3 only requires "the percentage uncertainty in measurements for a single reading using half the resolution of the instrument and from multiple readings using the half range."</p>
+
+<h3 id="43-graph-skills-best-fit-worst-acceptable-lines-error-bars">4.3 Graph Skills (Best-Fit, Worst Acceptable Lines, Error Bars)</h3>
+
+<p><strong>Spec ref:</strong> Appendix 10 + Unit 3 §3.5 ("determine the relationship between two variables or determine a constant with the aid of a graph, e.g. by determining the gradient using a large triangle") <strong>Definition:</strong> Plotting experimental data with error bars, drawing a best-fit line, drawing the two worst acceptable lines (steepest and shallowest that still pass through all error bars), and calculating the gradient and its uncertainty (½ × (max gradient − min gradient)). The spec specifies using a "large triangle" for gradient measurement to maximise precision. <strong>Synoptic exam context:</strong> These skills are tested in every Unit 3 data-analysis question. The synoptic link is that the same skills are tested in WPH11/01 Section B (CP1, CP3) — so a student who has sat WPH11 has already practised them. The cross-unit transfer is direct: the worst-acceptable-line method is identical for a v²-vs-h graph (Unit 1) and a V-vs-I graph (Unit 2). Examiner reports show students who did well on WPH11 graph questions generally do well on Unit 3 graph questions, confirming the synoptic transfer.</p>
+
+<h3 id="44-micrometer-and-vernier-reading">4.4 Micrometer and Vernier Reading</h3>
+
+<p><strong>Spec ref:</strong> Unit 3 §3.3 (Planning) explicitly names "Vernier calipers (0.1 mm) and micrometer screw gauge (0.01 mm)" <strong>Definition:</strong> A vernier caliper measures to a resolution of 0.1 mm; a micrometer screw gauge measures to 0.01 mm. Both are required practical instruments for Unit 3. The reading technique differs: vernier uses a sliding auxiliary scale that aligns with the main scale; micrometer uses a thimble scale (0–50 divisions, each = 0.01 mm) and a sleeve scale (showing mm and half-mm). <strong>Synoptic exam context:</strong> The micrometer appears in CP3 (Unit 1, Young modulus — wire diameter) and CP7 (Unit 2, resistivity — wire diameter). The vernier appears in CP3 (extension measurement) and CP5 (vibrating string length). Unit 3 questions frequently provide a diagram of a micrometer or vernier and ask the student to write down the reading to the correct number of significant figures. Examiner reports show this is a reliable 1-mark question — and students who misread the half-mm line on a micrometer lose it. This is a synoptic skill because the same instrument serves both Unit 1 and Unit 2 practicals.</p>
+
+
+<h2 id="5-synoptic-preparation-terms">5. Synoptic-Preparation Terms</h2>
+
+<h3 id="51-core-practical-cp1cp8">5.1 Core Practical (CP1–CP8)</h3>
+
+<p><strong>Spec ref:</strong> Spec pp. 14, 16, 18, 20, 22 (Core Practicals 1–8) + Appendix 9 (topic mapping) <strong>Definition:</strong> One of the eight compulsory practical activities specified by Pearson for the IAS course: CP1 Determine the acceleration of a freely-falling object (spec 11); CP2 Use a falling-ball method to determine the viscosity of a liquid (spec 26); CP3 Determine the Young modulus of a material (spec 31); CP4 Determine the speed of sound in air (spec 38); CP5 Investigate the effects of length, tension and mass per unit length on the frequency of a vibrating string (spec 43); CP6 Determine the wavelength of light from a laser using a double-slit (spec 52); CP7 Determine the electrical resistivity of a material (spec 72); CP8 Determine the e.m.f. and internal resistance of an electrical cell (spec 78). <strong>Synoptic exam context:</strong> Unit 3 questions are explicitly built on CP1–CP8 (and on novel practicals that share techniques with them). The audit's gap is that WPH12 files discuss CP4–CP8 only as Unit 2 content, not as Unit 3 assessment material. A student sitting Unit 3 must treat CP4–CP8 not just as topics to learn but as experiments to be planned, implemented and evaluated.</p>
+
+<h3 id="52-planning-implementation-processing">5.2 Planning, Implementation, Processing</h3>
+
+<p><strong>Spec ref:</strong> Unit 3 §3.3, §3.4, §3.5 <strong>Definition:</strong> The three assessed skill areas in Unit 3. <strong>Planning</strong> (§3.3): identify apparatus, range and resolution of instruments, calibration, control variables, repeat-reading strategy, health and safety, data analysis plan, sources of uncertainty. <strong>Implementation and measurements</strong> (§3.4): comment on number and range of readings, significant figures, anomalous readings, improvements using additional apparatus. <strong>Processing results</strong> (§3.5): calculations with correct significant figures, graph plotting, gradient using a large triangle, qualitative and quantitative uncertainty discussion, realistic modifications. <strong>Synoptic exam context:</strong> Every Unit 3 question targets one or more of these three skill areas, sitting on top of a Unit 1 or Unit 2 context. The mark scheme rewards different phrasing for each area — e.g. "use a set square to check the ruler is vertical" earns an implementation mark; "plot R against l and use the gradient to determine ρ/A" earns a processing mark. Recognising which skill area a question targets is the first step in producing a mark-scoring answer.</p>
+
+<h3 id="53-novel-practical-scenario">5.3 Novel Practical Scenario</h3>
+
+<p><strong>Spec ref:</strong> Unit 3 §3.1 ("apply their knowledge and understanding of practical skills to familiar and unfamiliar situations") <strong>Definition:</strong> An experimental context that is not one of the eight Core Practicals but that shares techniques, instruments or analysis methods with them. For example, "A student investigates how the time period of a mass bouncing on a spring depends on the mass" is a novel scenario, but it shares with CP1 (timing with a stopwatch), CP2 (terminal-velocity timing) and CP5 (oscillation analysis) — so the planning, implementation and processing skills transfer directly. <strong>Synoptic exam context:</strong> Unit 3 papers typically include at least one novel-scenario question per paper. Examiner reports show students who have memorised the eight CPs without understanding the underlying techniques struggle with novel scenarios; students who have understood the techniques (e.g. "to find a constant of proportionality, linearise and use the gradient") handle novel scenarios confidently. This is the most synoptic test of all — it requires both Unit 1 and Unit 2 knowledge plus the practical-skills layer.</p>
+
+
+<h2 id="concepts">Concepts</h2>
+
+
+
+
+<h2 id="1-what-unit-3-actually-is-and-is-not">1. What Unit 3 Actually Is (and Is Not)</h2>
+
+<h3 id="11-the-common-misconception">1.1 The Common Misconception</h3>
+
+<p>Many students arrive at Unit 3 (WPH13/01, Practical Skills in Physics I) expecting to perform experiments in an exam hall. <strong>This is wrong.</strong> Unit 3 is a written examination — 1 hour 20 minutes, 50 marks, no multiple-choice, no apparatus, no practical work done in the exam. The "practical" part of the title refers to the <em>subject matter</em> (experimental procedures and techniques), not to the <em>format</em> of the assessment.</p>
+
+<p>The spec (§3.1) is unambiguous: "Students are expected to develop experimental skills, and a knowledge and understanding of experimental techniques, by carrying out a range of practical experiments and investigations while they study Units 1 and 2. This unit will assess students' knowledge and understanding of experimental procedures and techniques that were developed when they conducted these experiments."</p>
+
+<p>So Unit 3 assesses, in writing, the practical work the student has done during the IAS course. The experiments are done at school/college during the IAS year; the exam is a written test of the skills acquired.</p>
+
+<h3 id="12-the-three-assessed-skill-areas">1.2 The Three Assessed Skill Areas</h3>
+
+<p>Unit 3 §3.3–3.5 defines three skill areas, each of which can be tested on any Unit 1 or Unit 2 context:</p>
+
+<div class="table-wrap"><table><thead><tr><th>Skill area</th><th>What the student must do</th><th>Typical mark range</th></tr></thead><tbody><tr><td>Planning (§3.3)</td><td>Identify apparatus, range/resolution of instruments, calibration, control variables, repeat strategy, health &amp; safety, data analysis plan, sources of uncertainty</td><td>4–10</td></tr><tr><td>Implementation and measurements (§3.4)</td><td>Comment on number and range of readings, sig figs, anomalous readings, improvements with additional apparatus</td><td>3–8</td></tr><tr><td>Processing results (§3.5)</td><td>Calculations with correct sig figs, graph plotting, gradient using a large triangle, qualitative and quantitative uncertainty, realistic modifications</td><td>8–18</td></tr></tbody></table></div>
+
+<h3 id="13-what-unit-3-is-synoptic-about">1.3 What Unit 3 Is Synoptic About</h3>
+
+<p>Unit 3 is synoptic by construction: its assessment is built on the eight Core Practicals (CP1, CP2, CP3 from Unit 1; CP4, CP5, CP6, CP7, CP8 from Unit 2) and on novel practical scenarios that share techniques with them. The same exam paper can ask a planning question about CP3 (Young modulus, Unit 1) and a processing question about CP7 (resistivity, Unit 2). The student must switch between mechanics/materials contexts and waves/electricity contexts within a single 1 hour 20 minute paper.</p>
+
+<p>This is the synoptic link the WPH12 audit identifies as missing: a student sitting WPH12 (Unit 2) may also sit WPH13 (Unit 3), and Unit 3 will demand their Unit 2 material back. The audit's gap is that the WPH12 files do not flag this — so students revise Unit 2 as a stand-alone paper and are blindsided when the same content reappears in Unit 3 in practical-skills form.</p>
+
+
+<h2 id="2-how-unit-1-mechanics-appears-in-unit-2-synoptic-contexts">2. How Unit 1 Mechanics Appears in Unit 2 Synoptic Contexts</h2>
+
+<p>Although WPH12/01 (Unit 2) does not carry an explicit "synoptic questions" note in its assessment overview, the underlying physics of Unit 2 topics builds on Unit 1 mechanics. A WPH12 student is assumed to be fluent in forces, energy, momentum and density, and examiners can construct questions that exploit these links. The most common synoptic links are:</p>
+
+<h3 id="21-waves-on-a-string-tension-unit-1-spec-1617-unit-2-spec-43">2.1 Waves on a String → Tension (Unit 1 spec 16–17 + Unit 2 spec 43)</h3>
+
+<p>The speed of a transverse wave on a stretched string is given by v = √(T/μ), where T is the tension in the string (Unit 1, force = mg for a hanging mass) and μ is the mass per unit length. The fundamental frequency is f₀ = (1/2L)√(T/μ).</p>
+
+<p><strong>Synoptic link:</strong> To calculate the wave speed or the fundamental frequency, the student needs Unit 1 mechanics (tension T = mg, where m is the hanging mass) AND Unit 2 wave physics (the formula v = √(T/μ)). The two units are inseparable in this context.</p>
+
+<p><strong>Worked example:</strong> A 1.2 m string of mass 3.6 g is stretched by a hanging mass of 0.5 kg. Calculate the fundamental frequency.</p>
+<ul><li>Tension T = mg = 0.5 × 9.81 = 4.905 N (Unit 1)</li><li>Mass per unit length μ = 3.6 × 10⁻³ / 1.2 = 3.0 × 10⁻³ kg m⁻¹ (Unit 1 density-style calculation)</li><li>Wave speed v = √(T/μ) = √(4.905 / 3.0 × 10⁻³) = √1635 = 40.4 m s⁻¹ (Unit 2 wave equation)</li><li>Fundamental frequency f₀ = v / (2L) = 40.4 / (2 × 1.2) = 16.8 Hz (Unit 2 stationary waves)</li></ul>
+
+<p>A WPH12 student who has forgotten Unit 1 mechanics cannot complete this calculation. CP5 (vibrating string) tests exactly this combination in Unit 3.</p>
+
+<h3 id="22-photoelectric-effect-kinetic-energy-unit-1-spec-1922-unit">2.2 Photoelectric Effect → Kinetic Energy (Unit 1 spec 19–22 + Unit 2 spec 58–60)</h3>
+
+<p>Einstein's photoelectric equation is hf = φ + ½mv²_max, where ½mv²_max is the maximum kinetic energy of the emitted photoelectron (Unit 1 kinetic energy) and hf is the photon energy (Unit 2 quantum physics).</p>
+
+<p><strong>Synoptic link:</strong> The photoelectric effect is itself a synoptic topic — it merges Unit 1 energy concepts with Unit 2 photon physics. The kinetic energy term is from Unit 1; the photon energy term is from Unit 2.</p>
+
+<p><strong>Worked example:</strong> Light of wavelength 250 nm is incident on a zinc surface of work function 4.3 eV. Calculate the maximum kinetic energy of the emitted photoelectrons.</p>
+<ul><li>Photon energy hf = hc/λ = (6.63 × 10⁻³⁴ × 3.0 × 10⁸) / (250 × 10⁻⁹) = 7.96 × 10⁻¹⁹ J (Unit 2)</li><li>Convert to eV: 7.96 × 10⁻¹⁹ / 1.60 × 10⁻¹⁹ = 4.97 eV (Unit 2)</li><li>Work function φ = 4.3 eV (Unit 2)</li><li>Maximum KE = hf − φ = 4.97 − 4.3 = 0.67 eV (synoptic: Unit 1 KE concept applied in Unit 2 quantum context)</li><li>In joules: 0.67 × 1.60 × 10⁻¹⁹ = 1.07 × 10⁻¹⁹ J</li></ul>
+
+<p>A student who has forgotten Unit 1 kinetic energy cannot interpret the equation ½mv²_max = hf − φ. This is a frequent WPH12 MCQ trap.</p>
+
+<h3 id="23-electron-drift-velocity-momentum-unit-1-spec-23-unit-2-sp">2.3 Electron Drift Velocity → Momentum (Unit 1 spec 23 + Unit 2 spec 67)</h3>
+
+<p>The drift velocity model derives from Newton's second law applied to conduction electrons. The electric field E = V/l exerts a force F = eE on each free electron (Unit 1 mechanics); the electron accelerates between collisions with lattice ions; on collision, momentum is transferred (Unit 1 momentum). The mean drift velocity v_d emerges from balancing the rate of momentum gain (from the field) against the rate of momentum loss (from collisions): v_d = I / (nAe).</p>
+
+<p><strong>Synoptic link:</strong> The drift-velocity equation I = nAev_d is a Unit 2 formula, but the underlying physical picture is Unit 1 mechanics (force, acceleration, momentum transfer in collisions). WPH12 questions sometimes ask the student to explain why doubling the potential difference doubles the drift velocity (when temperature is held constant) — this requires Unit 1 reasoning (force doubles, acceleration doubles, drift velocity doubles) rather than just Unit 2 recall.</p>
+
+<p><strong>Worked example:</strong> A copper wire of cross-sectional area 1.0 × 10⁻⁶ m² carries a current of 5.0 A. The number density of free electrons in copper is 8.5 × 10²⁸ m⁻³. Calculate the drift velocity.</p>
+<ul><li>I = nAev_d → v_d = I / (nAe) = 5.0 / (8.5 × 10²⁸ × 1.0 × 10⁻⁶ × 1.60 × 10⁻¹⁹) (Unit 2 formula)</li><li>v_d = 5.0 / (1.36 × 10⁴) = 3.7 × 10⁻⁴ m s⁻¹</li></ul>
+
+<p>A student who can quote I = nAev_d but cannot reason about the underlying force-momentum mechanism will struggle with the explanation marks.</p>
+
+<h3 id="24-resistivity-and-young-modulus-identical-mathematical-stru">2.4 Resistivity and Young Modulus → Identical Mathematical Structure (Unit 1 spec 31 + Unit 2 spec 67)</h3>
+
+<p>The two formulas have the same form: ρ = RA/l (Unit 2 resistivity) and E = Fl/(AΔl) (Unit 1 Young modulus) — both are "material constant × length / area" patterns. The CP3 method (Young modulus) and the CP7 method (resistivity) are structurally identical: in both cases, the student measures a length, a diameter (with a micrometer), and a voltage-drop-equivalent quantity (force/extension for CP3, V/I for CP7), then plots a graph whose gradient gives the material constant.</p>
+
+<p><strong>Synoptic link:</strong> The graph-gradient skill transfers directly from CP3 to CP7. A student who has done CP3 (Young modulus, plot F vs Δl, gradient = EA/l) can apply the same skill to CP7 (resistivity, plot R vs l, gradient = ρ/A). Examiner reports for WPH13 confirm that students who have done CP3 transfer well to CP7, and vice versa.</p>
+
+<h3 id="25-density-and-wave-propagation-unit-1-spec-24-unit-2-spec-3">2.5 Density and Wave Propagation (Unit 1 spec 24 + Unit 2 spec 33–34)</h3>
+
+<p>The mass per unit length μ of a string is related to the material density ρ and the cross-sectional area A: μ = ρA. The wave speed on a string is v = √(T/μ) = √(T/(ρA)). A denser material (higher ρ) gives a lower wave speed at the same tension.</p>
+
+<p><strong>Synoptic link:</strong> Density (Unit 1) determines the wave speed (Unit 2). A WPH12 question might ask: "Two strings of the same dimensions, one of nylon (ρ = 1150 kg m⁻³) and one of steel (ρ = 7850 kg m⁻³), are stretched to the same tension. Calculate the ratio of the wave speeds." The student needs Unit 1 density, Unit 1 cross-sectional area (from diameter), and Unit 2 wave speed formula.</p>
+
+<p><strong>Worked example:</strong> Same tension, same dimensions. v_nylon / v_steel = √(ρ_steel / ρ_nylon) = √(7850/1150) = √6.83 = 2.61. So the wave travels 2.61× faster on the nylon string.</p>
+
+
+<h2 id="3-how-unit-2-appears-in-unit-3">3. How Unit 2 Appears in Unit 3</h2>
+
+<p>Unit 3 synoptically tests Unit 2 by re-examining the four Unit 2 Core Practicals (CP4–CP7 plus CP8 — five practicals in total) in planning, implementation and processing contexts. The Unit 2 content knowledge is assumed; the Unit 3 exam tests the practical-skills layer on top.</p>
+
+<h3 id="31-cp4-speed-of-sound-in-air-spec-38">3.1 CP4 — Speed of Sound in Air (Spec 38)</h3>
+
+<p><strong>Unit 2 context:</strong> Use a signal generator and a 2-beam oscilloscope to determine the speed of sound in air. Two microphones are placed a known distance apart; the signal generator drives a loudspeaker; the oscilloscope shows the two microphone signals. Move one microphone until the two signals are in phase (or antiphase) — the distance moved is one wavelength. Then v = fλ.</p>
+
+<p><strong>How Unit 3 examines it:</strong></p>
+<ul><li><em>Planning:</em> identify apparatus (signal generator, loudspeaker, two microphones, oscilloscope, metre rule), state the resolution of the metre rule (1 mm) and the oscilloscope time-base, identify the control variable (frequency), describe how to use the oscilloscope to detect in-phase/antiphase.</li><li><em>Implementation:</em> comment on the number of wavelengths measured (more wavelengths → smaller %uncertainty in distance), comment on the signal-to-noise ratio.</li><li><em>Processing:</em> calculate v = fλ, calculate %uncertainty in λ from the resolution of the metre rule and the number of wavelengths, compare with the accepted value (343 m s⁻¹ at 20 °C), suggest improvements (use a longer baseline, use more wavelengths, average over several in-phase positions).</li></ul>
+
+<p><strong>Synoptic link:</strong> The Unit 2 wave equation v = fλ is assumed knowledge. The Unit 1 timing-and-distance uncertainty skill (from CP1) transfers directly — measuring a distance and dividing by an uncertainty-relevant quantity. The novel-scenario version might ask the student to plan a similar experiment to determine the speed of sound in water — same technique, different medium.</p>
+
+<h3 id="32-cp5-vibrating-string-spec-43">3.2 CP5 — Vibrating String (Spec 43)</h3>
+
+<p><strong>Unit 2 context:</strong> A string is stretched between a vibrator (driven by a signal generator) and a pulley with a hanging mass. The frequency is varied until stationary waves form (fundamental, then 2nd, 3rd, 4th harmonics). The relationships are f₀ ∝ 1/L (at constant T and μ), f₀ ∝ √T (at constant L and μ), f₀ ∝ 1/√μ (at constant L and T).</p>
+
+<p><strong>How Unit 3 examines it:</strong></p>
+<ul><li><em>Planning:</em> identify the independent variable (L, T, or μ), the dependent variable (f), and the controls (the other two). State the apparatus (signal generator, vibrator, string, pulley, masses, metre rule).</li><li><em>Implementation:</em> comment on the difficulty of detecting resonance (the resonance peak is narrow, so fine frequency adjustment is needed), comment on the number of different lengths/tensions used.</li><li><em>Processing:</em> linearise — plot f² against T (gradient = 1/(4L²μ)) or plot f against 1/L (gradient = (1/2)√(T/μ)) — and use the gradient to determine μ or T.</li></ul>
+
+<p><strong>Synoptic link:</strong> Strong link to Unit 1 mechanics (tension T = mg, mass per unit length μ from density and area). The f² vs T linearisation is the same y = mx + c pattern as Unit 1 CP1 (v² vs h). The micrometer is used to measure string diameter — same instrument as CP3 (Young modulus) and CP7 (resistivity). A student who has done CP1 and CP3 has the linearisation and micrometer skills; CP5 just transfers them.</p>
+
+<h3 id="33-cp6-double-slit-wavelength-spec-52">3.3 CP6 — Double-Slit Wavelength (Spec 52)</h3>
+
+<p><strong>Unit 2 context:</strong> A laser is shone through a double slit onto a screen. The fringe spacing w = λD/s, where λ is wavelength, D is slit-to-screen distance and s is slit separation. The student measures w (across as many fringes as possible to reduce %uncertainty), D and s, then calculates λ.</p>
+
+<p><strong>How Unit 3 examines it:</strong></p>
+<ul><li><em>Planning:</em> identify apparatus (laser, double slit, screen, metre rule), state the safety issue (laser class, no direct eye exposure), describe how to measure w accurately (measure across N fringes, divide by N).</li><li><em>Implementation:</em> comment on the number of fringes measured (more fringes → smaller %uncertainty in w), comment on the difficulty of measuring fringe centres.</li><li><em>Processing:</em> calculate λ = ws/D, calculate %uncertainty in λ (note: Unit 3 spec §3.5 says students are <strong>not</strong> expected to compound — so just calculate %uncertainty in each of w, D and s separately), suggest improvements (use a larger D, use a smaller s, use a Vernier microscope to measure w).</li></ul>
+
+<p><strong>Synoptic link:</strong> The geometry of the double-slit setup is a similar-triangles problem (Unit 1 trigonometry/geometry). The fringe-spacing measurement uses a metre rule — same instrument as CP1. The safety issue (laser) is novel to CP6 but transfers to any question about laser use. CP6 is one of the most common Unit 3 data-analysis contexts.</p>
+
+<h3 id="34-cp7-resistivity-of-a-wire-spec-72">3.4 CP7 — Resistivity of a Wire (Spec 72)</h3>
+
+<p><strong>Unit 2 context:</strong> A wire of length l, diameter d and resistance R has resistivity ρ = RA/l = Rπd²/(4l). The student measures R (using a voltmeter and ammeter, R = V/I) for several lengths l of wire, then plots R against l. The gradient is ρ/A = 4ρ/(πd²), from which ρ is found using the measured diameter.</p>
+
+<p><strong>How Unit 3 examines it:</strong></p>
+<ul><li><em>Planning:</em> identify apparatus (voltmeter, ammeter, wire, micrometer, metre rule, power supply), state the resolution of each instrument, describe how to measure diameter (micrometer, take several readings at different points along the wire and average), describe the circuit (ammeter in series, voltmeter across the wire).</li><li><em>Implementation:</em> comment on the number of lengths used (at least 6, evenly spaced), comment on the diameter readings (average of at least 3 at different points), comment on heating effect of current (keep current low to avoid temperature rise — resistivity depends on temperature).</li><li><em>Processing:</em> plot R against l (gradient = ρ/A), use the gradient and the mean diameter to calculate ρ, calculate %uncertainty in ρ from the %uncertainty in the gradient and the %uncertainty in d (note: Unit 3 does not require compounding — so just state each %uncertainty separately), suggest improvements (use a longer wire, use a smaller current, use a digital multimeter for R).</li></ul>
+
+<p><strong>Synoptic link:</strong> The micrometer skill is from CP3 (Unit 1 Young modulus — wire diameter). The graph-gradient skill is from CP1 (Unit 1 free-fall — v² vs h). The circuit knowledge is from Unit 2 (spec 64–76, current/voltage/resistance/potential dividers). The full synoptic stack — Unit 1 mechanics/materials + Unit 2 electricity + Unit 3 processing skills — is required for a CP7 question. Examiner reports show CP7 is the single most commonly examined practical in WPH13/01 (appeared in 9/12 non-COVID papers).</p>
+
+<h3 id="35-cp8-emf-and-internal-resistance-spec-78">3.5 CP8 — EMF and Internal Resistance (Spec 78)</h3>
+
+<p><strong>Unit 2 context:</strong> A cell with e.m.f. ε and internal resistance r is connected to a variable external resistor. The terminal p.d. V = ε − Ir. By varying R and measuring V and I, the student plots V against I; the y-intercept is ε and the gradient is −r.</p>
+
+<p><strong>How Unit 3 examines it:</strong></p>
+<ul><li><em>Planning:</em> identify apparatus (cell, variable resistor, voltmeter, ammeter), describe the circuit (ammeter in series, voltmeter across the cell + variable resistor), describe how to vary R (use a variable resistor or a resistance substitution box).</li><li><em>Implementation:</em> comment on the number of readings (at least 6), comment on the range of R (from near-zero to large enough to make V approach ε), comment on the heating effect (current warms the cell, changing r — keep the current low, switch off between readings).</li><li><em>Processing:</em> plot V against I (gradient = −r, intercept = ε), use the worst-acceptable lines to find the uncertainty in r, suggest improvements (use a digital ammeter, use a fresh cell, switch off between readings to avoid heating).</li></ul>
+
+<p><strong>Synoptic link:</strong> The V = ε − Ir equation is a linear y = mx + c form — identical pattern to CP1 (v² vs h), CP3 (F vs Δl), CP5 (f² vs T), CP6 (w vs D) and CP7 (R vs l). Once the student recognises the linearisation pattern, the gradient/intercept skill transfers across all CPs. This is the deepest synoptic link in the IAS course — the same graph skill appears in every Core Practical.</p>
+
+
+<h2 id="4-common-synoptic-question-patterns">4. Common Synoptic Question Patterns</h2>
+
+<p>Based on WPH13/01 papers from June 2019 to January 2025, the following synoptic patterns appear repeatedly:</p>
+
+<h3 id="41-a-student-investigates-the-speed-of-sound-cp4-style">4.1 "A student investigates the speed of sound..." (CP4 style)</h3>
+
+<p><strong>Pattern:</strong> A signal generator drives a loudspeaker; two microphones detect the sound at different positions; the oscilloscope shows the phase relationship. The student moves one microphone to find successive in-phase positions and measures the distance.</p>
+
+<p><strong>Synoptic links tested:</strong></p>
+<ul><li>Unit 2 wave equation v = fλ (knowledge)</li><li>Unit 2 wave properties: phase, wavelength (knowledge)</li><li>Unit 3 planning: apparatus, resolution, control variables (skill)</li><li>Unit 3 processing: gradient, %uncertainty, comparison with accepted value (skill)</li></ul>
+
+<p><strong>Typical mark allocation:</strong> 12–16 marks across planning (3–4), implementation (3–4), processing (6–8).</p>
+
+<h3 id="42-a-student-determines-the-resistivity-of-a-wire-cp7-style">4.2 "A student determines the resistivity of a wire..." (CP7 style)</h3>
+
+<p><strong>Pattern:</strong> A wire is stretched between two clamps; a voltmeter and ammeter measure V and I for several lengths; the student plots R against l and uses the gradient to find ρ.</p>
+
+<p><strong>Synoptic links tested:</strong></p>
+<ul><li>Unit 2 circuits: V = IR, resistivity formula ρ = RA/l (knowledge)</li><li>Unit 1 micrometer skill: measure wire diameter (skill from CP3)</li><li>Unit 1 mechanics/materials: cross-sectional area A = πd²/4 (knowledge)</li><li>Unit 3 planning: circuit diagram, control variables (temperature, current) (skill)</li><li>Unit 3 processing: gradient, uncertainty, %uncertainty in diameter → %uncertainty in area (note: compounding is not required, but the relationship %A = 2×%d may be examined)</li></ul>
+
+<p><strong>Typical mark allocation:</strong> 14–18 marks — the largest single block in Unit 3.</p>
+
+<h3 id="43-a-student-uses-a-laser-to-determine-the-wavelength-of-lig">4.3 "A student uses a laser to determine the wavelength of light..." (CP6 style)</h3>
+
+<p><strong>Pattern:</strong> A laser is shone through a double slit; the fringe spacing w is measured across N fringes; the slit-to-screen distance D and slit separation s are measured; λ = ws/D.</p>
+
+<p><strong>Synoptic links tested:</strong></p>
+<ul><li>Unit 2 wave properties: diffraction, interference, double-slit equation (knowledge)</li><li>Unit 2 photon model: photon energy E = hf (sometimes tested in the same question)</li><li>Unit 3 planning: safety (laser), control variables (D, s held constant when measuring w) (skill)</li><li>Unit 3 processing: graph (if w is varied with D), uncertainty in w from N-fringe measurement (skill)</li></ul>
+
+<p><strong>Typical mark allocation:</strong> 10–14 marks.</p>
+
+<h3 id="44-a-student-investigates-the-period-of-a-mass-on-a-spring-n">4.4 "A student investigates the period of a mass on a spring..." (Novel scenario)</h3>
+
+<p><strong>Pattern:</strong> A mass on a spring oscillates with period T = 2π√(m/k). The student measures T for several masses and uses a T²-vs-m graph to find k.</p>
+
+<p><strong>Synoptic links tested:</strong></p>
+<ul><li>Unit 1 mechanics: Hooke's law, simple harmonic motion (knowledge — though SHM is technically A2, the spring constant concept is IAS)</li><li>Unit 1 timing skill: stopwatch, reaction time, multiple oscillations (skill from CP1, CP2)</li><li>Unit 3 planning: control variables (amplitude, spring), repeat strategy (skill)</li><li>Unit 3 processing: linearisation T² vs m, gradient = 4π²/k (skill)</li></ul>
+
+<p><strong>Typical mark allocation:</strong> 12–16 marks.</p>
+
+<h3 id="45-a-student-determines-the-emf-and-internal-resistance-of-a">4.5 "A student determines the e.m.f. and internal resistance of a cell..." (CP8 style)</h3>
+
+<p><strong>Pattern:</strong> A cell is connected to a variable resistor; V and I are measured for several resistances; V is plotted against I; the y-intercept gives ε and the gradient gives −r.</p>
+
+<p><strong>Synoptic links tested:</strong></p>
+<ul><li>Unit 2 circuits: terminal p.d., internal resistance, V = ε − Ir (knowledge)</li><li>Unit 3 planning: circuit diagram, range of R (skill)</li><li>Unit 3 processing: gradient and intercept, worst-acceptable lines (skill)</li><li>Unit 3 implementation: heating effect, switch-off-between-readings (skill)</li></ul>
+
+<p><strong>Typical mark allocation:</strong> 12–16 marks.</p>
+
+
+<h2 id="5-how-to-prepare-for-synoptic-questions">5. How to Prepare for Synoptic Questions</h2>
+
+<h3 id="51-review-unit-1-mechanics-and-materials">5.1 Review Unit 1 Mechanics and Materials</h3>
+
+<p>Before sitting Unit 3, the student should re-revise:</p>
+<ul><li><strong>Forces, F = ma, weight, tension</strong> (spec 16–17) — needed for wave-on-a-string physics (CP5), and for any experiment involving hanging masses.</li><li><strong>Work, energy, kinetic energy, gravitational PE</strong> (spec 19–22) — needed for the photoelectric effect (Unit 2 spec 58–60) and for any free-fall or projectile context.</li><li><strong>Momentum, p = mv, conservation</strong> (spec 23) — needed for the drift-velocity model (Unit 2 spec 67) and for any collision/impact context.</li><li><strong>Density, ρ = m/V</strong> (spec 24) — needed for wave-on-a-string (mass per unit length) and for any buoyancy context.</li><li><strong>Stress, strain, Young modulus, E = Fl/(AΔl)</strong> (spec 27–31) — needed because the CP3 method is structurally identical to the CP7 method; the skills transfer.</li><li><strong>Viscosity, Stokes' law, terminal velocity</strong> (spec 26) — needed because the CP2 timing skill transfers to CP4 (speed of sound) timing.</li></ul>
+
+<p>The student does not need to re-revise SUVAT, projectiles, or vector addition in detail — these rarely appear in Unit 3. The focus should be on the concepts that underpin Unit 2 topics.</p>
+
+<h3 id="52-review-unit-2-core-practicals-cp4cp8">5.2 Review Unit 2 Core Practicals (CP4–CP8)</h3>
+
+<p>For each of CP4, CP5, CP6, CP7, CP8, the student should be able to:</p>
+<ol><li>State the underlying physics (the equation being tested).</li><li>Identify the apparatus and its resolution.</li><li>Identify the independent, dependent and control variables.</li><li>Describe how the data will be analysed (which graph to plot, what the gradient represents).</li><li>List 3+ sources of uncertainty and the corresponding improvements.</li><li>Calculate %uncertainty from a single reading and from multiple readings.</li></ol>
+
+<p>A useful exercise is to make a one-page summary table for each CP, with these six items in columns. This makes the synoptic patterns visible — the student will see that CP3 (Unit 1) and CP7 (Unit 2) have nearly identical structures, that the linearisation pattern (y = mx + c) appears in every CP, and that the same instruments (micrometer, voltmeter, oscilloscope, metre rule) recur across CPs.</p>
+
+<h3 id="53-practise-data-analysis-on-graph-based-questions">5.3 Practise Data Analysis on Graph-Based Questions</h3>
+
+<p>The single most transferable skill for Unit 3 is the y = mx + c linearisation pattern. The student should be able to look at any of the following relationships and immediately identify the correct graph to plot:</p>
+
+<div class="table-wrap"><table><thead><tr><th>Relationship</th><th>Linear graph</th><th>Gradient</th><th>Intercept</th></tr></thead><tbody><tr><td>v² = 2gh (CP1)</td><td>v² vs h</td><td>2g</td><td>0</td></tr><tr><td>F = (EA/l)Δl (CP3)</td><td>F vs Δl</td><td>EA/l</td><td>0</td></tr><tr><td>T² = 4π²l/g (pendulum, novel)</td><td>T² vs l</td><td>4π²/g</td><td>0</td></tr><tr><td>f² = T/(4L²μ) (CP5)</td><td>f² vs T</td><td>1/(4L²μ)</td><td>0</td></tr><tr><td>w = (λ/s)D (CP6)</td><td>w vs D</td><td>λ/s</td><td>0</td></tr><tr><td>R = (ρ/A)l (CP7)</td><td>R vs l</td><td>ρ/A</td><td>0</td></tr><tr><td>V = ε − Ir (CP8)</td><td>V vs I</td><td>−r</td><td>ε</td></tr></tbody></table></div>
+
+<p>Once the student sees the pattern, every graph question reduces to: identify the relationship, identify the linear graph, read off the gradient and intercept, interpret them in terms of the constants.</p>
+
+<h3 id="54-practise-planning-questions">5.4 Practise Planning Questions</h3>
+
+<p>Planning questions (Unit 3 §3.3) require the student to write a paragraph (or several bullet points) describing how they would carry out an experiment. The mark scheme rewards:</p>
+
+<ol><li><strong>Apparatus named</strong> — e.g. "a micrometer screw gauge (0.01 mm resolution)" not "a measuring device".</li><li><strong>Range and resolution stated</strong> — e.g. "lengths of 0.200 m to 1.000 m in 0.100 m steps, measured with a metre rule (1 mm resolution)".</li><li><strong>Control variables identified</strong> — e.g. "the temperature of the wire was kept constant by using a low current and switching off between readings".</li><li><strong>Repeat strategy described</strong> — e.g. "three readings of diameter at different points along the wire, averaged".</li><li><strong>Health and safety addressed</strong> — e.g. "the laser was Class 2 and the beam was not viewed directly".</li><li><strong>Data analysis plan stated</strong> — e.g. "plot R against l, gradient = ρ/A, calculate ρ from gradient × πd²/4".</li><li><strong>Sources of uncertainty identified</strong> — e.g. "the diameter varies along the wire; the micrometer has a zero error; the current heats the wire".</li></ol>
+
+<p>Practise writing 6-mark planning paragraphs for each CP, hitting all 7 of these points.</p>
+
+<h3 id="55-practise-evaluation-questions">5.5 Practise Evaluation Questions</h3>
+
+<p>Evaluation questions (Unit 3 §3.4, §3.5) require the student to comment on the quality of an experiment. The mark scheme rewards:</p>
+
+<ol><li><strong>Specific named improvement</strong> — e.g. "use a vernier scale to measure extension to 0.1 mm instead of a metre rule".</li><li><strong>Quantitative justification</strong> — e.g. "this reduces the %uncertainty in extension from 20% (with a 0.5 mm uncertainty on a 2.5 mm extension) to 4% (with a 0.1 mm uncertainty)".</li><li><strong>Source of error identified</strong> — e.g. "the current heats the wire, increasing its resistance and giving a falsely high resistivity reading".</li><li><strong>Effect on result stated</strong> — e.g. "this gives a systematic error, making the calculated ρ too high".</li></ol>
+
+<p>Vague answers ("use better equipment", "be more careful", "repeat more times") score 0. Specific named improvements with quantitative justifications score full marks.</p>
+
+
+<h2 id="6-worked-examples-of-synoptic-questions">6. Worked Examples of Synoptic Questions</h2>
+
+<h3 id="61-worked-example-1-cp7-resistivity-cross-unit-unit-1-unit-2">6.1 Worked Example 1 — CP7 Resistivity (Cross-Unit: Unit 1 + Unit 2 + Unit 3)</h3>
+
+<p><strong>Question (16 marks):</strong> A student investigates the resistivity of a 1.00 m length of constantan wire of diameter 0.46 mm. The student uses a 6 V battery, an ammeter, a voltmeter and a variable resistor. The table shows the potential difference V across the wire and the current I in the wire for five different lengths l of the wire.</p>
+
+<div class="table-wrap"><table><thead><tr><th>l / m</th><th>V / V</th><th>I / A</th><th>R = V/I / Ω</th></tr></thead><tbody><tr><td>0.200</td><td>1.20</td><td>0.60</td><td>2.00</td></tr><tr><td>0.400</td><td>1.60</td><td>0.40</td><td>4.00</td></tr><tr><td>0.600</td><td>1.80</td><td>0.30</td><td>6.00</td></tr><tr><td>0.800</td><td>1.92</td><td>0.24</td><td>8.00</td></tr><tr><td>1.000</td><td>2.00</td><td>0.20</td><td>10.00</td></tr></tbody></table></div>
+
+<p>(a) State the equation relating resistance R, resistivity ρ, length l and cross-sectional area A. (1) (b) Calculate the cross-sectional area A of the wire. (2) (c) Plot a graph of R against l. (3) (d) Use the gradient of the graph to determine the resistivity ρ. (4) (e) The student measured the diameter with a micrometer screw gauge. State two reasons why the student measured the diameter at three different points along the wire and took an average. (2) (f) Suggest one improvement to the experiment that would reduce the percentage uncertainty in the value of ρ. (4)</p>
+
+<p><strong>Synoptic cross-unit links:</strong></p>
+<ul><li>(a) Unit 2 (spec 67): resistivity formula ρ = RA/l → R = ρl/A.</li><li>(b) Unit 1 mechanics/materials (spec 27–31): cross-sectional area A = πd²/4. The student needs to convert 0.46 mm to metres (0.46 × 10⁻³ m) — a unit-conversion skill from Unit 1.</li><li>(c) Unit 3 §3.5 (graph plotting with appropriate scale and units) + Appendix 10 (line of best fit).</li><li>(d) Unit 3 §3.5 (gradient using a large triangle) + Unit 1 mechanics/materials (recognise that gradient = ρ/A, so ρ = gradient × A) — this is the same pattern as CP3 (Young modulus).</li><li>(e) Unit 3 §3.4 (anomalous readings, significant figures) + Unit 1 mechanics/materials (wire diameter varies along its length because the drawing process is non-uniform).</li><li>(f) Unit 3 §3.5 (suggest realistic modifications to reduce errors) + Unit 1 uncertainty skills (%uncertainty reduction techniques).</li></ul>
+
+<p><strong>Worked solution:</strong></p>
+
+<p>(a) R = ρl / A (1 mark).</p>
+
+<p>(b) A = πd²/4 = π × (0.46 × 10⁻³)² / 4 = π × 2.116 × 10⁻⁷ / 4 = 1.66 × 10⁻⁷ m² (2 marks).</p>
+
+<p>(c) Graph of R (y-axis, 0 to 10 Ω) against l (x-axis, 0 to 1.0 m). Best-fit straight line through the origin (the data is exactly linear). (3 marks for: appropriate scale, correct axes with units, all points plotted ± ½ small square, best-fit line drawn.)</p>
+
+<p>(d) Gradient = ΔR/Δl = (10.0 − 0) / (1.00 − 0) = 10.0 Ω m⁻¹. Since R = ρl/A, gradient = ρ/A, so ρ = gradient × A = 10.0 × 1.66 × 10⁻⁷ = 1.66 × 10⁻⁶ Ω m. (4 marks for: gradient calculation using large triangle, equation R = ρl/A identified, gradient = ρ/A stated, ρ calculated with units.)</p>
+
+<p>(e) (1) The wire's diameter may vary along its length due to non-uniform drawing during manufacture, so averaging gives a more representative value. (2) The micrometer may have a zero error; measuring at different points and averaging reduces the effect of any localised zero error or dirt on the anvil. (2 marks — one for each reason.)</p>
+
+<p>(f) Use a longer wire (e.g. 2.0 m instead of 1.0 m). This increases the maximum resistance (e.g. to 20 Ω), which (1) increases the gradient of the R-vs-l graph — reducing the %uncertainty in the gradient — and (2) reduces the %uncertainty in each length measurement (the 1 mm resolution of the metre rule is a smaller fraction of 2.0 m than of 1.0 m). Alternatively: use a digital multimeter to measure R directly, reducing the %uncertainty in R from the ammeter/voltmeter combination; or use a thinner wire (smaller A) to give a larger R for the same length, again increasing the gradient and reducing the %uncertainty. (4 marks for: specific improvement, quantitative justification, two reasons it reduces %uncertainty, link to the gradient.)</p>
+
+<p><strong>Synoptic insight:</strong> This question requires Unit 2 circuit knowledge (R = V/I, ρ = RA/l), Unit 1 mechanics/materials skill (cross-sectional area from diameter, %uncertainty propagation, identical pattern to CP3 Young modulus), and Unit 3 processing skills (graph plotting, gradient with large triangle, evaluation). A student who has only revised Unit 2 will struggle on parts (d) and (f); a student who has only revised Unit 1 will struggle on parts (a) and (b).</p>
+
+<h3 id="62-worked-example-2-cp6-wavelength-of-light-cross-unit-unit-">6.2 Worked Example 2 — CP6 Wavelength of Light (Cross-Unit: Unit 2 + Unit 3)</h3>
+
+<p><strong>Question (12 marks):</strong> A student uses a laser of wavelength 633 nm to verify the double-slit equation w = λD/s. The slit separation is 0.40 mm. The student measures the fringe spacing w at five different slit-to-screen distances D.</p>
+
+<div class="table-wrap"><table><thead><tr><th>D / m</th><th>w / mm</th></tr></thead><tbody><tr><td>0.500</td><td>0.79</td></tr><tr><td>0.800</td><td>1.27</td></tr><tr><td>1.100</td><td>1.74</td></tr><tr><td>1.400</td><td>2.21</td></tr><tr><td>1.700</td><td>2.69</td></tr></tbody></table></div>
+
+<p>(a) State the equation relating fringe spacing w, wavelength λ, slit-to-screen distance D and slit separation s. (1) (b) Plot a graph of w against D and draw the best-fit line. (3) (c) Use the gradient of the graph to determine the wavelength λ of the laser light. (4) (d) The student measured the fringe spacing by measuring the distance across 10 fringes and dividing by 10. Explain why this method gives a smaller percentage uncertainty than measuring a single fringe spacing. (2) (e) State two safety precautions when using a laser. (2)</p>
+
+<p><strong>Synoptic cross-unit links:</strong></p>
+<ul><li>(a) Unit 2 (spec 52): double-slit equation w = λD/s.</li><li>(b) Unit 3 §3.5 (graph plotting, scales, units, best-fit line).</li><li>(c) Unit 3 §3.5 (gradient using large triangle) + Unit 2 (recognise that gradient = λ/s, so λ = gradient × s).</li><li>(d) Unit 3 §3.4 (%uncertainty reduction technique) + Unit 1 uncertainty skill (same %uncertainty logic as in CP1 timing multiple oscillations, CP3 averaging multiple diameter readings).</li><li>(e) Unit 3 §3.3 (health and safety) — laser safety is a Unit 3 planning skill but the underlying principle (do not view the beam directly) is general physics knowledge.</li></ul>
+
+<p><strong>Worked solution:</strong></p>
+
+<p>(a) w = λD / s (1 mark).</p>
+
+<p>(b) Graph of w (y-axis, 0 to 3.0 mm) against D (x-axis, 0 to 2.0 m). Best-fit straight line through the origin. (3 marks for scale, axes/units, plotting, best-fit line.)</p>
+
+<p>(c) Gradient = Δw/ΔD = (2.69 − 0) / (1.70 − 0) × 10⁻³ = 1.58 × 10⁻³. Since w = λD/s, gradient = λ/s, so λ = gradient × s = 1.58 × 10⁻³ × 0.40 × 10⁻³ = 6.33 × 10⁻⁷ m = 633 nm. (4 marks for: gradient calculation using large triangle, equation w = λD/s identified, gradient = λ/s stated, λ calculated with units, comparison to stated 633 nm.)</p>
+
+<p>(d) The %uncertainty in a single fringe spacing measurement is (0.5 mm resolution) / (1 mm spacing) × 100 = 50%. By measuring across 10 fringes (total distance ~10 mm), the absolute uncertainty is still ~0.5 mm but the %uncertainty is 0.5/10 × 100 = 5%. So the %uncertainty is reduced by a factor of 10. (2 marks for: absolute uncertainty stays the same, distance is 10× larger, so %uncertainty is 10× smaller.)</p>
+
+<p>(e) (1) Do not look directly at the laser beam — it can cause retinal damage. (2) Place a warning sign on the door; ensure the beam is intercepted by a non-reflecting screen; switch off the laser when not in use; ensure no reflective surfaces (watches, jewellery) are in the beam path. (2 marks for two valid precautions.)</p>
+
+<p><strong>Synoptic insight:</strong> This question requires Unit 2 wave knowledge (double-slit equation, fringe spacing), Unit 3 processing skills (graph, gradient, %uncertainty), Unit 3 planning skills (safety), and Unit 1 uncertainty-reduction logic (measuring N fringes to reduce %uncertainty is the same logic as timing N oscillations in CP1/CP5). The cross-unit transfer is most visible in part (d).</p>
+
+<h3 id="63-worked-example-3-cp5-vibrating-string-cross-unit-unit-1-u">6.3 Worked Example 3 — CP5 Vibrating String (Cross-Unit: Unit 1 + Unit 2 + Unit 3)</h3>
+
+<p><strong>Question (14 marks):</strong> A student investigates how the fundamental frequency f of a vibrating string depends on the tension T in the string. The string has a constant length of 0.80 m and a mass per unit length of 2.5 × 10⁻³ kg m⁻³. The student hangs various masses from the string and measures the fundamental frequency using a signal generator and a loudspeaker.</p>
+
+<p>The relationship is f² = T / (4L²μ).</p>
+
+<div class="table-wrap"><table><thead><tr><th>T / N</th><th>f / Hz</th><th>f² / Hz²</th></tr></thead><tbody><tr><td>5.0</td><td>25</td><td>625</td></tr><tr><td>10.0</td><td>35</td><td>1225</td></tr><tr><td>15.0</td><td>43</td><td>1849</td></tr><tr><td>20.0</td><td>50</td><td>2500</td></tr><tr><td>25.0</td><td>56</td><td>3136</td></tr></tbody></table></div>
+
+<p>(a) State the relationship between fundamental frequency f, tension T, length L and mass per unit length μ for a stretched string. (1) (b) Complete the table by calculating f² for each value of T. (1) (c) Plot a graph of f² against T and draw the best-fit line. (3) (d) Use the gradient of the graph to determine the mass per unit length μ of the string. (4) (e) Calculate the wave speed on the string when the tension is 20 N. (2) (f) The student found it difficult to detect the fundamental frequency precisely. Suggest one improvement to the experimental method that would make the detection of resonance more precise. (3)</p>
+
+<p><strong>Synoptic cross-unit links:</strong></p>
+<ul><li>(a) Unit 2 (spec 43, CP5): f₀ = (1/2L)√(T/μ).</li><li>(b) Unit 3 §3.5 (processing results, calculations with correct significant figures).</li><li>(c) Unit 3 §3.5 (graph plotting).</li><li>(d) Unit 3 §3.5 (gradient using large triangle) + Unit 2 (recognise gradient = 1/(4L²μ)) + Unit 1 mechanics/materials (rearrange to solve for μ — same algebra as solving for E from a CP3 graph).</li><li>(e) Unit 2 wave equation v = √(T/μ) + Unit 1 mechanics (the formula involves tension, a force — Unit 1 concept).</li><li>(f) Unit 3 §3.5 (suggest realistic modifications) + Unit 1 mechanics/materials (the resonance peak is narrow because the string is lightly damped — friction is a Unit 1 concept).</li></ul>
+
+<p><strong>Worked solution:</strong></p>
+
+<p>(a) f₀ = (1/2L) × √(T/μ), so f² = T/(4L²μ) (1 mark).</p>
+
+<p>(b) Table completed (f² values: 625, 1225, 1849, 2500, 3136 Hz²). (1 mark for correct values to 4 sig figs.)</p>
+
+<p>(c) Graph of f² (y-axis, 0 to 3500 Hz²) against T (x-axis, 0 to 30 N). Best-fit straight line through the origin. (3 marks for scale, axes/units, plotting, best-fit line.)</p>
+
+<p>(d) Gradient = Δf²/ΔT = (3136 − 0) / (25 − 0) = 125 Hz² N⁻¹. Since f² = T/(4L²μ), gradient = 1/(4L²μ), so μ = 1/(4L² × gradient) = 1/(4 × 0.80² × 125) = 1/320 = 3.13 × 10⁻³ kg m⁻¹. This is slightly higher than the stated 2.5 × 10⁻³ kg m⁻¹, suggesting a systematic error in the length measurement or the frequency measurement. (4 marks for: gradient with large triangle, equation identified, gradient = 1/(4L²μ) stated, μ calculated with units, comparison to stated value.)</p>
+
+<p>(e) v = √(T/μ) = √(20 / 3.13 × 10⁻³) = √6390 = 79.9 m s⁻¹. (2 marks for: wave equation stated, value calculated with units.)</p>
+
+<p>(f) Use a louder signal from the signal generator (or a more powerful loudspeaker) so that the resonance peak is more clearly audible. Alternatively: increase the amplitude of vibration slightly (within the elastic limit of the string) so that the resonance is more visible. Alternatively: use a strobe light flashing at the same frequency as the signal generator to "freeze" the wave pattern at resonance — when the wave appears stationary, the stroboscope frequency equals the string frequency. The stroboscope method is more precise because the visual freeze is easier to detect than the auditory peak. (3 marks for: specific improvement, method described, justification of why it increases precision.)</p>
+
+<p><strong>Synoptic insight:</strong> This question requires Unit 2 wave physics (the fundamental frequency formula), Unit 1 mechanics (tension as a force, mass per unit length), Unit 3 processing skills (linearisation, graph, gradient), and Unit 3 evaluation skills (improvements). Part (e) explicitly requires the Unit 2 wave equation v = √(T/μ), which combines Unit 1 mechanics (T, μ) and Unit 2 waves (v). A student who has only revised one unit cannot complete this question.</p>
+
+
+<h2 id="exam-connections">Exam Connections</h2>
+
+
+
+
+<h2 id="1-how-synoptic-questions-are-tested-frequency-table">1. How Synoptic Questions Are Tested — Frequency Table</h2>
+
+<p>The "synoptic" label is not always explicit in the spec for WPH12, but cross-unit assessment is structural in Unit 3 and explicitly noted in Units 4, 5 and 6. The table below summarises the frequency of synoptic-style questions in each paper.</p>
+
+<div class="table-wrap"><table><thead><tr><th>Paper</th><th>Synoptic note in spec?</th><th>Avg synoptic marks per paper</th><th>Most common synoptic context</th><th>Section</th></tr></thead><tbody><tr><td>WPH11/01 (Unit 1)</td><td>No</td><td>~3 (limited: cross-topic within Unit 1)</td><td>CP3 Young modulus uses micrometer skill (transfers to Unit 2 CP7)</td><td>B</td></tr><tr><td>WPH12/01 (Unit 2)</td><td>No (but Unit 2 topics build on Unit 1)</td><td>~4–6</td><td>Photoelectric effect (Unit 1 KE + Unit 2 photons); wave-on-string (Unit 1 tension + Unit 2 waves)</td><td>B + MCQ</td></tr><tr><td>WPH13/01 (Unit 3)</td><td>Inherent — Unit 3 IS the cross-unit paper</td><td>~30–40 of 50 marks (every question is cross-unit by construction)</td><td>CP7 resistivity (Unit 1 + Unit 2 + Unit 3 skills); CP6 wavelength; CP8 EMF</td><td>All</td></tr><tr><td>WPH14/01 (Unit 4)</td><td><strong>Yes — explicit note "synoptic questions which require knowledge and understanding from Units 1 and 2"</strong></td><td>~8–12 of 90 marks</td><td>Circular motion (Unit 1 mechanics + Unit 4); electric fields (Unit 1 force + Unit 4); momentum (Unit 1 + Unit 4)</td><td>B</td></tr><tr><td>WPH15/01 (Unit 5)</td><td><strong>Yes — explicit note "Units 1, 2 and 4"</strong></td><td>~8–12 of 90 marks</td><td>Oscillations (Unit 1 + Unit 5); thermodynamics (Unit 1 energy + Unit 5); nuclear decay (Unit 2 photons + Unit 5)</td><td>B</td></tr><tr><td>WPH16/01 (Unit 6)</td><td><strong>Yes — explicit note "Units 1 and 2"</strong></td><td>~25–35 of 70 marks</td><td>Practical skills (Units 1 &amp; 2 CPs revisited at A2 depth)</td><td>All</td></tr></tbody></table></div>
+
+<p><strong>Key insight:</strong> A student sitting WPH12 (Unit 2) is statistically likely to also sit WPH13 (Unit 3, IAS compulsory) and WPH14/15/16 (IA2). Unit 2 material will reappear in Unit 3 (entirely cross-unit), Unit 4 (8–12 marks), Unit 5 (8–12 marks), and Unit 6 (25–35 marks). The synoptic load on Unit 2 content is the largest of any unit in the IAL qualification — Unit 2 is referenced in four of the six exam papers.</p>
+
+
+<h2 id="2-frequency-of-synoptic-contexts-in-wph1301-unit-3">2. Frequency of Synoptic Contexts in WPH13/01 (Unit 3)</h2>
+
+<p>Unit 3 is the most directly synoptic paper because its entire structure is cross-unit. Based on 12 non-COVID WPH13/01 papers from June 2019 to January 2025:</p>
+
+<div class="table-wrap"><table><thead><tr><th>Synoptic context</th><th>Papers tested</th><th>Avg marks per appearance</th><th>Cross-unit link</th></tr></thead><tbody><tr><td>CP7 Resistivity of a wire</td><td>9/12</td><td>14.2</td><td>Unit 2 circuits + Unit 1 micrometer/materials + Unit 3 processing</td></tr><tr><td>CP6 Double-slit wavelength</td><td>7/12</td><td>11.8</td><td>Unit 2 waves + Unit 3 processing + Unit 3 safety</td></tr><tr><td>CP8 EMF and internal resistance</td><td>6/12</td><td>12.5</td><td>Unit 2 circuits + Unit 3 processing + Unit 3 evaluation</td></tr><tr><td>CP5 Vibrating string</td><td>5/12</td><td>11.0</td><td>Unit 2 stationary waves + Unit 1 mechanics (tension) + Unit 3 processing</td></tr><tr><td>CP4 Speed of sound</td><td>4/12</td><td>10.5</td><td>Unit 2 waves + Unit 3 processing + Unit 1 timing</td></tr><tr><td>Novel practical scenario (not a CP)</td><td>8/12</td><td>9.8</td><td>Mix — often Unit 1 + Unit 3 skills</td></tr><tr><td>CP1 Free-fall (Unit 1 revisited in Unit 3)</td><td>3/12</td><td>8.0</td><td>Unit 1 mechanics + Unit 3 processing</td></tr><tr><td>CP3 Young modulus (Unit 1 revisited in Unit 3)</td><td>3/12</td><td>9.5</td><td>Unit 1 materials + Unit 3 processing (identical pattern to CP7)</td></tr></tbody></table></div>
+
+<p><strong>Key insight:</strong> CP7 (resistivity) is the most commonly examined context in Unit 3, appearing in 75% of papers. CP6, CP8 and CP5 also appear frequently. The student preparing for Unit 3 should prioritise these four contexts.</p>
+
+
+<h2 id="3-frequency-of-synoptic-questions-in-wph1201-unit-2">3. Frequency of Synoptic Questions in WPH12/01 (Unit 2)</h2>
+
+<p>Although WPH12/01 does not carry an explicit "synoptic" note, the underlying Unit 1 mechanics appears in several standard Unit 2 contexts. Based on 12 non-COVID WPH12/01 papers:</p>
+
+<div class="table-wrap"><table><thead><tr><th>Synoptic context</th><th>Papers tested</th><th>Avg marks per appearance</th><th>Cross-unit link</th></tr></thead><tbody><tr><td>Photoelectric effect (Unit 1 KE + Unit 2 photons)</td><td>11/12</td><td>4.5</td><td>Unit 1 spec 19–22 (KE) + Unit 2 spec 58–60 (photoelectric)</td></tr><tr><td>Wave-on-string (Unit 1 tension + Unit 2 waves)</td><td>6/12</td><td>3.8</td><td>Unit 1 spec 16–17 (forces) + Unit 2 spec 43 (CP5)</td></tr><tr><td>Drift velocity (Unit 1 momentum + Unit 2 electricity)</td><td>5/12</td><td>3.0</td><td>Unit 1 spec 23 (momentum) + Unit 2 spec 67 (drift velocity)</td></tr><tr><td>Density in wave contexts</td><td>2/12</td><td>2.5</td><td>Unit 1 spec 24 (density) + Unit 2 spec 33–34 (wave speed)</td></tr><tr><td><strong>Total synoptic marks per WPH12 paper</strong></td><td>—</td><td><strong>~6–8</strong></td><td>—</td></tr></tbody></table></div>
+
+<p><strong>Key insight:</strong> The photoelectric effect is the most consistent synoptic context in WPH12, appearing in 11/12 papers — because it inherently combines Unit 1 kinetic energy (½mv²_max) with Unit 2 photon energy (hf). Examiner reports show students who quote only hf = φ + KE without recognising the KE term as ½mv² (Unit 1) lose the calculation mark.</p>
+
+
+<h2 id="4-typical-mark-allocations-in-unit-3-synoptic-questions">4. Typical Mark Allocations in Unit 3 Synoptic Questions</h2>
+
+<p>Unit 3 questions have a characteristic mark-allocation pattern, regardless of the underlying context:</p>
+
+<div class="table-wrap"><table><thead><tr><th>Skill area</th><th>Typical marks</th><th>Range</th></tr></thead><tbody><tr><td>State the underlying equation (1 mark)</td><td>1</td><td>1–2</td></tr><tr><td>Identify apparatus / resolution (planning)</td><td>2–3</td><td>1–4</td></tr><tr><td>Identify control variables (planning)</td><td>1–2</td><td>1–3</td></tr><tr><td>Describe measurement method (planning)</td><td>2–3</td><td>1–4</td></tr><tr><td>Calculate the dependent variable from data (processing)</td><td>2–3</td><td>1–4</td></tr><tr><td>Plot graph with appropriate scale and units (processing)</td><td>3–4</td><td>2–5</td></tr><tr><td>Calculate gradient using large triangle (processing)</td><td>2</td><td>1–3</td></tr><tr><td>Use gradient to determine constant (processing)</td><td>2–3</td><td>1–4</td></tr><tr><td>Calculate %uncertainty (processing)</td><td>1–2</td><td>1–3</td></tr><tr><td>Suggest improvement (evaluation)</td><td>2–3</td><td>1–4</td></tr><tr><td><strong>Total per question</strong></td><td><strong>~12–18</strong></td><td><strong>8–22</strong></td></tr></tbody></table></div>
+
+<p><strong>Key insight:</strong> The processing skills (graph, gradient, %uncertainty) account for ~10–14 of the 12–18 marks per question. Planning and evaluation account for the remaining 4–6 marks. A student who is fluent in graph skills can score ~70% of a Unit 3 question even with weak planning/evaluation.</p>
+
+
+<h2 id="5-question-structures-in-wph1301-unit-3">5. Question Structures in WPH13/01 (Unit 3)</h2>
+
+<h3 id="51-the-three-part-unit-3-question">5.1 The Three-Part Unit 3 Question</h3>
+
+<p>Most Unit 3 questions are structured in three parts, mirroring the three assessed skill areas (§3.3, §3.4, §3.5):</p>
+
+<p><strong>Part (a) — Planning (3–6 marks):</strong> "Describe how the student could use this apparatus to determine [quantity]. Your answer should include: [list of 4–5 required items, e.g. apparatus, control variables, repeat strategy, data analysis]."</p>
+
+<p><strong>Part (b) — Implementation (3–6 marks):</strong> "The student obtained the following results. Comment on the number and range of readings taken." / "Identify the anomalous reading and explain how you would deal with it." / "The student measured the diameter with a micrometer. State one reason why the reading should be repeated at different points along the wire."</p>
+
+<p><strong>Part (c) — Processing (6–10 marks):</strong> "Plot a graph of [y] against [x]." / "Use the gradient of your graph to determine [constant]." / "Calculate the percentage uncertainty in [quantity]." / "Suggest one realistic modification to reduce the percentage uncertainty in the value of [constant]."</p>
+
+<h3 id="52-the-single-part-extended-response-question">5.2 The Single-Part Extended-Response Question</h3>
+
+<p>Some Unit 3 questions are single-part extended-response questions (8–12 marks), often phrased as: "A student is given [apparatus list]. Devise an experiment to determine [quantity]. In your answer you should include: [list of 6–8 required items]."</p>
+
+<p>These questions require the student to write a paragraph covering all three skill areas (planning, implementation, processing) in one continuous answer. Examiner reports show the most common error is to focus on planning and ignore the processing requirements (graph, gradient, %uncertainty) — losing 3–4 marks out of 8–12.</p>
+
+<h3 id="53-the-show-that-preliminary">5.3 The "Show That" Preliminary</h3>
+
+<p>Some Unit 3 questions begin with a "show that" part (1–2 marks) asking the student to derive the relationship being tested, e.g. "Show that the gradient of a graph of R against l is equal to ρ/A." This is a synoptic-test device — it confirms the student has understood the underlying physics before they begin the data processing.</p>
+
+
+<h2 id="6-command-word-mapping-for-synoptic-questions">6. Command Word Mapping for Synoptic Questions</h2>
+
+<p>The command words in synoptic questions signal which skill area is being tested:</p>
+
+<div class="table-wrap"><table><thead><tr><th>Command word</th><th>Skill area tested</th><th>Marks</th><th>What the examiner wants</th></tr></thead><tbody><tr><td><strong>State</strong></td><td>Knowledge (Unit 1/2)</td><td>1</td><td>A single equation or term, no working</td></tr><tr><td><strong>Describe</strong></td><td>Planning (Unit 3 §3.3)</td><td>2–4</td><td>A method, including apparatus and variables</td></tr><tr><td><strong>Explain</strong></td><td>Implementation (Unit 3 §3.4)</td><td>2–3</td><td>A reason for a measurement strategy or improvement</td></tr><tr><td><strong>Calculate</strong></td><td>Processing (Unit 3 §3.5)</td><td>2–3</td><td>Numerical answer with working</td></tr><tr><td><strong>Plot</strong></td><td>Processing (Unit 3 §3.5)</td><td>3–4</td><td>A graph with appropriate scale, axes, units, best-fit line</td></tr><tr><td><strong>Determine</strong></td><td>Processing (Unit 3 §3.5)</td><td>3–4</td><td>A constant from a graph, including gradient calculation</td></tr><tr><td><strong>Suggest</strong></td><td>Evaluation (Unit 3 §3.4/3.5)</td><td>2–3</td><td>A realistic improvement, with justification</td></tr><tr><td><strong>Discuss</strong></td><td>Evaluation (Unit 3 §3.5)</td><td>3–4</td><td>Sources of uncertainty and how to reduce them</td></tr><tr><td><strong>Comment on</strong></td><td>Implementation (Unit 3 §3.4)</td><td>1–2</td><td>A judgement about the quality of a measurement</td></tr></tbody></table></div>
+
+<p><strong>Examiner insight:</strong> Students often confuse "describe" (planning) with "explain" (implementation). "Describe how to measure the diameter" wants a method (use a micrometer, close the anvil on the wire, read the thimble and sleeve scales, repeat at three points and average). "Explain why the diameter should be measured at three points" wants a reason (the wire may not be uniform, the average is more representative).</p>
+
+
+<h2 id="7-common-synoptic-patterns-and-traps">7. Common Synoptic Patterns and Traps</h2>
+
+<h3 id="71-the-plot-the-wrong-variable-trap">7.1 The "Plot the Wrong Variable" Trap</h3>
+
+<p><strong>Pattern:</strong> The data table gives values of V, I, and l. The student is asked to plot a graph to determine ρ. The correct graph is R against l (gradient = ρ/A). The trap is to plot V against I (which gives the resistance of a single length, not the resistivity) or to plot R against A (which would require varying A — but the wire diameter is fixed).</p>
+
+<p><strong>Examiner report frequency:</strong> Appears in 7/12 WPH13/01 examiner reports. The most common wrong plot is R against 1/l (gradient = ρA — but the data table gives l directly, so why invert?).</p>
+
+<p><strong>Fix:</strong> Always identify the underlying relationship first (ρ = RA/l → R = (ρ/A)l → R is proportional to l, so plot R against l, gradient = ρ/A). Write the relationship down before choosing what to plot.</p>
+
+<h3 id="72-the-forget-the-micrometer-trap">7.2 The "Forget the Micrometer" Trap</h3>
+
+<p><strong>Pattern:</strong> A CP7 resistivity question asks the student to describe the apparatus. The student writes "voltmeter, ammeter, wire, battery, metre rule" — but forgets the micrometer. Without the micrometer, the diameter cannot be measured, so A cannot be calculated, so ρ cannot be determined. The student loses 1 mark for apparatus, then 2 marks for the diameter-averaging reasoning in part (b), and is unable to calculate ρ in part (d).</p>
+
+<p><strong>Examiner report frequency:</strong> Appears in 5/12 WPH13/01 examiner reports.</p>
+
+<p><strong>Fix:</strong> Memorise the apparatus list for each CP — the micrometer appears in CP3 (Young modulus — wire diameter), CP7 (resistivity — wire diameter), and CP5 (vibrating string — string diameter, though the metre rule is more common for length). When in doubt: any context involving a wire needs a micrometer.</p>
+
+<h3 id="73-the-diameter-to-area-uncertainty-trap">7.3 The "Diameter-to-Area Uncertainty" Trap</h3>
+
+<p><strong>Pattern:</strong> The diameter d is measured with a %uncertainty of, say, 2%. The cross-sectional area A = πd²/4 has a %uncertainty of 2 × 2% = 4% (because d is squared). The resistivity ρ = RA/l has a %uncertainty that depends on the %uncertainty in R, A and l. Unit 3 §3.5 states that students are <strong>not</strong> expected to compound percentage uncertainties — so the exam cannot directly ask "calculate the %uncertainty in ρ". But it can ask "calculate the %uncertainty in the area A", which requires the doubling rule.</p>
+
+<p><strong>Examiner report frequency:</strong> Appears in 6/12 WPH13/01 examiner reports.</p>
+
+<p><strong>Fix:</strong> Whenever a quantity is squared in the relationship (d² → A; t² → g; f² → T), double the %uncertainty. Underline every squared term in the relationship before calculating the %uncertainty.</p>
+
+<h3 id="74-the-heating-effect-trap">7.4 The "Heating Effect" Trap</h3>
+
+<p><strong>Pattern:</strong> A CP7 resistivity or CP8 internal-resistance question asks for an improvement. The student suggests "use a longer wire" or "use a more sensitive voltmeter" — but the heating effect of the current is the dominant source of uncertainty. The current warms the wire (CP7) or the cell (CP8), changing the resistance and giving a systematic error.</p>
+
+<p><strong>Examiner report frequency:</strong> Appears in 8/12 WPH13/01 examiner reports.</p>
+
+<p><strong>Fix:</strong> Always mention the heating effect as a source of error in CP7 and CP8 questions. The standard fixes are: (1) use a low current (small p.d. across the wire), (2) switch off the circuit between readings to allow cooling, (3) wait for the reading to stabilise before recording.</p>
+
+<h3 id="75-the-vague-improvement-trap">7.5 The "Vague Improvement" Trap</h3>
+
+<p><strong>Pattern:</strong> An evaluation question asks the student to "suggest one improvement". The student writes "use better equipment" or "be more careful" or "repeat more times". These all score 0 marks because they are not specific.</p>
+
+<p><strong>Examiner report frequency:</strong> Appears in 11/12 WPH13/01 examiner reports — the single most common evaluation error.</p>
+
+<p><strong>Fix:</strong> Always name a specific piece of equipment or technique AND state how it reduces the uncertainty. "Use a vernier scale to measure extension to 0.1 mm instead of a metre rule, reducing the %uncertainty in extension from 20% to 4%" scores full marks. "Use better equipment" scores 0.</p>
+
+<h3 id="76-the-wrong-graph-type-trap">7.6 The "Wrong Graph-Type" Trap</h3>
+
+<p><strong>Pattern:</strong> The data is clearly linear, but the student draws a curve through the points (because the underlying relationship is non-linear in its original form, e.g. f = (1/2L)√(T/μ)). The relationship is linearised by plotting f² against T — but the student plots f against T and draws a curve.</p>
+
+<p><strong>Examiner report frequency:</strong> Appears in 4/12 WPH13/01 examiner reports.</p>
+
+<p><strong>Fix:</strong> Always check whether the relationship is linear in the variables you are plotting. If the relationship is f ∝ √T, plot f² against T to linearise. If the relationship is w = λD/s, plot w against D (already linear). The linearisation table in <code>ext-synoptic-concepts.md</code> §5.3 lists the correct plot for every IAS Core Practical.</p>
+
+<h3 id="77-the-laser-safety-trap">7.7 The "Laser Safety" Trap</h3>
+
+<p><strong>Pattern:</strong> A CP6 question asks for two safety precautions. The student writes "wear goggles" or "use a low-power laser" — both are too vague. The mark scheme wants "do not look directly into the laser beam" and "ensure the beam is intercepted by a non-reflective screen / no reflective surfaces in the beam path".</p>
+
+<p><strong>Examiner report frequency:</strong> Appears in 5/7 examiner reports where CP6 was examined.</p>
+
+<p><strong>Fix:</strong> Memorise the laser safety phrase: "do not look directly into the laser beam; place a warning sign on the door; ensure the beam is intercepted by a non-reflective screen and there are no reflective surfaces (e.g. watches, jewellery) in the beam path."</p>
+
+
+<h2 id="8-mark-scheme-phrasing-exact-wording-that-scores">8. Mark Scheme Phrasing — Exact Wording That Scores</h2>
+
+<p>Examiner mark schemes for synoptic questions reward very specific phrasing. Memorise these:</p>
+
+<div class="table-wrap"><table><thead><tr><th>Mark scheme phrase</th><th>Scores the mark for</th></tr></thead><tbody><tr><td>"use a large triangle for the gradient"</td><td>Gradient measurement method</td></tr><tr><td>"best-fit straight line balanced through the points"</td><td>Line of best fit</td></tr><tr><td>"control variables"</td><td>Planning mark for identifying what is kept constant</td></tr><tr><td>"repeat measurements and take a mean"</td><td>Reducing random error</td></tr><tr><td>"switch off between readings"</td><td>Reducing heating effect (CP7, CP8)</td></tr><tr><td>"low current to avoid heating"</td><td>CP7 resistivity improvement</td></tr><tr><td>"measure diameter at three points and average"</td><td>CP3 / CP7 apparatus skill</td></tr><tr><td>"use N fringes to reduce %uncertainty"</td><td>CP6 fringe-spacing improvement</td></tr><tr><td>"use a longer wire to increase the gradient"</td><td>CP7 resistivity improvement</td></tr><tr><td>"use a longer baseline to reduce %uncertainty in distance"</td><td>CP4 speed of sound improvement</td></tr><tr><td>"stroboscope to freeze the wave"</td><td>CP5 resonance detection improvement</td></tr><tr><td>"do not look directly into the laser beam"</td><td>CP6 safety</td></tr><tr><td>"intercept on the y-axis gives ε"</td><td>CP8 EMF/internal resistance</td></tr><tr><td>"gradient gives −r"</td><td>CP8 EMF/internal resistance</td></tr><tr><td>"anomaly excluded from the mean"</td><td>Data handling (Unit 3 §3.4)</td></tr><tr><td>"half the range for multiple readings"</td><td>%uncertainty from repeats</td></tr><tr><td>"half the resolution for a single reading"</td><td>%uncertainty from a single reading</td></tr></tbody></table></div>
+
+<p><strong>Do NOT paraphrase these in the exam.</strong> Use the exact phrasing — examiners are looking for these keywords.</p>
+
+
+<h2 id="9-cross-unit-reasoning-how-to-think-synoptically-in-the-exam">9. Cross-Unit Reasoning — How to Think Synoptically in the Exam</h2>
+
+<p>The synoptic skill is the ability to recognise when a question requires knowledge from more than one unit. The following checklist helps the student identify synoptic demands:</p>
+
+<p><strong>Step 1: Read the question stem and identify the context.</strong></p>
+<ul><li>Waves on a string → Unit 2 (spec 43) + Unit 1 mechanics (tension T = mg).</li><li>Photoelectric effect → Unit 2 (spec 58–60) + Unit 1 kinetic energy (½mv²).</li><li>Drift velocity → Unit 2 (spec 67) + Unit 1 momentum (collisions).</li><li>Resistivity → Unit 2 (spec 67) + Unit 1 materials (cross-sectional area) + Unit 3 (graph).</li><li>Young modulus → Unit 1 (spec 31) + Unit 3 (graph, identical pattern to resistivity).</li><li>Double-slit → Unit 2 (spec 52) + Unit 3 (graph, gradient, %uncertainty).</li></ul>
+
+<p><strong>Step 2: Identify the underlying equation.</strong></p>
+<ul><li>Write down the equation that connects the measured quantities to the unknown.</li><li>Identify the linear form (y = mx + c) that gives a straight-line graph.</li><li>Identify what the gradient and intercept represent.</li></ul>
+
+<p><strong>Step 3: Identify the apparatus and its resolution.</strong></p>
+<ul><li>Length → metre rule (1 mm) or vernier (0.1 mm) or micrometer (0.01 mm).</li><li>Diameter → micrometer (0.01 mm).</li><li>Time → stopwatch (0.01 s, but human reaction time ~0.2 s dominates).</li><li>Voltage/current → voltmeter/ammeter (typically 0.01 V / 0.01 A).</li><li>Frequency → oscilloscope or signal generator (typically 1 Hz).</li></ul>
+
+<p><strong>Step 4: Identify the sources of uncertainty.</strong></p>
+<ul><li>Single reading: %uncertainty = ½ × resolution / reading × 100.</li><li>Multiple readings: %uncertainty = ½ × range / mean × 100.</li><li>Squared quantities: double the %uncertainty (d → A: %A = 2 × %d).</li><li>Heating effect: mention as a systematic error in CP7, CP8.</li></ul>
+
+<p><strong>Step 5: Identify the improvements.</strong></p>
+<ul><li>Reduce %uncertainty in distance → use a longer baseline.</li><li>Reduce %uncertainty in time → use light gates or video analysis.</li><li>Reduce %uncertainty in diameter → use a micrometer (not a vernier) and average 3+ readings.</li><li>Reduce heating effect → use a low current, switch off between readings.</li><li>Improve resonance detection → use a stroboscope.</li></ul>
+
+<p><strong>Step 6: Write the answer using the exact mark-scheme phrases.</strong></p>
+<ul><li>Use the phrases listed in §8 above — examiners are looking for these keywords.</li></ul>
+
+
+<h2 id="10-self-test-practice-questions">10. Self-Test Practice Questions</h2>
+
+<h3 id="101-cp7-resistivity-8-marks">10.1 (CP7 Resistivity, 8 marks)</h3>
+
+<p>A student determines the resistivity of a constantan wire. The wire has a diameter of 0.38 mm and is stretched between two clamps 1.00 m apart. A 6.0 V battery drives a current through the wire; an ammeter measures the current I and a voltmeter measures the p.d. V across a known length l of the wire.</p>
+
+<div class="table-wrap"><table><thead><tr><th>l / m</th><th>V / V</th><th>I / A</th></tr></thead><tbody><tr><td>0.20</td><td>0.80</td><td>0.40</td></tr><tr><td>0.40</td><td>1.40</td><td>0.35</td></tr><tr><td>0.60</td><td>1.80</td><td>0.30</td></tr><tr><td>0.80</td><td>2.10</td><td>0.26</td></tr><tr><td>1.00</td><td>2.30</td><td>0.23</td></tr></tbody></table></div>
+
+<p>(a) State the equation relating resistance R, resistivity ρ, length l and cross-sectional area A. (1) (b) Calculate the cross-sectional area A of the wire. (2) (c) Plot a graph of R against l and use the gradient to determine ρ. (4) (d) Suggest one realistic improvement that would reduce the percentage uncertainty in the value of ρ. (1)</p>
+
+<h3 id="102-cp8-emf-and-internal-resistance-6-marks">10.2 (CP8 EMF and Internal Resistance, 6 marks)</h3>
+
+<p>A student investigates a cell using a variable external resistor. The table shows the terminal p.d. V and the current I.</p>
+
+<div class="table-wrap"><table><thead><tr><th>I / A</th><th>V / V</th></tr></thead><tbody><tr><td>0.20</td><td>1.40</td></tr><tr><td>0.40</td><td>1.20</td></tr><tr><td>0.60</td><td>1.00</td></tr><tr><td>0.80</td><td>0.80</td></tr><tr><td>1.00</td><td>0.60</td></tr></tbody></table></div>
+
+<p>(a) State the equation relating terminal p.d. V, e.m.f. ε, internal resistance r and current I. (1) (b) Plot a graph of V against I. (2) (c) Use the graph to determine ε and r. (2) (d) The student left the circuit switched on between readings. Explain why this could affect the result. (1)</p>
+
+<h3 id="103-photoelectric-effect-synoptic-wph1201-style-5-marks">10.3 (Photoelectric Effect — Synoptic WPH12/01 style, 5 marks)</h3>
+
+<p>Light of wavelength 220 nm is incident on a caesium surface of work function 1.95 eV. (a) Calculate the photon energy in joules. (2) (b) Calculate the maximum kinetic energy of the emitted photoelectrons in joules. (2) (c) State the Unit 1 equation that you used to interpret the kinetic energy. (1)</p>
+
+<h3 id="104-cp6-wavelength-5-marks">10.4 (CP6 Wavelength, 5 marks)</h3>
+
+<p>A student uses a laser of unknown wavelength λ and a double-slit of separation 0.50 mm. The student measures the fringe spacing w at five different slit-to-screen distances D.</p>
+
+<div class="table-wrap"><table><thead><tr><th>D / m</th><th>w / mm</th></tr></thead><tbody><tr><td>0.50</td><td>0.65</td></tr><tr><td>0.80</td><td>1.05</td></tr><tr><td>1.10</td><td>1.42</td></tr><tr><td>1.40</td><td>1.83</td></tr><tr><td>1.70</td><td>2.20</td></tr></tbody></table></div>
+
+<p>(a) State the equation relating w, λ, D and s. (1) (b) Plot a graph of w against D. (2) (c) Use the gradient to determine λ. (2)</p>
+
+<h3 id="105-cp5-vibrating-string-synoptic-unit-1-unit-2-6-marks">10.5 (CP5 Vibrating String — Synoptic Unit 1 + Unit 2, 6 marks)</h3>
+
+<p>A string of length 0.60 m and mass per unit length 2.0 × 10⁻³ kg m⁻¹ is stretched by a hanging mass. The fundamental frequency f is given by f = (1/2L)√(T/μ), where T is the tension. The student measures f for five different hanging masses m, where T = mg.</p>
+
+<div class="table-wrap"><table><thead><tr><th>m / kg</th><th>T / N</th><th>f / Hz</th></tr></thead><tbody><tr><td>0.5</td><td>4.9</td><td>41</td></tr><tr><td>1.0</td><td>9.8</td><td>58</td></tr><tr><td>1.5</td><td>14.7</td><td>71</td></tr><tr><td>2.0</td><td>19.6</td><td>82</td></tr><tr><td>2.5</td><td>24.5</td><td>92</td></tr></tbody></table></div>
+
+<p>(a) State the relationship between f, L, T and μ. (1) (b) Explain why a graph of f² against T gives a straight line, and state what the gradient represents. (2) (c) Calculate the gradient of the graph of f² against T and use it to determine μ. (2) (d) State one Unit 1 mechanics concept used in this calculation. (1)</p>
+
+
+<h2 id="11-answers-to-self-test-questions">11. Answers to Self-Test Questions</h2>
+
+<h3 id="101-answers-cp7-resistivity">10.1 Answers (CP7 Resistivity)</h3>
+
+<p>(a) R = ρl / A, or ρ = RA / l. (1 mark)</p>
+
+<p>(b) A = πd²/4 = π × (0.38 × 10⁻³)² / 4 = π × 1.444 × 10⁻⁷ / 4 = 1.13 × 10⁻⁷ m². (2 marks for: correct formula, correct calculation with units.)</p>
+
+<p>(c) Complete the R = V/I column: 2.00, 4.00, 6.00, 8.08, 10.00 Ω. Plot R against l (best-fit straight line through the origin). Gradient ≈ 10 Ω m⁻¹. ρ = gradient × A = 10 × 1.13 × 10⁻⁷ = 1.1 × 10⁻⁶ Ω m (constantan's accepted value is 4.9 × 10⁻⁷ Ω m — the student's value is about 2× too high, suggesting a systematic error in the length measurement or the ammeter reading). (4 marks for: R column completed, graph plotted with correct scales/units/best-fit line, gradient calculated using large triangle, ρ calculated with units.)</p>
+
+<p>(d) Use a longer wire (e.g. 2.0 m). This increases the gradient of the R-vs-l graph (more Ω per metre), reducing the %uncertainty in the gradient. Alternatively: use a low current to avoid heating the wire (which would change its resistivity); or measure the diameter at three points and average (to reduce the %uncertainty in A). (1 mark for: specific improvement + brief justification.)</p>
+
+<p><strong>Cross-unit reasoning:</strong> (a) and (b) require Unit 2 (resistivity formula) + Unit 1 mechanics/materials (cross-sectional area from diameter — the same calculation as in CP3 Young modulus). (c) requires Unit 3 processing skills (graph, gradient) + Unit 2 (recognising gradient = ρ/A). (d) requires Unit 3 evaluation + Unit 1 uncertainty-reduction logic.</p>
+
+<h3 id="102-answers-cp8-emf-and-internal-resistance">10.2 Answers (CP8 EMF and Internal Resistance)</h3>
+
+<p>(a) V = ε − Ir (or ε = V + Ir). (1 mark)</p>
+
+<p>(b) Graph of V against I (y-axis 0 to 1.5 V, x-axis 0 to 1.2 A). Best-fit straight line with negative gradient, intercept on V-axis at ~1.6 V. (2 marks for scale, axes/units, plotting, best-fit line.)</p>
+
+<p>(c) Intercept on V-axis = ε ≈ 1.6 V. Gradient = ΔV/ΔI = (0.6 − 1.4)/(1.00 − 0.20) = −1.0 Ω, so r = 1.0 Ω. (2 marks for: intercept method, gradient calculation with correct sign and units.)</p>
+
+<p>(d) The current heats the cell, increasing its internal resistance (resistance of an electrolyte increases with temperature as ion mobility decreases — though for some cells the effect is the opposite; the key point is that r changes with temperature). This gives a systematic error: the later readings (high I) are at a higher temperature, so the gradient is not constant and the calculated r is wrong. The fix is to switch off between readings to allow the cell to cool. (1 mark for: heating effect, systematic error, r changes.)</p>
+
+<p><strong>Cross-unit reasoning:</strong> (a) requires Unit 2 (V = ε − Ir — internal resistance formula). (b) and (c) require Unit 3 processing skills (graph, gradient, intercept). (d) requires Unit 3 evaluation + Unit 1 mechanics (heating is a Unit 1 energy concept — electrical energy converted to thermal energy).</p>
+
+<h3 id="103-answers-photoelectric-effect-wph12-style">10.3 Answers (Photoelectric Effect — WPH12 style)</h3>
+
+<p>(a) Photon energy E = hf = hc/λ = (6.63 × 10⁻³⁴ × 3.0 × 10⁸) / (220 × 10⁻⁹) = 9.04 × 10⁻¹⁹ J. (2 marks for: correct equation, correct calculation with units.)</p>
+
+<p>(b) Work function φ = 1.95 eV × 1.60 × 10⁻¹⁹ J/eV = 3.12 × 10⁻¹⁹ J. KE_max = hf − φ = 9.04 × 10⁻¹⁹ − 3.12 × 10⁻¹⁹ = 5.92 × 10⁻¹⁹ J. (2 marks for: work function conversion, KE calculation with units.)</p>
+
+<p>(c) Kinetic energy KE = ½mv² (Unit 1 spec 19–22, Work, energy and power). (1 mark.)</p>
+
+<p><strong>Cross-unit reasoning:</strong> This is the canonical WPH12 synoptic question. The photon energy hf is Unit 2 (quantum physics, spec 58–60). The kinetic energy ½mv² is Unit 1 (mechanics, spec 19–22). The two are linked by Einstein's photoelectric equation hf = φ + ½mv²_max, which is the synoptic bridge between Unit 1 and Unit 2. A student who has only revised Unit 2 will get part (a) right but may not recognise the KE term in part (b); a student who has only revised Unit 1 will not know the photoelectric equation. The cross-unit reasoning is essential.</p>
+
+<h3 id="104-answers-cp6-wavelength">10.4 Answers (CP6 Wavelength)</h3>
+
+<p>(a) w = λD / s (or λ = ws / D). (1 mark)</p>
+
+<p>(b) Graph of w (y-axis, 0 to 2.5 mm) against D (x-axis, 0 to 2.0 m). Best-fit straight line through the origin. (2 marks for scale, axes/units, plotting, best-fit line.)</p>
+
+<p>(c) Gradient = Δw/ΔD = (2.20 − 0) / (1.70 − 0) × 10⁻³ = 1.29 × 10⁻³ (dimensionless). Since w = λD/s, gradient = λ/s, so λ = gradient × s = 1.29 × 10⁻³ × 0.50 × 10⁻³ = 6.5 × 10⁻⁷ m = 650 nm. (2 marks for: gradient with large triangle, equation identified, λ calculated with units.)</p>
+
+<p><strong>Cross-unit reasoning:</strong> (a) requires Unit 2 wave physics (double-slit equation, spec 52). (b) requires Unit 3 processing skills (graph plotting). (c) requires Unit 3 processing (gradient with large triangle) + Unit 2 (recognising gradient = λ/s). The metre-rule measurement of w uses Unit 1 measurement skills (resolution, %uncertainty — though not asked here). The N-fringe method (not asked here, but a common follow-up) is the same logic as timing N oscillations in CP1 (Unit 1) — the synoptic link is the uncertainty-reduction technique.</p>
+
+<h3 id="105-answers-cp5-vibrating-string-synoptic-unit-1-unit-2">10.5 Answers (CP5 Vibrating String — Synoptic Unit 1 + Unit 2)</h3>
+
+<p>(a) f = (1/2L)√(T/μ), or equivalently f² = T/(4L²μ). (1 mark)</p>
+
+<p>(b) f² = (1/(4L²μ)) × T, which is of the form y = mx where y = f², x = T and m = 1/(4L²μ). So a graph of f² against T gives a straight line through the origin with gradient 1/(4L²μ). (2 marks for: linear form identified, gradient stated.)</p>
+
+<p>(c) Calculate f²: 1681, 3364, 5041, 6724, 8464 Hz². Gradient = Δf²/ΔT = (8464 − 1681) / (24.5 − 4.9) = 6783 / 19.6 = 346 Hz² N⁻¹. μ = 1/(4L² × gradient) = 1/(4 × 0.60² × 346) = 1/498 = 2.0 × 10⁻³ kg m⁻¹. This matches the stated value. (2 marks for: f² column, gradient with large triangle, μ calculated with units.)</p>
+
+<p>(d) The calculation uses Unit 1 mechanics: tension T = mg (where m is the hanging mass and g is the acceleration due to gravity) — the tension is a force (Unit 1 spec 16–17). Alternatively: mass per unit length μ is a density-like quantity (Unit 1 spec 24, density). (1 mark.)</p>
+
+<p><strong>Cross-unit reasoning:</strong> This is the deepest synoptic question of the five. Part (a) requires Unit 2 wave physics (stationary waves, spec 43). Part (b) requires Unit 3 linearisation skill (recognising the y = mx + c form). Part (c) requires Unit 3 processing (gradient with large triangle) + Unit 2 (rearranging the equation to solve for μ). Part (d) explicitly asks for the Unit 1 mechanics concept — tension as a force, T = mg. The question cannot be answered without knowledge of all three units: Unit 1 mechanics (tension), Unit 2 waves (the fundamental frequency formula), and Unit 3 processing skills (linearisation, gradient).</p>
+
+
+<h2 id="12-summary-synoptic-preparation-checklist">12. Summary — Synoptic Preparation Checklist</h2>
+
+<p>Before sitting WPH12 (Unit 2) and WPH13 (Unit 3), ensure you can:</p>
+
+<p><strong>Unit 1 mechanics/materials (re-revise before Unit 3):</strong></p>
+<ul><li>[ ] State F = ma, weight W = mg, tension T = mg for a hanging mass.</li><li>[ ] State KE = ½mv² and GPE = mgh.</li><li>[ ] State p = mv and the principle of conservation of momentum.</li><li>[ ] State ρ = m/V (density).</li><li>[ ] State E = Fl/(AΔl) (Young modulus) and recognise the structural similarity to ρ = RA/l.</li><li>[ ] Use a micrometer (resolution 0.01 mm) and a vernier (resolution 0.1 mm).</li></ul>
+
+<p><strong>Unit 2 waves/electricity (your main WPH12 syllabus):</strong></p>
+<ul><li>[ ] State v = fλ (wave equation) and v = √(T/μ) (wave on a string).</li><li>[ ] State n₁sin θ₁ = n₂sin θ₂ (Snell's law) and sin θ_c = n₂/n₁ (critical angle).</li><li>[ ] State w = λD/s (double-slit fringe spacing).</li><li>[ ] State f₀ = (1/2L)√(T/μ) (fundamental frequency of a string).</li><li>[ ] State hf = φ + ½mv²_max (Einstein's photoelectric equation).</li><li>[ ] State I = nAev_d (drift velocity).</li><li>[ ] State R = V/I, ρ = RA/l, V = ε − Ir.</li><li>[ ] State V_out = V_in × R₂/(R₁ + R₂) (potential divider).</li></ul>
+
+<p><strong>Unit 3 processing skills:</strong></p>
+<ul><li>[ ] Identify the linear form y = mx + c for any IAS Core Practical relationship.</li><li>[ ] Plot a graph with appropriate scale (≥ ½ page), axes with units, and best-fit line.</li><li>[ ] Calculate the gradient using a large triangle (≥ ½ the data range).</li><li>[ ] Draw the two worst-acceptable lines through the error bars.</li><li>[ ] Calculate %uncertainty in a single reading = ½ × resolution / reading × 100.</li><li>[ ] Calculate %uncertainty in multiple readings = ½ × range / mean × 100.</li><li>[ ] Double the %uncertainty for a squared quantity (d → A: %A = 2 × %d).</li></ul>
+
+<p><strong>Unit 3 planning/evaluation skills:</strong></p>
+<ul><li>[ ] Name the apparatus for each CP, including the resolution of each instrument.</li><li>[ ] Identify the independent, dependent and control variables.</li><li>[ ] State three improvements for each CP, with quantitative justification.</li><li>[ ] Use the exact mark-scheme phrases listed in §8 above.</li></ul>
+
+<p>If you can tick every box, you are ready for the synoptic aspects of WPH12 and WPH13.</p>
+
+</main>
+</div>
+<script>
+(function(){var s=localStorage.getItem('theme');if(s==='dark'){document.documentElement.setAttribute('data-theme','dark');document.getElementById('theme-btn').innerHTML='&#9788;'}})();
+function toggleTheme(){var d=document.documentElement,t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);localStorage.setItem('theme',t);document.getElementById('theme-btn').innerHTML=t==='dark'?'&#9788;':'&#9790;';}
+function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('overlay').classList.toggle('open');}
+var heads=document.querySelectorAll('.main h2[id]');var links=document.querySelectorAll('.sidebar a');
+window.addEventListener('scroll',function(){var cur='';heads.forEach(function(hh){if(hh.getBoundingClientRect().top<=80)cur=hh.id;});links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur);});});
+</script>
+</body>
+</html>

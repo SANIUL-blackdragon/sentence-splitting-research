@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Waves and Electricity — Formula Sheet</title>
+<style>
+
+  @page { size: A4; margin: 15mm 20mm; }
+  * { box-sizing: border-box; }
+  body {
+    max-width: 210mm;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #000;
+    background: #fff;
+    line-height: 1.45;
+    padding: 0;
+  }
+  @media print {
+    body { margin: 0; padding: 0; }
+  }
+
+  /* ── page header ── */
+  .page-header {
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 8px;
+  }
+  .page-header .unit-name {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 2px 0;
+  }
+  .page-header .subtitle {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 2px 0;
+  }
+  .page-header .unit-code {
+    font-size: 10px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  /* ── table of contents ── */
+  .toc {
+    margin: 10px 0 14px 0;
+    font-size: 10px;
+  }
+  .toc-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .toc-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 18px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .toc-list li { margin: 0; }
+  .toc-list li::before { content: attr(data-n) ". "; font-weight: bold; }
+
+  /* ── section heading ── */
+  .sec-head {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin: 14px 0 6px 0;
+    padding-top: 6px;
+    border-top: 1px solid #000;
+  }
+  .sec-head:first-of-type {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  /* ── formula key-box ── */
+  .key-box {
+    border: 2px solid #000;
+    padding: 8px 10px;
+    margin: 6px 0;
+  }
+  .key-box .label {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 9px;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+  }
+  .key-box .label.given { }
+  .key-box .label.must-mem { }
+  .key-box .formula-name {
+    font-weight: bold;
+    font-size: 11px;
+    margin: 2px 0 1px 0;
+  }
+  .key-box .formula {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 16px;
+    font-style: italic;
+    margin: 3px 0;
+  }
+  .key-box .vars {
+    font-size: 10px;
+    margin: 2px 0 0 0;
+  }
+  .key-box .vars em {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+  }
+  .key-box .vars .sep {
+    margin: 0 4px;
+  }
+
+  /* ── note box ── */
+  .note-box {
+    border: 1px solid #000;
+    padding: 6px 8px;
+    margin: 6px 0;
+    font-style: italic;
+    font-size: 10px;
+  }
+
+  /* ── key-result box ── */
+  .result-box {
+    border: 1px solid #000;
+    padding: 6px 8px;
+    margin: 6px 0;
+    font-size: 10px;
+  }
+  .result-box .result-label {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 9px;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+
+  /* ── inline formula line ── */
+  .formula-line {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    font-style: italic;
+    margin: 2px 0;
+  }
+
+  /* ── variables block ── */
+  .vars-block {
+    font-size: 10px;
+    margin: 2px 0 6px 0;
+  }
+  .vars-block em {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+  }
+  .vars-block .vline { margin: 1px 0; }
+  .vars-block .sep { margin: 0 6px; }
+
+  /* ── multi-formula group ── */
+  .formula-group {
+    border: 2px solid #000;
+    padding: 8px 10px;
+    margin: 6px 0;
+  }
+  .formula-group .label {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 9px;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .formula-group .fg-item {
+    margin: 4px 0;
+  }
+  .formula-group .fg-item .fline {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    font-style: italic;
+  }
+  .formula-group .fg-item .fname {
+    font-weight: bold;
+    font-size: 11px;
+    margin: 0 0 1px 0;
+  }
+  .formula-group .fg-item .vars {
+    font-size: 10px;
+    margin: 1px 0 0 0;
+  }
+  .formula-group .fg-item .vars em {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+  }
+
+  /* ── quick reference table ── */
+  .qr-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+    margin: 8px 0;
+  }
+  .qr-table th,
+  .qr-table td {
+    border: 1px solid #000;
+    padding: 4px 6px;
+    vertical-align: top;
+    text-align: left;
+  }
+  .qr-table th {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    text-align: left;
+  }
+  .qr-table .formula-cell {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 13px;
+  }
+
+  /* ── sign conventions list ── */
+  .conv-list {
+    font-size: 10px;
+    margin: 0;
+    padding-left: 18px;
+  }
+  .conv-list li {
+    margin: 2px 0;
+  }
+
+  /* ── two-col layout for quick ref ── */
+  .two-col {
+    display: flex;
+    gap: 12px;
+  }
+  .two-col > div {
+    flex: 1;
+  }
+
+.dfrac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;font-size:.85em;margin:0 .1em;line-height:1.2}
+.dfrac .num{border-bottom:1px solid currentColor;padding:0 .15em}
+.dfrac .den{padding:0 .15em}
+</style>
+</head>
+<body>
+
+<h1>Unit 2: Waves and Electricity — Formula Sheet</h1>
+
+<!-- ═══════════════ PAGE HEADER ═══════════════ -->
+<div class="page-header">
+  <div class="unit-name">Unit 2: Waves and Electricity</div>
+  <div class="subtitle">Pearson Edexcel International Advanced Level in Physics</div>
+  <div class="unit-code">WPH12 / 01</div>
+</div>
+
+<!-- ═══════════════ TABLE OF CONTENTS ═══════════════ -->
+<div class="toc">
+  <div class="toc-title">Contents</div>
+  <ul class="toc-list">
+    <li data-n="1">Wave Properties</li>
+    <li data-n="2">Wave Equations</li>
+    <li data-n="3">Refraction and Total Internal Reflection</li>
+    <li data-n="4">Diffraction and Interference</li>
+    <li data-n="5">Stationary Waves</li>
+    <li data-n="6">Photoelectric Effect</li>
+    <li data-n="7">DC Circuits — Current and Charge</li>
+    <li data-n="8">DC Circuits — Resistance and Resistivity</li>
+    <li data-n="9">DC Circuits — EMF and Internal Resistance</li>
+    <li data-n="10">DC Circuits — Energy and Power</li>
+    <li data-n="11">Potential Dividers</li>
+  </ul>
+</div>
+
+<!-- ═══════════════ 1 ═══════════════ -->
+<div class="sec-head">1 &mdash; Wave Properties</div>
+
+<div class="vars-block">
+  <div class="vline"><em>f</em> &mdash; frequency (Hz) <span class="sep">|</span> <em>&lambda;</em> &mdash; wavelength (m) <span class="sep">|</span> <em>T</em> &mdash; period (s) <span class="sep">|</span> <em>v</em> &mdash; wave speed (m/s) <span class="sep">|</span> <em>A</em> &mdash; amplitude (m)</div>
+  <div class="vline"><em>n</em> &mdash; refractive index <span class="sep">|</span> <em>I</em> &mdash; intensity (W/m&sup2;) <span class="sep">|</span> <em>P</em> &mdash; power (W) <span class="sep">|</span> <em>r</em> &mdash; distance from source (m)</div>
+</div>
+
+<!-- ═══════════════ 2 ═══════════════ -->
+<div class="sec-head">2 &mdash; Wave Equations</div>
+
+<div class="formula-group">
+  <div class="label">Given</div>
+  <div class="fg-item">
+    <div class="fname">Wave equation</div>
+    <div class="fline">v = f&lambda;</div>
+  </div>
+  <div class="fg-item">
+    <div class="fname">Period-frequency relationship</div>
+    <div class="fline">T = 1/f</div>
+  </div>
+  <div class="fg-item">
+    <div class="fname">Speed on a string</div>
+    <div class="fline">v = &radic;(T/&mu;)</div>
+  </div>
+  <div class="vars">
+    <em>T</em> &mdash; tension in string (N) <span class="sep">|</span> <em>&mu;</em> &mdash; mass per unit length (kg/m)
+  </div>
+</div>
+
+<div class="key-box">
+  <div class="label">Must Memorise</div>
+  <div class="formula-name">Intensity</div>
+  <div class="formula">I = P / (4&pi;r&sup2;)</div>
+  <div class="vars">
+    <em>I</em> &mdash; intensity (W/m&sup2;) <span class="sep">|</span> <em>P</em> &mdash; power of source (W) <span class="sep">|</span> <em>r</em> &mdash; distance from point source (m)
+  </div>
+</div>
+
+<div class="result-box">
+  <div class="result-label">Key Result</div>
+  Intensity &prop; amplitude&sup2; &mdash; doubling amplitude quadruples intensity
+</div>
+
+<!-- ═══════════════ 3 ═══════════════ -->
+<div class="sec-head">3 &mdash; Refraction and Total Internal Reflection</div>
+
+<div class="formula-group">
+  <div class="label">Given</div>
+  <div class="fg-item">
+    <div class="fname">Refractive index</div>
+    <div class="fline">n = c / v</div>
+  </div>
+  <div class="fg-item">
+    <div class="fname">Snell's Law</div>
+    <div class="fline">n<sub>1</sub>sin&theta;<sub>1</sub> = n<sub>2</sub>sin&theta;<sub>2</sub></div>
+  </div>
+  <div class="vars">
+    <em>n</em> &mdash; refractive index <span class="sep">|</span> <em>c</em> &mdash; speed of light in vacuum (3.00 &times; 10&#8312; m/s) <span class="sep">|</span> <em>v</em> &mdash; speed in medium <span class="sep">|</span> <em>&theta;</em> &mdash; angle from normal
+  </div>
+</div>
+
+<div class="key-box">
+  <div class="label">Must Memorise</div>
+  <div class="formula-name">Critical Angle</div>
+  <div class="formula">sin C = 1/n</div>
+  <div class="vars">
+    <em>C</em> &mdash; critical angle (&deg;) <span class="sep">|</span> <em>n</em> &mdash; refractive index (denser medium)
+  </div>
+</div>
+
+<div class="note-box">
+  <strong>Note:</strong> TIR occurs when angle of incidence &gt; critical angle, light travels from denser to less dense medium.
+</div>
+
+<!-- ═══════════════ 4 ═══════════════ -->
+<div class="sec-head">4 &mdash; Diffraction and Interference</div>
+
+<div class="formula-group">
+  <div class="label">Given</div>
+  <div class="fg-item">
+    <div class="fname">Double-slit fringe spacing</div>
+    <div class="fline">w = &lambda;D / s</div>
+  </div>
+  <div class="vars">
+    <em>w</em> &mdash; fringe spacing (m) <span class="sep">|</span> <em>&lambda;</em> &mdash; wavelength (m) <span class="sep">|</span> <em>D</em> &mdash; slit-to-screen distance (m) <span class="sep">|</span> <em>s</em> &mdash; slit separation (m)
+  </div>
+</div>
+
+<div class="key-box">
+  <div class="label">Given</div>
+  <div class="formula-name">Diffraction grating</div>
+  <div class="formula">n&lambda; = d sin&theta;</div>
+  <div class="vars">
+    <em>n</em> &mdash; order number (integer) <span class="sep">|</span> <em>d</em> &mdash; slit spacing (m) <span class="sep">|</span> <em>&theta;</em> &mdash; angle of diffraction (&deg;)
+  </div>
+</div>
+
+<div class="note-box">
+  <strong>Note:</strong> d = 1/N where N = number of lines per metre. Maximum order: n_max = d/&lambda; (truncate to integer).
+</div>
+
+<!-- ═══════════════ 5 ═══════════════ -->
+<div class="sec-head">5 &mdash; Stationary Waves</div>
+
+<div class="result-box">
+  <div class="result-label">Key Result</div>
+  Fundamental: f&#8321; = v/(2L) &mdash; string fixed at both ends<br>
+  Harmonics: f&#8345; = nf&#8321; &mdash; nth harmonic<br>
+  Pipe (closed at one end): f&#8321; = v/(4L), only odd harmonics
+</div>
+
+<!-- ═══════════════ 6 ═══════════════ -->
+<div class="sec-head">6 &mdash; Photoelectric Effect</div>
+
+<div class="formula-group">
+  <div class="label">Given</div>
+  <div class="fg-item">
+    <div class="fname">Photon energy</div>
+    <div class="fline">E = hf</div>
+  </div>
+  <div class="fg-item">
+    <div class="fname">Einstein's photoelectric equation</div>
+    <div class="fline">hf = &phi; + &frac12;mv&#178;_max</div>
+  </div>
+  <div class="vars">
+    <em>h</em> &mdash; Planck constant (6.63 &times; 10&#8315;&#179;&#8308; J s) <span class="sep">|</span> <em>f</em> &mdash; frequency (Hz) <span class="sep">|</span> <em>&phi;</em> &mdash; work function (J) <span class="sep">|</span> <em>m</em> &mdash; electron mass <span class="sep">|</span> <em>v_max</em> &mdash; maximum electron speed (m/s)
+  </div>
+</div>
+
+<div class="key-box">
+  <div class="label">Must Memorise</div>
+  <div class="formula-name">Threshold frequency</div>
+  <div class="formula">f&#8320; = &phi; / h</div>
+</div>
+
+<div class="key-box">
+  <div class="label">Given</div>
+  <div class="formula-name">de Broglie wavelength</div>
+  <div class="formula">&lambda; = h / p</div>
+  <div class="vars">
+    <em>p</em> &mdash; momentum (kg m/s) <span class="sep">|</span> <em>h</em> &mdash; Planck constant
+  </div>
+</div>
+
+<!-- ═══════════════ 7 ═══════════════ -->
+<div class="sec-head">7 &mdash; DC Circuits: Current and Charge</div>
+
+<div class="formula-group">
+  <div class="label">Given</div>
+  <div class="fg-item">
+    <div class="fname">Electric current</div>
+    <div class="fline">I = &Delta;Q / &Delta;t</div>
+  </div>
+  <div class="fg-item">
+    <div class="fname">Drift velocity</div>
+    <div class="fline">I = nAvq</div>
+  </div>
+  <div class="vars">
+    <em>I</em> &mdash; current (A) <span class="sep">|</span> <em>Q</em> &mdash; charge (C) <span class="sep">|</span> <em>n</em> &mdash; number density of charge carriers (m&#8315;&#179;) <span class="sep">|</span> <em>A</em> &mdash; cross-sectional area (m&sup2;) <span class="sep">|</span> <em>v</em> &mdash; drift velocity (m/s) <span class="sep">|</span> <em>q</em> &mdash; charge on carrier (C)
+  </div>
+</div>
+
+<!-- ═══════════════ 8 ═══════════════ -->
+<div class="sec-head">8 &mdash; DC Circuits: Resistance and Resistivity</div>
+
+<div class="formula-group">
+  <div class="label">Given</div>
+  <div class="fg-item">
+    <div class="fname">Ohm's Law</div>
+    <div class="fline">V = IR</div>
+  </div>
+  <div class="fg-item">
+    <div class="fname">Resistivity</div>
+    <div class="fline">R = &rho;L / A</div>
+  </div>
+  <div class="vars">
+    <em>V</em> &mdash; potential difference (V) <span class="sep">|</span> <em>I</em> &mdash; current (A) <span class="sep">|</span> <em>R</em> &mdash; resistance (&Omega;) <span class="sep">|</span> <em>&rho;</em> &mdash; resistivity (&Omega; m) <span class="sep">|</span> <em>L</em> &mdash; length (m) <span class="sep">|</span> <em>A</em> &mdash; cross-sectional area (m&sup2;)
+  </div>
+</div>
+
+<div class="note-box">
+  <strong>Series:</strong> R_total = R&#8321; + R&#8322; + ... &mdash; same current, V splits<br>
+  <strong>Parallel:</strong> 1/R_total = 1/R&#8321; + 1/R&#8322; + ... &mdash; same V, current splits
+</div>
+
+<!-- ═══════════════ 9 ═══════════════ -->
+<div class="sec-head">9 &mdash; DC Circuits: EMF and Internal Resistance</div>
+
+<div class="key-box">
+  <div class="label">Must Memorise</div>
+  <div class="formula-name">EMF and terminal voltage</div>
+  <div class="formula">&epsilon; = V + Ir</div>
+  <div class="vars">
+    <em>&epsilon;</em> &mdash; EMF (V) <span class="sep">|</span> <em>V</em> &mdash; terminal potential difference (V) <span class="sep">|</span> <em>I</em> &mdash; current (A) <span class="sep">|</span> <em>r</em> &mdash; internal resistance (&Omega;)
+  </div>
+</div>
+
+<div class="result-box">
+  <div class="result-label">Key Result</div>
+  "Lost volts" = Ir &mdash; the p.d. lost across internal resistance<br>
+  V-I graph: gradient = &minus;r, y-intercept = &epsilon;
+</div>
+
+<!-- ═══════════════ 10 ═══════════════ -->
+<div class="sec-head">10 &mdash; DC Circuits: Energy and Power</div>
+
+<div class="formula-group">
+  <div class="label">Given</div>
+  <div class="fg-item">
+    <div class="fname">Electrical energy</div>
+    <div class="fline">W = VIt</div>
+  </div>
+  <div class="fg-item">
+    <div class="fname">Power (3 forms)</div>
+    <div class="fline">P = VI = I&sup2;R = V&sup2;/R</div>
+  </div>
+  <div class="vars">
+    <em>W</em> &mdash; energy (J) <span class="sep">|</span> <em>V</em> &mdash; p.d. (V) <span class="sep">|</span> <em>I</em> &mdash; current (A) <span class="sep">|</span> <em>t</em> &mdash; time (s) <span class="sep">|</span> <em>R</em> &mdash; resistance (&Omega;)
+  </div>
+</div>
+
+<!-- ═══════════════ 11 ═══════════════ -->
+<div class="sec-head">11 &mdash; Potential Dividers</div>
+
+<div class="key-box">
+  <div class="label">Given</div>
+  <div class="formula-name">Potential divider</div>
+  <div class="formula">V_out = V_in &times; R&#8322; / (R&#8321; + R&#8322;)</div>
+  <div class="vars">
+    <em>V_out</em> &mdash; output voltage (V) <span class="sep">|</span> <em>V_in</em> &mdash; input voltage (V) <span class="sep">|</span> <em>R&#8321;</em>, <em>R&#8322;</em> &mdash; resistances (&Omega;)
+  </div>
+</div>
+
+<div class="note-box">
+  <strong>Note:</strong> LDR: R decreases as light intensity increases. NTC thermistor: R decreases as temperature increases.
+</div>
+
+</body>
+</html>

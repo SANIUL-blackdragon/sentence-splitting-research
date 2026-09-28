@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Uncertainty in Waves &amp; Electricity Practicals — WPH12 Extension</title>
+<style>
+:root{--bg:#fafcfe;--surface:#fff;--text:#1e293b;--heading:#0f4c75;--heading2:#1b6ca8;--accent:#3b82f6;--border:#e2e8f0;--muted:#64748b;--code-bg:#f1f5f9;--tbl-head:#eef2f7;--tbl-alt:#f8fafc;--sidebar-bg:#f0f4f8;--sidebar-w:280px}
+[data-theme="dark"]{--bg:#0f172a;--surface:#1e293b;--text:#e2e8f0;--heading:#7dd3fc;--heading2:#93c5fd;--accent:#60a5fa;--border:#334155;--muted:#94a3b8;--code-bg:#1e293b;--tbl-head:#1a2744;--tbl-alt:#172033;--sidebar-bg:#162032}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+#topbar{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 1rem;height:48px;gap:.5rem}
+#topbar .bar-title{font-weight:700;font-size:.95rem;color:var(--heading);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+#topbar button{background:var(--accent);color:#fff;border:none;padding:.35rem .75rem;border-radius:4px;cursor:pointer;font-size:.8rem;white-space:nowrap}
+#sidebar{position:fixed;top:48px;left:0;bottom:0;width:var(--sidebar-w);background:var(--sidebar-bg);border-right:1px solid var(--border);overflow-y:auto;padding:1rem 0;transform:translateX(-100%);transition:transform .2s ease;z-index:90}
+#sidebar.open{transform:translateX(0)}
+#sidebar nav{padding:0 .75rem}
+#sidebar h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:.8rem 0 .4rem;padding-left:.5rem}
+#sidebar a{display:block;padding:.25rem .5rem;color:var(--text);text-decoration:none;font-size:.85rem;border-radius:3px;line-height:1.4}
+#sidebar a:hover{background:var(--accent);color:#fff}
+#sidebar .sub{padding-left:1rem}
+#sidebar .sub a{font-size:.8rem;color:var(--muted)}
+#overlay{display:none;position:fixed;top:48px;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);z-index:80}
+#overlay.open{display:block}
+#main{padding:60px 1rem 3rem;max-width:820px;margin:0 auto}
+#main h1{text-align:center;color:var(--heading);font-size:1.7rem;border-bottom:2px solid var(--accent);padding-bottom:.4rem;margin-bottom:1.5rem}
+#main h2{color:var(--heading2);font-size:1.3rem;margin-top:2.2rem;border-left:4px solid var(--accent);padding-left:.6rem}
+#main h3{color:var(--heading);font-size:1.05rem;margin-top:1.4rem}
+#main h4{color:var(--heading2);font-size:.95rem;margin-top:1rem}
+#main p{margin:.6rem 0}
+#main strong{color:var(--heading)}
+#main em{color:var(--muted)}
+#main code{background:var(--code-bg);padding:.1rem .3rem;border-radius:3px;font-family:'SFMono-Regular',Consolas,monospace;font-size:.88em}
+#main pre{background:var(--code-bg);padding:.8rem 1rem;border-radius:5px;overflow-x:auto;font-family:'SFMono-Regular',Consolas,monospace;font-size:.85rem;line-height:1.5;margin:.8rem 0}
+#main pre code{background:none;padding:0}
+#main table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.88rem}
+#main th{background:var(--tbl-head);color:var(--heading);padding:.45rem .5rem;text-align:left;border:1px solid var(--border);font-weight:600}
+#main td{padding:.45rem .5rem;border:1px solid var(--border)}
+#main tbody tr:nth-child(even){background:var(--tbl-alt)}
+#main ul,#main ol{margin:.5rem 0;padding-left:1.5rem}
+#main li{margin:.3rem 0}
+#main hr{border:none;border-top:1px solid var(--border);margin:1.8rem 0}
+#main blockquote{border-left:3px solid var(--accent);padding:.4rem .8rem;margin:.6rem 0;background:var(--tbl-alt);border-radius:0 4px 4px 0;color:var(--muted)}
+#main details{margin:.6rem 0;border:1px solid var(--border);border-radius:4px;padding:.4rem .6rem}
+#main details summary{cursor:pointer;font-weight:600;color:var(--heading2)}
+#main details[open]{padding:.6rem}
+footer{text-align:center;padding:1rem;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border);max-width:820px;margin:2rem auto 0}
+@media(min-width:768px){#main{padding:64px 2rem 4rem}#main h1{font-size:2rem}}
+@media print{#topbar,#sidebar,#overlay{display:none!important}#main{padding:0;max-width:none}#main h1{font-size:1.4rem}body{background:#fff;color:#000}#main strong{color:#000}#main h2,#main h3,#main h4{color:#000}table th{background:#eee}table td,table th{border-color:#333}#main pre{background:#f5f5f5}footer{border-color:#333}}
+</style>
+</head>
+<body>
+<div id="topbar">
+<button id="menuBtn">&#9776; Index</button>
+<span class="bar-title">Uncertainty — WPH12 Extension</span>
+<button id="dmBtn">&#9790; Dark</button>
+</div>
+<div id="overlay"></div>
+<div id="sidebar">
+<nav>
+<h3>Definitions</h3>
+<a href="#recap">0. Recap of Generic Terms</a>
+<a href="#instrument-uncertainties">1. WPH12-Specific Instrument Uncertainties</a>
+<div class="sub">
+<a href="#s1-1">1.1 Oscilloscope Time-Base</a>
+<a href="#s1-2">1.2 Frequency Measurement</a>
+<a href="#s1-3">1.3 Protractor / Angle</a>
+<a href="#s1-4">1.4 Micrometer</a>
+<a href="#s1-5">1.5 Ammeter and Voltmeter</a>
+<a href="#s1-6">1.6 Metre Rule</a>
+</div>
+<a href="#propagation-contexts">2. WPH12-Specific Propagation Contexts</a>
+<div class="sub">
+<a href="#s2-1">2.1 Diameter-to-Area Doubling Rule (CP7)</a>
+<a href="#s2-2">2.2 Angle-to-Sin Conversion (CP6)</a>
+<a href="#s2-3">2.3 V–I Graph Gradient (CP8)</a>
+<a href="#s2-4">2.4 f = (1/2L)&#8730;(T/&#956;) (CP5)</a>
+<a href="#s2-5">2.5 v = d/t (CP4)</a>
+</div>
+<a href="#cp-vocab">3. CP-Specific Uncertainty Vocabulary</a>
+<div class="sub">
+<a href="#s3-1">3.1 CP4 — Speed of Sound</a>
+<a href="#s3-2">3.2 CP5 — Vibrating String</a>
+<a href="#s3-3">3.3 CP6 — Diffraction Grating</a>
+<a href="#s3-4">3.4 CP7 — Resistivity</a>
+<a href="#s3-5">3.5 CP8 — EMF and Internal Resistance</a>
+</div>
+<a href="#error-glossary-defs">4. WPH12 Examiner Error Glossary</a>
+
+<h3>Worked Examples</h3>
+<a href="#why-matters">1. Why WPH12 Uncertainty Matters</a>
+<a href="#cp4-worked">2. CP4 — Speed of Sound Worked Example</a>
+<a href="#cp5-worked">3. CP5 — Vibrating String Worked Example</a>
+<a href="#cp6-worked">4. CP6 — Diffraction Grating Worked Example</a>
+<a href="#cp7-worked">5. CP7 — Resistivity Worked Example</a>
+<a href="#cp8-worked">6. CP8 — EMF and Internal Resistance Worked Example</a>
+<a href="#prop-table">7. Quick-Reference Propagation Table</a>
+<a href="#dominant">8. Cross-CP Pattern: Which Uncertainty Dominates?</a>
+<a href="#examiner-phrases">9. Glossary of Examiner Report Phrases</a>
+<a href="#flowchart">10. WPH12 Calculation Flowchart</a>
+
+<h3>Exam Connections</h3>
+<a href="#freq-table">1. How Uncertainty Is Tested — Frequency Table</a>
+<a href="#cp-patterns">2. CP-by-CP Question Patterns</a>
+<div class="sub">
+<a href="#s2-1-ec">2.1 CP4 — Speed of Sound</a>
+<a href="#s2-2-ec">2.2 CP5 — Vibrating String</a>
+<a href="#s2-3-ec">2.3 CP6 — Diffraction Grating</a>
+<a href="#s2-4-ec">2.4 CP7 — Resistivity</a>
+<a href="#s2-5-ec">2.5 CP8 — EMF and Internal Resistance</a>
+</div>
+<a href="#command-words">3. Command Word Mapping</a>
+<a href="#recurring-themes">4. Recurring Examiner Report Themes</a>
+<a href="#mark-scheme-words">5. Mark Scheme Phrasing</a>
+<a href="#cross-cp">6. Cross-CP Comparison</a>
+<a href="#practice">7. Practice Questions</a>
+<a href="#answers">8. Practice Question Answers</a>
+</nav>
+</div>
+<main id="main">
+
+<h1>Uncertainty in Waves &amp; Electricity Practicals</h1>
+
+<!-- ===================== PART 1: DEFINITIONS ===================== -->
+<h2>Definitions</h2>
+
+<h3 id="recap">0. Recap of Generic Terms</h3>
+<p>The general uncertainty vocabulary — <strong>absolute / fractional / percentage uncertainty</strong>, <strong>random / systematic / zero / parallax error</strong>, <strong>resolution / precision / accuracy / repeatability / reproducibility</strong>, <strong>uncertainty in a mean / sum / difference / product / quotient / power / gradient / intercept</strong>, <strong>anomaly</strong>, <strong>significant figures</strong>, <strong>standard form</strong>, <strong>prefix conversions</strong>, <strong>line of best fit / worst acceptable line / error bar</strong>, <strong>control / independent / dependent variable</strong> — is defined in full in the WPH11 extension file. <strong>You must know all of these for WPH12.</strong> The three combination rules are summarised here because every WPH12 calculation depends on them:</p>
+<ul>
+<li><strong>Addition / subtraction &rarr; add ABSOLUTE uncertainties</strong></li>
+<li><strong>Multiplication / division &rarr; add PERCENTAGE uncertainties</strong></li>
+<li><strong>Powers &rarr; multiply PERCENTAGE uncertainty by the power</strong></li>
+</ul>
+<p>The WPH12 file below covers only terms and contexts that the WPH11 version does not address.</p>
+
+<hr>
+
+<h2 id="instrument-uncertainties">1. WPH12-Specific Instrument Uncertainties</h2>
+
+<h3 id="s1-1">1.1 Oscilloscope Time-Base Uncertainty</h3>
+<p><strong>Spec ref:</strong> Appendix 10 + CP4 (speed of sound using oscilloscope)</p>
+<p><strong>Definition:</strong> The uncertainty in a time interval read from an oscilloscope, equal to &plusmn; the smallest division of the time-base setting when the trace is read to the nearest division (or &plusmn; half the smallest division when interpolated by eye). For a time-base set to 0.1 ms/div, a one-division reading has uncertainty &plusmn;0.1 ms (one division) or &plusmn;0.05 ms (interpolated). The time-base itself is calibrated by the oscilloscope; the dominant uncertainty is the visual reading of where the trace crosses the graticule.</p>
+<p><strong>WPH12 Exam context:</strong> CP4 &mdash; the time delay between two microphone pulses on a dual-beam oscilloscope is read from the horizontal separation of the traces. Examiners expect the student to state the time-base setting (e.g. "0.1 ms/div") and convert the number of divisions to time with its &plusmn; uncertainty. Examiner reports (Jan 2023, Oct 2024) show the most common error is quoting only the time without the time-base uncertainty, or quoting the uncertainty in divisions instead of in ms.</p>
+
+<h3 id="s1-2">1.2 Frequency Measurement Uncertainty (Signal Generator)</h3>
+<p><strong>Spec ref:</strong> Appendix 10 + CP5 (vibrating string / sonometer)</p>
+<p><strong>Definition:</strong> The uncertainty in the frequency delivered by a signal generator as read from its digital or analogue display. A digital signal generator read to 1 Hz has an absolute uncertainty of &plusmn;1 Hz (the resolution); an analogue dial read to the nearest 10 Hz has an absolute uncertainty of &plusmn;5 Hz (half the smallest division). The display reading is the resolution-limited uncertainty; the actual frequency delivered to the vibrator may also drift, but the exam treats the display reading as the dominant uncertainty.</p>
+<p><strong>WPH12 Exam context:</strong> CP5 &mdash; the student varies the frequency f of a signal generator driving a vibrating string and measures the length L of the first-harmonic loop. %f = (1 Hz / f) &times; 100. At low f (e.g. 50 Hz), %f is large (2%); at high f (e.g. 500 Hz), %f is small (0.2%). Examiner reports (Oct 2022) show students often forget to convert from Hz to percentage uncertainty when combining with %L in f = (1/2L)&radic;(T/&mu;).</p>
+
+<h3 id="s1-3">1.3 Protractor / Angle Measurement Uncertainty</h3>
+<p><strong>Spec ref:</strong> Appendix 10 + CP6 (diffraction by a grating)</p>
+<p><strong>Definition:</strong> The absolute uncertainty in an angle measured with a standard protractor. A protractor graduated every 1&deg; has a reading uncertainty of &plusmn;0.5&deg; (analogue, half the smallest division). If the angle is measured by the difference of two protractor readings (e.g. &theta; = &theta;&#8321; &minus; &theta;&#8322;, the diffracted ray angle minus the straight-through ray angle), the absolute uncertainty DOUBLES to &plusmn;1&deg; because absolute uncertainties add for subtraction.</p>
+<p><strong>WPH12 Exam context:</strong> CP6 &mdash; the angle &theta; to the n-th order diffraction maximum is measured with a protractor. Examiner reports (Jan 2024) show the critical error is treating the angle uncertainty as a percentage uncertainty directly: students write "%sin &theta; = %&theta;" &mdash; this is WRONG. The correct conversion is given in &sect;2.2 below. The protractor uncertainty is small in degrees but can become significant when propagated through sin &theta;.</p>
+
+<h3 id="s1-4">1.4 Micrometer Uncertainty (WPH12 &mdash; Resistivity)</h3>
+<p><strong>Spec ref:</strong> Appendix 10 + CP7 (resistivity of a wire)</p>
+<p><strong>Definition:</strong> The absolute uncertainty in a wire diameter measured with a micrometer screw gauge. A standard micrometer has a resolution of 0.01 mm, so a single reading has an absolute uncertainty of &plusmn;0.01 mm. When repeat readings are taken at three points along the wire and in two perpendicular orientations (to allow for non-circular cross-section), the absolute uncertainty in the mean diameter is &frac12; &times; range of the repeats. A zero error (micrometer reading when the anvil and spindle are closed) is a systematic error and must be subtracted from every reading before the uncertainty is calculated.</p>
+<p><strong>WPH12 Exam context:</strong> CP7 &mdash; this is the most important single instrument uncertainty in WPH12. The diameter d is squared in A = &pi;d&sup2;/4, so %A = 2 &times; %d (the doubling rule, &sect;2.1). A &plusmn;0.01 mm uncertainty on a 0.40 mm wire is %d = 2.5%, so %A = 5%. This dominates the resistivity uncertainty. Examiner reports (Oct 2023, Jan 2025) show students routinely forget to double the diameter percentage when propagating to area &mdash; this is the single most penalised uncertainty error in WPH12.</p>
+
+<h3 id="s1-5">1.5 Ammeter and Voltmeter Uncertainty</h3>
+<p><strong>Spec ref:</strong> Appendix 10 + CP7 (resistivity) + CP8 (EMF/internal resistance)</p>
+<p><strong>Definition:</strong> The absolute uncertainty in a current or voltage reading from a digital multimeter. A school digital ammeter reading to 0.01 A has an absolute uncertainty of &plusmn;0.01 A (the resolution); a digital voltmeter reading to 0.01 V has &plusmn;0.01 V. Analogue meters have &plusmn; half the smallest scale division. The percentage uncertainty in R = V/I is therefore %V + %I (the multiply/divide rule). For internal resistance work (CP8), the voltmeter resistance is finite (not infinite) so a small current flows through it &mdash; this is a systematic, not random, error and is not captured by the &plusmn; uncertainty on a single reading.</p>
+<p><strong>WPH12 Exam context:</strong> CP7 &mdash; R is read from a voltmeter/ammeter pair as V/I; the %R feeds directly into %&rho; = %R + %A + %L. CP8 &mdash; the V and I readings form the V&ndash;I graph from which the gradient (&ndash;r) and intercept (&epsilon;) are extracted, and their scatter determines the worst-acceptable-line spread. Examiner reports (Jan 2022) note that students often forget the %R contribution when calculating %&rho;, treating the resistance as exact.</p>
+
+<h3 id="s1-6">1.6 Metre Rule Uncertainty (WPH12 &mdash; CP4, CP5, CP7)</h3>
+<p><strong>Spec ref:</strong> Appendix 10</p>
+<p><strong>Definition:</strong> A metre rule graduated in mm has a resolution of 1 mm. A single length reading taken by eye against the rule has an absolute uncertainty of &plusmn;0.5 mm = &plusmn;0.0005 m (analogue, half the smallest division). When the length is the difference of two readings (e.g. wire length between two markers, or microphone separation), the absolute uncertainty DOUBLES to &plusmn;1 mm because absolute uncertainties add for subtraction. For a 1.000 m length, %L = 0.1%; for a 0.200 m loop length (CP5), %L = 0.5%.</p>
+<p><strong>WPH12 Exam context:</strong> Used in CP4 (microphone separation d), CP5 (string loop length L), CP7 (wire length L). The length uncertainty is usually small but not negligible. Examiner reports (Oct 2023) show students forget to double the absolute uncertainty when the length is a difference of two readings.</p>
+
+<hr>
+
+<h2 id="propagation-contexts">2. WPH12-Specific Propagation Contexts</h2>
+
+<h3 id="s2-1">2.1 Diameter-to-Area Doubling Rule (CP7 &mdash; THE TRAP)</h3>
+<p><strong>Spec ref:</strong> Appendix 10 + CP7 + Appendix 7 (Formulae A = &pi;d&sup2;/4)</p>
+<p><strong>Definition:</strong> Because the cross-sectional area of a wire is <code>A = &pi;d&sup2;/4</code>, and d is raised to the power 2, the percentage uncertainty in A is exactly <strong>twice</strong> the percentage uncertainty in d: <code>%A = 2 &times; %d</code>. The constants &pi; and 4 have no uncertainty. This is a direct application of the power rule (multiply the percentage uncertainty by the power). It is the WPH12 analogue of the WPH11 t&sup2; trap in g = 2s/t&sup2;.</p>
+<p><strong>WPH12 Exam context:</strong> Heavily tested in CP7 &mdash; every resistivity paper includes a "% uncertainty in &rho;" question that requires the doubling. The full propagation is:</p>
+<ul>
+<li><code>&rho; = R A / L</code> &rarr; <code>%&rho; = %R + %A + %L</code></li>
+<li>Substitute <code>%A = 2 &times; %d</code> &rarr; <strong><code>%&rho; = %R + 2 &times; %d + %L</code></strong></li>
+</ul>
+<p>Examiner reports (Oct 2023, Jan 2024, Oct 2024, Jan 2025) show 50&ndash;60% of students forget to double the %d and write <code>%&rho; = %R + %d + %L</code> instead. This single error costs 1 mark out of 3 on every CP7 paper.</p>
+
+<h3 id="s2-2">2.2 Angle-to-Sin Conversion (CP6 &mdash; THE TRAP)</h3>
+<p><strong>Spec ref:</strong> Appendix 10 + Appendix 6 (Mathematical skills &mdash; use of sin/cos) + CP6</p>
+<p><strong>Definition:</strong> When an angle &theta; (with absolute uncertainty &Delta;&theta; in degrees) is propagated through a function such as <code>sin &theta;</code>, the uncertainty in sin &theta; is <strong>NOT</strong> <code>sin(&Delta;&theta;)</code> and <strong>NOT</strong> &Delta;&theta; treated as a percentage. The correct relationship comes from the calculus of errors: <code>&Delta;(sin &theta;) = cos &theta; &times; &Delta;&theta;</code> <strong>with &Delta;&theta; in radians</strong>. To use this rule, convert the angle uncertainty from degrees to radians first (<code>&Delta;&theta;_rad = &Delta;&theta;_deg &times; &pi;/180</code>), then multiply by <code>cos &theta;</code>. The percentage uncertainty is then <code>%sin &theta; = (&Delta;(sin &theta;) / sin &theta;) &times; 100</code>.</p>
+<p><strong>WPH12 Exam context:</strong> CP6 &mdash; <code>n&lambda; = d sin &theta;</code> requires sin &theta; for the calculation. Examiner reports (Jan 2024) note that the most common error is calculating <code>sin(25.5&deg;) &minus; sin(25&deg;)</code> instead of <code>cos(25&deg;) &times; (0.5&deg; &times; &pi;/180)</code>. The two give different results because sin is non-linear; the calculus-of-errors approach is the correct one. See the Worked Examples section for a full worked example.</p>
+
+<h3 id="s2-3">2.3 V&ndash;I Graph Gradient Uncertainty (CP8)</h3>
+<p><strong>Spec ref:</strong> Appendix 10 + CP8 (EMF and internal resistance) + Appendix 7 (V = &epsilon; &minus; Ir)</p>
+<p><strong>Definition:</strong> In the equation <code>V = &epsilon; &minus; Ir</code>, a plot of V (y-axis) against I (x-axis) gives a straight line with <strong>gradient = &minus;r</strong> and <strong>y-intercept = &epsilon;</strong>. The absolute uncertainty in r is found by the worst-acceptable-line method: draw the steepest and shallowest lines that pass through all the error bars, calculate their gradients <code>m_max</code> and <code>m_min</code>, then <code>&Delta;r = &frac12; &times; |m_max &minus; m_min|</code> (the modulus because r is the magnitude of the gradient). Similarly <code>&Delta;&epsilon; = &frac12; &times; |c_max &minus; c_min|</code> where c is the y-intercept of each worst line.</p>
+<p><strong>WPH12 Exam context:</strong> CP8 &mdash; virtually every CP8 question asks for <code>r &plusmn; &Delta;r</code> and <code>&epsilon; &plusmn; &Delta;&epsilon;</code>. Examiner reports (Oct 2022, Jan 2023, Oct 2024) show the three common errors: (1) drawing only one worst line, (2) using the full range (<code>|m_max &minus; m_min|</code>) instead of half the range, (3) forgetting that r is the <strong>magnitude</strong> of the gradient and reporting a negative uncertainty. The negative sign on the gradient tells you the slope direction; r itself is positive.</p>
+
+<h3 id="s2-4">2.4 Propagation through f = (1/2L)&radic;(T/&mu;) (CP5)</h3>
+<p><strong>Spec ref:</strong> Appendix 10 + CP5 + Appendix 7 (First harmonic formula)</p>
+<p><strong>Definition:</strong> For the first harmonic of a stretched string, <code>f = (1/2L) &radic;(T/&mu;)</code>. Breaking this into operations: the term <code>&radic;(T/&mu;)</code> involves a division (T/&mu;, so add %T + %&mu;) then a square root (power &frac12;, so multiply by &frac12;). The factor <code>1/(2L)</code> involves a division by L (so add %L). The two terms are multiplied, so their percentage uncertainties add. The full propagation is:</p>
+<p><strong><code>%f = %L + &frac12;(%T + %&mu;) = %L + &frac12;%T + &frac12;%&mu;</code></strong></p>
+<p>The factor of 2 in <code>1/(2L)</code> is an exact constant with no uncertainty.</p>
+<p><strong>WPH12 Exam context:</strong> CP5 &mdash; the student varies L or T and measures f. Examiner reports (Oct 2021) show students frequently forget the &frac12; multiplier on %T and %&mu; (because of the square root) and add the full %T to %L. They also sometimes apply the &frac12; to %L by mistake &mdash; this is wrong because L is raised to the power 1 in <code>1/(2L)</code>, not power &frac12;.</p>
+
+<h3 id="s2-5">2.5 Propagation through v = d/t (CP4)</h3>
+<p><strong>Spec ref:</strong> Appendix 10 + CP4 + Appendix 7 (v = d/t)</p>
+<p><strong>Definition:</strong> For the speed of sound measured as <code>v = d/t</code> where d is the microphone separation and t is the time delay read from the oscilloscope, the propagation is the simple division rule: <strong><code>%v = %d + %t</code></strong>. There are no powers, so no multiplier. The uncertainty is usually dominated by %t because the oscilloscope time-base (e.g. &plusmn;0.1 ms) divided by a typical delay (e.g. 1 ms) gives a large percentage (10%), while the metre rule uncertainty on d = 1.000 m is only 0.1%.</p>
+<p><strong>WPH12 Exam context:</strong> CP4 &mdash; straightforward application of the multiply/divide rule. Examiner reports (Oct 2023) show the main error is converting the time-base uncertainty incorrectly (e.g. confusing ms and &micro;s prefixes) and so mis-stating %t by a factor of 1000.</p>
+
+<hr>
+
+<h2 id="cp-vocab">3. CP-Specific Uncertainty Vocabulary (CP4&ndash;CP8)</h2>
+
+<h3 id="s3-1">3.1 CP4 &mdash; Speed of Sound (Oscilloscope) Uncertainties</h3>
+<p><strong>Spec ref:</strong> Appendix 9 CP4</p>
+<p><strong>Definition:</strong> The uncertainties specific to the speed-of-sound determination: (a) the microphone separation d read from a metre rule (&plusmn;0.5 mm or &plusmn;1 mm if a difference of two readings); (b) the time delay t read from the oscilloscope time-base (&plusmn; the time-base division, typically &plusmn;0.1 ms); (c) the temperature drift of the air (a systematic effect on the true v, not on the measured v); (d) the alignment of the microphones on the same axis as the source (a method error that biases d). The first two feed into %v = %d + %t.</p>
+<p><strong>WPH12 Exam context:</strong> Examiner expects the student to (i) state d with units and &plusmn; uncertainty, (ii) read the time-base from the oscilloscope trace and convert divisions to ms, (iii) state the percentage uncertainty in v with both contributions shown separately. ~3 marks per CP4 paper.</p>
+
+<h3 id="s3-2">3.2 CP5 &mdash; Vibrating String Uncertainties</h3>
+<p><strong>Spec ref:</strong> Appendix 9 CP5</p>
+<p><strong>Definition:</strong> The uncertainties specific to the standing-wave-on-a-string determination: (a) the frequency f read from the signal generator (&plusmn;1 Hz digital, or &plusmn;5 Hz analogue); (b) the loop length L measured with a metre rule between the vibration generator and the bridge or between two nodes (&plusmn;0.5 mm or &plusmn;1 mm if a difference); (c) the tension T = mg from hanging masses (uncertainty dominated by the mass, since g is exact to the precision needed &mdash; typically &plusmn;0.1 g on a 100 g mass = 0.1%); (d) the mass per unit length &mu; of the string (uncertainty from weighing and length-measuring the string sample, usually 1&ndash;2%).</p>
+<p><strong>WPH12 Exam context:</strong> The f&ndash;L relationship is usually plotted as f vs 1/L (straight line through origin, gradient = &frac12;&radic;(T/&mu;)) or L vs &radic;T (gradient related to f and &mu;). Examiner expects the student to identify which variable's percentage uncertainty dominates. ~3&ndash;4 marks per CP5 paper.</p>
+
+<h3 id="s3-3">3.3 CP6 &mdash; Diffraction Grating Uncertainties</h3>
+<p><strong>Spec ref:</strong> Appendix 9 CP6</p>
+<p><strong>Definition:</strong> The uncertainties specific to the diffraction-grating determination of wavelength: (a) the angle &theta; measured with a protractor (&plusmn;0.5&deg; for a single reading, &plusmn;1&deg; if a difference of two readings); (b) the grating spacing d calculated from the lines-per-mm specification N (d = 1/N; the manufacturer's quoted N is exact to the precision printed, so %d is usually negligible); (c) the order number n (an exact integer, no uncertainty); (d) the visual judgement of where the brightest part of the maximum falls on the protractor scale (a method error). The propagation is <code>%&lambda; = %d + %sin &theta;</code> (since n&lambda; = d sin &theta;, so &lambda; = d sin &theta; / n).</p>
+<p><strong>WPH12 Exam context:</strong> The angle-to-sin conversion (&sect;2.2) is the unique skill tested. Examiner reports show this is the most-missed single mark in CP6 &mdash; students who write <code>&Delta;sin &theta; = sin(0.5&deg;)</code> lose 1 mark out of 2.</p>
+
+<h3 id="s3-4">3.4 CP7 &mdash; Resistivity Uncertainties</h3>
+<p><strong>Spec ref:</strong> Appendix 9 CP7</p>
+<p><strong>Definition:</strong> The uncertainties specific to the resistivity determination: (a) the wire diameter d measured with a micrometer (&plusmn;0.01 mm) at three points and two orientations, mean taken, zero error subtracted; (b) the wire length L between two marked points (&plusmn;1 mm as a difference of two readings); (c) the resistance R = V/I from a voltmeter/ammeter pair (combined %R = %V + %I, but in practice the voltmeter and ammeter are precise enough that %R is dominated by the load resistor tolerance and the contact resistance at the crocodile clips &mdash; a systematic effect that increases the measured R); (d) the temperature rise in the wire from sustained current (a systematic effect on the true &rho; because &rho; increases with T for a metal). The propagation is <strong><code>%&rho; = %R + 2&times;%d + %L</code></strong> (the doubling rule, &sect;2.1).</p>
+<p><strong>WPH12 Exam context:</strong> THE key CP7 calculation. Examiner reports show this is the single most-tested propagation in WPH12 &mdash; appears with the doubling rule in 7 of the last 8 CP7 papers. ~4&ndash;5 marks per CP7 paper.</p>
+
+<h3 id="s3-5">3.5 CP8 &mdash; EMF and Internal Resistance Uncertainties</h3>
+<p><strong>Spec ref:</strong> Appendix 9 CP8</p>
+<p><strong>Definition:</strong> The uncertainties specific to the EMF and internal resistance determination from a V&ndash;I graph: (a) the terminal p.d. V read from a voltmeter (&plusmn;0.01 V); (b) the current I read from an ammeter (&plusmn;0.01 A); (c) the gradient uncertainty from the worst-acceptable-line method (&Delta;r = &frac12;|m_max &minus; m_min|); (d) the intercept uncertainty from the same worst lines (&Delta;&epsilon; = &frac12;|c_max &minus; c_min|); (e) the heating of the internal resistance during current flow (a systematic drift that causes the points to curve away from a straight line at high I &mdash; method error, not captured by &plusmn; uncertainties).</p>
+<p><strong>WPH12 Exam context:</strong> Always asked as a 4-mark question: "Use the graph to determine r and &epsilon;, and state the uncertainty in each." Examiner reports show the three common errors listed in &sect;2.3. ~4 marks per CP8 paper.</p>
+
+<hr>
+
+<h2 id="error-glossary-defs">4. WPH12 Examiner Error Glossary</h2>
+<p>The WPH12-specific errors that examiner reports flag repeatedly:</p>
+<table>
+<thead>
+<tr><th>Examiner phrase (WPH12)</th><th>What it means you did wrong</th></tr>
+</thead>
+<tbody>
+<tr><td>"did not double the diameter percentage"</td><td>Wrote <code>%A = %d</code> instead of <code>%A = 2 &times; %d</code> in CP7</td></tr>
+<tr><td>"treated angle uncertainty as percentage"</td><td>Wrote <code>%sin &theta; = %&theta;</code> instead of using <code>&Delta;(sin &theta;) = cos &theta; &times; &Delta;&theta;_rad</code> in CP6</td></tr>
+<tr><td>"applied &frac12; to length term"</td><td>Wrote <code>%f = &frac12;%L + &frac12;%T</code> instead of <code>%f = %L + &frac12;%T</code> in CP5</td></tr>
+<tr><td>"did not convert &Delta;&theta; to radians"</td><td>Used degrees directly in the cos &theta; &times; &Delta;&theta; formula in CP6</td></tr>
+<tr><td>"negative uncertainty reported"</td><td>Wrote <code>r = &minus;1.2 &plusmn; 0.2 &Omega;</code> instead of <code>r = 1.2 &plusmn; 0.2 &Omega;</code> in CP8</td></tr>
+<tr><td>"only one worst line drawn"</td><td>Did not draw both the steepest and shallowest worst lines in CP8</td></tr>
+<tr><td>"confused ms and &micro;s on the time-base"</td><td>Mis-stated %t by a factor of 1000 in CP4</td></tr>
+<tr><td>"zero error not subtracted before mean"</td><td>Failed to correct micrometer readings in CP7</td></tr>
+</tbody>
+</table>
+
+<!-- ===================== PART 2: WORKED EXAMPLES ===================== -->
+<h2>Worked Examples</h2>
+
+<h3 id="why-matters">1. Why WPH12 Uncertainty Matters</h3>
+<p>The WPH11 version of this extension covers the generic rules: add absolutes for sums/differences, add percentages for products/quotients, multiply by the power for powers, half-the-range for repeats, both worst lines for gradients, sig fig matching between value and uncertainty. <strong>You must know all of these before reading this file.</strong></p>
+<p>WPH12 then layers five CP-specific traps on top of those rules. Each trap costs an average of 1 mark per paper and the traps are independent (a student can know the doubling rule for CP7 and still miss the angle-to-sin conversion in CP6). The five worked examples in this file cover every trap, in the order CP4 &rarr; CP5 &rarr; CP6 &rarr; CP7 &rarr; CP8.</p>
+<p>The spec says 32 of the 80 marks on each WPH12/01 paper are at Level 2 maths or above. Of those 32, typically 8&ndash;12 marks are uncertainty-related &mdash; see the exam-connections file &sect;1 for the per-paper frequency table.</p>
+
+<hr>
+
+<h3 id="cp4-worked">2. CP4 &mdash; Speed of Sound (Oscilloscope) Worked Example</h3>
+<p><strong>Set-up:</strong> A student places two microphones 1.000 m apart facing a loudspeaker. The microphones are connected to a dual-beam oscilloscope set to a time-base of 0.1 ms/div. The trace shows the second microphone pulse is 3.0 divisions to the right of the first microphone pulse.</p>
+<p><strong>Readings:</strong></p>
+<ul>
+<li>Microphone separation d = 1.000 m, measured with a metre rule as a single reading (the rule is placed once with one end at microphone 1 and the other end at microphone 2). Absolute uncertainty = &plusmn;0.5 mm = &plusmn;0.0005 m (analogue, half the 1 mm resolution).</li>
+<li>Time delay t = 3.0 div &times; 0.1 ms/div = 0.30 ms = 3.0 &times; 10&#8315;&#8308; s.</li>
+<li>The time-base uncertainty is &plusmn;0.1 ms (&plusmn;1 division on the graticule), since the trace is read to the nearest division. So t = (3.0 &plusmn; 1.0) &times; 0.1 ms = 0.30 &plusmn; 0.10 ms. <strong>Convert to seconds:</strong> t = (3.0 &plusmn; 1.0) &times; 10&#8315;&#8308; s.</li>
+</ul>
+<p><strong>Step 1 &mdash; Calculate v:</strong></p>
+<ul>
+<li>v = d / t = 1.000 / (3.0 &times; 10&#8315;&#8308;) = 3333.3 m/s = 3.33 &times; 10&sup3; m/s (3 sig figs to match the 2 sig figs in t = 3.0, but quoting 3 sig figs is acceptable here because the leading value 3.0 has 2 sig figs and the answer is rounded to match the limiting input &mdash; 2 sig figs would also be acceptable: 3.3 &times; 10&sup3; m/s).</li>
+</ul>
+<p><strong>Step 2 &mdash; Calculate %uncertainties:</strong></p>
+<ul>
+<li>%d = (0.0005 / 1.000) &times; 100 = 0.05%</li>
+<li>%t = (1.0 / 3.0) &times; 100 = 33.3%</li>
+<li><strong>%v = %d + %t = 0.05% + 33.3% = 33.4%</strong> (addition rule for division)</li>
+</ul>
+<p><strong>Step 3 &mdash; Convert back to absolute uncertainty:</strong></p>
+<ul>
+<li>&Delta;v = 33.4% &times; 3333.3 / 100 = 1113 m/s &asymp; 1100 m/s (2 sig figs in the uncertainty)</li>
+<li>Result: <strong>v = 3300 &plusmn; 1100 m/s</strong> (or, more honestly, <strong>v = (3.3 &plusmn; 1.1) &times; 10&sup3; m/s</strong>)</li>
+</ul>
+<p><strong>Step 4 &mdash; Diagnose:</strong></p>
+<p>The %t dominates overwhelmingly. The 1-division uncertainty on the oscilloscope trace is the bottleneck. <strong>Improvement (mark-scheme phrasing):</strong> "Increase d so the time delay is larger, reducing %t" OR "Use a faster time-base (e.g. 0.05 ms/div) so the same trace occupies more divisions and the relative reading uncertainty falls."</p>
+<p><strong>Common error (examiner report, Oct 2023):</strong> Students forget to convert 0.10 ms to seconds and write t = (3.0 &plusmn; 1.0) &times; 10&#8315;&sup1; s, giving v in m/ms (= m &times; 10&sup3;/s) &mdash; wrong units by a factor of 1000. Always carry units through every step.</p>
+
+<hr>
+
+<h3 id="cp5-worked">3. CP5 &mdash; Vibrating String Worked Example</h3>
+<p><strong>Set-up:</strong> A student investigates the first harmonic of a stretched string of mass per unit length &mu; = 0.00060 &plusmn; 0.00001 kg/m. The tension is provided by a hanging mass m = 0.200 &plusmn; 0.001 kg. The first-harmonic loop length is measured as L = 0.450 &plusmn; 0.001 m (a difference of two metre-rule readings, so &plusmn;1 mm).</p>
+<p><strong>Step 1 &mdash; Calculate f:</strong></p>
+<ul>
+<li>T = mg = 0.200 &times; 9.81 = 1.962 N (g = 9.81 N/kg exact to 3 sig fig)</li>
+<li>f = (1 / 2L) &times; &radic;(T/&mu;) = (1 / (2 &times; 0.450)) &times; &radic;(1.962 / 0.00060)</li>
+<li>f = (1 / 0.900) &times; &radic;(3270) = 1.111 &times; 57.18 = 63.5 Hz</li>
+</ul>
+<p><strong>Step 2 &mdash; Calculate %uncertainties for each input:</strong></p>
+<ul>
+<li>%L = (0.001 / 0.450) &times; 100 = 0.222%</li>
+<li>%T = %m (since T = mg and g is exact) = (0.001 / 0.200) &times; 100 = 0.500%</li>
+<li>%&mu; = (0.00001 / 0.00060) &times; 100 = 1.667%</li>
+</ul>
+<p><strong>Step 3 &mdash; Propagate through f = (1/2L)&radic;(T/&mu;):</strong></p>
+<ul>
+<li>The factor <code>1/(2L)</code> contributes <code>%L = 0.222%</code> to %f (L is to the power 1 &mdash; no multiplier).</li>
+<li>The factor <code>&radic;(T/&mu;)</code> is <code>(T/&mu;)<sup>(1/2)</sup></code>. The division T/&mu; contributes <code>%T + %&mu; = 0.500 + 1.667 = 2.167%</code>. The square root (power &frac12;) multiplies this by &frac12;: <code>&frac12; &times; 2.167 = 1.083%</code>.</li>
+<li>The two factors are multiplied, so their percentage uncertainties add:</li>
+<li><strong>%f = %L + &frac12;(%T + %&mu;) = 0.222% + 1.083% = 1.305% &asymp; 1.3%</strong></li>
+</ul>
+<p><strong>Step 4 &mdash; Convert to absolute uncertainty:</strong></p>
+<ul>
+<li>&Delta;f = 1.3% &times; 63.5 / 100 = 0.83 Hz &asymp; 0.8 Hz (1 sig fig in uncertainty)</li>
+<li>Result: <strong>f = 64 &plusmn; 1 Hz</strong> (round the value to the same decimal place as the uncertainty &mdash; here to the nearest integer because &Delta;f is to the nearest integer)</li>
+</ul>
+<p><strong>Common errors (examiner report, Oct 2021):</strong></p>
+<ol>
+<li>Applying the &frac12; to %L (writing <code>&frac12;%L + &frac12;%T + &frac12;%&mu;</code>) &mdash; wrong, because L is raised to power 1 in <code>1/(2L)</code>, not power &frac12;. The &frac12; only applies inside the square root.</li>
+<li>Forgetting the &frac12; on %T and %&mu; (writing <code>%L + %T + %&mu;</code>) &mdash; wrong, because the square root is a power of &frac12;.</li>
+<li>Treating the constant 2 in <code>1/(2L)</code> as having uncertainty &mdash; exact constants have no uncertainty.</li>
+</ol>
+<p><strong>Tip:</strong> Rewrite the formula as <code>f = (1/2) &times; L<sup>&minus;1</sup> &times; T<sup>(1/2)</sup> &times; &mu;<sup>(&minus;1/2)</sup></code> before propagating. The exponent on each variable tells you the multiplier: &minus;1 on L, &frac12; on T, &minus;&frac12; on &mu;. Then <code>%f = 1&times;%L + &frac12;&times;%T + &frac12;&times;%&mu;</code> (use the absolute value of the exponent for the multiplier, because percentage uncertainties always add).</p>
+
+<hr>
+
+<h3 id="cp6-worked">4. CP6 &mdash; Diffraction Grating Worked Example (Angle-to-Sin Trap)</h3>
+<p><strong>Set-up:</strong> A student uses a diffraction grating with N = 300 lines/mm (so d = 1/N mm) to measure the wavelength of a laser. The first-order (n = 1) maximum is measured at an angle &theta; = 25&deg; from the straight-through direction. The angle is read from a protractor graduated every 1&deg;, so the absolute uncertainty is &plusmn;0.5&deg; (analogue, half the smallest division). The angle &theta; is a single reading taken from the straight-through direction.</p>
+<p><strong>Step 1 &mdash; Calculate d and &lambda;:</strong></p>
+<ul>
+<li>d = 1 / 300 mm = (1/300) &times; 10&#8315;&sup3; m = 3.333 &times; 10&#8315;&sup6; m</li>
+<li>&lambda; = (d &times; sin &theta;) / n = (3.333 &times; 10&#8315;&sup6; &times; sin 25&deg;) / 1 = 3.333 &times; 10&#8315;&sup6; &times; 0.4226 = 1.409 &times; 10&#8315;&sup6; m</li>
+<li>&lambda; = 1.41 &times; 10&#8315;&sup6; m = 633 nm (3 sig figs to match d and &theta;)</li>
+</ul>
+<p><strong>Step 2 &mdash; Calculate %d:</strong></p>
+<p>The lines-per-mm specification N = 300 is the manufacturer's value, treated as exact to the precision printed (3 sig figs). So %d = 0% (negligible compared to the angle contribution). If the question specifies a tolerance on N (e.g. "300 &plusmn; 5 lines/mm"), use it; otherwise take d as exact.</p>
+<p><strong>Step 3 &mdash; Calculate %sin &theta; using the angle-to-sin conversion (the trap):</strong></p>
+<ul>
+<li>The angle uncertainty is &Delta;&theta; = 0.5&deg;. Convert to radians: &Delta;&theta;_rad = 0.5 &times; &pi;/180 = 0.00873 rad.</li>
+<li>Apply the calculus-of-errors formula: &Delta;(sin &theta;) = cos &theta; &times; &Delta;&theta;_rad = cos(25&deg;) &times; 0.00873 = 0.9063 &times; 0.00873 = 0.00791.</li>
+<li>sin &theta; = sin(25&deg;) = 0.4226.</li>
+<li><strong>%sin &theta; = (0.00791 / 0.4226) &times; 100 = 1.87%</strong></li>
+</ul>
+<p><strong>Step 4 &mdash; Propagate through &lambda; = d sin &theta; / n:</strong></p>
+<ul>
+<li>n is an exact integer (no uncertainty).</li>
+<li>%&lambda; = %d + %sin &theta; = 0% + 1.87% = 1.87%</li>
+</ul>
+<p><strong>Step 5 &mdash; Convert to absolute uncertainty:</strong></p>
+<ul>
+<li>&Delta;&lambda; = 1.87% &times; 1.409 &times; 10&#8315;&sup6; / 100 = 2.6 &times; 10&#8315;&sup8; m &asymp; 3 &times; 10&#8315;&sup8; m (1 sig fig)</li>
+<li>Result: <strong>&lambda; = (1.41 &plusmn; 0.03) &times; 10&#8315;&sup6; m</strong> or equivalently <strong>&lambda; = 1410 &plusmn; 30 nm</strong></li>
+</ul>
+<p><strong>Common errors (examiner report, Jan 2024):</strong></p>
+<ol>
+<li>Writing <code>&Delta;(sin &theta;) = sin(0.5&deg;) = 0.00873</code> &mdash; coincidentally similar to the correct 0.00791 in this case (because for small angles sin &asymp; angle in radians), but this is the WRONG method and gives different values for larger angles. Always use <code>cos &theta; &times; &Delta;&theta;_rad</code>.</li>
+<li>Treating the 0.5&deg; as a percentage directly: writing <code>%sin &theta; = 0.5%</code> &mdash; wrong by a factor of 4.</li>
+<li>Forgetting to convert degrees to radians: writing <code>&Delta;(sin &theta;) = cos(25&deg;) &times; 0.5 = 0.45</code> &mdash; wrong by a factor of 180/&pi; &asymp; 57. This is the single most-penalised error in CP6.</li>
+<li>Calculating <code>(sin(25.5&deg;) &minus; sin(25&deg;))</code> as the uncertainty &mdash; numerically close to the correct calculus-of-errors value for small &Delta;&theta; but conceptually wrong because it measures the function's change rather than the propagated uncertainty. Examiners accept it for small &Delta;&theta; but the spec-endorsed method is the cos &theta; &times; &Delta;&theta;_rad formula.</li>
+</ol>
+<p><strong>Tip for remembering:</strong> The calculus-of-errors formula <code>&Delta;f(x) = |f'(x)| &times; &Delta;x</code> for any function f. For <code>f(&theta;) = sin &theta;</code>, <code>f'(&theta;) = cos &theta;</code>, so <code>&Delta;(sin &theta;) = |cos &theta;| &times; &Delta;&theta;</code> with &Delta;&theta; in radians. Practise this once with &theta; = 60&deg;, &Delta;&theta; = 0.5&deg; &mdash; you should get &Delta;(sin &theta;) = cos 60&deg; &times; 0.00873 = 0.5 &times; 0.00873 = 0.00437.</p>
+
+<hr>
+
+<h3 id="cp7-worked">5. CP7 &mdash; Resistivity Worked Example (THE Doubling Trap)</h3>
+<p><strong>Set-up:</strong> A student measures the resistivity of a nichrome wire. The wire diameter is measured with a micrometer (resolution 0.01 mm) at three points along the wire and in two perpendicular orientations at each point. The six readings are: 0.38, 0.39, 0.38, 0.40, 0.38, 0.39 mm. The micrometer has a zero error of +0.01 mm (reads 0.01 mm when the anvil and spindle are closed). The wire length between two marked points is L = 1.000 &plusmn; 0.001 m. The resistance between the two marked points is R = 5.20 &plusmn; 0.10 &Omega; (the &plusmn;0.10 &Omega; combines the voltmeter/ammeter percentage uncertainties and the contact resistance variation).</p>
+<p><strong>Step 1 &mdash; Correct the diameter readings for the zero error:</strong></p>
+<ul>
+<li>Subtract the +0.01 mm zero error from every reading (systematic correction):</li>
+<li>Corrected readings: 0.37, 0.38, 0.37, 0.39, 0.37, 0.38 mm</li>
+</ul>
+<p><strong>Step 2 &mdash; Calculate the mean diameter and its uncertainty:</strong></p>
+<ul>
+<li>Mean d = (0.37 + 0.38 + 0.37 + 0.39 + 0.37 + 0.38) / 6 = 2.26 / 6 = 0.3767 mm</li>
+<li>Range = 0.39 &minus; 0.37 = 0.02 mm</li>
+<li>Absolute uncertainty from repeats = &frac12; &times; range = 0.01 mm</li>
+<li>Compare with the micrometer resolution (&plusmn;0.01 mm). Take the larger: &plusmn;0.01 mm.</li>
+<li><strong>d = 0.38 &plusmn; 0.01 mm</strong> (round the value to the same decimal place as the uncertainty)</li>
+</ul>
+<p><strong>Step 3 &mdash; Calculate the cross-sectional area A:</strong></p>
+<ul>
+<li>A = &pi;d&sup2;/4 = &pi; &times; (0.38 &times; 10&#8315;&sup3;)&sup2; / 4 = &pi; &times; 1.444 &times; 10&#8315;&sup7; / 4 = 1.134 &times; 10&#8315;&sup7; m&sup2;</li>
+</ul>
+<p><strong>Step 4 &mdash; Calculate &rho;:</strong></p>
+<ul>
+<li>&rho; = R A / L = (5.20 &times; 1.134 &times; 10&#8315;&sup7;) / 1.000 = 5.90 &times; 10&#8315;&sup7; &Omega;&middot;m</li>
+</ul>
+<p><strong>Step 5 &mdash; Calculate %uncertainties:</strong></p>
+<ul>
+<li>%d = (0.01 / 0.38) &times; 100 = 2.63%</li>
+<li><strong>%A = 2 &times; %d = 2 &times; 2.63% = 5.26%</strong> (THE DOUBLING RULE &mdash; d is squared in A = &pi;d&sup2;/4)</li>
+<li>%L = (0.001 / 1.000) &times; 100 = 0.10%</li>
+<li>%R = (0.10 / 5.20) &times; 100 = 1.92%</li>
+</ul>
+<p><strong>Step 6 &mdash; Propagate through &rho; = R A / L:</strong></p>
+<ul>
+<li>&rho; = R &times; A / L is a product of R and A, divided by L. All operations are multiplication/division, so add all percentage uncertainties:</li>
+<li><strong>%&rho; = %R + %A + %L = 1.92% + 5.26% + 0.10% = 7.28% &asymp; 7.3%</strong></li>
+<li>Substituting the doubling rule: <strong>%&rho; = %R + 2&times;%d + %L = 1.92 + 5.26 + 0.10 = 7.3%</strong></li>
+</ul>
+<p><strong>Step 7 &mdash; Convert to absolute uncertainty:</strong></p>
+<ul>
+<li>&Delta;&rho; = 7.3% &times; 5.90 &times; 10&#8315;&sup7; / 100 = 4.3 &times; 10&#8315;&sup8; &Omega;&middot;m</li>
+<li>Result: <strong>&rho; = (5.9 &plusmn; 0.4) &times; 10&#8315;&sup7; &Omega;&middot;m</strong> (uncertainty to 1 sig fig; value to the same decimal place)</li>
+</ul>
+<p><strong>Common errors (examiner reports, Oct 2023 / Jan 2024 / Jan 2025):</strong></p>
+<ol>
+<li><strong>Forgetting the doubling rule</strong> &mdash; writing <code>%&rho; = %R + %d + %L = 1.92 + 2.63 + 0.10 = 4.7%</code>. This is wrong because d is squared inside A; the %d must be doubled before adding to %&rho;. Costs 1 mark out of 3.</li>
+<li><strong>Not subtracting the zero error</strong> &mdash; using the raw 0.38&ndash;0.40 mm readings, getting d_mean = 0.387 mm instead of 0.377 mm. This is a systematic error and shifts &rho; by ~5%.</li>
+<li><strong>Adding the resolution AND the half-range uncertainty</strong> &mdash; writing &Delta;d = 0.01 + 0.01 = 0.02 mm. Wrong: take the LARGER of the two, do not add.</li>
+<li><strong>Using the absolute uncertainty in d directly as the absolute uncertainty in A</strong> &mdash; writing &Delta;A = 0.01 mm&sup2;. Wrong: percentage uncertainties, not absolute, propagate through the square.</li>
+<li><strong>Rounding the diameter before calculating A</strong> &mdash; using d = 0.38 mm (2 sig figs) for the area calculation gives A = 1.13 &times; 10&#8315;&sup7; m&sup2;, but if the full d = 0.3767 mm is used, A = 1.115 &times; 10&#8315;&sup7; m&sup2; &mdash; a 2% difference. Always use unrounded values for intermediate calculations and round only at the end.</li>
+</ol>
+<p><strong>Why this dominates the resistivity uncertainty:</strong> %A (5.3%) is the largest single contribution to %&rho;, and it is entirely due to the d&sup2; term. Even with a perfect micrometer (&plusmn;0.005 mm), %A would still be 2.6%. This is why the spec CP7 statement explicitly requires the student to take repeat diameter readings &mdash; the only way to reduce %A is to reduce %d, and the only way to reduce %d is to take repeats (halving the range) and use a more precise micrometer.</p>
+
+<hr>
+
+<h3 id="cp8-worked">6. CP8 &mdash; EMF and Internal Resistance Worked Example (V&ndash;I Graph)</h3>
+<p><strong>Set-up:</strong> A student varies the load resistor across a cell and measures the terminal p.d. V (voltmeter) and current I (ammeter). She plots V (y-axis) against I (x-axis) and draws the best-fit line and the two worst acceptable lines through the error bars. The best-fit gradient is &minus;1.20 V/A; the steepest worst line gradient is &minus;1.40 V/A; the shallowest worst line gradient is &minus;1.00 V/A. The best-fit y-intercept is 1.50 V; the steepest worst line intercept is 1.65 V; the shallowest worst line intercept is 1.35 V.</p>
+<p><strong>Step 1 &mdash; Identify what the gradient and intercept represent:</strong></p>
+<ul>
+<li>The equation is V = &epsilon; &minus; Ir, which is y = &epsilon; + (&minus;r) &times; I when y = V and x = I.</li>
+<li>So gradient = &minus;r &rarr; r = &minus;gradient = &minus;(&minus;1.20) = 1.20 &Omega;.</li>
+<li>And y-intercept = &epsilon; = 1.50 V.</li>
+</ul>
+<p><strong>Step 2 &mdash; Calculate the uncertainty in r (the gradient magnitude):</strong></p>
+<ul>
+<li>The two worst gradients are m_max = &minus;1.00 V/A (the shallowest, which algebraically is the largest because it is closest to zero &mdash; gradients here are negative) and m_min = &minus;1.40 V/A (the steepest, which is the most negative &mdash; algebraically the smallest).</li>
+<li>|m_max| = 1.00 &Omega;, |m_min| = 1.40 &Omega;.</li>
+<li>&Delta;r = &frac12; &times; (|m_min| &minus; |m_max|) = &frac12; &times; (1.40 &minus; 1.00) = &frac12; &times; 0.40 = 0.20 &Omega;.</li>
+<li>Result for internal resistance: <strong>r = 1.20 &plusmn; 0.20 &Omega;</strong> (or r = 1.2 &plusmn; 0.2 &Omega; to 2 sig figs in the value, matching the 1 sig fig in the uncertainty)</li>
+</ul>
+<p><strong>Step 3 &mdash; Calculate the uncertainty in &epsilon; (the intercept):</strong></p>
+<ul>
+<li>The two worst intercepts are c_max = 1.65 V (highest) and c_min = 1.35 V (lowest).</li>
+<li>&Delta;&epsilon; = &frac12; &times; (c_max &minus; c_min) = &frac12; &times; (1.65 &minus; 1.35) = &frac12; &times; 0.30 = 0.15 V &asymp; 0.2 V (1 sig fig)</li>
+<li>Result for EMF: <strong>&epsilon; = 1.50 &plusmn; 0.15 V</strong> or rounded to 1 sig fig in uncertainty: <strong>&epsilon; = 1.5 &plusmn; 0.2 V</strong></li>
+</ul>
+<p><strong>Step 4 &mdash; Sig fig matching:</strong></p>
+<ul>
+<li>For r: &Delta;r = 0.20 &Omega;. The best-fit value r = 1.20 &Omega; already has the same decimal place (2 decimal places &mdash; but &Delta;r = 0.2 &Omega; is 1 decimal place, so r should be quoted to 1 decimal place: r = 1.2 &plusmn; 0.2 &Omega;).</li>
+<li>For &epsilon;: &Delta;&epsilon; = 0.2 V. The best-fit &epsilon; = 1.50 V should be rounded to 1 decimal place: &epsilon; = 1.5 &plusmn; 0.2 V.</li>
+</ul>
+<p><strong>Common errors (examiner reports, Oct 2022 / Jan 2023 / Oct 2024):</strong></p>
+<ol>
+<li><strong>Reporting a negative uncertainty or negative r</strong> &mdash; writing <code>r = &minus;1.20 &plusmn; 0.20 &Omega;</code> because the gradient was negative. r is the magnitude; the negative sign on the gradient tells you the line slopes down, not that resistance is negative. Always take the modulus: r = +1.2 &Omega;.</li>
+<li><strong>Drawing only one worst line</strong> &mdash; students draw only the steepest and use <code>&Delta;r = |m_max &minus; m_best|</code> instead of <code>&frac12;|m_max &minus; m_min|</code>. This overstates the uncertainty and loses 2 marks (one for not drawing the second line, one for the wrong formula).</li>
+<li><strong>Using the full range instead of half</strong> &mdash; writing <code>&Delta;r = |m_max &minus; m_min| = 0.40 &Omega;</code> instead of <code>0.20 &Omega;</code>. Always use half the range.</li>
+<li><strong>Confusing gradient and intercept</strong> &mdash; assigning the gradient value to &epsilon; and the intercept to r. This is a misreading of y = mx + c; check the equation form (V = &epsilon; &minus; Ir has &epsilon; as the constant term = intercept).</li>
+<li><strong>Not drawing the worst lines through ALL error bars</strong> &mdash; the worst acceptable line must pass through every error bar on the graph, not just the end ones. A line that clips one error bar but misses another is not a valid worst line.</li>
+</ol>
+<p><strong>Why the worst-line method works here:</strong> The V&ndash;I data are inherently scattered because the ammeter and voltmeter each contribute &plusmn;0.01 (in their respective units) of random reading uncertainty, plus the contact resistance at the variable resistor changes slightly between readings. The error bars capture this scatter. The two worst lines represent the extreme slopes that remain consistent with the data, so half their difference is the standard uncertainty in the gradient.</p>
+
+<hr>
+
+<h3 id="prop-table">7. Quick-Reference Propagation Table for WPH12</h3>
+<table>
+<thead>
+<tr><th>CP</th><th>Formula</th><th>Propagation (one line)</th><th>Common trap</th></tr>
+</thead>
+<tbody>
+<tr><td>CP4</td><td>v = d / t</td><td><code>%v = %d + %t</code></td><td>Prefix confusion (ms vs &micro;s)</td></tr>
+<tr><td>CP5</td><td>f = (1/2L)&radic;(T/&mu;)</td><td><code>%f = %L + &frac12;%T + &frac12;%&mu;</code></td><td>Applying &frac12; to %L by mistake</td></tr>
+<tr><td>CP6</td><td>&lambda; = d sin &theta; / n</td><td><code>%&lambda; = %d + %sin &theta;</code> where <code>&Delta;(sin &theta;) = cos &theta; &times; &Delta;&theta;_rad</code></td><td>Using degrees in the cos formula</td></tr>
+<tr><td>CP7</td><td>&rho; = R A / L with <code>A = &pi;d&sup2;/4</code></td><td><code>%&rho; = %R + 2&times;%d + %L</code></td><td><strong>Forgetting to double %d</strong></td></tr>
+<tr><td>CP8</td><td>V = &epsilon; &minus; Ir &rarr; r = &minus;gradient, &epsilon; = intercept</td><td><code>&Delta;r = &frac12;|m_max &minus; m_min|</code>, <code>&Delta;&epsilon; = &frac12;|c_max &minus; c_min|</code></td><td>Negative uncertainty reported</td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<h3 id="dominant">8. Cross-CP Pattern: Which Uncertainty Dominates?</h3>
+<p>In every WPH12 CP, one input dominates the combined percentage uncertainty. Identifying the dominant contribution is the key to writing improvement answers that score.</p>
+<table>
+<thead>
+<tr><th>CP</th><th>Dominant contribution</th><th>Why</th><th>Improvement (mark-scheme phrasing)</th></tr>
+</thead>
+<tbody>
+<tr><td>CP4</td><td>%t (oscilloscope time-base)</td><td>&plusmn;0.1 ms on a 0.3 ms reading = 33%</td><td>"Increase d so t is larger / use a finer time-base"</td></tr>
+<tr><td>CP5</td><td>%&mu; (mass per unit length)</td><td>Weighing + length-measuring the string</td><td>"Use a longer sample of the same string to reduce %&mu;"</td></tr>
+<tr><td>CP6</td><td>%sin &theta; (angle-to-sin conversion)</td><td>&plusmn;0.5&deg; &rarr; ~2% in sin &theta;</td><td>"Use a grating with more lines/mm to increase &theta; for the same &lambda;"</td></tr>
+<tr><td>CP7</td><td>%A = 2&times;%d (diameter doubling)</td><td>d is squared; micrometer &plusmn;0.01 mm on 0.4 mm = 2.5%, doubled = 5%</td><td>"Take more repeat readings of d / use a digital micrometer with 0.001 mm resolution"</td></tr>
+<tr><td>CP8</td><td>&Delta;r and &Delta;&epsilon; (graph scatter)</td><td>Depends on the quality of the V&ndash;I data</td><td>"Use a voltmeter and ammeter with finer resolution / take more (V, I) pairs / reduce contact resistance"</td></tr>
+</tbody>
+</table>
+<p><strong>Improvement questions are worth 2 marks each and appear on every CP.</strong> Always: (1) name the specific change, (2) state which uncertainty it reduces and by how much. Vague answers like "use better equipment" score 0.</p>
+
+<hr>
+
+<h3 id="examiner-phrases">9. Glossary of Examiner Report Phrases (WPH12-specific)</h3>
+<table>
+<thead>
+<tr><th>Examiner phrase</th><th>What it means you did wrong</th><th>CP</th></tr>
+</thead>
+<tbody>
+<tr><td>"did not double the diameter percentage"</td><td>Wrote %A = %d instead of %A = 2 &times; %d</td><td>CP7</td></tr>
+<tr><td>"sin treated as linear in &theta;"</td><td>Used sin(&Delta;&theta;) or %&theta; instead of cos &theta; &times; &Delta;&theta;_rad</td><td>CP6</td></tr>
+<tr><td>"&Delta;&theta; left in degrees"</td><td>Failed to convert 0.5&deg; to radians before multiplying by cos &theta;</td><td>CP6</td></tr>
+<tr><td>"&frac12; applied to length term"</td><td>Wrote %f = &frac12;%L + &frac12;%T instead of %f = %L + &frac12;%T</td><td>CP5</td></tr>
+<tr><td>"negative resistance reported"</td><td>Wrote r = &minus;1.2 &plusmn; 0.2 &Omega; because the gradient was negative</td><td>CP8</td></tr>
+<tr><td>"only one worst line drawn"</td><td>Did not draw both the steepest and shallowest worst acceptable lines</td><td>CP8</td></tr>
+<tr><td>"full range used instead of half-range"</td><td>Wrote &Delta;r = |m_max &minus; m_min| instead of &frac12;|m_max &minus; m_min|</td><td>CP8</td></tr>
+<tr><td>"zero error not subtracted"</td><td>Used raw micrometer readings without correcting for the +0.01 mm zero error</td><td>CP7</td></tr>
+<tr><td>"prefix error ms vs &micro;s"</td><td>Mis-converted oscilloscope time-base, giving %t wrong by factor 1000</td><td>CP4</td></tr>
+<tr><td>"uncertainty in d added to %&rho; directly"</td><td>Wrote %&rho; = %R + %d + %L instead of doubling %d</td><td>CP7</td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<h3 id="flowchart">10. WPH12 Calculation Flowchart (CP-Specific)</h3>
+<pre><code>For each WPH12 CP calculation:
+
+1. Identify the formula and isolate the unknown.
+   ├── CP4: v = d / t
+   ├── CP5: f = (1/2L)√(T/μ)
+   ├── CP6: λ = d sin θ / n
+   ├── CP7: ρ = R A / L  with A = πd²/4
+   └── CP8: r = −gradient, ε = y-intercept from V-I graph
+
+2. List each input with its value AND absolute uncertainty.
+   ├── Single reading: ΔX = ± resolution (digital) or ± ½ resolution (analogue)
+   ├── Repeats: ΔX = ½ range (exclude anomalies, subtract zero error first)
+   └── Difference of two readings: double the single-reading uncertainty
+
+3. Convert every input to % uncertainty.
+   └── %X = (ΔX / X) × 100 — denominator is the MEASURED VALUE, not the calculated result
+
+4. Apply the propagation rule:
+   ├── CP4: %v = %d + %t  (division rule)
+   ├── CP5: %f = %L + ½%T + ½%μ  (L to power 1, T and μ to power ½)
+   ├── CP6: %λ = %d + %sin θ  where Δ(sin θ) = cos θ × Δθ_RADIANS
+   ├── CP7: %ρ = %R + 2×%d + %L  (d is squared in A — THE doubling rule)
+   └── CP8: Δr = ½|m_max − m_min|;  Δε = ½|c_max − c_min|  (worst-line method)
+
+5. Convert % back to absolute: ΔX = %X × X / 100
+
+6. Quote result: value ± uncertainty, same decimal place, correct units.
+   └── The magnitude r is positive (modulus of the negative gradient) in CP8.
+
+7. Improvement answer (2 marks): name the specific change + state which
+   uncertainty it reduces and by how much. Vague = 0 marks.</code></pre>
+
+<!-- ===================== PART 3: EXAM CONNECTIONS ===================== -->
+<h2>Exam Connections</h2>
+
+<h3 id="freq-table">1. How Uncertainty Is Tested in WPH12 &mdash; Frequency Table</h3>
+<table>
+<thead>
+<tr><th>Skill</th><th style="text-align:center">Papers tested (est.)</th><th style="text-align:center">Avg marks per paper</th><th>CP context</th></tr>
+</thead>
+<tbody>
+<tr><td>%d doubling &rarr; %A in CP7 resistivity</td><td style="text-align:center">7/14</td><td style="text-align:center">1.5</td><td>CP7</td></tr>
+<tr><td>Gradient &plusmn; uncertainty in V&ndash;I graph (CP8)</td><td style="text-align:center">6/14</td><td style="text-align:center">3.0</td><td>CP8</td></tr>
+<tr><td>Angle-to-sin conversion (CP6 diffraction)</td><td style="text-align:center">4/14</td><td style="text-align:center">1.5</td><td>CP6</td></tr>
+<tr><td>Oscilloscope time-base %t (CP4)</td><td style="text-align:center">5/14</td><td style="text-align:center">2.0</td><td>CP4</td></tr>
+<tr><td>Frequency % uncertainty (CP5)</td><td style="text-align:center">3/14</td><td style="text-align:center">1.5</td><td>CP5</td></tr>
+<tr><td>Absolute uncertainty from repeats (&frac12; range)</td><td style="text-align:center">9/14</td><td style="text-align:center">1.5</td><td>All CPs</td></tr>
+<tr><td>Significant figures match (value &plusmn; &Delta;)</td><td style="text-align:center">11/14</td><td style="text-align:center">1.0</td><td>All CPs</td></tr>
+<tr><td>Random vs systematic error (incl. zero error in micrometer)</td><td style="text-align:center">6/14</td><td style="text-align:center">1.5</td><td>CP7</td></tr>
+<tr><td>Anomaly identification and exclusion</td><td style="text-align:center">5/14</td><td style="text-align:center">1.0</td><td>All CPs</td></tr>
+<tr><td>Improvement that reduces a NAMED uncertainty</td><td style="text-align:center">12/14</td><td style="text-align:center">2.0</td><td>All CPs</td></tr>
+<tr><td><strong>Total uncertainty marks per paper</strong></td><td style="text-align:center">&mdash;</td><td style="text-align:center"><strong>~10</strong></td><td>&mdash;</td></tr>
+</tbody>
+</table>
+<p><strong>Insight:</strong> WPH12 papers carry slightly fewer uncertainty marks than WPH11 papers (~10 vs ~18) because WPH12 also tests quantum physics and AC theory, which displace some practical marks. However, the WPH12 marks are concentrated in the Section B CP question (worth 12&ndash;18 marks), so the per-CP density is high &mdash; typically 4&ndash;6 uncertainty marks per CP question. A student who skips CP7's doubling rule or CP8's worst-line method will lose those marks on every paper.</p>
+
+<hr>
+
+<h2 id="cp-patterns">2. CP-by-CP Question Patterns</h2>
+
+<h3 id="s2-1-ec">2.1 CP4 &mdash; Speed of Sound (Oscilloscope)</h3>
+<p><strong>Typical question shape (4&ndash;6 marks):</strong></p>
+<ol>
+<li>State the time-base setting shown on the oscilloscope (1 mark).</li>
+<li>Read the time delay t from the trace and convert from divisions to ms or s (1 mark).</li>
+<li>Calculate v = d / t (1 mark).</li>
+<li>Calculate the percentage uncertainty in v (2 marks &mdash; separate %d and %t contributions).</li>
+<li>Suggest one improvement that reduces %t (1 mark).</li>
+</ol>
+<p><strong>Mark-scheme phrasing that scores:</strong></p>
+<ul>
+<li>"Time-base = 0.1 ms/div" (must include units)</li>
+<li>"t = 3 div &times; 0.1 ms/div = 0.3 ms = 3 &times; 10&#8315;&#8308; s" (must show the division-to-time conversion)</li>
+<li>"%t = (0.1 / 3.0) &times; 100 = 3.3%" (or whatever the question's value is &mdash; denominator must be the measured value, not the calculated v)</li>
+<li>"%v = %d + %t = 0.05% + 3.3% = 3.4%" (must show both contributions and addition)</li>
+<li>"Increase d so t is larger, reducing %t" OR "Use a finer time-base (e.g. 0.05 ms/div) so the same delay occupies more divisions"</li>
+</ul>
+<p><strong>Common pitfall:</strong> Confusing ms and &micro;s prefixes when converting the time-base. A 0.1 ms/div setting is 100 &micro;s/div &mdash; using 0.1 &micro;s/div gives %t wrong by 1000&times;. Examiner reports (Oct 2023) flag this on 4 of the last 6 CP4 papers.</p>
+
+<h3 id="s2-2-ec">2.2 CP5 &mdash; Vibrating String</h3>
+<p><strong>Typical question shape (4&ndash;6 marks):</strong></p>
+<ol>
+<li>Calculate T from the hanging mass (1 mark).</li>
+<li>Calculate f from f = (1/2L)&radic;(T/&mu;) (2 marks &mdash; must substitute correctly).</li>
+<li>Calculate the percentage uncertainty in f (2 marks &mdash; the &frac12; multiplier on %T and %&mu; is the key).</li>
+<li>Plot or interpret a graph of f vs 1/L and find &mu; from the gradient (1&ndash;2 marks).</li>
+</ol>
+<p><strong>Mark-scheme phrasing that scores:</strong></p>
+<ul>
+<li>"T = mg = 0.200 &times; 9.81 = 1.96 N" (must show substitution)</li>
+<li>"f = (1 / (2 &times; 0.450)) &times; &radic;(1.96 / 6.0 &times; 10&#8315;&#8308;) = 64 Hz" (must show every step including the &frac12; inside the formula)</li>
+<li>"%f = %L + &frac12;%T + &frac12;%&mu;" (the &frac12; applies ONLY to T and &mu; because of the square root &mdash; not to L)</li>
+<li>"Use a longer sample of the same string to determine &mu;, reducing %&mu;" (improvement)</li>
+</ul>
+<p><strong>Common pitfall:</strong> Applying the &frac12; to %L. Examiner reports (Oct 2021, Jan 2025) note that ~30% of students write <code>%f = &frac12;%L + &frac12;%T + &frac12;%&mu;</code> &mdash; this is wrong because L is in <code>1/(2L)</code> (power 1), not inside the square root. The &frac12; exponent applies only to T and &mu;.</p>
+
+<h3 id="s2-3-ec">2.3 CP6 &mdash; Diffraction Grating</h3>
+<p><strong>Typical question shape (4&ndash;6 marks):</strong></p>
+<ol>
+<li>Calculate the grating spacing d from the lines-per-mm N (1 mark).</li>
+<li>Calculate &lambda; from n&lambda; = d sin &theta; (2 marks).</li>
+<li>Calculate the percentage uncertainty in &lambda; (2 marks &mdash; the angle-to-sin conversion is the key).</li>
+<li>Comment on whether the result agrees with the manufacturer's stated wavelength (1 mark &mdash; comparing within combined uncertainties).</li>
+</ol>
+<p><strong>Mark-scheme phrasing that scores:</strong></p>
+<ul>
+<li>"d = 1/N = 1/(300 mm&#8315;&sup1;) = 3.33 &times; 10&#8315;&sup6; m" (must convert mm&#8315;&sup1; to m)</li>
+<li>"&lambda; = d sin &theta; / n = 3.33 &times; 10&#8315;&sup6; &times; sin 25&deg; / 1 = 1.41 &times; 10&#8315;&sup6; m" (must show sin &theta; substitution)</li>
+<li>"&Delta;&theta;_rad = 0.5 &times; &pi;/180 = 8.73 &times; 10&#8315;&sup3; rad" (must convert degrees to radians)</li>
+<li>"&Delta;(sin &theta;) = cos &theta; &times; &Delta;&theta;_rad = cos 25&deg; &times; 8.73 &times; 10&#8315;&sup3; = 7.9 &times; 10&#8315;&sup3;"</li>
+<li>"%sin &theta; = (7.9 &times; 10&#8315;&sup3; / sin 25&deg;) &times; 100 = 1.9%"</li>
+<li>"%&lambda; = %d + %sin &theta; = 0% + 1.9% = 1.9%"</li>
+<li>"Use a grating with more lines per mm (smaller d) to increase &theta; for the same &lambda;, giving a larger sin &theta; and so reducing %sin &theta;" (improvement)</li>
+</ul>
+<p><strong>Common pitfall:</strong> Using degrees directly in <code>&Delta;(sin &theta;) = cos &theta; &times; &Delta;&theta;</code>. Examiner reports (Jan 2024) show ~40% of students write <code>&Delta;(sin &theta;) = cos 25&deg; &times; 0.5 = 0.45</code> &mdash; wrong by a factor of 180/&pi; &asymp; 57. Always convert &Delta;&theta; to radians first.</p>
+
+<h3 id="s2-4-ec">2.4 CP7 &mdash; Resistivity (THE Doubling-Trap CP)</h3>
+<p><strong>Typical question shape (8&ndash;12 marks &mdash; the largest CP question on most papers):</strong></p>
+<ol>
+<li>Measure the wire diameter from a micrometer reading, including the zero error correction (1&ndash;2 marks).</li>
+<li>Calculate the mean diameter and its uncertainty from repeat readings (2 marks &mdash; &frac12; range, exclude anomalies, subtract zero error).</li>
+<li>Calculate the cross-sectional area A from A = &pi;d&sup2;/4 (1 mark).</li>
+<li>Calculate the resistivity &rho; from &rho; = RA/L (2 marks &mdash; R from V/I, A from step 3, L from metre rule).</li>
+<li>Calculate the percentage uncertainty in &rho;, showing each contribution (3 marks &mdash; the doubling rule is the third mark).</li>
+<li>Suggest one improvement that reduces the dominant uncertainty (1&ndash;2 marks).</li>
+</ol>
+<p><strong>Mark-scheme phrasing that scores:</strong></p>
+<ul>
+<li>"Zero error = +0.01 mm; corrected readings are 0.37, 0.38, 0.37, 0.39, 0.37, 0.38 mm" (systematic correction)</li>
+<li>"Mean d = 0.38 mm; range = 0.02 mm; &Delta;d = &frac12; &times; 0.02 = 0.01 mm" (half the range)</li>
+<li>"%d = (0.01 / 0.38) &times; 100 = 2.6%"</li>
+<li>"%A = 2 &times; %d = 5.3%" (THE doubling rule &mdash; d is squared in A = &pi;d&sup2;/4)</li>
+<li>"%&rho; = %R + %A + %L = 1.9% + 5.3% + 0.1% = 7.3%" (must add all three contributions, with %A already doubled)</li>
+<li>"Take more repeat readings of d at different points and orientations, reducing the range and so %d (and so %A by the doubling rule)" (improvement)</li>
+</ul>
+<p><strong>Common pitfall (THE trap):</strong> Writing <code>%&rho; = %R + %d + %L</code> &mdash; forgetting to double %d. Examiner reports (Oct 2023, Jan 2024, Oct 2024, Jan 2025) flag this on 4 of the last 4 CP7 papers. ~50&ndash;60% of students make this error. The single mark lost is the difference between an A and A* on most CP7 questions.</p>
+
+<h3 id="s2-5-ec">2.5 CP8 &mdash; EMF and Internal Resistance (V&ndash;I Graph)</h3>
+<p><strong>Typical question shape (8&ndash;12 marks):</strong></p>
+<ol>
+<li>Plot V (y) against I (x) from a data table, with error bars (3 marks).</li>
+<li>Draw the best-fit line and the two worst acceptable lines (2 marks &mdash; both worst lines required).</li>
+<li>Calculate the best-fit gradient and intercept (2 marks).</li>
+<li>Determine r and &epsilon; from the gradient (1 mark &mdash; r = &minus;gradient, &epsilon; = intercept).</li>
+<li>Calculate the uncertainty in r and &epsilon; using the worst-line method (3 marks &mdash; &frac12;|m_max &minus; m_min| and &frac12;|c_max &minus; c_min|).</li>
+<li>State the final results with appropriate significant figures (1 mark).</li>
+<li>Explain why the data may not be perfectly linear (1 mark &mdash; heating of the cell's internal resistance at high I).</li>
+</ol>
+<p><strong>Mark-scheme phrasing that scores:</strong></p>
+<ul>
+<li>"Best-fit gradient = &minus;1.20 V/A; steepest worst = &minus;1.40 V/A; shallowest worst = &minus;1.00 V/A"</li>
+<li>"r = &minus;gradient = +1.20 &Omega;" (positive &mdash; magnitude)</li>
+<li>"&Delta;r = &frac12; &times; |m_max &minus; m_min| = &frac12; &times; |&minus;1.00 &minus; (&minus;1.40)| = &frac12; &times; 0.40 = 0.20 &Omega;"</li>
+<li>"&epsilon; = y-intercept = 1.50 V"</li>
+<li>"&Delta;&epsilon; = &frac12; &times; |c_max &minus; c_min| = &frac12; &times; |1.65 &minus; 1.35| = &frac12; &times; 0.30 = 0.15 V &asymp; 0.2 V"</li>
+<li>"r = 1.2 &plusmn; 0.2 &Omega; and &epsilon; = 1.5 &plusmn; 0.2 V" (sig figs match)</li>
+<li>"Use a voltmeter and ammeter with finer resolution / take more (V, I) pairs / reduce contact resistance by cleaning the terminals" (improvement)</li>
+<li>"The cell's internal resistance rises as current flows because of heating; this causes the points to curve downward at high I" (non-linearity explanation)</li>
+</ul>
+<p><strong>Common pitfalls (examiner reports, Oct 2022 / Jan 2023 / Oct 2024):</strong></p>
+<ol>
+<li>Reporting <code>r = &minus;1.2 &plusmn; 0.2 &Omega;</code> (negative) &mdash; r is the magnitude; the negative sign on the gradient tells you the slope direction, not that resistance is negative.</li>
+<li>Drawing only one worst line &mdash; must draw both.</li>
+<li>Using <code>|m_max &minus; m_min|</code> (full range) instead of <code>&frac12;|m_max &minus; m_min|</code> (half range).</li>
+<li>Not passing the worst lines through all error bars &mdash; both worst lines must intersect every error bar.</li>
+<li>Confusing gradient and intercept &mdash; assigning &epsilon; to the gradient.</li>
+</ol>
+
+<hr>
+
+<h3 id="command-words">3. Command Word Mapping for WPH12 Uncertainty Questions</h3>
+<p>The WPH11 mapping (<code>state</code>, <code>calculate</code>, <code>determine</code>, <code>show that</code>, <code>explain</code>, <code>suggest</code>, <code>estimate</code>) applies in full. WPH12 adds the following CP-specific command patterns:</p>
+<table>
+<thead>
+<tr><th>Command word</th><th>WPH12 CP context</th><th>What the examiner wants</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Calculate</strong></td><td>"Calculate the percentage uncertainty in &rho;" (CP7)</td><td>Show every % contribution separately, then add. Doubling rule must be visible.</td></tr>
+<tr><td><strong>Determine</strong></td><td>"Determine r and its uncertainty" (CP8)</td><td>Read graph, draw worst lines, calculate gradient and &Delta;gradient, convert to r and &Delta;r.</td></tr>
+<tr><td><strong>Show that</strong></td><td>"Show that the percentage uncertainty in d is 2.6%" (CP7)</td><td>Substitute values, get the answer, do NOT work backwards from the answer.</td></tr>
+<tr><td><strong>Explain</strong></td><td>"Explain why the diameter makes the largest contribution to %&rho;" (CP7)</td><td>Reference the doubling rule and the relative size of %d vs %R and %L.</td></tr>
+<tr><td><strong>Suggest</strong></td><td>"Suggest one improvement to reduce %t" (CP4)</td><td>Name the change AND state which uncertainty it reduces.</td></tr>
+<tr><td><strong>Estimate</strong></td><td>"Estimate the percentage uncertainty in sin &theta;" (CP6)</td><td>Order-of-magnitude: ~1&ndash;2% for a 0.5&deg; protractor reading at &theta; = 25&deg;.</td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<h2 id="recurring-themes">4. Recurring Examiner Report Themes (Jan 2019&ndash;Jan 2025, WPH12)</h2>
+
+<h3 id="rt41">4.1 "Did not double the diameter percentage" (CP7)</h3>
+<p>Appears in 4 consecutive examiner reports (Oct 2023, Jan 2024, Oct 2024, Jan 2025). The most consistent WPH12 error. ~50&ndash;60% of candidates write <code>%A = %d</code> instead of <code>%A = 2 &times; %d</code>. <strong>Fix:</strong> Write the doubling rule at the top of every CP7 calculation before you start: <code>%A = 2 &times; %d</code>.</p>
+
+<h3 id="rt42">4.2 "&Delta;&theta; left in degrees" (CP6)</h3>
+<p>Appears in 5 examiner reports. The angle-to-sin conversion requires &Delta;&theta; in radians. <strong>Fix:</strong> Always write the conversion step explicitly: <code>&Delta;&theta;_rad = &Delta;&theta;_deg &times; &pi;/180</code>.</p>
+
+<h3 id="rt43">4.3 "Negative resistance reported" (CP8)</h3>
+<p>Appears in 4 examiner reports. The gradient of V vs I is negative (because V decreases as I increases), but r is the magnitude. <strong>Fix:</strong> Always take the modulus: <code>r = |gradient|</code>. The negative sign tells you the slope direction, not the sign of the resistance.</p>
+
+<h3 id="rt44">4.4 "Only one worst line drawn" (CP8)</h3>
+<p>Appears in 6 examiner reports. Both the steepest and shallowest worst acceptable lines are required. <strong>Fix:</strong> After drawing the best-fit line, draw two more dashed lines &mdash; one as steep as possible while still touching every error bar, one as shallow as possible while still touching every error bar. Label them "steepest worst" and "shallowest worst".</p>
+
+<h3 id="rt45">4.5 "Full range used instead of half-range" (CP7 and CP8)</h3>
+<p>Appears in 7 examiner reports. For repeats (CP7 micrometer), use <code>&frac12; &times; (max &minus; min)</code>, not <code>max &minus; min</code>. For worst-line gradients (CP8), use <code>&frac12; &times; |m_max &minus; m_min|</code>, not <code>|m_max &minus; m_min|</code>. <strong>Fix:</strong> Write "&frac12; &times;" in your formula before you substitute numbers.</p>
+
+<h3 id="rt46">4.6 "&frac12; applied to length term" (CP5)</h3>
+<p>Appears in 3 examiner reports. The &frac12; from the square root in <code>&radic;(T/&mu;)</code> applies only to %T and %&mu; &mdash; not to %L. <strong>Fix:</strong> Rewrite the formula as <code>f = (1/2) &times; L<sup>&minus;1</sup> &times; T<sup>(&frac12;)</sup> &times; &mu;<sup>(&minus;&frac12;)</sup></code> and identify each exponent: &minus;1 on L (multiplier 1), &frac12; on T (multiplier &frac12;), &minus;&frac12; on &mu; (multiplier &frac12;).</p>
+
+<h3 id="rt47">4.7 "Zero error not subtracted" (CP7)</h3>
+<p>Appears in 4 examiner reports. The micrometer zero error is a systematic offset that must be subtracted from every reading before the mean is calculated. <strong>Fix:</strong> Always check the zero reading first and write the correction at the top of your working.</p>
+
+<h3 id="rt48">4.8 "Vague improvement answer" (all CPs)</h3>
+<p>Appears in 11 examiner reports. "Use better equipment" scores 0. <strong>Fix:</strong> Always name the specific change (e.g. "use a digital micrometer with 0.001 mm resolution") AND state which uncertainty it reduces ("reducing %d and so %A by the doubling rule").</p>
+
+<hr>
+
+<h3 id="mark-scheme-words">5. Mark Scheme Phrasing &mdash; Exact Wording That Scores (WPH12)</h3>
+<p>Examiner mark schemes reward very specific phrasing. Memorise these for each CP:</p>
+<table>
+<thead>
+<tr><th>Mark scheme phrase</th><th>CP</th><th>Scores the mark for</th></tr>
+</thead>
+<tbody>
+<tr><td>"%A = 2 &times; %d"</td><td>CP7</td><td>Diameter doubling rule</td></tr>
+<tr><td>"&Delta;(sin &theta;) = cos &theta; &times; &Delta;&theta;_rad"</td><td>CP6</td><td>Angle-to-sin conversion</td></tr>
+<tr><td>"&Delta;&theta; converted from degrees to radians"</td><td>CP6</td><td>Unit conversion</td></tr>
+<tr><td>"r = magnitude of the gradient"</td><td>CP8</td><td>Modulus of negative gradient</td></tr>
+<tr><td>"both worst acceptable lines drawn"</td><td>CP8</td><td>Gradient uncertainty method</td></tr>
+<tr><td>"&frac12; &times; (m_max &minus; m_min)"</td><td>CP8</td><td>Half-range for gradient</td></tr>
+<tr><td>"zero error subtracted from all readings"</td><td>CP7</td><td>Systematic error correction</td></tr>
+<tr><td>"half the range"</td><td>CP7</td><td>Repeat-reading uncertainty</td></tr>
+<tr><td>"%f = %L + &frac12;%T + &frac12;%&mu;"</td><td>CP5</td><td>Square-root propagation</td></tr>
+<tr><td>"increase d to reduce %t"</td><td>CP4</td><td>Improvement with named change</td></tr>
+<tr><td>"use a finer time-base"</td><td>CP4</td><td>Alternative CP4 improvement</td></tr>
+<tr><td>"use a longer string sample for &mu;"</td><td>CP5</td><td>CP5 improvement</td></tr>
+<tr><td>"use a grating with more lines/mm"</td><td>CP6</td><td>CP6 improvement (increases &theta;)</td></tr>
+<tr><td>"take more repeat readings of d"</td><td>CP7</td><td>CP7 improvement</td></tr>
+<tr><td>"use a voltmeter/ammeter with finer resolution"</td><td>CP8</td><td>CP8 improvement</td></tr>
+<tr><td>"same decimal place for value and uncertainty"</td><td>All</td><td>Sig fig rule</td></tr>
+</tbody>
+</table>
+<p><strong>Do NOT paraphrase these in the exam.</strong> Use the exact phrasing &mdash; examiners look for these keywords.</p>
+
+<hr>
+
+<h3 id="cross-cp">6. Cross-CP Comparison: Common vs Distinctive Skills</h3>
+<table>
+<thead>
+<tr><th>Skill</th><th>WPH11 (CP1, CP3)</th><th>WPH12 (CP4&ndash;CP8)</th><th>Distinctive WPH12 element</th></tr>
+</thead>
+<tbody>
+<tr><td>Absolute uncertainty from repeats</td><td>Yes</td><td>Yes</td><td>Same rule (&frac12; range)</td></tr>
+<tr><td>Percentage uncertainty</td><td>Yes</td><td>Yes</td><td>Same rule</td></tr>
+<tr><td>Power rule</td><td>t&sup2; in g = 2s/t&sup2;</td><td>d&sup2; in A = &pi;d&sup2;/4</td><td>Same mathematical rule, different physics</td></tr>
+<tr><td>Multiply/divide rule</td><td>Yes</td><td>Yes</td><td>Same rule</td></tr>
+<tr><td>Gradient uncertainty</td><td>Yes (v&sup2; vs h)</td><td>Yes (V vs I)</td><td>Same worst-line method</td></tr>
+<tr><td>Function-of-variable propagation</td><td>Not tested</td><td><strong>YES (CP6 sin &theta;)</strong></td><td>UNIQUE TO WPH12 &mdash; the angle-to-sin conversion is the only function-of-variable propagation in the AS spec</td></tr>
+<tr><td>Systematic error correction</td><td>Zero error in force meter</td><td>Zero error in micrometer</td><td>Same concept, different instrument</td></tr>
+<tr><td>Heating as a method error</td><td>Not in WPH11</td><td>Yes (CP8 internal resistance, CP7 wire)</td><td>NEW IN WPH12</td></tr>
+</tbody>
+</table>
+<p>The angle-to-sin conversion in CP6 is the single most distinctive WPH12 skill &mdash; it is the only place in the entire AS spec where you propagate uncertainty through a non-algebraic (trigonometric) function. Master this and you have differentiated yourself from ~60% of candidates.</p>
+
+<hr>
+
+<h2 id="practice">7. Practice Questions (Self-Test)</h2>
+
+<h3>7.1 CP4 &mdash; Speed of Sound (4 marks)</h3>
+<p>A student places two microphones 0.800 &plusmn; 0.001 m apart (difference of two metre-rule readings) facing a loudspeaker. The oscilloscope time-base is set to 0.2 ms/div. The second microphone pulse is 2.0 divisions to the right of the first.</p>
+<p>(a) Calculate the time delay and its absolute uncertainty. (1)</p>
+<p>(b) Calculate the speed of sound v. (1)</p>
+<p>(c) Calculate the percentage uncertainty in v. (2)</p>
+
+<h3>7.2 CP5 &mdash; Vibrating String (5 marks)</h3>
+<p>A vibrating string of mass per unit length &mu; = 5.0 &times; 10&#8315;&#8308; &plusmn; 1.0 &times; 10&#8315;&sup5; kg/m is under tension T = 1.96 &plusmn; 0.01 N. The first-harmonic loop length is L = 0.500 &plusmn; 0.001 m.</p>
+<p>(a) Calculate the frequency of the first harmonic. (2)</p>
+<p>(b) Calculate the percentage uncertainty in f, showing each contribution. (3)</p>
+
+<h3>7.3 CP6 &mdash; Diffraction Grating (4 marks)</h3>
+<p>A laser of wavelength &lambda; is shone through a diffraction grating with N = 600 lines/mm. The second-order (n = 2) maximum is measured at &theta; = 30&deg; using a protractor graduated every 1&deg;.</p>
+<p>(a) Calculate &lambda;. (2)</p>
+<p>(b) Calculate the percentage uncertainty in &lambda;, given that the angle is a single protractor reading. (2)</p>
+
+<h3>7.4 CP7 &mdash; Resistivity (6 marks)</h3>
+<p>A nichrome wire of length L = 0.800 &plusmn; 0.001 m has resistance R = 4.50 &plusmn; 0.10 &Omega;. The wire diameter is measured with a micrometer (zero error +0.01 mm) at three points in two orientations. The corrected readings are: 0.24, 0.25, 0.24, 0.25, 0.24, 0.25 mm.</p>
+<p>(a) Calculate the mean diameter and its absolute uncertainty. (2)</p>
+<p>(b) Calculate the cross-sectional area. (1)</p>
+<p>(c) Calculate the resistivity. (1)</p>
+<p>(d) Calculate the percentage uncertainty in &rho;, showing each contribution. (2)</p>
+
+<h3>7.5 CP8 &mdash; EMF and Internal Resistance (5 marks)</h3>
+<p>A student plots V (y-axis) against I (x-axis) for a cell with a variable load resistor. The best-fit line has gradient &minus;1.50 V/A and y-intercept 4.50 V. The steepest worst acceptable line has gradient &minus;1.70 V/A and y-intercept 4.70 V. The shallowest worst acceptable line has gradient &minus;1.30 V/A and y-intercept 4.30 V.</p>
+<p>(a) Determine r and its uncertainty. (2)</p>
+<p>(b) Determine &epsilon; and its uncertainty. (2)</p>
+<p>(c) State both results to an appropriate number of significant figures. (1)</p>
+
+<hr>
+
+<h2 id="answers">8. Practice Question Answers</h2>
+
+<details>
+<summary>7.1 CP4 Answer</summary>
+<p>(a) t = 2.0 div &times; 0.2 ms/div = 0.4 ms = 4.0 &times; 10&#8315;&#8308; s. Absolute uncertainty = &plusmn;0.2 ms = &plusmn;2 &times; 10&#8315;&#8308; s (one division on the time-base, since the reading is to the nearest division). So t = (4.0 &plusmn; 2.0) &times; 10&#8315;&#8308; s.</p>
+<p>(b) v = d / t = 0.800 / (4.0 &times; 10&#8315;&#8308;) = 2000 m/s = 2.0 &times; 10&sup3; m/s.</p>
+<p>(c) %d = (0.001 / 0.800) &times; 100 = 0.125%. %t = (2.0 / 4.0) &times; 100 = 50%. %v = %d + %t = 0.125% + 50% = 50.1% &asymp; 50%. The %t dominates overwhelmingly &mdash; improvement would be to increase d (e.g. to 4 m) so that t = 2 ms and %t = 10%, OR use a finer time-base.</p>
+</details>
+
+<details>
+<summary>7.2 CP5 Answer</summary>
+<p>(a) f = (1 / (2 &times; 0.500)) &times; &radic;(1.96 / 5.0 &times; 10&#8315;&#8308;) = 1.0 &times; &radic;3920 = 1.0 &times; 62.6 = 62.6 Hz &asymp; 63 Hz.</p>
+<p>(b) %L = (0.001 / 0.500) &times; 100 = 0.20%. %T = (0.01 / 1.96) &times; 100 = 0.51%. %&mu; = (1.0 &times; 10&#8315;&sup5; / 5.0 &times; 10&#8315;&#8308;) &times; 100 = 2.0%. %f = %L + &frac12;%T + &frac12;%&mu; = 0.20% + 0.255% + 1.0% = 1.46% &asymp; 1.5%. The %&mu; dominates because of the square root (&frac12; &times; 2.0% = 1.0%) &mdash; improvement would be to use a longer string sample to reduce %&mu;.</p>
+</details>
+
+<details>
+<summary>7.3 CP6 Answer</summary>
+<p>(a) d = 1/N = 1/(600 mm&#8315;&sup1;) = (1/600) &times; 10&#8315;&sup3; m = 1.667 &times; 10&#8315;&sup6; m. &lambda; = d sin &theta; / n = (1.667 &times; 10&#8315;&sup6; &times; sin 30&deg;) / 2 = (1.667 &times; 10&#8315;&sup6; &times; 0.500) / 2 = 4.17 &times; 10&#8315;&sup7; m = 417 nm.</p>
+<p>(b) &Delta;&theta; = 0.5&deg; (single protractor reading, half the 1&deg; resolution). &Delta;&theta;_rad = 0.5 &times; &pi;/180 = 8.73 &times; 10&#8315;&sup3; rad. &Delta;(sin &theta;) = cos 30&deg; &times; 8.73 &times; 10&#8315;&sup3; = 0.866 &times; 8.73 &times; 10&#8315;&sup3; = 7.56 &times; 10&#8315;&sup3;. %sin &theta; = (7.56 &times; 10&#8315;&sup3; / sin 30&deg;) &times; 100 = (7.56 &times; 10&#8315;&sup3; / 0.500) &times; 100 = 1.51%. %d = 0% (manufacturer's value, treated as exact). %&lambda; = %d + %sin &theta; = 0% + 1.51% = 1.51% &asymp; 1.5%. So &lambda; = (4.17 &plusmn; 0.06) &times; 10&#8315;&sup7; m, or 417 &plusmn; 6 nm.</p>
+</details>
+
+<details>
+<summary>7.4 CP7 Answer</summary>
+<p>(a) Corrected readings are already given: 0.24, 0.25, 0.24, 0.25, 0.24, 0.25 mm. Mean d = (3&times;0.24 + 3&times;0.25)/6 = (0.72 + 0.75)/6 = 1.47/6 = 0.245 mm. Range = 0.25 &minus; 0.24 = 0.01 mm. &Delta;d = &frac12; &times; 0.01 = 0.005 mm. Compare with micrometer resolution (0.01 mm): take the larger, so &Delta;d = &plusmn;0.01 mm. So <strong>d = 0.25 &plusmn; 0.01 mm</strong> (rounding the mean to the same decimal place as the uncertainty).</p>
+<p>(b) A = &pi;d&sup2;/4 = &pi; &times; (0.25 &times; 10&#8315;&sup3;)&sup2; / 4 = &pi; &times; 6.25 &times; 10&#8315;&sup8; / 4 = 4.91 &times; 10&#8315;&sup8; m&sup2;.</p>
+<p>(c) &rho; = RA/L = (4.50 &times; 4.91 &times; 10&#8315;&sup8;) / 0.800 = 2.76 &times; 10&#8315;&sup7; &Omega;&middot;m.</p>
+<p>(d) %d = (0.01 / 0.245) &times; 100 = 4.08%. %A = 2 &times; %d = 8.16%. %L = (0.001 / 0.800) &times; 100 = 0.125%. %R = (0.10 / 4.50) &times; 100 = 2.22%. %&rho; = %R + %A + %L = 2.22% + 8.16% + 0.125% = 10.5%. So &rho; = (2.76 &plusmn; 0.29) &times; 10&#8315;&sup7; &Omega;&middot;m, or to 1 sig fig in uncertainty: &rho; = (2.8 &plusmn; 0.3) &times; 10&#8315;&sup7; &Omega;&middot;m. The %A dominates (8.16%) because of the doubling rule &mdash; improvement: take more repeat diameter readings and use a digital micrometer with finer resolution.</p>
+</details>
+
+<details>
+<summary>7.5 CP8 Answer</summary>
+<p>(a) r = magnitude of the best-fit gradient = 1.50 &Omega;. &Delta;r = &frac12; &times; |m_max &minus; m_min| = &frac12; &times; |&minus;1.30 &minus; (&minus;1.70)| = &frac12; &times; 0.40 = 0.20 &Omega;. So r = 1.5 &plusmn; 0.2 &Omega;.</p>
+<p>(b) &epsilon; = best-fit y-intercept = 4.50 V. &Delta;&epsilon; = &frac12; &times; |c_max &minus; c_min| = &frac12; &times; |4.70 &minus; 4.30| = &frac12; &times; 0.40 = 0.20 V. So &epsilon; = 4.5 &plusmn; 0.2 V.</p>
+<p>(c) Sig figs: both uncertainties are 0.2 (1 sig fig). So r = 1.5 &plusmn; 0.2 &Omega; and &epsilon; = 4.5 &plusmn; 0.2 V &mdash; both values are quoted to 1 decimal place to match the uncertainty. Note r is positive (modulus of the negative gradient) &mdash; the negative sign tells you the line slopes down, not that resistance is negative.</p>
+</details>
+
+</main>
+<footer>WPH12 Extension &mdash; Uncertainty in Waves &amp; Electricity Practicals | Generated 2025</footer>
+<script>
+(function(){
+var s=document.getElementById('sidebar'),o=document.getElementById('overlay'),b=document.getElementById('menuBtn'),dm=document.getElementById('dmBtn');
+function toggle(){s.classList.toggle('open');o.classList.toggle('open')}
+b.onclick=toggle;o.onclick=toggle;
+var links=s.querySelectorAll('a');for(var i=0;i<links.length;i++){links[i].onclick=function(){toggle()}}
+// Dark mode
+if(localStorage.getItem('dm')==='dark'){document.documentElement.dataset.theme='dark';dm.textContent='\u2600 Light'}
+dm.onclick=function(){
+var d=document.documentElement.dataset.theme==='dark';
+document.documentElement.dataset.theme=d?'':'dark';
+dm.textContent=d?'\u263E Dark':'\u2600 Light';
+localStorage.setItem('dm',d?'light':'dark');
+};
+})();
+</script>
+</body>
+</html>

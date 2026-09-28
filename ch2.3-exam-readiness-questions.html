@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch 2.3 — Waves and Light — Exam Readiness Questions</title>
+<style>
+:root{
+  --bg:#fafcfe;--surface:#fff;--text:#1e293b;--heading:#0f4c75;--heading2:#1b6ca8;
+  --accent:#3b82f6;--accent2:#10b981;--border:#e2e8f0;--muted:#64748b;
+  --tip-bg:#eff6ff;--tip-border:#bfdbfe;
+  --warn-bg:#fefce8;--warn-border:#fde68a;
+  --err-bg:#fef2f2;--err-border:#fecaca;
+  --worked-bg:#f0fdf4;--worked-border:#bbf7d0;
+  --note-bg:#f8fafc;--note-border:#cbd5e1;
+  --sidebar-bg:#fff;--sidebar-shadow:0 4px 24px rgba(0,0,0,.1);
+  --code-bg:#f1f5f9;--tbl-head:#eef2f7;--tbl-alt:#f8fafc;
+  --card-bg:#fff;--card-shadow:0 1px 3px rgba(0,0,0,.06);
+  --tier1-bg:#eff6ff;--tier1-border:#3b82f6;--tier1-fg:#1e40af;
+  --tier2-bg:#f0fdf4;--tier2-border:#10b981;--tier2-fg:#065f46;
+  --tier3-bg:#fef3f2;--tier3-border:#f43f5e;--tier3-fg:#9f1239;
+  --b-QFR-bg:#dbeafe;--b-QFR-fg:#1e40af;
+  --b-TDC-bg:#ede9fe;--b-TDC-fg:#5b21b6;
+  --b-CAL-bg:#d1fae5;--b-CAL-fg:#065f46;
+  --b-EXP-bg:#ffedd5;--b-EXP-fg:#9a3412;
+  --b-WTE-bg:#ccfbf1;--b-WTE-fg:#115e59;
+  --b-STE-bg:#fee2e2;--b-STE-fg:#991b1b;
+  --b-DIA-bg:#e0e7ff;--b-DIA-fg:#3730a3;
+  --b-SYN-bg:#fce7f3;--b-SYN-fg:#9d174d;
+  --b-DER-bg:#fef3c7;--b-DER-fg:#92400e;
+  --b-QWC-bg:#cffafe;--b-QWC-fg:#155e75;
+  --b-GRD-bg:#ecfccb;--b-GRD-fg:#3f6212;
+  --b-GRC-bg:#ffe4e6;--b-GRC-fg:#9f1239;
+  --b-MID-bg:#fef9c3;--b-MID-fg:#854d0e;
+  --b-DEV-bg:#f5e9d4;--b-DEV-fg:#78350f;
+  --b-CLC-bg:#d1fae5;--b-CLC-fg:#065f46;
+  --b-CMP-bg:#e0f2fe;--b-CMP-fg:#075985;
+  --b-RAT-bg:#fef3c7;--b-RAT-fg:#92400e;
+  --b-CCH-bg:#f0fdf4;--b-CCH-fg:#065f46;
+  --b-CLM-bg:#fef2f2;--b-CLM-fg:#991b1b;
+  --b-AEV-bg:#f5f3ff;--b-AEV-fg:#5b21b6;
+  --b-PTK-bg:#ecfeff;--b-PTK-fg:#155e75;
+  --b-VEC-bg:#e0e7ff;--b-VEC-fg:#3730a3;
+}
+[data-theme="dark"]{
+  --bg:#0f172a;--surface:#1e293b;--text:#e2e8f0;--heading:#93c5fd;--heading2:#7dd3fc;
+  --accent:#60a5fa;--accent2:#34d399;--border:#334155;--muted:#94a3b8;
+  --tip-bg:#1e3a5f;--tip-border:#2563eb;
+  --warn-bg:#422006;--warn-border:#a16207;
+  --err-bg:#4c1d1d;--err-border:#dc2626;
+  --worked-bg:#052e16;--worked-border:#16a34a;
+  --note-bg:#1a2332;--note-border:#475569;
+  --sidebar-bg:#1e293b;--sidebar-shadow:0 4px 24px rgba(0,0,0,.4);
+  --code-bg:#0f172a;--tbl-head:#1e3a5f;--tbl-alt:#162032;
+  --card-bg:#1e293b;--card-shadow:0 1px 3px rgba(0,0,0,.3);
+  --tier1-bg:#1e3a5f;--tier1-border:#60a5fa;--tier1-fg:#bfdbfe;
+  --tier2-bg:#052e16;--tier2-border:#34d399;--tier2-fg:#a7f3d0;
+  --tier3-bg:#4c1d1d;--tier3-border:#fb7185;--tier3-fg:#fecdd3;
+  --b-QFR-bg:#1e3a5f;--b-QFR-fg:#bfdbfe;
+  --b-TDC-bg:#3b2a5e;--b-TDC-fg:#ddd6fe;
+  --b-CAL-bg:#0c3a26;--b-CAL-fg:#a7f3d0;
+  --b-EXP-bg:#5a2e0a;--b-EXP-fg:#fed7aa;
+  --b-WTE-bg:#0c3a36;--b-WTE-fg:#99f6e4;
+  --b-STE-bg:#5a1a1a;--b-STE-fg:#fecaca;
+  --b-DIA-bg:#2a2e6a;--b-DIA-fg:#c7d2fe;
+  --b-SYN-bg:#5a1d44;--b-SYN-fg:#fbcfe8;
+  --b-DER-bg:#5a3e0a;--b-DER-fg:#fde68a;
+  --b-QWC-bg:#0c4a52;--b-QWC-fg:#a5f3fc;
+  --b-GRD-bg:#2a4310;--b-GRD-fg:#d9f99d;
+  --b-GRC-bg:#5a1a2a;--b-GRC-fg:#fecdd3;
+  --b-MID-bg:#5a4d0a;--b-MID-fg:#fef08a;
+  --b-DEV-bg:#4a3520;--b-DEV-fg:#f5e9d4;
+  --b-CLC-bg:#0c3a26;--b-CLC-fg:#a7f3d0;
+  --b-CMP-bg:#0c3a4a;--b-CMP-fg:#bae6fd;
+  --b-RAT-bg:#5a3e0a;--b-RAT-fg:#fde68a;
+  --b-CCH-bg:#0c3a26;--b-CCH-fg:#a7f3d0;
+  --b-CLM-bg:#5a1a1a;--b-CLM-fg:#fecaca;
+  --b-AEV-bg:#3b2a5e;--b-AEV-fg:#ddd6fe;
+  --b-PTK-bg:#0c4a52;--b-PTK-fg:#a5f3fc;
+  --b-VEC-bg:#2a2e6a;--b-VEC-fg:#c7d2fe;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding-top:52px}
+@media(max-width:480px){body{font-size:15px;padding-top:48px}}
+header{position:fixed;top:0;left:0;right:0;height:52px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;z-index:1000;padding:0 16px;gap:12px}
+#menuBtn{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text);padding:4px 8px;border-radius:6px;line-height:1}
+#menuBtn:hover{background:var(--code-bg)}
+#headerTitle{font-weight:700;font-size:.95rem;color:var(--heading);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+#darkBtn{margin-left:auto;background:none;border:1px solid var(--border);border-radius:6px;cursor:pointer;padding:4px 10px;font-size:.8rem;color:var(--text);white-space:nowrap}
+#darkBtn:hover{background:var(--code-bg)}
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:1100;display:none}
+#overlay.open{display:block}
+#sidebar{position:fixed;top:0;left:-340px;width:320px;max-width:85vw;height:100vh;background:var(--sidebar-bg);box-shadow:var(--sidebar-shadow);z-index:1200;overflow-y:auto;padding:16px 0;transition:left .25s ease}
+#sidebar.open{left:0}
+#sidebar .sb-head{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;border-bottom:1px solid var(--border);margin-bottom:8px}
+#sidebar .sb-head span{font-weight:700;color:var(--heading);font-size:.95rem}
+#sidebar .sb-close{background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text);padding:4px;line-height:1}
+#sidebar nav{padding:0 12px}
+#sidebar nav ul{list-style:none;padding:0;margin:0}
+#sidebar nav li{margin-bottom:2px}
+#sidebar nav a{display:block;padding:6px 10px;border-radius:6px;font-size:.82rem;color:var(--text);text-decoration:none;transition:background .15s;line-height:1.4}
+#sidebar nav a:hover{background:var(--code-bg)}
+#sidebar nav a.chapter{font-weight:700;color:var(--heading);font-size:.9rem;margin-top:10px;padding:8px 10px;border-radius:6px}
+#sidebar nav a.tier1{background:var(--tier1-bg);color:var(--tier1-fg);border-left:3px solid var(--tier1-border)}
+#sidebar nav a.tier2{background:var(--tier2-bg);color:var(--tier2-fg);border-left:3px solid var(--tier2-border)}
+#sidebar nav a.tier3{background:var(--tier3-bg);color:var(--tier3-fg);border-left:3px solid var(--tier3-border)}
+#sidebar nav a.q-link{padding-left:16px;font-size:.8rem;color:var(--muted)}
+#sidebar nav a.q-link .q-tag{font-weight:700;color:var(--heading2)}
+#sidebar nav a.q-link:hover{background:var(--code-bg);color:var(--text)}
+main{max-width:920px;margin:0 auto;padding:24px 20px 60px}
+@media(max-width:600px){main{padding:16px 12px 40px}}
+.cover{text-align:center;padding:48px 20px 40px;border-bottom:2px solid var(--border);margin-bottom:32px}
+.cover h1{font-size:2rem;color:var(--heading);margin-bottom:8px;line-height:1.25}
+@media(max-width:480px){.cover h1{font-size:1.5rem}}
+.cover .subtitle{font-size:1rem;color:var(--muted);margin-bottom:16px}
+.cover .meta{display:inline-flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.cover .tag{background:var(--code-bg);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:.8rem;color:var(--muted)}
+.cover .stats{margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cover .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 18px;min-width:100px}
+.cover .stat .num{font-size:1.5rem;font-weight:800;color:var(--accent);line-height:1.1}
+.cover .stat .lbl{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.intro{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:16px 20px;margin-bottom:24px;font-size:.92rem}
+.intro p{margin:0}
+section{margin-bottom:40px}
+section h2{color:var(--heading);font-size:1.4rem;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+.tier-banner{padding:14px 18px;border-radius:10px;margin-bottom:18px;border-left:5px solid;font-weight:700}
+.tier-banner.t1{background:var(--tier1-bg);border-color:var(--tier1-border);color:var(--tier1-fg)}
+.tier-banner.t2{background:var(--tier2-bg);border-color:var(--tier2-border);color:var(--tier2-fg)}
+.tier-banner.t3{background:var(--tier3-bg);border-color:var(--tier3-border);color:var(--tier3-fg)}
+.tier-banner .tier-name{font-size:1.15rem;display:block}
+.tier-banner .tier-desc{font-size:.85rem;font-weight:400;color:var(--muted);display:block;margin-top:2px}
+.tbl-wrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+@media(max-width:600px){table{font-size:.78rem}}
+th{background:var(--tbl-head);color:var(--heading);font-weight:600;text-align:left;padding:8px 10px;border:1px solid var(--border);white-space:nowrap}
+td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+tr:nth-child(even) td{background:var(--tbl-alt)}
+td.num,th.num{text-align:center}
+tr.total td{font-weight:700;background:var(--tbl-head);color:var(--heading)}
+.qcard{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:18px;box-shadow:var(--card-shadow);scroll-margin-top:64px}
+@media(max-width:480px){.qcard{padding:14px 14px}}
+.qcard-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.qnum{background:var(--heading);color:#fff;font-weight:700;font-size:.85rem;padding:3px 10px;border-radius:6px;letter-spacing:.02em}
+[data-theme="dark"] .qnum{background:var(--accent)}
+.badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.75rem;font-weight:700;letter-spacing:.05em;font-family:'SF Mono',Consolas,monospace}
+.badge-QFR{background:var(--b-QFR-bg);color:var(--b-QFR-fg)}
+.badge-TDC{background:var(--b-TDC-bg);color:var(--b-TDC-fg)}
+.badge-CAL{background:var(--b-CAL-bg);color:var(--b-CAL-fg)}
+.badge-EXP{background:var(--b-EXP-bg);color:var(--b-EXP-fg)}
+.badge-WTE{background:var(--b-WTE-bg);color:var(--b-WTE-fg)}
+.badge-STE{background:var(--b-STE-bg);color:var(--b-STE-fg)}
+.badge-DIA{background:var(--b-DIA-bg);color:var(--b-DIA-fg)}
+.badge-SYN{background:var(--b-SYN-bg);color:var(--b-SYN-fg)}
+.badge-DER{background:var(--b-DER-bg);color:var(--b-DER-fg)}
+.badge-QWC{background:var(--b-QWC-bg);color:var(--b-QWC-fg)}
+.badge-GRD{background:var(--b-GRD-bg);color:var(--b-GRD-fg)}
+.badge-GRC{background:var(--b-GRC-bg);color:var(--b-GRC-fg)}
+.badge-MID{background:var(--b-MID-bg);color:var(--b-MID-fg)}
+.badge-DEV{background:var(--b-DEV-bg);color:var(--b-DEV-fg)}
+.badge-CLC{background:var(--b-CLC-bg);color:var(--b-CLC-fg)}
+.badge-CMP{background:var(--b-CMP-bg);color:var(--b-CMP-fg)}
+.badge-RAT{background:var(--b-RAT-bg);color:var(--b-RAT-fg)}
+.badge-CCH{background:var(--b-CCH-bg);color:var(--b-CCH-fg)}
+.badge-CLM{background:var(--b-CLM-bg);color:var(--b-CLM-fg)}
+.badge-AEV{background:var(--b-AEV-bg);color:var(--b-AEV-fg)}
+.badge-PTK{background:var(--b-PTK-bg);color:var(--b-PTK-fg)}
+.badge-VEC{background:var(--b-VEC-bg);color:var(--b-VEC-fg)}
+.qspec{font-size:.8rem;color:var(--muted);font-weight:600;background:var(--code-bg);padding:2px 8px;border-radius:4px}
+.qmeta{margin-left:auto;font-size:.82rem;color:var(--muted);font-weight:600}
+@media(max-width:480px){.qmeta{margin-left:0;width:100%;font-size:.78rem}}
+.qmeta .marks{color:var(--accent);font-weight:700}
+.qtext{font-size:1rem;margin-bottom:12px;color:var(--text)}
+.qtext p{margin-bottom:6px}
+.qtext strong{color:var(--heading)}
+.qtext em{color:var(--heading2);font-style:italic}
+.qtext code{background:var(--code-bg);padding:1px 5px;border-radius:4px;font-size:.9em}
+.qtext ul{margin:6px 0 6px 22px}
+.qtext li{margin-bottom:3px}
+.qtext table{margin:8px 0}
+details.answer{margin-top:10px;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--bg)}
+details.answer > summary{cursor:pointer;padding:10px 14px;background:var(--code-bg);font-weight:700;color:var(--heading);font-size:.88rem;user-select:none;list-style:none;display:flex;align-items:center;gap:8px}
+details.answer > summary::-webkit-details-marker{display:none}
+details.answer > summary::before{content:"\25B6";font-size:.7rem;transition:transform .15s}
+details.answer[open] > summary::before{transform:rotate(90deg)}
+details.answer > summary:hover{background:var(--tbl-head)}
+.answer-body{padding:12px 16px 14px;font-size:.92rem}
+.answer-body p{margin-bottom:8px}
+.answer-body p:last-child{margin-bottom:0}
+.answer-body strong{color:var(--heading)}
+.answer-body em{color:var(--heading2);font-style:italic}
+.answer-body code{background:var(--code-bg);padding:1px 5px;border-radius:4px;font-size:.88em}
+.answer-body ul,.answer-body ol{margin:4px 0 8px 22px}
+.answer-body li{margin-bottom:3px}
+.answer-body table{margin:8px 0}
+.ans{background:var(--worked-bg);border-left:4px solid var(--worked-border);border-radius:0 6px 6px 0;padding:10px 14px;margin:8px 0}
+.ans + .ans{margin-top:8px}
+.ans-label{font-weight:700;color:var(--heading2);margin-right:4px}
+.marking{margin:10px 0}
+.marking-title{font-weight:700;color:var(--heading);font-size:.85rem;margin-bottom:4px;text-transform:uppercase;letter-spacing:.03em}
+.marking ul{margin:4px 0 8px 22px}
+.marking li{margin-bottom:5px}
+.mcode{display:inline-block;min-width:26px;padding:1px 6px;border-radius:4px;background:var(--accent);color:#fff;font-size:.72rem;font-weight:700;font-family:'SF Mono',Consolas,monospace;margin-right:6px;text-align:center}
+[data-theme="dark"] .mcode{background:var(--accent);color:#0f172a}
+.box{border-left:4px solid;border-radius:0 8px 8px 0;padding:10px 14px;margin:10px 0;font-size:.9rem}
+.box-title{font-weight:700;margin-bottom:4px;font-size:.82rem;text-transform:uppercase;letter-spacing:.03em}
+.box p{margin:0}
+.box p + p{margin-top:6px}
+.box.warn{background:var(--warn-bg);border-color:var(--warn-border);color:var(--text)}
+.box.warn .box-title{color:#92400e}
+[data-theme="dark"] .box.warn .box-title{color:#fde68a}
+.box.err{background:var(--err-bg);border-color:var(--err-border);color:var(--text)}
+.box.err .box-title{color:#991b1b}
+[data-theme="dark"] .box.err .box-title{color:#fecaca}
+.box.note{background:var(--note-bg);border-color:var(--note-border);color:var(--text)}
+.box.note .box-title{color:var(--muted)}
+.box.note p{color:var(--muted);font-style:italic}
+.box.worked{background:var(--worked-bg);border-color:var(--worked-border)}
+.warn-label{font-weight:700;color:#991b1b;margin-right:4px}
+[data-theme="dark"] .warn-label{color:#fecaca}
+.eq{display:block;text-align:center;font-size:1.05rem;font-weight:600;padding:10px;margin:10px 0;background:var(--code-bg);border-radius:8px;color:var(--heading);font-family:'SF Mono',Consolas,monospace}
+@media(max-width:480px){.eq{font-size:.92rem;padding:8px}}
+hr{border:none;border-top:1px solid var(--border);margin:24px 0}
+sub,sup{font-size:.75em}
+.prog-table th,.prog-table td{text-align:center}
+.prog-table td.qcol{text-align:left;font-weight:600}
+.prog-table input[type="checkbox"]{width:18px;height:18px;cursor:pointer;accent-color:var(--accent)}
+.prog-table tr.t1-row td.qcol{color:var(--tier1-fg)}
+.prog-table tr.t2-row td.qcol{color:var(--tier2-fg)}
+.prog-table tr.t3-row td.qcol{color:var(--tier3-fg)}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border)}
+@media print{
+  header,#sidebar,#overlay,#darkBtn{display:none!important}
+  body{padding-top:0;background:#fff;color:#000}
+  main{max-width:100%;padding:0}
+  .qcard{break-inside:avoid;box-shadow:none;border:1px solid #ccc}
+  details.answer{break-inside:avoid}
+  details.answer > summary{display:none}
+  details.answer .answer-body{display:block!important}
+  .cover{break-after:avoid}
+  .tier-banner{break-after:avoid}
+  a[href]:after{content:""}
+}
+</style>
+</head>
+<body>
+<header>
+<button id="menuBtn" onclick="toggleSidebar()" aria-label="Toggle navigation">&#9776;</button>
+<span id="headerTitle">Ch 2.3 — Waves and Light &middot; Exam Readiness Questions</span>
+<button id="darkBtn" onclick="toggleDark()" aria-label="Toggle dark mode">&#127769; Dark</button>
+</header>
+<div id="overlay" onclick="toggleSidebar()"></div>
+<aside id="sidebar">
+<div class="sb-head">
+<span>Index</span>
+<button class="sb-close" onclick="toggleSidebar()" aria-label="Close">&#10005;</button>
+</div>
+<nav>
+<a href="#cover" class="chapter" onclick="toggleSidebar()">Cover</a>
+<ul><li><a href="#summary" onclick="toggleSidebar()">&#128202; Summary</a></li></ul>
+<a href="#tier1" class="chapter tier1" onclick="toggleSidebar()">Tier 1 — Foundation</a>
+<ul><li><a href="#q1" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q1 DER</span> Show that the critical angle C for total…</a></li><li><a href="#q2" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q2 GRD</span> A ray of light travels from a glass block…</a></li><li><a href="#q3" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q3 DER</span> A diffraction grating has slit spacing d…</a></li><li><a href="#q4" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q4 DER</span> An electron in a vacuum tube has kinetic…</a></li><li><a href="#q5" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q5 DER</span> The photoelectric equation is hf = φ + ½m…</a></li></ul>
+<a href="#tier2" class="chapter tier2" onclick="toggleSidebar()">Tier 2 — Application</a>
+<ul><li><a href="#q6" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q6 GRD</span> A student investigates the inverse square…</a></li><li><a href="#q7" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q7 GRD</span> A displacement–distance graph for a longi…</a></li><li><a href="#q8" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q8 GRD</span> Unpolarised light of intensity 180 W m⁻²…</a></li><li><a href="#q9" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q9 QWC</span> A student investigates sound waves using…</a></li><li><a href="#q10" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q10 GRD</span> A diffraction grating is labelled "500 li…</a></li><li><a href="#q11" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q11 QWC</span> An optical fibre is used to transmit digi…</a></li><li><a href="#q12" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q12 DER</span> In the photoelectric effect, photoelectro…</a></li><li><a href="#q13" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q13 GRD</span> Figure 1 shows a graph of maximum kinetic…</a></li><li><a href="#q14" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q14 GRD</span> An atom has the following energy levels (…</a></li><li><a href="#q15" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q15 GRD</span> A technician uses ultrasound pulses of du…</a></li></ul>
+<a href="#tier3" class="chapter tier3" onclick="toggleSidebar()">Tier 3 — Integration</a>
+<ul><li><a href="#q16" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q16 DER</span> Two coherent microwave sources, S₁ and S₂…</a></li><li><a href="#q17" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q17 DER</span> (a) A string of length L is fixed at both…</a></li><li><a href="#q18" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q18 DER</span> Light of intensity I₀ is plane-polarised.…</a></li><li><a href="#q19" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q19 QWC</span> Wave-particle duality is a fundamental co…</a></li><li><a href="#q20" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q20 QWC</span> The wave model of light predicts that ele…</a></li></ul>
+<a href="#progress" class="chapter" onclick="toggleSidebar()">Progress Tracker</a>
+</nav>
+</aside>
+<main>
+<section id="cover" class="cover">
+<h1>Exam Readiness Questions</h1>
+<p class="subtitle">Ch 2.3 — Waves and Light &middot; WPH12</p>
+<div class="meta">
+<span class="tag">Pearson Edexcel IAL</span>
+</div>
+<div class="stats">
+<div class="stat"><div class="num">20</div><div class="lbl">Questions</div></div>
+<div class="stat"><div class="num">110</div><div class="lbl">Marks</div></div>
+<div class="stat"><div class="num">160</div><div class="lbl">Minutes</div></div>
+</div>
+</section>
+
+<div class="intro">
+<p>Answer every question below without looking at the answers. If you can answer all questions correctly with full working, you are exam-ready for this topic. If you struggle with any question, review the relevant concept section. Questions are arranged from Tier 1 (Foundation) to Tier 3 (Integration).</p>
+</div>
+
+<section id="summary"><h2>Summary</h2><div class="tbl-wrap"><table><thead><tr><th>Sub-topic</th><th>Questions</th><th class="num">Total Marks</th><th class="num">Time Target</th></tr></thead><tbody><tr><td>Wave properties (longitudinal waves, intensity)</td><td>Q6–Q7</td><td class="num">14</td><td class="num">18 min</td></tr><tr><td>Refraction, Snell's law & TIR</td><td>Q1–Q2, Q11</td><td class="num">13</td><td class="num">17 min</td></tr><tr><td>Diffraction, interference & coherence</td><td>Q3, Q10, Q16</td><td class="num">17</td><td class="num">24 min</td></tr><tr><td>Polarisation</td><td>Q8, Q18</td><td class="num">11</td><td class="num">17 min</td></tr><tr><td>Stationary waves & harmonics</td><td>Q9, Q17</td><td class="num">13</td><td class="num">19 min</td></tr><tr><td>Photoelectric effect</td><td>Q5, Q12–Q13, Q20</td><td class="num">22</td><td class="num">33 min</td></tr><tr><td>Energy levels & line spectra</td><td>Q14</td><td class="num">6</td><td class="num">9 min</td></tr><tr><td>De Broglie & wave-particle duality</td><td>Q4, Q19</td><td class="num">9</td><td class="num">16 min</td></tr><tr><td>Ultrasound</td><td>Q15</td><td class="num">5</td><td class="num">7 min</td></tr><tr class="total"><td>Total</td><td>20</td><td class="num">110</td><td class="num">160 min</td></tr></tbody></table></div></section>
+
+<section id="tier1">
+<div class="tier-banner t1"><span class="tier-name">Tier 1 — Foundation</span><span class="tier-desc">If you can't answer these instantly, revisit the chapter content.</span></div>
+<article class="qcard" id="q1">
+<div class="qcard-head">
+<span class="qnum">Q1</span>
+<span class="badge badge-DER">DER</span>
+<span class="qspec">§45</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>Show that the critical angle <em>C</em> for total internal reflection at a boundary between two transparent media is given by sin <em>C</em> = <em>n</em>₂/<em>n</em>₁, where <em>n</em>₁ is the refractive index of the medium in which the light is travelling and <em>n</em>₂ is the refractive index of the surrounding medium (<em>n</em>₁ > <em>n</em>₂).</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> sin <em>C</em> = <em>n</em>₂/<em>n</em>₁ (bald answer scores zero — full derivation chain required)</div>
+<div class="marking"><div class="marking-title">Marking Points</div><ul><li><span class="mcode">M1</span> Starts from <strong>Snell's law in the correct form: <em>n</em>₁ sin θ₁ = <em>n</em>₂ sin θ₂</strong> (accept <em>n</em>₁ sin <em>i</em> = <em>n</em>₂ sin <em>r</em>)</li><li><span class="mcode">M1</span> Identifies the critical angle condition: at angle <em>C</em>, the refracted ray travels along the boundary, <strong>so θ₂ = 90° and sin 90° = 1</strong>, giving <strong>n<em>₁ sin </em>C<em> = </em>n<em>₂</em></strong><em> (must explicitly state or clearly imply that the refracted angle is 90°)</em></li><li><span class="mcode">A1</span> Rearranges to obtain <strong>sin <em>C</em> = <em>n</em>₂/<em>n</em>₁</strong> ✓</li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Writing sin <em>C</em> = <em>n</em>₂/<em>n</em>₁ without any derivation chain (bald answer = 0). Starting from the critical angle formula as a recalled fact without deriving it from Snell's law. Using the wrong form of Snell's law (e.g. sin <em>i</em>/sin <em>r</em> = <em>n</em>₂/<em>n</em>₁ without correctly identifying <em>i</em> = <em>C</em> and <em>r</em> = 90°).</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>The most frequent error is treating this as a recall question. Students write sin <em>C</em> = <em>n</em>₂/<em>n</em>₁ immediately, earning 0 marks because "show that" questions require the derivation steps — the final answer is already given in the question stem. The Jun 2024 Q16a mark scheme explicitly required Snell's law as the starting point, identification of the 90° condition, and the rearrangement as three separate marking points.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q2">
+<div class="qcard-head">
+<span class="qnum">Q2</span>
+<span class="badge badge-GRD">GRD</span>
+<span class="qspec">§45–48</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~5 min</span>
+</div>
+<div class="qtext"><p>A ray of light travels from a glass block (<em>n</em> = 1.50) into air. The angle of incidence at the boundary is given as 50° measured <strong>from the surface</strong> of the glass.</p>
+<p>(a) Calculate the angle of incidence measured from the <strong>normal</strong>. (b) Calculate the critical angle for the glass–air boundary. (c) Determine whether total internal reflection occurs, and calculate either the angle of refraction or state the angle of reflection, as appropriate.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer (a):</span> θ₁ = <strong>40°</strong></div>
+<div class="ans"><span class="ans-label">Answer (b):</span> <em>C</em> = <strong>41.8°</strong></div>
+<div class="ans"><span class="ans-label">Answer (c):</span> TIR does <strong>not</strong> occur. The angle of refraction is <strong>θ₂ = 75°</strong> (or 74.6° to 3 SF).</div>
+<div class="marking"><div class="marking-title">Marking Points</div><ul><li><span class="mcode">B1</span> θ₁ = 90° − 50° = <strong>40°</strong> — angle from the normal</li><li><span class="mcode">M1</span> sin <em>C</em> = 1/<em>n</em> = 1/1.50 = 0.667, so <em>C</em> = <strong>41.8°</strong> (accept 41.7°–41.9°)</li><li><span class="mcode">M1</span> Compares θ₁ = 40° with <em>C</em> = 41.8° and correctly concludes that since θ₁ < <em>C</em>, <strong>TIR does NOT occur</strong></li><li><span class="mcode">A1</span> Applies Snell's law: 1.50 × sin 40° = 1.00 × sin θ₂ → sin θ₂ = 0.964 → θ₂ = <strong>75°</strong> (2 SF, matching the 2 SF in <em>n</em> = 1.50)</li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Using θ = 50° directly in Snell's law without converting to the angle from the normal (gives sin θ₂ > 1, leading to the incorrect conclusion that TIR occurs). Stating the angle of refraction without first checking whether TIR occurs.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>The <strong>angle-from-surface trap</strong> has appeared in 7 of 13 past papers. Students who skip the conversion and use 50° directly in Snell's law get sin θ₂ > 1, leading them to incorrectly conclude TIR occurs. The correct approach is always: convert to angle from normal first, then check against the critical angle.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q3">
+<div class="qcard-head">
+<span class="qnum">Q3</span>
+<span class="badge badge-DER">DER</span>
+<span class="qspec">§51–52</span>
+<span class="qmeta"><span class="marks">4 marks</span> &middot; ~5 min</span>
+</div>
+<div class="qtext"><p>A diffraction grating has slit spacing <em>d</em> and is used with light of wavelength λ.</p>
+<p>(a) Starting from the grating equation <em>n</em>λ = <em>d</em> sin θ, show that the maximum number of visible orders is given by <em>n</em>_max = <em>d</em>/λ (rounded down to the nearest integer).</p>
+<p>(b) A grating with 300 lines per mm is illuminated with light of wavelength 590 nm. Without detailed calculation, explain why only 5 orders are visible given that <em>d</em>/λ = 5.6.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> (a) <em>n</em>_max = <em>d</em>/λ (rounded down) (b) <strong>Only whole-integer orders exist; the 6th order would require sin θ > 1 which is impossible.</strong></div>
+<div class="marking"><div class="marking-title">Marking Points</div><ul><li><span class="mcode">M1</span> The maximum possible diffraction angle is θ = 90° (light travelling parallel to the grating). At this limit, <strong>sin θ = 1</strong>. Substituting into the grating equation: <strong><em>n</em>λ = <em>d</em> × 1 = <em>d</em></strong>.</li><li><span class="mcode">M2</span> Rearranging: <strong><em>n</em>_max = <em>d</em>/λ</strong>. Since <em>n</em> must be an integer and sin θ cannot exceed 1, the value is <strong>rounded down</strong> to the nearest whole number. ✓</li><li><span class="mcode">M3</span> <em>d</em> = 1/(300 × 10³) = <strong>3.33 × 10⁻⁶ m</strong>. Then <em>d</em>/λ = 3.33 × 10⁻⁶ / (590 × 10⁻⁹) = <strong>5.65</strong>.</li><li><span class="mcode">M4</span> Only <strong>whole-integer values of <em>n</em></strong> produce visible maxima. The 6th order (<em>n</em> = 6) would require sin θ = 6λ/<em>d</em> = 6 × 590 × 10⁻⁹ / 3.33 × 10⁻⁶ = 1.06, which is <strong>greater than 1 and therefore impossible</strong>. So the highest visible order is <em>n</em> = 5.</li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>In part (a), stating "<em>n</em>_max = <em>d</em>/λ" without showing the substitution of sin θ = 1 (bald answer scores zero). In part (b), using <em>d</em> = 300 × 10³ m (the <em>d</em> vs 1/<em>d</em> trap). Stating "5.6 rounds to 6" without explaining that fractional orders are physically impossible.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>In part (b), the rounding error is common: students see 5.65 and round to 6 (standard mathematical rounding), but physically <em>n</em> = 6 requires sin θ > 1 which is impossible, so the answer must be truncated (not rounded) to 5.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q4">
+<div class="qcard-head">
+<span class="qnum">Q4</span>
+<span class="badge badge-DER">DER</span>
+<span class="qspec">§54</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>An electron in a vacuum tube has kinetic energy 2.0 × 10⁻¹⁷ J. <strong>Show that</strong> its de Broglie wavelength is approximately 1.10 × 10⁻¹⁰ m.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> λ ≈ <strong>1.10 × 10⁻¹⁰ m</strong> (bald answer scores zero — full derivation chain required)</div>
+<div class="marking"><div class="marking-title">Marking Points</div><ul><li><span class="mcode">M1</span> Starts from kinetic energy and derives momentum: <em>p</em> = √(2<em>m</em>_e <em>E</em>_k). Acceptable routes: <em>E</em>_k = ½<em>m</em>v<em>² → </em>v<em> = √(2</em>E<em>_k/</em>m<em>_e) → </em>p<em> = </em>m<em>_e </em>v<em> = √(2</em>m<em>_e </em>E<em>_k); OR directly </em>p<em>² = 2</em>m<em>_e </em>E<em>_k → </em>p<em> = √(2</em>m<em>_e </em>E<em>_k)</em></li><li><span class="mcode">M1</span> Correct substitution using electron <strong>mass</strong>: <em>p</em> = √(2 × 9.11 × 10⁻³¹ × 2.0 × 10⁻¹⁷) = √(3.644 × 10⁻⁴⁷) = <strong>6.04 × 10⁻²⁴ kg m s⁻¹</strong> (using electron CHARGE 1.60 × 10⁻¹⁹ instead of mass scores zero for this mark)</li><li><span class="mcode">A1</span> Completes the chain: λ = <em>h</em>/<em>p</em> = 6.63 × 10⁻³⁴ / 6.04 × 10⁻²⁴ = <strong>1.10 × 10⁻¹⁰ m</strong> (accept 1.09–1.10 × 10⁻¹⁰ m)</li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Writing λ = 1.10 × 10⁻¹⁰ m without any derivation steps (bald answer = 0). Using <em>p</em> = <em>eV</em> or <em>p</em> = <em>qV</em> (charge × voltage is not momentum). Using the electron charge (1.60 × 10⁻¹⁹ C) in place of electron mass anywhere in the calculation.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>The Jan 2022 Q2 MCQ specifically tested whether students know to use electron <strong>mass</strong> and not electron <strong>charge</strong> in de Broglie calculations. This remains one of the most frequent errors: students see "electron" and instinctively reach for 1.60 × 10⁻¹⁹ C. The de Broglie equation uses momentum (mass × velocity), not charge.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q5">
+<div class="qcard-head">
+<span class="qnum">Q5</span>
+<span class="badge badge-DER">DER</span>
+<span class="qspec">§59</span>
+<span class="qmeta"><span class="marks">3 marks</span> &middot; ~4 min</span>
+</div>
+<div class="qtext"><p>The photoelectric equation is <em>hf</em> = φ + ½<em>mv</em>²_max, where φ is the work function of the metal. <strong>Show that</strong> the threshold frequency <em>f</em>₀ for a metal is given by <em>f</em>₀ = φ / <em>h</em>.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <em>f</em>₀ = φ / <em>h</em></div>
+<div class="marking"><div class="marking-title">Marking Points</div><ul><li><span class="mcode">M1</span> States that at the threshold frequency, the maximum kinetic energy of photoelectrons is zero (½<em>mv</em>²_max = 0), because the photon energy just equals the work function</li><li><span class="mcode">M1</span> Substitutes ½<em>mv</em>²_max = 0 into the photoelectric equation: <em>hf</em>₀ = φ + 0 = φ</li><li><span class="mcode">A1</span> Rearranges to give <em>f</em>₀ = φ / <em>h</em>, or states that since <em>hf</em>₀ = φ, the threshold frequency is <em>f</em>₀ = φ / <em>h</em></li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Writing only "<em>f</em>₀ = φ/<em>h</em>" without any working (bald answer scores 0). Stating the formula without showing the substitution of ½<em>mv</em>²_max = 0 into the photoelectric equation. Starting from <em>E</em> = <em>hf</em> without connecting to the photoelectric equation.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Writing <em>f</em>₀ = φ/<em>h</em> as a standalone formula recall without deriving it from the photoelectric equation. The "show that" command word requires the derivation chain — the mark scheme awards marks for the logical steps, not the final expression. A student who simply writes the given answer scores 0/3. Another error is confusing threshold frequency with threshold wavelength — the derivation must use frequency (<em>f</em>) because the photoelectric equation is written in terms of <em>f</em>, not λ.</p></div>
+</div>
+</details>
+</article>
+</section>
+<section id="tier2">
+<div class="tier-banner t2"><span class="tier-name">Tier 2 — Application</span><span class="tier-desc">Apply concepts to exam-style scenarios.</span></div>
+<article class="qcard" id="q6">
+<div class="qcard-head">
+<span class="qnum">Q6</span>
+<span class="badge badge-GRD">GRD</span>
+<span class="qspec">§44</span>
+<span class="qmeta"><span class="marks">5 marks</span> &middot; ~7 min</span>
+</div>
+<div class="qtext"><p>A student investigates the inverse square law for a point light source of unknown power. They measure the intensity <em>I</em> at various distances <em>r</em> from the source and plot a graph of <em>I</em> against 1/<em>r</em>². The graph is a straight line through the origin with a gradient of 3.0 W.</p>
+<p>(a) State the relationship between intensity and distance for a point source. (b) Calculate the power output of the light source. (c) The student now tilts the light meter so that the normal to its surface makes an angle of 60° with the direction of the incoming radiation. Calculate the new intensity reading at the same distance <em>r</em>.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer (a):</span> <strong><em>I</em> ∝ 1/<em>r</em>²</strong> — intensity is inversely proportional to the square of the distance from a point source.</div>
+<div class="ans"><span class="ans-label">Answer (b):</span> <em>P</em> = <strong>38 W</strong> (2 s.f.)</div>
+<div class="ans"><span class="ans-label">Answer (c):</span> The reading is <strong>halved</strong> (<em>I</em>/2).</div>
+<div class="marking"><div class="marking-title">Marking Points</div><ul><li><span class="mcode">B1</span> <em>I</em> ∝ 1/<em>r</em>²</li><li><span class="mcode">M1</span> Correct use of <em>I</em> = <em>P</em>/(4π<em>r</em>²) → gradient = <em>P</em>/(4π)</li><li><span class="mcode">A1</span> <em>P</em> = 4π × 3.0 = <strong>38 W</strong> (2 s.f.)</li><li><span class="mcode">M1</span> Effective intensity = <em>I</em> cos θ with θ = 60°</li><li><span class="mcode">A1</span> <em>I</em> × 0.50 or <em>I</em>/2</li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p><em>I</em> ∝ 1/<em>r</em> (missing square). <em>I</em> = <em>P</em>/<em>r</em>² (missing 4π factor). Using sin 60° instead of cos 60°.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>The 4π trap: radiation spreads over a sphere of area 4π<em>r</em>², not a circle. Students who write <em>I</em> = <em>P</em>/<em>r</em>² obtain <em>P</em> = gradient directly, missing the spherical geometry factor.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q7">
+<div class="qcard-head">
+<span class="qnum">Q7</span>
+<span class="badge badge-GRD">GRD</span>
+<span class="qspec">§35–37</span>
+<span class="qmeta"><span class="marks">9 marks</span> &middot; ~11 min</span>
+</div>
+<div class="qtext"><p>A displacement–distance graph for a longitudinal sound wave travelling to the right is shown. The graph is sinusoidal with amplitude 1.5 × 10⁻⁶ m and wavelength 0.68 m. The speed of sound in air is 340 m s⁻¹. Point P is at a position of maximum positive displacement on the graph. Point Q is at a position of zero displacement, located λ/4 to the right of P.</p>
+<p>(a) <strong>Calculate</strong> the frequency of the sound wave. (b) <strong>Describe</strong> the pressure, density, and molecular displacement at point P. (c) <strong>Describe</strong> the pressure, density, and molecular displacement at point Q. <strong>Explain</strong> why the displacement is zero yet the pressure is not normal.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer (a):</span> <em>f</em> = <em>v</em>/λ = 340 / 0.68 = <strong>500 Hz</strong></div>
+<div class="marking"><div class="marking-title">Marking Points (a)</div><ul><li><span class="mcode">M1</span> Correct rearrangement and substitution: <em>f</em> = <em>v</em>/λ = 340 / 0.68</li><li><span class="mcode">A1</span> <strong>500 Hz</strong> (unit required)</li></ul></div>
+<div class="ans"><span class="ans-label">Answer (b):</span> At point P: displacement is maximum in the direction of travel; pressure ≈ normal; density ≈ normal.</div>
+<div class="marking"><div class="marking-title">Marking Points (b)</div><ul><li><span class="mcode">M1</span> Molecular displacement is at its maximum value <strong>in the direction of wave travel</strong> (to the right)</li><li><span class="mcode">M1</span> Pressure is approximately <strong>normal</strong> (atmospheric)</li><li><span class="mcode">M1</span> Density is approximately <strong>normal</strong></li></ul></div>
+<div class="ans"><span class="ans-label">Answer (c):</span> At point Q: displacement is zero; pressure is maximum (above normal); density is maximum (compression). This is because molecules from both sides are converging at Q.</div>
+<div class="marking"><div class="marking-title">Marking Points (c)</div><ul><li><span class="mcode">M1</span> Molecular displacement is <strong>zero</strong> (molecules at equilibrium position)</li><li><span class="mcode">M1</span> Pressure is <strong>maximum</strong> (above normal)</li><li><span class="mcode">M1</span> Density is <strong>maximum</strong> (Q is at the centre of a <strong>compression</strong>)</li><li><span class="mcode">M1</span> Explanation: although displacement at Q is zero, the <strong>displacement gradient</strong> is negative — molecules to the left of Q have positive displacement (moving towards Q) and molecules to the right of Q have negative displacement (also moving towards Q), so molecules are <strong>converging</strong> at Q</li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted (b)</div><p>Stating that pressure is maximum or minimum at P. Stating that density is maximum or minimum at P. Any suggestion that maximum displacement corresponds to maximum pressure or density.</p></div>
+<div class="box warn"><div class="box-title">NOT Accepted (c)</div><p>Stating that zero displacement means normal conditions at Q. Stating that pressure is minimum at Q. Any answer that does not mention convergence of molecules.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>The displacement-zero trap. Students automatically assume that zero displacement = normal pressure and density. At the centre of a compression or rarefaction, molecules are at their equilibrium positions (zero displacement) but the pressure and density are at their extreme values. The pressure depends on the displacement gradient, not on the displacement itself.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q8">
+<div class="qcard-head">
+<span class="qnum">Q8</span>
+<span class="badge badge-GRD">GRD</span>
+<span class="qspec">§49</span>
+<span class="qmeta"><span class="marks">5 marks</span> &middot; ~7 min</span>
+</div>
+<div class="qtext"><p>Unpolarised light of intensity 180 W m⁻² is incident on two polarising filters placed one after the other. The transmission axis of the second filter (the analyser) is at 60° to the transmission axis of the first filter.</p>
+<p>(a) Calculate the intensity of light after the first filter. (b) Calculate the intensity of light after both filters. (c) The analyser is now rotated so that the angle between the transmission axes is 30°. Without calculation, state whether the transmitted intensity increases, decreases, or stays the same. Explain your answer.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer (a):</span> <em>I</em>₁ = <strong>90 W m⁻²</strong></div>
+<div class="ans"><span class="ans-label">Answer (b):</span> <em>I</em>₂ = <strong>22.5 W m⁻²</strong> (accept 23 W m⁻² to 2 SF)</div>
+<div class="ans"><span class="ans-label">Answer (c):</span> The transmitted intensity <strong>increases</strong>.</div>
+<div class="marking"><div class="marking-title">Marking Points</div><ul><li><span class="mcode">M1</span> A single polarising filter transmits <strong>50%</strong> of unpolarised light: <em>I</em>₁ = <em>I</em>₀/2 = 180/2 = <strong>90 W m⁻²</strong></li><li><span class="mcode">M1</span> Applies Malus's law: <em>I</em>₂ = <em>I</em>₁ cos²θ = 90 × cos²60° = 90 × 0.250</li><li><span class="mcode">A1</span> <strong>22.5 W m⁻²</strong> (accept 23 W m⁻²)</li><li><span class="mcode">M1</span> States that the intensity <strong>increases</strong> because the angle between the transmission axes decreases from 60° to 30°</li><li><span class="mcode">M1</span> Explains that cos 30° > cos 60°, so cos²30° > cos²60°, and since <em>I</em> = <em>I</em>₁ cos²θ, a smaller angle gives a larger transmitted intensity</li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Applying Malus's law directly to the unpolarised light in part (a) (<em>I</em> = 180 × cos²θ with some θ — wrong because Malus's law only applies between two filters). Using <em>I</em> = <em>I</em>₀ cos²θ for part (b) with <em>I</em>₀ = 180 W m⁻² instead of <em>I</em>₁ = 90 W m⁻².</p>
+<p>⚠️ <strong>Common error (the single-filter trap, 4 papers):</strong> In part (a), attempting to use Malus's law with the angle to the first filter. Since the incident light is unpolarised, there is no defined angle of polarisation — the filter simply transmits one of the two equal perpendicular components, giving exactly 50% regardless of orientation.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q9">
+<div class="qcard-head">
+<span class="qnum">Q9</span>
+<span class="badge badge-QWC">QWC</span>
+<span class="qspec">§41–42</span>
+<span class="qmeta"><span class="marks">6 marks</span> &middot; ~9 min</span>
+</div>
+<div class="qtext"><p>A student investigates sound waves using two different setups:</p>
+<ul><li><strong>Setup A:</strong> A string fixed at both ends.</li><li><strong>Setup B:</strong> A tube closed at one end and open at the other.</li></ul>
+<p>Compare the behaviour of these two systems when each is vibrating at its fundamental frequency.</p>
+<p>Discuss how stationary waves form in each setup. In your answer, you should:</p>
+<ul><li>explain how a stationary wave is produced by superposition,</li><li>describe the positions of nodes and antinodes at the fundamental frequency in each setup,</li><li>explain why Setup A produces all harmonics but Setup B produces only odd harmonics.</li></ul>
+<p>Write your answer in <strong>continuous prose</strong>.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> A stationary wave is produced when a progressive wave travelling along a medium is reflected at a boundary and superposes with the incident wave. The reflected wave has the same frequency and amplitude as the incident wave but travels in the opposite direction. At points where the two waves are always in antiphase, permanent cancellation occurs and a <strong>node</strong> is formed; at points where the two waves are always in phase, maximum constructive interference occurs and an <strong>antinode</strong> is formed. In <strong>Setup A</strong> (string fixed at both ends), both ends must be nodes because the fixed boundaries reflect the wave with a 180° phase change. At the fundamental frequency, there is one antinode at the centre of the string, with the wavelength λ = 2<em>L</em>, giving <em>f</em>₁ = <em>v</em>/(2<em>L</em>). All integer harmonics are possible because each additional half-wavelength fits between the two fixed nodes: the second harmonic has λ = <em>L</em>, the third has λ = 2<em>L</em>/3, and so on. In <strong>Setup B</strong> (closed tube), the closed end is a fixed boundary, producing a node, while the open end is a free boundary, producing an antinode. At the fundamental frequency, the tube length is one quarter of a wavelength (<em>L</em> = λ/4), giving <em>f</em>₁ = <em>v</em>/(4<em>L</em>). Only <strong>odd harmonics</strong> are possible because the boundary conditions require a node at one end and an antinode at the other. The second harmonic would require either two nodes or two antinodes, which violates the boundary condition. The next allowable pattern (third harmonic) has three quarter-wavelengths in the tube (<em>L</em> = 3λ/4), giving <em>f</em>₃ = 3<em>v</em>/(4<em>L</em>).</div>
+<div class="marking"><div class="marking-title">Marking Points</div><ul><li><span class="mcode">IC1</span> Explains stationary wave formation by superposition of incident and reflected waves of the same frequency and amplitude, travelling in opposite directions <em>(1 mark)</em></li><li><span class="mcode">IC1</span> Describes nodes (permanent cancellation) and antinodes (maximum oscillation) as a result of the superposition <em>(1 mark)</em></li><li><span class="mcode">IC1</span> Correctly identifies boundary conditions for Setup A: nodes at both fixed ends; states λ = 2<em>L</em> for the fundamental <em>(1 mark)</em></li><li><span class="mcode">IC1</span> Correctly identifies boundary conditions for Setup B: node at closed end, antinode at open end; states λ = 4<em>L</em> for the fundamental <em>(1 mark)</em></li><li><span class="mcode">IC1</span> Explains why only odd harmonics exist in Setup B: a valid harmonic must have a node at the closed end AND an antinode at the open end, which is only satisfied when <em>L</em> = <em>n</em>λ/4 for odd <em>n</em> <em>(1 mark)</em></li><li><span class="mcode">LK1</span> Uses <strong>continuous prose</strong> with logical connectives — not bullet points, numbered lists, or tables <em>(1 mark)</em></li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Confusing node separation with wavelength (node separation = λ/2, not λ). Saying the closed tube has "no second harmonic because the tube is too short." Using bullet points or a table (loses the LK1 continuous prose mark). Saying the open end of a tube has a node because "the air is fixed there" — the open end is a <strong>free boundary</strong> (antinode).</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Confusing node separation with wavelength. The distance between adjacent nodes is λ/2, not λ. In Setup A at the fundamental, the node-to-node distance is <em>L</em> (the full string length), so λ = 2<em>L</em>, not <em>L</em>.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Stating that the open end of a tube has a node. The open end is a <strong>free boundary</strong> (antinode) because the air can move freely, while the closed end is a fixed boundary (node).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q10">
+<div class="qcard-head">
+<span class="qnum">Q10</span>
+<span class="badge badge-GRD">GRD</span>
+<span class="qspec">§50–52</span>
+<span class="qmeta"><span class="marks">7 marks</span> &middot; ~10 min</span>
+</div>
+<div class="qtext"><p>A diffraction grating is labelled "500 lines per mm". Light from a laser is directed at normal incidence onto the grating. A screen is placed parallel to the grating at a distance <em>D</em> = 0.85 m. The second-order maximum is observed at a distance <em>x</em> = 0.712 m from the central maximum.</p>
+<p>(a) Calculate the slit spacing <em>d</em> of the grating. (b) Calculate the wavelength λ of the laser light. (c) Determine the maximum number of orders visible with this grating and light.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer (a):</span> <em>d</em> = <strong>2.00 × 10⁻⁶ m</strong></div>
+<div class="ans"><span class="ans-label">Answer (b):</span> λ = <strong>642 nm</strong> (accept 6.42 × 10⁻⁷ m)</div>
+<div class="ans"><span class="ans-label">Answer (c):</span> Maximum <strong>3 orders</strong> visible</div>
+<div class="marking"><div class="marking-title">Marking Points</div><ul><li><span class="mcode">M1</span> <em>N</em> = 500 × 10³ = 5.00 × 10⁵ lines m⁻¹; <strong><em>d</em> = 1/<em>N</em> = 1/(5.00 × 10⁵) = 2.00 × 10⁻⁶ m</strong></li><li><span class="mcode">M2</span> Angle to second-order maximum: <strong>tan θ = <em>x</em>/<em>D</em> = 0.712/0.850 = 0.838</strong>; θ = arctan(0.838) = <strong>40.0°</strong></li><li><span class="mcode">M3</span> <strong>sin θ = sin 40.0° = 0.642</strong> (Note: sin 40.0° = 0.642 ≠ tan θ = 0.838 — the small-angle approximation does NOT apply here)</li><li><span class="mcode">M4</span> Applying grating equation: <em>n</em>λ = <em>d</em> sin θ → λ = <em>d</em> sin θ/<em>n</em> = (2.00 × 10⁻⁶ × 0.642)/2 = <strong>642 nm</strong></li><li><span class="mcode">M5</span> <em>n</em>_max = <em>d</em>/λ = (2.00 × 10⁻⁶)/(6.42 × 10⁻⁷) = 3.12; rounding down to nearest integer gives <strong>n<em> = 3</em></strong><em></em></li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>In part (a), writing <em>d</em> = 5.00 × 10⁵ m (the <em>d</em> vs 1/<em>d</em> trap). In part (b), using sin θ ≈ tan θ for θ ≈ 40° (the small-angle approximation is only valid below about 10°). In part (c), rounding <em>n</em>_max up to 4.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>The <strong>d vs 1/d trap</strong> is the single most common error in grating questions. Students read "500 lines per mm" and use <em>d</em> = 500,000 or <em>d</em> = 500 × 10⁻³ instead of <em>d</em> = 1/(500 × 10³). The second most common error is assuming sin θ ≈ tan θ for large angles — at θ = 40° the difference between sin θ (0.642) and tan θ (0.838) is 31%, giving a wildly incorrect wavelength of 838 nm.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q11">
+<div class="qcard-head">
+<span class="qnum">Q11</span>
+<span class="badge badge-QWC">QWC</span>
+<span class="qspec">§45–48</span>
+<span class="qmeta"><span class="marks">6 marks</span> &middot; ~8 min</span>
+</div>
+<div class="qtext"><p>An optical fibre is used to transmit digital signals over long distances. The fibre consists of a glass core surrounded by a cladding of lower refractive index.</p>
+<p>Discuss how the optical fibre transmits signals by total internal reflection. In your answer, you should:</p>
+<ul><li>explain why the cladding is necessary,</li><li>explain why the signals arriving at the end of the fibre may be broader (more spread out in time) than the signals that entered the fibre,</li><li>describe one method used to reduce this pulse broadening.</li></ul>
+<p>Write your answer in <strong>continuous prose</strong>.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> Total internal reflection occurs when light travelling in a denser medium (the core, refractive index <em>n</em>₁) strikes a boundary with a less dense medium (the cladding, <em>n</em>₂) at an angle of incidence greater than the critical angle. The cladding is necessary because TIR can only occur when light passes from a medium of higher refractive index to one of lower refractive index. Without the cladding, the core surface would be in contact with air or some other material, and any scratch, damage, or contact with another surface would allow light to escape, causing signal loss and cross-talk between adjacent fibres. The cladding also protects the core and ensures a consistent boundary for TIR along the entire length of the fibre. However, not all light rays entering the fibre travel along the same path. Rays that enter at small angles to the axis travel almost straight along the fibre, while rays that enter at larger angles undergo repeated reflections at shallower angles to the boundary, following a longer zigzag path. Because these different rays (modes) travel different total distances through the fibre, they arrive at the far end at slightly different times. This causes a sharp input pulse to become spread out in time — a phenomenon known as <strong>modal dispersion</strong> or pulse broadening. One method to reduce pulse broadening is to use a <strong>single-mode fibre</strong>, which has a very narrow core (typically only a few micrometres in diameter). In such a fibre, only the axial ray (travelling parallel to the axis) can propagate, so there is only one mode and no modal dispersion. Alternatively, a <strong>graded-index fibre</strong> can be used, in which the refractive index of the core decreases gradually from the centre to the edge. Rays travelling at larger angles spend more time in regions of lower refractive index (where they travel faster), which compensates for their longer path lengths and reduces the time difference between modes.</div>
+<div class="marking"><div class="marking-title">Marking Points</div><ul><li><span class="mcode">IC1</span> Explains that TIR requires light to pass from higher to lower refractive index, and the cladding provides this lower-<em>n</em> boundary <em>(1 mark)</em></li><li><span class="mcode">IC1</span> Explains that without cladding, light could escape at scratches or contact points, or that the cladding protects the core <em>(1 mark)</em></li><li><span class="mcode">IC1</span> Describes that rays entering at different angles follow different path lengths (modal dispersion), causing them to arrive at different times <em>(1 mark)</em></li><li><span class="mcode">IC1</span> States that this causes the pulse to spread out in time (broaden) at the output <em>(1 mark)</em></li><li><span class="mcode">IC1</span> Describes one method to reduce broadening: single-mode fibre (narrow core, only one mode) or graded-index fibre (varying refractive index compensates path length differences) <em>(1 mark)</em></li><li><span class="mcode">LK1</span> Uses <strong>continuous prose</strong> with logical connectives <em>(1 mark)</em></li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Saying the cladding "reflects the light" (the cladding does not reflect — TIR occurs at the core-cladding boundary within the core). Describing pulse broadening without mentioning different path lengths or angles of entry. Suggesting "use a shorter fibre" as a method to reduce broadening (impractical). Using bullet points or a table.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Students often describe pulse broadening as occurring because "light slows down in the fibre" without identifying the mechanism (different rays taking different path lengths). The mark scheme requires the concept of modal dispersion to be explained.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q12">
+<div class="qcard-head">
+<span class="qnum">Q12</span>
+<span class="badge badge-DER">DER</span>
+<span class="qspec">§59</span>
+<span class="qmeta"><span class="marks">6 marks</span> &middot; ~9 min</span>
+</div>
+<div class="qtext"><p>In the photoelectric effect, photoelectrons emitted from a metal surface can be stopped by applying a stopping potential <em>V</em>_s between the metal and a collecting electrode. The maximum kinetic energy of the emitted photoelectrons is KE_max.</p>
+<p>(a) By considering that the work done by the electric field on an electron of charge <em>e</em> moving through potential difference <em>V</em>_s equals the electron's kinetic energy, <strong>show that</strong> the stopping potential is given by <em>V</em>_s = (<em>hf</em> − φ) / <em>e</em>.</p>
+<p>(b) A metal surface has a work function φ = 4.30 eV. Light of frequency 1.20 × 10¹⁵ Hz is incident on the surface. <strong>Calculate</strong> the stopping potential.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer (a):</span> <em>V</em>_s = (<em>hf</em> − φ) / <em>e</em></div>
+<div class="ans"><span class="ans-label">Answer (b):</span> <em>V</em>_s = <strong>0.68 V</strong> (accept 0.67–0.69 V)</div>
+<div class="marking"><div class="marking-title">Marking Points (a)</div><ul><li><span class="mcode">M1</span> States that the work done by the electric field on the electron equals its maximum kinetic energy: <strong>KE_max = <em>eV</em>_s</strong>. The stopping potential is the potential at which the maximum kinetic energy of the photoelectron is exactly converted to electrical potential energy.</li><li><span class="mcode">M1</span> Writes the photoelectric equation <strong>KE_max = <em>hf</em> − φ</strong>. Substitutes into the energy conservation equation: <strong><em>eV</em>_s = <em>hf</em> − φ</strong>.</li><li><span class="mcode">A1</span> Divides both sides by <em>e</em>: <strong><em>V</em>_s = (<em>hf</em> − φ) / <em>e</em></strong> ✓</li></ul></div>
+<div class="marking"><div class="marking-title">Marking Points (b)</div><ul><li><span class="mcode">M1</span> Calculates photon energy: <strong>E = <em>hf</em> = 6.63 × 10⁻³⁴ × 1.20 × 10¹⁵ = 7.96 × 10⁻¹⁹ J</strong></li><li><span class="mcode">M1</span> Converts work function to joules: <strong>φ = 4.30 × 1.60 × 10⁻¹⁹ = 6.88 × 10⁻¹⁹ J</strong>. Applies photoelectric equation: <strong>KE_max = 7.96 × 10⁻¹⁹ − 6.88 × 10⁻¹⁹ = 1.08 × 10⁻¹⁹ J</strong></li><li><span class="mcode">A1</span> Calculates stopping potential: <strong><em>V</em>_s = KE_max / <em>e</em> = 1.08 × 10⁻¹⁹ / 1.60 × 10⁻¹⁹ = 0.675 V ≈ 0.68 V</strong></li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>In (a), writing <em>V</em>_s = (<em>hf</em> − φ)/<em>e</em> as the only line with no derivation (bald answer scores zero). In (b), forgetting to convert eV to joules — mixing units gives a nonsensical answer. In (b), calculating KE_max in joules but dividing by <em>e</em> without the 10⁻¹⁹ conversion, giving <em>V</em>_s = 1.08 × 10⁻¹⁹ V. In (b), using φ = 4.30 J instead of φ = 4.30 eV.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>In (b), the most frequent error is a unit conversion failure. Students either forget to convert φ from eV to joules, or they convert correctly but then forget to divide by <em>e</em> to get volts, leaving the answer in joules or eV instead of volts.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q13">
+<div class="qcard-head">
+<span class="qnum">Q13</span>
+<span class="badge badge-GRD">GRD</span>
+<span class="qspec">§57–60</span>
+<span class="qmeta"><span class="marks">7 marks</span> &middot; ~10 min</span>
+</div>
+<div class="qtext"><p>Figure 1 shows a graph of maximum kinetic energy KE_max of photoelectrons plotted against the frequency <em>f</em> of the incident radiation for two different metals, A and B. Both lines are straight and parallel.</p>
+<div class="tbl-wrap"><table><thead><tr><th style="text-align:left">Data from the graph</th><th style="text-align:left"></th></tr></thead><tbody><tr><td style="text-align:left">Gradient of both lines</td><td style="text-align:left">4.14 × 10⁻¹⁵ eV Hz⁻¹</td></tr><tr><td style="text-align:left"><em>x</em>-intercept for metal A</td><td style="text-align:left">4.4 × 10¹⁴ Hz</td></tr><tr><td style="text-align:left"><em>x</em>-intercept for metal B</td><td style="text-align:left">7.2 × 10¹⁴ Hz</td></tr></tbody></table></div>
+<p>(a) Use data from the graph to calculate a value for the Planck constant <em>h</em>. (b) Calculate the work function of metal B, giving your answer in both joules and electronvolts. (c) Light of frequency 6.0 × 10¹⁴ Hz is incident on metal A. Calculate the maximum kinetic energy of the photoelectrons emitted from metal A in electronvolts.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer (a):</span> <em>h</em> = <strong>6.6 × 10⁻³⁴ J s</strong> (to 2 s.f.; accept 6.63 × 10⁻³⁴ J s for 3 s.f.)</div>
+<div class="marking"><div class="marking-title">Marking Points (a)</div><ul><li><span class="mcode">M1</span> States that the <strong>gradient of a KE_max vs <em>f</em> graph equals <em>h</em></strong> (the Planck constant). Since KE_max is plotted in eV, the gradient has units of eV Hz⁻¹.</li><li><span class="mcode">A1</span> Converts the gradient to SI: <strong>h = 4.14 × 10⁻¹⁵ eV Hz⁻¹ × 1.60 × 10⁻¹⁹ J eV⁻¹ = 6.63 × 10⁻³⁴ J s</strong> ≈ <strong>6.6 × 10⁻³⁴ J s</strong> (2 s.f.)</li></ul></div>
+<div class="ans"><span class="ans-label">Answer (b):</span> φ_B = <strong>4.8 × 10⁻¹⁹ J = 3.0 eV</strong> (to 2 s.f. for both)</div>
+<div class="marking"><div class="marking-title">Marking Points (b)</div><ul><li><span class="mcode">M1</span> Uses <strong>φ = <em>hf</em>₀</strong> with the <em>x</em>-intercept for metal B: φ_B = <em>h</em> × <em>f</em>₀_B</li><li><span class="mcode">M1</span> Correct calculation in joules: φ_B = 6.63 × 10⁻³⁴ × 7.2 × 10¹⁴ = <strong>4.8 × 10⁻¹⁹ J</strong> (2 s.f.)</li><li><span class="mcode">A1</span> Correct conversion to electronvolts: φ_B = 4.77 × 10⁻¹⁹ / 1.60 × 10⁻¹⁹ = <strong>3.0 eV</strong> (2 s.f.)</li></ul></div>
+<div class="ans"><span class="ans-label">Answer (c):</span> KE_max = <strong>0.66 eV</strong> (to 2 s.f.)</div>
+<div class="marking"><div class="marking-title">Marking Points (c)</div><ul><li><span class="mcode">M1</span> Calculates the work function of metal A using the gradient in eV: φ_A = gradient × <em>f</em>₀_A = 4.14 × 10⁻¹⁵ × 4.4 × 10¹⁴ = <strong>1.82 eV</strong> (must use metal A's <em>x</em>-intercept, not metal B's)</li><li><span class="mcode">A1</span> Calculates the photon energy and subtracts φ_A: <em>E</em> = gradient × <em>f</em> = 4.14 × 10⁻¹⁵ × 6.0 × 10¹⁴ = 2.48 eV; <strong>KE_max = 2.48 − 1.82 = 0.66 eV</strong> (2 s.f.)</li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>For (a): stating the gradient equals <em>h</em>/<em>e</em> (this is for a <em>V</em>_s vs <em>f</em> graph, not KE_max vs <em>f</em>); failing to convert the gradient from eV Hz⁻¹ to J s. For (b): using the wrong <em>x</em>-intercept (using metal A's <em>f</em>₀ for metal B). Converting eV to J by multiplying by 1.60 × 10⁻¹⁹ instead of dividing.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>The most dangerous trap in (c) is using the work function of the wrong metal. The question specifies metal A, but students who calculated φ_B in part (b) may instinctively reuse that value. Always re-read which metal is being asked about.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q14">
+<div class="qcard-head">
+<span class="qnum">Q14</span>
+<span class="badge badge-GRD">GRD</span>
+<span class="qspec">§63</span>
+<span class="qmeta"><span class="marks">6 marks</span> &middot; ~9 min</span>
+</div>
+<div class="qtext"><p>An atom has the following energy levels (given in eV relative to the ionisation level at 0 eV):</p>
+<div class="tbl-wrap"><table><thead><tr><th style="text-align:center">Level</th><th style="text-align:center"><em>n</em> = 1</th><th style="text-align:center"><em>n</em> = 2</th><th style="text-align:center"><em>n</em> = 3</th><th style="text-align:center"><em>n</em> = 4</th></tr></thead><tbody><tr><td style="text-align:center">Energy / eV</td><td style="text-align:center">−13.6</td><td style="text-align:center">−3.40</td><td style="text-align:center">−1.51</td><td style="text-align:center">−0.85</td></tr></tbody></table></div>
+<p>(a) An electron in the <em>n</em> = 4 level makes a transition to the <em>n</em> = 2 level, emitting a photon. Calculate the wavelength of the emitted photon. (b) An electron in the <em>n</em> = 3 level makes a transition to the <em>n</em> = 1 level. Calculate the energy of the emitted photon in joules. (c) State which of the two transitions in parts (a) and (b) produces a photon with the longer wavelength. Justify your answer without further calculation.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer (a):</span> λ = <strong>4.88 × 10⁻⁷ m</strong> (accept 487–489 nm, or 4.87 × 10⁻⁷ m to 3 s.f.)</div>
+<div class="ans"><span class="ans-label">Answer (b):</span> <em>E</em> = <strong>1.93 × 10⁻¹⁸ J</strong> (accept 1.93–1.94 × 10⁻¹⁸ J)</div>
+<div class="ans"><span class="ans-label">Answer (c):</span> The <strong><em>n</em> = 4 → <em>n</em> = 2</strong> transition produces the longer wavelength.</div>
+<div class="marking"><div class="marking-title">Marking Points (a)</div><ul><li><span class="mcode">M1</span> Calculates the energy difference: Δ<em>E</em> = <em>E</em>₄ − <em>E</em>₂ = (−0.85) − (−3.40) = <strong>2.55 eV</strong></li><li><span class="mcode">M1</span> Converts to joules and substitutes into λ = <em>hc</em>/Δ<em>E</em>: Δ<em>E</em> = 2.55 × 1.60 × 10⁻¹⁹ = 4.08 × 10⁻¹⁹ J; λ = (6.63 × 10⁻³⁴ × 3.00 × 10⁸) / 4.08 × 10⁻¹⁹</li><li><span class="mcode">A1</span> <strong>λ = 4.88 × 10⁻⁷ m</strong> (3 s.f.) with correct unit</li></ul></div>
+<div class="marking"><div class="marking-title">Marking Points (b)</div><ul><li><span class="mcode">M1</span> Δ<em>E</em> = <em>E</em>₃ − <em>E</em>₁ = (−1.51) − (−13.6) = <strong>12.09 eV</strong>, converts to joules: Δ<em>E</em> = 12.09 × 1.60 × 10⁻¹⁹ = <strong>1.93 × 10⁻¹⁸ J</strong></li><li><span class="mcode">A1</span> <strong>1.93 × 10⁻¹⁸ J</strong> (3 s.f.)</li></ul></div>
+<div class="marking"><div class="marking-title">Marking Points (c)</div><ul><li><span class="mcode">B1</span> States that the <strong><em>n</em> = 4 → <em>n</em> = 2</strong> transition has the longer wavelength, with justification: Δ<em>E</em>(4→2) = 2.55 eV is smaller than Δ<em>E</em>(3→1) = 12.09 eV, and since λ = <em>hc</em>/Δ<em>E</em>, a smaller energy difference gives a longer wavelength</li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Forgetting to convert eV to joules before using λ = <em>hc</em>/Δ<em>E</em>. Using Δ<em>E</em> = <em>E</em>_lower − <em>E</em>_upper (gives negative energy). In part (c), stating the answer without justification. Using the magnitude of the energy values (e.g., comparing 13.6 and 0.85) instead of the energy differences.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Forgetting the eV → J conversion. Students write λ = <em>hc</em>/Δ<em>E</em> but substitute Δ<em>E</em> = 2.55 (in eV) without multiplying by 1.60 × 10⁻¹⁹, giving λ = 7.80 × 10⁻²⁶ m — a nonsensical result. Always check that photon wavelengths fall in the visible/UV/IR range (10⁻⁹ to 10⁻⁶ m).</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>In part (c), reasoning about wavelength from the arrow length on an energy level diagram. Arrow LENGTH on a diagram is proportional to energy, NOT wavelength. Longer arrow = larger Δ<em>E</em> = shorter λ.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q15">
+<div class="qcard-head">
+<span class="qnum">Q15</span>
+<span class="badge badge-GRD">GRD</span>
+<span class="qspec">§55–56</span>
+<span class="qmeta"><span class="marks">5 marks</span> &middot; ~7 min</span>
+</div>
+<div class="qtext"><p>A technician uses ultrasound pulses of duration 3.0 μs to inspect an aluminium component at 50 °C. An echo from a defect is detected 26 μs after the pulse is transmitted. The speed of ultrasound in aluminium at 50 °C is 6140 m s⁻¹.</p>
+<p>(a) <strong>Calculate</strong> the depth of the defect below the surface. (b) The technician needs to detect cracks as close as 5.0 mm to the surface. <strong>Determine</strong> whether the current setup can achieve this, supporting your answer with a calculation.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer (a):</span> <em>d</em> = <strong>80 mm</strong> (accept 79–80 mm or 7.98 × 10⁻² m)</div>
+<div class="ans"><span class="ans-label">Answer (b):</span> The minimum detectable depth is 9.2 mm. Since 9.2 mm > 5.0 mm, cracks at 5.0 mm would <strong>not</strong> be detected.</div>
+<div class="marking"><div class="marking-title">Marking Points (a)</div><ul><li><span class="mcode">M1</span> Correctly applies the round-trip formula: <strong>d = <em>vt</em>/2</strong> (evidence of understanding the factor of 2)</li><li><span class="mcode">A1</span> <em>d</em> = 6140 × 26 × 10⁻⁶ / 2 = <strong>7.98 × 10⁻² m = 79.8 mm ≈ 80 mm</strong> (2 s.f.)</li></ul></div>
+<div class="marking"><div class="marking-title">Marking Points (b)</div><ul><li><span class="mcode">M1</span> Calculates the minimum detectable depth: <em>d</em>_min = <em>v</em>τ/2 = 6140 × 3.0 × 10⁻⁶ / 2 = <strong>9.2 × 10⁻³ m = 9.2 mm</strong></li><li><span class="mcode">A1</span> Correct conclusion with justification: since <em>d</em>_min = 9.2 mm > 5.0 mm, <strong>cracks at 5.0 mm would NOT be detected</strong></li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Using <em>d</em> = <em>vt</em> (without the /2) — this gives 160 mm, exactly double the correct answer. Stating "5.0 mm is close to the surface so it will be detected" without calculation — this is the counterintuitive trap.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>The factor-of-2 error has appeared in 6+ past papers. Writing <em>d</em> = <em>vt</em> = 6140 × 26 × 10⁻⁶ = 0.160 m = 160 mm gives exactly double the correct answer. Students must always ask: "Does the pulse travel there AND back?"</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>The counterintuitive resolution trap: students assume that a closer crack is easier to detect. In reality, if the round-trip time (2<em>d</em>/<em>v</em>) is shorter than the pulse duration (τ), the echo returns before the transmitted pulse has finished and the two overlap, making the crack indistinguishable. Cracks CLOSER to the surface may be HARDER to detect, not easier.</p></div>
+</div>
+</details>
+</article>
+</section>
+<section id="tier3">
+<div class="tier-banner t3"><span class="tier-name">Tier 3 — Integration</span><span class="tier-desc">Multi-step, synoptic, QWC-heavy questions.</span></div>
+<article class="qcard" id="q16">
+<div class="qcard-head">
+<span class="qnum">Q16</span>
+<span class="badge badge-DER">DER+QWC</span>
+<span class="qspec">§39–40</span>
+<span class="qmeta"><span class="marks">6 marks</span> &middot; ~9 min</span>
+</div>
+<div class="qtext"><p>Two coherent microwave sources, S₁ and S₂, are separated by a distance <em>d</em> = 12.0 cm. They emit microwaves of wavelength λ = 3.00 cm. A microwave detector is moved along a line PQ that is parallel to S₁S₂ and at a perpendicular distance <em>D</em> = 40.0 cm from the midpoint of S₁S₂.</p>
+<p>(a) Derive the condition for constructive interference at a point on PQ in terms of the path difference from S₁ and S₂. DER</p>
+<p>(b) Calculate the distance from O to the nearest point on PQ where the detector records a minimum intensity.</p>
+<p>(c) Explain why it is essential that the two sources are coherent in order to observe a stable interference pattern, and discuss why two independent laboratory light sources cannot normally produce a stable interference pattern. QWC</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer (a):</span> For constructive interference, the two waves must arrive at a point in phase. A path difference of one wavelength λ corresponds to a phase difference of 2π rad (one complete cycle). Therefore, constructive interference occurs when the path difference Δ<em>s</em> = <em>s</em>₂ − <em>s</em>₁ is a whole number of wavelengths: <strong>Δ<em>s</em> = <em>n</em>λ</strong> where <em>n</em> = 0, 1, 2, … This gives a phase difference of 2π<em>n</em> rad, equivalent to zero phase difference (in phase), so the displacements reinforce to give maximum resultant amplitude.</div>
+<div class="ans"><span class="ans-label">Answer (b):</span> Destructive interference (minimum intensity) occurs when the path difference = (<em>n</em> + ½)λ. For the nearest minimum to O, <em>n</em> = 0, so Δ<em>s</em> = λ/2 = 1.50 cm. The fringe spacing is Δ<em>x</em> = <em>D</em>λ/<em>d</em> = 40.0 × 3.00/12.0 = 10.0 cm. The distance from a maximum to the adjacent minimum is half the fringe spacing: <strong>10.0/2 = 5.00 cm</strong>. (Alternative: <em>x</em> = <em>D</em> tan θ where sin θ = λ/(2<em>d</em>) = 3.00/(2 × 12.0) = 0.125, θ = 7.18°, <em>x</em> = 40.0 × tan 7.18° = 5.03 cm)</div>
+<div class="ans"><span class="ans-label">Answer (c):</span> Coherent sources maintain a constant phase relationship because they have the same frequency and a constant phase difference. Without coherence, the phase difference between the two waves at any point on PQ would vary randomly with time, causing the positions of maxima and minima to shift rapidly. The detector would record a time-averaged uniform intensity, and no stable interference pattern would be observed. Two independent laboratory light sources are incoherent because they produce light by spontaneous emission from many independent atoms, each emitting photons with random phases. There is no fixed phase relationship between the two sources, so no stable pattern forms. This is why a single source split by a double slit (or grating) is required for interference experiments with light.</div>
+<div class="marking"><div class="marking-title">Marking Points</div><ul><li><span class="mcode">M1</span> Derives path difference = <em>n</em>λ for constructive interference, with reasoning linking to phase (M1) Correct calculation: <strong>5.00 cm</strong> (or 5.03 cm)</li><li><span class="mcode">M1</span> Coherence defined: same frequency and constant phase difference</li><li><span class="mcode">M1</span> Explanation of why incoherence destroys the stable pattern</li><li><span class="mcode">M1</span> Reason why independent light sources are incoherent</li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>States the path difference condition without deriving from phase difference. Using <em>n</em> = 1 for first minimum (gives 3λ/2 path difference, second minimum). "Same wavelength" alone (insufficient for coherence). "They emit different colours" as reason for incoherence.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Omitting the link between path difference and phase difference (2π per λ) in the derivation. Not explaining that random phase fluctuations cause time-averaging when describing why incoherence destroys the pattern.</p></div>
+<div class="box note"><div class="box-title">Level 3 — Examiner Commentary</div><p>Top-tier responses to part (c) go beyond stating "same frequency and constant phase difference" and explain the <em>physical consequence</em> of incoherence — that random phase fluctuations cause the pattern to shift and average to uniform intensity. They also identify <em>why</em> independent sources are incoherent at the atomic level (spontaneous emission from independent atoms with random phases) rather than simply stating that they are. Mid-tier responses may correctly define coherence and state that independent sources lack it, but without explaining the mechanism.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q17">
+<div class="qcard-head">
+<span class="qnum">Q17</span>
+<span class="badge badge-DER">DER</span>
+<span class="qspec">§43–44</span>
+<span class="qmeta"><span class="marks">7 marks</span> &middot; ~10 min</span>
+</div>
+<div class="qtext"><p>(a) A string of length <em>L</em> is fixed at both ends and vibrates in its fundamental mode. By deriving from first principles, show that the fundamental frequency <em>f</em> satisfies the relationship <em>f</em>² = <em>T</em> / (4<em>L</em>²μ), where <em>T</em> is the tension in the string and μ is the mass per unit length.</p>
+<p>(b) A guitar string of length 0.650 m and mass per unit length 3.2 × 10⁻³ kg m⁻¹ is plucked. The fundamental frequency produced is 58 Hz. Use the relationship in (a) to calculate the tension in the string.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer (a):</span> <em>f</em>² = <em>T</em> / (4<em>L</em>²μ) (bald answer scores zero)</div>
+<div class="ans"><span class="ans-label">Answer (b):</span> <em>T</em> = <strong>18 N</strong> (2 s.f.)</div>
+<div class="marking"><div class="marking-title">Marking Points (a)</div><div class="tbl-wrap"><table><thead><tr><th style="text-align:left">Step</th><th style="text-align:left">Statement</th><th style="text-align:left">Justification</th></tr></thead><tbody><tr><td style="text-align:left">1</td><td style="text-align:left">λ = 2<em>L</em></td><td style="text-align:left">Fundamental mode: exactly one half-wavelength fits between the two fixed ends</td></tr><tr><td style="text-align:left">2</td><td style="text-align:left"><em>v</em> = <em>f</em>λ = <em>f</em> × 2<em>L</em>, therefore <em>f</em> = <em>v</em> / (2<em>L</em>)</td><td style="text-align:left">Universal wave equation <em>v</em> = <em>f</em>λ applied to the standing wave</td></tr><tr><td style="text-align:left">3</td><td style="text-align:left"><em>v</em> = √(<em>T</em>/μ)</td><td style="text-align:left">Wave speed on a taut string depends on the restoring force per unit mass per unit length</td></tr><tr><td style="text-align:left">4</td><td style="text-align:left"><em>f</em> = √(<em>T</em>/μ) / (2<em>L</em>)</td><td style="text-align:left">Substituting the expression for <em>v</em> from step 3 into step 2</td></tr><tr><td style="text-align:left">5</td><td style="text-align:left"><em>f</em>² = <em>T</em> / (4<em>L</em>²μ)</td><td style="text-align:left">Squaring both sides ✓</td></tr></tbody></table></div></div>
+<div class="marking"><div class="marking-title">Marking Points (b)</div><ul><li><span class="mcode">M1</span> Rearranging: <em>T</em> = 4<em>L</em>²μ<em>f</em>²</li><li><span class="mcode">A1</span> <em>T</em> = 4 × (0.650)² × 3.2 × 10⁻³ × (58)² = 4 × 0.4225 × 3.2 × 10⁻³ × 3364 = <strong>18 N</strong> (2 s.f., matching the 2 s.f. in μ)</li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>A bald "λ = 2<em>L</em>" without "because the fundamental mode has one half-wavelength fitting on the string" (scores 0 for that line). In part (b), using <em>f</em> = 57.7 Hz (unrounded) gives <em>T</em> = 18.0 N; either 18 N or 18.0 N is acceptable if SF are consistent.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Writing individual steps without the physical justification required for DER. Each algebraic line must be accompanied by the physics reason (e.g., "because at the fundamental, one half-wavelength fits on the string"). Simply writing λ = 2<em>L</em> → <em>f</em> = <em>v</em>/(2<em>L</em>) → <em>v</em> = √(<em>T</em>/μ) → <em>f</em>² = <em>T</em>/(4<em>L</em>²μ) as bare equations loses all the justification marks.</p></div>
+<div class="box note"><div class="box-title">Level 3 — Examiner Commentary</div><p>This derivation combines the wave equation (<em>v</em> = <em>f</em>λ) with the string wave speed formula (<em>v</em> = √(<em>T</em>/μ)) and the boundary condition (λ = 2<em>L</em>). The highest-scoring responses clearly justify each step, especially explaining <em>why</em> λ = 2<em>L</em> (one half-wavelength fits between two fixed nodes) and <em>why</em> <em>v</em> = √(<em>T</em>/μ) (the restoring force per unit mass). Common errors include writing bare equations without justification, or confusing the wave equation with the kinetic energy formula.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q18">
+<div class="qcard-head">
+<span class="qnum">Q18</span>
+<span class="badge badge-DER">DER</span>
+<span class="qspec">§49</span>
+<span class="qmeta"><span class="marks">6 marks</span> &middot; ~10 min</span>
+</div>
+<div class="qtext"><p>Light of intensity <em>I</em>₀ is plane-polarised. A second polarising filter (analyser) is placed in the path of this light with its transmission axis at an angle θ to the plane of polarisation.</p>
+<p>(a) <strong>Show that</strong> the intensity of the light transmitted through the analyser is given by <em>I</em> = <em>I</em>₀ cos²θ.</p>
+<p>(b) Two polarising filters are placed with their transmission axes at 90° to each other (crossed polarisers). A student states that no light can pass through this arrangement. Another student suggests that inserting a <strong>third</strong> polarising filter at 45° between the crossed pair would allow light to be transmitted. Use Malus's law to verify the second student's claim, calculating the fraction of <em>I</em>₀ transmitted by the three-filter arrangement.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer (a):</span> <em>I</em> = <em>I</em>₀ cos²θ (bald answer scores zero)</div>
+<div class="ans"><span class="ans-label">Answer (b):</span> The second student is correct — the three-filter arrangement transmits <strong>¼ of <em>I</em>₀</strong></div>
+<div class="marking"><div class="marking-title">Marking Points (a)</div><ul><li><span class="mcode">M1</span> The electric field of the polarised light has amplitude <em>E</em>₀ in the plane of polarisation. The analyser transmits only the <strong>component of <em>E</em>₀ along its transmission axis</strong>: <em>E</em> = <em>E</em>₀ cos θ (must explain the resolution of the E-field into components)</li><li><span class="mcode">M1</span> Intensity is proportional to the <strong>square</strong> of the amplitude: <em>I</em> ∝ <em>E</em>². Therefore <em>I</em>/<em>I</em>₀ = (<em>E</em>₀ cos θ)² / <em>E</em>₀² = cos²θ (must include the squaring step with justification)</li><li><span class="mcode">A1</span> Rearranges to give <strong><em>I</em> = <em>I</em>₀ cos²θ</strong> ✓</li></ul></div>
+<div class="marking"><div class="marking-title">Marking Points (b)</div><ul><li><span class="mcode">M1</span> <strong>Crossed polarisers (no middle filter):</strong> θ = 90°, so <em>I</em> = <em>I</em>₀ cos²(90°) = <em>I</em>₀ × 0 = <strong>0</strong> — no light transmitted</li><li><span class="mcode">M1</span> <strong>Three-filter arrangement:</strong> After filter 1, light is polarised with intensity <em>I</em>₀. Angle between filter 1 and inserted filter (at 45°) is 45°, so <em>I</em>₁ = <em>I</em>₀ cos²(45°) = <em>I</em>₀ × 0.500 = <strong><em>I</em>₀/2</strong>. Angle between inserted filter (at 45°) and filter 2 (at 90°) is also 45°, so <em>I</em>₂ = (<em>I</em>₀/2) × cos²(45°) = (<em>I</em>₀/2) × 0.500 = <strong><em>I</em>₀/4</strong></li><li><span class="mcode">A1</span> States that the three-filter arrangement transmits <strong>¼ (or 25%) of <em>I</em>₀</strong>, confirming that inserting the third filter <strong>does</strong> allow light through</li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted (a)</div><p>Writing <em>I</em> = <em>I</em>₀ cos²θ without any derivation (bald answer = 0). Stating "Malus's law" as the entire derivation. Using <em>I</em> = <em>I</em>₀ cos²θ to "prove" <em>I</em> = <em>I</em>₀ cos²θ (circular).</p></div>
+<div class="box warn"><div class="box-title">NOT Accepted (b)</div><p>Applying Malus's law only once (e.g., using θ = 45° directly from filter 1 to filter 2, ignoring the middle filter). Forgetting that the middle filter changes the plane of polarisation.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>In part (b), applying Malus's law only once, using θ = 45° directly between the first and last filters. This ignores that the middle filter <em>re-polarises</em> the light along its own transmission axis. The key insight is that each filter redefines the plane of polarisation.</p></div>
+<div class="box note"><div class="box-title">Level 3 — Examiner Commentary</div><p>This question combines a standard derivation (part a) with a counterintuitive application (part b). The three-polariser paradox — that inserting an <em>additional</em> absorbing filter between crossed polarisers <em>increases</em> transmission from 0% to 25% — is a classic T3 challenge. The key discriminating feature is whether students recognise that the middle filter <em>re-polarises</em> the light, changing the effective angle for the final transmission to 45° (not 90°). High-scoring responses show Malus's law applied at each filter with explicit angle values.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q19">
+<div class="qcard-head">
+<span class="qnum">Q19</span>
+<span class="badge badge-QWC">QWC</span>
+<span class="qspec">§50, §53, §54, §60</span>
+<span class="qmeta"><span class="marks">6 marks</span> &middot; ~12 min</span>
+</div>
+<div class="qtext"><p>Wave-particle duality is a fundamental concept in physics. Electrons directed at a thin crystal produce a diffraction pattern of concentric rings, while the photoelectric effect demonstrates that light transfers energy in discrete packets called photons.</p>
+<p>Discuss the evidence for wave-particle duality. In your answer you should:</p>
+<ul><li>explain why the observation of a diffraction pattern from electrons provides evidence for the wave nature of matter</li><li>explain why a crystal lattice is required to observe electron diffraction, whereas visible light can be diffracted by a grating with much wider slit spacing</li><li>describe how the photoelectric effect provides evidence for the particle nature of light, making reference to the threshold frequency</li><li>explain how the de Broglie equation λ = <em>h</em>/<em>p</em> connects the wave and particle descriptions</li></ul></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> Electron diffraction proves matter has wave properties; the photoelectric effect proves light has particle properties. The de Broglie equation λ = <em>h</em>/<em>p</em> unifies both descriptions.</div>
+<div class="marking"><div class="marking-title">Marking Points</div><ul><li><span class="mcode">M1</span> A diffraction pattern consists of regions of constructive and destructive interference, which are <strong>wave phenomena</strong>. The observation of such a pattern from electrons demonstrates that electrons exhibit wave behaviour — a purely particle model cannot produce interference.</li><li><span class="mcode">M2</span> For significant diffraction to occur, the wavelength of the wave must be <strong>comparable to the spacing of the diffracting structure</strong>. Electrons accelerated through ~kV potentials have de Broglie wavelengths of order <strong>10⁻¹¹ m</strong>, comparable to crystal lattice spacing (~10⁻¹⁰ m). Visible light has wavelengths of order <strong>10⁻⁷ m</strong>, far too large for a crystal lattice — but comparable to optical diffraction grating spacing (~10⁻⁶ m).</li><li><span class="mcode">M3</span> In the photoelectric effect, electrons are emitted only if the incident light frequency <strong>exceeds a threshold frequency <em>f</em>₀</strong>. This cannot be explained by a wave model, because a wave model predicts that increasing the intensity should eventually cause emission regardless of frequency. The photon model (<em>E</em> = <em>hf</em>) explains this: each photon delivers a fixed quantum of energy proportional to frequency; below <em>f</em>₀, no single photon has sufficient energy to overcome the work function φ.</li><li><span class="mcode">M4</span> The de Broglie equation <strong>λ = <em>h</em>/<em>p</em></strong> connects wave properties (wavelength λ) with particle properties (momentum <em>p</em>). For a photon: <em>p</em> = <em>E</em>/<em>c</em> = <em>hf</em>/<em>c</em> = <em>h</em>/λ, so photons obey the same equation. For matter: <em>p</em> = <em>mv</em>, giving λ = <em>h</em>/(<em>mv</em>). The equation shows that <strong>all</strong> matter and radiation exhibit both wave and particle characteristics.</li><li><span class="mcode">M5</span> The duality is <strong>complementary</strong>: experiments that probe interference/diffraction reveal wave properties, while experiments that probe energy/momentum transfer reveal particle properties.</li><li><span class="mcode">M6</span> QWC: Answer is logically structured, progressing from evidence for wave nature of matter → quantitative justification for different diffracting structures → evidence for particle nature of light → unifying equation → synoptic conclusion.</li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Stating "electrons are waves" (electrons exhibit wave <em>properties</em>). Saying "light is particles" (light exhibits particle <em>properties</em>). Failing to mention the threshold frequency in the photoelectric effect explanation. Giving a qualitative description without the quantitative wavelength comparison between electrons and crystal spacing.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Students frequently describe electron diffraction without explaining <em>why</em> a crystal is needed (the wavelength comparison is the key physics). Others describe the photoelectric effect in terms of intensity only, omitting threshold frequency entirely — the threshold frequency is the <em>defining</em> evidence against the wave model.</p></div>
+<div class="box note"><div class="box-title">Level 3 — Examiner Commentary</div><p>The highest-scoring responses integrate all four bullet points into a coherent narrative. The wavelength comparison (electron ~10⁻¹¹ m vs crystal spacing ~10⁻¹⁰ m vs visible light ~10⁻⁷ m) is the single most important quantitative element — students who omit it lose the M2 mark and typically score 4/6 maximum. The de Broglie equation should be presented as the unifying framework, not just a formula to quote. Responses that simply list facts without connective language score lower on the QWC dimension.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q20">
+<div class="qcard-head">
+<span class="qnum">Q20</span>
+<span class="badge badge-QWC">QWC</span>
+<span class="qspec">§62</span>
+<span class="qmeta"><span class="marks">6 marks</span> &middot; ~10 min</span>
+</div>
+<div class="qtext"><p>The wave model of light predicts that electrons should be emitted from a metal surface at any frequency provided the intensity is sufficiently high. Experimental observations of the photoelectric effect contradict this prediction.</p>
+<p>Use the photon model of light to explain the following observations:</p>
+<ul><li>electrons are not emitted below a threshold frequency, regardless of the intensity</li><li>the maximum kinetic energy of the emitted electrons depends on the frequency of the light, not on its intensity</li><li>electrons are emitted instantaneously when light above the threshold frequency is incident on the surface</li></ul>
+<p>In your answer, you should compare the predictions of the wave model with the photon model for each observation.</p></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> The wave model predicts that energy is distributed continuously across the wavefront, which means that the energy delivered to the surface accumulates over time. Therefore, the wave model predicts that electrons should be emitted at any frequency if the intensity is high enough, because the energy builds up gradually. However, experiments show that no electrons are emitted below a threshold frequency regardless of intensity, which means energy does not accumulate. The photon model explains this because light consists of discrete packets of energy called photons, where the energy of each photon is given by <em>E</em> = <em>hf</em>. Each photon interacts with one electron in a one-to-one interaction, so the electron can only absorb energy in quanta of <em>hf</em>. For an electron to be emitted, the photon energy must exceed the work function (<em>hf</em> ≥ φ), which means there is a minimum frequency — the threshold frequency — below which no emission occurs, regardless of how many photons arrive per second. Furthermore, the wave model predicts that higher intensity gives more energy to each electron, because the amplitude of the wave is greater. However, the photon model explains that increasing the intensity only increases the number of photons per second, therefore more electrons are emitted per second (greater photocurrent), but the maximum kinetic energy of each electron depends only on the frequency of the incident light, because <em>E</em>_k(max) = <em>hf</em> − φ. Finally, the wave model predicts a time delay before emission at low intensities, because energy must accumulate. However, emission is observed to be instantaneous, because the entire photon energy <em>hf</em> is transferred to the electron in a single interaction, which contradicts the wave model's prediction of gradual energy build-up.</div>
+<div class="marking"><div class="marking-title">Marking Points</div><ul><li><span class="mcode">M1</span> Describes the <strong>wave model prediction</strong> and its failure: the wave model predicts emission at any frequency with sufficient intensity (energy accumulates), but no electrons are emitted below the threshold frequency</li><li><span class="mcode">M2</span> Explains using the <strong>photon model</strong> that <em>E</em> = <em>hf</em> and one photon interacts with one electron in a one-to-one interaction, so the photon energy must exceed the work function for emission to occur</li><li><span class="mcode">M3</span> Explains the <strong>role of intensity</strong>: in the photon model, increasing intensity increases the number of photons per second, therefore more electrons are emitted per second (greater photocurrent), but <em>E</em>_k(max) depends only on frequency, not intensity</li><li><span class="mcode">M4</span> Explains <strong>instantaneous emission</strong>: the photon transfers all its energy in a single interaction, which contradicts the wave model's prediction of a time delay</li><li><span class="mcode">C1</span> <strong>Coherent and logical</strong> structure: the answer flows as a connected argument using causal linkages (because, therefore, which means, so)</li><li><span class="mcode">C2</span> <strong>Accurate and appropriate</strong> use of spelling, grammar and punctuation; continuous prose without bullet points</li></ul></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Listing correct physics facts without connective language (loses C1). Using bullet points or numbered lists (explicitly penalised — QWC requires continuous prose). Stating "intensity increases energy per photon" — this contradicts the photon model and is explicitly penalised. Confusing the photon model with the wave model (e.g. "photons accumulate energy"). Saying "electrons absorb multiple photons" — the one-to-one interaction is a key requirement. Failing to mention <em>E</em> = <em>hf</em> or the work function.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Listing correct facts without connective words (because, therefore, however, in contrast) — this reads as a list and scores 0 for C1. The mark scheme template explicitly penalises list-style answers.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Stating "intensity increases energy per photon" — this directly contradicts the photon model where intensity = number of photons per second, not energy per photon. This error was explicitly noted in the Jun 2023 mark scheme.</p></div>
+<div class="box note"><div class="box-title">Level 3 — Examiner Commentary</div><p>The photoelectric effect QWC has appeared four times (Jun 2019, Jan 2022, Oct 2023, Jun 2025) and follows a consistent template. The highest-scoring responses (Level 3, 5–6 marks) systematically compare wave and photon model predictions for each observation, using causal chains: "because energy accumulates in the wave model... however no emission below <em>f</em>₀... therefore the wave model fails... the photon model explains this because <em>E</em> = <em>hf</em> and one photon interacts with one electron." The most common error is listing correct facts without connective words (losing C1), and confusing intensity effects between the two models (losing M3).</p></div>
+</div>
+</details>
+</article>
+</section>
+
+<section id="progress"><h2>Progress Tracker</h2><div class="tbl-wrap"><table class="prog-table"><thead><tr><th>Q#</th><th>Type</th><th>Tier</th><th class="num">Marks</th><th>Correct?</th></tr></thead><tbody><tr class="t1-row"><td class="qcol">Q1</td><td>DER</td><td>1</td><td class="num">3</td><td><input type="checkbox" id="p-q1"></td></tr><tr class="t1-row"><td class="qcol">Q2</td><td>GRD</td><td>1</td><td class="num">4</td><td><input type="checkbox" id="p-q2"></td></tr><tr class="t1-row"><td class="qcol">Q3</td><td>DER</td><td>1</td><td class="num">4</td><td><input type="checkbox" id="p-q3"></td></tr><tr class="t1-row"><td class="qcol">Q4</td><td>DER</td><td>1</td><td class="num">3</td><td><input type="checkbox" id="p-q4"></td></tr><tr class="t1-row"><td class="qcol">Q5</td><td>DER</td><td>1</td><td class="num">3</td><td><input type="checkbox" id="p-q5"></td></tr><tr class="t2-row"><td class="qcol">Q6</td><td>GRD</td><td>2</td><td class="num">5</td><td><input type="checkbox" id="p-q6"></td></tr><tr class="t2-row"><td class="qcol">Q7</td><td>GRD</td><td>2</td><td class="num">9</td><td><input type="checkbox" id="p-q7"></td></tr><tr class="t2-row"><td class="qcol">Q8</td><td>GRD</td><td>2</td><td class="num">5</td><td><input type="checkbox" id="p-q8"></td></tr><tr class="t2-row"><td class="qcol">Q9</td><td>QWC</td><td>2</td><td class="num">6</td><td><input type="checkbox" id="p-q9"></td></tr><tr class="t2-row"><td class="qcol">Q10</td><td>GRD</td><td>2</td><td class="num">7</td><td><input type="checkbox" id="p-q10"></td></tr><tr class="t2-row"><td class="qcol">Q11</td><td>QWC</td><td>2</td><td class="num">6</td><td><input type="checkbox" id="p-q11"></td></tr><tr class="t2-row"><td class="qcol">Q12</td><td>DER</td><td>2</td><td class="num">6</td><td><input type="checkbox" id="p-q12"></td></tr><tr class="t2-row"><td class="qcol">Q13</td><td>GRD</td><td>2</td><td class="num">7</td><td><input type="checkbox" id="p-q13"></td></tr><tr class="t2-row"><td class="qcol">Q14</td><td>GRD</td><td>2</td><td class="num">6</td><td><input type="checkbox" id="p-q14"></td></tr><tr class="t2-row"><td class="qcol">Q15</td><td>GRD</td><td>2</td><td class="num">5</td><td><input type="checkbox" id="p-q15"></td></tr><tr class="t3-row"><td class="qcol">Q16</td><td>DER</td><td>3</td><td class="num">6</td><td><input type="checkbox" id="p-q16"></td></tr><tr class="t3-row"><td class="qcol">Q17</td><td>DER</td><td>3</td><td class="num">7</td><td><input type="checkbox" id="p-q17"></td></tr><tr class="t3-row"><td class="qcol">Q18</td><td>DER</td><td>3</td><td class="num">6</td><td><input type="checkbox" id="p-q18"></td></tr><tr class="t3-row"><td class="qcol">Q19</td><td>QWC</td><td>3</td><td class="num">6</td><td><input type="checkbox" id="p-q19"></td></tr><tr class="t3-row"><td class="qcol">Q20</td><td>QWC</td><td>3</td><td class="num">6</td><td><input type="checkbox" id="p-q20"></td></tr><tr class="total"><td class="qcol">Total</td><td>—</td><td>—</td><td class="num">110</td><td id="p-score">0 / 20</td></tr></tbody></table></div></section>
+
+<footer>
+<p>TAABot &mdash; Exam Readiness Questions &middot; WPH12 Ch 2.3 &middot; 20 questions &middot; 110 marks &middot; 160 min target</p>
+<p style="margin-top:4px;font-size:.72rem">Regenerated R906-D &middot; Pearson Edexcel International A-Level</p>
+</footer>
+</main>
+<script>
+(function(){
+  var saved=localStorage.getItem('erq-theme');
+  if(saved==='dark')document.documentElement.setAttribute('data-theme','dark');
+  updateBtn();
+  loadProgress();
+})();
+function toggleDark(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  if(isDark){document.documentElement.removeAttribute('data-theme');localStorage.setItem('erq-theme','light')}
+  else{document.documentElement.setAttribute('data-theme','dark');localStorage.setItem('erq-theme','dark')}
+  updateBtn();
+}
+function updateBtn(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  var btn=document.getElementById('darkBtn');
+  if(btn)btn.innerHTML=isDark?'\u2600\uFE0F Light':'\u{1F319} Dark';
+}
+function toggleSidebar(){
+  var sb=document.getElementById('sidebar'),ov=document.getElementById('overlay');
+  sb.classList.toggle('open');ov.classList.toggle('open');
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    var sb=document.getElementById('sidebar');
+    if(sb.classList.contains('open'))toggleSidebar();
+  }
+});
+function loadProgress(){
+  var saved=localStorage.getItem('erq-progress-ch-2-3');
+  if(!saved)return;
+  try{
+    var state=JSON.parse(saved);
+    document.querySelectorAll('.prog-table input[type="checkbox"]').forEach(function(cb){
+      if(state[cb.id])cb.checked=true;
+    });
+    updateScore();
+  }catch(e){}
+}
+function saveProgress(){
+  var state={};
+  document.querySelectorAll('.prog-table input[type="checkbox"]').forEach(function(cb){
+    state[cb.id]=cb.checked;
+  });
+  localStorage.setItem('erq-progress-ch-2-3',JSON.stringify(state));
+}
+function updateScore(){
+  var checked=document.querySelectorAll('.prog-table input[type="checkbox"]:checked').length;
+  var scoreEl=document.getElementById('p-score');
+  if(scoreEl)scoreEl.textContent=checked+' / 20';
+}
+document.querySelectorAll('.prog-table input[type="checkbox"]').forEach(function(cb){
+  cb.addEventListener('change',function(){saveProgress();updateScore();});
+});
+window.addEventListener('beforeprint',function(){
+  document.querySelectorAll('details.answer').forEach(function(d){
+    d.setAttribute('data-was-open',d.open?'1':'0');
+    d.open=true;
+  });
+});
+window.addEventListener('afterprint',function(){
+  document.querySelectorAll('details.answer').forEach(function(d){
+    d.open=d.getAttribute('data-was-open')==='1';
+    d.removeAttribute('data-was-open');
+  });
+});
+</script>
+</body>
+</html>

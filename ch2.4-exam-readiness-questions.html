@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ch 2.4 — Electric Circuits — Exam Readiness Questions</title>
+<style>
+
+:root{
+  --bg:#fafcfe;--surface:#fff;--text:#1e293b;--heading:#0f4c75;--heading2:#1b6ca8;
+  --accent:#3b82f6;--accent2:#10b981;--border:#e2e8f0;--muted:#64748b;
+  --tip-bg:#eff6ff;--tip-border:#bfdbfe;
+  --warn-bg:#fefce8;--warn-border:#fde68a;
+  --err-bg:#fef2f2;--err-border:#fecaca;
+  --worked-bg:#f0fdf4;--worked-border:#bbf7d0;
+  --note-bg:#f8fafc;--note-border:#cbd5e1;
+  --sidebar-bg:#fff;--sidebar-shadow:0 4px 24px rgba(0,0,0,.1);
+  --code-bg:#f1f5f9;--tbl-head:#eef2f7;--tbl-alt:#f8fafc;
+  --card-bg:#fff;--card-shadow:0 1px 3px rgba(0,0,0,.06);
+  --tier1-bg:#eff6ff;--tier1-border:#3b82f6;--tier1-fg:#1e40af;
+  --tier2-bg:#f0fdf4;--tier2-border:#10b981;--tier2-fg:#065f46;
+  --tier3-bg:#fef3f2;--tier3-border:#f43f5e;--tier3-fg:#9f1239;
+  --b-QFR-bg:#dbeafe;--b-QFR-fg:#1e40af;
+  --b-TDC-bg:#ede9fe;--b-TDC-fg:#5b21b6;
+  --b-CAL-bg:#d1fae5;--b-CAL-fg:#065f46;
+  --b-EXP-bg:#ffedd5;--b-EXP-fg:#9a3412;
+  --b-WTE-bg:#ccfbf1;--b-WTE-fg:#115e59;
+  --b-STE-bg:#fee2e2;--b-STE-fg:#991b1b;
+  --b-DIA-bg:#e0e7ff;--b-DIA-fg:#3730a3;
+  --b-SYN-bg:#fce7f3;--b-SYN-fg:#9d174d;
+  --b-DER-bg:#fef3c7;--b-DER-fg:#92400e;
+  --b-QWC-bg:#cffafe;--b-QWC-fg:#155e75;
+  --b-GRD-bg:#ecfccb;--b-GRD-fg:#3f6212;
+  --b-RAT-bg:#fef3c7;--b-RAT-fg:#92400e;
+}
+[data-theme="dark"]{
+  --bg:#0f172a;--surface:#1e293b;--text:#e2e8f0;--heading:#93c5fd;--heading2:#7dd3fc;
+  --accent:#60a5fa;--accent2:#34d399;--border:#334155;--muted:#94a3b8;
+  --tip-bg:#1e3a5f;--tip-border:#2563eb;
+  --warn-bg:#422006;--warn-border:#a16207;
+  --err-bg:#4c1d1d;--err-border:#dc2626;
+  --worked-bg:#052e16;--worked-border:#16a34a;
+  --note-bg:#1a2332;--note-border:#475569;
+  --sidebar-bg:#1e293b;--sidebar-shadow:0 4px 24px rgba(0,0,0,.4);
+  --code-bg:#0f172a;--tbl-head:#1e3a5f;--tbl-alt:#162032;
+  --card-bg:#1e293b;--card-shadow:0 1px 3px rgba(0,0,0,.3);
+  --tier1-bg:#1e3a5f;--tier1-border:#60a5fa;--tier1-fg:#bfdbfe;
+  --tier2-bg:#052e16;--tier2-border:#34d399;--tier2-fg:#a7f3d0;
+  --tier3-bg:#4c1d1d;--tier3-border:#fb7185;--tier3-fg:#fecdd3;
+  --b-QFR-bg:#1e3a5f;--b-QFR-fg:#bfdbfe;
+  --b-TDC-bg:#3b2a5e;--b-TDC-fg:#ddd6fe;
+  --b-CAL-bg:#0c3a26;--b-CAL-fg:#a7f3d0;
+  --b-EXP-bg:#5a2e0a;--b-EXP-fg:#fed7aa;
+  --b-WTE-bg:#0c3a36;--b-WTE-fg:#99f6e4;
+  --b-STE-bg:#5a1a1a;--b-STE-fg:#fecaca;
+  --b-DIA-bg:#2a2e6a;--b-DIA-fg:#c7d2fe;
+  --b-SYN-bg:#5a1d44;--b-SYN-fg:#fbcfe8;
+  --b-DER-bg:#5a3e0a;--b-DER-fg:#fde68a;
+  --b-QWC-bg:#0c4a52;--b-QWC-fg:#a5f3fc;
+  --b-GRD-bg:#2a4310;--b-GRD-fg:#d9f99d;
+  --b-RAT-bg:#5a3e0a;--b-RAT-fg:#fde68a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;padding-top:52px}
+@media(max-width:480px){body{font-size:15px;padding-top:48px}}
+header{position:fixed;top:0;left:0;right:0;height:52px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;z-index:1000;padding:0 16px;gap:12px}
+#menuBtn{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text);padding:4px 8px;border-radius:6px;line-height:1}
+#menuBtn:hover{background:var(--code-bg)}
+#headerTitle{font-weight:700;font-size:.95rem;color:var(--heading);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+#darkBtn{margin-left:auto;background:none;border:1px solid var(--border);border-radius:6px;cursor:pointer;padding:4px 10px;font-size:.8rem;color:var(--text);white-space:nowrap}
+#darkBtn:hover{background:var(--code-bg)}
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:1100;display:none}
+#overlay.open{display:block}
+#sidebar{position:fixed;top:0;left:-340px;width:320px;max-width:85vw;height:100vh;background:var(--sidebar-bg);box-shadow:var(--sidebar-shadow);z-index:1200;overflow-y:auto;padding:16px 0;transition:left .25s ease}
+#sidebar.open{left:0}
+#sidebar .sb-head{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;border-bottom:1px solid var(--border);margin-bottom:8px}
+#sidebar .sb-head span{font-weight:700;color:var(--heading);font-size:.95rem}
+#sidebar .sb-close{background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text);padding:4px;line-height:1}
+#sidebar nav{padding:0 12px}
+#sidebar nav ul{list-style:none;padding:0;margin:0}
+#sidebar nav li{margin-bottom:2px}
+#sidebar nav a{display:block;padding:6px 10px;border-radius:6px;font-size:.82rem;color:var(--text);text-decoration:none;transition:background .15s;line-height:1.4}
+#sidebar nav a:hover{background:var(--code-bg)}
+#sidebar nav a.chapter{font-weight:700;color:var(--heading);font-size:.9rem;margin-top:10px;padding:8px 10px;border-radius:6px}
+#sidebar nav a.tier1{background:var(--tier1-bg);color:var(--tier1-fg);border-left:3px solid var(--tier1-border)}
+#sidebar nav a.tier2{background:var(--tier2-bg);color:var(--tier2-fg);border-left:3px solid var(--tier2-border)}
+#sidebar nav a.tier3{background:var(--tier3-bg);color:var(--tier3-fg);border-left:3px solid var(--tier3-border)}
+#sidebar nav a.q-link{padding-left:16px;font-size:.8rem;color:var(--muted)}
+#sidebar nav a.q-link .q-tag{font-weight:700;color:var(--heading2)}
+#sidebar nav a.q-link:hover{background:var(--code-bg);color:var(--text)}
+main{max-width:920px;margin:0 auto;padding:24px 20px 60px}
+@media(max-width:600px){main{padding:16px 12px 40px}}
+.cover{text-align:center;padding:48px 20px 40px;border-bottom:2px solid var(--border);margin-bottom:32px}
+.cover h1{font-size:2rem;color:var(--heading);margin-bottom:8px;line-height:1.25}
+@media(max-width:480px){.cover h1{font-size:1.5rem}}
+.cover .subtitle{font-size:1rem;color:var(--muted);margin-bottom:16px}
+.cover .meta{display:inline-flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.cover .tag{background:var(--code-bg);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:.8rem;color:var(--muted)}
+.cover .stats{margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cover .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 18px;min-width:100px}
+.cover .stat .num{font-size:1.5rem;font-weight:800;color:var(--accent);line-height:1.1}
+.cover .stat .lbl{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.intro{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:16px 20px;margin-bottom:24px;font-size:.92rem}
+.intro p{margin:0}
+section{margin-bottom:40px}
+section h2{color:var(--heading);font-size:1.4rem;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+.tier-banner{padding:14px 18px;border-radius:10px;margin-bottom:18px;border-left:5px solid;font-weight:700}
+.tier-banner.t1{background:var(--tier1-bg);border-color:var(--tier1-border);color:var(--tier1-fg)}
+.tier-banner.t2{background:var(--tier2-bg);border-color:var(--tier2-border);color:var(--tier2-fg)}
+.tier-banner.t3{background:var(--tier3-bg);border-color:var(--tier3-border);color:var(--tier3-fg)}
+.tier-banner .tier-name{font-size:1.15rem;display:block}
+.tier-banner .tier-desc{font-size:.85rem;font-weight:400;color:var(--muted);display:block;margin-top:2px}
+.tbl-wrap{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+@media(max-width:600px){table{font-size:.78rem}}
+th{background:var(--tbl-head);color:var(--heading);font-weight:600;text-align:left;padding:8px 10px;border:1px solid var(--border);white-space:nowrap}
+td{padding:7px 10px;border:1px solid var(--border);vertical-align:top}
+tr:nth-child(even) td{background:var(--tbl-alt)}
+td.num,th.num{text-align:center}
+tr.total td{font-weight:700;background:var(--tbl-head);color:var(--heading)}
+.qcard{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:18px;box-shadow:var(--card-shadow);scroll-margin-top:64px}
+@media(max-width:480px){.qcard{padding:14px 14px}}
+.qcard-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.qnum{background:var(--heading);color:#fff;font-weight:700;font-size:.85rem;padding:3px 10px;border-radius:6px;letter-spacing:.02em}
+[data-theme="dark"] .qnum{background:var(--accent)}
+.badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.75rem;font-weight:700;letter-spacing:.05em;font-family:'SF Mono',Consolas,monospace}
+.badge-QFR{background:var(--b-QFR-bg);color:var(--b-QFR-fg)}
+.badge-TDC{background:var(--b-TDC-bg);color:var(--b-TDC-fg)}
+.badge-CAL{background:var(--b-CAL-bg);color:var(--b-CAL-fg)}
+.badge-EXP{background:var(--b-EXP-bg);color:var(--b-EXP-fg)}
+.badge-WTE{background:var(--b-WTE-bg);color:var(--b-WTE-fg)}
+.badge-DIA{background:var(--b-DIA-bg);color:var(--b-DIA-fg)}
+.badge-DER{background:var(--b-DER-bg);color:var(--b-DER-fg)}
+.badge-QWC{background:var(--b-QWC-bg);color:var(--b-QWC-fg)}
+.badge-GRD{background:var(--b-GRD-bg);color:var(--b-GRD-fg)}
+.badge-RAT{background:var(--b-RAT-bg);color:var(--b-RAT-fg)}
+.qspec{font-size:.8rem;color:var(--muted);font-weight:600;background:var(--code-bg);padding:2px 8px;border-radius:4px}
+.qmeta{margin-left:auto;font-size:.82rem;color:var(--muted);font-weight:600}
+@media(max-width:480px){.qmeta{margin-left:0;width:100%;font-size:.78rem}}
+.qmeta .marks{color:var(--accent);font-weight:700}
+.qtext{font-size:1rem;margin-bottom:12px;color:var(--text)}
+.qtext strong{color:var(--heading)}
+.qtext em{color:var(--heading2);font-style:italic}
+.qtext code{background:var(--code-bg);padding:1px 5px;border-radius:4px;font-size:.9em}
+details.answer{margin-top:10px;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--bg)}
+details.answer > summary{cursor:pointer;padding:10px 14px;background:var(--code-bg);font-weight:700;color:var(--heading);font-size:.88rem;user-select:none;list-style:none;display:flex;align-items:center;gap:8px}
+details.answer > summary::-webkit-details-marker{display:none}
+details.answer > summary::before{content:"\25B6";font-size:.7rem;transition:transform .15s}
+details.answer[open] > summary::before{transform:rotate(90deg)}
+details.answer > summary:hover{background:var(--tbl-head)}
+.answer-body{padding:12px 16px 14px;font-size:.92rem}
+.answer-body p{margin-bottom:8px}
+.answer-body p:last-child{margin-bottom:0}
+.answer-body strong{color:var(--heading)}
+.answer-body code{background:var(--code-bg);padding:1px 5px;border-radius:4px;font-size:.88em}
+.ans{background:var(--worked-bg);border-left:4px solid var(--worked-border);border-radius:0 6px 6px 0;padding:10px 14px;margin:8px 0}
+.ans-label{font-weight:700;color:var(--heading2);margin-right:4px}
+.marking{margin:10px 0}
+.marking-title{font-weight:700;color:var(--heading);font-size:.85rem;margin-bottom:4px;text-transform:uppercase;letter-spacing:.03em}
+.marking ul,.answer-body ul,.answer-body ol{margin:4px 0 8px 22px}
+.answer-body li{margin-bottom:3px}
+.mcode{display:inline-block;min-width:26px;padding:1px 6px;border-radius:4px;background:var(--accent);color:#fff;font-size:.72rem;font-weight:700;font-family:'SF Mono',Consolas,monospace;margin-right:4px;text-align:center}
+[data-theme="dark"] .mcode{background:var(--accent);color:#0f172a}
+.sub-mark-head{font-weight:700;color:var(--heading2);font-size:.85rem;margin:8px 0 2px;font-style:italic}
+.box{border-left:4px solid;border-radius:0 8px 8px 0;padding:10px 14px;margin:10px 0;font-size:.9rem}
+.box-title{font-weight:700;margin-bottom:4px;font-size:.82rem;text-transform:uppercase;letter-spacing:.03em}
+.box p{margin:0}
+.box p + p{margin-top:6px}
+.box.warn{background:var(--warn-bg);border-color:var(--warn-border);color:var(--text)}
+.box.warn .box-title{color:#92400e}
+[data-theme="dark"] .box.warn .box-title{color:#fde68a}
+.box.err{background:var(--err-bg);border-color:var(--err-border);color:var(--text)}
+.box.err .box-title{color:#991b1b}
+[data-theme="dark"] .box.err .box-title{color:#fecaca}
+.box.note{background:var(--note-bg);border-color:var(--note-border);color:var(--text)}
+.box.note .box-title{color:var(--muted)}
+.box.note p{color:var(--muted);font-style:italic}
+.box.worked{background:var(--worked-bg);border-color:var(--worked-border)}
+.warn-label{font-weight:700;color:#991b1b;margin-right:4px}
+[data-theme="dark"] .warn-label{color:#fecaca}
+.eq{display:block;text-align:center;font-size:1.05rem;font-weight:600;padding:10px;margin:10px 0;background:var(--code-bg);border-radius:8px;color:var(--heading);font-family:'SF Mono',Consolas,monospace}
+@media(max-width:480px){.eq{font-size:.92rem;padding:8px}}
+hr{border:none;border-top:1px solid var(--border);margin:24px 0}
+sub,sup{font-size:.75em}
+.prog-table th,.prog-table td{text-align:center}
+.prog-table td.qcol{text-align:left;font-weight:600}
+.prog-table input[type="checkbox"]{width:18px;height:18px;cursor:pointer;accent-color:var(--accent)}
+.prog-table tr.t1-row td.qcol{color:var(--tier1-fg)}
+.prog-table tr.t2-row td.qcol{color:var(--tier2-fg)}
+.prog-table tr.t3-row td.qcol{color:var(--tier3-fg)}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border)}
+@media print{
+  header,#sidebar,#overlay,#darkBtn{display:none!important}
+  body{padding-top:0;background:#fff;color:#000}
+  main{max-width:100%;padding:0}
+  .qcard{break-inside:avoid;box-shadow:none;border:1px solid #ccc}
+  details.answer{break-inside:avoid}
+  details.answer > summary{display:none}
+  details.answer .answer-body{display:block!important}
+  .cover{break-after:avoid}
+  .tier-banner{break-after:avoid}
+  a[href]:after{content:""}
+}
+
+</style>
+</head>
+<body>
+<header>
+<button id="menuBtn" onclick="toggleSidebar()" aria-label="Toggle navigation">&#9776;</button>
+<span id="headerTitle">Ch 2.4 — Electric Circuits &middot; Exam Readiness Questions</span>
+<button id="darkBtn" onclick="toggleDark()" aria-label="Toggle dark mode">&#127769; Dark</button>
+</header>
+<div id="overlay" onclick="toggleSidebar()"></div>
+<aside id="sidebar">
+<div class="sb-head">
+<span>Index</span>
+<button class="sb-close" onclick="toggleSidebar()" aria-label="Close">&#10005;</button>
+</div>
+<nav>
+<a href="#cover" class="chapter" onclick="toggleSidebar()">Cover</a>
+<ul><li><a href="#summary" onclick="toggleSidebar()">&#128202; Summary</a></li></ul>
+<a href="#tier1" class="chapter tier1" onclick="toggleSidebar()">Tier 1 — Foundation</a>
+<ul>
+<li><a href="#q1" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q1 QFR</span> Define electric current.</a></li>
+<li><a href="#q2" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q2 QFR</span> Define potential difference.</a></li>
+<li><a href="#q3" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q3 QFR</span> State Kirchhoff's first law.</a></li>
+<li><a href="#q4" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q4 QFR</span> Define electromotive force (e.m.f.).</a></li>
+<li><a href="#q5" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q5 TDC</span> State the equation relating terminal p...</a></li>
+</ul>
+<a href="#tier2" class="chapter tier2" onclick="toggleSidebar()">Tier 2 — Application</a>
+<ul>
+<li><a href="#q6" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q6 EXP</span> Explain, in terms of the motion of co...</a></li>
+<li><a href="#q7" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q7 WTE</span> Explain how Kirchhoff's first law is...</a></li>
+<li><a href="#q8" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q8 DIA</span> Sketch separate I–V characteristic g...</a></li>
+<li><a href="#q9" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q9 WTE</span> A student is asked to explain why the...</a></li>
+<li><a href="#q10" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q10 DER</span> The volt is defined as 1 joule per c...</a></li>
+<li><a href="#q11" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q11 CAL</span> A copper wire of cross-sectional are...</a></li>
+<li><a href="#q12" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q12 CAL</span> An LED has a potential difference of...</a></li>
+<li><a href="#q13" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q13 RAT</span> Wire P has length l, diameter d, and...</a></li>
+<li><a href="#q14" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q14 GRD</span> A student investigates how the resis...</a></li>
+<li><a href="#q15" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q15 CAL</span> A cell of e.m.f. 9.0 V and internal r...</a></li>
+</ul>
+<a href="#tier3" class="chapter tier3" onclick="toggleSidebar()">Tier 3 — Integration</a>
+<ul>
+<li><a href="#q16" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q16 DER</span> Starting from Kirchhoff's first and s...</a></li>
+<li><a href="#q17" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q17 QWC</span> A circuit contains a battery of e.m.f...</a></li>
+<li><a href="#q18" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q18 QWC</span> The resistance of a tungsten filament...</a></li>
+<li><a href="#q19" class="q-link" onclick="toggleSidebar()"><span class="q-tag">Q19 GRD</span> A student investigates the resistivity...</a></li>
+</ul>
+<a href="#progress" class="chapter" onclick="toggleSidebar()">Progress Tracker</a>
+</nav>
+</aside>
+<main>
+<section id="cover" class="cover">
+<h1>Exam Readiness Questions</h1>
+<p class="subtitle">Ch 2.4 — Electric Circuits &middot; WPH12</p>
+<div class="meta">
+<span class="tag">Pearson Edexcel IAL</span>
+</div>
+<div class="stats">
+<div class="stat"><div class="num">19</div><div class="lbl">Questions</div></div>
+<div class="stat"><div class="num">61</div><div class="lbl">Marks</div></div>
+<div class="stat"><div class="num">78</div><div class="lbl">Minutes</div></div>
+</div>
+</section>
+
+<div class="intro">
+<p><strong>How to use this section.</strong> Answer every question below without looking at the answers. If you can answer all questions correctly with full working, you are exam-ready for this topic. If you struggle with any question, review the relevant concept section above. Questions are arranged from Tier 1 (Foundation) to Tier 3 (Integration).</p>
+</div>
+
+<section id="summary">
+<h2>Summary</h2>
+<div class="tbl-wrap"><table><thead><tr><th>Sub-topic</th><th>Questions</th><th class="num">Total Marks</th><th class="num">Time Target</th></tr></thead><tbody><tr><td>Current, p.d. &amp; definitions (§64–§66)</td><td>Q1, Q2, Q6, Q10</td><td>8</td><td>9 min</td></tr><tr><td>Kirchhoff's laws &amp; circuits (§67a–§67b, §68)</td><td>Q3, Q7, Q16, Q17</td><td>13</td><td>17 min</td></tr><tr><td>E.m.f., internal resistance &amp; energy (§69, §77)</td><td>Q4, Q5, Q12, Q15</td><td>8</td><td>9 min</td></tr><tr><td>I-V characteristics &amp; components (§70, §79–§80)</td><td>Q8, Q9</td><td>8</td><td>10 min</td></tr><tr><td>Charge carriers &amp; drift velocity (§73)</td><td>Q11</td><td>3</td><td>4 min</td></tr><tr><td>Resistivity (§71)</td><td>Q13, Q14, Q18, Q19</td><td>21</td><td>29 min</td></tr><tr class="total"><td>Total</td><td>19</td><td class="num">61</td><td class="num">78 min</td></tr></tbody></table></div>
+</section>
+
+<section id="tier1">
+<div class="tier-banner t1"><span class="tier-name">Tier 1 — Foundation</span><span class="tier-desc">If you can't answer these instantly, revisit the chapter content.</span></div>
+<article class="qcard" id="q1">
+<div class="qcard-head">
+<span class="qnum">Q1</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§64</span>
+<span class="qmeta"><span class="marks">1 mark</span> · ~1 min</span>
+</div>
+<div class="qtext">Define electric current.</div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> Electric current is the rate of flow of electric charge (the charge passing a point per unit time).</div>
+<div class="marking"><div class="marking-title">Marking Points</div>
+<ul><li><span class="mcode">B1</span> Rate of flow of (electric) charge</li></ul>
+</div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>"Flow of electrons" alone (describes electron flow, not the definition of current — ions can also carry current); "movement of charge" without "rate of"; "what flows in a wire".</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Describing the mechanism (electrons moving) instead of giving the formal definition. The MS for Jan 2020 Q1(a) required "rate of flow of charge" specifically.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q2">
+<div class="qcard-head">
+<span class="qnum">Q2</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§65</span>
+<span class="qmeta"><span class="marks">1 mark</span> · ~1 min</span>
+</div>
+<div class="qtext">Define potential difference.</div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> The energy transferred (work done) per unit charge between two points in a circuit.</div>
+<div class="marking"><div class="marking-title">Marking Points</div>
+<ul><li><span class="mcode">B1</span> Energy transferred per unit charge (accept "work done per unit charge")</li></ul>
+</div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>"The push of electricity"; "the voltage across a component" (circular definition); "energy per second" (that is power, not p.d.).</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Confusing potential difference with current or power. "Energy per second" is a power definition, not a p.d. definition.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q3">
+<div class="qcard-head">
+<span class="qnum">Q3</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§67a</span>
+<span class="qmeta"><span class="marks">1 mark</span> · ~1 min</span>
+</div>
+<div class="qtext">State Kirchhoff's first law.</div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> At any junction (node) in an electrical circuit, the sum of the currents entering the junction equals the sum of the currents leaving the junction.</div>
+<div class="marking"><div class="marking-title">Marking Points</div>
+<ul><li><span class="mcode">B1</span> Sum of currents entering a junction = sum of currents leaving (accept "algebraic sum of currents at a junction is zero")</li></ul>
+</div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>"Voltage is the same in parallel" (that is a consequence, not the law); "Current is conserved" without mentioning a junction (too vague — the MS for Jun 2024 Q9 required explicit mention of the junction).</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Stating Kirchhoff's second law instead. Adding "the current splits equally" (it does not necessarily split equally).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q4">
+<div class="qcard-head">
+<span class="qnum">Q4</span>
+<span class="badge badge-QFR">QFR</span>
+<span class="qspec">§69</span>
+<span class="qmeta"><span class="marks">1 mark</span> · ~1 min</span>
+</div>
+<div class="qtext">Define electromotive force (e.m.f.).</div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> The electromotive force (e.m.f.) of a source is the energy transferred per unit charge by the source when charge flows through it.</div>
+<div class="marking"><div class="marking-title">Marking Points</div>
+<ul><li><span class="mcode">B1</span> Energy (transferred/converted/work done) per unit charge (by/through the source)</li></ul>
+</div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>"The force that pushes electrons" (e.m.f. is NOT a force); "the voltage of a cell" (voltage is a p.d.); omitting "per unit charge"; "the p.d. across a cell" (terminal p.d. ≠ e.m.f. when current flows).</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>The word "force" in "electromotive force" misleads students into thinking it is a force. E.m.f. is an energy-per-charge quantity (measured in volts), not a force (measured in newtons).</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q5">
+<div class="qcard-head">
+<span class="qnum">Q5</span>
+<span class="badge badge-TDC">TDC</span>
+<span class="qspec">§69</span>
+<span class="qmeta"><span class="marks">1 mark</span> · ~1 min</span>
+</div>
+<div class="qtext">State the equation relating terminal potential difference, e.m.f., current, and internal resistance.</div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> V = ε − Ir</div>
+<div class="marking"><div class="marking-title">Marking Points</div>
+<ul><li><span class="mcode">B1</span> V = ε − Ir (accept ℰ or E for e.m.f. symbol)</li></ul>
+</div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>V = ε + Ir (wrong sign — would mean terminal p.d. exceeds e.m.f., which is physically impossible); V = IR (this is Ohm's law, not the e.m.f. equation).</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Writing V = ε + Ir. This is the single most common sign error in Ch 2.4. The lost volts (Ir) must be <em>subtracted</em> from the e.m.f. to give the terminal p.d.</p></div>
+</div>
+</details>
+</article>
+</section>
+<section id="tier2">
+<div class="tier-banner t2"><span class="tier-name">Tier 2 — Application</span><span class="tier-desc">Multi-step calculations, explanations, and data interpretation.</span></div>
+<article class="qcard" id="q6">
+<div class="qcard-head">
+<span class="qnum">Q6</span>
+<span class="badge badge-EXP">EXP</span>
+<span class="qspec">§64</span>
+<span class="qmeta"><span class="marks">3 marks</span> · ~3 min</span>
+</div>
+<div class="qtext">Explain, in terms of the motion of conduction electrons and lattice ions, why a metal wire has resistance.</div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> When a p.d. is applied across a metal wire, the free electrons are accelerated by the electric field and gain kinetic energy. However, the electrons repeatedly collide with the vibrating lattice ions. At each collision, the electrons transfer energy to the lattice (heating the wire) and lose their directed velocity. This repeated scattering randomises the electron motion and limits the mean drift velocity, which manifests macroscopically as resistance.</div>
+<div class="marking"><div class="marking-title">Marking Points</div>
+<ul><li><span class="mcode">M1</span> Electrons are accelerated by the electric field / gain kinetic energy</li><li><span class="mcode">M1</span> Electrons collide with (vibrating) lattice ions</li><li><span class="mcode">A1</span> Collisions randomise electron velocity / transfer energy to the lattice / limit the drift velocity</li></ul>
+</div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>"Electrons get stuck" or "electrons are repelled by atoms" — must reference <em>collisions</em> with lattice ions specifically. "Opposition to current flow" is a restatement, not a mechanism.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Describing resistance as "opposition to current flow" without any microscopic mechanism. The MS for Jun 2019 Q4(b) explicitly required the collision mechanism.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q7">
+<div class="qcard-head">
+<span class="qnum">Q7</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§67a</span>
+<span class="qmeta"><span class="marks">2 marks</span> · ~3 min</span>
+</div>
+<div class="qtext">Explain how Kirchhoff's first law is a consequence of the conservation of charge.</div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> Conservation of charge states that electric charge cannot be created or destroyed. At a junction, the charge flowing into the junction per unit time must equal the charge flowing out per unit time. Since current is defined as the rate of flow of charge (I = ΔQ/Δt), and the time interval is the same for all branches, the sum of currents entering must equal the sum of currents leaving.</div>
+<div class="marking"><div class="marking-title">Marking Points</div>
+<ul><li><span class="mcode">E1</span> Charge cannot be created or destroyed / is conserved</li><li><span class="mcode">E2</span> Therefore charge per unit time flowing in = charge per unit time flowing out at a junction, and since I = ΔQ/Δt, the sum of currents in equals sum of currents out</li></ul>
+</div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>"Charge is conserved so current is conserved" (too vague — must explicitly link charge conservation to current via the rate definition).</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Stating Kirchhoff's first law without explaining <em>why</em> it follows from charge conservation. The key step is connecting charge (Q) to current (I) via I = ΔQ/Δt.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q8">
+<div class="qcard-head">
+<span class="qnum">Q8</span>
+<span class="badge badge-DIA">DIA</span>
+<span class="qspec">§70</span>
+<span class="qmeta"><span class="marks">4 marks</span> · ~5 min</span>
+</div>
+<div class="qtext">Sketch separate I–V characteristic graphs for each of the following components. In each case, label both axes and indicate the key features of the graph. <br>(a) A metallic conductor at constant temperature (ohmic conductor). <br>(b) A filament lamp. <br>(c) A silicon diode.</div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> Three I–V graphs sketched (V on x-axis, I on y-axis): (a) straight line through origin; (b) symmetric curve through origin with decreasing gradient; (c) zero current until ~0.6 V forward bias, then sharp rise.</div>
+<p><strong>Part (a) — Ohmic conductor:</strong> A straight line through the origin with constant gradient (I is directly proportional to V).</p>
+<p><strong>Part (b) — Filament lamp:</strong> A curve through the origin with decreasing gradient as |V| increases (the graph becomes less steep). The curve is symmetric in the first and third quadrants (same shape for positive and negative V).</p>
+<p><strong>Part (c) — Silicon diode:</strong> Approximately zero current for negative p.d. and for positive p.d. below ~0.6 V. Above approximately 0.6 V in the forward-biased direction, the current increases sharply.</p>
+<div class="marking"><div class="marking-title">Marking Points</div>
+<ul><li><span class="mcode">B1</span> Part (a): Straight line through the origin; both axes labelled</li><li><span class="mcode">B1</span> Part (b): Curve through the origin with decreasing gradient; symmetric about the origin</li><li><span class="mcode">B1</span> Part (c): Approximately zero current for negative V and for positive V &lt; 0.6 V</li><li><span class="mcode">B1</span> Part (c): Sharp increase in current above threshold of ~0.6 V in forward direction</li></ul>
+</div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Drawing the diode curve in both quadrants (diodes conduct in only one direction). Drawing the filament lamp as a straight line. Omitting axis labels.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>For the diode, drawing a curve that rises gradually rather than showing a sharp threshold at ~0.6 V. The MS requires the near-zero current region and the sharp transition to be clearly distinguishable.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q9">
+<div class="qcard-head">
+<span class="qnum">Q9</span>
+<span class="badge badge-WTE">WTE</span>
+<span class="qspec">§70, §79</span>
+<span class="qmeta"><span class="marks">4 marks</span> · ~5 min</span>
+</div>
+<div class="qtext">A student is asked to explain why the resistance of a metal wire increases with temperature while the resistance of an NTC thermistor decreases with temperature. Their answer is: <em>"The resistance changes because of temperature. In both cases the atoms vibrate more, which changes the resistance."</em> Explain what is wrong with this answer and write a correct explanation for each component.</div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> The student's answer is wrong because it applies the same mechanism (lattice vibrations) to both components. "Lattice vibrations" is the mechanism for metals only — it does not explain thermistor behaviour.</div>
+<p><strong>Metal:</strong> As temperature increases, the lattice ions vibrate with greater amplitude. This increases the frequency of collisions between conduction electrons and lattice ions, increasing the scattering of electrons and therefore increasing the resistance.</p>
+<p><strong>NTC thermistor:</strong> As temperature increases, more charge carriers are released (promoted) into the conduction band. This increases the number density of charge carriers (n). Since resistance is inversely related to the number of charge carriers, the resistance decreases.</p>
+<div class="marking"><div class="marking-title">Marking Points</div>
+<ul><li><span class="mcode">C1</span> Identifies the error: the student applies the same mechanism to both; "lattice vibrations" is not the mechanism for semiconductors</li><li><span class="mcode">C2</span> Metal: increased lattice ion vibrations → increased electron scattering → increased resistance</li><li><span class="mcode">C3</span> Thermistor: increased temperature → more charge carriers released into conduction band → increased n → decreased resistance</li><li><span class="mcode">C4</span> Clear contrast between the two different mechanisms</li></ul>
+</div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>"Both have increased vibrations so both resistances increase"; "The thermistor has more energy so resistance decreases" (no mechanism); "Electrons move faster in the thermistor" (it is charge carrier <em>number</em> that increases, not their speed).</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>This is the #1 exam trap in Ch 2.4, appearing in 4 of 13 past papers. The MS for Jan 2022 and Oct 2023 specifically penalised students who used "lattice vibrations" to explain thermistor behaviour. The metal mechanism (vibrations) and semiconductor mechanism (charge carrier release) are fundamentally different.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q10">
+<div class="qcard-head">
+<span class="qnum">Q10</span>
+<span class="badge badge-DER">DER</span>
+<span class="qspec">§65</span>
+<span class="qmeta"><span class="marks">3 marks</span> · ~4 min</span>
+</div>
+<div class="qtext">The volt is defined as 1 joule per coulomb and the ampere as 1 coulomb per second. Show that 1 V = 1 W A⁻¹, where W represents watts. <em>(Bald answer = 0 marks — every algebraic step must be shown.)</em></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> 1 V = 1 W A⁻¹ (shown via unit substitution: 1 V = 1 J C⁻¹ → 1 W s C⁻¹ → 1 W A⁻¹).</div>
+<p>Starting from the definition of the volt:</p>
+<p>1 V = 1 J C⁻¹</p>
+<p>Since 1 W = 1 J s⁻¹, we can write 1 J = 1 W s. Substituting:</p>
+<p>1 V = (1 W s) × C⁻¹ = 1 W s C⁻¹</p>
+<p>Since 1 A = 1 C s⁻¹, therefore 1 s C⁻¹ = 1 A⁻¹. Substituting:</p>
+<p>1 V = 1 W × A⁻¹ = <strong>1 W A⁻¹</strong> ✓</p>
+<div class="marking"><div class="marking-title">Marking Points</div>
+<ul><li><span class="mcode">M1</span> Starts from 1 V = 1 J C⁻¹</li><li><span class="mcode">M1</span> Expresses joules in terms of watts and seconds: 1 J = 1 W s (from 1 W = 1 J s⁻¹)</li><li><span class="mcode">A1</span> Substitutes and uses 1 A = 1 C s⁻¹ to show 1 V = 1 W A⁻¹</li></ul>
+</div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Writing "1 V = 1 W A⁻¹" directly without derivation (bald answer = 0 marks). Skipping intermediate steps.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Students often write the final answer immediately, losing all 3 marks. Every algebraic manipulation must be shown for "show that" questions. This is a unit-derivation question, not a recall question.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q11">
+<div class="qcard-head">
+<span class="qnum">Q11</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§73</span>
+<span class="qmeta"><span class="marks">3 marks</span> · ~4 min</span>
+</div>
+<div class="qtext">A copper wire of cross-sectional area 1.5 × 10⁻⁶ m² carries a current of 2.4 A. The number density of free electrons in copper is 8.5 × 10²⁸ m⁻³. Calculate the drift velocity of the free electrons in the wire.</div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> v = <strong>1.2 × 10⁻⁴ m s⁻¹</strong> (≈ 0.12 mm s⁻¹).</div>
+<p>v = I/(nAe) = 2.4 / (8.5 × 10²⁸ × 1.5 × 10⁻⁶ × 1.60 × 10⁻¹⁹) = 2.4 / (2.04 × 10⁴) = <strong>1.2 × 10⁻⁴ m s⁻¹</strong></p>
+<div class="marking"><div class="marking-title">Marking Points</div>
+<ul><li><span class="mcode">M1</span> Correct rearrangement and substitution into v = I/(nAe)</li><li><span class="mcode">M1</span> Correct evaluation of the denominator: nAe = 2.04 × 10⁴ (allow 2.0–2.1 × 10⁴)</li><li><span class="mcode">A1</span> v = 1.2 × 10⁻⁴ m s⁻¹ (allow 1.15–1.20 × 10⁻⁴ m s⁻¹)</li></ul>
+</div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Answer without unit; answer with incorrect magnitude (e.g. 1.2 × 10⁴ m s⁻¹ — this is faster than light!); using diameter instead of cross-sectional area.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Getting the magnitude completely wrong. Drift velocity in metals is always very small (~10⁻⁴ m s⁻¹), because the number density of free electrons is enormous. If your answer comes out much larger than 1 mm s⁻¹, check your calculation.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q12">
+<div class="qcard-head">
+<span class="qnum">Q12</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§77</span>
+<span class="qmeta"><span class="marks">3 marks</span> · ~3 min</span>
+</div>
+<div class="qtext">An LED has a potential difference of 2.1 V across it and a current of 18 mA through it. Calculate the power dissipated by the LED.</div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> P = <strong>0.038 W</strong> (or 38 mW).</div>
+<p>P = VI = 2.1 × 0.018 = 0.0378 W = <strong>0.038 W</strong> (or 38 mW)</p>
+<div class="marking"><div class="marking-title">Marking Points</div>
+<ul><li><span class="mcode">M1</span> Conversion of 18 mA to 0.018 A</li><li><span class="mcode">M1</span> Correct substitution into P = VI</li><li><span class="mcode">A1</span> 0.038 W or 38 mW (accept 0.0378 W for 3 s.f.)</li></ul>
+</div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>37.8 W (failed to convert mA to A — this is 1000× too large); 2.1 × 18 = 37.8 "W" without unit conversion; answers without units.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>The mA-to-A conversion trap. Multiplying 2.1 × 18 directly gives 37.8, which is wrong by a factor of 1000. Always convert milliamperes to amperes before substituting into P = VI.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q13">
+<div class="qcard-head">
+<span class="qnum">Q13</span>
+<span class="badge badge-RAT">RAT</span>
+<span class="qspec">§71</span>
+<span class="qmeta"><span class="marks">3 marks</span> · ~4 min</span>
+</div>
+<div class="qtext">Wire P has length l, diameter d, and resistivity ρ. Wire Q has length 2l, diameter d, and is made of the same material. Wire R has length l, diameter 2d, and is made of the same material. State the ratio of resistances Rₚ : Rᵩ : Rᵣ.</div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> Rₚ : Rᵩ : Rᵣ = <strong>4 : 8 : 1</strong>.</div>
+<p>Working:</p>
+<ul>
+<li>R = ρl/A, so Rₚ = ρl/A where A = πd²/4</li>
+<li>Wire Q: length 2l, same A → Rᵩ = ρ(2l)/A = 2Rₚ</li>
+<li>Wire R: same length l, diameter 2d → Aᵣ = π(2d)²/4 = 4A → Rᵣ = ρl/(4A) = Rₚ/4</li>
+<li>Expressing as integer ratio: Rₚ : Rᵩ : Rᵣ = Rₚ : 2Rₚ : Rₚ/4 = <strong>4 : 8 : 1</strong></li>
+</ul>
+<div class="marking"><div class="marking-title">Marking Points</div>
+<ul><li><span class="mcode">M1</span> Correct reasoning for Q: doubling length doubles resistance (Rᵩ = 2Rₚ)</li><li><span class="mcode">M1</span> Correct reasoning for R: doubling diameter quadruples area, so resistance is quartered (Rᵣ = Rₚ/4)</li><li><span class="mcode">A1</span> Correct final ratio: 4 : 8 : 1</li></ul>
+</div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>1 : 2 : 0.25 (not integer ratio); 4 : 2 : 1 (wrong — confused the effect of doubling diameter); 1 : 2 : 4 (inverted the diameter effect).</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Thinking that doubling the diameter doubles the area (instead of quadrupling it, since A ∝ d²). This gives the ratio 4 : 8 : 2 instead of 4 : 8 : 1. Remember: area depends on the <em>square</em> of the diameter.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q14">
+<div class="qcard-head">
+<span class="qnum">Q14</span>
+<span class="badge badge-GRD">GRD</span>
+<span class="qspec">§71</span>
+<span class="qmeta"><span class="marks">4 marks</span> · ~5 min</span>
+</div>
+<div class="qtext">A student investigates how the resistance R of a manganin wire varies with its length l. The wire has a constant cross-sectional area of 5.1 × 10⁻⁷ m². The student measures R for different lengths and plots a graph of R against l. The graph is a straight line through the origin with a gradient of 6.7 Ω m⁻¹. Use the graph to determine the resistivity of manganin.</div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> ρ = <strong>3.4 × 10⁻⁶ Ω m</strong>.</div>
+<p>From R = ρl/A, rearranging gives R = (ρ/A) × l. This is of the form y = mx (straight line through origin) where the gradient m = ρ/A.</p>
+<p>Therefore: ρ = gradient × A = 6.7 Ω m⁻¹ × 5.1 × 10⁻⁷ m² = <strong>3.4 × 10⁻⁶ Ω m</strong></p>
+<div class="marking"><div class="marking-title">Marking Points</div>
+<ul><li><span class="mcode">M1</span> States or implies R = ρl/A, so R = (ρ/A) × l (straight line with gradient = ρ/A)</li><li><span class="mcode">M1</span> Identifies gradient of R vs l graph = ρ/A</li><li><span class="mcode">M1</span> Correct substitution: ρ = 6.7 × 5.1 × 10⁻⁷</li><li><span class="mcode">A1</span> ρ = 3.4 × 10⁻⁶ Ω m with correct units (accept 3.42 × 10⁻⁶ Ω m)</li></ul>
+</div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Using ρ = gradient/A (inverted fraction); using gradient = ρ × A (wrong relationship); omitting units; using m instead of m² for area giving ρ = 3.4 × 10⁻³ Ω m.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Confusing which variable goes on which axis, then writing gradient = A/ρ instead of ρ/A. Remember: if R is on the y-axis and l is on the x-axis, then gradient = ΔR/Δl = ρ/A, so ρ = gradient × A.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q15">
+<div class="qcard-head">
+<span class="qnum">Q15</span>
+<span class="badge badge-CAL">CAL</span>
+<span class="qspec">§69</span>
+<span class="qmeta"><span class="marks">3 marks</span> · ~4 min</span>
+</div>
+<div class="qtext">A cell of e.m.f. 9.0 V and internal resistance 1.5 Ω is connected to an external resistor of 10.5 Ω. Calculate (a) the current in the circuit, and (b) the terminal p.d. across the cell.</div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> (a) I = <strong>0.75 A</strong>; (b) V = <strong>7.9 V</strong>.</div>
+<p>(a) I = ε/(R + r) = 9.0 V / (10.5 Ω + 1.5 Ω) = 9.0 / 12.0 = <strong>0.75 A</strong></p>
+<p>(b) V = IR = 0.75 A × 10.5 Ω = <strong>7.9 V</strong></p>
+<p>(or V = ε − Ir = 9.0 − 0.75 × 1.5 = 7.875 ≈ 7.9 V)</p>
+<div class="marking"><div class="marking-title">Marking Points</div>
+<ul><li><span class="mcode">M1</span> I = ε/(R + r) = 9.0/12.0 = 0.75 A (method mark for correct equation and total resistance)</li><li><span class="mcode">A1</span> I = 0.75 A</li><li><span class="mcode">A1</span> V = 7.9 V (accept 7.88 V from V = ε − Ir route; ECF from incorrect current)</li></ul>
+</div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Using I = ε/R (ignoring internal resistance) giving I = 0.86 A; using V = ε (ignoring internal resistance) giving V = 9.0 V; answers without units.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Forgetting to include the internal resistance in the total resistance. The denominator must be (R + r), not just R. Also check: terminal p.d. must be <em>less</em> than e.m.f. when current flows — if you get V &gt; ε, something is wrong.</p></div>
+</div>
+</details>
+</article>
+</section>
+<section id="tier3">
+<div class="tier-banner t3"><span class="tier-name">Tier 3 — Integration</span><span class="tier-desc">Cross-topic synthesis, extended derivations, and QWC.</span></div>
+<article class="qcard" id="q16">
+<div class="qcard-head">
+<span class="qnum">Q16</span>
+<span class="badge badge-DER">DER</span>
+<span class="qspec">§67b, §68</span>
+<span class="qmeta"><span class="marks">4 marks</span> · ~5 min</span>
+</div>
+<div class="qtext">Starting from Kirchhoff's first and second laws and the definition of resistance R = V/I, derive the formula for the total resistance of two resistors R₁ and R₂ connected in series: Rₜ = R₁ + R₂. <em>(Bald answer = 0 marks — every step must be shown.)</em></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> <strong>Rₜ = R₁ + R₂</strong> (derived from Kirchhoff's first law, Kirchhoff's second law, and V = IR).</div>
+<p>By Kirchhoff's first law (conservation of charge), the same current I flows through both resistors since there is no junction between them.</p>
+<p>By Kirchhoff's second law (conservation of energy), the sum of p.d.s equals the e.m.f.:</p>
+<p>Vₜ = V₁ + V₂</p>
+<p>Substituting V = IR for each component:</p>
+<p>IRₜ = IR₁ + IR₂</p>
+<p>Factoring out I:</p>
+<p>IRₜ = I(R₁ + R₂)</p>
+<p>Dividing both sides by I:</p>
+<p><strong>Rₜ = R₁ + R₂</strong> ✓</p>
+<div class="marking"><div class="marking-title">Marking Points</div>
+<ul><li><span class="mcode">M1</span> Same current I through both resistors (Kirchhoff's first law)</li><li><span class="mcode">M1</span> Vₜ = V₁ + V₂ (Kirchhoff's second law)</li><li><span class="mcode">M1</span> Substitution: IRₜ = IR₁ + IR₂, then factorising: IRₜ = I(R₁ + R₂)</li><li><span class="mcode">A1</span> Divides by I to obtain Rₜ = R₁ + R₂</li></ul>
+</div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Stating the formula without derivation; starting from V = IR alone without citing Kirchhoff's laws; using numerical examples instead of algebraic proof; writing V₁ = I₁R₁ with different currents (current is the same in series).</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Not explicitly citing Kirchhoff's laws as the starting point. The question specifically asks you to start from these laws. Another error is writing different subscripts for current (I₁, I₂) — in series, the current is the same throughout.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q17">
+<div class="qcard-head">
+<span class="qnum">Q17</span>
+<span class="badge badge-QWC">QWC</span>
+<span class="qspec">§67a, §67b</span>
+<span class="qmeta"><span class="marks">6 marks</span> · ~8 min</span>
+</div>
+<div class="qtext">A circuit contains a battery of e.m.f. ε connected to three resistors: resistor P (4.0 Ω) in series with a parallel combination of resistor Q (6.0 Ω) and resistor R (12.0 Ω). A student measures the current leaving the battery as 1.50 A. Using Kirchhoff's laws, explain how the current distributes in this circuit and how the potential difference is shared between the components. Refer to each resistor by its label (P, Q, R) throughout your answer. <em>(QWC: split rubric — 4 IC marks + 2 structure marks.)</em></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> K1 at junction: Iᵩ = 1.00 A, Iᵣ = 0.50 A (verified: 1.00 + 0.50 = 1.50 A). K2 around loop: Vₚ = Vᵩ = Vᵣ = 6.0 V; ε = 12.0 V.</div>
+<p><strong>Indicative Content — 4 marks:</strong></p>
+<div class="tbl-wrap"><table><thead><tr><th style="width:60px">Mark</th><th>Point required</th></tr></thead><tbody>
+<tr><td>IC1</td><td>Kirchhoff's first law applied: current of 1.50 A enters the junction and splits. Using the current divider rule: current through Q = 1.50 × 12.0/(6.0 + 12.0) = <strong>1.00 A</strong>; current through R = 1.50 × 6.0/(6.0 + 12.0) = <strong>0.50 A</strong>. Verified: 1.00 + 0.50 = 1.50 A ✓ (must use labels Q and R)</td></tr>
+<tr><td>IC2</td><td>Physical principle of K1: conservation of charge — charge cannot accumulate at a junction</td></tr>
+<tr><td>IC3</td><td>Kirchhoff's second law: Vₚ = 1.50 × 4.0 = 6.0 V; Vᵩ = 1.00 × 6.0 = 6.0 V; Vᵣ = 0.50 × 12.0 = 6.0 V. Sum of p.d.s: 6.0 + 6.0 = 12.0 V = ε (must use labels P, Q, R)</td></tr>
+<tr><td>IC4</td><td>Physical principle of K2: conservation of energy — p.d. is the same across parallel components Q and R (both 6.0 V)</td></tr>
+</tbody></table></div>
+<p><strong>Structure, Precision and Linkage — 2 marks:</strong></p>
+<div class="tbl-wrap"><table><thead><tr><th style="width:60px">Mark</th><th>Criterion</th></tr></thead><tbody>
+<tr><td>SP1</td><td>Each resistor is referred to by its specific label (P, Q, R) throughout the answer — generic statements without labels lose IC marks</td></tr>
+<tr><td>SP2</td><td>Clear logical structure: K1 stated, applied to the specific junction, values calculated and verified; then K2 stated, applied to the specific loop, values calculated and verified; both laws explicitly linked to their physical conservation principles</td></tr>
+</tbody></table></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>"Current is conserved at junctions" without naming which junction or which resistors; "Energy is conserved" without referencing p.d. and e.m.f. specifically; "The voltages add up" without using the specific resistor labels and calculated values; any answer that does not consistently use the labels P, Q, R.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>The MS for Jun 2022 Q15(a) was very strict: generic Kirchhoff's law statements without application to the specific resistors named in the question lost marks. Students must use the labels P, Q, R in every calculation and explanation. Writing continuous prose with logical connectives (therefore, since, because) is required for QWC marks.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q18">
+<div class="qcard-head">
+<span class="qnum">Q18</span>
+<span class="badge badge-QWC">QWC</span>
+<span class="qspec">§71</span>
+<span class="qmeta"><span class="marks">6 marks</span> · ~8 min</span>
+</div>
+<div class="qtext">The resistance of a tungsten filament lamp increases significantly when it is operating compared to when it is cold. A student uses the cold resistance value in the equation R = ρl/A to calculate the resistivity of tungsten at its operating temperature. The student's calculated value is much lower than the accepted value at the operating temperature. Explain, using a causal chain of reasoning, why the student's calculated resistivity is incorrect. <em>(QWC: split rubric — 4 IC marks + 2 structure marks.)</em></div>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> Operating temperature raises tungsten resistivity (lattice-ion vibration mechanism), so R_operating ≫ R_cold. Using R_cold in ρ = RA/l gives a ρ value much lower than the true ρ at the operating temperature.</div>
+<p><strong>Indicative Content — 4 marks:</strong></p>
+<div class="tbl-wrap"><table><thead><tr><th style="width:60px">Mark</th><th>Point required</th></tr></thead><tbody>
+<tr><td>IC1</td><td>When the filament lamp operates, the temperature of the tungsten filament increases significantly because electrical energy is converted to thermal energy in the filament</td></tr>
+<tr><td>IC2</td><td>Because the temperature increases, the resistivity of tungsten increases (since resistivity of metals increases with temperature due to greater lattice ion vibration)</td></tr>
+<tr><td>IC3</td><td>This means the resistance at operating temperature is much greater than the cold resistance. The student uses the cold resistance in ρ = RA/l, and since R_cold ≪ R_operating, the calculated ρ will be much lower than the true ρ at the operating temperature</td></tr>
+<tr><td>IC4</td><td>To obtain the correct resistivity at the operating temperature, the student must use the resistance at that temperature (e.g. read from the I-V characteristic at the operating current), not the cold resistance</td></tr>
+</tbody></table></div>
+<p><strong>Structure — 2 marks:</strong></p>
+<div class="tbl-wrap"><table><thead><tr><th style="width:60px">Mark</th><th>Criterion</th></tr></thead><tbody>
+<tr><td>S1</td><td>Coherent, sustained causal chain using connective language throughout ("because," "therefore," "which means," "so," "as a result")</td></tr>
+<tr><td>S2</td><td>Each step logically follows from the previous one; no isolated or disconnected statements; the chain runs continuously from cause to final conclusion</td></tr>
+</tbody></table></div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Simple list of facts without causal connections; "The resistance changes" without explaining <em>why</em> (missing the temperature-resistivity mechanism for metals); bullet points (loses structure marks); stating the answer without tracing through the causal chain.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error</div><p>Writing bullet-pointed facts without connective language loses both structure marks. The key physics point that many students miss is that resistivity of <em>metals</em> increases with temperature (lattice vibration mechanism), and this must be stated explicitly. Using the cold resistance gives a value that is wrong because ρ at the operating temperature is genuinely higher, not because of a measurement error.</p></div>
+</div>
+</details>
+</article>
+<article class="qcard" id="q19">
+<div class="qcard-head">
+<span class="qnum">Q19</span>
+<span class="badge badge-GRD">GRD</span>
+<span class="qspec">§71</span>
+<span class="qmeta"><span class="marks">8 marks</span> · ~12 min</span>
+</div>
+<div class="qtext">A student investigates the resistivity of a uniform constantan wire. She measures the resistance R of wires of the same length (1.00 m) but different diameters d. Her results are:</div>
+<div class="tbl-wrap"><table><thead><tr><th>d / mm</th><th>R / Ω</th></tr></thead><tbody><tr><td>0.40</td><td>2.20</td></tr><tr><td>0.50</td><td>1.40</td></tr><tr><td>0.60</td><td>0.97</td></tr><tr><td>0.80</td><td>0.55</td></tr><tr><td>1.00</td><td>0.35</td></tr></tbody></table></div>
+<p class="qtext" style="margin-top:8px">(a) Explain why a graph of R against 1/d² should be plotted to determine the resistivity, rather than R against d. State the relationship you would expect. <em>(3 marks)</em><br>(b) Calculate the additional column values of 1/d² (in m⁻²). Plot R (y-axis) against 1/d² (x-axis). Determine the gradient of your graph and use it to calculate the resistivity of constantan. <em>(5 marks)</em></p>
+<details class="answer">
+<summary>Answer &amp; Marking Criteria</summary>
+<div class="answer-body">
+<div class="ans"><span class="ans-label">Answer:</span> (a) R = (4ρl/π)(1/d²) → straight line through origin; (b) ρ ≈ <strong>2.8 × 10⁻⁷ Ω m</strong>.</div>
+<p><strong>Part (a) — 3 marks:</strong></p>
+<p>Since A = πd²/4, we have R = ρl/A = 4ρl/(πd²). This is of the form R = (4ρl/π) × (1/d²), which is a straight line through the origin with gradient = 4ρl/π. A graph of R against d would be a curve (R ∝ 1/d²), making it impossible to determine a gradient. Plotting R against 1/d² linearises the relationship, allowing the gradient to be found and ρ calculated.</p>
+<p><strong>Part (b) — 5 marks:</strong></p>
+<p>Converting d from mm to m and calculating 1/d²:</p>
+<div class="tbl-wrap"><table><thead><tr><th>d / mm</th><th>d / m</th><th>1/d² / 10⁶ m⁻²</th><th>R / Ω</th></tr></thead><tbody><tr><td>0.40</td><td>4.0 × 10⁻⁴</td><td>6.25</td><td>2.20</td></tr><tr><td>0.50</td><td>5.0 × 10⁻⁴</td><td>4.00</td><td>1.40</td></tr><tr><td>0.60</td><td>6.0 × 10⁻⁴</td><td>2.78</td><td>0.97</td></tr><tr><td>0.80</td><td>8.0 × 10⁻⁴</td><td>1.56</td><td>0.55</td></tr><tr><td>1.00</td><td>1.0 × 10⁻³</td><td>1.00</td><td>0.35</td></tr></tbody></table></div>
+<p>Plotting R (y-axis) against 1/d² (x-axis) gives a straight line through the origin.</p>
+<p>Gradient = ΔR/Δ(1/d²) using a large triangle on the line of best fit:</p>
+<p>gradient = (2.20 − 0.35) / [(6.25 − 1.00) × 10⁶] = 1.85 / (5.25 × 10⁶) = 3.52 × 10⁻⁷ Ω m²</p>
+<p>Since gradient = 4ρl/π:</p>
+<p>ρ = gradient × π/(4l) = 3.52 × 10⁻⁷ × π/(4 × 1.00) = 2.77 × 10⁻⁷ Ω m ≈ <strong>2.8 × 10⁻⁷ Ω m</strong></p>
+<div class="marking"><div class="marking-title">Marking Points</div>
+<div class="sub-mark-head">Part (a)</div>
+<ul>
+<li><span class="mcode">M1</span> Derivation or statement of relationship: R = (4ρl/π)(1/d²), i.e. R ∝ 1/d²</li>
+<li><span class="mcode">E1</span> Explanation that R against d gives a curve while R against 1/d² gives a straight line through the origin</li>
+<li><span class="mcode">E2</span> Gradient of linearised graph = 4ρl/π, allowing ρ to be determined directly</li>
+</ul>
+<div class="sub-mark-head">Part (b)</div>
+<ul>
+<li><span class="mcode">C1</span> Correct conversion of d from mm to m before calculating 1/d² (critical step)</li>
+<li><span class="mcode">C2</span> Correct calculation of 1/d² values (at least 2 checked values correct)</li>
+<li><span class="mcode">P1</span> Suitable axes: R on y-axis, 1/d² on x-axis; points plotted correctly; line of best fit through origin</li>
+<li><span class="mcode">M2</span> Gradient calculated correctly from the line of best fit</li>
+<li><span class="mcode">A1</span> ρ = gradient × π/(4l) = <strong>2.8 × 10⁻⁷ Ω m</strong> (accept 2.7–2.9 × 10⁻⁷ Ω m)</li>
+</ul>
+</div>
+<div class="box warn"><div class="box-title">NOT Accepted</div><p>Plotting R against d (non-linear — defeats the purpose of linearisation); using d in mm without converting to metres for 1/d² (gives answer off by factor of 10⁶); using A = πd² (forgetting the /4) — A = πd²/4, so gradient = 4ρl/π, NOT ρl/π; forgetting to convert mm to m.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error #1</div><p>Calculating A = πd² (without /4) and then getting the wrong gradient expression. The cross-sectional area is A = π(d/2)² = πd²/4. Forgetting the factor of 4 gives ρ that is too large by a factor of 4.</p></div>
+<div class="box err"><div class="box-title">⚠️ Common Error #2</div><p>Using d in mm directly when calculating 1/d². Since 1/d² has units of m⁻², the diameter must be in metres. Using mm gives 1/d² values that are 10⁶ times too large, making the gradient 10⁶ times too small and ρ 10⁶ times too small. Always convert mm → m first.</p></div>
+</div>
+</details>
+</article>
+</section>
+
+
+<section id="progress"><h2>Progress Tracker</h2><div class="tbl-wrap"><table class="prog-table"><thead><tr><th>Q#</th><th>Type</th><th>Tier</th><th class="num">Marks</th><th>Correct?</th></tr></thead><tbody><tr class="t1-row"><td class="qcol">Q1</td><td>QFR</td><td>1</td><td class="num">1</td><td><input type="checkbox" id="p-q1"></td></tr><tr class="t1-row"><td class="qcol">Q2</td><td>QFR</td><td>1</td><td class="num">1</td><td><input type="checkbox" id="p-q2"></td></tr><tr class="t1-row"><td class="qcol">Q3</td><td>QFR</td><td>1</td><td class="num">1</td><td><input type="checkbox" id="p-q3"></td></tr><tr class="t1-row"><td class="qcol">Q4</td><td>QFR</td><td>1</td><td class="num">1</td><td><input type="checkbox" id="p-q4"></td></tr><tr class="t1-row"><td class="qcol">Q5</td><td>TDC</td><td>1</td><td class="num">1</td><td><input type="checkbox" id="p-q5"></td></tr><tr class="t2-row"><td class="qcol">Q6</td><td>EXP</td><td>2</td><td class="num">3</td><td><input type="checkbox" id="p-q6"></td></tr><tr class="t2-row"><td class="qcol">Q7</td><td>WTE</td><td>2</td><td class="num">2</td><td><input type="checkbox" id="p-q7"></td></tr><tr class="t2-row"><td class="qcol">Q8</td><td>DIA</td><td>2</td><td class="num">4</td><td><input type="checkbox" id="p-q8"></td></tr><tr class="t2-row"><td class="qcol">Q9</td><td>WTE</td><td>2</td><td class="num">4</td><td><input type="checkbox" id="p-q9"></td></tr><tr class="t2-row"><td class="qcol">Q10</td><td>DER</td><td>2</td><td class="num">3</td><td><input type="checkbox" id="p-q10"></td></tr><tr class="t2-row"><td class="qcol">Q11</td><td>CAL</td><td>2</td><td class="num">3</td><td><input type="checkbox" id="p-q11"></td></tr><tr class="t2-row"><td class="qcol">Q12</td><td>CAL</td><td>2</td><td class="num">3</td><td><input type="checkbox" id="p-q12"></td></tr><tr class="t2-row"><td class="qcol">Q13</td><td>RAT</td><td>2</td><td class="num">3</td><td><input type="checkbox" id="p-q13"></td></tr><tr class="t2-row"><td class="qcol">Q14</td><td>GRD</td><td>2</td><td class="num">4</td><td><input type="checkbox" id="p-q14"></td></tr><tr class="t2-row"><td class="qcol">Q15</td><td>CAL</td><td>2</td><td class="num">3</td><td><input type="checkbox" id="p-q15"></td></tr><tr class="t3-row"><td class="qcol">Q16</td><td>DER</td><td>3</td><td class="num">4</td><td><input type="checkbox" id="p-q16"></td></tr><tr class="t3-row"><td class="qcol">Q17</td><td>QWC</td><td>3</td><td class="num">6</td><td><input type="checkbox" id="p-q17"></td></tr><tr class="t3-row"><td class="qcol">Q18</td><td>QWC</td><td>3</td><td class="num">6</td><td><input type="checkbox" id="p-q18"></td></tr><tr class="t3-row"><td class="qcol">Q19</td><td>GRD</td><td>3</td><td class="num">8</td><td><input type="checkbox" id="p-q19"></td></tr><tr class="total"><td class="qcol">Total</td><td>—</td><td>—</td><td class="num">61</td><td id="p-score">0 / 19</td></tr></tbody></table></div></section>
+
+<footer>
+<p>TAABot &mdash; Exam Readiness Questions &middot; WPH12 Ch 2.4 &middot; 19 questions &middot; 61 marks &middot; 78 min target</p>
+<p style="margin-top:4px;font-size:.72rem">Generated R906-B &middot; Pearson Edexcel International A-Level</p>
+</footer>
+</main>
+<script>
+
+(function(){
+  var saved=localStorage.getItem('erq-theme');
+  if(saved==='dark')document.documentElement.setAttribute('data-theme','dark');
+  updateBtn();
+  loadProgress();
+})();
+function toggleDark(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  if(isDark){document.documentElement.removeAttribute('data-theme');localStorage.setItem('erq-theme','light')}
+  else{document.documentElement.setAttribute('data-theme','dark');localStorage.setItem('erq-theme','dark')}
+  updateBtn();
+}
+function updateBtn(){
+  var isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  var btn=document.getElementById('darkBtn');
+  if(btn)btn.innerHTML=isDark?'\u2600\uFE0F Light':'\u{1F319} Dark';
+}
+function toggleSidebar(){
+  var sb=document.getElementById('sidebar'),ov=document.getElementById('overlay');
+  sb.classList.toggle('open');ov.classList.toggle('open');
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    var sb=document.getElementById('sidebar');
+    if(sb.classList.contains('open'))toggleSidebar();
+  }
+});
+function loadProgress(){
+  var saved=localStorage.getItem('erq-progress-ch-2-4');
+  if(!saved)return;
+  try{
+    var state=JSON.parse(saved);
+    document.querySelectorAll('.prog-table input[type="checkbox"]').forEach(function(cb){
+      if(state[cb.id])cb.checked=true;
+    });
+    updateScore();
+  }catch(e){}
+}
+function saveProgress(){
+  var state={};
+  document.querySelectorAll('.prog-table input[type="checkbox"]').forEach(function(cb){
+    state[cb.id]=cb.checked;
+  });
+  localStorage.setItem('erq-progress-ch-2-4',JSON.stringify(state));
+}
+function updateScore(){
+  var checked=document.querySelectorAll('.prog-table input[type="checkbox"]:checked').length;
+  var scoreEl=document.getElementById('p-score');
+  if(scoreEl)scoreEl.textContent=checked+' / 19';
+}
+document.querySelectorAll('.prog-table input[type="checkbox"]').forEach(function(cb){
+  cb.addEventListener('change',function(){saveProgress();updateScore();});
+});
+window.addEventListener('beforeprint',function(){
+  document.querySelectorAll('details.answer').forEach(function(d){
+    d.setAttribute('data-was-open',d.open?'1':'0');
+    d.open=true;
+  });
+});
+window.addEventListener('afterprint',function(){
+  document.querySelectorAll('details.answer').forEach(function(d){
+    d.open=d.getAttribute('data-was-open')==='1';
+    d.removeAttribute('data-was-open');
+  });
+});
+
+</script>
+</body>
+</html>

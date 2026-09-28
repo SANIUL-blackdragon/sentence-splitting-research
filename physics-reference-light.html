@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waves, Light &amp; Quanta — Field Reference</title>
+<style>
+  :root{
+    --bg:#F7F8FA;
+    --panel:#FFFFFF;
+    --panel-2:#EFF2F5;
+    --line:#DCE1E7;
+    --line-soft:#E7EAEE;
+    --text:#1B2430;
+    --text-dim:#4E5C6B;
+    --text-faint:#8695A3;
+    --readout-bg:#F0F4F3;
+    --readout-line:#CBD8D6;
+    --readout-text:#106B63;
+    --accent:#5B6675;
+    --accent-soft:rgba(91,102,117,.08);
+    --radius:8px;
+    --serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation-duration:.001ms !important; transition-duration:.001ms !important;} }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+
+  a{color:var(--readout-text);}
+  ::selection{background:#CFE3E1; color:#0B1420;}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; gap:16px;
+    padding:12px 22px;
+    background:rgba(247,248,250,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .mark{
+    font-family:var(--serif); font-size:1.05rem; letter-spacing:.02em; white-space:nowrap;
+    color:var(--text);
+  }
+  .topbar .mark em{font-style:italic; color:var(--text-dim); font-size:.85em; margin-left:.5em;}
+  .searchwrap{ margin-left:auto; position:relative; width:min(340px, 46vw); }
+  .searchwrap input{
+    width:100%; background:var(--readout-bg); border:1px solid var(--readout-line);
+    color:var(--text); border-radius:999px; padding:8px 14px 8px 34px;
+    font-family:var(--sans); font-size:.88rem; outline:none;
+  }
+  .searchwrap input:focus{ border-color:var(--text-dim); }
+  .searchwrap svg{position:absolute; left:12px; top:50%; transform:translateY(-50%); opacity:.5;}
+  .searchwrap .count{
+    position:absolute; right:10px; top:50%; transform:translateY(-50%);
+    font-size:.72rem; color:var(--text-faint); font-family:var(--mono); pointer-events:none;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{ padding:56px 22px 30px; max-width:1180px; margin:0 auto; }
+  .hero h1{
+    font-family:var(--serif); font-weight:400; font-style:italic;
+    font-size:clamp(2rem, 4.2vw, 3.1rem); margin:0 0 12px; line-height:1.1;
+    max-width:16ch;
+  }
+  .hero p.sub{
+    color:var(--text-dim); max-width:56ch; font-size:1.02rem; margin:0 0 30px;
+  }
+  .spectrum{
+    position:relative; height:46px; border-radius:6px; overflow:hidden;
+    background:linear-gradient(90deg,#7A2E8C 0%, #4B4FC4 16%, #3A8FD1 33%, #3FBF8F 50%, #C7D14A 66%, #B4740F 83%, #D1573C 100%);
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);
+    animation:spectrumIn 1.1s cubic-bezier(.22,.9,.3,1) both;
+  }
+  @keyframes spectrumIn{ from{ clip-path:inset(0 100% 0 0); } to{ clip-path:inset(0 0% 0 0); } }
+  .spectrum-labels{
+    display:flex; justify-content:space-between; margin-top:8px;
+    font-family:var(--mono); font-size:.72rem; color:var(--text-faint);
+  }
+  .spectrum-cap{ font-size:.78rem; color:var(--text-faint); margin-top:10px; max-width:60ch; }
+
+  /* ---------- Layout ---------- */
+  .layout{
+    display:grid; grid-template-columns:220px minmax(0,1fr);
+    gap:0 34px; max-width:1180px; margin:0 auto; padding:0 22px 100px;
+    align-items:start;
+  }
+  nav.toc{
+    position:sticky; top:66px; align-self:start;
+    display:flex; flex-direction:column; gap:2px;
+    padding:18px 0; max-height:calc(100vh - 90px); overflow-y:auto;
+  }
+  nav.toc a{
+    display:flex; align-items:baseline; gap:10px;
+    text-decoration:none; color:var(--text-dim);
+    font-size:.85rem; padding:6px 10px; border-radius:6px;
+    border-left:2px solid transparent;
+    transition:color .15s ease, border-color .15s ease, background .15s ease;
+  }
+  nav.toc a .num{ font-family:var(--mono); font-size:.72rem; color:var(--text-faint); width:1.4em; flex:none;}
+  nav.toc a:hover{ color:var(--text); background:rgba(0,0,0,.03); }
+  nav.toc a.active{ color:var(--text); border-left-color:var(--accent-nav, var(--text-dim)); background:rgba(0,0,0,.035); }
+
+  main{ min-width:0; padding-top:18px; }
+
+  /* ---------- Section ---------- */
+  section.topic{
+    padding:34px 0 10px; border-top:1px solid var(--line-soft);
+  }
+  section.topic:first-child{ border-top:none; }
+  section.topic.hidden{ display:none; }
+
+  .topic-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:6px; }
+  .topic-head .chip{
+    font-family:var(--mono); font-size:.72rem; color:var(--bg);
+    background:var(--accent); border-radius:4px; padding:2px 7px; flex:none;
+  }
+  .topic-head h2{
+    font-family:var(--serif); font-weight:400; font-size:1.5rem; margin:0;
+  }
+  .topic-intro{ color:var(--text-dim); font-size:.92rem; max-width:64ch; margin:6px 0 22px; }
+
+  /* ---------- Cards ---------- */
+  .cards{ display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:14px; }
+  .card{
+    background:var(--panel); border:1px solid var(--line);
+    border-left:3px solid var(--accent);
+    border-radius:var(--radius); padding:16px 18px;
+  }
+  .card.unit.hidden{ display:none; }
+  .card h3{ font-size:.95rem; font-weight:600; margin:0 0 10px; color:var(--text); }
+
+  .eq{
+    font-family:var(--mono); font-size:1.06rem; color:var(--readout-text);
+    background:var(--readout-bg); border:1px solid var(--readout-line);
+    border-radius:6px; padding:10px 13px; overflow-x:auto;
+    letter-spacing:.01em;
+  }
+  .eq + .eq{ margin-top:8px; }
+  .eq.alt{ font-size:.92rem; opacity:.82; }
+
+  .frac{ display:inline-flex; flex-direction:column; vertical-align:middle; text-align:center; line-height:1.15; margin:0 .18em; }
+  .frac .num, .frac .den{ display:block; padding:0 .22em; }
+  .frac .den{ border-top:1.4px solid currentColor; }
+
+  .sqrt{ display:inline-flex; align-items:stretch; margin:0 .1em; }
+  .sqrt .rad{ font-size:1.05em; padding-right:.05em; align-self:flex-start; }
+  .sqrt .radicand{ border-top:1.4px solid currentColor; padding:0 .2em; }
+
+  .eq sup{ font-size:.68em; }
+  .eq sub{ font-size:.68em; }
+
+  dl.vars{ margin:12px 0 0; display:grid; grid-template-columns:auto 1fr; gap:4px 12px; font-size:.83rem; }
+  dl.vars dt{ font-family:var(--mono); color:var(--text-dim); }
+  dl.vars dd{ margin:0; color:var(--text-dim); }
+
+  ul.notelist{ margin:12px 0 0; padding-left:1.1em; font-size:.85rem; color:var(--text-dim); }
+  ul.notelist li{ margin:2px 0; }
+
+  p.note{ margin:12px 0 0; font-size:.83rem; color:var(--text-faint); border-top:1px dashed var(--line); padding-top:9px; }
+  p.note strong{ color:var(--text-dim); font-weight:600; }
+
+  /* ---------- Tables ---------- */
+  .tablewrap{ overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); }
+  table.ref{ width:100%; border-collapse:collapse; font-size:.88rem; min-width:520px; }
+  table.ref thead th{
+    text-align:left; font-weight:600; font-size:.72rem; color:var(--text-faint);
+    padding:10px 16px; border-bottom:1px solid var(--line); background:var(--panel-2);
+    position:sticky; top:0;
+  }
+  table.ref tbody td{ padding:10px 16px; border-bottom:1px solid var(--line-soft); color:var(--text-dim); }
+  table.ref tbody tr:last-child td{ border-bottom:none; }
+  table.ref tbody tr.unit.hidden{ display:none; }
+  table.ref td.sym, table.ref td.val{ font-family:var(--mono); color:var(--readout-text); white-space:nowrap; }
+  table.ref td.name{ color:var(--text); }
+  table.ref tbody tr:hover td{ background:rgba(0,0,0,.02); }
+
+  /* ---------- Chains ---------- */
+  .chains{ display:flex; flex-direction:column; gap:22px; }
+  .chain{
+    background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--accent);
+    border-radius:var(--radius); padding:18px 20px;
+  }
+  .chain.unit.hidden{ display:none; }
+  .chain h3{ font-size:.95rem; font-weight:600; margin:0 0 12px; }
+  .chain-flow{ display:flex; flex-direction:column; align-items:flex-start; gap:0; }
+  .chain-step{ width:100%; }
+  .chain-arrow{ color:var(--text-faint); font-family:var(--mono); font-size:.85rem; padding:5px 0 5px 13px; }
+  .chain-result{
+    margin-top:2px; border:1px solid var(--accent); border-radius:6px;
+    background:var(--readout-bg); padding:10px 13px; position:relative;
+  }
+  .chain-result .tag{
+    position:absolute; top:-9px; left:12px; background:var(--accent); color:var(--bg);
+    font-family:var(--mono); font-size:.62rem; padding:1px 6px; border-radius:3px;
+  }
+  .chain p.note{ border-top:1px dashed var(--line); }
+
+  /* ---------- Accent themes ---------- */
+  [data-accent="amber"]{ --accent:#B4740F; --accent-soft:rgba(232,163,61,.12); }
+  [data-accent="cyan"]{ --accent:#0E8A90; --accent-soft:rgba(95,201,208,.12); }
+  [data-accent="violet"]{ --accent:#6C5CC4; --accent-soft:rgba(156,143,224,.12); }
+  [data-accent="neutral"]{ --accent:#5B6675; --accent-soft:rgba(137,147,163,.10); }
+  nav.toc a[data-accent="amber"].active{ border-left-color:#B4740F; }
+  nav.toc a[data-accent="cyan"].active{ border-left-color:#0E8A90; }
+  nav.toc a[data-accent="violet"].active{ border-left-color:#6C5CC4; }
+  nav.toc a[data-accent="neutral"].active{ border-left-color:#5B6675; }
+
+  footer{
+    max-width:1180px; margin:0 auto; padding:0 22px 60px;
+    color:var(--text-faint); font-size:.78rem; border-top:1px solid var(--line-soft); padding-top:20px;
+  }
+
+  /* ---------- Focus ---------- */
+  a:focus-visible, input:focus-visible{ outline:2px solid #0E8A90; outline-offset:2px; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    .layout{ grid-template-columns:1fr; }
+    nav.toc{
+      position:sticky; top:53px; flex-direction:row; overflow-x:auto; overflow-y:hidden;
+      max-height:none; padding:10px 0; gap:6px; background:rgba(247,248,250,.96);
+      border-bottom:1px solid var(--line); z-index:40;
+    }
+    nav.toc a{ flex:none; white-space:nowrap; border-left:none; border-bottom:2px solid transparent; border-radius:6px 6px 0 0; }
+    nav.toc a.active{ border-bottom-color:var(--accent-nav, var(--text-dim)); border-left:none; }
+    .hero{ padding-top:34px; }
+    .topbar .mark em{ display:none; }
+    .searchwrap{ width:auto; flex:1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="mark">Field Reference <em>waves · optics · quanta</em></div>
+  <div class="searchwrap">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input id="search" type="text" placeholder="Search formulas, symbols, constants…" autocomplete="off">
+    <span class="count" id="searchCount"></span>
+  </div>
+</div>
+
+<div class="hero">
+  <h1>Waves, light &amp; quanta</h1>
+  <p class="sub">Every constant, formula, variable, derived chain and proportionality across mechanical waves, optics and quantum phenomena — laid out as a single instrument panel.</p>
+  <div class="spectrum" id="spectrum" role="img" aria-label="Visible light spectrum from violet to red, 380 to 750 nanometres"></div>
+  <div class="spectrum-labels"><span>380 nm</span><span>450</span><span>500</span><span>550</span><span>600</span><span>650</span><span>750 nm</span></div>
+  <p class="spectrum-cap">Section markers below borrow their colour from this run — amber for mechanical wave behaviour, cyan for optics, violet for quantum phenomena.</p>
+</div>
+
+<div class="layout">
+  <nav class="toc" id="toc" aria-label="Section navigation"></nav>
+  <main id="main"></main>
+</div>
+
+<footer>Field reference compiled for study use. Values rounded to three significant figures.</footer>
+
+<script>
+/* ---------------- math helpers ---------------- */
+function frac(n,d){ return '<span class="frac"><span class="num">'+n+'</span><span class="den">'+d+'</span></span>'; }
+function sqrt(x){ return '<span class="sqrt"><span class="rad">\u221A</span><span class="radicand">'+x+'</span></span>'; }
+var H='<sub>0</sub>';
+
+/* ---------------- data ---------------- */
+var sections = [
+
+{id:'constants', num:'01', title:'Fundamental constants', accent:'neutral', type:'table',
+ intro:'The five constants that recur across every section below.',
+ cols:['Constant','Symbol','Value','Units'],
+ rows:[
+   ['Planck constant','h','6.63 \u00D7 10\u207B\u00B3\u2074','J s'],
+   ['Speed of light in vacuum','c','3.00 \u00D7 10\u2078','m s\u207B\u00B9'],
+   ['Elementary charge','e','1.60 \u00D7 10\u207B\u00B9\u2079','C'],
+   ['Electron mass','m<sub>e</sub>','9.11 \u00D7 10\u207B\u00B3\u00B9','kg'],
+   ['Electronvolt\u2013joule conversion','\u2014','1 eV = 1.60 \u00D7 10\u207B\u00B9\u2079','J']
+ ]},
+
+{id:'waves', num:'02', title:'Core wave properties', accent:'amber',
+ intro:'The two relations every wave obeys, before any medium-specific behaviour is added.',
+ formulas:[
+   {t:'Frequency and period', e:'f = '+frac('1','T'), alt:'T = '+frac('1','f'),
+    v:[['f','frequency, Hz'],['T','period, s']], n:'Inversely proportional.'},
+   {t:'Universal wave equation', e:'v = f\u03BB',
+    v:[['v','wave speed, m s\u207B\u00B9'],['f','frequency, Hz'],['\u03BB','wavelength, m']],
+    n:'For a given medium, v is constant. If f is fixed, then v \u221D \u03BB.'}
+ ]},
+
+{id:'intensity', num:'03', title:'Intensity, amplitude &amp; the inverse square law', accent:'amber',
+ intro:'How power spreads out from a source, and how it relates to a wave\u2019s amplitude.',
+ formulas:[
+   {t:'Intensity', e:'I = '+frac('P','A'),
+    v:[['I','intensity, W m\u207B\u00B2'],['P','power, W'],['A','area, m\u00B2']]},
+   {t:'Intensity and amplitude', e:'I \u221D A<sup>2</sup>',
+    n:'Doubling amplitude increases intensity by a factor of 4.'},
+   {t:'Inverse square law', e:'I \u221D '+frac('1','r<sup>2</sup>'), alt:'I = '+frac('P','4\u03C0r<sup>2</sup>'),
+    v:[['r','distance from source, m']], n:'Radiation spreads over the surface of a sphere.'},
+   {t:'Effective intensity on an angled surface', e:'I<sub>eff</sub> = I cos\u03B8',
+    v:[['\u03B8','angle between radiation and the normal to the surface']]},
+   {t:'Efficiency', e:'Efficiency = '+frac('Useful power output','Total power input')+' \u00D7 100%'}
+ ]},
+
+{id:'refraction', num:'04', title:'Refraction, Snell\u2019s law &amp; total internal reflection', accent:'cyan',
+ intro:'How wave speed changes at a boundary, and the condition for a ray to be trapped.',
+ formulas:[
+   {t:'Refractive index', e:'n = '+frac('c','v'),
+    v:[['n','refractive index (dimensionless)'],['c','speed of light in vacuum, m s\u207B\u00B9'],['v','speed of light in the material, m s\u207B\u00B9']],
+    n:'Higher n means a slower light speed in the material.'},
+   {t:'Snell\u2019s law', e:'n<sub>1</sub> sin\u03B8<sub>1</sub> = n<sub>2</sub> sin\u03B8<sub>2</sub>',
+    v:[['n\u2081','refractive index of incident medium'],['\u03B8\u2081','angle of incidence from the normal'],['n\u2082','refractive index of refracted medium'],['\u03B8\u2082','angle of refraction from the normal']],
+    n:'If light enters a denser medium, n\u2082 &gt; n\u2081, so it bends towards the normal.'},
+   {t:'Critical angle', e:'sin C = '+frac('n<sub>2</sub>','n<sub>1</sub>'), alt:'sin C = '+frac('1','n')+'  (into air, n\u2082 = 1)',
+    list:['Condition for TIR \u2014 n\u2081 &gt; n\u2082','Condition for TIR \u2014 angle of incidence &gt; C']}
+ ]},
+
+{id:'strings', num:'05', title:'Stationary waves &amp; strings', accent:'amber',
+ intro:'How a string\u2019s tension and mass set the notes it can sustain.',
+ formulas:[
+   {t:'Mass per unit length', e:'\u03BC = '+frac('mass','length'),
+    v:[['\u03BC','mass per unit length, kg m\u207B\u00B9']]},
+   {t:'Wave speed on a string', e:'v = '+sqrt(frac('T','\u03BC')),
+    v:[['T','tension, N'],['\u03BC','mass per unit length, kg m\u207B\u00B9']],
+    n:'v \u221D \u221AT  and  v \u221D 1/\u221A\u03BC'},
+   {t:'Fundamental frequency', e:'f<sub>1</sub> = '+frac('v','2L'), alt:'f<sub>1</sub> = '+frac('1','2L')+' '+sqrt(frac('T','\u03BC')),
+    v:[['L','length of string, m']]},
+   {t:'Harmonics', e:'f<sub>n</sub> = n f<sub>1</sub>', alt:'\u03BB<sub>n</sub> = '+frac('2L','n'),
+    v:[['n','harmonic number, 1, 2, 3, \u2026']]},
+   {t:'Derived \u2014 fundamental frequency squared', e:'f<sup>2</sup> = '+frac('T','4L<sup>2</sup>\u03BC'),
+    n:'Combines v = f\u03BB, \u03BB = 2L and v = \u221A(T/\u03BC). f is inversely proportional to L and to \u221A\u03BC, and proportional to \u221AT.', tag:'derived'},
+   {t:'Node and antinode spacing',
+    list:['Distance between adjacent nodes = \u03BB/2','Distance between a node and adjacent antinode = \u03BB/4']}
+ ]},
+
+{id:'interference', num:'06', title:'Interference, diffraction &amp; beats', accent:'cyan',
+ intro:'What happens when two or more waves overlap, and how a grating or slit spreads them out.',
+ formulas:[
+   {t:'Path difference and phase difference', e:'\u0394\u03C6 = '+frac('2\u03C0','\u03BB')+' \u00D7 \u0394x',
+    v:[['\u0394\u03C6','phase difference, rad'],['\u0394x','path difference, m'],['\u03BB','wavelength, m']]},
+   {t:'Constructive &amp; destructive interference', e:'\u0394x = n\u03BB  (constructive)', alt:'\u0394x = (n + '+frac('1','2')+')\u03BB  (destructive)'},
+   {t:'Young\u2019s double-slit fringe spacing', e:'w = '+frac('\u03BBD','s'),
+    v:[['w','fringe spacing, m'],['D','distance from slits to screen, m'],['s','slit separation, m']], n:'Valid when D \u226B s.'},
+   {t:'Beat frequency', e:'f<sub>beat</sub> = |f<sub>1</sub> \u2212 f<sub>2</sub>|', n:'Number of loudness variations per second, Hz.'},
+   {t:'Diffraction grating equation', e:'n\u03BB = d sin\u03B8',
+    v:[['n','order number, 0, 1, 2, \u2026'],['\u03BB','wavelength, m'],['d','slit spacing, m'],['\u03B8','angle from normal']],
+    list:['d = 1/N \u2014 from lines per metre','d = 1/(N \u00D7 10\u00B3) \u2014 from lines per mm','n<sub>max</sub> = d/\u03BB, rounded down \u2014 set \u03B8 = 90\u00B0']},
+   {t:'Single-slit diffraction, first minimum', e:'sin\u03B8 = '+frac('\u03BB','a'),
+    v:[['a','slit width, m']], n:'A narrower slit gives a wider central maximum.'},
+   {t:'Angular width of central maximum', e:'\u03B8 \u2248 '+frac('2\u03BB','a'),
+    n:'Total angular width of the central bright fringe, rad \u2014 valid for small angles.'}
+ ]},
+
+{id:'polarisation', num:'07', title:'Polarisation', accent:'cyan',
+ intro:'How filters cut down unpolarised light, and how a second filter behaves against the first.',
+ formulas:[
+   {t:'Single polarising filter', e:'I = '+frac('I<sub>0</sub>','2'),
+    n:'Transmitted intensity after one filter on unpolarised light \u2014 independent of filter orientation.'},
+   {t:'Malus\u2019s law', e:'I = I<sub>0</sub> cos<sup>2</sup>\u03B8',
+    v:[['I\u2080','intensity after the first filter'],['I','intensity after the second filter'],['\u03B8','angle between the transmission axes of the two filters']]}
+ ]},
+
+{id:'ultrasound', num:'08', title:'Pulse-echo &amp; ultrasound', accent:'cyan',
+ intro:'How a reflected pulse locates a boundary, and how much of it bounces back.',
+ formulas:[
+   {t:'Pulse-echo distance', e:'d = '+frac('vt','2'),
+    v:[['d','distance to reflecting surface, m'],['v','speed of pulse, m s\u207B\u00B9'],['t','round-trip time, s']],
+    n:'The pulse travels to the surface and back \u2014 the factor of 2 is easy to drop.'},
+   {t:'Acoustic impedance', e:'Z = \u03C1c',
+    v:[['Z','acoustic impedance, kg m\u207B\u00B2 s\u207B\u00B9'],['\u03C1','density, kg m\u207B\u00B3'],['c','speed of sound in the medium, m s\u207B\u00B9']]},
+   {t:'Intensity reflection coefficient', e:frac('I<sub>r</sub>','I<sub>i</sub>')+' = ('+frac('Z<sub>2</sub> \u2212 Z<sub>1</sub>','Z<sub>2</sub> + Z<sub>1</sub>')+')<sup>2</sup>',
+    v:[['I\u1D63','reflected intensity'],['I\u1D62','incident intensity'],['Z\u2081, Z\u2082','acoustic impedance of each medium']],
+    n:'Larger impedance mismatch gives greater reflection.'}
+ ]},
+
+{id:'photons', num:'09', title:'Photons &amp; the photoelectric effect', accent:'violet',
+ intro:'Light as discrete packets of energy, and the threshold behaviour that only a particle model explains.',
+ formulas:[
+   {t:'Photon energy', e:'E = hf = '+frac('hc','\u03BB'),
+    v:[['E','photon energy, J'],['h','Planck constant'],['f','frequency, Hz'],['\u03BB','wavelength, m'],['c','speed of light']],
+    n:'E \u221D f  and  E \u221D 1/\u03BB'},
+   {t:'Work function and threshold frequency', e:'\u03D5 = hf'+H,
+    v:[['\u03D5','work function, J or eV'],['f\u2080','threshold frequency, Hz']]},
+   {t:'Einstein\u2019s photoelectric equation', e:'hf = \u03D5 + '+frac('1','2')+'mv<sub>max</sub><sup>2</sup>',
+    alt:frac('1','2')+'mv<sub>max</sub><sup>2</sup> = hf \u2212 \u03D5'},
+   {t:'Stopping potential', e:'eV<sub>s</sub> = '+frac('1','2')+'mv<sub>max</sub><sup>2</sup> = hf \u2212 \u03D5',
+    n:'A graph of KE<sub>max</sub> against frequency has gradient h.'},
+   {t:'Intensity and photoelectrons',
+    list:['Intensity \u221D number of photons per second','Intensity \u221D photocurrent','Intensity does not affect KE<sub>max</sub>']},
+   {t:'Number of photons', e:'N = '+frac('Total energy','E<sub>photon</sub>')+' = '+frac('Pt','hf'),
+    v:[['P','power, W'],['t','time, s']]}
+ ]},
+
+{id:'debroglie', num:'10', title:'Wave\u2013particle duality &amp; de\u00A0Broglie wavelength', accent:'violet',
+ intro:'Every moving particle carries an associated wavelength.',
+ formulas:[
+   {t:'de Broglie wavelength', e:'\u03BB = '+frac('h','p')+' = '+frac('h','mv'),
+    v:[['\u03BB','de Broglie wavelength, m'],['p','momentum, kg m s\u207B\u00B9'],['m','particle mass, kg'],['v','particle velocity, m s\u207B\u00B9']]}
+ ],
+ chainsInline:[
+   {t:'Derived \u2014 accelerated electrons', steps:['eV = '+frac('1','2')+'mv<sup>2</sup>','p = mv','\u03BB = '+frac('h','p')],
+    result:'\u03BB = '+frac('h', sqrt('2meV')), v:[['V','accelerating voltage, V']]}
+ ]},
+
+{id:'spectra', num:'11', title:'Atomic line spectra', accent:'violet',
+ intro:'The energy gaps between fixed atomic levels set the exact colours an element emits or absorbs.',
+ formulas:[
+   {t:'Photon emission / absorption energy', e:'\u0394E = E<sub>upper</sub> \u2212 E<sub>lower</sub> = hf = '+frac('hc','\u03BB'),
+    list:['Longest wavelength \u2192 smallest \u0394E','Shortest wavelength \u2192 largest \u0394E']},
+   {t:'Possible spectral lines from an excited state', e:'N = '+frac('n(n\u22121)','2'),
+    v:[['n','principal quantum number of the highest excited level']],
+    n:'Example: n = 4 gives N = 6 possible emitted frequencies.'}
+ ]},
+
+{id:'summary', num:'12', title:'Summary of proportional relationships', accent:'neutral', type:'table',
+ intro:'Every proportionality from the sections above, in one scan.',
+ cols:['Relationship','Proportionality','Condition'],
+ rows:[
+   ['Frequency and period','f \u221D 1/T','Inversely proportional'],
+   ['Wave speed and tension','v \u221D \u221AT','On a string'],
+   ['Wave speed and mass density','v \u221D 1/\u221A\u03BC','Heavier string = slower'],
+   ['Intensity and amplitude','I \u221D A\u00B2','Double amplitude = 4\u00D7 intensity'],
+   ['Intensity and distance','I \u221D 1/r\u00B2','Point source'],
+   ['Photon energy and frequency','E \u221D f','Directly proportional'],
+   ['Photon energy and wavelength','E \u221D 1/\u03BB','Inversely proportional'],
+   ['Max KE and frequency','KE<sub>max</sub> \u221D f','Gradient = h'],
+   ['Path difference and phase difference','\u0394\u03C6 \u221D \u0394x','2\u03C0/\u03BB proportionality'],
+   ['Refractive index and speed','n \u221D 1/v','Higher n = slower light'],
+   ['Grating angle and wavelength','sin\u03B8 \u221D \u03BB','For fixed d']
+ ]},
+
+{id:'chains', num:'13', title:'Formula chains \u2014 how they combine', accent:'neutral', type:'chains',
+ intro:'Five derivations that appear repeatedly on exam papers, each built from two or three formulas above.',
+ chains:[
+   {t:'Refraction chain', steps:['n = '+frac('c','v'),'v = f\u03BB'],
+    result:'\u03BB<sub>glass</sub> = '+frac('\u03BB<sub>air</sub>','n'),
+    n:'Light entering glass: v decreases, f stays constant, so \u03BB decreases proportionally.'},
+   {t:'Stationary wave string chain', steps:['f<sub>1</sub> = '+frac('v','2L'), 'v = '+sqrt(frac('T','\u03BC'))],
+    result:'f<sub>1</sub><sup>2</sup> = '+frac('T','4L<sup>2</sup>\u03BC'),
+    n:'Substitute v into f\u2081, then square both sides.'},
+   {t:'de Broglie chain', steps:['eV = '+frac('1','2')+'mv<sup>2</sup>','p = mv','\u03BB = '+frac('h','p')],
+    result:'\u03BB = '+frac('h', sqrt('2meV')),
+    n:'Momentum from kinetic energy, then substituted into the de Broglie relation.'},
+   {t:'Photon counting chain', steps:['Total energy = Pt','Energy per photon = hf'],
+    result:'N = '+frac('Pt','hf'),
+    n:'Total energy delivered, divided by the energy carried by one photon.'},
+   {t:'Diffraction grating geometry chain', steps:['tan\u03B8 = '+frac('x','D'),'n\u03BB = d sin\u03B8'],
+    result:'\u03BB = '+frac('d sin(arctan(x/D))','n'),
+    n:'Calculate tan\u03B8 first from the measured distances, then convert to sin\u03B8 \u2014 the two angles are not interchangeable mid-calculation.'}
+ ]}
+];
+
+/* ---------------- rendering ---------------- */
+var main = document.getElementById('main');
+var toc = document.getElementById('toc');
+
+function textOf(html){ var d=document.createElement('div'); d.innerHTML=html; return (d.textContent||'').toLowerCase(); }
+
+sections.forEach(function(sec){
+  var navA = document.createElement('a');
+  navA.href = '#'+sec.id;
+  navA.dataset.accent = sec.accent;
+  navA.innerHTML = '<span class="num">'+sec.num+'</span>'+sec.title.replace(/&amp;/g,'&');
+  toc.appendChild(navA);
+
+  var el = document.createElement('section');
+  el.className = 'topic';
+  el.id = sec.id;
+  el.dataset.accent = sec.accent;
+
+  var head = document.createElement('div');
+  head.className = 'topic-head';
+  head.innerHTML = '<span class="chip">'+sec.num+'</span><h2>'+sec.title+'</h2>';
+  el.appendChild(head);
+
+  if(sec.intro){
+    var intro = document.createElement('p');
+    intro.className = 'topic-intro';
+    intro.textContent = sec.intro;
+    el.appendChild(intro);
+  }
+
+  if(sec.type === 'table'){
+    var wrap = document.createElement('div'); wrap.className='tablewrap';
+    var table = document.createElement('table'); table.className='ref';
+    var thead = document.createElement('thead');
+    thead.innerHTML = '<tr>'+sec.cols.map(function(c){return '<th>'+c+'</th>';}).join('')+'</tr>';
+    table.appendChild(thead);
+    var tbody = document.createElement('tbody');
+    sec.rows.forEach(function(row){
+      var tr = document.createElement('tr');
+      tr.className = 'unit';
+      tr.dataset.search = textOf(row.join(' '));
+      var cls = ['name','sym','val',''];
+      tr.innerHTML = row.map(function(cell,i){
+        var c = i===0 ? 'name' : (i===1 ? 'sym' : (i===2 ? 'val' : ''));
+        return '<td class="'+c+'">'+cell+'</td>';
+      }).join('');
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    wrap.appendChild(table);
+    el.appendChild(wrap);
+  }
+  else if(sec.type === 'chains'){
+    var chains = document.createElement('div'); chains.className='chains';
+    sec.chains.forEach(function(c){
+      var card = document.createElement('div');
+      card.className = 'chain unit';
+      var searchTxt = textOf(c.t + ' ' + c.steps.join(' ') + ' ' + c.result + ' ' + (c.n||''));
+      card.dataset.search = searchTxt;
+      var html = '<h3>'+c.t+'</h3><div class="chain-flow">';
+      c.steps.forEach(function(s, i){
+        html += '<div class="chain-step"><div class="eq">'+s+'</div></div>';
+        html += '<div class="chain-arrow">\u2193</div>';
+      });
+      html += '<div class="chain-result"><span class="tag">result</span><div class="eq">'+c.result+'</div></div>';
+      html += '</div>';
+      if(c.n) html += '<p class="note">'+c.n+'</p>';
+      card.innerHTML = html;
+      chains.appendChild(card);
+    });
+    el.appendChild(chains);
+  }
+  else {
+    var cards = document.createElement('div'); cards.className='cards';
+    (sec.formulas||[]).forEach(function(f){
+      var card = document.createElement('div');
+      card.className = 'card unit';
+      var searchTxt = textOf(f.t+' '+f.e+' '+(f.alt||'')+' '+(f.n||'')+' '+((f.v||[]).map(function(p){return p.join(' ');}).join(' '))+' '+((f.list||[]).join(' ')));
+      card.dataset.search = searchTxt;
+      var html = '<h3>'+f.t+'</h3><div class="eq">'+f.e+'</div>';
+      if(f.alt) html += '<div class="eq alt">'+f.alt+'</div>';
+      if(f.v && f.v.length){
+        html += '<dl class="vars">';
+        f.v.forEach(function(p){ html += '<dt>'+p[0]+'</dt><dd>'+p[1]+'</dd>'; });
+        html += '</dl>';
+      }
+      if(f.list && f.list.length){
+        html += '<ul class="notelist">'+f.list.map(function(li){return '<li>'+li+'</li>';}).join('')+'</ul>';
+      }
+      if(f.n) html += '<p class="note">'+f.n+'</p>';
+      card.innerHTML = html;
+      cards.appendChild(card);
+    });
+    el.appendChild(cards);
+
+    if(sec.chainsInline){
+      var ic = document.createElement('div'); ic.className='chains'; ic.style.marginTop='14px';
+      sec.chainsInline.forEach(function(c){
+        var card = document.createElement('div');
+        card.className = 'chain unit';
+        card.dataset.search = textOf(c.t+' '+c.steps.join(' ')+' '+c.result+' '+((c.v||[]).map(function(p){return p.join(' ');}).join(' ')));
+        var html = '<h3>'+c.t+'</h3><div class="chain-flow">';
+        c.steps.forEach(function(s){ html += '<div class="chain-step"><div class="eq">'+s+'</div></div><div class="chain-arrow">\u2193</div>'; });
+        html += '<div class="chain-result"><span class="tag">result</span><div class="eq">'+c.result+'</div></div></div>';
+        if(c.v && c.v.length){
+          html += '<dl class="vars">'+c.v.map(function(p){return '<dt>'+p[0]+'</dt><dd>'+p[1]+'</dd>';}).join('')+'</dl>';
+        }
+        card.innerHTML = html;
+        ic.appendChild(card);
+      });
+      el.appendChild(ic);
+    }
+  }
+
+  main.appendChild(el);
+});
+
+/* ---------------- active nav highlighting ---------------- */
+var navLinks = Array.prototype.slice.call(toc.querySelectorAll('a'));
+var topics = Array.prototype.slice.call(document.querySelectorAll('section.topic'));
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    var link = toc.querySelector('a[href="#'+entry.target.id+'"]');
+    if(!link) return;
+    if(entry.isIntersecting){
+      navLinks.forEach(function(l){ l.classList.remove('active'); l.style.removeProperty('--accent-nav'); });
+      link.classList.add('active');
+      var accentMap = {amber:'#B4740F', cyan:'#0E8A90', violet:'#6C5CC4', neutral:'#5B6675'};
+      link.style.setProperty('--accent-nav', accentMap[entry.target.dataset.accent] || '#5B6675');
+    }
+  });
+}, {rootMargin:'-15% 0px -70% 0px', threshold:0});
+topics.forEach(function(t){ io.observe(t); });
+
+/* ---------------- search filter ---------------- */
+var search = document.getElementById('search');
+var countEl = document.getElementById('searchCount');
+search.addEventListener('input', function(){
+  var q = search.value.trim().toLowerCase();
+  var visible = 0, total = 0;
+  document.querySelectorAll('.unit').forEach(function(u){
+    total++;
+    var match = !q || u.dataset.search.indexOf(q) !== -1;
+    u.classList.toggle('hidden', !match);
+    if(match) visible++;
+  });
+  document.querySelectorAll('section.topic').forEach(function(sec){
+    if(!q){ sec.classList.remove('hidden'); return; }
+    var any = sec.querySelectorAll('.unit:not(.hidden)').length > 0;
+    sec.classList.toggle('hidden', !any);
+  });
+  countEl.textContent = q ? (visible+'/'+total) : '';
+});
+</script>
+</body>
+</html>
