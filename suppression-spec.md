@@ -1,6 +1,6 @@
 # The Suppression Specification
 
-### v1.1 (draft) -- drafted for unambiguity: definitions, laws, rules, precedence, examples, and an interpretation index
+### v1.2 (draft) -- drafted for unambiguity: definitions, laws, rules, precedence, examples, and an interpretation index
 
 > **STATUS: UNPROVEN AND NOT FINAL.** Nothing in this file may be treated as functional unless it is explicitly stated to have been shown to work.
 
@@ -8,7 +8,7 @@ Companion to `precision-first-split-theory.md` and `why-not-to-split.md`. Contai
 
 Stable IDs (D-, T-, DL-, R-, L-, W-, AM-, CI-, OI-) are citable and are never reused. A withdrawn ID stays in place as a marked stub so old citations still resolve. Nothing may be considered "implied" -- if it is not written here, it is not part of the specification.
 
-The list of defects fixed in v1.1 is in §10.
+The lists of defects fixed in v1.1 and v1.2 are in §10.
 
 ---
 
@@ -28,7 +28,7 @@ The list of defects fixed in v1.1 is in §10.
 
 0.7 A "ruling" in §7 is a **conformance vector**: an application of the rules to an example that an implementation must reproduce. If a ruling ever disagrees with the rules, that is a defect in this document, to be fixed by amendment; until it is fixed, the rules govern.
 
-0.8 Withdrawn IDs (R1.1, R3.2, L2) remain as stubs. They have no force.
+0.8 Withdrawn IDs (R1.1, R3.2, L2, D3a) remain as stubs. They have no force.
 
 ---
 
@@ -48,28 +48,28 @@ The list of defects fixed in v1.1 is in §10.
 **D3 -- Punctuation Set** (exhaustive, closed). Each of these characters is a punctuation token:
 
 - `. ! ? , ; : ( ) [ ] { }`
-- quotation marks `"` (U+0022), `“` (U+201C), `”` (U+201D), `„` (U+201E), `‟` (U+201F), `«`, `»`, and the single opening quote `‘` (U+2018);
-- dashes `–` (U+2013) and `—` (U+2014);
+- quotation marks `"` (U+0022), `“` (U+201C), `”` (U+201D), `„` (U+201E), `‟` (U+201F), `«`, `»`;
+- the en dash `–` (U+2013);
 - the ellipsis character `…` (U+2026);
-- plus the two context-dependent cases D3a and D3b.
+- plus the hyphen-run case D3b.
 
-**D3a -- Apostrophes.** `'` (U+0027) and `’` (U+2019) are word characters **if and only if** they are immediately preceded AND immediately followed by a Letter or Digit (`don't`, `don’t`, `O'Brien` are ONE word token -- see AM-1). In every other position they are punctuation tokens (opening or closing single quotes, trailing possessives such as `dogs'`, initial elisions such as `'til`).
+**D3a -- WITHDRAWN in v1.2.** It made the apostrophes `'` (U+0027) and `’` (U+2019) punctuation tokens outside word-internal positions, which admitted them into Decoration (D9) and let a sequence like `.'` produce a candidate (v1.1's ruling 7.25). Withdrawn by the principal's ruling: D3 makes both apostrophes word characters unconditionally, so they can never be punctuation tokens, never Decoration, and `.'` can never be a candidate. See §10 (v1.1 → v1.2, ruling (b)).
 
 **D3b -- Dashes.** A maximal run of two or more hyphen-minus characters (`--`) is ONE punctuation token. This is the only punctuation token longer than one character. A single `-` is a word character (`well-known` is ONE word token).
 
-**Not in the Punctuation Set** (therefore word characters): every other character, including `_`, `%`, `$`, `×`, `°`, and the superscripts in `10⁻³`.
+**Not in the Punctuation Set** (therefore word characters): every other character, including the apostrophes `'` (U+0027) and `’` (U+2019), the em dash `—` (U+2014), the opening single quote `‘` (U+2018), `_`, `%`, `$`, `×`, `°`, and the superscripts in `10⁻³`. (The em dash and the opening single quote were punctuation tokens in v1.1; the principal's ruling returns them to the word-character class, so `word—Next` and `‘Word` are each ONE word token. See §10, ruling (d).)
 
-**D4 -- Word token.** A maximal run of consecutive characters, none of which is whitespace or part of a punctuation token. A word token may contain letters, digits, word-internal apostrophes, single hyphens, underscores, and symbols.
+**D4 -- Word token.** A maximal run of consecutive characters, none of which is whitespace or part of a punctuation token. A word token may contain letters, digits, apostrophes, em dashes, opening single quotes, single hyphens, underscores, and symbols (`wait—no`, `‘Word`, `don't`, `well-known` are each ONE word token).
 
-**D5 -- Punctuation token.** Exactly one character of the Punctuation Set standing as its own token, or a hyphen run (D3b), or an apostrophe in a non-word-internal position (D3a).
+**D5 -- Punctuation token.** Exactly one character of the Punctuation Set standing as its own token, or a hyphen run (D3b). Nothing else is a punctuation token.
 
-**D6 -- Single-character token.** A word token consisting of exactly one Letter or exactly one Digit. (A lone symbol such as `%`, `×`, `-`, or `_` is not a single-character token.)
+**D6 -- Single-character token.** A word token consisting of exactly one Letter or exactly one Digit. (A lone symbol such as `%`, `×`, `-`, `_`, or `'` is not a single-character token.)
 
 **D7 -- All-caps run.** A word token that (a) contains at least two letters, (b) contains no lowercase letter, and (c) contains at least one uppercase letter. Digits are tolerated (`COVID19`, `HTML5` qualify). A token with no letters (`1995`, `×`) is not an all-caps run.
 
 **D8 -- Terminator.** A punctuation token whose character is `.`, `!`, `?`, or `…`.
 
-**D9 -- Decoration.** A maximal run of punctuation tokens immediately after a terminator cluster (D11), drawn only from: `" ” ' ’ ) ] } »`. Decoration stops at the first token not in that set.
+**D9 -- Decoration.** A maximal run of punctuation tokens immediately after a terminator cluster (D11), drawn only from: `" ” ) ] } »`. Decoration stops at the first token not in that set. Apostrophes (`'` U+0027, `’` U+2019) are not in this set and can never enter it: they are word characters (D3), hence never punctuation tokens. A closing single quote sequence such as `.'` is therefore never terminator + Decoration; there the `.` is immediately followed by a word character and produces no candidate at all (D10, R0.1).
 
 **D10 -- Candidate.** A terminator cluster (D11) that is followed, after any Decoration, by whitespace or by end-of-block (D13). Nothing else is a candidate. `9.81`, `example.com`, `v2.1.3` produce **no** candidate, because their periods are not followed by whitespace (R0.1).
 
@@ -100,7 +100,7 @@ The list of defects fixed in v1.1 is in §10.
 **T3.** Definitions used by the rules:
 
 - *Pre-candidate token*: the word or punctuation token immediately before the terminator cluster.
-- *Following token*: the first token after the Decoration and after the gap, skipping any *opening marks* (`( [ { “ " „ ‟ « ‘ '`). It exists only if it lies in the same block. It is *usable* only if it is a word token.
+- *Following token*: the first token after the Decoration and after the gap, skipping any *opening marks* (`( [ { “ " „ ‟ «`). It exists only if it lies in the same block. It is *usable* only if it is a word token. (`‘` and the apostrophes are word characters (D3); they can never stand alone as punctuation tokens, so they need no skipping.)
 - *Effective initial*: the first character of the following token that is a Letter or Digit. It is "none" if the following token is not usable, or is a word token containing no Letter or Digit.
 
 **T4.** Worked tokenizations (binding):
@@ -112,9 +112,9 @@ The list of defects fixed in v1.1 is in §10.
 - `(NLP).` → `(` `NLP` `)` `.`
 - `...` → `.` `.` `.`
 - `J. K. Rowling.` → `J` `.` `K` `.` `Rowling` `.`
-- `'Go home.'` → `'` `Go` `home` `.` `'`
-- `dogs'` → `dogs` `'`
-- `wait—no` → `wait` `—` `no`
+- `'Go home.'` → `'Go` `home` `.` `'`
+- `dogs'` → `dogs'`
+- `wait—no` → `wait—no`
 - `wait--no` → `wait` `--` `no`
 
 ---
@@ -139,7 +139,7 @@ The list of defects fixed in v1.1 is in §10.
 
 ### Layer 0 -- Structure
 
-**R0.1 -- Candidacy.** Only positions satisfying D10 are candidates. A terminator cluster that is not followed, after any Decoration, by whitespace or end-of-block is not a candidate and never reaches any other rule. *Absorbs:* `9.81`, `example.com`, `v2.1.3`, `10⁻³.5`, times, file names, and every internal period such as `U.S.A` and `Ph.D` (this is everything v1.0's R1.1 tried to do). *Note:* `(He left.) Then` **is** a candidate, because `)` is Decoration.
+**R0.1 -- Candidacy.** Only positions satisfying D10 are candidates. A terminator cluster that is not followed, after any Decoration, by whitespace or end-of-block is not a candidate and never reaches any other rule. *Absorbs:* `9.81`, `example.com`, `v2.1.3`, `10⁻³.5`, times, file names, and every internal period such as `U.S.A` and `Ph.D` (this is everything v1.0's R1.1 tried to do), and every terminator immediately followed by a word character, e.g. the `.` of `…home.' Then` (the `'` is a word character, D3). *Note:* `(He left.) Then` **is** a candidate, because `)` is Decoration.
 
 **R0.2 -- Cluster normalization.** A terminator cluster (D11) is ONE candidate. An ellipsis cluster is suppressed by R4.2 (evaluation still follows DL2, so an earlier rule may be the one cited). A strong cluster is adjudicated exactly as a single terminator; `!` and `?` follow exactly the same rules as `.` -- there is no special exclamation logic anywhere in this specification. *Consequence (declared):* R1.2, R1.3 and R2.1 therefore also apply before `!` and `?` (AM-8).
 
@@ -157,7 +157,7 @@ The list of defects fixed in v1.1 is in §10.
 
 `dr, mr, mrs, ms, prof, gen, gov, sen, capt, sgt, lt, col, rev, hon‡, st, mt, ft, vs, ca, cf, pp, fig‡, eq, ch, sec‡, no‡, approx, dept, univ, assn, bros, al‡, jan, feb, mar‡, apr, may‡, jun, jul, aug, sep, sept, oct, nov, dec, mon, tue, tues, wed‡, thu, thur, thurs, fri, sat‡, sun‡`
 
-This list, as written, is complete. (`al` stands for `et al.`.) `etc` and `inc` are deliberately NOT in P: they can end sentences, and the specification's lexicon never licenses and never guesses (see ruling 7.12).
+This list, as written, is complete. (`al` stands for `et al.`.) `etc` and `inc` are deliberately NOT in P: they can end sentences, and the specification's lexicon never licenses and never guesses (see ruling 7.12). The v1.0 asterisk notation (`etc*`, `inc*`) is VOID: it pointed to an "R2.2 note" that has never existed -- the identifier R2.2 is not defined, not reserved, and not withdrawn; it simply is not part of this specification. No build flag, mode, profile, or other configuration may add, remove, or vary entries of P (L5); an implementation that restores `etc`/`inc` to P by such a toggle is non-conformant.
 
 *Ruling consequence:* `St. James`, `Dr. Smith arrived.`, `vs. The outcome`, `Sat. Jan. 5` -- all suppressed at the first period, even before a capital. *Misreading guards:* (a) R2.1 fires regardless of what follows -- the continuation cannot rescue the candidate; (b) R2.1 does NOT apply at end-of-block (DL3 outranks it: a block ending `…visited St.` still splits).
 
@@ -198,6 +198,8 @@ Capitalized attributions (`"Stop!" John said.`) are not handled: AM-6, OI-3.
 
 **L4.** No entry may carry a "license" or "permit-split" flag. If a future amendment wants one, it is a new rule (§4 amendment), not a lexicon flag -- rules and data stay separate. (The ‡ mark records a *cost*; it never permits a split.)
 
+**L5 -- Immutability.** Set P is fixed by this document. No flag, mode, build option, profile, or runtime configuration may add, remove, or vary entries, and no implementation may ship a toggle that does (e.g. one restoring v1.0's asterisked `etc*`/`inc*`). The lexicon has exactly one source of amendment: L3.
+
 ---
 
 ## §6. The three doors
@@ -207,7 +209,7 @@ Under this specification a false split can pass ONLY through:
 - **Door A -- P omission or unhandled enumerator.**
   (i) An unknown multi-letter abbreviation before a capital (`Cmdr. Shepard signed it.`). Repair: one P row (L3).
   (ii) A list marker that R1.2/R1.3 do not catch: multi-digit numerals (`10. Foo`) or lowercase Roman numerals (`iv. Bar`). A P row cannot repair these; repair is a specification amendment (OI-1).
-- **Door B -- capitalized attribution.** A closing quote followed by an attribution that starts with a capital (`"Stop!" John said.`; AM-6, AM-7). Repair: a specification amendment adding one right-context rule (OI-3).
+- **Door B -- capitalized attribution after a closing double quote.** A closing double quote (D9) followed by an attribution that starts with a capital (`"Stop!" John said.`; AM-6). Single-quoted material cannot pass through this door: no candidate exists after a closing apostrophe (D3, D9, AM-7). Repair: a specification amendment adding one right-context rule (OI-3).
 - **Door C -- tokenization defect.** Text where D3/D4 mis-segment (unusual Unicode, markup leakage such as `**Bold.** Next`). Repair: T-law amendment.
 
 Everything else is closed by construction. This enumeration is the specification's central warranty claim and is deliberately falsifiable (adjudication protocol: OI-4).
@@ -224,7 +226,7 @@ Everything else is closed by construction. This enumeration is the specification
 | 7.4  | `Dr. Smith arrived. He sat.` | KEEP after `Dr.`; SPLIT after `arrived.`; the final `sat.` is at end-of-block | R2.1, DL1, DL3 |
 | 7.5  | `St. James's Park is old. It…` | KEEP after `St.`; SPLIT after `old.` | R2.1, DL1 |
 | 7.6  | `J. K. Rowling wrote it. More…` | KEEP, KEEP; SPLIT after `it.` | R1.2, DL1 |
-| 7.7  | `I don't. You do.` | SPLIT after `don't.` -- `don't` is ONE token (D3a), not single-character | DL1, D3a |
+| 7.7  | `I don't. You do.` | SPLIT after `don't.` -- `don't` is ONE token (D3: apostrophes are word characters), not single-character | DL1, D3 |
 | 7.8  | `"Stop!" he said. Then…` | KEEP after `!"` (following token `he` is lowercase); SPLIT after `said.` (following `Then` is a capital). The quote and its attribution travel as one chunk | R3.1, DL1 |
 | 7.9  | `"Stop!" He left.` | candidate `!"`; following token `He` is a capital; nothing suppresses; SPLIT after `!"` (declared: quoted fragment, then new sentence) | DL1, AM-6 |
 | 7.10 | `"It is over." He said nothing.` | SPLIT after `."` -- a true boundary | DL1 |
@@ -242,7 +244,7 @@ Everything else is closed by construction. This enumeration is the specification
 | 7.22 | `NASA was founded. Later…` | SPLIT after `founded.`; the token `NASA` mid-sentence never matters | DL1 |
 | 7.23 | `He is taller than I. Others disagree.` | KEEP after `I.` -- missed split, accepted | R1.2, AM-2 |
 | 7.24 | `Prices rose 5. The next year…` | KEEP after `5.` (single digit) | R1.2 |
-| 7.25 | `He said, 'Go home.' Then he left.` | the closing `'` is Decoration (D3a, D9); SPLIT after `.'` | D3a, D9, DL1 |
+| 7.25 | `He said, 'Go home.' Then he left.` | no candidate after `home.` -- the `.` is immediately followed by the word token `'` (D3), not whitespace (D10, R0.1); the whole example is ONE chunk (missed split, accepted) | D3, D10, AM-7 |
 | 7.26 | `Was it NASA? We do not know.` | KEEP after `?` -- R1.3 applies to `?` exactly as to `.`; missed split, accepted | R0.2, R1.3, AM-8 |
 | 7.27 | `He sat. She stood.` | KEEP after `sat.` (`sat` is in P); missed split, accepted | R2.1, AM-9 |
 | 7.28 | `Section 12. 3 items follow.` | KEEP after `12.` (digit-initial continuation) | R3.1 |
@@ -251,6 +253,7 @@ Everything else is closed by construction. This enumeration is the specification
 | 7.31 | `(He left.) Then she left.` | `)` is Decoration, so `.)` is a candidate; SPLIT after `.)` | D9, D10, DL1 |
 | 7.32 | `Gov. Smith signed it.` | KEEP after `Gov.` | R2.1 |
 | 7.33 | `He left. “Then he came.”` | the opening `“` is skipped when locating the effective initial (`T`); SPLIT after `left.` | T3, DL1 |
+| 7.34 | `It was NASA—funded. The project…` | `NASA—funded` is ONE word token (D3: `—` is a word character); it contains lowercase, so it is not an all-caps run (D7) and R1.3 does not fire; SPLIT after `funded.` | D3, D4, D7, DL1 |
 
 ---
 
@@ -258,24 +261,25 @@ Everything else is closed by construction. This enumeration is the specification
 
 **W1 -- Warranted.** Every SPLIT emitted inside a block satisfies: candidacy (D10) + no suppression rule fired (§4, DL2) + uppercase effective initial (R3.1/DL5). Every SPLIT at end-of-block satisfies DL3. Subject to §6's doors staying shut, no SPLIT is placed at a non-sentence-end (D14 standard).
 
-**W2 -- Not warranted (recall).** This specification does NOT promise to find every sentence end. The missed splits AM-1 through AM-5, AM-8 and AM-9 below are accepted BY DESIGN and are not defects.
+**W2 -- Not warranted (recall).** This specification does NOT promise to find every sentence end. The accepted misses AM-1 through AM-5, AM-7, AM-8 and AM-9 below are accepted BY DESIGN and are not defects.
 
 **W3 -- The schedule.**
 
 *W3a -- Accepted missed splits (a KEEP where a human would split):*
 
-- **AM-1** -- no accepted miss. Contractions are safe by D3a (`don't.` is one token); listed so the class it prevents is documented.
+- **AM-1** -- no accepted miss. Contractions are safe by D3 (apostrophes are word characters; `don't.` is one token); listed so the class it prevents is documented.
 - **AM-2** -- true boundary after a single-character word or digit (`than I.`, `5 A.`, `Figure 2.`, the `D` of `Ph.D.`), because R1.2 suppresses all single-character pre-tokens. Cost: merged chunks. Frequency: unmeasured.
 - **AM-3** -- true boundary after all-caps runs and Roman numerals (`Chapter IV. The…`, `…built with AI. The…`, `…on TV. She…`) -- R1.3. Frequency: **unmeasured**; likely non-trivial in modern and technical prose, since sentences ending in acronyms are common.
 - **AM-4** -- true boundary at an ellipsis (`over… A new era`) -- R4.2. Frequency: unmeasured.
 - **AM-5** -- `U.S.`-class trailing ambiguity before capitals (7.19/7.20) -- R1.2. This is the "Layer E" case of the catalogue in the companion documents, absorbed in the safe direction.
+- **AM-7** -- RECLASSIFIED in v1.2 (was filed in v1.1 as a declared false-split risk). Any terminator immediately followed by a closing apostrophe produces no candidate (`…home.' Then`, `…over?' He…`) -- D3, D10 -- so single-quoted dialogue and its attributions are entirely invisible to the splitter. The v1.1 behavior (SPLIT after `.'`, Door B exposure) is withdrawn. Frequency: unmeasured.
 - **AM-8** -- `!` and `?` inherit the abbreviation-shape suppressors (R0.2): a true boundary after a single-character, all-caps, or P token followed by `?` or `!` is missed (`Was it NASA? We…`, `What is 5? Ten.`). Frequency: unmeasured.
 - **AM-9** -- lexicon-induced misses (R2.1): a true boundary after any P entry before a capital (`He sat. She stood.`, `…on Main St. It…`). Highest for ‡ entries.
 
 *W3b -- Declared false-split risks.* These are NOT missed splits. They are false splits that the specification knowingly permits; they remain defects (CI-6), but acknowledged ones:
 
 - **AM-6** -- a closing quote followed by a capitalized attribution (`"Stop!" John said.`, `"Stop!" He said.`) splits after the quote -- Door B.
-- **AM-7** -- single-quoted dialogue is recognized only as Decoration (D9); it is invisible to quote parity (D16), and its attributions behave as in AM-6 -- Door B.
+- **AM-7** -- RECLASSIFIED in v1.2; moved to W3a. The v1.1 entry (single-quoted dialogue as Decoration, attributions behaving as in AM-6) described the withdrawn D3a behavior and no longer applies.
 
 **W4 -- Failure protocol.** When a false split is observed in the wild: identify which door (§6) it passed through; apply exactly one repair.
 
@@ -300,7 +304,9 @@ Record it in the audit trail. Threshold-tuning, per-document hacks, and multi-ru
 
 ---
 
-## §10. Change log: v1.0 → v1.1
+## §10. Change log
+
+### v1.0 → v1.1
 
 | Ref | Defect in v1.0 | Fix in v1.1 |
 | --- | -------------- | ----------- |
@@ -333,12 +339,28 @@ Record it in the audit trail. Threshold-tuning, per-document hacks, and multi-ru
 | Cross-refs | `§DL2`; "§7 schedule" (it is §8); `R2.2`; T3 cited as the token stream (it is T1) | Fixed |
 | D12 | "Two consecutive newlines" missed CRLF and whitespace-only blank lines; `th` missing; tag-detection order unspecified | Defined precisely |
 
+### v1.1 → v1.2
+
+The principal reported four contradictions and ruled on each. The rulings, restated (this text is self-contained):
+
+- **(a) Lexicon.** v1.0's `etc*`/`inc*` pointed to an "R2.2 note" that does not exist; ruling 7.12 and the closing note of §4 say `etc.` splits. `etc` and `inc` are excluded from P, and no toggle may put them back.
+- **(b) Apostrophe.** D3 makes `'` a word character, so it can never be Decoration; a closing single quote sequence like `.'` therefore never counts as Decoration.
+- **(c) Double hyphen.** D5 says one character per punctuation token, but `--` is two; it is treated as ONE token.
+- **(d) Em dash / opening single quote.** Neither `—` nor `‘` is in the Punctuation Set, so `word—Next` is ONE word token.
+
+| Ref | Defect | Fix in v1.2 | Ruling |
+| --- | ------ | ----------- | ------ |
+| R2.1/L5 | Nothing in the text prevented an implementation toggle from restoring the v1.0 asterisked `etc*`/`inc*` to P (the reference implementation's `--strict-asterisks` did exactly that); the asterisks themselves pointed to a non-existent R2.2 | R2.1: asterisk notation declared void (R2.2 has never existed); new L5: P is immutable, no flag/mode/profile may vary it | (a) |
+| D3a/D9/D5/T4/7.25 | D3a made non-word-internal apostrophes punctuation tokens; D9 admitted `'` and `’` as Decoration; v1.1's 7.25 split after `.'` -- the exact outcome ruling (b) forbids | D3a withdrawn (stub); apostrophes unconditionally word characters (D3 note); `'`/`’` removed from D9 with an explanation; D5 reduced to "one character or hyphen run"; T4 `dogs'`, `'Go home.'` reworked; 7.25 reversed; AM-1 recited to D3; AM-7 reclassified from declared false-split risk (W3b) to accepted miss (W3a); W2 and Door B updated; T3 opening marks lose `‘` and `'` | (b) |
+| D3b/D5 | None. v1.1 already treats `--` as ONE punctuation token (D3b) and D5 excepts it; the ruling is already the written law | Verified; no change (T4 `wait--no` unchanged) | (c) |
+| D3/D4/T4/7.34 | v1.1 ADDED `—` and `‘` to the Punctuation Set (its §10 row called v1.0's one-token `word—Word` behavior a defect). The principal has ruled the one-token behavior correct | `—` and `‘` removed from D3; declared word characters (D3 note, D4); T4 `wait—no` → one token; new ruling 7.34; the v1.1 §10 row is superseded on this point | (d) |
+
 ### Open issues (need a design decision; deliberately not changed)
 
 - **OI-1 -- Enumerators.** Multi-digit list numbers (`10. Foo`) and lowercase Roman numerals (`iv. Bar`) produce false splits (Door A(ii)). Needs a new rule.
 - **OI-2 -- `!` and `?` share the abbreviation suppressors** (CI-4, AM-8). This is a design choice with a recall cost; consider whether R1.2, R1.3 and R2.1 should apply to `.` only.
-- **OI-3 -- Capitalized attributions** (Door B, AM-6). A right-context rule would revive D15's wider window and D16's quote parity.
+- **OI-3 -- Capitalized attributions** (Door B, AM-6). A right-context rule would revive D15's wider window and D16's quote parity. (Since v1.2, single-quote attributions are unreachable -- AM-7 -- so this issue concerns double quotes only.)
 - **OI-4 -- D14 has no adjudication protocol.** The "deliberately falsifiable" warranty needs a stated procedure for deciding whether a position is a sentence end (who judges, how many editors, how ties are resolved).
 - **OI-5 -- Unmeasured frequencies and a small seed lexicon.** AM-2, AM-3, AM-8 and AM-9 need corpus measurements. P omits common abbreviations such as `Ltd`, `Corp`, `Ave`, `Blvd`.
-- **OI-6 -- Quote and whitespace ambiguity.** Straight `"` and `'` are ambiguous between opening and closing (and `5"` inch marks would toggle parity if D16 were revived). NBSP is treated as ordinary whitespace though it is often used to glue an abbreviation to a name. The HTML block list is minimal (`br`, `blockquote`, `tr`, `ul`, `ol` are not boundaries).
+- **OI-6 -- Quote and whitespace ambiguity.** Straight `"` is ambiguous between opening and closing (and `5"` inch marks would toggle parity if D16 were revived); `'` is always a word character (D3), so its ambiguity is moot for tokenization. NBSP is treated as ordinary whitespace though it is often used to glue an abbreviation to a name. The HTML block list is minimal (`br`, `blockquote`, `tr`, `ul`, `ol` are not boundaries).
 - **OI-7 -- Companion documents.** References to `precision-first-split-theory.md` and `why-not-to-split.md` (and the "catalogue" cited in AM-5) were not checked against those files.
